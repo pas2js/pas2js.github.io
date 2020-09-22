@@ -1,4 +1,4 @@
-﻿var pas = {};
+var pas = {};
 
 var rtl = {
 
@@ -6001,6 +6001,16 @@ rtl.module("uDatabase",["System","Classes","SysUtils","Types","JS","Web","DB","u
     $r.addProperty("BeforeConnect",0,pas.Classes.$rtti["TNotifyEvent"],"FBeforeConnect","FBeforeConnect");
     $r.addProperty("OnConnectError",0,$mod.$rtti["TConnectErrorEvent"],"FOnConnectError","FOnConnectError");
   });
+  this.Sleep = function (ms) {
+    var Result = null;
+    Result = new Promise(function (resolve, reject) {
+      window.setTimeout(function () {
+        window.console.log("Done waiting");
+        resolve(ms);
+      },ms);
+    });
+    return Result;
+  };
   this.ShowQuery = function (contents) {
     var i = 0;
     var outputElm = null;
@@ -6050,6 +6060,7 @@ rtl.module("uDatabase",["System","Classes","SysUtils","Types","JS","Web","DB","u
     fetched = await window.fetch(path);
     buf = await fetched.arrayBuffer();
     dataDB = new Uint8Array(buf);
+    await $mod.Sleep(25);
     callBackDB(new SQL.Database(dataDB));
   };
 });
