@@ -1,0 +1,176 @@
+<!-- (0047)Rect -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Rect command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Rect, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Rect</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Create a TRect value from 2 points or 4 coordinates</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Classes</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Rect</b></font>
+
+(
+<b>Left, Top, Right, Bottom </b> : Integer
+)
+ : TRect;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Rect</b></font>&nbsp;(
+<b>TopLeft, BottomRight </b> : TPoint
+)  : TRect;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Rect</b></font> function creates a <b>TRect</b> (rectangle) value from either 4 coordinates or 2 points.
+<br>&nbsp;<br>
+When creating from two points <b>TopLeft</b> and <b>BottomRight</b>, you can pass two TPoint values, or use the <b>Point</b> function to generate them.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#FF0000><b>Important</b></font><br>
+<br>
+There are two <font color=#996600><b>Rect</b></font> functions in the <b>Classes</b> and <b>Types</b> units. Only the former supports the second syntax.<br>
+<br>
+If using both of these units in your code, and you specify <b>Types</b> after <b>Classes</b> you must prefix Rect with Classes to use this second syntax.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="bounds.htm">Bounds</a></b></td>
+<td width="8"></td>
+<td align="left">Create a TRect value from top left and size values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="point.htm">Point</a></b></td>
+<td width="8"></td>
+<td align="left">Generates a TPoint value from X and Y values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="pointsequal.htm">PointsEqual</a></b></td>
+<td width="8"></td>
+<td align="left">Compares two TPoint values for equality</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ptinrect.htm">PtInRect</a></b></td>
+<td width="8"></td>
+<td align="left">Tests to see if a <b>point</b> lies within a <b>rectangle</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tpoint.htm">TPoint</a></b></td>
+<td width="8"></td>
+<td align="left">Holds X and Y integer values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="trect.htm">TRect</a></b></td>
+<td width="8"></td>
+<td align="left">Holds rectangle coordinate values</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Create two rectangles using both syntaxes</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;rectangle1, rectangle2 : TRect;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the first rectangle using syntax 1</b></font><br>
+&nbsp;&nbsp;rectangle1 := <font color=#C00000><b>Rect</b></font>(20, 40, 60, 80);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the second rectangle using the Rect function</b></font><br>
+&nbsp;&nbsp;rectangle2 := Classes.<font color=#C00000><b>Rect</b></font>(Point(20, 40), Point(60, 80));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the top left and bottom right coords of each rectangle</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('Rectangle 1 coords = %d,%d,%d,%d',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [rectangle1.Left,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectangle1.Top,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectangle1.Right,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectangle1.Bottom]);<br><b>
+</b><br>
+&nbsp;&nbsp;ShowMessageFmt('Rectangle 2 coords = %d,%d,%d,%d',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [rectangle2.Left,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectangle2.Top,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectangle2.Right,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectangle2.Bottom]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="rect&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Rectangle 1 coords = 20,40,60,80<br>&nbsp;&nbsp;
+Rectangle 2 coords = 20,40,60,80<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

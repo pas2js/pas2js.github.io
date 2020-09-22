@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="11">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="5" Y="17"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="32"/>
+        <CursorPos X="36" Y="48"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="Unit1.html"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="30"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="index.html"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="27"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\WEBLib\weblib.graphics.pas"/>
+        <UnitName Value="WEBLib.Graphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="416"/>
+        <CursorPos X="25" Y="443"/>
+        <UsageCount Value="26"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\WEBLib\weblib.forms.pas"/>
+        <UnitName Value="WEBLib.Forms"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="22"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\WEBLib\weblib.runner.pas"/>
+        <UnitName Value="WEBLib.Runner"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="16" Y="15"/>
+        <UsageCount Value="9"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\WEBLib\weblib.extctrls.pas"/>
+        <UnitName Value="WEBLib.ExtCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="317"/>
+        <CursorPos X="56" Y="341"/>
+        <UsageCount Value="18"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\WEBLib\weblib.controls.pas"/>
+        <UnitName Value="WEBLib.Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="644"/>
+        <CursorPos Y="661"/>
+        <UsageCount Value="16"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\..\..\pas2js-windows-0.9.5\packages\rtl\web.pas"/>
+        <UnitName Value="Web"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2248"/>
+        <CursorPos X="97" Y="2270"/>
+        <UsageCount Value="12"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\WEBLib\weblib.stdctrls.pas"/>
+        <UnitName Value="WEBLib.StdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="65"/>
+        <CursorPos X="33" Y="90"/>
+        <UsageCount Value="14"/>
+      </Unit10>
+    </Units>
+    <JumpHistory HistoryIndex="-1"/>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1" ActiveMode="Default">
+        <Mode0 Name="Default">
+          <local>
+            <LaunchingApplication Use="True" PathPlusParams="$(Pas2JSBrowser) $(Pas2JSProjectURL)"/>
+          </local>
+        </Mode0>
+      </Modes>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

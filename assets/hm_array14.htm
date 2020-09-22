@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Passing array as reference in &nbsp;Pas2JS</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Passing array as reference in &nbsp;Pas2JS</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TFixedSizeArray&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">..</span><span class="f_CodeExample" style="color: #0000ff;">9</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TDynamicArray&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;SomeProc(fixed&nbsp;:&nbsp;TFixedSizeArray;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">dynamic</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;TDynamicArray);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;fixed[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;&nbsp;&nbsp;:=&nbsp;fixed[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;+&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">dynamic</span><span class="f_CodeExample" style="color: #000000;">.SetLength(</span><span class="f_CodeExample" style="color: #0000ff;">20</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">dynamic</span><span class="f_CodeExample" style="color: #000000;">[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;:=&nbsp;fixed[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;+&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">dynamic</span><span class="f_CodeExample" style="color: #000000;">[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button3Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;f&nbsp;:&nbsp;TFixedSizeArray;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;d&nbsp;:&nbsp;TDynamicArray;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;f[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">100</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;d.SetLength(</span><span class="f_CodeExample" style="color: #0000ff;">10</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;d[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">50</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;SomeProc(f,&nbsp;d);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;ShowMessage(IntToStr(&nbsp;f[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">])&nbsp;);&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//100</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;ShowMessage(IntToStr(&nbsp;d[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">])&nbsp;);&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//151</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p>Result:</p>
+<p>---------------</p>
+<p class="p_CodeExample"><span class="f_CodeExample">100&nbsp;and&nbsp;151</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">-------------</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Note that f[0] will be unchanged after call SomeProc method! </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">f</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> is a </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TFixedSizeArray.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

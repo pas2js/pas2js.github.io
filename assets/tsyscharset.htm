@@ -1,0 +1,129 @@
+<!-- (0054)TSysCharSet -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TSysCharSet command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TSysCharSet, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TSysCharSet</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Characters used by supplied string parsing functions</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>TSysCharSet</b> : char;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>TSysCharSet</b></font> type is used as a general type for setting special characters during Delphi string parsing functions.
+<br>&nbsp;<br>
+For example, the <b>FindCmdLineSwitch</b> can be configured to search for user defined command line 'switch' value prefix characters.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="findcmdlineswitch.htm">FindCmdLineSwitch</a></b></td>
+<td width="8"></td>
+<td align="left">Determine whether a certain parameter switch was passed</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Override the default Windows Command Line Switch parsing characters</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;switchPrefixes : <font color=#C00000><b>TSysCharSet</b></font>;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Before running this code, use the Run/parameters menu option</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// to set the following command line parameters : *def /abc</b></font><br>&nbsp;&nbsp;ShowMessage(CmdLine);&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Show the execution command + parameters</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// How many parameters were passed?</b></font><br>
+&nbsp;&nbsp;WriteLn('There are '+IntToStr(ParamCount)+' parameters');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Scan for abc and def parameters using the default / and - values</b></font><br>
+&nbsp;&nbsp;if FindCmdLineSwitch('abc')<br>
+&nbsp;&nbsp;then WriteLn('/abc found')<br>
+&nbsp;&nbsp;else WriteLn('/abc NOT found');<br><b>
+</b><br>
+&nbsp;&nbsp;if FindCmdLineSwitch('def')<br>
+&nbsp;&nbsp;then WriteLn('/def found')<br>
+&nbsp;&nbsp;else WriteLn('/def NOT found');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Rescan with * and / as the switch prefix characters</b></font><br>
+&nbsp;&nbsp;switchPrefixes := ['*','/'];<br>
+&nbsp;&nbsp;if FindCmdLineSwitch('abc', switchPrefixes, True)<br>
+&nbsp;&nbsp;then WriteLn('*abc or /abc found')<br>
+&nbsp;&nbsp;else WriteLn('*abc and /abc NOT found');<br><b>
+</b><br>
+&nbsp;&nbsp;if FindCmdLineSwitch('def', switchPrefixes, True)<br>
+&nbsp;&nbsp;then WriteLn('*def or /def found')<br>
+&nbsp;&nbsp;else WriteLn('*def and /def NOT found');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/tsyscharset&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;"C:\Program files\Borland\Delphi7\Projects\Project1.exe" *def /abc<br>&nbsp;&nbsp;
+/abc found<br>&nbsp;&nbsp;
+/def NOT found<br>&nbsp;&nbsp;
+*abc or /abc found<br>&nbsp;&nbsp;
+*def or /def found<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

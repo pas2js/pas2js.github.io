@@ -1,0 +1,232 @@
+<!-- (0062)Set&ExpandCode3=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Set command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Set, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Set</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines a set of up to 255 distinct values</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type Name = <b>Set</b> of Ordinal type;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type Name = <b>Set</b> of Value range;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Set</b></font> keyword defines an set type for up to 255 discrete values. Do not confuse with enumerations - they can only adopt one value. A set variable always holds all set values - some are set on, some are set off.
+<br>&nbsp;<br>
+The <b>Ordinal type</b> can be :
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>Characters&nbsp;</b></td><td class=dd> such as 'A' and '5'</td></tr>
+<tr><td class=dt align='right'><b>Integers&nbsp;</b></td><td class=dd> in the range 0 to 255</td></tr>
+<tr><td class=dt align='right'><b>Enumerations&nbsp;</b></td><td class=dd> names such as Diamonds, Clubs</td></tr></table>
+<br>&nbsp;<br>
+Remember that a <font color=#996600><b>Set</b></font> declaration is a <b>variable</b>. As such, it has all possible values set <b>off</b> at the start.
+<br>&nbsp;<br>
+When you initialise the set, you will be setting some or all of these values <b>on</b>.
+<br>&nbsp;<br>
+You can then check a variable to see if its value is in the set. You might want to do this, for example, when parsing code, to see if the next character is a lower case letter.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Each enumeration type, or set member, occupies one bit of a 256 bit (32 byte) mask.<br>
+<br>
+Any of these 32 bytes that contains none of the enumeration definition bits is omitted from the set in order to save storage. See the examples for an illustration of this.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="exclude.htm">Exclude</a></b></td>
+<td width="8"></td>
+<td align="left">Exclude a value in a set variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="in.htm">In</a></b></td>
+<td width="8"></td>
+<td align="left">Used to test if a value is a member of a set</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="include.htm">Include</a></b></td>
+<td width="8"></td>
+<td align="left">Include a value in a set variable</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Sets of characters</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;Alphabet&nbsp;&nbsp;: <font color=#C00000><b>Set</b></font> of 'A'..'z';&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Set of all letters</b></font><br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;Alphabet&nbsp;&nbsp;:= ['A'..'z'];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Set all of the members ON</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Check values against the alphabet set</b></font><br>
+&nbsp;&nbsp;if 'Z' in Alphabet<br>
+&nbsp;&nbsp;then WriteLn('Z is in Alphabet')<br>
+&nbsp;&nbsp;else WriteLn('Z is NOT in Alphabet');<br><b>
+</b><br>
+&nbsp;&nbsp;if 'd' in Alphabet<br>
+&nbsp;&nbsp;then WriteLn('d is in Alphabet')<br>
+&nbsp;&nbsp;else WriteLn('d is NOT in Alphabet');<br><b>
+</b><br>
+&nbsp;&nbsp;if '1' in Alphabet<br>
+&nbsp;&nbsp;then WriteLn('1 is in Alphabet')<br>
+&nbsp;&nbsp;else WriteLn('1 is NOT in Alphabet');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/set&expandcode1=yes&expandcode3=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Z is in Alphabet<br>&nbsp;&nbsp;
+d is in Alphabet<br>&nbsp;&nbsp;
+1 is NOT in Alphabet<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Sets of positive numbers</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;SmallNums : <font color=#C00000><b>Set</b></font> of 0..55;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Set of the first 56 set members</b></font><br>&nbsp;&nbsp;LargeNums : <font color=#C00000><b>Set</b></font> of 200..255;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Set of the&nbsp;&nbsp;last 56 set members</b></font><br>&nbsp;&nbsp;FullNums&nbsp;&nbsp;: <font color=#C00000><b>Set</b></font> of 0..255;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Set of the&nbsp;&nbsp;all 256 set members</b></font><br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// We have a range of 0 to 55 values that we can set</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Notice the great flexibility we have in setting values</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// We can specify multiple ranges, and individual members</b></font><br>&nbsp;&nbsp;SmallNums := [3..12,23,30..32];&nbsp;&nbsp;<font color=#008000><b>// Set only some of the members on</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the storage taken by these sets</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Each set member takes up one bit of one byte of a possible 32 bytes.</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// However, only bytes with at least one bit set are stored</b></font><br>
+&nbsp;&nbsp;WriteLn('SmallNums uses : '+IntToStr(SizeOf(SmallNums))+' bytes');<br>
+&nbsp;&nbsp;WriteLn('LargeNums uses : '+IntToStr(SizeOf(LargeNums))+' bytes');<br>
+&nbsp;&nbsp;WriteLn('AllNums uses&nbsp;&nbsp; : '+IntToStr(SizeOf(FullNums))+' bytes');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Check values against the small numbers set</b></font><br>
+&nbsp;&nbsp;if 12 in SmallNums<br>
+&nbsp;&nbsp;then WriteLn('12 is in SmallNums')<br>
+&nbsp;&nbsp;else WriteLn('12 is NOT in SmallNums');<br><b>
+</b><br>
+&nbsp;&nbsp;if 13 in SmallNums<br>
+&nbsp;&nbsp;then WriteLn('13 is in SmallNums')<br>
+&nbsp;&nbsp;else WriteLn('13 is NOT in SmallNums');<br><b>
+</b><br>
+&nbsp;&nbsp;if 30 in SmallNums<br>
+&nbsp;&nbsp;then WriteLn('30 is in SmallNums')<br>
+&nbsp;&nbsp;else WriteLn('30 is NOT in SmallNums');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/set&expandcode2=yes&expandcode3=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;SmallNums uses : 7 bytes<br>&nbsp;&nbsp;
+LargeNums uses : 7 bytes<br>&nbsp;&nbsp;
+AllNums uses&nbsp;&nbsp; : 32 bytes<br>&nbsp;&nbsp;
+12 is in SmallNums<br>&nbsp;&nbsp;
+13 is NOT in SmallNums<br>&nbsp;&nbsp;
+30 is in SmallNums<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Sets of user defined enumeration values</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> type</b><br>
+&nbsp;&nbsp;TNumber&nbsp;&nbsp; = (Ace, One, Two, Three, Four, Five, Siz, Seven, Eight, <br>
+&nbsp;&nbsp;Nine, Ten, Jack, Queen, King);<br><b>
+</b><br><b>
+var</b><br>&nbsp;&nbsp;CourtCards: <font color=#C00000><b>Set</b></font> of TNumber;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Court cards</b></font><br>
+&nbsp;&nbsp;CardNumbers : array[1..4] of TNumber;<br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the card numbers only to allow picture cards</b></font><br>
+&nbsp;&nbsp;CourtCards := [Ace, Jack, Queen, King];<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define some cards</b></font><br>
+&nbsp;&nbsp;CardNumbers[1] := Ace;<br>
+&nbsp;&nbsp;CardNumbers[2] := Four;<br>
+&nbsp;&nbsp;CardNumbers[3] := Jack;<br>
+&nbsp;&nbsp;CardNumbers[4] := Seven;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the picture cards that we have</b></font><br>
+&nbsp;&nbsp;for i := 1 to 4 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if CardNumbers[i] in CourtCards <br>
+&nbsp;&nbsp;&nbsp;&nbsp;then WriteLn('Card '+IntToStr(i)+' is a court card');<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="set.htm#Ex3"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Card 1 is a court card<br>&nbsp;&nbsp;
+Card 3 is a court card<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

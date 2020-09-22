@@ -1,0 +1,172 @@
+<!-- (0054)FileSetDate -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : FileSetDate command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, FileSetDate, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>FileSetDate</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Set the last modified date and time of a file</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>FileSetDate</b></font>
+
+(
+<b>FileHandle </b> : Integer;<b> FileAge </b> : Integer
+)
+ : Integer;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>FileSetDate</b></font>&nbsp;(
+<b>const FileName </b> : string;<b> FileAge </b> : Integer
+)  : Integer;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <b>SetFileDate</b> function sets the last modified date and time of a file.
+<br>&nbsp;<br>
+<font color=#FF0000>Version 1</font> of this function takes a <b>FileHandle</b> parameter to indicate the file. This requires use of the <b>FileOpen</b> function, which is one of the low level file handling routines in Delphi.
+<br>&nbsp;<br>
+<font color=#FF0000>Version 2</font> of this function takes a <b>FileName</b> parameter to define the file. 
+<br>&nbsp;<br>
+The file is searched for in the current directory.
+<br>&nbsp;<br>
+The second parameter, <b>FileAge</b> is an Integer date/time representation that is used to change the last modified date/time of the file.
+<br>&nbsp;<br>
+Use the <b>DateTimeToFileDate</b> function to convert a <b>TDateTime</b> value to this integer format.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="datetimetofiledate.htm">DateTimeToFileDate</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a TDateTime value to a File date/time format</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="fileage.htm">FileAge</a></b></td>
+<td width="8"></td>
+<td align="left">Get the last modified date/time of a file without opening it</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="filedatetodatetime.htm">FileDateToDateTime</a></b></td>
+<td width="8"></td>
+<td align="left">Converts a file date/time format to a TDateTime value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="filegetattr.htm">FileGetAttr</a></b></td>
+<td width="8"></td>
+<td align="left">Gets the attributes of a file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="filesetattr.htm">FileSetAttr</a></b></td>
+<td width="8"></td>
+<td align="left">Sets the attributes of a file</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Display, update, and redisplay the last modified date of a file</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;fileName&nbsp;&nbsp;&nbsp;&nbsp;: string;<br>
+&nbsp;&nbsp;fileDate&nbsp;&nbsp;&nbsp;&nbsp;: Integer;<br>
+&nbsp;&nbsp;newDateTime : TDateTime;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Unit1.DCU file for the current project</b></font><br>
+&nbsp;&nbsp;fileName := 'Unit1.DCU';<br>
+&nbsp;&nbsp;fileDate := FileAge(fileName);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Did we get the file age OK?</b></font><br>
+&nbsp;&nbsp;if fileDate > -1 then<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(fileName+' last modified date = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DateTimeToStr(FileDateToDateTime(fileDate)));<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Now change the last modified date</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;newDateTime := StrToDateTime('01/01/2000 12:34:56');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FileSetDate</b></font>(fileName, DateTimeToFileDate(newDateTime));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Did we update the file last modified date OK?</b></font><br>
+&nbsp;&nbsp;fileDate := FileAge(fileName);<br>
+&nbsp;&nbsp;if fileDate > -1 then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(fileName+' last modified date = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DateTimeToStr(FileDateToDateTime(fileDate)));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="filesetdate&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Unit1.DCU last modified date = 30/10/2002 15:16:22<br>&nbsp;&nbsp;
+Unit1.DCU last modified date = 01/01/2000 12:34:56<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

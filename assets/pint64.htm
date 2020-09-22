@@ -1,0 +1,135 @@
+<!-- (0049)PInt64 -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : PInt64 command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, PInt64, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>PInt64</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Pointer to an Int64 value</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>PInt64</b> = ^Int64;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>PInt64</b></font> type is a pointer to an Int64 value.
+<br>&nbsp;<br>
+Pointer arithmetic, such as <b>Inc, Dec</b> can be used on it, for example to navigate a block of Int64 values, as in the example.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="dec.htm">Dec</a></b></td>
+<td width="8"></td>
+<td align="left">Decrement an ordinal variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inc.htm">Inc</a></b></td>
+<td width="8"></td>
+<td align="left">Increment an ordinal variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="int64.htm">Int64</a></b></td>
+<td width="8"></td>
+<td align="left">A 64 bit sized integer - the largest in Delphi</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Store 3 Int64 values in memory and navigate through them</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;int64Ptr : <font color=#C00000><b>PInt64</b></font>;<br>
+&nbsp;&nbsp;a : TDateTime;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Allocate storage for three Int64 variables</b></font><br>
+&nbsp;&nbsp;GetMem(int64Ptr, 3 * SizeOf(Int64));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Fill out these Int64 variables</b></font><br>
+&nbsp;&nbsp;int64Ptr^ := 1;<br>
+&nbsp;&nbsp;Inc(int64Ptr);<br>
+&nbsp;&nbsp;int64Ptr^ := 22;<br>
+&nbsp;&nbsp;Inc(int64Ptr);<br>
+&nbsp;&nbsp;int64Ptr^ := 333;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display these values</b></font><br>
+&nbsp;&nbsp;Dec(int64Ptr, 2);<br>
+&nbsp;&nbsp;ShowMessageFmt('Value 1 = %d',[int64Ptr^]);<br>
+&nbsp;&nbsp;Inc(int64Ptr);<br>
+&nbsp;&nbsp;ShowMessageFmt('Value 2 = %d',[int64Ptr^]);<br>
+&nbsp;&nbsp;Inc(int64Ptr);<br>
+&nbsp;&nbsp;ShowMessageFmt('Value 3 = %d',[int64Ptr^]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="pint64&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Value 1 = 1<br>&nbsp;&nbsp;
+Value 2 = 22<br>&nbsp;&nbsp;
+Value 3 = 333<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

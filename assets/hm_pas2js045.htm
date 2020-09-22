@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1"> Property using Array field</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js044.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js046.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Setter/Getter with Array field
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+
+type
+ TTest = class
+   FValues: array [0..12] of Integer;
+   function GetValue(x: Integer): Integer;
+   procedure SetValue(x, y: Integer);
+   property Values[x: Integer]: Integer read GetValue write SetValue; default;
+ end;
+ 
+function TTest.GetValue(x: Integer): Integer;
+begin
+  Result := FValues[x];
+end;
+
+procedure TTest.SetValue(x, y: Integer);
+begin
+  FValues[x] := y;
+end;
+
+{ unit1.pas } 
+var 
+  x: Integer;
+  t: TTest = TTest.Create;
+  
+Begin
+for x := 0 to 10 do
+begin
+  t[x] := x;
+  WriteLn(t[x]);
+end;
+
+{ CONSOLE OUTPUT
+	0
+	1
+	2
+	3
+	4
+	5
+	6
+	7
+	8
+	9
+	10
+}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var x$1 = 0;
+var t = null,
+t = TObject.Create($New(TTest));
+for (x$1 = 0; x$1 <= 10; x$1++) {
+	TTest.SetValue(t, x$1, x$1);
+	WriteLn(TTest.GetValue(t, x$1));
+}
+
+var TTest = {
+   $ClassName:"TTest",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FValues = [0,0,0,0,0,0,0,0,0,0,0,0,0];
+   }
+  
+   ,GetValue:function(Self, x$2) {
+      return Self.FValues[x$2];
+   }
+  
+   ,SetValue:function(Self, x$3, y) {
+      Self.FValues[x$3] = y;
+   }
+   ,Destroy:TObject.Destroy
+};	  
+
+</code></pre></div>
+</div>
+</body>
+</html>

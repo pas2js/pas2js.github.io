@@ -1,0 +1,168 @@
+<html oncontextmenu="return false"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Boolean command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Boolean, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css">
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tbody><tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tbody><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</td></tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Boolean</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Allows just <b>True</b> and <b>False</b> values</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tbody><tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>Boolean</b> = (False, True);
+</font></td>
+
+</tr>
+
+</tbody></table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</tbody></table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody><tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tbody><tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color="#996600"><b>Boolean</b></font> type provides an enumeration of the logical <b>True</b> and <b>False</b> values.
+<br>&nbsp;<br>
+Unlike other languages, it is not a number - it will only allow these values. This makes the code much more reliable.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Using calculations to test for true or false is a C like practice, but is supported in Delphi. Use the following to hold such a logical number:<br>
+<br>
+<b>ByteBool<br>
+WordBool<br>
+LongBool</b><br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tbody><tr valign="top">
+<td><b><a href="and.htm">And</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>and</b> or bitwise <b>and</b> of two arguments</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="if.htm">If</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a conditional expression to determine what to do next</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="not.htm">Not</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>Not</b> or bitwise <b>not</b> of one arguments</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="or.htm">Or</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>or</b> or bitwise <b>or</b> of two arguments</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="xor.htm">Xor</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>Xor</b> or bitwise <b>Xor</b> of two arguments</td>
+</tr>
+
+</tbody></table>
+</td>
+</tr>
+
+<tr><td> <!-- Added for AdSense-->	
+<script type="text/javascript"><!--
+google_ad_client = "pub-5499211888959302";
+//300x250, created 07/01/08
+google_ad_slot = "1706833624";
+google_ad_width = 300;
+google_ad_height = 250;
+//--></script>
+<acript type="text/javascript" src="../pagead2.googlesyndication.com/pagead/show_ads.js">
+</acript></td></tr> <!-- Added for AdSense-->
+
+</tbody></table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Boolean assignments and tests</b></td></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;same : <font color="#C00000"><b>Boolean</b></font>;<br>
+&nbsp;&nbsp;small, large, i : Integer;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;small := 23;<br>
+&nbsp;&nbsp;large := 455555;<br><b>
+</b><br>&nbsp;&nbsp;<font color="#008000"><b>// Test directly to see if these numbers are the same size</b></font><br>
+&nbsp;&nbsp;if small = large<br>
+&nbsp;&nbsp;then WriteLn('small = large')<br>
+&nbsp;&nbsp;else WriteLn('small &lt;&gt; large');<br><b>
+</b><br>&nbsp;&nbsp;<font color="#008000"><b>// Use a Boolean to hold and test this outcome</b></font><br>
+&nbsp;&nbsp;same := (small = large);<br>
+&nbsp;&nbsp;if same<br>
+&nbsp;&nbsp;then WriteLn('small = large')<br>
+&nbsp;&nbsp;else WriteLn('small &lt;&gt; large');<br><b>
+</b><br>&nbsp;&nbsp;<font color="#008000"><b>// Assign a direct logical value to this Boolean</b></font><br>
+&nbsp;&nbsp;same := True;<br>
+&nbsp;&nbsp;if same<br>
+&nbsp;&nbsp;then WriteLn('same is True')<br>
+&nbsp;&nbsp;else WriteLn('same is False');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="boolean&amp;expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;small &lt;&gt; large<br>&nbsp;&nbsp;
+small &lt;&gt; large<br>&nbsp;&nbsp;
+same is True<br>
+&nbsp;
+</font></td></tr>
+
+</tbody></table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</tbody></table>
+
+</body></html>

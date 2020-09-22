@@ -1,0 +1,146 @@
+<!-- (0065)ArcCos&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : ArcCos command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, ArcCos, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>ArcCos</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">The Arc Cosine of a number, returned in <b>radians</b></font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Math</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>ArcCos</b></font>
+
+(
+<b>const Number </b> : Extended
+)
+ : Extended;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>ArcCos</b></font> function is a mathematical function giving the value in radians of the Arc Cosine of <b>Number</b>.
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>PI radians&nbsp;</b></td><td class=dd> = 180 degrees</td></tr></table>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The <b>System</b> unit supports only the following angular functions:<br>
+<br>
+<font color=#200080><b>ArcTan<br>
+Sin<br>
+Cos</b></font><br>
+<br>
+Special floating point values <b>INF, -INF</b> yield <b>+PI/2</b> and <b>-PI/2</b> respectively.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="arcsin.htm">ArcSin</a></b></td>
+<td width="8"></td>
+<td align="left">The Arc Sine of a number, returned in <b>radians</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="arctan.htm">ArcTan</a></b></td>
+<td width="8"></td>
+<td align="left">The Arc Tangent of a number, returned in <b>radians</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="cos.htm">Cos</a></b></td>
+<td width="8"></td>
+<td align="left">The Cosine of a number</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="sin.htm">Sin</a></b></td>
+<td width="8"></td>
+<td align="left">The Sine of a number</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tan.htm">Tan</a></b></td>
+<td width="8"></td>
+<td align="left">The Tangent of a number</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : The ArcCos of 0.5 gives 60 degrees</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Math, <font color=#008000>&nbsp;&nbsp;// Unit containing the ArcCos command</font><br>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;float : single;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// The ArcCos of 0.5 should give 60 degrees</b></font><br>
+&nbsp;&nbsp;float := <font color=#C00000><b>ArcCos</b></font>(0.5);<br>&nbsp;&nbsp;float := RadToDeg(float);&nbsp;&nbsp;<font color=#008000><b>// Convert result to degrees</b></font><br>
+&nbsp;&nbsp;WriteLn('ArcCos of 0.5 = '+FloatToStr(float)+' degrees');<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="arccos.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;ArcCos of 0.5 = 60 degrees<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,170 @@
+<!-- (0049)Length -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Length command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Length, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Length</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Return the number of elements in an array or string</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Length</b></font>
+
+(
+<b>const SourceString </b> : string
+)
+ : Integer;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Length</b></font>&nbsp;(
+<b>const&nbsp;&nbsp;SourceArray </b> : array
+)  : Integer;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Length</b></font> function returns either the number of characters in <b>SourceString</b>, or the number of elements in <b>SourceArray</b>.
+<br>&nbsp;<br>
+It is often used to loop around all characters in a string or elements in an array.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Arrays start at index = 0 by default. So the length of such an array is 1 more than the highest index.<br>
+<br>
+The length of a <b>Multi-dimensional</b> array is always that of the <b>first</b> subarray - the left most defined dimension.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="copy.htm">Copy</a></b></td>
+<td width="8"></td>
+<td align="left">Create a copy of part of  a string or an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setlength.htm">SetLength</a></b></td>
+<td width="8"></td>
+<td align="left">Changes the size of a string, or the size(s) of an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="slice.htm">Slice</a></b></td>
+<td width="8"></td>
+<td align="left">Creates a slice of an array as an Open Array parameter</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Get the length of arrays and a string</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;openArray&nbsp;&nbsp;: array of char;<br>
+&nbsp;&nbsp;fixedArray : array[2..4] of Integer;<br>
+&nbsp;&nbsp;multiArray : array[2..4, 1..9] of Integer;<br>
+&nbsp;&nbsp;shortStr&nbsp;&nbsp; : shortstring;<br>
+&nbsp;&nbsp;longStr&nbsp;&nbsp;&nbsp;&nbsp;: string;<br>
+&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define the length of the open array</b></font><br>
+&nbsp;&nbsp;SetLength(openArray, 17);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the length of the arrays</b></font><br>
+&nbsp;&nbsp;WriteLn('Length of openArray = '+IntToStr(<font color=#C00000><b>Length</b></font>(openArray)));<br>
+&nbsp;&nbsp;WriteLn('Length of fixedArray = '+IntToStr(<font color=#C00000><b>Length</b></font>(fixedArray)));<br>
+&nbsp;&nbsp;WriteLn('Length of multiArray = '+IntToStr(<font color=#C00000><b>Length</b></font>(multiArray)));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Assign to the strings</b></font><br>
+&nbsp;&nbsp;shortStr := 'ABCDEFGH';<br>
+&nbsp;&nbsp;longStr&nbsp;&nbsp;:= '12345678901234567890';<br>
+&nbsp;&nbsp;WriteLn('Length of shortStr = '+IntToStr(<font color=#C00000><b>Length</b></font>(shortStr)));<br>
+&nbsp;&nbsp;WriteLn('Length of longStr = '+IntToStr(<font color=#C00000><b>Length</b></font>(longStr)));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display one letter at a time from the short string</b></font><br>
+&nbsp;&nbsp;for i := 1 to <font color=#C00000><b>Length</b></font>(shortStr) do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Letter '+IntToStr(i)+' = '+shortStr[i]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="length&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Length of openArray = 17<br>&nbsp;&nbsp;
+Length of fixedArray = 3<br>&nbsp;&nbsp;
+Length of multiArray = 3<br>&nbsp;&nbsp;
+Length of shortStr = 8<br>&nbsp;&nbsp;
+Length of longStr = 20<br>&nbsp;&nbsp;
+Letter 1 = A<br>&nbsp;&nbsp;
+Letter 2 = B<br>&nbsp;&nbsp;
+Letter 3 = C<br>&nbsp;&nbsp;
+Letter 4 = D<br>&nbsp;&nbsp;
+Letter 5 = E<br>&nbsp;&nbsp;
+Letter 6 = F<br>&nbsp;&nbsp;
+Letter 7 = G<br>&nbsp;&nbsp;
+Letter 8 = H<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

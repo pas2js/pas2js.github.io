@@ -1,0 +1,131 @@
+<!-- (0052)SetString -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : SetString command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, SetString, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>SetString</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Copies characters from a buffer into a string</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>SetString</b></font>
+
+(
+<b>var TargetString </b> : string;<b> BufferPointer </b> : PChar;<b> Length </b> : Integer
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>SetString</b></font> procedure sets the length of <b>TargetString</b> to <b>Length</b> before copying that number of characters from the buffer referenced by <b>BufferPointer</b>.
+<br>&nbsp;<br>
+The length is only set when the string is <b>not</b> a <b>ShortString</b>. In fact, the string is reallocated - the <b>TargetString</b> reference is then set to point to this new string.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="fillchar.htm">FillChar</a></b></td>
+<td width="8"></td>
+<td align="left">Fills out a section of storage with a fill character or byte value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setlength.htm">SetLength</a></b></td>
+<td width="8"></td>
+<td align="left">Changes the size of a string, or the size(s) of an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="stringofchar.htm">StringOfChar</a></b></td>
+<td width="8"></td>
+<td align="left">Creates a string with one character repeated many times</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;target : string;<br>
+&nbsp;&nbsp;source : array[1..5] of Char;<br>
+&nbsp;&nbsp;srcPtr : PChar;<br>
+&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Fill out the character array</b></font><br>
+&nbsp;&nbsp;for i := 1 to 5 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source[i] := Chr(i+64);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Copy these characters to a string</b></font><br>
+&nbsp;&nbsp;srcPtr := Addr(source);<br>
+&nbsp;&nbsp;<font color=#C00000><b>SetString</b></font>(target, srcPtr, 5);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show what we have got</b></font><br>
+&nbsp;&nbsp;WriteLn('target now = '+target);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/setstring&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;target now = ABCDE<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

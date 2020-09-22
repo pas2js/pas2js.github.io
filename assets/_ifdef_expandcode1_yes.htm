@@ -1,0 +1,156 @@
+<!-- (0065)$IfDef&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : $IfDef command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, $IfDef, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>$IfDef</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Compiler Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Executes code if a conditional symbol has been defined</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$IfDef</b> Symbol}<br>&nbsp;
+... Code to run when the symbol is defined ...<br>&nbsp;
+{<b>$Else</b>}<br>&nbsp;
+... Code to run when the symbol is not defined ...<br>&nbsp;
+{<b>$EndIf</b>}
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>$IfDef</b></font> compiler directive starts a section of conditionally compiled code. Only if the specified <b>Symbol</b> has been defined.
+<br>&nbsp;<br>
+Symbols come in two types. Predefined in Delphi, such as <b>Console</b> when running a console application. And defined by the <b>$Define</b> compiler direcctive.
+<br>&nbsp;<br>
+<font color=#996600><b>$IfDef</b></font> is very useful when developing code, allowing various sections to be compiled when testing.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$define.htm">$Define</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a compiler directive symbol - as used by <b>IfDef</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$else.htm">$Else</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the alternate section of an <b>IfDef</b> or <b>IfNDef</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$endif.htm">$EndIf</a></b></td>
+<td width="8"></td>
+<td align="left">Terminates conditional code compilation</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$ifndef.htm">$IfNDef</a></b></td>
+<td width="8"></td>
+<td align="left">Executes code if a conditional symbol has not been defined</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$ifopt.htm">$IfOpt</a></b></td>
+<td width="8"></td>
+<td align="left">Tests for the state of a <b>Compiler directive</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$undef.htm">$UnDef</a></b></td>
+<td width="8"></td>
+<td align="left">Undefines a compiler directive symbol - as used by <b>IfDef</b></td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Setting up and using a test mode symbol</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;text : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set our code into test mode</b></font><br>
+&nbsp;&nbsp;{$Define TESTMODE}<br><b>
+</b><br>
+&nbsp;&nbsp;text := 'We are in test mode';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the value of text if we are in test mode</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$IfDef</b></font> TESTMODE}<br>
+&nbsp;&nbsp;WriteLn('text = '+text);<br>
+&nbsp;&nbsp;{$EndIf}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Switch off test mode</b></font><br>
+&nbsp;&nbsp;{$UnDef TESTMODE}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the value of text if we are in test mode</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$IfDef</b></font> TESTMODE}<br>
+&nbsp;&nbsp;WriteLn('text = '+text);<br>
+&nbsp;&nbsp;{$Else} <br>
+&nbsp;&nbsp;WriteLn('Out of test mode now');<br>
+&nbsp;&nbsp;{$EndIf}<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$ifdef.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;We are in test mode<br>&nbsp;&nbsp;
+Out of test mode now<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

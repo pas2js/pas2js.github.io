@@ -1,0 +1,210 @@
+<!-- (0069)FormatCurr&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : FormatCurr command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, FormatCurr, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>FormatCurr</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Rich formatting of a currency value into a string</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>FormatCurr</b></font>
+
+(
+<b>const Formatting </b> : string;<b> Value </b> : Currency
+)
+ : string;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>FormatCurr</b></font>&nbsp;(
+<b>const Formatting </b> : string;<b> Value </b> : Currency;<b> FormatSettings </b> : TFormatSettings
+)  : string;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>FormatCurr</b></font> function provides rich <b>Formatting</b> of a currency <b>Value</b> into a string.
+<br>&nbsp;<br>
+The <b>Formatting</b> string may contain a mix of freeform text and control characters:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>0&nbsp;</b></td><td class=dd>&nbsp;&nbsp;: Forces digit display or 0</td></tr>
+<tr><td class=dt align='right'><b>#&nbsp;</b></td><td class=dd> : Optional digit display</td></tr>
+<tr><td class=dt align='right'><b>,&nbsp;</b></td><td class=dd> : Forces display of thousands</td></tr>
+<tr><td class=dt align='right'><b>.&nbsp;</b></td><td class=dd> : Forces display of decimals</td></tr>
+<tr><td class=dt align='right'><b>E+&nbsp;</b></td><td class=dd> : Forces signed exponent display</td></tr>
+<tr><td class=dt align='right'><b>E-&nbsp;</b></td><td class=dd> : Optional sign exponent display</td></tr>
+<tr><td class=dt align='right'><b>;&nbsp;</b></td><td class=dd> : Separator of +ve -ve and zero values</td></tr></table>
+<br>&nbsp;<br>
+These are best understood by looking at the sample code.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font> of this function is for use within threads. You furnish the <b>FormatSettings</b> record before invoking the call. It takes a local copy of global formatting variables that make the routine thread safe.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="currtostrf.htm">CurrToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a currency value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="format.htm">Format</a></b></td>
+<td width="8"></td>
+<td align="left">Rich formatting of numbers and text into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="formatdatetime.htm">FormatDateTime</a></b></td>
+<td width="8"></td>
+<td align="left">Rich formatting of a TDateTime variable into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="formatfloat.htm">FormatFloat</a></b></td>
+<td width="8"></td>
+<td align="left">Rich formatting of a floating point number into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="strtocurr.htm">StrToCurr</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a number string into a currency value</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Showing all of the formatting data types</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the FormatCurr command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;curr : Currency;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up our floating point number</b></font><br>
+&nbsp;&nbsp;curr := 1234.567;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display a sample value using all of the format options</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Round out the decimal value</b></font><br>
+&nbsp;&nbsp;WriteLn('##### : '+<font color=#C00000><b>FormatCurr</b></font>('#####', curr));<br>
+&nbsp;&nbsp;WriteLn('00000 : '+<font color=#C00000><b>FormatCurr</b></font>('00000', curr));<br>
+&nbsp;&nbsp;WriteLn('0&nbsp;&nbsp;&nbsp;&nbsp; : '+<font color=#C00000><b>FormatCurr</b></font>('0'&nbsp;&nbsp;&nbsp;&nbsp;, curr));<br>
+&nbsp;&nbsp;WriteLn('#,##0 : '+<font color=#C00000><b>FormatCurr</b></font>('#,##0', curr));<br>
+&nbsp;&nbsp;WriteLn(',0&nbsp;&nbsp;&nbsp;&nbsp;: '+<font color=#C00000><b>FormatCurr</b></font>(',0'&nbsp;&nbsp; , curr));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Include the decimal value</b></font><br>
+&nbsp;&nbsp;WriteLn('0.#### : '+<font color=#C00000><b>FormatCurr</b></font>('0.####', curr));<br>
+&nbsp;&nbsp;WriteLn('0.0000 : '+<font color=#C00000><b>FormatCurr</b></font>('0.0000', curr));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Scientific format</b></font><br>
+&nbsp;&nbsp;WriteLn('0.0000000E+00 : '+<font color=#C00000><b>FormatCurr</b></font>('0.0000000E+00', curr));<br>
+&nbsp;&nbsp;WriteLn('0.0000000E-00 : '+<font color=#C00000><b>FormatCurr</b></font>('0.0000000E-00', curr));<br>
+&nbsp;&nbsp;WriteLn('#.#######E-## : '+<font color=#C00000><b>FormatCurr</b></font>('#.#######E-##', curr));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Include freeform text</b></font><br>
+&nbsp;&nbsp;WriteLn('"Value = "0.0 : '+<font color=#C00000><b>FormatCurr</b></font>('"Value = "0.0', curr));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Different formatting for negative numbers</b></font><br>
+&nbsp;&nbsp;curr := 1234.567;<br>
+&nbsp;&nbsp;WriteLn('0.0 : '+<font color=#C00000><b>FormatCurr</b></font>('0.0'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, -curr));<br>
+&nbsp;&nbsp;WriteLn('0.0 "CR";0.0 "DB" : '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatCurr</b></font>('0.0 "CR";0.0 "DB"', -curr));<br>
+&nbsp;&nbsp;WriteLn('0.0 "CR";0.0 "DB" : '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatCurr</b></font>('0.0 "CR";0.0 "DB"', curr));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Different format for zero value</b></font><br>
+&nbsp;&nbsp;curr := 0.0;<br>
+&nbsp;&nbsp;WriteLn('0.0 : '+<font color=#C00000><b>FormatCurr</b></font>('0.0' , curr));<br>
+&nbsp;&nbsp;WriteLn('0.0;-0.0;"Nothing" : '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatCurr</b></font>('0.0;-0.0;"Nothing"', curr));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="formatcurr.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;##### : 1235<br>&nbsp;&nbsp;
+00000 : 01235<br>&nbsp;&nbsp;
+0&nbsp;&nbsp;&nbsp;&nbsp; : 1235<br>&nbsp;&nbsp;
+#,##0 : 1,235<br>&nbsp;&nbsp;
+,0&nbsp;&nbsp;&nbsp;&nbsp;: 1,235<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+0.#### : 1234.567<br>&nbsp;&nbsp;
+0.0000 : 1234.5670<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+0.0000000E+00 : 1.2345670E+03<br>&nbsp;&nbsp;
+0.0000000E-00 : 1.2345670E03<br>&nbsp;&nbsp;
+#.#######E-## : 1.234567E3<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+"Value = " : Value = 1234.6<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+0.0 : -1234.6<br>&nbsp;&nbsp;
+0.0 "CR";0.0 "DB" : 1234.6 DB<br>&nbsp;&nbsp;
+0.0 "CR";0.0 "DB" : 1234.6 CR<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+0.0 : 0.0<br>&nbsp;&nbsp;
+0.0;-0.0;"Nothing" : Nothing<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

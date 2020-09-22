@@ -1,0 +1,159 @@
+<!-- (0045)Do -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Do command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Do, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Do</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines the start of some controlled action</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+<font color=#FF0000>1.</font> <b>for</b>&nbsp;&nbsp; Variable := Expression to Expression <b>do</b> Statement;<br>&nbsp;
+<font color=#FF0000>2.</font> <b>while</b> Expression <b>do</b> Statement</b><br>&nbsp;
+<font color=#FF0000>3.</font> <b>try</b>&nbsp;&nbsp; Statements except on ExceptionClass <b>do</b> Statement; end;<br>&nbsp;
+<font color=#FF0000>4.</font> <b>with</b>&nbsp;&nbsp;Expression <b>do</b> Statement
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Do</b></font> keyword is always a part of one of the shown 4 control types. It precedes the <b>Statements</b> section of the control action.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="begin.htm">Begin</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that starts a statement block</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="end.htm">End</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that terminates statement blocks</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="except.htm">Except</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the error trapping clause of a <b>Try</b> statement</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="for.htm">For</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a loop that executes a finite number of times</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="repeat.htm">Repeat</a></b></td>
+<td width="8"></td>
+<td align="left">Repeat statements until a ternmination condition is met</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="try.htm">Try</a></b></td>
+<td width="8"></td>
+<td align="left">Starts code that has error trapping</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="while.htm">While</a></b></td>
+<td width="8"></td>
+<td align="left">Repeat statements whilst a continuation condition is met</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="with.htm">With</a></b></td>
+<td width="8"></td>
+<td align="left">A means of simplifying references to structured variables</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Show singles and block do statement blocks</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// A for statement - the do keyword precedes a single statement</b></font><br>
+&nbsp;&nbsp;for i := 1 to 3 <font color=#C00000><b>Do</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('For loop, i = '+IntToStr(i));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// A while statement - the do precedes a statement block</b></font><br>
+&nbsp;&nbsp;while i < 6 <font color=#C00000><b>Do</b></font><br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('While loop, i = '+IntToStr(i));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Inc(i);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/do&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;For loop, i = 1<br>&nbsp;&nbsp;
+For loop, i = 2<br>&nbsp;&nbsp;
+For loop, i = 3<br>&nbsp;&nbsp;
+While loop, i = 4<br>&nbsp;&nbsp;
+While loop, i = 5<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

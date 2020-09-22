@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+p {padding:5px; line-height:1.5em;}
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Programming Logic</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js001.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js003.htm"><span class="hmbtnnext"></span></a>	  
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+<tbody style="line-height: 1.45;">
+  <tr>
+	<td>
+<h2><span id="gs" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> What is programming logic?</span></h2>
+<p>Programming as any other language would not work without logic. Logic is the glue that holds together the code, and controls how it is executed. For example, supposing we were writing a word procesor program. When the user presses the Enter key, we will move the cursor to a new line. The code would have a logical test for the user hitting the Enter key. If hit we do a line throw, if not, we continue on the same line. In the above example, we might well use the <strong>If statement</strong> to check for the Enter key.</p>
+
+<h2><span id="gs" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> IF THEN ELSE</span></h2>
+<h3>400 => x > 400</h3>
+<p>Here is an example that calculates the square of 17 and see how the if statement works:</p>
+<pre><span id="code" class="language-css">Example: 17 squared test</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+program Project1;
+
+uses
+  JS, Web, Classes, SysUtils;
+
+
+procedure ShowMeSquare17;
+var
+   number : Integer;
+   text   : String;
+ begin
+   number := Sqr(17);                 // Calculate the square of 17
+   if number > 400 then
+     text := '17 squared > 400' else   // Action when if condition is true
+     text := '17 squared <= 400';      // Action when if condition is false
+
+   WriteLn( text );
+ end;
+
+begin
+  ShowMeSquare17;
+
+end.   
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget');">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.ShowMeSquare17 = function () {
+    var number = 0;
+    var text = "";
+    number = pas.System.Sqr(17);
+    if (number > 400) {
+      text = "17 squared > 400"}
+     else text = "17 squared <= 400";
+    pas.System.Writeln(text);
+  };
+  $mod.$main = function () {
+    $mod.ShowMeSquare17();
+  };
+});
+
+</code></pre></div>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"><img id="callout-icon" src="tipbulb.gif" width="32" height="32" border="0" alt="tipbulb"/>We are going to see the following result on the console: 17 squared <= 400 </span></p>
+
+
+<h3>Which doors are open?<br><img src="100door.png" border="0"/></h3>
+<p>You have 100 doors in a row that are all initially closed. You make 100 passes by the doors. 
+<ol>
+<li>The first time through, you visit every door and toggle the door (if the door is closed, you open it; if it is open, you close it);</li> 
+<li>The second time you only visit every 2nd door (door #2, #4, #6, ...);</li> 
+<li>The third time, every 3rd door (door #3, #6, #9, ...), etc, until you only visit the 100th door.</li> 
+</ol>
+<strong>Question:</strong> What state are the doors in after the last pass? Which doors are open?</p>
+<pre><span id="code" class="language-css">Example: Which doors are open?</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+procedure doors;
+var doors : array [1..100] of Boolean;
+var i, j : Integer;
+begin
+for i := 1 to 100 do
+   for j := i to 100 do
+      if (j mod i) = 0 then
+         doors[j] := not doors[j];
+
+for i := 1 to 100 do
+   if doors[i] then
+      WriteLn('Door '+IntToStr(i)+' is open');
+end;
+
+{
+	Door 1 is open 
+	Door 4 is open 
+	Door 9 is open 
+	Door 16 is open 
+	Door 25 is open 
+	Door 36 is open 
+	Door 49 is open 
+	Door 64 is open 
+	Door 81 is open 
+	Door 100 is open
+}
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget2');">Show JS code</button>
+<div id="widget2" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.doors = function () {
+    var doors = rtl.arraySetLength(null,false,100);
+    var i = 0;
+    var j = 0;
+    for (i = 1; i <= 100; i++) for (var $l1 = i; $l1 <= 100; $l1++) {
+      j = $l1;
+      if ((j % i) === 0) doors[j - 1] = !doors[j - 1];
+    };
+    for (i = 1; i <= 100; i++) if (doors[i - 1]) pas.System.Writeln(("Door " + pas.SysUtils.IntToStr(i)) + " is open");
+  };
+  $mod.$main = function () {
+    $mod.doors();
+  };
+});
+
+</code></pre></div>
+
+<h3>The total number of lots obtained<br><img src="gcd.jpg" border="0"/></h3>
+<p>Implement a <strong>static method</strong> to perform this problem: Two plots of land with areas of 23,500 m² (square meters) and 14,100m² (square meters) are divided into lots, as large as possible, all in the same area.  
+<strong>Question:</strong> The total number of lots obtained, is:</p>
+<div style="font-size:smaller; background-color: #cacaca;"> A static method (it does not need an instance of Utilities to be called) the euclidean algorithm for computing the greatest common divisor, finding a number both left and right can be divided by. This method can be reused from multiple places in code.</div>
+<pre><span id="code" class="language-css">Example: How many lots?</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  Utilities = class
+  public
+    class function GCD(left, right: Integer): Integer;
+  end;
+
+{ Utilities }
+class function Utilities.GCD(left, right: Integer): Integer;
+var rem : Integer;
+begin
+  // repeat everything from begin to end as long as right is not 0.
+  while right <> 0 do begin
+    // defines a new variable that returns left modulus right.
+    rem := left mod right;
+    // sets left to right.
+    left := right;
+    // sets right to the earlier calculated remainder.
+    right := rem;
+  end;
+  // return the left value.
+  Result := left;
+end;   
+
+{ main program }
+WriteLn(
+  Utilities.GCD(23500, 14100)
+); //-----> 4700 lots
+
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget3');">Show JS code</button>
+<div id="widget3" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass($mod,"Utilities",pas.System.TObject,function () {
+    this.GCD = function (left, right) {
+      var Result = 0;
+      var rem = 0;
+      while (right !== 0) {
+        rem = left % right;
+        left = right;
+        right = rem;
+      };
+      Result = left;
+      return Result;
+    };
+  });
+  $mod.$main = function () {
+    pas.System.Writeln($mod.Utilities.GCD(23500,14100));
+  };
+});
+
+</code></pre></div>
+
+<h3>The danger function<br><img src="road110.jpg" border="0"/></h3>
+<p>Just take a look at the following example. <br><strong>Question:</strong> The number value is:</p>
+<pre><span id="code" class="language-css">Number value is:</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TFuncOfInt = function(n: Integer): Integer;
+
+function MakeAdder(y: Integer): TFuncOfInt;
+  function Adder(x: Integer): integer;
+  begin
+    Result := x + y;
+  end;
+
+begin
+  Result:= @Adder;
+end;
+
+{ main program }
+var 
+  number: TFuncOfInt;
+  
+begin
+  number := MakeAdder(100);
+  WriteLn(
+	number(10)
+  );
+  
+end.    
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget4');">Show JS code</button>
+<div id="widget4" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.MakeAdder = function (y) {
+    var Result = null;
+    function Adder(x) {
+      var Result = 0;
+      Result = x + y;
+      return Result;
+    };
+    Result = Adder;
+    return Result;
+  };
+  this.number = null;
+  $mod.$main = function () {
+    $mod.number = $mod.MakeAdder(100);
+    pas.System.Writeln($mod.number(10));
+  };
+});
+
+</code></pre></div>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"><img id="callout-icon" src="tipbulb.gif" width="32" height="32" border="0" alt="tipbulb"/>The number is 110</span></p>
+
+
+
+
+<!--<p>The <strong>Pas2js</strong> compiler is - naturally - open source and can be downloaded and used freely. The sources are currently the primary means to get it. The Pas2js compiler is part of Free Pascal. As such, the compiler is present in the utils/pas2js directory of the <a href="https://svn.freepascal.org/cgi-bin/viewvc.cgi/trunk/utils/pas2js/">FPC SVN repo<img src="download.gif" border="0"/></a></p> 
+-->
+
+<p>The pas2js RTL is still in flux. To enable faster releases, the RTL packages and demos are in a separate repository in SVN: <a href="https://svn.freepascal.org/svn/projects/pas2js/trunk">https://svn.freepascal.org/svn/projects/pas2js/trunk<img src="download.gif" border="0"/></a></p>
+<pre style="border: 1px solid #ddd; color: black; background-color: #efefef; padding: 15px;">svn co https://svn.freepascal.org/svn/projects/pas2js/trunk pas2js</pre>
+
+<h2><span id="snap" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> Snapshots</span></h2>
+<p>Till pas2js is integrated in the main FPC distribution, <strong>snapshots</strong> will be made available as time permits. 
+They will contain binaries for Windows, Linux (64 bit) and Macos. The snapshots are uploaded to <a class="external autonumber" href="ftp://ftpmaster.freepascal.org/fpc/contrib/pas2js">[1]<img src="download.gif" border="0"/></a>
+</p>
+<p>Every version will have a directory with the version number. A list of changes can be found on the <a href="//wiki.freepascal.org/Pas2JS_Version_Changes" title="Pas2JS Version Changes">Pas2JS Version Changes.</a></p>
+
+<h2><span id="inst" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> Installation</span></h2>
+
+<p>More details about the Installation, see <a href="hm_pas2jslazarusintegration.htm">Lazarus Integration of pas2js<img src="download.gif" border="0"/></a></p>
+
+
+	</td>
+  </tr>
+</tbody>  
+</table>
+</body>
+</html>

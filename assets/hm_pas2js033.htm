@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Array Initialization</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js032.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js034.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Some ways to initialize an Array.
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+var
+   ai : array [0..1] of Integer = [789, 123];
+  ai2 : array [1..3] of Integer = [12, 34, 56];
+  arr := [];
+  astr: array [0..1] of string = ['a', 'b'];
+  af1: array [1..3] of Float = [12, 3.4, 56];
+  af2: array [2..3] of Float = [123, 456];
+
+  arr2 := [1, 2, '3', 3.14, 'end'];
+  ndx : Integer;
+begin
+  { test I }
+  Writeln(Low(ai));   // 0
+  Writeln(High(ai));  // 1
+  Writeln(ai[0]); // 789
+  Writeln(ai[1]); // 123
+
+  Writeln(Format('%d - %d - %d', [Low(ai2), High(ai2), Length(ai2)]));  // 1 - 3 - 3
+  Writeln(ai2[1]); // 12
+  Writeln(ai2[2]); // 34
+  Writeln(ai2[3]); // 56
+
+  { test II }
+  Writeln(Length(arr));  // 0
+  Writeln(Low(arr));    // 0
+  Writeln(High(arr));   // -1
+
+  { test III }
+WriteLn('----------');
+  Writeln(Format('%d - %d - %d', [Low(astr), High(astr), Length(astr)]));  // 0 - 1 - 2
+  Writeln(astr[0]);  // a
+  Writeln(astr[1]);  // b
+
+  Writeln(Format('%d - %d - %d', [Low(af1), High(af1), Length(af1)]));  // 1 - 3 - 3
+  Writeln(af1[1]);  // 12
+  Writeln(af1[2]);  // 3.4
+  Writeln(af1[3]);  // 56
+
+  Writeln(Format('%d - %d - %d', [Low(af2), High(af2), Length(af2)]));  // 2 - 3 - 2
+  Writeln(af2[2]);  // 123
+  Writeln(af2[3]);  // 456
+
+  af2 := [7.8, 90];
+
+  Writeln(Format('%d - %d - %d', [Low(af2), High(af2), Length(af2)])); // 2 - 3 - 2
+  Writeln(af2[2]);  // 7.8
+  Writeln(af2[3]);  // 90
+
+{ test IV }
+for ndx := Low(arr2) To High(arr2) do
+   WriteLn(arr2[ndx]);
+{ OUTPUT
+ 1
+ 2
+ 3
+ 3.14
+ end
+}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+  var ai = [0,0], ai = [789, 123];
+  var ai2 = [0,0,0], ai2 = [12, 34, 56];
+  var arr = [],  arr = [];
+  var astr = ["",""], astr = ["a", "b"];
+  var af1 = [0,0,0], af1 = [12, 3.4, 56];
+  var af2 = [0,0], af2 = [123, 456];
+  var arr2 = [undefined,undefined,undefined,undefined,undefined],
+	  arr2 = [1, 2, "3", 3.14, "end"];
+  var ndx = 0;
+  WriteLn(0);
+  WriteLn(1);
+  WriteLn(ai[0]);
+  WriteLn(ai[1]);
+  WriteLn("1 - 3 - 3");
+  WriteLn(ai2[(1)-1]);
+  WriteLn(ai2[(2)-1]);
+  WriteLn(ai2[(3)-1]);
+  WriteLn(0);
+  WriteLn(0);
+  WriteLn((-1));
+  WriteLn("----------");
+  WriteLn("0 - 1 - 2");
+  WriteLn(astr[0]);
+  WriteLn(astr[1]);
+  WriteLn("1 - 3 - 3");
+  WriteLn(af1[(1)-1]);
+  WriteLn(af1[(2)-1]);
+  WriteLn(af1[(3)-1]);
+  WriteLn("2 - 3 - 2");
+  WriteLn(af2[(2)-2]);
+  WriteLn(af2[(3)-2]);
+  af2 = [7.8, 90];
+  WriteLn("2 - 3 - 2");
+  WriteLn(af2[(2)-2]);
+  WriteLn(af2[(3)-2]);
+  for(ndx=0;ndx<=4;ndx++) {
+	 WriteLn(arr2[ndx]);
+  }
+
+</code></pre></div>
+</div>
+</body>
+</html>

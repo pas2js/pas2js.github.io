@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Sets</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Sets</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_language_types1.htm">Previous</a>&nbsp;
+     <a href="hm_language_types3.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Pas2JS&nbsp;supports&nbsp;a&nbsp;limited&nbsp;version&nbsp;of&nbsp;sets.&nbsp;Only&nbsp;sets&nbsp;of&nbsp;enumerations&nbsp;are&nbsp;supported.&nbsp;Only&nbsp;in&nbsp;operator&nbsp;is&nbsp;supported.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Compiler&nbsp;supports&nbsp;Include&nbsp;and&nbsp;Exclude&nbsp;methods,&nbsp;which&nbsp;can&nbsp;be&nbsp;used&nbsp;in&nbsp;two&nbsp;ways,&nbsp;either&nbsp;as&nbsp;Include(mySet,&nbsp;&nbsp;value)&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">or&nbsp;as&nbsp;mySet.Include(value).&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Sets</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> is a datatype of boolean enum values. A set can have all it's states included, unlike a normal </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">enum</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> which can only represent one state. Under Object-Pascal sets have a limit of 255 elements, and are defined as such:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Example&nbsp;code:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="394" style="width:394px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">TMySet&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">set</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(msFirst,msSecond,msThird);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;populate&nbsp;set&nbsp;with&nbsp;two&nbsp;states</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FMySet:&nbsp;TMySet;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">FMySet:=[msFirst,msThird];</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The Smart Pascal syntax lack support for sets, which is a drawback compared to Delphi and FreePascal. However, </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; text-decoration: underline;">sets can be emulated using arrays and constants</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> which incidentally bypass the 255 elements limit.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_set01.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Set&nbsp;of&nbsp;enumerations&nbsp;with&nbsp;Records&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_set02.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Set&nbsp;with&nbsp;Constants&nbsp;1</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_set03.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Set&nbsp;with&nbsp;Constants&nbsp;2</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_set04.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Set&nbsp;of&nbsp;enum</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

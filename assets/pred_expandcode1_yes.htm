@@ -1,0 +1,183 @@
+<!-- (0063)Pred&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Pred command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Pred, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Pred</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Decrement an ordinal variable</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Pred</b></font>
+
+(
+const Ordinal Value
+)
+ : Ordinal type;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Pred</b></font> function decrements an ordinal value, and returns this value.
+<br>&nbsp;<br>
+You can decrement :
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>Characters&nbsp;</b></td><td class=dd></td></tr>
+<tr><td class=dt align='right'><b>Non-floating number types&nbsp;</b></td><td class=dd></td></tr>
+<tr><td class=dt align='right'><b>Enumeration types&nbsp;</b></td><td class=dd></td></tr>
+<tr><td class=dt align='right'><b>Pointers&nbsp;</b></td><td class=dd></td></tr></table>
+<br>&nbsp;<br>
+The decrement is by the base size of the unit. For example, decrementing a <b>Pointer</b> will be by 2 bytes if the pointer points to Words.
+<br>&nbsp;<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#996600><b>Pred</b></font> is equivalent in performance to simple subtraction, or the <b>Dec</b> procedure.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="dec.htm">Dec</a></b></td>
+<td width="8"></td>
+<td align="left">Decrement an ordinal variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inc.htm">Inc</a></b></td>
+<td width="8"></td>
+<td align="left">Increment an ordinal variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="sqr.htm">Sqr</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the square of a number</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="sqrt.htm">Sqrt</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the square root of a number</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="succ.htm">Succ</a></b></td>
+<td width="8"></td>
+<td align="left">Increment an ordinal variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="sum.htm">Sum</a></b></td>
+<td width="8"></td>
+<td align="left">Return the sum of an array of floating point values</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Decrementing characters, numbers and enumerations</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;<font color=#008000>// The System unit does not need to be defined</font><br>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> type</b><br>
+&nbsp;&nbsp;TSuit = (Hearts, Clubs, Diamonds, Spades);<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Character : char;<br>
+&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;: Integer;<br>
+&nbsp;&nbsp;Card&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: TSuit;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// We can decrement characters</b></font><br>
+&nbsp;&nbsp;Character := 'B';<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('Character : '+Character);<br>
+&nbsp;&nbsp;Character := <font color=#C00000><b>Pred</b></font>(Character);<br>
+&nbsp;&nbsp;WriteLn('Character-1 : '+Character);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// We can decrement numbers</b></font><br>
+&nbsp;&nbsp;Number := 23;<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('Number : '+IntToStr(Number));<br>
+&nbsp;&nbsp;Number := <font color=#C00000><b>Pred</b></font>(Number);<br>
+&nbsp;&nbsp;WriteLn('Number-1 : '+IntToStr(Number));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// We can decrement enumerations</b></font><br>
+&nbsp;&nbsp;Card := Clubs;<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('Card starts at Clubs');<br>
+&nbsp;&nbsp;Card := <font color=#C00000><b>Pred</b></font>(Card);<br>
+&nbsp;&nbsp;if Card = Hearts then WriteLn('Card is now Hearts');<br>
+&nbsp;&nbsp;if Card = Clubs then WriteLn('Card is now Clubs');<br>
+&nbsp;&nbsp;if Card = Diamonds then WriteLn('Card is now Diamonds');<br>
+&nbsp;&nbsp;if Card = Spades then WriteLn('Card is now Spades');<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="pred.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Character : B<br>&nbsp;&nbsp;
+Character-1 : A<br>&nbsp;&nbsp;
+Number : 23<br>&nbsp;&nbsp;
+Number-1 : 22<br>&nbsp;&nbsp;
+Card starts at Clubs<br>&nbsp;&nbsp;
+Card is now Hearts<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,439 @@
+<!-- (0073)FormatDateTime&ExpandCode2=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : FormatDateTime command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, FormatDateTime, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>FormatDateTime</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Rich formatting of a TDateTime variable into a string</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>FormatDateTime</b></font>
+
+(
+<b>const Formatting </b> : string;<b> DateTime </b> : TDateTime
+)
+ : string;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>FormatDateTime</b></font>&nbsp;(
+<b>const Formatting </b> : string;<b> DateTime </b> : TDateTime;<b> const FormatSettings </b> : TFormatSettings
+)  : string;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>FormatDateTime</b></font> function provides rich formatting of a TDateTime value <b>DateTime</b> into a string. Formatting is defined by the <b>Formatting</b> string. 
+<br>&nbsp;<br>
+The <b>Formatting</b> string can comprise a mix of ordinary characters (that are passed unchanged to the result string), and data formatting characters. This formatting is best explained by the example code. 
+<br>&nbsp;<br>
+The following (non-Asian) formatting character strings can be used in the <b>Formatting</b> string:
+<br>&nbsp;<br>
+<table>
+<tr><td class=dt align='right'><b>y&nbsp;</b></td><td class=dd> = Year last 2 digits</td></tr>
+<tr><td class=dt align='right'><b>yy&nbsp;</b></td><td class=dd> = Year last 2 digits</td></tr>
+<tr><td class=dt align='right'><b>yyyy&nbsp;</b></td><td class=dd> = Year as 4 digits</td></tr>
+<tr><td class=dt align='right'><b>m&nbsp;</b></td><td class=dd> = Month number no-leading 0</td></tr>
+<tr><td class=dt align='right'><b>mm&nbsp;</b></td><td class=dd> = Month number as 2 digits</td></tr>
+<tr><td class=dt align='right'><b>mmm&nbsp;</b></td><td class=dd> = Month using ShortDayNames (Jan)</td></tr>
+<tr><td class=dt align='right'><b>mmmm&nbsp;</b></td><td class=dd> = Month using LongDayNames (January)</td></tr>
+<tr><td class=dt align='right'><b>d&nbsp;</b></td><td class=dd> = Day number no-leading 0</td></tr>
+<tr><td class=dt align='right'><b>dd&nbsp;</b></td><td class=dd> = Day number as 2 digits</td></tr>
+<tr><td class=dt align='right'><b>ddd&nbsp;</b></td><td class=dd> = Day using ShortDayNames (Sun)</td></tr>
+<tr><td class=dt align='right'><b>dddd&nbsp;</b></td><td class=dd> = Day using LongDayNames&nbsp;&nbsp;(Sunday)</td></tr>
+<tr><td class=dt align='right'><b>ddddd&nbsp;</b></td><td class=dd> = Day in ShortDateFormat</td></tr>
+<tr><td class=dt align='right'><b>dddddd&nbsp;</b></td><td class=dd> = Day in LongDateFormat</td></tr>
+<tr><td class=dt align='right'><b>&nbsp;</b></td><td class=dd></td></tr>
+<tr><td class=dt align='right'><b>c&nbsp;</b></td><td class=dd> = Use ShortDateFormat + LongTimeFormat</td></tr>
+<tr><td class=dt align='right'><b>h&nbsp;</b></td><td class=dd> = Hour number no-leading 0</td></tr>
+<tr><td class=dt align='right'><b>hh&nbsp;</b></td><td class=dd> = Hour number as 2 digits</td></tr>
+<tr><td class=dt align='right'><b>n</b><td class=dd> = Minute number no-leading 0</td></tr>
+<tr><td class=dt align='right'><b>nn&nbsp;</b></td><td class=dd> = Minute number as 2 digits</td></tr>
+<tr><td class=dt align='right'><b>s&nbsp;</b></td><td class=dd> = Second number no-leading 0</td></tr>
+<tr><td class=dt align='right'><b>ss&nbsp;</b></td><td class=dd> = Second number as 2 digits</td></tr>
+<tr><td class=dt align='right'><b>z</b><td class=dd> = Milli-sec number no-leading 0s</td></tr>
+<tr><td class=dt align='right'><b>zzz&nbsp;</b></td><td class=dd> = Milli-sec number as 3 digits</td></tr>
+<tr><td class=dt align='right'><b>t&nbsp;</b></td><td class=dd> = Use ShortTimeFormat</td></tr>
+<tr><td class=dt align='right'><b>tt&nbsp;</b></td><td class=dd> = Use LongTimeFormat</td></tr>
+<tr><td class=dt align='right'><b>&nbsp;</b></td><td class=dd></td></tr>
+<tr><td class=dt align='right'><b>am/pm&nbsp;</b></td><td class=dd> = Use after h : gives 12 hours + am/pm</td></tr>
+<tr><td class=dt align='right'><b>a/p&nbsp;</b></td><td class=dd> = Use after h : gives 12 hours + a/p</td></tr>
+<tr><td class=dt align='right'><b>ampm&nbsp;</b></td><td class=dd> = As a/p but TimeAMString,TimePMString</td></tr>
+<tr><td class=dt align='right'><b>/&nbsp;</b></td><td class=dd> = Substituted by DateSeparator value</td></tr>
+<tr><td class=dt align='right'><b>:</b><td class=dd> = Substituted by TimeSeparator value</td></tr>
+</table>
+<br>&nbsp;<br>
+<b>Important</b> : if you want to see characters such as dd in the formatted output, placing them in " marks will stop them being interpreted as date or time elements.
+<br>&nbsp;<br>
+In addition to this formatting, various of the above options are affected by the following variables, withe their default values :
+<br>&nbsp;<br>
+<table>
+<tr><td class=dt align='right'><b>DateSeparator&nbsp;</b></td><td class=dd> = /</td></tr>
+<tr><td class=dt align='right'><b>TimeSeparator&nbsp;</b></td><td class=dd> = :</td></tr>
+<tr><td class=dt align='right'><b>ShortDateFormat&nbsp;</b></td><td class=dd> = dd/mm/yyyy</td></tr>
+<tr><td class=dt align='right'><b>LongDateFormat&nbsp;</b></td><td class=dd> = dd mmm yyyy</td></tr>
+<tr><td class=dt align='right'><b>TimeAMString&nbsp;</b></td><td class=dd> = AM</td></tr>
+<tr><td class=dt align='right'><b>TimePMString&nbsp;</b></td><td class=dd> = PM</td></tr>
+<tr><td class=dt align='right'><b>ShortTimeFormat&nbsp;</b></td><td class=dd> = hh:mm</td></tr>
+<tr><td class=dt align='right'><b>LongTimeFormat&nbsp;</b></td><td class=dd> = hh:mm:ss</td></tr>
+<tr><td class=dt align='right'><b>ShortMonthNames&nbsp;</b></td><td class=dd> = Jan Feb ...</td></tr>
+<tr><td class=dt align='right'><b>LongMonthNames&nbsp;</b></td><td class=dd> = January, February ...</td></tr>
+<tr><td class=dt align='right'><b>ShortDayNames&nbsp;</b></td><td class=dd> = Sun, Mon ...</td></tr>
+<tr><td class=dt align='right'><b>LongDayNames&nbsp;</b></td><td class=dd> = Sunday, Monday ...</td></tr>
+<tr><td class=dt align='right'><b>TwoDigitYearCenturyWindow&nbsp;</b></td><td class=dd> = 50</td></tr>
+</table>
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font> of this function is for use within threads. You furnish the <b>FormatSettings</b> record before invoking the call. It takes a local copy of global formatting variables that make the routine thread safe.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="dateseparator.htm">DateSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to separate display date fields</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="datetimetostr.htm">DateTimeToStr</a></b></td>
+<td width="8"></td>
+<td align="left">Converts TDateTime date and time values to a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="datetimetostring.htm">DateTimeToString</a></b></td>
+<td width="8"></td>
+<td align="left">Rich formatting of a TDateTime variable into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="longdateformat.htm">LongDateFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Long version of the date to string format</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="longdaynames.htm">LongDayNames</a></b></td>
+<td width="8"></td>
+<td align="left">An array of days of the week names, starting 1 = Sunday</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="longmonthnames.htm">LongMonthNames</a></b></td>
+<td width="8"></td>
+<td align="left">An array of days of the month names, starting 1 = January</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="longtimeformat.htm">LongTimeFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Long version of the time to string format</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shortdateformat.htm">ShortDateFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Compact version of the date to string format</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shortdaynames.htm">ShortDayNames</a></b></td>
+<td width="8"></td>
+<td align="left">An array of days of the week names, starting 1 = Sunday</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shortmonthnames.htm">ShortMonthNames</a></b></td>
+<td width="8"></td>
+<td align="left">An array of days of the month names, starting 1 = Jan</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shorttimeformat.htm">ShortTimeFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Short version of the time to string format</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="strtodatetime.htm">StrToDateTime</a></b></td>
+<td width="8"></td>
+<td align="left">Converts a date+time string into a TDateTime value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="timeamstring.htm">TimeAMString</a></b></td>
+<td width="8"></td>
+<td align="left">Determines AM value in DateTimeToString procedure</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="timepmstring.htm">TimePMString</a></b></td>
+<td width="8"></td>
+<td align="left">Determines PM value in DateTimeToString procedure</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="timeseparator.htm">TimeSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to separate display time fields</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="twodigityearcenturywindow.htm">TwoDigitYearCenturyWindow</a></b></td>
+<td width="8"></td>
+<td align="left">Sets the century threshold for 2 digit year string conversions</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Showing all of the <b>date</b> field formatting data types</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myDate : TDateTime;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up our TDateTime variable with a full date and time :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// 5th of June 2000 at 01:02:03.004&nbsp;&nbsp;(.004 milli-seconds)</b></font><br>
+&nbsp;&nbsp;myDate := EncodeDateTime(2000, 6, 5, 1, 2, 3, 4);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Date only - numeric values with no leading zeroes (except year)</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d/m/y = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('d/m/y', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Date only - numeric values with leading zeroes</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dd/mm/yy = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('dd/mm/yy', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use short names for the day, month, and add freeform text ('of')</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;ddd d of mmm yyyy = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('ddd d of mmm yyyy', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use long names for the day and month</b></font><br>
+&nbsp;&nbsp;WriteLn('dddd d of mmmm yyyy = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('dddd d of mmmm yyyy', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShortDateFormat settings only</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddddd = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('ddddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the LongDateFormat settings only</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddddd = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('dddddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShortDateFormat + LongTimeFormat settings</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('c', myDate));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/formatdatetime&expandcode1=yes&expandcode2=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d/m/y = 5/6/00<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dd/mm/yy = 05/06/00<br>&nbsp;&nbsp;
+&nbsp;&nbsp;ddd d of mmm yyyy = Mon 5 of Jun 2000<br>&nbsp;&nbsp;
+dddd d of mmmm yyyy = Monday 5 of June 2000<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddddd = 05/06/2000<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddddd = 05 June 2000<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c = 05/06/2000 01:02:03<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Showing all of the <b>time</b> field formatting data types</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the FormatDateTime command</font><br>&nbsp;&nbsp;DateUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;myDate : TDateTime;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up our TDateTime variable with a full date and time :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// 5th of June 2000 at 01:02:03.004&nbsp;&nbsp;(.004 milli-seconds)</b></font><br>
+&nbsp;&nbsp;myDate := EncodeDateTime(2000, 6, 5, 1, 2, 3, 4);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Time only - numeric values with no leading zeroes</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp; h:n:s.z = '+<font color=#C00000><b>FormatDateTime</b></font>('h:n:s.z', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Time only - numeric values with leading zeroes</b></font><br>
+&nbsp;&nbsp;WriteLn('hh:nn:ss.zzz = '+<font color=#C00000><b>FormatDateTime</b></font>('hh:nn:ss.zzz', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShortTimeFormat settings only</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t = '+<font color=#C00000><b>FormatDateTime</b></font>('t', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the LongTimeFormat settings only</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tt = '+<font color=#C00000><b>FormatDateTime</b></font>('tt', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShortDateFormat + LongTimeFormat settings</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c = '+<font color=#C00000><b>FormatDateTime</b></font>('c', myDate));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="formatdatetime.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h:m:s.z = 1:2:3.4<br>&nbsp;&nbsp;
+hh:mm:ss.zzz = 01:02:03.004<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t = 01:02<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tt = 01:02:03<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c = 05/06/2000 01:02:03<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Showing the effect of local date format settings</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myDate : TDateTime;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up our TDateTime variable with a full date and time :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// 5th of June 2049 at 01:02:03.004&nbsp;&nbsp;(.004 milli-seconds)</b></font><br>&nbsp;&nbsp;<font color=#008000><b>//</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note that 49 is treated as 2049 as follows :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TwoDigitYearCenturyWindow => 50</b></font><br>&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current year => 2008 (at time of writing)</b></font><br>&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subtract TwoDigitYearCenturyWindow => 1958</b></font><br>&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 digit year to be converted => 49</b></font><br>&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;Compare with the last 2 digits of 1958 => Less</b></font><br>&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So the year is in the next century => 2049</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// (58 would be converted to 1958)</b></font><br><b>
+</b><br>
+&nbsp;&nbsp;myDate := StrToDateTime('05/06/49 01:02:03.004');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Demonstrate default locale settings</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the DateSeparator and TimeSeparator values</b></font><br>
+&nbsp;&nbsp;WriteLn('dd/mm/yy hh:nn:ss = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('dd/mm/yy hh:nn:ss', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use ShortMonthNames</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmm = '+<font color=#C00000><b>FormatDateTime</b></font>('mmm', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use LongMonthNames</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mmmm = '+<font color=#C00000><b>FormatDateTime</b></font>('mmmm', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use ShortDayNames</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddd = '+<font color=#C00000><b>FormatDateTime</b></font>('ddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use LongDayNames</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddd = '+<font color=#C00000><b>FormatDateTime</b></font>('dddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShortDateFormat string</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddddd = '+<font color=#C00000><b>FormatDateTime</b></font>('ddddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the LongDateFormat string</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddddd = '+<font color=#C00000><b>FormatDateTime</b></font>('dddddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the TimeAmString</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hhampm = '+<font color=#C00000><b>FormatDateTime</b></font>('hhampm', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShortTimeFormat string</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t = '+<font color=#C00000><b>FormatDateTime</b></font>('t', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the LongTimeFormat string</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tt = '+<font color=#C00000><b>FormatDateTime</b></font>('tt', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the TwoDigitCenturyWindow</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dd/mm/yyyy = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('dd/mm/yyyy', myDate));<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now change the defaults</b></font><br>
+&nbsp;&nbsp;DateSeparator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:= '-';<br>
+&nbsp;&nbsp;TimeSeparator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:= '_';<br>
+&nbsp;&nbsp;ShortDateFormat&nbsp;&nbsp;&nbsp;&nbsp;:= 'dd/mmm/yy';<br>
+&nbsp;&nbsp;LongDateFormat&nbsp;&nbsp;&nbsp;&nbsp; := 'dddd dd of mmmm of yyyy';<br>
+&nbsp;&nbsp;TimeAMString&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; := 'morning';<br>
+&nbsp;&nbsp;TimePMString&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; := 'afternoon';<br>
+&nbsp;&nbsp;ShortTimeFormat&nbsp;&nbsp;&nbsp;&nbsp;:= 'hh:nn:ss';<br>
+&nbsp;&nbsp;LongTimeFormat&nbsp;&nbsp;&nbsp;&nbsp; := 'hh : nn : ss . zzz';<br>
+&nbsp;&nbsp;ShortMonthNames[6] := 'JUN';<br>
+&nbsp;&nbsp;LongMonthNames[6]&nbsp;&nbsp;:= 'JUNE';<br>
+&nbsp;&nbsp;ShortDayNames[1]&nbsp;&nbsp; := 'SUN';<br>
+&nbsp;&nbsp;LongDayNames[1]&nbsp;&nbsp;&nbsp;&nbsp;:= 'SUNDAY';<br>&nbsp;&nbsp;TwoDigitYearCenturyWindow := 75; <font color=#008000><b>// This means 49 is treated as 1949</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up our TDateTime variable with the same value as before</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// except that we must use the new date and time separators</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// The TwoDigitYearCenturyWindow variable only takes effect here</b></font><br>
+&nbsp;&nbsp;myDate := StrToDateTime('09-02-49 01_02_03.004');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the DateSeparator and TimeSeparator values</b></font><br>
+&nbsp;&nbsp;WriteLn('dd/mm/yy hh:nn:ss = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('dd/mm/yy hh:nn:ss', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use ShortMonthNames</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmm = '+<font color=#C00000><b>FormatDateTime</b></font>('mmm', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use LongMonthNames</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mmmm = '+<font color=#C00000><b>FormatDateTime</b></font>('mmmm', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use ShortDayNames</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddd = '+<font color=#C00000><b>FormatDateTime</b></font>('ddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use LongDayNames</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddd = '+<font color=#C00000><b>FormatDateTime</b></font>('dddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShortDateFormat string</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddddd = '+<font color=#C00000><b>FormatDateTime</b></font>('ddddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the LongDateFormat string</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddddd = '+<font color=#C00000><b>FormatDateTime</b></font>('dddddd', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the TimeAmString</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hhampm = '+<font color=#C00000><b>FormatDateTime</b></font>('hhampm', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShortTimeFormat string</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t = '+<font color=#C00000><b>FormatDateTime</b></font>('t', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the LongTimeFormat string</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tt = '+<font color=#C00000><b>FormatDateTime</b></font>('tt', myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the TwoDigitCenturyWindow</b></font><br>
+&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dd/mm/yyyy = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FormatDateTime</b></font>('dd/mm/yyyy', myDate));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/formatdatetime&expandcode2=yes&expandcode3=yes.htm#Ex3"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;dd/mm/yy hh:mm:ss = 05/06/49 01:02:03<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmm = Jun<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mmmm = June<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddd = Sat<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddd = Saturday<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddddd = 05/06/2049<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddddd = 05 June 2049<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hhampm = 01AM<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t = 01:02<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tt = 01:02:03<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dd/mm/yyyy = 05/06/2049<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+dd/mm/yy hh:nn:ss = 05-06-49 01_02_03<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mmm = JUN<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mmmm = JUNE<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddd = SUN<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddd = SUNDAY<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ddddd = 05-JUN-49<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dddddd = SUNDAY 05 of JUNE of 1949<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hhampm = 01morning<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t = 01_02_03<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tt = 01 _ 02 _ 03 . 004<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dd/mm/yyyy = 05-06-1949<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

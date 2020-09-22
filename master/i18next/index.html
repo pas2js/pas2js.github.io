@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">-->
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+      <title>18n</title>
+  
+</head>
+<body>
+<p><span>Select your language:</span><br>
+<select name="language">
+  <option value="en">British English</option>
+  <option value="fr">Français</option>
+  <option value="it">Italiano</option>
+  <option value="br">Brasileiro</option>  
+</select>
+</p>
+
+<ul class="nav nav-sidebar">
+  <li><a href="#" data-i18n="MENU_Good bye"></a></li>
+  <li><a href="#" data-i18n="MENU_Hello"></a></li>
+  <li><a href="#" data-i18n="MENU_Selectyourlanguage"></a></li>
+</ul>
+
+<script type="text/javascript" src="lib/js/i18next-1.11.2.js" ></script>
+
+
+<script type="text/javascript"> 
+var resources = {
+  'en': { 
+    translation: { 
+        'MENU_Good bye': 'Good bye! $t(menu_country)',
+        'MENU_Hello': 'Hello! $t(menu_country)',
+        'MENU_Selectyourlanguage': 'Select your language: $t(menu_country)',
+		'MENU_country': 'England'
+    } 
+  },            
+  'fr': { 
+    translation: { 
+        'MENU_Good bye': 'Au revoir ! $t(menu_country)',
+        'MENU_Hello': 'Bonjour ! $t(menu_country)',
+        'MENU_Selectyourlanguage': 'Sélectionner votre langage: $t(menu_country)',
+        'MENU_country': 'France'
+    } 
+  },
+  'it': { 
+    translation: { 
+        'MENU_Good bye': 'Arrivederci! $t(menu_country)',
+        'MENU_Hello': 'Buongiorno! $t(menu_country)',
+        'MENU_Selectyourlanguage': 'Seleziona la tua lingua: $t(menu_country)',
+        'MENU_country': 'Italy'
+    } 
+  },
+  'br': { 
+    translation: { 
+        'MENU_Good bye': 'Oi! $t(menu_country)',
+        'MENU_Hello': 'Olá! $t(menu_country)',
+        'MENU_Selectyourlanguage': 'Selecione seu idioma: $t(menu_country)',
+        'MENU_country': 'Brasil'
+    } 
+  }    
+};
+
+
+var select = document.querySelector('select');
+var i18nList = document.querySelectorAll('[data-i18n]');
+
+i18n.init({ 
+   resStore: resources,
+   lng: 'en'
+});  
+  
+i18nList.forEach(function(v){
+  v.text = window.i18n.t(v.dataset.i18n);
+});
+
+select.addEventListener('change', function () {
+    var selecionada = this.options[this.selectedIndex];
+    var o = selecionada.getAttribute('value');
+	i18n.init({
+		lng: o
+	}, function(o) {
+		i18nList.forEach(function(v){
+		  v.text = window.i18n.t(v.dataset.i18n);
+		})
+	})
+});
+
+
+			
+</script>
+  
+  </body>
+</html>

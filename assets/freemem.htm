@@ -1,0 +1,150 @@
+<!-- (0050)FreeMem -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : FreeMem command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, FreeMem, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>FreeMem</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Free memory storage used by a variable</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>FreeMem</b></font>
+
+(
+<b>MemoryPointer </b> : Pointer {;<b> MemorySize </b> : Integer}
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>FreeMem</b></font> procedure frees up memory storage used by a variable <b>MemoryPointer</b>.
+<br>&nbsp;<br>
+You can optionally specify the <b>MemorySize</b> to be freed. However, you must specify the size allocated in the first place.
+<br>&nbsp;<br>
+If the variable is <b>nil</b> then nothing happens.
+<br>&nbsp;<br>
+If the variable invalidly points to memory (maybe it has already been freed), then an <b>EInvalidPointer</b> exception is thrown.
+<br>&nbsp;<br>
+If the memory contains references to memory based variables, you must call <b>Finalize</b> before <font color=#996600><b>FreeMem</b></font>.
+<br>&nbsp;<br>
+<font color=#996600><b>FreeMem</b></font> is the counter command to <b>GetMem</b>.
+<br>&nbsp;<br>
+Ideally, you should use <b>New</b> and <b>Dispose</b> instead of GetMem and FreeMem. It avoids the need to call Finalize.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="dispose.htm">Dispose</a></b></td>
+<td width="8"></td>
+<td align="left">Dispose of storage used by a  pointer type variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="getmem.htm">GetMem</a></b></td>
+<td width="8"></td>
+<td align="left">Get a specified number of storage bytes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="new.htm">New</a></b></td>
+<td width="8"></td>
+<td align="left">Create a new pointer type variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="reallocmem.htm">ReallocMem</a></b></td>
+<td width="8"></td>
+<td align="left">Reallocate an existing block of storage</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple exampl of using <b>GetMem</b> and <b>FreeMem</b></b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;charPtr&nbsp;&nbsp;: PChar;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Allocate storage for 4 characters</b></font><br>
+&nbsp;&nbsp;GetMem(charPtr, 4 * SizeOf(Char));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Assign to these characters</b></font><br>
+&nbsp;&nbsp;charPtr^ := 'A';<br>
+&nbsp;&nbsp;Inc(charPtr);<br>
+&nbsp;&nbsp;charPtr^ := 'B';<br>
+&nbsp;&nbsp;Inc(charPtr);<br>
+&nbsp;&nbsp;charPtr^ := 'C';<br>
+&nbsp;&nbsp;Inc(charPtr);<br>&nbsp;&nbsp;charPtr^ := #0;&nbsp;&nbsp;<font color=#008000><b>// String terminator</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display these values</b></font><br>
+&nbsp;&nbsp;Dec(charPtr, 3);<br>
+&nbsp;&nbsp;WriteLn('Characters stored = '+charPtr);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now free the memory for these characters</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>FreeMem</b></font>(charPtr);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/freemem&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Characters stored = ABC<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

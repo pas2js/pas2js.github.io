@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Looping</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Looping</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_subroutines.htm">Previous</a>&nbsp;
+     <a href="hm_exceptions.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Why loops are used in programming</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">One of the main reasons for using computers is to save the tedium of many repetitive tasks. One of the main uses of loops in programs is to carrry out such repetitive tasks. A loop will execute one or more lines of code (statements) as many times as you want. </span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Your choice of loop type depends on how you want to control and terminate the looping.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span><br>
+<a name="forloop"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">FOR loop</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This is the most common loop type. </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">For</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> loops are executed a fixed number of times, determined by a count. They terminate when the count is exhausted. The count (loop) is held in a variable that can be used in the loop. The count can proceed upwards or downwards, but always does so by a value of 1 unit. This count variable can be a number or even an enumeration.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">COUNT</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Here is a simple example counting up using numeric values in Pas2JS:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button1Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">count&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">For</span><span class="f_CodeExample" style="color: #000000;">&nbsp;count&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #000080;">5</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">do</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">ShowMessage</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">Format</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #000080;">'Count&nbsp;is&nbsp;now&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[count]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">OBS:</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;The&nbsp;ShowMessageFmt&nbsp;routine&nbsp;is&nbsp;useful&nbsp;for&nbsp;displaying&nbsp;information&nbsp;in&nbsp;Delphi.</span></p>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In&nbsp;Pas2JS&nbsp;you&nbsp;should&nbsp;use&nbsp;ShowMessage&nbsp;+&nbsp;Format.</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Result is:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Count&nbsp;is&nbsp;now&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Count&nbsp;is&nbsp;now&nbsp;2</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Count&nbsp;is&nbsp;now&nbsp;3</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Count&nbsp;is&nbsp;now&nbsp;4</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Count&nbsp;is&nbsp;now&nbsp;5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">---------------</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">See the JS code generated:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button1Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;count&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">(count&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;count&lt;=</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;count++)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Count&nbsp;is&nbsp;now&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+count.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><a name="enumset"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">ENUMERATIONS</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Enumerations&nbsp;(see&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff; text-decoration: underline;"><a href="hm_language_types1.htm">Enumeration</a></span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">&nbsp;and&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff; text-decoration: underline;"><a href="hm_language_types2.htm">sets</a></span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;to&nbsp;explore)&nbsp;are&nbsp;very&nbsp;readable&nbsp;ways&nbsp;of&nbsp;assigning&nbsp;values&nbsp;to&nbsp;variables&nbsp;by&nbsp;name.&nbsp;</span></p>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">They&nbsp;can&nbsp;also&nbsp;be&nbsp;used&nbsp;to&nbsp;control&nbsp;For&nbsp;loops:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; background: #ffff99; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">TWeekDay</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;(</span><span class="f_CodeExample" style="color: #0000ff;">Monday&nbsp;=&nbsp;1,&nbsp;Tuesday,&nbsp;Wednesday,&nbsp;Thursday,&nbsp;Friday</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button1Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;weekday:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TWeekDay</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;hours:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">array</span><span class="f_CodeExample" style="color: #000000;">[</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">TWeekDay</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Set&nbsp;up&nbsp;the&nbsp;hours&nbsp;every&nbsp;day&nbsp;to&nbsp;zero</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">weekDay</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;Monday&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Friday&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">do</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;hours[weekDay]&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Add&nbsp;an&nbsp;hour&nbsp;of&nbsp;overtime&nbsp;to&nbsp;the&nbsp;working&nbsp;hours&nbsp;on&nbsp;Tuesday&nbsp;to&nbsp;Thursday</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">weekDay</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;Tuesday&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Thursday&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">do</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Inc(hours[weekDay]);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px; font-weight: bold; color: #000000;">Result is:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">hours[Monday]&nbsp;&nbsp;&nbsp;=&nbsp;0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">hours[Tuesday]&nbsp;&nbsp;=&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">hours[Wednesday]=&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">hours[Thursday]&nbsp;=&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">hours[Friday]&nbsp;&nbsp;&nbsp;=&nbsp;0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">--------------------</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Note&nbsp;the&nbsp;use&nbsp;of&nbsp;the&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Inc</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;routine&nbsp;to&nbsp;increment&nbsp;the&nbsp;hours.</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A2_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A2','$TOGGLE0186A2_ICON')">See the JS code generated:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 18px;"><table id="TOGGLE0186A2" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #008000;">//&nbsp;TWeekDay&nbsp;enumeration</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWeekDay&nbsp;=&nbsp;{&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Monday&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">2</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Tuesday&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">3</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Wednesday&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">4</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Thursday&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Friday&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;};</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button1Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;weekday&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;hours&nbsp;=&nbsp;[</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">(weekday&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;weekday&lt;=</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;weekday++)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hours[$Idx(weekday,</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">)]&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">(weekday&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">2</span><span class="f_CodeExample" style="color: #000000;">;weekday&lt;=</span><span class="f_CodeExample" style="color: #800000;">4</span><span class="f_CodeExample" style="color: #000000;">;weekday++)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++hours[$Idx(weekday,</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">)];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a name="charloop"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">CHARACTER LOOP</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">We can also use single letters as the count type, because they are also ordinal types:</span></p>
+<p>&nbsp;</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Character for loop using Delphi</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Delphi example: count G until A</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="277" style="width:277px;"><p style="background: #ffff99; margin: 7px 0px 7px 0px;"><span style="font-size: 13px; font-family: 'Courier New'; font-weight: bold; color: #000000;">var</span><br>
+<span style="font-size: 13px; font-family: 'Courier New'; color: #000000;">letter : Char;</span><br>
+<span style="font-size: 13px; font-family: 'Courier New'; font-weight: bold; color: #000000;">begin</span><br>
+<span style="font-size: 13px; font-family: 'Courier New'; font-weight: bold; color: #000000;">for </span><span style="font-size: 13px; font-family: 'Courier New'; color: #000000;">letter := 'G' downto 'A' do</span><br>
+<span style="font-size: 13px; font-family: 'Courier New'; color: #000000;"> &nbsp; WriteLn('Letter = '+letter)</span><br>
+<span style="font-size: 13px; font-family: 'Courier New'; font-weight: bold; color: #000000;">end;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px; font-weight: bold; color: #000000;">Result is:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Letter&nbsp;=&nbsp;G</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Letter&nbsp;=&nbsp;F</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Letter&nbsp;=&nbsp;E</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Letter&nbsp;=&nbsp;D</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Letter&nbsp;=&nbsp;C</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Letter&nbsp;=&nbsp;B</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Letter&nbsp;=&nbsp;A</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">-----------</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Same you can accomplish with Pas2JS:</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="277" style="width:277px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button1Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">letter&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;letter&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Ord</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #800000;">'G'</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;downto&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Ord</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #800000;">'A'</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">do</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">ShowMessage(</span><span class="f_CodeExample" style="color: #800000;">'Letter&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">chr</span><span class="f_CodeExample" style="color: #000000;">(letter))</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The For statements in the examples above have all executed one statement. If you want to execute more than one, you must enclose these in a </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Begin</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> and </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">End</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> pair.</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A3_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A3','$TOGGLE0186A3_ICON')">JS code generated:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A3" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button1Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;letter&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">(letter&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">71</span><span class="f_CodeExample" style="color: #000000;">;letter&gt;=</span><span class="f_CodeExample" style="color: #800000;">65</span><span class="f_CodeExample" style="color: #000000;">;letter--)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Letter&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+Chr(letter));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a name="repeatloop"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">REPEAT LOOP</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The Repeat loop type is used for loops where we do not know in advance how many times we will execute. For example, when we keep asking a user for a value until one is provided, or the user aborts. Here, we are more concerned with the loop termination condition.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Repeat loops always execute at least once. At the end, the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Until</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> condition is checked, and the loop aborts of condition works out as true.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">A simple example using Pas2JS.</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">W3Button1Click</span><span class="f_CodeExample" style="color: #000000;">(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;exit1:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Boolean</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Our&nbsp;exit&nbsp;condition&nbsp;flag</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;i:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;exit1&nbsp;:=&nbsp;False;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;do&nbsp;not&nbsp;exit&nbsp;until&nbsp;we&nbsp;are&nbsp;ready</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">repeat</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Inc(i);&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Increment&nbsp;a&nbsp;count</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Sqr(i)&nbsp;&gt;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">99</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit1&nbsp;:=&nbsp;true;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Exit&nbsp;if&nbsp;the&nbsp;square&nbsp;of&nbsp;our&nbsp;number&nbsp;exceeds&nbsp;99</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">until</span><span class="f_CodeExample" style="color: #000000;">&nbsp;exit1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Shorthand&nbsp;for&nbsp;'until&nbsp;exit&nbsp;:=&nbsp;true'</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(i);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Result will be:</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">10</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> (upon exit1, i will be 10, since 100 &gt; 99).</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Here we exit1 the repeat loop when a Boolean variable is true. Notice that we use a </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">shorthand</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> - just specifying the variable as the condition is sufficient since the variable value is either true or false.</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A4_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A4','$TOGGLE0186A4_ICON')">The beast generated this JS code:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A4" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button1Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;exit1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">false</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">false</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++i$3;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;((i$3*i$3)&gt;</span><span class="f_CodeExample" style="color: #800000;">99</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">true</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">while</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(!exit1);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(i$3);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">COMPOUND CONDITIONS with Pas2JS</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="405" style="width:405px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button1Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">i&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">repeat</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">Inc(i);&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Increment&nbsp;a&nbsp;count</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">until</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(Sqr(i)&nbsp;&gt;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">99</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">or</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(Sqrt(i)&nbsp;&gt;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">5</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Result will be: 7 </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(since sqrt(7) &nbsp;&gt; 2.5)</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Notice that compound statements require </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">separating brackets</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. Notice also that Repeat statements can accomodate multiple statements without the need for a begin/end pair. The repeat and until clauses form a natural pairing.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A5_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A5','$TOGGLE0186A5_ICON')">SMS generated this JS code:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A5" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button1Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++i$3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">while</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(!(((i$3*i$3)&gt;</span><span class="f_CodeExample" style="color: #800000;">99</span><span class="f_CodeExample" style="color: #000000;">)||(Math.sqrt(i$3)&gt;</span><span class="f_CodeExample" style="color: #800000;">2</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a name="whileloop"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">WHILE LOOPS</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">While loops are very similar to Repeat loops except that they have the exit condition at the start. This means that we use them when we wish to avoid loop execution altogether if the condition for exit is satisfied at the start.</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="405" style="width:405px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">W3Button1Click</span><span class="f_CodeExample" style="color: #000000;">(Sender:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TObject</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">i&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">while</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(Sqr(i)&nbsp;&lt;=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">99</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">and</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(Sqrt(i)&nbsp;&lt;=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">5</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">do</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">Inc(i);&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Increment&nbsp;a&nbsp;count</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">and the result will be 7</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> (since sqrt(7) &gt; 2.5)</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A6_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A6','$TOGGLE0186A6_ICON')">SMS generated this JS code:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A6" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button1Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">while</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(((i$3*i$3)&lt;=</span><span class="f_CodeExample" style="color: #800000;">99</span><span class="f_CodeExample" style="color: #000000;">)&amp;&amp;(Math.sqrt(i$3)&lt;=</span><span class="f_CodeExample" style="color: #800000;">2</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">))&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++i$3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Notice&nbsp;that&nbsp;our&nbsp;original&nbsp;Repeat&nbsp;Until&nbsp;condition&nbsp;used&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">OR</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;as&nbsp;the&nbsp;compound&nbsp;condition&nbsp;joiner&nbsp;-&nbsp;we&nbsp;continued&nbsp;until&nbsp;either&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">condition&nbsp;was&nbsp;met.&nbsp;With&nbsp;our&nbsp;While&nbsp;condition,&nbsp;we&nbsp;use&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">AND</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;as&nbsp;the&nbsp;joiner&nbsp;-&nbsp;we&nbsp;continue&nbsp;whilst&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">neither</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;condition&nbsp;is&nbsp;met.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Have&nbsp;a&nbsp;closer&nbsp;look&nbsp;to&nbsp;see&nbsp;why&nbsp;we&nbsp;do&nbsp;this.&nbsp;The&nbsp;difference&nbsp;is&nbsp;that&nbsp;we&nbsp;repeat&nbsp;an&nbsp;action&nbsp;until&nbsp;something&nbsp;or&nbsp;something&nbsp;else&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">happens.&nbsp;Whereas&nbsp;we&nbsp;keep&nbsp;doing&nbsp;an&nbsp;action&nbsp;while&nbsp;neither&nbsp;something&nbsp;nor&nbsp;something&nbsp;else&nbsp;have&nbsp;happened.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+myInitToggle('TOGGLE0186A2','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A2_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A2\',\'\$TOGGLE0186A2_ICON\')');
+myInitToggle('TOGGLE0186A3','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A3_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A3\',\'\$TOGGLE0186A3_ICON\')');
+myInitToggle('TOGGLE0186A4','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A4_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A4\',\'\$TOGGLE0186A4_ICON\')');
+myInitToggle('TOGGLE0186A5','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A5_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A5\',\'\$TOGGLE0186A5_ICON\')');
+myInitToggle('TOGGLE0186A6','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A6_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A6\',\'\$TOGGLE0186A6_ICON\')');
+}
+</script>
+</body>
+</html>

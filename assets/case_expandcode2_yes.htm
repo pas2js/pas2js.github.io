@@ -1,0 +1,238 @@
+<!-- (0063)Case&ExpandCode2=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Case command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Case, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Case</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">A mechanism for acting upon different values of an Ordinal</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>case Ordinal expression</b> of<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; <b>Ordinal value {,Ordinal value...} : <b>Statement;</b><br>&nbsp;
+?????<b>{...}<br>&nbsp;
+ ??&nbsp;&nbsp; else <b>Statement;</b><br>&nbsp;
+end;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>Name</b> = record<br>&nbsp;
+???Declarations ...<br>&nbsp;
+?????<b>case {Tag :} Ordinal type</b> of<br>&nbsp;
+???????<b>Ordinal value {,Ordinal value...} : <b>(Declarations);</b><br>&nbsp;
+???????<b>{...}</b><br>&nbsp;
+end;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Case</b></font> keyword provides a structured equivalent to a sequence of if statements on the same variable.
+<br>&nbsp;<br>
+The <font color=#996600><b>Case</b></font> statement is more elegant, more efficient, and easier to maintain than multiple if nestings.
+<br>&nbsp;<br>
+<font color=#A00000><b>Version 2.</b></font>
+Is used for Records declarations. It is then called a <b>Variant</b>. It provides a means of mapping two or more differing sets of declarations onto the same section of the record. 
+<br>&nbsp;<br>
+It is mostly used when handling different types of dataset for a record, where the datasets have mostly the same content. See the example for clarification.
+<br>&nbsp;<br>
+The <b>Tag</b> provides identification of the case element.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="else.htm">Else</a></b></td>
+<td width="8"></td>
+<td align="left">Starts false section of <b>if, case</b> and <b>try</b> statements</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="end.htm">End</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that terminates statement blocks</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="if.htm">If</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a conditional expression to determine what to do next</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="packed.htm">Packed</a></b></td>
+<td width="8"></td>
+<td align="left">Compacts complex data types into minimal storage</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="record.htm">Record</a></b></td>
+<td width="8"></td>
+<td align="left">A structured data type - holding fields of data</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="then.htm">Then</a></b></td>
+<td width="8"></td>
+<td align="left">Part of an <b>if</b> statement - starts the <b>true</b> clause</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Standard case statement usage</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;colour : TPrimary;<br>
+&nbsp;&nbsp;number : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the colour before it has an assigned value</b></font><br>
+&nbsp;&nbsp;ShowColour(colour);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now set the colour and try again</b></font><br>
+&nbsp;&nbsp;colour := Green;<br>
+&nbsp;&nbsp;ShowColour(colour);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Calculations can also be used in the case statement</b></font><br>
+&nbsp;&nbsp;number := 17;<br>
+&nbsp;&nbsp;<font color=#C00000><b>Case</b></font> number mod 2 of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0 : ShowMessage(IntToStr(Number)+' mod 2 = 0');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1 : ShowMessage(IntToStr(Number)+' mod 2 = 1');<br>
+&nbsp;&nbsp;else ShowMessage(IntToStr(Number)+' mod 2 is unknown');<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Procedure to show the colour of a passed</b></font><br><b>
+procedure TForm1.ShowColour(colour : TPrimary);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use a case statement to see the colour of the passed var</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note how important the else clause is, even though we have</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// apparently covered all TPrimary values!</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>Case</b></font> colour of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Red : WriteLn('The colour is Red');<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Green : WriteLn('The colour is Green');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue : WriteLn('The colour is Blue');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Yellow : WriteLn('The colour is Yellow');<br>
+&nbsp;&nbsp;else WriteLn('The colour is Unknown!');<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/case&expandcode1=yes&expandcode2=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;The colour is Unknown!<br>&nbsp;&nbsp;
+The colour is Green<br>&nbsp;&nbsp;
+17 mod 2 is 1<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Case within a <b>record</b></b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare a fruit record using case to choose the</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// diameter of a round fruit, or length and height ohterwise.</b></font><br>
+&nbsp;&nbsp;TFruit = record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string[20];<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Case</b></font> isRound : Boolean of <font color=#008000><b>// Choose how to map the next section</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(diameter : Single);&nbsp;&nbsp;<font color=#008000><b>// Maps to same storage as length</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False :<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(length&nbsp;&nbsp; : Single;&nbsp;&nbsp; <font color=#008000><b>// Maps to same storage as diameter</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width&nbsp;&nbsp;&nbsp;&nbsp;: Single);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;apple, banana, fruit : TFruit;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the apple as round, with appropriate dimensions</b></font><br>
+&nbsp;&nbsp;apple.name&nbsp;&nbsp;&nbsp;&nbsp; := 'Apple';<br>
+&nbsp;&nbsp;apple.isRound&nbsp;&nbsp;:= True;<br>
+&nbsp;&nbsp;apple.diameter := 3.2;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the banana as long, with appropriate dimensions</b></font><br>
+&nbsp;&nbsp;banana.name&nbsp;&nbsp;&nbsp;&nbsp;:= 'Banana';<br>
+&nbsp;&nbsp;banana.isRound := False;<br>
+&nbsp;&nbsp;banana.length&nbsp;&nbsp;:= 7.65;<br>
+&nbsp;&nbsp;banana.width&nbsp;&nbsp; := 1.3;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the attributes of the apple</b></font><br>
+&nbsp;&nbsp;fruit := apple;<br>
+&nbsp;&nbsp;if fruit.isRound<br>
+&nbsp;&nbsp;then ShowMessage(fruit.name +' diameter = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.diameter, ffFixed, 2, 1)+'"')<br>
+&nbsp;&nbsp;else ShowMessage(fruit.name +' length = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.length, ffFixed, 2, 1)+'" width = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.width, ffFixed, 2, 1)+'"');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the attributes of the banana</b></font><br>
+&nbsp;&nbsp;fruit := banana;<br>
+&nbsp;&nbsp;if fruit.isRound<br>
+&nbsp;&nbsp;then ShowMessage(fruit.name +' diameter = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.diameter, ffFixed, 2, 1)+'"')<br>
+&nbsp;&nbsp;else ShowMessage(fruit.name +' length = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.length, ffFixed, 2, 1)+'" width = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.width, ffFixed, 2, 1)+'"');<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="case.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Apple diameter = 3.2"<br>&nbsp;&nbsp;
+Banana length = 7.7" width = 1.3"<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

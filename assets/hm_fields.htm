@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Fields</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Fields</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_class.htm">Previous</a>&nbsp;
+     <a href="hm_properties.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">A&nbsp;field&nbsp;is&nbsp;like&nbsp;a&nbsp;variable&nbsp;that&nbsp;belongs&nbsp;to&nbsp;an&nbsp;object.&nbsp;Fields&nbsp;can&nbsp;be&nbsp;of&nbsp;any&nbsp;type,&nbsp;including&nbsp;class&nbsp;types.&nbsp;That&nbsp;is,&nbsp;fields&nbsp;can&nbsp;hold&nbsp;object&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">references.&nbsp;Fields&nbsp;are&nbsp;usually&nbsp;private.&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #000000;">To&nbsp;define&nbsp;a&nbsp;field&nbsp;member&nbsp;of&nbsp;a&nbsp;class,&nbsp;simply&nbsp;declare&nbsp;the&nbsp;field&nbsp;as&nbsp;you&nbsp;would&nbsp;a&nbsp;variable.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #000000;">For&nbsp;example,&nbsp;the&nbsp;following&nbsp;declaration&nbsp;creates&nbsp;a&nbsp;class&nbsp;called&nbsp;TAncestor&nbsp;whose&nbsp;only&nbsp;member,&nbsp;other&nbsp;than&nbsp;the&nbsp;methods&nbsp;inherited&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #000000;">from&nbsp;TObject,&nbsp;is&nbsp;an&nbsp;integer&nbsp;field&nbsp;called&nbsp;Value.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">All&nbsp;fields&nbsp;declarations&nbsp;must&nbsp;occur&nbsp;before&nbsp;any&nbsp;property&nbsp;or&nbsp;method&nbsp;declarations.&nbsp;After&nbsp;any&nbsp;property&nbsp;or&nbsp;method&nbsp;declarations,&nbsp;the&nbsp;var&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">may&nbsp;be&nbsp;used&nbsp;to&nbsp;introduce&nbsp;any&nbsp;additional&nbsp;field&nbsp;declarations.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Fields&nbsp;are&nbsp;statically&nbsp;bound;&nbsp;that&nbsp;is,&nbsp;references&nbsp;to&nbsp;them&nbsp;are&nbsp;fixed&nbsp;at&nbsp;compile&nbsp;time.&nbsp;To&nbsp;see&nbsp;what&nbsp;this&nbsp;means,&nbsp;consider&nbsp;the&nbsp;following&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">code:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TAncestor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">&nbsp;&nbsp;&nbsp;&nbsp;private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TDescendant</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">(TAncestor)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">&nbsp;&nbsp;&nbsp;&nbsp;private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;hides&nbsp;the&nbsp;inherited&nbsp;Value&nbsp;field</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button21Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;MyObj:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TAncestor</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;MyObj&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TDescendant</span><span class="f_CodeExample" style="color: #000000;">.Create;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//MyObj.Value&nbsp;:=&nbsp;'warleyalex';&nbsp;&nbsp;&nbsp;//&nbsp;error&nbsp;cannot&nbsp;assign&nbsp;String&nbsp;to&nbsp;Integer</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;MyObj.Value&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1234</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;OK</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;(MyObj&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">as</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TDescendant</span><span class="f_CodeExample" style="color: #000000;">).Value&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'warleyalex'</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;works!</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Although&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">MyObj</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;holds&nbsp;an&nbsp;instance&nbsp;of&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">TDescendant</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">,&nbsp;it&nbsp;is&nbsp;declared&nbsp;as&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">TAncestor</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">.&nbsp;The&nbsp;compiler&nbsp;therefore&nbsp;interprets&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">MyObject.Value</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;as&nbsp;referring&nbsp;to&nbsp;the&nbsp;(integer)&nbsp;field&nbsp;declared&nbsp;in&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">TAncestor</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">.&nbsp;Both&nbsp;fields,&nbsp;however,&nbsp;exist&nbsp;in&nbsp;the&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">TDescendant</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">object;&nbsp;the&nbsp;inherited&nbsp;Value&nbsp;is&nbsp;hidden&nbsp;by&nbsp;the&nbsp;new&nbsp;one&nbsp;and&nbsp;can&nbsp;be&nbsp;accessed&nbsp;through&nbsp;a&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">typecast</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Declarations&nbsp;of&nbsp;constants&nbsp;and&nbsp;typed&nbsp;constants&nbsp;can&nbsp;appear&nbsp;in&nbsp;classes&nbsp;and&nbsp;non-anonymous&nbsp;records&nbsp;at&nbsp;global&nbsp;scope.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Both&nbsp;constants&nbsp;and&nbsp;typed&nbsp;constants&nbsp;can&nbsp;also&nbsp;appear&nbsp;within&nbsp;nested&nbsp;type&nbsp;definitions.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Constants&nbsp;and&nbsp;typed&nbsp;constants&nbsp;can&nbsp;appear&nbsp;only&nbsp;within&nbsp;class&nbsp;definitions&nbsp;when&nbsp;the&nbsp;class&nbsp;is&nbsp;defined&nbsp;locally&nbsp;to&nbsp;a&nbsp;procedure</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">(i.e.&nbsp;they&nbsp;cannot&nbsp;appear&nbsp;within&nbsp;records&nbsp;defined&nbsp;within&nbsp;a&nbsp;procedure).</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Class&nbsp;Data&nbsp;Fields&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Class&nbsp;fields&nbsp;are&nbsp;data&nbsp;fields&nbsp;in&nbsp;a&nbsp;class&nbsp;that&nbsp;can&nbsp;be&nbsp;accessed&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; text-decoration: underline;">without&nbsp;an&nbsp;object&nbsp;reference</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;(unlike&nbsp;the&nbsp;normal&nbsp;&quot;instance&nbsp;fields&quot;&nbsp;which&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">are&nbsp;discussed&nbsp;above).&nbsp;The&nbsp;data&nbsp;stored&nbsp;in&nbsp;a&nbsp;class&nbsp;field&nbsp;are&nbsp;shared&nbsp;by&nbsp;all&nbsp;instances&nbsp;of&nbsp;the&nbsp;class&nbsp;and&nbsp;may&nbsp;be&nbsp;accessed&nbsp;by&nbsp;referring&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">to&nbsp;the&nbsp;class&nbsp;or&nbsp;to&nbsp;a&nbsp;variable&nbsp;that&nbsp;represents&nbsp;an&nbsp;instance&nbsp;of&nbsp;the&nbsp;class.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">In&nbsp;Pas2JS,&nbsp;you&nbsp;can&nbsp;have&nbsp;a&nbsp;block&nbsp;of&nbsp;class&nbsp;fields&nbsp;within&nbsp;a&nbsp;class&nbsp;declaration&nbsp;by&nbsp;using&nbsp;the&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">class&nbsp;var</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;block&nbsp;declaration.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">All&nbsp;fields&nbsp;declared&nbsp;after&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">class&nbsp;var</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;have&nbsp;static&nbsp;storage&nbsp;attributes.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TMyClasse&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InstanceField1:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//class&nbsp;static&nbsp;fields.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Red:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Green:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Blue:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button21Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;myObject,&nbsp;o:&nbsp;TMyClasse;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TMyClasse.Red&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TMyClasse.Green&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TMyClasse.Blue&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;WriteLn(TMyClasse.Red&nbsp;+&nbsp;TMyClasse.Green&nbsp;+&nbsp;TMyClasse.Blue);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;myObject.Red&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">10</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;myObject.Green&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">20</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;myObject.Blue&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">30</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;o&nbsp;:=&nbsp;TMyClasse.Create;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">try</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;o.InstanceField1&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">50</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;WriteLn(myObject.Red&nbsp;+&nbsp;myObject.Green&nbsp;+&nbsp;myObject.Blue&nbsp;+&nbsp;o.InstanceField1);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">finally</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;o.Free;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">6,&nbsp;110</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">---------</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Class&nbsp;Properties</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Class&nbsp;properties&nbsp;can&nbsp;be&nbsp;accessed&nbsp;without&nbsp;an&nbsp;object&nbsp;reference.&nbsp;Class&nbsp;property&nbsp;accessors&nbsp;must&nbsp;themselves&nbsp;be&nbsp;declared&nbsp;as&nbsp;class&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">static&nbsp;methods,&nbsp;or&nbsp;class&nbsp;fields.&nbsp;A&nbsp;class&nbsp;property&nbsp;is&nbsp;declared&nbsp;with&nbsp;the&nbsp;class&nbsp;property&nbsp;keywords.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Class&nbsp;properties&nbsp;cannot&nbsp;be&nbsp;published,&nbsp;and&nbsp;cannot&nbsp;have&nbsp;stored&nbsp;or&nbsp;default&nbsp;value&nbsp;definitions.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;introduce&nbsp;a&nbsp;block&nbsp;of&nbsp;class&nbsp;static&nbsp;fields&nbsp;within&nbsp;a&nbsp;class&nbsp;declaration&nbsp;by&nbsp;using&nbsp;the&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">class&nbsp;var</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;block&nbsp;declaration.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">All&nbsp;fields&nbsp;declared&nbsp;after&nbsp;class&nbsp;var&nbsp;have&nbsp;static&nbsp;storage&nbsp;attributes.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;TMyClasse2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;Note&nbsp;fields&nbsp;must&nbsp;be&nbsp;declared&nbsp;as&nbsp;class&nbsp;fields&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FRed:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FGreen:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FBlue:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;ends&nbsp;the&nbsp;class&nbsp;var&nbsp;block</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Red:&nbsp;Integer&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FRed&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FRed;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Green:&nbsp;Integer&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FGreen&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FGreen;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Blue:&nbsp;Integer&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FBlue&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FBlue;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button25Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;TMyClasse2.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Red</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">10</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;TMyClasse2.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Blue</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">20</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;TMyClasse2.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Green</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">30</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(&nbsp;TMyClasse2.Red+TMyClasse2.blue+TMyClasse2.Green&nbsp;);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">60</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">---------</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

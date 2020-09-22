@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Delegates</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Delegates</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_language_types7.htm">Previous</a>&nbsp;
+     <a href="hm_language_types9.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Delegate</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;is&nbsp;a&nbsp;data&nbsp;structure&nbsp;that&nbsp;refers&nbsp;to&nbsp;a&nbsp;static&nbsp;method&nbsp;or&nbsp;to&nbsp;a&nbsp;class&nbsp;instance&nbsp;and&nbsp;an&nbsp;instance&nbsp;method&nbsp;of&nbsp;that&nbsp;class.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">The&nbsp;closest&nbsp;equivalent&nbsp;of&nbsp;a&nbsp;delegate&nbsp;in&nbsp;Delphi&nbsp;Win32&nbsp;is&nbsp;the&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">method&nbsp;pointer.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><a name="pointerex"></a><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Procedural&nbsp;Types&nbsp;and&nbsp;Procedure&nbsp;Pointers</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Pas2JS&nbsp;lets&nbsp;you&nbsp;treat&nbsp;routines&nbsp;(functions&nbsp;and&nbsp;procedures)&nbsp;as&nbsp;values&nbsp;that&nbsp;can&nbsp;be&nbsp;assigned&nbsp;to&nbsp;variables.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Consider&nbsp;the&nbsp;nest&nbsp;code&nbsp;segment:&nbsp;<a href="hm_closure02.htm"><img src="btn.jpg" border="0"/></a>
+</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Method&nbsp;Pointers</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Similar&nbsp;to&nbsp;procedural&nbsp;pointers,&nbsp;method&nbsp;pointers&nbsp;reference&nbsp;a&nbsp;method&nbsp;of&nbsp;an&nbsp;instance&nbsp;object.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Here's&nbsp;one&nbsp;method&nbsp;pointer&nbsp;example:&nbsp;<a href="hm_closure03.htm"><img src="btn.jpg" border="0"/></a>
+</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Function&nbsp;pointers&nbsp;are&nbsp;unified,&nbsp;there&nbsp;is&nbsp;no&nbsp;distinction&nbsp;between&nbsp;standalone&nbsp;function&nbsp;and&nbsp;method&nbsp;pointers.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">For&nbsp;instance&nbsp;the&nbsp;following&nbsp;code&nbsp;is&nbsp;valid&nbsp;as&nbsp;long&nbsp;as&nbsp;the&nbsp;function&nbsp;or&nbsp;method&nbsp;prototype&nbsp;matches.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">TMyFunction</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">(n:&nbsp;Integer):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">myMethodDelegate</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">(myInt:&nbsp;Integer):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string&nbsp;of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">object</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #008000;">//-----------------------------------------------------------------</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TmySampleClass</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;myStringMethod&nbsp;(myInt:&nbsp;Integer):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;mySignMethod&nbsp;(myInt:&nbsp;Integer):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;static;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;mySampleClass&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TmySampleClass.mySignMethod</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(myInt:&nbsp;Integer):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">''</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(myInt&nbsp;&gt;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'+'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(myInt&nbsp;&lt;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'-'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TmySampleClass.myStringMethod</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(myInt:&nbsp;Integer):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'zero'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(myInt&nbsp;&gt;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'positive'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(myInt&nbsp;&lt;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'negative'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button7Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mySC:&nbsp;TmySampleClass;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;x:&nbsp;myMethodDelegate;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;y:&nbsp;myMethodDelegate;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;IntegerToString&nbsp;:&nbsp;TMyFunction;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;IntegerToString&nbsp;:=&nbsp;IntToStr;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(IntegerToString(</span><span class="f_CodeExample" style="color: #0000ff;">12345</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mySC&nbsp;:=&nbsp;TmySampleClass.Create;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">try</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'%d&nbsp;is&nbsp;%d;&nbsp;use&nbsp;the&nbsp;sign&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;&nbsp;mySC.myStringMethod(</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">),&nbsp;&nbsp;mySC.mySignMethod(</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">)])&nbsp;);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'%d&nbsp;is&nbsp;%d;&nbsp;use&nbsp;the&nbsp;sign&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[-</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;mySC.myStringMethod(-</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">),&nbsp;mySC.mySignMethod(-</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">)])&nbsp;);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'%d&nbsp;is&nbsp;%d;&nbsp;use&nbsp;the&nbsp;sign&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;&nbsp;mySC.myStringMethod(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">),&nbsp;&nbsp;mySC.mySignMethod(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">)])&nbsp;);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(sLineBreak);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;Using&nbsp;Delegates&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;x&nbsp;:=&nbsp;mySC.myStringMethod;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;y&nbsp;:=&nbsp;mySC.mySignMethod;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'%d&nbsp;is&nbsp;%d;&nbsp;use&nbsp;the&nbsp;sign&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;&nbsp;&nbsp;x(</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">),&nbsp;&nbsp;y(</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;])&nbsp;);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'%d&nbsp;is&nbsp;%d;&nbsp;use&nbsp;the&nbsp;sign&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[-</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;x(-</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">),&nbsp;&nbsp;y(-</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">)])&nbsp;);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'%d&nbsp;is&nbsp;%d;&nbsp;use&nbsp;the&nbsp;sign&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;&nbsp;&nbsp;x(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">),&nbsp;&nbsp;y(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;])&nbsp;);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">finally</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;mySC.Free;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">As long as the function or method prototype matches. </span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;use&nbsp;the&nbsp;@&nbsp;operator&nbsp;to&nbsp;explicitly&nbsp;access&nbsp;a&nbsp;function&nbsp;reference&nbsp;to&nbsp;remove&nbsp;ambiguity.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_closure01.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">&nbsp;Pas2JS&nbsp;nested&nbsp;routine&nbsp;example.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">The&nbsp;function&nbsp;pointers&nbsp;and&nbsp;closures&nbsp;are&nbsp;unified,&nbsp;you&nbsp;don’t&nbsp;have&nbsp;to&nbsp;distinguish&nbsp;between&nbsp;a&nbsp;procedure&nbsp;and&nbsp;a&nbsp;procedure&nbsp;&nbsp;of&nbsp;&nbsp;object,&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">and&nbsp;you&nbsp;don’t&nbsp;have&nbsp;to&nbsp;distinguish&nbsp;a&nbsp;reference&nbsp;&nbsp;to&nbsp;&nbsp;procedure&nbsp;either.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">See&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;"><a href="hm_anonymous_methods.htm">Anonymous&nbsp;methods</a></span></p>
+
+</td></tr></table>
+
+</body>
+</html>

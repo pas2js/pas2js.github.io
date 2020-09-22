@@ -1,0 +1,158 @@
+<!-- (0063)Trim&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Trim command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Trim, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Trim</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Removes leading and trailing blanks from a string</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Trim</b></font>
+
+(
+<b>const Text </b> : String
+)
+ : String;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Trim</b></font>&nbsp;(
+<b>const Text </b> : WideString
+)  : WideString;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Trim</b></font> function removes blank and control characters (such as line feed) from the start and end of a string.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Use <b>TrimLeft</b> or <b>TrimRight</b> to limit the operation to just one end of the string.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="ansileftstr.htm">AnsiLeftStr</a></b></td>
+<td width="8"></td>
+<td align="left">Extracts characters from the left of a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansimidstr.htm">AnsiMidStr</a></b></td>
+<td width="8"></td>
+<td align="left">Returns a substring from the middle characters of a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansirightstr.htm">AnsiRightStr</a></b></td>
+<td width="8"></td>
+<td align="left">Extracts characters from the right of a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="delete">Delete</a></b></td>
+<td width="8"></td>
+<td align="left">Delete a section of characters from a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="trimleft.htm">TrimLeft</a></b></td>
+<td width="8"></td>
+<td align="left">Removes leading blanks from a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="trimright.htm">TrimRight</a></b></td>
+<td width="8"></td>
+<td align="left">Removes trailing blanks from a string</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrating Trim, TrimLeft and TrimRight</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the Trim command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> const</b><br>
+&nbsp;&nbsp;PaddedString = '&nbsp;&nbsp;Letters&nbsp;&nbsp;&nbsp;&nbsp; ';<br><b>
+begin</b><br>
+&nbsp;&nbsp;WriteLn('[' + <b>TrimLeft</b>(PaddedString)&nbsp;&nbsp;+ ']');<br>
+&nbsp;&nbsp;WriteLn('[' + <b>TrimRight</b>(PaddedString) + ']');<br>
+&nbsp;&nbsp;WriteLn('[' + <font color=#C00000><b>Trim</b></font>(PaddedString)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ ']');<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="trim.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;[Letters&nbsp;&nbsp;&nbsp;&nbsp; ]<br>&nbsp;&nbsp;
+[&nbsp;&nbsp;Letters]<br>&nbsp;&nbsp;
+[Letters]<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

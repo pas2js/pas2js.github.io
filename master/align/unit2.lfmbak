@@ -1,0 +1,94 @@
+object Form1: TForm1
+  Left = 350
+  Height = 480
+  Hint = 'Form1'
+  Top = 0
+  Width = 640
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  LCLVersion = '1.9.0.0'
+  object WebLabel1: TLabel
+    Left = 64
+    Height = 13
+    Top = 232
+    Width = 33
+    Caption = '-Label-'
+    ParentColor = False
+  end
+  object WebEdit1: TEdit
+    Left = 64
+    Height = 21
+    Top = 42
+    Width = 121
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    Text = 'WebEdit1'
+    TextHint = 'Add some text ...'
+  end
+  object WebButton1: TButton
+    Left = 204
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = 'Add'
+    OnClick = WebButton1Click
+    TabOrder = 1
+  end
+  object WebMemo1: TMemo
+    Left = 64
+    Height = 145
+    Top = 89
+    Width = 215
+    Lines.Strings = (
+      'WebMemo1'
+    )
+    TabOrder = 2
+  end
+  object WebComboBox1: TComboBox
+    Left = 64
+    Height = 21
+    Top = 197
+    Width = 215
+    ItemHeight = 13
+    OnChange = WebComboBox1Change
+    TabOrder = 3
+    Text = 'WebComboBox1'
+  end
+  object WebPanel1: TPanel
+    Left = 64
+    Height = 89
+    Top = 280
+    Width = 513
+    ClientHeight = 89
+    ClientWidth = 513
+    TabOrder = 4
+    object WebLabel2: TLabel
+      Left = 3
+      Height = 32
+      Top = 29
+      Width = 411
+      AutoSize = False
+      Caption = 'This demo shows the use of basic controls like TWebEdit, TWebButton, TWebComboBox, TWebMemo and TWebLabel.'
+      ParentColor = False
+      WordWrap = True
+    end
+    object WebImageControl1: TImage
+      Left = 6
+      Height = 16
+      Top = 7
+      Width = 16
+      AutoSize = True
+    end
+  end
+  object Btn: TButton
+    Left = 64
+    Height = 33
+    Top = 384
+    Width = 95
+    Caption = 'Btn'
+    OnClick = BtnClick
+    TabOrder = 5
+  end
+end

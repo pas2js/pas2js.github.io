@@ -1,0 +1,195 @@
+<!-- (0061)$R&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : $R command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, $R, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>$R</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Compiler Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Determines whether Delphi checks array bounds</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$R</b> FileName}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$R</b>-}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$R</b>+}
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>$R</b></font> compiler directive has two forms. Firstly, it defines a resource file to be compiled. Secondy, it determines whether Delphi should add code for array bounds checking.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+Defines a resource file. refer to <b>$Resource</b> for further information.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Versions 2 and 3</b></font>
+This is set off (-) by default, meaning that a bad array access will pass unnoticed, revealing itself in a difficult to debug part of the code.
+<br>&nbsp;<br>
+It is recommended to switch on <font color=#996600><b>$R</b></font> in order to detect array bound problems. This will result in the raising of an exception, allowing code testing to correctlt identify the point of failure.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<b>$R FileName</b> is equivalent to <b>$Resource FileName</b>.<br>
+<b>$R-</b> is equivalent to <b>$RangeChecks Off</b>.<br>
+<b>$R+</b> is equivalent to <b>$RangeChecks On</b>.<br>
+<br>
+It can and should only be set <b>once</b> in your code.<br>
+<br>
+The default value is <font color=#996600><b>$R</b></font>-.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$rangechecks.htm">$RangeChecks</a></b></td>
+<td width="8"></td>
+<td align="left">Determines whether Delphi checks array bounds</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$resource.htm">$Resource</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a resource file to be included in the application linking</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="array.htm">Array</a></b></td>
+<td width="8"></td>
+<td align="left">A data type holding indexable collections of data</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Trapping array bound problems</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;myArray : array[1..5] of string;<br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set range checking on</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$R</b></font>+}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Start array assignment from 0 - normally OK, but our</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// array starts at 1.</b></font><br>
+&nbsp;&nbsp;for i := 0 to 5 do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;myArray[i] := 'Element '+IntToStr(i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('myArray['+IntToStr(i)+'] = '+myArray[i]);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$r.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Delphi throws the ERangeError exception<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Ignoring array bounds problems</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myArray : array[1..5] of string;<br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set range checking off</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$R</b></font>-}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Start array assignment from 0 - normally OK, but our</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// array starts at 1.</b></font><br>
+&nbsp;&nbsp;for i := 0 to 5 do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;myArray[i] := 'Element '+IntToStr(i);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('myArray['+IntToStr(i)+'] = '+myArray[i]);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/$r&expandcode1=yes&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;myArray[0] = Element 0<br>&nbsp;&nbsp;
+myArray[1] = Element 1<br>&nbsp;&nbsp;
+myArray[2] = Element 2<br>&nbsp;&nbsp;
+myArray[3] = Element 3<br>&nbsp;&nbsp;
+myArray[4] = Element 4<br>&nbsp;&nbsp;
+myArray[5] = Element 5<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

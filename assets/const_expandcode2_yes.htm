@@ -1,0 +1,240 @@
+<!-- (0064)Const&ExpandCode2=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Const command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Const, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Const</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts the definition of fixed data values</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Const</b><br>&nbsp;
+&nbsp;&nbsp;Name1 = Expression1;<br>&nbsp;
+ {...}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Const</b><br>&nbsp;
+&nbsp;&nbsp;Name1 Type = Expression1;<br>&nbsp;
+ {...}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+Name (<b>Const</b> Const1 : type {;...});
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Const</b></font> keyword is used to start a section of constant definitions.
+<br>&nbsp;<br>
+The section is terminated by the next keyword in a program.
+<br>&nbsp;<br>
+Within the section, one or more constants may be defined. These can be a mixture of normal or typed constants:
+<br>&nbsp;<br>
+<font color=#FF0000><b>1.Normal constants</b></font>
+<br>&nbsp;<br>
+These give a name <b>Name1</b> to a fixed expression, <b>Expression1</b>. The expression must resolve into one of the following types:
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>Integer number<br>
+Floating point number<br>
+Character<br>
+String<br>
+Set<br>
+Enumerated value<br></font></font>
+<br>&nbsp;<br>
+<font color=#FF0000><b>2.Typed constants</b></font>
+<br>&nbsp;<br>
+These are very odd. They are constant only in the sense that their value persists all parts of a program. Yet it can be changed (as long as the compiler directive {WriteableConst} is set On).
+<br>&nbsp;<br>
+They are used, for example, when a routine needs to hold values that are preserved across calls.
+<br>&nbsp;<br>
+It is better to use Object Oriented principles to allow data to be preserved across accesses.
+<br>&nbsp;<br>
+<font color=#FF0000><b>3.Constant routine parameters</b></font>
+<br>&nbsp;<br>
+When passing data to a routine (function or procedure), you can prefix the parameter definition with <font color=#996600><b>Const</b></font> if the value is never updated. This marginally improves performance, clarifies routine operation, and prevents accidental updates of the value.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="out.htm">Out</a></b></td>
+<td width="8"></td>
+<td align="left">Identifies a routine parameter for output only</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="type.htm">Type</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a new category of variable or process</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="var.htm">Var</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of a section of data variables</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrating the different constant types</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> <font color=#C00000><b>Const</b></font></b><br>
+&nbsp;&nbsp;MAX_LINES = 3;<br>
+&nbsp;&nbsp;CRUDE_PI&nbsp;&nbsp;= 22/7;<br>
+&nbsp;&nbsp;HELLO&nbsp;&nbsp;&nbsp;&nbsp; = 'Hello World';<br>
+&nbsp;&nbsp;LETTERS&nbsp;&nbsp; = ['A'..'Z', 'a'..'z'];<br>
+&nbsp;&nbsp;DECISION&nbsp;&nbsp;= True;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display our crude value of Pi</b></font><br>
+&nbsp;&nbsp;WriteLn('Crude Pi = '+FloatToStr(CRUDE_PI));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Say hello to the WOrld</b></font><br>
+&nbsp;&nbsp;ShowMessage(HELLO);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display MAX_LINES of data</b></font><br>
+&nbsp;&nbsp;for i := 1 to MAX_LINES do<br>
+&nbsp;&nbsp;begin<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Do some checking - note that Char(i+64) = 'A'</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;if DECISION and (Char(i+63) in LETTERS)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;then ShowMessage(Char(i+63)+' is a letter')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else ShowMessage(Char(i+63)+' is not a letter');<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/const&expandcode1=yes&expandcode2=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Crude Pi = 3.14285714285714<br>&nbsp;&nbsp;
+Hello World<br>&nbsp;&nbsp;
+@ is not a letter<br>&nbsp;&nbsp;
+A is a letter<br>&nbsp;&nbsp;
+B is a letter<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Preserving a number value across calls to a routine</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;&nbsp;&nbsp;function GetNextNumber : Integer;<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;for i := 1 to 8 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Number = '+IntToStr(GetNextNumber));<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Get the next number from a given sequence</b></font><br><b>
+function TForm1.GetNextNumber: Integer;</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a range of numbers returnable by this routine</b></font><br>
+&nbsp;&nbsp;TNumbers = 0..5;<br><b>
+</b><br><b>
+<font color=#C00000><b>Const</b></font></b><br>&nbsp;&nbsp;<font color=#008000><b>// A typed constant is really a persistent variable :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// It's value is preserved across calls to this routine.</b></font><br>
+&nbsp;&nbsp;{$WriteableConst On}<br>&nbsp;&nbsp;nextNumber : TNumbers = 0;&nbsp;&nbsp;<font color=#008000><b>// Start at the beginning</b></font><br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Return the current value</b></font><br>
+&nbsp;&nbsp;result := nextNumber;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Increment to the next value</b></font><br>
+&nbsp;&nbsp;nextNumber := (nextNumber + 1) MOD 6;<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="const.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Number = 0<br>&nbsp;&nbsp;
+Number = 1<br>&nbsp;&nbsp;
+Number = 2<br>&nbsp;&nbsp;
+Number = 3<br>&nbsp;&nbsp;
+Number = 4<br>&nbsp;&nbsp;
+Number = 5<br>&nbsp;&nbsp;
+Number = 0<br>&nbsp;&nbsp;
+Number = 1<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

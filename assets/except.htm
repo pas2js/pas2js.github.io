@@ -1,0 +1,193 @@
+<!-- (0049)Except -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Except command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Except, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Except</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts the error trapping clause of a <b>Try</b> statement</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Try</b><br>&nbsp;
+&nbsp;&nbsp;Statement<br>&nbsp;
+ {Statement...}<br>&nbsp;
+<b>Except</b><br>&nbsp;
+&nbsp;&nbsp;Statement<br>&nbsp;
+ {Statement...}<br>&nbsp;
+<b>End</b>;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Try</b><br>&nbsp;
+&nbsp;&nbsp;Statement<br>&nbsp;
+ {Statement...}<br>&nbsp;
+<b>Except</b><br>&nbsp;
+&nbsp;&nbsp;<b>On</b> {Name :} Exception type <b>Do</b> Statement<br>&nbsp;
+ {<b>Else</b> Statement}<br>&nbsp;
+<b>End</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Except</b></font> keyword is used to mark the start of a block of statements that handle an exception in a <b>Try</b> clause. If the <font color=#996600><b>Except</b></font> block can handle the exception, then the program is not terminated.
+<br>&nbsp;<br>
+<font color=#996600><b>Except</b></font> has two different syntaxes:
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+In this version, if the <b>Try</b> clause generates an exception the <font color=#996600><b>Except</b></font> clause is executed. This is used to take alternative action when something unexpected goes wrong. The except clause cannot determine the error type however.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+<br>&nbsp;<br>
+This is similar to version 2, but specifies different actions for different exception types, such as <b>EInOutError</b>. An <b>Else</b> clause can be used as a catch all for unexpected exception types. The general exception type <b>Exception</b> can be used to catch all exception types.
+<br>&nbsp;<br>
+By assigning a <b>Name</b> to the exception, the message text of the exception (Name.Message) can be obtained for display or other uses.
+<br>&nbsp;<br>
+When an exception is raised in a version 2 setup, if the exception is not acted upon by On or Else statements, then a check is made to see if we are in a nested Try block. If so, the Except clause of this parent Try is processed. If no On or Else clause is found, the program terminates.
+<br>&nbsp;<br>
+The <b>Else</b> clause is not really necessary - it is better to use <b>On E:Exception Do</b>, the generic exception handling, since it still provides the error message (E.Message).
+<br>&nbsp;<br>
+<font color=#FF0000><b>Important</b></font> : you can determine the type of error that occured by using the generic exception handling - <b>On E:Exception Do</b>. E is a pointer to the exception object that is created by the exception condition. <b>E.ClassName</b> gives the exception type, such as <b>'EDivByZero'</b>, as shown in the final example code.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="finally.htm">Finally</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the unconditional code section of a <b>Try</b> statement</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="on.htm">On</a></b></td>
+<td width="8"></td>
+<td align="left">Defines exception handling in a <b>Try Except</b> clause</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="raise.htm">Raise</a></b></td>
+<td width="8"></td>
+<td align="left">Raise an exception</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="try.htm">Try</a></b></td>
+<td width="8"></td>
+<td align="left">Starts code that has error trapping</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Zero divide with a plain Except block</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;number, zero : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to divide an integer by zero - to raise an exception</b></font><br>
+&nbsp;&nbsp;Try<br>
+&nbsp;&nbsp;&nbsp;&nbsp;zero&nbsp;&nbsp; := 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number := 1 div zero;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('number / zero = '+IntToStr(number));<br>
+&nbsp;&nbsp;<font color=#C00000><b>Except</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Unknown error encountered');<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="except&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Unknown error encountered<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Divide by zero with an Except On clause</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;number, zero : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to divide an integer by zero - to raise an exception</b></font><br>
+&nbsp;&nbsp;Try<br>
+&nbsp;&nbsp;&nbsp;&nbsp;zero&nbsp;&nbsp; := 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number := 1 div zero;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('number / zero = '+IntToStr(number));<br>
+&nbsp;&nbsp;<font color=#C00000><b>Except</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;on E : Exception do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(E.ClassName+' error raised, with message : '+E.Message);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="except&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;EDivByZero error raised with message : Division by zero<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

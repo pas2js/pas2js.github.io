@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Enumerations in Pas2JS</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Enumerations in Pas2JS ex1</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TDay&nbsp;=&nbsp;(Mon=</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Tue,&nbsp;Wed,&nbsp;Thu,&nbsp;Fri,&nbsp;Sat,&nbsp;Sun);&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Defines&nbsp;enumeration&nbsp;range</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button12Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;today&nbsp;:&nbsp;TDay;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Defines&nbsp;enumeration&nbsp;variable</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;weekend&nbsp;:&nbsp;Boolean;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;today&nbsp;:=&nbsp;Wed;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Set&nbsp;today&nbsp;to&nbsp;be&nbsp;Wednesday</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;today&nbsp;&gt;&nbsp;Fri&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Ask&nbsp;if&nbsp;it&nbsp;is&nbsp;a&nbsp;weekend&nbsp;day</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;weekend&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">true</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;weekend&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">false</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'If&nbsp;today&nbsp;is&nbsp;Wed&nbsp;then&nbsp;weekend&nbsp;is:&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+&nbsp;weekend.ToString);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;today&nbsp;:=&nbsp;Mon&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Fri&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;day&nbsp;has&nbsp;each&nbsp;of&nbsp;the&nbsp;values&nbsp;Mon&nbsp;to&nbsp;Fri&nbsp;(&nbsp;1&nbsp;to&nbsp;5)&nbsp;in&nbsp;5&nbsp;iterations</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;of&nbsp;this&nbsp;loop,&nbsp;allowing&nbsp;you&nbsp;to&nbsp;whatever&nbsp;you&nbsp;want.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn&nbsp;(&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">ord</span><span class="f_CodeExample" style="color: #000000;">(today)&nbsp;);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">If&nbsp;today&nbsp;is&nbsp;Wed&nbsp;then&nbsp;weekend&nbsp;is:&nbsp;False&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">5&nbsp;iterations</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">JS&nbsp;output:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: solid 1px #000000;"><p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;today&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;weekend&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">false</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;today&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">3</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(today&gt;</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;weekend&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">true</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;weekend&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">false</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;WriteLn((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;If&nbsp;today&nbsp;is&nbsp;Wed&nbsp;then&nbsp;weekend&nbsp;is:&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+BoolToStr(weekend)));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">(today&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;today&lt;=</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;today++)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(today);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="background-color: #ffcc99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TDay&nbsp;=&nbsp;{&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Mon&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">2</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Tue&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">3</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Wed&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">4</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Thu&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Fri&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">6</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Sat&quot;</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #800000;">7</span><span class="f_CodeExample" style="color: #000000;">:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Sun&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;};</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">We&nbsp;can&nbsp;not&nbsp;have&nbsp;a&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">subrange&nbsp;of&nbsp;an&nbsp;enumeration</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;in&nbsp;Pas2JS,&nbsp;although&nbsp;a&nbsp;reduced&nbsp;range&nbsp;of&nbsp;values&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">can&nbsp;be&nbsp;accessed&nbsp;through&nbsp;loop&nbsp;for&nbsp;instance.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!-- (0070)ProcessPath&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : ProcessPath command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, ProcessPath, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>ProcessPath</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Split a drive/path/filename string into its constituent parts</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>FileCtrl</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>ProcessPath</b></font>
+
+(
+<b>const FullName </b> : string;<b> var Drive </b> : Char;<b> var Dir </b> : string;<b> var FileName </b> : string
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>ProcessPath</b></font> procedure splits a full file name <b>FullName</b> into its constituent <b>Drive, Dir</b> and <b>FileName</b> parts.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="extractfiledir.htm">ExtractFileDir</a></b></td>
+<td width="8"></td>
+<td align="left">Extracts the <b>dir</b> part of a full file name</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="extractfiledrive.htm">ExtractFileDrive</a></b></td>
+<td width="8"></td>
+<td align="left">Extracts the <b>drive</b> part of a full file name</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="extractfileext.htm">ExtractFileExt</a></b></td>
+<td width="8"></td>
+<td align="left">Extracts the <b>extension</b> part of a full file name</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="extractfilename.htm">ExtractFileName</a></b></td>
+<td width="8"></td>
+<td align="left">Extracts the <b>name</b> part of a full file name</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Ask the user for a file name, and show the constituent parts</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;FileCtrl, <font color=#008000>&nbsp;&nbsp;// Unit containing the ProcessPath command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;selectedFile&nbsp;&nbsp; : string;<br>
+&nbsp;&nbsp;drive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: char;<br>
+&nbsp;&nbsp;path, fileName : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Ask the user to select a file</b></font><br>
+&nbsp;&nbsp;if PromptForFileName(selectedFile)<br>
+&nbsp;&nbsp;then<br>
+&nbsp;&nbsp;begin<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Display this full file/path value</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Selected file = '+selectedFile);<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Split this full file/path value into its constituent parts</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>ProcessPath</b></font>(selectedFile, drive, path, fileName);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('drive = '+drive);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('path = '+path);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('fileName = '+fileName);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="processpath.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;{ The user selects C:\Files\data.txt and hits OK }<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Selected file = C:\Files\data.txt<br>&nbsp;&nbsp;
+drive = C<br>&nbsp;&nbsp;
+path = \Files<br>&nbsp;&nbsp;
+filename = data.txt<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

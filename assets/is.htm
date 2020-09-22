@@ -1,0 +1,172 @@
+<!-- (0045)Is -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Is command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Is, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Is</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Tests whether an object is a certain class or ascendant</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+Object reference <b>Is</b> Class reference
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Is</b></font> keyword is used to test to see whether an object belongs to a class, or parent of that class.
+<br>&nbsp;<br>
+For example, you may test to see whether a graphical component (normally called 'Sender') is a TButton, or TList or whatever.
+<br>&nbsp;<br>
+All objects belong to the TObject class, from which they are ultimately derived.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="as.htm">As</a></b></td>
+<td width="8"></td>
+<td align="left">Used for casting object references</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="class.htm">Class</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the declaration of a type of object class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="object.htm">Object</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a subroutine data type to refer to an object method</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tobject.htm">TObject</a></b></td>
+<td width="8"></td>
+<td align="left">The base class type that is ancestor to all other classes</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate use of <b>is</b> on a class hierarchy</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Forms, Dialogs, Classes, Controls, StdCtrls;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define new class types</b></font><br>
+&nbsp;&nbsp;TFruit = class<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string;<br>
+&nbsp;&nbsp;published<br>
+&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(name : string);<br>
+&nbsp;&nbsp;end;<br>&nbsp;&nbsp;<font color=#008000><b>// Define two descendant types</b></font><br>
+&nbsp;&nbsp;TApple = class(TFruit);<br>
+&nbsp;&nbsp;TPear&nbsp;&nbsp;= class(TFruit);<br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+{$R *.dfm} // Include form definitions</b><br><b>
+</b><br><font color=#008000><b>// Create a fruit object</b></font><br><b>
+constructor TFruit.Create(name: string);</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;self.name := name;<br><b>
+end;</b><br><b>
+</b><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;fruit&nbsp;&nbsp;: TFruit;<br>
+&nbsp;&nbsp;apple&nbsp;&nbsp;: TApple;<br>
+&nbsp;&nbsp;pear&nbsp;&nbsp; : TPear;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create 2 different fruit objects</b></font><br>
+&nbsp;&nbsp;apple&nbsp;&nbsp;:= TApple.Create('Pink Lady');<br>
+&nbsp;&nbsp;pear&nbsp;&nbsp; := TPear.Create('Comice');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// They are both TFruit or descendant types</b></font><br>
+&nbsp;&nbsp;if apple&nbsp;&nbsp;<font color=#C00000><b>Is</b></font> TFruit then ShowMessage(apple.name +' is a fruit');<br>
+&nbsp;&nbsp;if pear&nbsp;&nbsp; <font color=#C00000><b>Is</b></font> TFruit then ShowMessage(pear.name&nbsp;&nbsp;+' is a fruit');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Apple is also a TApple type</b></font><br>
+&nbsp;&nbsp;fruit := apple;<br>
+&nbsp;&nbsp;if fruit <font color=#C00000><b>Is</b></font> TApple then ShowMessage(apple.name&nbsp;&nbsp;+' is an apple');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// But apple is not a pear</b></font><br>&nbsp;&nbsp;if fruit <font color=#C00000><b>Is</b></font> TPear&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 'if apple is TPear' does not compile</b></font><br>
+&nbsp;&nbsp;then ShowMessage(apple.name+' is a pear')<br>
+&nbsp;&nbsp;else ShowMessage(apple.name+' is not a pear');<br><b>
+end;</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Pink lady is a fruit<br>&nbsp;&nbsp;
+Comice is a fruit<br>&nbsp;&nbsp;
+Pink lady is an apple<br>&nbsp;&nbsp;
+Pink lady is not a pear<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

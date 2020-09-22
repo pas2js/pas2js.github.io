@@ -1,0 +1,700 @@
+h6 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  /*	&:before {
+  		position: fixed;
+  		top: 0;
+  		bottom: 0;
+  		left: 50%;
+  		width: 2px;
+  		height: 100vh;
+  		background: rgba(black, .05);
+  		content: "";
+  	}*/
+}
+
+h6 {
+  font: bold 20vw Montserrat;
+  pointer-events: none;
+  cursor: default;
+  align: center;
+}
+
+.e {
+  display: inline-block;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.e:after {
+  position: absolute;
+  top: calc(80% -  2.5vw);
+  left: calc(80% - 2.5vw);
+  content: "";
+  width: 5vw;
+  height: 5vw;
+  background: currentColor;
+  border-radius: 50%;
+  -webkit-transform: scale(0) translateX(0);
+  transform: scale(0) translateX(0);
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.e:before {
+  display: block;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.e:nth-child(1) {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+
+.e:nth-child(1):before {
+  content: "S";
+}
+
+.e:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.e:nth-child(2):before {
+  content: "m";
+}
+
+.e:nth-child(3) {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+.e:nth-child(3):before {
+  content: "a";
+}
+
+.e:nth-child(4) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.e:nth-child(4):before {
+  content: "r";
+}
+
+.e:nth-child(5) {
+  -webkit-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.e:nth-child(5):before {
+  content: "t";
+}
+
+.e:nth-child(6) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.e:nth-child(6):before {
+  content: "";
+}
+
+.go .e {
+  -webkit-animation: float 1.2s ease-in-out infinite;
+  animation: float 1.2s ease-in-out infinite;
+}
+
+.go .e:before {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.go .e:after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.go .e:nth-child(4),
+.go span:nth-child(6) {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-duration: 0.075s;
+  transition-duration: 0.075s;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+  -webkit-animation: none;
+  animation: none;
+}
+
+.go .e:nth-child(1):after {
+  -webkit-transform: scale(1) translateX(60%);
+  transform: scale(1) translateX(60%);
+}
+
+.go .e:nth-child(2) {
+  -webkit-animation-delay: 0.09s;
+  animation-delay: 0.09s;
+}
+
+.go .e:nth-child(2):after {
+  -webkit-transform: scale(1) translateX(95%);
+  transform: scale(1) translateX(95%);
+}
+
+.go .e:nth-child(3) {
+  -webkit-animation-delay: 0.18s;
+  animation-delay: 0.18s;
+}
+
+.go .e:nth-child(3):after {
+  -webkit-transform: scale(1) translateX(140%);
+  transform: scale(1) translateX(140%);
+}
+
+.go .e:nth-child(5) {
+  -webkit-animation-delay: 0.27s;
+  animation-delay: 0.27s;
+}
+
+.go .e:nth-child(5):after {
+  -webkit-transform: scale(1) translateX(55%);
+  transform: scale(1) translateX(55%);
+}
+
+.e:nth-child(1),
+span:nth-child(4) {
+  color: #4285F4;
+}
+
+.e:nth-child(2),
+span:nth-child(6) {
+  color: #EA4335;
+}
+
+.e:nth-child(3) {
+  color: #FBBC05;
+}
+
+.e:nth-child(5) {
+  color: #34A853;
+}
+
+@-webkit-keyframes float {
+  from, to {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  25%, 75% {
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+  }
+
+  50% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+}
+
+@keyframes float {
+  from, to {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  25%, 75% {
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+  }
+
+  50% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+}
+
+//-------------------------------------------------------------------
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+/*
+[Table of Contents]
+
+1. RESET
+2. GENERAL
+3. HOME LAYOUT
+4. LEFT RIGHT PANEL
+5. TOOLBAR & NAVBAR
+6. MEDIA LIST
+7. BUTTONS
+8. GALLERY
+9. BLOG & SINGLE
+10. TABS
+11. COMMENTS
+12. CONTACT PAGE
+13. LOGIN SCREEN
+
+/*===============================================*/
+/* 1. RESET		 						         */
+/*===============================================*/
+
+
+/*===============================================*/
+/* 2. GENERAL		 						     */
+/*===============================================*/
+html,
+body {
+position: relative;
+height: 100%;
+width: 100%;
+overflow-x: hidden;
+}
+body {
+font-family: 'Open Sans', sans-serif;
+margin: 0;
+padding: 0;
+color: #232323;
+font-size: 14px;
+line-height: 1.4;
+width: 100%;
+-webkit-text-size-adjust: 100%;
+overflow: hidden;
+font-weight:400;
+}
+.clear{
+clear:both;
+display:block;
+}
+.clearleft{
+clear:both;
+float:left;
+display:block;
+}
+a {
+text-decoration: none;
+color: #2E6E7F;
+}
+p{
+padding:0px;
+margin:0px;
+line-height:20px;
+}
+blockquote{
+border-left: 5px #2E6E7F solid;
+padding:0 0 0 20px;
+margin:10px 0 20px 0;
+line-height:22px;
+font-weight:300;
+}
+blockquote cite{
+display:block;
+color:#2E6E7F;
+font-weight:700;
+font-size:11px;
+text-transform:uppercase;
+line-height:22px;
+}
+.page-content .img{
+max-width:100%;
+display:block;
+margin-top:20px;
+margin-bottom:20px;
+}
+.title{
+font-size:15px;
+font-weight:bold;
+color:#2E6E7F;
+margin-bottom:30px;
+}
+.videocontainer{
+max-width:100%;
+padding:0;
+display: block;
+margin:0;
+}
+/*===============================================*/
+/* 3. HOME LAYOUT		 						 */
+/*===============================================*/
+#home{
+//background-image:url(images/bg.jpg);
+//background-repeat:no-repeat;
+background-color:#FFFFFF;
+background-size:cover;
+background-position: center center;
+}
+
+#cover{
+//position:absolute;
+//left:0px;
+//right:0px;
+//top:0px;
+//bottom:0px;
+background-color:#2E6E7F;
+opacity:0.85;
+width: 100%;
+height: 100%;
+}
+#logo{
+width:156px;
+height:48px;
+position:absolute;
+top:50%;
+left:50%;
+margin-left:-78px;
+margin-top:-24px;
+}
+/*===============================================*/
+/* 4. LEFT RIGHT PANEL	 						 */
+/*===============================================*/
+.panel-left.panel{
+background:#1c1c1c;
+width:100px;
+text-align:center;
+}
+.panel-left.panel .content-block,
+.panel-right.panel .content-block{
+padding:0px;
+margin:0px;
+}
+.panel-content{
+margin:0px;
+padding:0px;
+}
+.panel-content li{
+list-style-type:none;
+}
+.panel-content .panel-link {
+font-size:13px;
+text-transform:uppercase;
+font-weight:700;
+}
+.panel-content .panel-link a{
+display:block;
+color:#efefef;
+padding:10px 20px 10px;
+border-bottom:1px solid #0d0d0d;
+}
+.panel-content .panel-link li:first-child a{
+padding-top:0px;
+}
+.panel-content .panel-link a img{
+display:block;
+width:32px;
+height:32px;
+margin:0px auto 5px auto;
+}
+/* Right Panel */
+.panel-right .panel-cover{
+height:60px;
+background-image:url(images/photos/5.jpg);
+background-size:cover;
+background-position:center top;
+text-align:center;
+color:#FFFFFF;
+padding-top:60px;
+font-weight:700;
+position:relative;
+}
+.panel-right .panel-cover span{
+display:block;
+font-size:12px;
+}
+.panel-right .badge{
+margin-left:10px;
+}
+.cover{
+position:absolute;
+left:0px;
+right:0px;
+top:0px;
+bottom:0px;
+background-color:#000;
+opacity:0.5;
+}
+.cover-text{
+position:relative;
+}
+/*===============================================*/
+/* 5. TOOLBAR & NAVBAR	 						 */
+/*===============================================*/
+/** Toolbar **/
+.toolbar{
+background-color:#2E6E7F;
+}
+.toolbar:before{
+background-color:transparent;
+}
+.toolbar img{
+max-width:30px;
+}
+/** Navbar **/
+.navbar{
+background-color:#2E6E7F;
+color:#FFFFFF;
+}
+.navbar:after{
+background-color:#2E6E7F;
+}
+.icon-home-white{
+background-image:url(images/icons/white/home.png);
+width:21px;
+height:21px;
+}
+/*===============================================*/
+/* 6. MEDIA LIST					             */
+/*===============================================*/
+.list-block {
+font-size:14px;
+margin: 18px 0px;
+}
+.list-block  .icon{
+width:29px;
+height:29px;
+}
+.list-block .item-text {
+font-size:12px;
+line-height:18px;
+min-height:45px;
+height:auto;
+}
+.icon-gallery{
+background-image:url(images/icons/black/gallery.png);
+}
+.icon-blog{
+background-image:url(images/icons/black/blog.png);
+}
+.icon-tabs{
+background-image:url(images/icons/black/list.png);
+}
+.icon-toggle{
+background-image:url(images/icons/black/file.png);
+}
+.icon-login{
+background-image:url(images/icons/black/login.png);
+}
+.icon-contact{
+background-image:url(images/icons/black/contact.png);
+}
+.icon-social{
+background-image:url(images/icons/black/heart.png);
+}
+.icon-user{
+background-image:url(images/icons/black/user.png);
+}
+.icon-facebook{
+background-image:url(images/icons/socials/facebook.png);
+}
+.icon-twitter{
+background-image:url(images/icons/socials/twitter.png);
+}
+.icon-googlep{
+background-image:url(images/icons/socials/google.png);
+}
+.icon-linkedin{
+background-image:url(images/icons/socials/linkedin.png);
+}
+.icon-pinterest{
+background-image:url(images/icons/socials/pinterest.png);
+}
+/*===============================================*/
+/* 7. BUTTONS					                 */
+/*===============================================*/
+.button.active-state {
+  background-color: red !important;
+}
+
+.button.button-fill.color-blue,
+.theme-blue .button.button-fill {
+background:#2E6E7F none repeat scroll 0% 0%;
+color:#FFFFFF;
+}
+/*===============================================*/
+/* 8. GALLERY					                 */
+/*===============================================*/
+.ul.photo_gallery_3{
+width: 100%;
+list-style: outside none none;
+padding: 0px;
+margin: 10px 0px 20px;
+float: left;
+clear: both;
+}
+ul.photo_gallery_3{
+margin:0px;
+padding:0px;
+}
+ul.photo_gallery_3 li{
+width: 31%;
+padding: 0px;
+float: left;
+margin: 1%;
+list-style:none;
+}
+ul.photo_gallery_3 li img{
+margin: 0px!important;
+max-width:100%;
+height:auto;
+}
+/*===============================================*/
+/* 9. BLOG & SINGLE					             */
+/*===============================================*/
+.post-card .card-header {
+display: block;
+padding: 10px;
+}
+.post-card .post-avatar {
+float: left;
+}
+.post-card .post-name {
+margin-left: 44px;
+font-size: 14px;
+font-weight: 500;
+}
+.post-card .post-date {
+margin-left: 44px;
+font-size: 13px;
+color: #8e8e93;
+}
+.post-card .card-footer {
+background: #fafafa;
+}
+
+.post-card .card-footer.no-border {
+border-top:1px solid #e1e1e1;
+}
+.post-card .card-footer a {
+color: #81848b;
+font-weight: 500;
+}
+.post-card .card-content img {
+display: block;
+}
+.post-card .card-content-inner {
+padding: 15px 10px;
+}
+.post-card .infos{
+margin-top:10px;
+}
+/*===============================================*/
+/* 10. TABS		                                 */
+/*===============================================*/
+.tabs .content-block{
+margin-top:0px;
+}
+.tabs .content-block {
+margin-top:10px;
+}
+.list-block .accordion-item .list-block,
+.list-block .accordion-item .content-block{
+margin-bottom:10px;
+}
+.accordion-item .item-title{
+color:#000000;
+}
+/*===============================================*/
+/* 11. COMMENTS		                             */
+/*===============================================*/
+.comments .card {
+margin-top:0px;
+}
+.comments .card-header{
+color:#2E6E7F;
+}
+.comments .list-block .item-title {
+color:#8E8E93;
+font-size:12px;
+}
+.comments .list-block .item-subtitle {
+font-size:12.5px;
+line-height:18px;
+word-wrap:break-word;
+white-space: normal!important;
+}
+.comment-form .list-block.inset{
+-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;
+}
+.comment-form .list-block,
+.comment-form .list-block ul{
+margin-top:0px;
+}
+.list-block input[type="time"],
+.list-block input[type="number"],
+.list-block input[type="search"],
+.list-block input[type="text"],
+.list-block input[type="password"],
+.list-block input[type="email"],
+.list-block input[type="tel"],
+.list-block input[type="url"],
+.list-block input[type="date"],
+.list-block input[type="datetime-local"],
+.list-block select, .list-block textarea {
+font-size:12.5px;
+}
+/*===============================================*/
+/* 12. CONTACT PAGE		                         */
+/*===============================================*/
+.contact .list-block.inset,
+.contact .card ,
+.about .card,
+.gallery .card {
+margin-left:0px!important;
+margin-right:0px!important;
+}
+.contact .card .card-header{
+color:#2E6E7F;
+}
+/*===============================================*/
+/* 13. LOGIN SCREEN                             */
+/*===============================================*/
+.login-screen,
+.popup-register{
+border:6px solid #EFEFF4;
+}
+.forget-password{
+font-size:10px;
+}
+.close-modal{
+position:absolute;
+right:20px;
+top:5px;
+font-size:18px;
+}
+.close-modal a{
+color:#000000;
+}

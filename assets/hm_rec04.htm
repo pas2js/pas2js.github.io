@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Using Records in Pas2JS</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Using Records in Pas2JS</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;A&nbsp;procedure&nbsp;that&nbsp;displays&nbsp;a&nbsp;variable&nbsp;number&nbsp;of&nbsp;strings</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ShowCustomer(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;fields:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;i&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Display&nbsp;all&nbsp;fields&nbsp;passed&nbsp;-&nbsp;note&nbsp;:&nbsp;arrays&nbsp;start&nbsp;at&nbsp;0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Length</span><span class="f_CodeExample" style="color: #000000;">(fields)-</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(fields[i]);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(sLineBreak);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;#13#10</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button11Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;John,&nbsp;Sarah&nbsp;:&nbsp;TCustomer1;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;:&nbsp;integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Set&nbsp;up&nbsp;the&nbsp;John's&nbsp;customer&nbsp;details</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;John.firstName&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'John'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;John.lastName&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Smith'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;John.address1&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'7&nbsp;Park&nbsp;Drive'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;John.address2&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Branston'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;John.address3&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Grimworth'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;John.city&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Banmore'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;John.postCode&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'BNM&nbsp;1AB'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Set&nbsp;up&nbsp;John's&nbsp;sister&nbsp;similarly&nbsp;-&nbsp;simply&nbsp;copying&nbsp;the&nbsp;whole&nbsp;record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Sarah&nbsp;:=&nbsp;John;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;And&nbsp;then&nbsp;changing&nbsp;the&nbsp;first&nbsp;name&nbsp;to&nbsp;suit</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Sarah.firstName&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Sarah'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Now&nbsp;show&nbsp;the&nbsp;details&nbsp;of&nbsp;both&nbsp;customers</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">ShowCustomer</span><span class="f_CodeExample" style="color: #000000;">([John.firstName,&nbsp;John.lastName,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.address1,&nbsp;John.address2,&nbsp;John.address3,John.city,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.postCode]);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">ShowCustomer</span><span class="f_CodeExample" style="color: #000000;">([Sarah.firstName,&nbsp;Sarah.lastName,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sarah.address1,&nbsp;Sarah.address2,&nbsp;Sarah.address3,Sarah.city,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sarah.postCode]);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">John</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Smith</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">7&nbsp;Park&nbsp;Drive</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Branston</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Grimworth</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Banmore</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">BNM&nbsp;1AB</span></p>
+<p style="white-space: nowrap;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Sarah</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Smith</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">7&nbsp;Park&nbsp;Drive</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Branston</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Grimworth</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">Banmore</span></p>
+<p style="white-space: nowrap;"><span class="f_CodeExample" style="color: #000000;">BNM&nbsp;1AB</span></p>
+<p style="white-space: nowrap;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">-------------------</span></p>
+<p style="white-space: nowrap;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">JS&nbsp;output:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">ShowCustomer</span><span class="f_CodeExample" style="color: #000000;">(fields)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;$temp50;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">(i&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,$temp50&nbsp;=&nbsp;fields.length;i&lt;$temp50;i++)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn($DIdxR(fields,i,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;\r\n&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="background-color: #ffcc99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">W3Button11Click</span><span class="f_CodeExample" style="color: #000000;">(Self,&nbsp;Sender$7)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;John&nbsp;=&nbsp;{address1:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,address2:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,address3:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,city:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,firstName:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,lastName:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,postCode:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">};</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Sarah&nbsp;=&nbsp;{address1:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,address2:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,address3:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,city:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,firstName:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,lastName:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,postCode:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">};</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i$11&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.firstName&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;John&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.lastName&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Smith&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.address1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;7&nbsp;Park&nbsp;Drive&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.address2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Branston&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.address3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Grimworth&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.city&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Banmore&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John.postCode&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;BNM&nbsp;1AB&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy$TCustomer1(John,Sarah);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sarah.firstName&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Sarah&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowCustomer(([John.firstName,John.lastName,John.address1,John.address2,John.address3,John.city,John.postCode].slice()));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowCustomer(([Sarah.firstName,Sarah.lastName,Sarah.address1,Sarah.address2,Sarah.address3,Sarah.city,Sarah.postCode].slice()));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

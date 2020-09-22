@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Arithmetic operators</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js010.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js012.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+Using some basic Arithmetic operators and <b>StrToIntDef, div, mod</b>.
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+{ filename: unit1.pas }
+var
+  n, i: Integer;
+begin
+  n := 10;
+  n := n * 10;
+
+for i := 1 to n do
+begin
+   if (i mod 3) = 0 then Continue;
+   if (i mod 5) = 1 then Continue;
+   if (i mod 7) = 0 then Continue;
+   if i > n div 2 then Break;
+   Writeln(IntToStr(i));
+end;
+// it will output:
+{2,4,5,8,10,13,17,19,20,22,23,25,29,32,34,37,38,40,43,44,47,50}
+
+n := 142;
+Writeln('142 div 10 = ' + IntToStr(142 div 10)); // 14
+Writeln('142 mod 10 = ' + IntToStr(142 mod 10)); // 2
+
+i := 10;
+Writeln(IntToStr(n + i));  // 100 + 10 = 110
+Writeln(IntToStr(n - i));  // 100 - 10 = 90
+Writeln(IntToStr(n + n * i - i)); // (100 + 100 * 10 - 10) = 1090
+Writeln(IntToStr((n + n) * (i - i))); // (100+100) x (10-10) = 0
+Writeln(IntToStr((n + i) * (n - i))); // (100+10) x (100-10) = 9900
+Writeln(IntToStr(n + n div i)); // 100 + (100 / 10) = 110
+Writeln(IntToStr(n div i + n)); // (100 / 10) + 100 = 110
+
+{ filename: unit2.pas }
+var a := StrToIntDef(w3_Prompt('Enter 1st number','0'),0);
+var b := StrToIntDef(w3_Prompt('Enter 2nd number','0'),0);
+
+WriteLn(Format('%d + %d = %d', [a, b, a + b]));
+WriteLn(Format('%d - %d = %d', [a, b, a - b]));
+WriteLn(Format('%d * %d = %d', [a, b, a * b]));
+WriteLn(Format('%d / %d = %d', [a, b, a div b]));
+WriteLn(Format('%d mod %d = %d', [a, b, a mod b]));
+WriteLn(Format('%d ^ %d = %d', [a, b, Trunc(Power(a, b))]));
+
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+  var n = 0;
+  var i = 0;
+  n = 10;
+  n*=10;
+  var $temp1;
+  for(i=1,$temp1=n;i<=$temp1;i++) {
+	 if (!(i%3)) {
+		continue;
+	 }
+	 if (i%5==1) {
+		continue;
+	 }
+	 if (!(i%7)) {
+		continue;
+	 }
+	 if (i>($Div(n,2))) {
+		break;
+	 }
+	 WriteLn(i.toString());
+  }
+  n = 142;
+  WriteLn("142 div 10 = 14");
+  WriteLn("142 mod 10 = 2");
+  i = 10;
+  WriteLn((n+i).toString());
+  WriteLn((n-i).toString());
+  WriteLn((n+n*i-i).toString());
+  WriteLn(((n+n)*(i-i)).toString());
+  WriteLn(((n+i)*(n-i)).toString());
+  WriteLn((n+($Div(n,i))).toString());
+  WriteLn((($Div(n,i))+n).toString());
+  
+{ Reference to unit2.pas}
+  
+function StrToIntDef(v,d) { var r=parseInt(v,10); return isNaN(r)?d:r }
+function $Div(a,b) { var r=a/b; return (r>=0)?Math.floor(r):Math.ceil(r) }
+  
+  var a = 0, b = 0;
+  a = StrToIntDef(w3_Prompt("Enter 1st number","0"),0);
+  b = StrToIntDef(w3_Prompt("Enter 2nd number","0"),0);
+  WriteLn((a.toString()+" + "+b.toString()+" = "+(a+b).toString()));
+  WriteLn((a.toString()+" - "+b.toString()+" = "+(a-b).toString()));
+  WriteLn((a.toString()+" * "+b.toString()+" = "+(a*b).toString()));
+  WriteLn((a.toString()+" \/ "+b.toString()+" = "+($Div(a,b)).toString()));
+  WriteLn((a.toString()+" mod "+b.toString()+" = "+(a%b).toString()));
+  WriteLn((a.toString()+" ^ "+b.toString()+" = "+Trunc(Math.pow(a,b)).toString()));
+
+
+</code></pre></div>
+</div>
+</body>
+</html>

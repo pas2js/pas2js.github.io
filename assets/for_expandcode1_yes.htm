@@ -1,0 +1,230 @@
+<!-- (0062)For&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : For command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, For, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>For</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts a loop that executes a finite number of times</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>for</b> Variable := Integer Expression <b>to|downto</b> Integer Expression <b>do</b> Statement;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>for</b> Variable :=&nbsp;&nbsp;&nbsp;&nbsp;Char Expression <b>to|downto</b>&nbsp;&nbsp;&nbsp;&nbsp;Char Expression <b>do</b> Statement;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>for</b> Variable :=&nbsp;&nbsp;&nbsp;&nbsp;Enum Expression <b>to|downto</b>&nbsp;&nbsp;&nbsp;&nbsp;Enum Expression <b>do</b> Statement;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>For</b></font> keyword starts a control loop, which is executed a finite number of times. 
+<br>&nbsp;<br>
+The <b>Variable</b> is set to the result of the 1st <b>Expression</b>. If the result is less than or equal to the result of the 2nd <b>Expression</b> (when <b>to</b> is specified), then the <b>Statement</b> is executed. <b>Variable</b> is then incremented by 1 and the process is repeated until the variable value exceeds the 2nd expression value.
+<br>&nbsp;<br>
+For <b>downto</b>, the variable value is checked as being greater than or equal to the 2nd expression, and its value is decremented at the loop end.
+<br>&nbsp;<br>
+The <b>Expressions</b> may result in any Ordinal type - Integers, Characters or Enumerations.
+<br>&nbsp;<br>
+The <b>Statement</b> maybe a single line, or a set of statements with a <b>begin/end</b> block.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The loop <b>Variable</b> value is not guaranteed by Delphi at loop end. So do not use it!<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="begin.htm">Begin</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that starts a statement block</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="do.htm">Do</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the start of some controlled action</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="downto.htm">DownTo</a></b></td>
+<td width="8"></td>
+<td align="left">Prefixes an decremental <b>for</b> loop target value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="end.htm">End</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that terminates statement blocks</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="repeat.htm">Repeat</a></b></td>
+<td width="8"></td>
+<td align="left">Repeat statements until a ternmination condition is met</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="to.htm">To</a></b></td>
+<td width="8"></td>
+<td align="left">Prefixes an incremental <b>for</b> loop target value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="until.htm">Until</a></b></td>
+<td width="8"></td>
+<td align="left">Ends a <b>Repeat</b> control loop</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="while.htm">While</a></b></td>
+<td width="8"></td>
+<td align="left">Repeat statements whilst a continuation condition is met</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Integer for loop</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Loop 5 times</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>For</b></font> i := 1 to (10 div 2) do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('i = '+IntToStr(i));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="for.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;i = 1<br>&nbsp;&nbsp;
+i = 2<br>&nbsp;&nbsp;
+i = 3<br>&nbsp;&nbsp;
+i = 4<br>&nbsp;&nbsp;
+i = 5<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Character for loop</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;c : char;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Loop 5 times - downwards</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>For</b></font> c := 'E' downto 'A' do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('c = '+c);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/for&expandcode1=yes&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;c = E<br>&nbsp;&nbsp;
+c = D<br>&nbsp;&nbsp;
+c = C<br>&nbsp;&nbsp;
+c = B<br>&nbsp;&nbsp;
+c = A<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Enumeration for loop</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;suit : (Hearts, Clubs, Diamonds, Spades);<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Loop 3 times</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>For</b></font> suit := Hearts to Diamonds do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Suit = '+IntToStr(Ord(suit)));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/for&expandcode1=yes&expandcode3=yes.htm#Ex3"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Suit = 0<br>&nbsp;&nbsp;
+Suit = 1<br>&nbsp;&nbsp;
+Suit = 2<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

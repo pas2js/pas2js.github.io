@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="Int,Fraction,Floor,Ceiling,Round,Truncate" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Rounding functions (Float)</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Int, Fraction, Floor, Ceiling, Round, Truncate</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button22Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;vr&nbsp;:&nbsp;float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Round(12.75)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(Round(</span><span class="f_CodeExample" style="color: #0000ff;">12</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">75</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Trunc(12.75)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(Trunc(</span><span class="f_CodeExample" style="color: #0000ff;">12</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">75</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;&nbsp;Int(12.75)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Int(</span><span class="f_CodeExample" style="color: #0000ff;">12</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">75</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;Frac(12.75)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Frac(</span><span class="f_CodeExample" style="color: #0000ff;">12</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">75</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;vr&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">12</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">85</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;Fraction(12.85)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(vr.Fraction()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;Floor(12.75)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Floor(</span><span class="f_CodeExample" style="color: #0000ff;">12</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">75</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;Ceiling(12.85)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(vr.Ceiling()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;Round(12.75)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Round(</span><span class="f_CodeExample" style="color: #0000ff;">12</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">75</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;Truncate(12.85)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(vr.Truncate()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Round(12.75)&nbsp;=&nbsp;13</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Trunc(12.75)&nbsp;=&nbsp;12</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Int(12.75)&nbsp;=&nbsp;12</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Frac(12.75)&nbsp;=&nbsp;0.75</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Fraction(12.85)&nbsp;=&nbsp;0.8499999999999996</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Floor(12.75)&nbsp;=&nbsp;12</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Ceiling(12.85)&nbsp;=&nbsp;13</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Round(12.75)&nbsp;=&nbsp;13</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Truncate(12.85)&nbsp;=&nbsp;12&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span class="f_BodyText"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">JS output</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button22Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$20)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;vr&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Round(12.75)&nbsp;=&nbsp;13&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Trunc(12.75)&nbsp;=&nbsp;12&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;&nbsp;Int(12.75)&nbsp;=&nbsp;12&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;Frac(12.75)&nbsp;=&nbsp;0.75&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vr&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">12</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">85</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;Fraction(12.85)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(Frac(vr))));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;Floor(12.75)&nbsp;=&nbsp;12&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;Ceiling(12.85)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(Math.ceil(vr))));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;Round(12.75)&nbsp;=&nbsp;13&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;Truncate(12.85)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(Trunc(vr))));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_BodyText" style="text-indent: -18px; margin: 0px 0px 10px 18px;"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText" style="text-indent: -18px; margin: 0px 0px 10px 18px;"><span class="f_BodyText">&nbsp;</span></p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+}
+</script>
+</body>
+</html>

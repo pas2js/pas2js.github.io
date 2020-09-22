@@ -1,0 +1,141 @@
+<!-- (0068)FindClose&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : FindClose command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, FindClose, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>FindClose</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Closes a successful <b>FindFirst</b> file search</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>FindClose</b></font>
+
+(
+<b>var SearchResults </b> : TSearchRec
+)
+ : Integer;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>FindClose</b></font> function closes a successful <b>FindFirst</b> (and <b>FindNext</b>) file search. It frees up the resources used by the search in <b>SearchResults</b>.
+<br>&nbsp;<br>
+A <font color=#996600><b>FindClose</b></font> call is not necessary if <b>FindFirst</b> finds nothing, but must be called if it does, even if a subsequent <b>FindNext</b> call fails.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="filesearch.htm">FileSearch</a></b></td>
+<td width="8"></td>
+<td align="left">Search for a file in one or more directories</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="findfirst.htm">FindFirst</a></b></td>
+<td width="8"></td>
+<td align="left">Finds all files matching a file mask and attributes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="findnext.htm">FindNext</a></b></td>
+<td width="8"></td>
+<td align="left">Find the next file after a successful <b>FindFirst</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tsearchrec.htm">TSearchRec</a></b></td>
+<td width="8"></td>
+<td align="left">Record used to hold data for <b>FindFirst</b> and <b>FindNext</b></td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Show when to call <b>FindClose</b></b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the FindClose command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;searchResult : TSearchRec;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to find regular files matching Unit1.d* in the current dir</b></font><br>
+&nbsp;&nbsp;if FindFirst('Unit1.d*', faAnyFile, searchResult) = 0 then<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;repeat<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('File name = '+searchResult.Name);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('File size = '+IntToStr(searchResult.Size));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;until FindNext(searchResult) <> 0;<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Must free up resources used by these successful finds</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>FindClose</b></font>(searchResult);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="findclose.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;File name = Unit1.dcu<br>&nbsp;&nbsp;
+File size = 4382<br>&nbsp;&nbsp;
+File name = Uni1.dfm<br>&nbsp;&nbsp;
+File size = 524<br>&nbsp;&nbsp;
+File name = Uni1.ddp<br>&nbsp;&nbsp;
+File size = 51<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,250 @@
+<!-- (0065)String&ExpandCode2=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : String command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, String, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>String</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">A data type that holds a string of characters</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>String</b>;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>String</b>[FixedSize constant];
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>String</b></font> data type is used to hold sequences of characters, like sentences.
+<br>&nbsp;<br>
+<font color=#996600><b>String</b></font> is by default, actually treated as a <b>AnsiString</b>. It can be treated as a <b>ShortString</b> if the <b>$LongStrings</b> compiler directive is set <b>Off</b> (the default is <b>On</b>).
+<br>&nbsp;<br>
+An <b>AnsiChar</b> can hold any number of characters, restricted only by memory.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font> however, forces the string to be a <b>ShortString</b> by defining a <b>FixedSize</b> (up to 255 characters) of the string. This is particularly important when creating many strings, and especially so when storing strings in records (as in example 2).
+<br>&nbsp;<br>
+Strings can be assigned from other strings, from functions that return a string, and with concatenations as in the sample code.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Strings are indexed with 1 for the first character (arrays start with 0 for the first element).<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$longstrings.htm">$LongStrings</a></b></td>
+<td width="8"></td>
+<td align="left">Treat <b>string</b> types as <b>AnsiString</b> or <b>ShortString</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansicomparestr.htm">AnsiCompareStr</a></b></td>
+<td width="8"></td>
+<td align="left">Compare two strings for equality</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansilowercase.htm">AnsiLowerCase</a></b></td>
+<td width="8"></td>
+<td align="left">Change upper case characters in a string to lower case</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansipos.htm">AnsiPos</a></b></td>
+<td width="8"></td>
+<td align="left">Find the position of one string in another</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansistring.htm">AnsiString</a></b></td>
+<td width="8"></td>
+<td align="left">A data type that holds a string of AnsiChars</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansiuppercase.htm">AnsiUpperCase</a></b></td>
+<td width="8"></td>
+<td align="left">Change lower case characters in a string to upper case</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="concat.htm">Concat</a></b></td>
+<td width="8"></td>
+<td align="left">Concatenates one or more strings into one string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="copy.htm">Copy</a></b></td>
+<td width="8"></td>
+<td align="left">Create a copy of part of  a string or an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="delete">Delete</a></b></td>
+<td width="8"></td>
+<td align="left">Delete a section of characters from a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="length.htm">Length</a></b></td>
+<td width="8"></td>
+<td align="left">Return the number of elements in an array or string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="move.htm">Move</a></b></td>
+<td width="8"></td>
+<td align="left">Copy bytes of data from a source to a destination</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="pstring.htm">PString</a></b></td>
+<td width="8"></td>
+<td align="left">Pointer to a String value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setlength.htm">SetLength</a></b></td>
+<td width="8"></td>
+<td align="left">Changes the size of a string, or the size(s) of an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shortstring.htm">ShortString</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a string of up to 255 characters</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="widestring.htm">WideString</a></b></td>
+<td width="8"></td>
+<td align="left">A data type that holds a string of WideChars</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Assigning to a string and then adding a bit more</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myString : <font color=#C00000><b>String</b></font>;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Assign a famous sentence to this string</b></font><br>
+&nbsp;&nbsp;myString := 'Hello World';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Add to this string</b></font><br>
+&nbsp;&nbsp;myString := myString + ', how is everyone?';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the final myString value</b></font><br>
+&nbsp;&nbsp;WriteLn('myString = '+myString);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/string&expandcode1=yes&expandcode2=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Hello World, how is everyone?<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Using fixed length strings in a <b>record</b></b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;<font color=#008000>// The System unit does not need to be defined</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare a customer record</b></font><br>
+&nbsp;&nbsp;TCustomer = Record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;firstName : <font color=#C00000><b>String</b></font>[15];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lastName&nbsp;&nbsp;: <font color=#C00000><b>String</b></font>[30];<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;customer : TCustomer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the John's customer details</b></font><br>
+&nbsp;&nbsp;with customer do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;firstName := 'John';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lastName&nbsp;&nbsp;:= 'Smith';<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now show the details of our customer</b></font><br>
+&nbsp;&nbsp;WriteLn('Customer name = '+customer.firstName+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' '+customer.lastName);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="string.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Customer name = John Smith<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

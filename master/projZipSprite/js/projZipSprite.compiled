@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="D:\fpc2js\pas2js-windows-1.5.1\bin\pas2js.exe" Date="1325224588"/>
+  <Params Value=" -Tbrowser -Pecmascript5 -MObjFPC -Sc -O1 -l -vewnhibq -FiD:\git\pas2js\pas2js.github.io\master\projZipSprite\js -FuD:\git\pas2js\pas2js.github.io\master\projZipSprite\ -FUD:\git\pas2js\pas2js.github.io\master\projZipSprite\js\ -FED:\git\pas2js\pas2js.github.io\master\projZipSprite\ -oD:\git\pas2js\pas2js.github.io\master\projZipSprite\project1.js -Jeutf-8 -Jirtl.js -Jc -Jminclude -O1 projZipSprite.lpr"/>
+</CONFIG>

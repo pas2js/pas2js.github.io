@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Const Array</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js106.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js108.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Const Array
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+{ main.pas }
+Begin
+// -----> CASE I <-------
+const a : array [1..4] of Integer = [11, 22, 33, 44];
+var i : Integer;
+
+WriteLn(a[1]);
+WriteLn(a[2]);
+WriteLn(a[3]);
+WriteLn(a[4]);
+
+for i:=Low(a) to High(a) do
+   WriteLn(a[i]);
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+11 22 33 44
+
+11
+22
+33
+44
+}
+
+// -----> CASE II <-------
+const ac : array [1..4] of Integer = [11, 22, 33, 44];
+var aa := ac;
+
+WriteLn(aa[1]);
+WriteLn(aa[2]);
+WriteLn(aa[3]);
+WriteLn(aa[4]);
+
+for i:=Low(aa) to High(aa) do
+   WriteLn(aa[i]);
+
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  11 22 33 44
+  11
+  22
+  33
+  44
+
+}
+
+// -----> CASE III <-------
+type TEnum = (en1, en2, en3);
+
+const ace : array [TEnum] of String = ['one', 'two', 'three'];
+const ac2 = ace;
+
+var j : TEnum;
+
+for j in TEnum do
+   WriteLn(ace[j]);
+
+for j in TEnum do
+   WriteLn(ac2[j]);
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  one
+  two
+  three
+  one
+  two
+  three
+
+}
+
+// -----> CASE VI <-------
+type TEnum2 = (en1, en2, en3);
+type TEnumArray = array [TEnum2] of string;
+
+const acb : TEnumArray = ('one', 'two', 'three');
+const ac21 : TEnumArray = acb;
+
+var k : TEnum2;
+
+for k in TEnum2 do
+   WriteLn(acb[k]);
+
+for k in TEnum2 do
+   WriteLn(ac21[k]);
+
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  one
+  two
+  three
+  one
+  two
+  three
+}
+
+// -----> CASE V <-------
+const
+  X: array [0..1, 0..2] of Integer = [[1, 2, 3], [4, 5, 6]];
+
+WriteLn(X[0,0]);
+
+for var w := Low(X) to High(X) do
+   for var z := Low(X[w]) to High(X[w]) do
+      WriteLn(IntToStr(w)+', '+IntToStr(z)+' : '+IntToStr(X[w, z]));
+
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  1
+  0, 0 : 1
+  0, 1 : 2
+  0, 2 : 3
+  1, 0 : 4
+  1, 1 : 5
+  1, 2 : 6
+}
+
+// -----> CASE VI <-------
+type
+   TDayTable = array[1..12] of Integer;
+const
+  { True=Leapyear }
+   cMonthDays: array [boolean] of TDayTable =
+     ((31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31),
+      (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31));
+
+for var m := 1 to 12 do
+   WriteLn(cMonthDays[False, m].ToString+' vs '+cMonthDays[True][m].ToString);
+
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  31 vs 31
+  28 vs 29
+  31 vs 31
+  30 vs 30
+  31 vs 31
+  30 vs 30
+  31 vs 31
+  31 vs 31
+  30 vs 30
+  31 vs 31
+  30 vs 30
+  31 vs 31
+}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+      var i = 0;
+      var aa = [0,0,0,0],
+         j = 0;
+      var k = 0;
+      var w = 0;
+      var z = 0;
+      var m = 0;
+      /// TEnum2 enumeration
+      ///  [line: 139, column: 6, file: uMain]
+      var TEnum2 = [ "en1", "en2", "en3" ];
+      /// TEnum enumeration
+      ///  [line: 116, column: 6, file: uMain]
+      var TEnum = [ "en1", "en2", "en3" ];
+      var X = [[1,2,3],[4,5,6]],
+          cMonthDays = [[31,28,31,30,31,30,31,31,30,31,30,31],[31,29,31,30,31,30,31,31,30,31,30,31]],
+          ace = ["one","two","three"],
+          acb = ["one","two","three"],
+          ac21 = ["one","two","three"],
+          ac2 = ["one","two","three"],
+          ac = [11,22,33,44],
+          a = [11,22,33,44];
+      WriteLn(11);
+      WriteLn(22);
+      WriteLn(33);
+      WriteLn(44);
+      for(i=1;i<=4;i++) {
+         WriteLn(a[(i)-1]);
+      }
+      aa = ac;
+      WriteLn(aa[(1)-1]);
+      WriteLn(aa[(2)-1]);
+      WriteLn(aa[(3)-1]);
+      WriteLn(aa[(4)-1]);
+      for(i=1;i<=4;i++) {
+         WriteLn(aa[(i)-1]);
+      }
+      for(j=0;j<=2;j++) {
+         WriteLn(ace[j]);
+      }
+      for(j=0;j<=2;j++) {
+         WriteLn(ac2[j]);
+      }
+      for(k=0;k<=2;k++) {
+         WriteLn(acb[k]);
+      }
+      for(k=0;k<=2;k++) {
+         WriteLn(ac21[k]);
+      }
+      WriteLn(1);
+      for(w=0;w<=1;w++) {
+         for(z=0;z<=2;z++) {
+            WriteLn((w.toString()+", "+z.toString()+" : "+(X[w][z]).toString()));
+         }
+      }
+      for(m=1;m<=12;m++) {
+         WriteLn(((cMonthDays[false?1:0][(m)-1]).toString()+" vs "+(cMonthDays[true?1:0][(m)-1]).toString()));
+      }
+</code></pre></div>
+</div>
+</body>
+</html>

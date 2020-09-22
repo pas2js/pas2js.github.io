@@ -1,0 +1,378 @@
+/* Text Styles */
+hr { color: #000000}
+body, table /* Normal */
+{
+ font-size: 15px;
+ font-family: 'Arial';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.f_BodyText /* Body Text */
+{
+}
+span.f_BodyTextHowTo /* Body Text HowTo */
+{
+}
+span.f_Callouts /* Callouts */
+{
+ font-size: 13px;
+ font-family: 'Verdana';
+ letter-spacing: -1px;
+}
+span.f_CalloutsBulleted /* Callouts Bulleted */
+{
+ font-size: 13px;
+ font-family: 'Verdana';
+ letter-spacing: -1px;
+}
+span.f_CalloutsHeader /* Callouts Header */
+{
+ font-size: 13px;
+ font-family: 'Verdana';
+ font-weight: bold;
+ letter-spacing: -1px;
+}
+span.f_CodeExample /* Code Example */
+{
+ font-size: 13px;
+ font-family: 'Courier New';
+}
+span.f_Comment /* Comment */
+{
+}
+span.f_HeadingHowToToggle_atoc_ /* Heading HowTo Toggle_atoc_ */
+{
+ font-size: 17px;
+ font-family: 'Verdana';
+ letter-spacing: -1px;
+}
+span.f_HeadingHowTo_atoc_ /* Heading HowTo_atoc_ */
+{
+ font-size: 17px;
+ font-family: 'Verdana';
+ letter-spacing: -1px;
+}
+span.f_HeadingToggleLarger_atocs_ /* Heading Toggle Larger_atocs_ */
+{
+ font-family: 'Verdana';
+ font-weight: bold;
+}
+span.f_HeadingToggle_atocs_ /* Heading Toggle_atocs_ */
+{
+ font-size: 13px;
+ font-family: 'Verdana';
+ font-weight: bold;
+}
+span.f_Heading1 /* Heading1 */
+{
+ font-size: 19px;
+ font-family: 'Tahoma';
+}
+span.f_Heading2Toggle_atoc_ /* Heading2 Toggle_atoc_ */
+{
+ font-size: 19px;
+ color: #000080;
+}
+span.f_Heading2_atoc_ /* Heading2_atoc_ */
+{
+ font-size: 19px;
+ color: #000080;
+}
+span.f_Heading3 /* Heading3 */
+{
+ font-size: 16px;
+ font-weight: bold;
+ color: #000080;
+}
+span.f_Heading3Underline_atocs_ /* Heading3 Underline_atocs_ */
+{
+ font-size: 16px;
+ font-weight: bold;
+ color: #000080;
+}
+span.f_Heading3_atoc_ /* Heading3_atoc_ */
+{
+ font-size: 16px;
+ font-weight: bold;
+ color: #000080;
+}
+span.f_Heading3_atocs_ /* Heading3_atocs_ */
+{
+ font-size: 16px;
+ font-weight: bold;
+ color: #000080;
+}
+span.f_HowToBulleted /* HowTo Bulleted */
+{
+}
+span.f_HowToNumbered /* HowTo Numbered */
+{
+}
+span.f_ImageCaption /* Image Caption */
+{
+ font-size: 12px;
+ font-family: 'Verdana';
+ font-style: italic;
+}
+span.f_InThisTopicHeading /* InThisTopic Heading */
+{
+ font-size: 13px;
+ font-family: 'Verdana';
+ font-weight: bold;
+ color: #ffffff;
+ letter-spacing: -1px;
+ text-transform: uppercase;
+}
+span.f_InThisTopicLinkList /* InThisTopic LinkList */
+{
+ font-family: 'Verdana';
+ letter-spacing: -1px;
+}
+span.f_Note /* Note */
+{
+}
+span.f_Notes /* Notes */
+{
+}
+span.f_NotesBox /* NotesBox */
+{
+}
+span.f_PopupBox /* Popup Box */
+{
+ font-size: 12px;
+}
+span.f_SeeAlso /* SeeAlso */
+{
+ font-size: 16px;
+ font-weight: bold;
+}
+span.f_T_Code /* T_Code */
+{
+ font-family: 'Courier New';
+ letter-spacing: -1px;
+}
+span.f_T_Emphasis /* T_Emphasis */
+{
+ font-size: 13px;
+ font-weight: bold;
+ color: #000000;
+}
+span.f_T_Entry /* T_Entry */
+{
+ font-family: 'Courier New';
+ font-weight: bold;
+ letter-spacing: -1px;
+}
+span.f_T_Entry10pt /* T_Entry 10pt */
+{
+ font-size: 13px;
+ font-family: 'Courier New';
+ font-style: italic;
+ font-weight: bold;
+ letter-spacing: -1px;
+}
+span.f_T_Menu /* T_Menu */
+{
+ font-size: 13px;
+ font-family: 'Verdana';
+ font-weight: bold;
+ color: #000000;
+}
+span.f_T_Menu10p /* T_Menu 10p */
+{
+ font-size: 13px;
+ font-family: 'Verdana';
+ font-weight: bold;
+ color: #000000;
+}
+span.f_T_ToggleLink /* T_ToggleLink */
+{
+ font-size: 13px;
+ font-family: 'Tahoma';
+ font-weight: bold;
+}
+span.f_T_ToggleLinkLarge /* T_ToggleLinkLarge */
+{
+ font-family: 'Tahoma';
+ font-weight: bold;
+}
+span.f_T_Toggletext /* T_Toggletext */
+{
+ font-size: 13px;
+ font-family: 'Times New Roman';
+ font-style: italic;
+ background-color: #ffffbb;
+}
+span.f_TipBody /* Tip Body */
+{
+ font-size: 13px;
+ font-family: 'Verdana';
+ letter-spacing: -1px;
+}
+span.f_TipHeading /* Tip Heading */
+{
+ font-family: 'Tahoma';
+ font-weight: bold;
+}
+/* Paragraph styles */
+p /* Normal */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.p_BodyText /* Body Text */
+{
+ margin: 0px 0px 10px 0px;
+}
+.p_BodyTextHowTo /* Body Text HowTo */
+{
+ margin: 0px 0px 10px 24px;
+}
+.p_Callouts /* Callouts */
+{
+ margin: 0px 0px 5px 0px;
+}
+.p_CalloutsBulleted /* Callouts Bulleted */
+{
+ text-indent: -27px;
+ margin: 0px 24px 10px 51px;
+}
+.p_CalloutsHeader /* Callouts Header */
+{
+ margin: 0px 0px 3px 0px;
+}
+.p_CodeExample /* Code Example */
+{
+ white-space: nowrap;
+}
+.p_Comment /* Comment */
+{
+ text-align: center;
+}
+.p_HeadingHowToToggle_atoc_ /* Heading HowTo Toggle_atoc_ */
+{
+ text-indent: -20px;
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ background: #f0f0f0;
+ padding: 3px 3px 3px 3px;
+ margin: 17px -3px 12px 17px;
+}
+.p_HeadingHowTo_atoc_ /* Heading HowTo_atoc_ */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ background: #f0f0f0;
+ padding: 3px 3px 3px 3px;
+ margin: 17px -3px 12px -3px;
+}
+.p_HeadingToggleLarger_atocs_ /* Heading Toggle Larger_atocs_ */
+{
+ text-indent: -19px;
+ margin: 0px 0px 10px 43px;
+}
+.p_HeadingToggle_atocs_ /* Heading Toggle_atocs_ */
+{
+ text-indent: -19px;
+ margin: 0px 0px 10px 43px;
+}
+.p_Heading1 /* Heading1 */
+{
+}
+.p_Heading2Toggle_atoc_ /* Heading2 Toggle_atoc_ */
+{
+ text-indent: -20px;
+ margin: 15px 0px 10px 20px;
+}
+.p_Heading2_atoc_ /* Heading2_atoc_ */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-top: none;
+ border-right: none;
+ border-left: none;
+ padding: 1px 1px 1px 1px;
+ margin: 14px -1px 9px -1px;
+}
+.p_Heading3 /* Heading3 */
+{
+ margin: 5px 0px 5px 0px;
+}
+.p_Heading3Underline_atocs_ /* Heading3 Underline_atocs_ */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-top: none;
+ border-right: none;
+ border-left: none;
+ padding: 1px 1px 1px 1px;
+ margin: 4px -1px 4px -1px;
+}
+.p_Heading3_atoc_ /* Heading3_atoc_ */
+{
+ margin: 5px 0px 5px 0px;
+}
+.p_Heading3_atocs_ /* Heading3_atocs_ */
+{
+ margin: 5px 0px 5px 0px;
+}
+.p_HowToBulleted /* HowTo Bulleted */
+{
+ text-indent: -15px;
+ margin: 0px 0px 10px 39px;
+}
+.p_HowToNumbered /* HowTo Numbered */
+{
+ text-indent: -22px;
+ margin: 0px 0px 10px 48px;
+}
+.p_ImageCaption /* Image Caption */
+{
+}
+.p_InThisTopicHeading /* InThisTopic Heading */
+{
+ text-align: center;
+ white-space: nowrap;
+}
+.p_InThisTopicLinkList /* InThisTopic LinkList */
+{
+ white-space: nowrap;
+ margin: 0px 0px 1px 0px;
+}
+.p_Note /* Note */
+{
+ text-indent: -59px;
+ margin: 0px 0px 10px 83px;
+}
+.p_Notes /* Notes */
+{
+}
+.p_NotesBox /* NotesBox */
+{
+ margin: 10px 0px 0px 0px;
+}
+.p_PopupBox /* Popup Box */
+{
+}
+.p_SeeAlso /* SeeAlso */
+{
+ margin: 10px 0px 0px 0px;
+}
+.p_T_Toggletext /* T_Toggletext */
+{
+ background: #ffffbb;
+}
+.p_TipBody /* Tip Body */
+{
+}
+.p_TipHeading /* Tip Heading */
+{
+}

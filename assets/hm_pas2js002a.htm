@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Anatomy of a pas2js project</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js001.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js003.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	This is an anatomy of a tiny pas2js application. <br>
+	<strong>Notes:</strong> 
+	<ul>
+	<li>The unit System is always loaded implicitely.</li>
+	<li>References to other units are translated to full path. For example TObject is translated to pas.system.TObject</li>
+	<li>References to dotted unitnames, aka units with namespaces are translated to pas["namespace.unitname"].</li>
+	<li>To create and initialize the units in topological order the pas2js compiler translates an Unit to the following JavaScript code.</li>
+	</ul>
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+{ filename: project1.lpr }
+program project1;
+
+{$mode objfpc}
+
+uses
+  Classes, SysUtils, JS, Web, Unit1, Unit2, Unit3;
+
+begin
+  // Your code here
+  MyIntfProc1;
+  MyIntfProc2;
+  MyIntfProc3;
+end.
+
+//--------------------------
+{ filename: unit1.pas }
+unit Unit1;
+
+{$mode objfpc}
+
+interface
+
+uses
+  Classes, SysUtils, JS, Web;
+
+procedure MyIntfProc1;
+
+var
+  dIntf: double;
+  sIntf: string = 'Unit1.pas';
+
+implementation
+
+Const
+  A = 'Unit1';
+
+var
+  dImpl: double;
+
+Procedure MyIntfProc1;
+begin
+  dImpl:= dIntf;
+  console.log(A);
+end;
+
+procedure MyImplProc;
+begin
+  dImpl:= dIntf;
+end;
+
+// Note: The finalization section is not supported by pas2js.
+initialization
+  console.log('Unit1 initialization');
+end.
+
+//--------------------------
+{ filename: unit2.pas }  
+unit Unit2;
+
+interface
+
+uses
+  Classes, SysUtils, JS, Web;
+
+procedure MyIntfProc2;
+
+var
+  dIntf: double;
+  sIntf: string = 'Unit2.pas';
+
+implementation
+
+Const
+  B = 'Unit2';
+
+var
+  dImpl: double;
+
+Procedure MyIntfProc2;
+begin
+  dImpl:= dIntf;
+  console.log(B);
+end;
+
+procedure MyImplProc;
+begin
+  dImpl:= dIntf;
+end;
+
+// Note: The finalization section is not supported by pas2js.
+initialization
+  console.log('Unit2 initialization');
+end.
+
+//--------------------------
+{ filename: unit3.pas }
+unit Unit3;
+
+interface
+
+uses
+  Classes, SysUtils, JS, Web;
+
+procedure MyIntfProc3;
+
+var
+  dIntf: double;
+  sIntf: string = 'Unit3.pas';
+
+implementation
+
+Const
+  C = 'Unit3';
+
+var
+  dImpl: double;
+
+Procedure MyIntfProc3;
+begin
+  dImpl:= dIntf;
+  console.log(C);
+end;
+
+procedure MyImplProc;
+begin
+  dImpl:= dIntf;
+end;
+
+// Note: The finalization section is not supported by pas2js.
+initialization
+  console.log('Unit3 initialization');
+end.
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("System",[],function () {
+  "use strict";
+  var $mod = this;
+  $mod.$init = function () {
+    rtl.exitcode = 0;
+  };
+});
+
+rtl.module("RTLConsts",["System"],function () {
+  "use strict";
+  var $mod = this;
+  $mod.$resourcestrings = {SArgumentMissing: {org: 'Missing argument in format "%s"'}, SInvalidFormat: {org: 'Invalid format specifier : "%s"'}, SInvalidArgIndex: {org: 'Invalid argument index in format: "%s"'}, SListCapacityError: {org: "List capacity (%s) exceeded."}, SListCountError: {org: "List count (%s) out of bounds."}, SListIndexError: {org: "List index (%s) out of bounds"}, SSortedListError: {org: "Operation not allowed on sorted list"}, SDuplicateString: {org: "String list does not allow duplicates"}, SErrFindNeedsSortedList: {org: "Cannot use find on unsorted list"}, SInvalidName: {org: 'Invalid component name: "%s"'}, SInvalidBoolean: {org: '"%s" is not a valid boolean.'}, SDuplicateName: {org: 'Duplicate component name: "%s"'}, SErrInvalidDate: {org: 'Invalid date: "%s"'}, SErrInvalidTimeFormat: {org: 'Invalid time format: "%s"'}, SInvalidDateFormat: {org: 'Invalid date format: "%s"'}, SCantReadPropertyS: {org: 'Cannot read property "%s"'}, SCantWritePropertyS: {org: 'Cannot write property "%s"'}, SErrPropertyNotFound: {org: 'Unknown property: "%s"'}, SIndexedPropertyNeedsParams: {org: 'Indexed property "%s" needs parameters'}, SErrInvalidTypecast: {org: "Invalid class typecast"}, SErrInvalidInteger: {org: 'Invalid integer value: "%s"'}, SErrInvalidFloat: {org: 'Invalid floating-point value: "%s"'}, SInvalidDateTime: {org: "Invalid date-time value: %s"}, SInvalidCurrency: {org: "Invalid currency value: %s"}, SErrInvalidDayOfWeek: {org: "%d is not a valid day of the week"}, SErrInvalidTimeStamp: {org: 'Invalid date\/timestamp : "%s"'}, SErrInvalidDateWeek: {org: "%d %d %d is not a valid dateweek"}, SErrInvalidDayOfYear: {org: "Year %d does not have a day number %d"}, SErrInvalidDateMonthWeek: {org: "Year %d, month %d, Week %d and day %d is not a valid date."}, SErrInvalidDayOfWeekInMonth: {org: "Year %d Month %d NDow %d DOW %d is not a valid date"}, SInvalidJulianDate: {org: "%f Julian cannot be represented as a DateTime"}, SErrInvalidHourMinuteSecMsec: {org: "%d:%d:%d.%d is not a valid time specification"}, SInvalidGUID: {org: '"%s" is not a valid GUID value'}, SEmptyStreamIllegalReader: {org: "Illegal Nil stream for TReader constructor"}, SInvalidPropertyValue: {org: "Invalid value for property"}, SInvalidImage: {org: "Invalid stream format"}, SUnknownProperty: {org: 'Unknown property: "%s"'}, SUnknownPropertyType: {org: "Unknown property type %d"}, SAncestorNotFound: {org: 'Ancestor class for "%s" not found.'}, SUnsupportedPropertyVariantType: {org: "Unsupported property variant type %d"}, SPropertyException: {org: "Error reading %s%s%s: %s"}, SInvalidPropertyPath: {org: "Invalid property path"}, SReadOnlyProperty: {org: "Property is read-only"}, SClassNotFound: {org: 'Class "%s" not found'}, SEmptyStreamIllegalWriter: {org: "Illegal Nil stream for TWriter constructor"}, SErrInvalidPropertyType: {org: "Invalid property type from streamed property: %d"}, SParserExpected: {org: "Wrong token type: %s expected"}, SParserInvalidFloat: {org: "Invalid floating point number: %s"}, SParserInvalidInteger: {org: "Invalid integer number: %s"}, SParserUnterminatedString: {org: "Unterminated string"}, SParserWrongTokenType: {org: "Wrong token type: %s expected but %s found"}, SParserWrongTokenSymbol: {org: "Wrong token symbol: %s expected but %s found"}, SParserLocInfo: {org: " (at %d,%d, stream offset %.8x)"}, SParserUnterminatedBinValue: {org: "Unterminated byte value"}, SParserInvalidProperty: {org: "Invalid property"}};
+});
+
+rtl.module("JS",["System"],function () {
+  "use strict";
+  var $mod = this;
+});
+
+rtl.module("Classes",["System","RTLConsts","JS"],function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  $mod.$init = function () {
+    $impl.ClassList = Object.create(null);
+  };
+},[],function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  $impl.ClassList = null;
+});
+
+rtl.module("Web",["System","JS"],function () {
+  "use strict";
+  var $mod = this;
+});
+
+// A Pascal Unit1 is translated into the following JavaScript structure:
+rtl.module("Unit1",["System","Classes","JS","Web"],function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  this.MyIntfProc1 = function () {
+    $impl.dImpl = $mod.dIntf;
+    window.console.log($impl.A);
+  };
+  this.dIntf = 0.0;
+  $mod.$init = function () {
+    window.console.log("Unit1 initialization");
+  };
+},null,function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  $impl.A = "Unit1";
+  $impl.dImpl = 0.0;
+});
+
+// A Pascal Unit2 is translated into the following JavaScript structure:
+rtl.module("Unit2",["System","Classes","JS","Web"],function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  this.MyIntfProc2 = function () {
+    $impl.dImpl = $mod.dIntf;
+    window.console.log($impl.B);
+  };
+  this.dIntf = 0.0;
+  $mod.$init = function () {
+    window.console.log("Unit2 initialization");
+  };
+},null,function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  $impl.B = "Unit2";
+  $impl.dImpl = 0.0;
+});
+
+// A Pascal Unit3 is translated into the following JavaScript structure:
+rtl.module("Unit3",["System","Classes","JS","Web"],function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  this.MyIntfProc3 = function () {
+    $impl.dImpl = $mod.dIntf;
+    window.console.log($impl.C);
+  };
+  this.dIntf = 0.0;
+  $mod.$init = function () {
+    window.console.log("Unit3 initialization");
+  };
+},null,function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  $impl.C = "Unit3";
+  $impl.dImpl = 0.0;
+});
+
+// A Pascal Program is translated into the following JavaScript structure:
+rtl.module("program",["System","Classes","JS","Web","Unit1","Unit2","Unit3"],function () {
+  "use strict";
+  var $mod = this;
+  $mod.$main = function () {
+    pas.Unit1.MyIntfProc1();
+    pas.Unit2.MyIntfProc2();
+    pas.Unit3.MyIntfProc3();
+  };
+})
+</code></pre></div>
+</div>
+</body>
+</html>

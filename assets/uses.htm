@@ -1,0 +1,170 @@
+<!-- (0047)Uses -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Uses command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Uses, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Uses</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Declares a list of <b>Units</b> to be imported</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Uses</b> Unit1 {Unit2, ...};
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Uses</b> Unit1 in FileName1 {Unit2, ...};
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Uses</b></font> keyword defines a list of one or more units that are used by the current unit, program or library.
+<br>&nbsp;<br>
+Each unit is effectively imported - all public or published routines and data in each unit is made available.
+<br>&nbsp;<br>
+For example, including <b>SysUtils</b> makes available a lot of data manipulation routines, such as <b>IntToStr</b>.
+<br>&nbsp;<br>
+The order of the units in the list is important. Those <b>later</b> in the list take <b>precedence</b> over the earlier ones. In the rare situation where the same routine or data is defined in two or more units, you can force Delphi to use the desired unit by prefixing that unit name to the routine or data name.
+<br>&nbsp;<br>
+For Units, the <font color=#996600><b>Uses</b></font> may be defined in the <b>Interface</b> and <b>Implementation</b> sections. It is cleaner and may save recompilations if you put units used in the implementation section if they are only used there.
+<br>&nbsp;<br>
+<font color=#FF0000>Version 1</font> is the standard form - it lets Delphi find the units.
+<br>&nbsp;<br>
+<font color=#FF0000>Version 2</font> defines the <b>FileName</b>, including path, where the unit resides. This is only applicable to programs and libraries.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<b>System</b> is included by default - there is no need to explictly include it.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="implementation.htm">Implementation</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the implementation (code) section of a Unit</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="interface.htm">Interface</a></b></td>
+<td width="8"></td>
+<td align="left">Used for Unit external definitions, and as a Class skeleton</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="unit.htm">Unit</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the start of a unit file - a Delphi module</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Defines the external view of this unit</b><br><b>
+</b><br><b>
+<font color=#C00000><b>Uses</b></font></b><br>
+&nbsp;&nbsp;Forms;<br><b>
+</b><br><b>
+type</b><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+Implementation&nbsp;&nbsp; // Implements the Interface of this unit</b><br><b>
+{$R *.dfm}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Include form definitions</b><br><b>
+</b><br><b>
+<font color=#C00000><b>Uses</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Private units</b><br>
+&nbsp;&nbsp;Dialogs, SysUtils;<br><b>
+</b><br><font color=#008000><b>// A private routine - not predefined in the Interface section</b></font><br><b>
+procedure SayNumber(number : Integer);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Say a number as a string</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note that we are very specific about the IntToStr routine :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// we are making it unambiguous that it is the SysUtils</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// version that we are using.</b></font><br>
+&nbsp;&nbsp;WriteLn('Number = '+SysUtils.IntToStr(number));<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// A routine pre-defined in the Interface section</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display a number</b></font><br>
+&nbsp;&nbsp;SayNumber(123);<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Number = 123<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

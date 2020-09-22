@@ -1,0 +1,188 @@
+<!-- (0060)PromptForFileName -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : PromptForFileName command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, PromptForFileName, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>PromptForFileName</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Shows a dialog allowing the user to select a file</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Dialogs</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>PromptForFileName</b></font>
+
+(
+<b>var FileName </b> : string;<b> { const Filter </b> : string;<b> const DefaultExt </b> : string;<b>&nbsp;&nbsp;const Title </b> : string;<b> const InitialDir </b> : string;<b> SaveDialog </b> : Boolean = False }
+)
+ : Boolean;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>PromptForFileName</b></font> function presents a dialog to the user allowing navigation to, and selection of a file. 
+<br>&nbsp;<br>
+If the user presses <b>OK</b> the <b>FileName</b> variable is updated with the full drive/path/filename value for the selected file, and the return value is <b>True</b>.
+<br>&nbsp;<br>
+If the user presses <b>Cancel</b>, no updates are done, and the return value is <b>False</b>.
+<br>&nbsp;<br>
+The remaining parameters are all optional (although parameters used on the right mandate use of the preceding parameters) :
+<br>&nbsp;<br>
+<font color=#008000><b>Filter</b></font>
+<br>&nbsp;<br>
+Used to limit the types of file displayed. The format is as follows :
+<br>&nbsp;<br>
+<font class=mono>'Description|filter{|...}'</font>
+<br>&nbsp;<br>
+For example, to show only <b>.txt</b> and <b>.pas</b> files :
+<br>&nbsp;<br>
+<font class=mono>Text files (*.txt)|*.txt|Delphi files (*.pas)|*.pas</font>
+<br>&nbsp;<br>
+<font color=#008000><b>DefaultExt</b></font>
+<br>&nbsp;<br>
+Used to define an extension to add to a new file name (if <b>SaveDialog</b> is True).
+<br>&nbsp;<br>
+<font color=#008000><b>Title</b></font>
+<br>&nbsp;<br>
+Used to give a title to the dialog.
+<br>&nbsp;<br>
+<font color=#008000><b>InitialDir</b></font>
+<br>&nbsp;<br>
+Positions the dialog at a given directory. For example :
+<br>&nbsp;<br>
+<font class=mono>'C:Program Files'</font>
+<br>&nbsp;<br>
+<font color=#008000><b>SaveDialog</b></font>
+<br>&nbsp;<br>
+Determines whether a new file can be selected for saving.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="inputbox.htm">InputBox</a></b></td>
+<td width="8"></td>
+<td align="left">Display a dialog that asks for user text input, with default</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inputquery.htm">InputQuery</a></b></td>
+<td width="8"></td>
+<td align="left">Display a dialog that asks for user text input</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="showmessage.htm">ShowMessage</a></b></td>
+<td width="8"></td>
+<td align="left">Display a string in a simple dialog with an OK button</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="showmessagefmt.htm">ShowMessageFmt</a></b></td>
+<td width="8"></td>
+<td align="left">Display formatted data in a simple dialog with an OK button</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="showmessagepos.htm">ShowMessagePos</a></b></td>
+<td width="8"></td>
+<td align="left">Display a string in a simple dialog at a given screen position</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="topendialog.htm">TOpenDialog</a></b></td>
+<td width="8"></td>
+<td align="left">Displays a file selection dialog</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tsavedialog.htm">TSaveDialog</a></b></td>
+<td width="8"></td>
+<td align="left">Displays a dialog for selecting a save file name</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Use this dialog to select a text file</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;selectedFile&nbsp;&nbsp; : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Ask the user to select a file</b></font><br>
+&nbsp;&nbsp;if <font color=#C00000><b>PromptForFileName</b></font>(selectedFile,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Text files (*.txt)|*.txt',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Select your project file',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'C:\',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; False)&nbsp;&nbsp;<font color=#008000><b>// Means not a Save dialog</b></font><br>
+&nbsp;&nbsp;then<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Display this full file/path value</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Selected file = '+selectedFile)<br>
+&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Cancel pressed');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="promptforfilename&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;{ In the dialog, user selects C:\Files\data.txt and hits OK }<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Selected file = C:\Files\data.txt<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

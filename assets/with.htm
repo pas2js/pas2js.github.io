@@ -1,0 +1,214 @@
+<!-- (0047)With -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : With command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, With, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>With</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">A means of simplifying references to structured variables</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>with data name</b> do <b>Statement;</b>
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>with data name</b> do <br>&nbsp;
+begin<br>&nbsp;
+&nbsp;&nbsp;<b>Statement;</b><br>&nbsp;
+&nbsp;&nbsp;{...}<br>&nbsp;
+end;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>With</b></font> keyword is a convenience provided by Delphi for referencing elements of a complex variable, such as a record or object.
+<br>&nbsp;<br>
+It simplifies the code by removing the need to prefix each referenced element with the complex variable name.
+<br>&nbsp;<br>
+For example :
+<br>&nbsp;<br>
+<font class=mono><font color=#200080>myObject.colour := clRed;<br>
+myObject.size&nbsp;&nbsp; := 23.5;<br>
+myObject.name&nbsp;&nbsp; := 'Fred';</font></font>
+<br>&nbsp;<br>
+can be rewritten :
+<br>&nbsp;<br>
+<font class=mono><font color=#200080><font color=#996600><b>With</b></font> myObject do<br>
+begin<br>
+&nbsp;&nbsp;colour := clRed;<br>
+&nbsp;&nbsp;size&nbsp;&nbsp; := 23.5;<br>
+&nbsp;&nbsp;name&nbsp;&nbsp; := 'Fred';<br>
+end;</font></font>
+<br>&nbsp;<br>
+<b>However</b> be warned that it can surprisingly make your code more difficult to read, especially when nesting <font color=#996600><b>With</b></font> clauses. More disturbingly, it can create maintenance problems, where a code change can mean that the wrong target for the 'child' field referenced.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Within a <font color=#996600><b>With</b></font> clause, Delphi tries to resolve these 'incomplete' references by looking at the immediate <font color=#996600><b>With</b></font> target, and then any nested withs above.<br>
+<br>
+It then looks at other data types, such as local variables, subroutine parameters etc. This is where some of the danger of the <font color=#996600><b>With</b></font> keyword comes.<br>
+<br>
+<font color=#FF0000>Use carefully!</font><br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="begin.htm">Begin</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that starts a statement block</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="end.htm">End</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that terminates statement blocks</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="record.htm">Record</a></b></td>
+<td width="8"></td>
+<td align="left">A structured data type - holding fields of data</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Using the with keyword with a record structure</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare a customer record</b></font><br>
+&nbsp;&nbsp;TCustomer = Record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;firstName : string[20];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lastName&nbsp;&nbsp;: string[20];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address1&nbsp;&nbsp;: string[100];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address2&nbsp;&nbsp;: string[100];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address3&nbsp;&nbsp;: string[100];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;city&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: string[20];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;postCode&nbsp;&nbsp;: string[8];<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;John, Sarah : TCustomer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the John's customer details</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>With</b></font> John do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;firstName := 'John';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lastName&nbsp;&nbsp;:= 'Smith';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address1&nbsp;&nbsp;:= '7 Park Drive';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address2&nbsp;&nbsp;:= 'Branston';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address3&nbsp;&nbsp;:= 'Grimworth';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;city&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:= 'Banmore';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;postCode&nbsp;&nbsp;:= 'BNM 1AB';<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up John's sister similarly - simply copying the whole record</b></font><br>
+&nbsp;&nbsp;Sarah := John;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And then changing the first name to suit</b></font><br>
+&nbsp;&nbsp;Sarah.firstName := 'Sarah';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now show the details of both customers</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>With</b></font> John do ShowCustomer([firstName, lastName,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address1, address2, address3, city,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; postCode]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>With</b></font> Sarah do ShowCustomer([firstName, lastName,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address1, address2, address3, city,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; postCode]);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// A procedure that displays a variable number of strings</b></font><br><b>
+procedure TForm1.ShowCustomer(const fields: array of string);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display all fields passed - note : arrays start at 0</b></font><br>
+&nbsp;&nbsp;for i := 0 to Length(fields)-1 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(fields[i]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/with&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;John<br>&nbsp;&nbsp;
+Smith<br>&nbsp;&nbsp;
+7 Park Drive<br>&nbsp;&nbsp;
+Branston<br>&nbsp;&nbsp;
+Grimworth<br>&nbsp;&nbsp;
+Banmore<br>&nbsp;&nbsp;
+BNM 1AB<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Sarah<br>&nbsp;&nbsp;
+Smith<br>&nbsp;&nbsp;
+7 Park Drive<br>&nbsp;&nbsp;
+Branston<br>&nbsp;&nbsp;
+Grimworth<br>&nbsp;&nbsp;
+Banmore<br>&nbsp;&nbsp;
+BNM 1AB<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

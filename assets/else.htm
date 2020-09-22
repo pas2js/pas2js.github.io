@@ -1,0 +1,169 @@
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Else command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Else, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Else</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts false section of <b>if, case</b> and <b>try</b> statements</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>if</b> Condition <b>then</b> Statement <b>else</b> Statement;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>case</b> Expression <b>of</b> <br>&nbsp;
+&nbsp;&nbsp;Case clauses<br>&nbsp;
+&nbsp;&nbsp;...<br>&nbsp;
+&nbsp;&nbsp;<b>else</b><br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Statements<br>&nbsp;
+<b>end</b>;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>try</b> <br>&nbsp;
+&nbsp;&nbsp;Statements<br>&nbsp;
+&nbsp;&nbsp;...<br>&nbsp;
+<b>except</b><br>&nbsp;
+&nbsp;&nbsp;Exception statements<br>&nbsp;
+&nbsp;&nbsp;...<br>&nbsp;
+<b>else</b><br>&nbsp;
+&nbsp;&nbsp;Statements<br>&nbsp;
+<b>end</b>
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Else</b></font> keyword is part of the <b>If, Case</b> and <b>Try</b> statements. It is used to start the section of code executed when earlier conditions are not satisfied.
+<br>&nbsp;<br>
+See details of each of these statements for further details.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="case.htm">Case</a></b></td>
+<td width="8"></td>
+<td align="left">A mechanism for acting upon different values of an Ordinal</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="end.htm">End</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that terminates statement blocks</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="if.htm">If</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a conditional expression to determine what to do next</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="then.htm">Then</a></b></td>
+<td width="8"></td>
+<td align="left">Part of an <b>if</b> statement - starts the <b>true</b> clause</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="try.htm">Try</a></b></td>
+<td width="8"></td>
+<td align="left">Starts code that has error trapping</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate various uses of the else clause</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Note the lack of a ';' after the 'then' clause</b></font><br>
+&nbsp;&nbsp;if False<br>
+&nbsp;&nbsp;then WriteLn('True')<br>
+&nbsp;&nbsp;<font color=#C00000><b>Else</b></font> WriteLn('False');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Nested if statements - Delphi sensibly manages associations</b></font><br>
+&nbsp;&nbsp;if true then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if false then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Inner then satisfied')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Else</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Inner else satisfied')<br>
+&nbsp;&nbsp;<font color=#C00000><b>Else</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Outer else satisfied')<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="else&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;False<br>&nbsp;&nbsp;
+Inner else satisfied<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

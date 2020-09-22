@@ -1,0 +1,596 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>SubRoutines</title>
+   <meta name="keywords" content="procedures,functions" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">SubRoutines</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_programming_with_Pas2JS.htm">Previous</a>&nbsp;
+     <a href="hm_looping.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">An overview</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">A subroutine is like a sub-program. It is not only helps divide your code up into sensible, manageable chunks, but it also allows these chunks to be used (called) by different parts of your program. Each subroutine contains one of more statements.</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">  &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">In common with other languages, Pas2JS provides 2 types of subroutine </span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Procedures and Functions</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #800000;">.</span><span style="font-size: 16px; font-family: 'Times New Roman';"> </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">Functions are the same as procedures except that they return a value in addition to executing statements. A Function, as its name suggests, is like a little program that calculates something, returning the value to the caller. On the other hand, a procedure is like a little routine that performs something, and then just finishes.</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">  &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Parameters to subroutines</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">Both functions and procedures can be defined to operate without any data being passed. For example, you might have a function that simply returns a random number (like the Pas2JS RandomInt function). It needs no data to get it going.</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">  &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">Likewise, you can have a procedure that carries out some task without the need for data to dictate its operations. For example, you might have a procedure that draws a square on the screen. The same square every time it is called.</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">  &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">Often, however, you will pass data, called parameters, to a subroutine. (Note that the definition of a subroutine refers to parameters as arguments - they are parameters when passed to the subroutine).</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">  &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Some simple function and procedure examples</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">The following code illustrates simple function and procedure definitions:</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: procedure without parameters</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">ShowTime</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;A&nbsp;procedure&nbsp;with&nbsp;no&nbsp;parameters</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Display&nbsp;the&nbsp;current&nbsp;date&nbsp;and&nbsp;time</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #000080;">'Date&nbsp;and&nbsp;time&nbsp;is&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+DateTimeToStr(Now));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Let&nbsp;us&nbsp;call&nbsp;this&nbsp;procedure</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.btnClearClick(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">ShowTime</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Result is: </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Date and time is 2014-07-17 13:55:01</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">JS output:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;ShowTime()&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">((</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">&quot;Date&nbsp;and&nbsp;time&nbsp;is&nbsp;&quot;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">+DateTimeToStr(Now())));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">};</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;btnClearClick(</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">,&nbsp;Sender$4)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowTime();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Notice that we are using some Pas2JS run time library functions. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">A procedure with parameters in Pas2JS</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Example code : Show yesterday, today and tomorrows dates in Pas2JS</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">ShowTime</span><span class="f_CodeExample" style="color: #000000;">(dateTime&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Float</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;With&nbsp;parameters</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Display&nbsp;the&nbsp;date&nbsp;passed&nbsp;to&nbsp;the&nbsp;routine</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #000080;">'Date&nbsp;and&nbsp;time&nbsp;is&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+DateToStr(dateTime));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">Today</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Float</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;Date;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">Yesterday</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Float</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;Date&nbsp;-&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">Tomorrow</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Float</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;Date&nbsp;+&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Let&nbsp;us&nbsp;call&nbsp;this&nbsp;procedure</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">btnClearClick</span><span class="f_CodeExample" style="color: #000000;">(Sender:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TObject</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">ShowTime</span><span class="f_CodeExample" style="color: #000000;">(Today);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">ShowTime</span><span class="f_CodeExample" style="color: #000000;">(Yesterday);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">ShowTime</span><span class="f_CodeExample" style="color: #000000;">(Tomorrow);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px; font-weight: bold; color: #000000;">Result is:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Date&nbsp;and&nbsp;time&nbsp;is&nbsp;2014-07-17&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Date&nbsp;and&nbsp;time&nbsp;is&nbsp;2014-07-16&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Date&nbsp;and&nbsp;time&nbsp;is&nbsp;2014-07-18</span></p>
+<p class="p_CodeExample">--------------------------------------------</p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Tip:  </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TDateTime</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"> in Delphi is equal to </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Float</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"> in Pas2JS.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="175" style="width:175px;"><p style="background: #ccffff;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TDateTime</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"> = Float;  </span></p>
+<p style="background: #ccffff;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Real</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= Float;  </span></p>
+<p style="background: #ccffff;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Double</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"> &nbsp; &nbsp; &nbsp; &nbsp;= Float;  </span></p>
+<p style="background: #ccffff;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Extended</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"> &nbsp; &nbsp;= Float;  </span></p>
+<p style="background: #ccffff;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TColor</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"> &nbsp; &nbsp; &nbsp; &nbsp;= Integer; </span></p>
+<p style="background: #ccffff;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">THandle</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"> &nbsp; &nbsp; = Variant;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">A function without parameters in Pas2JS</span></p>
+<p>&nbsp;</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Example code : Return a random character A-Z in Pas2JS</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">RandomRange</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AFrom,&nbsp;ATo:&nbsp;Integer):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AFrom&nbsp;&gt;&nbsp;ATo&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;:=&nbsp;RandomInt(AFrom&nbsp;-&nbsp;ATo)&nbsp;+&nbsp;ATo</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">else</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;:=&nbsp;RandomInt(ATo&nbsp;-&nbsp;AFrom)&nbsp;+&nbsp;AFrom;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">RandomChar</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">i&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Get&nbsp;a&nbsp;random&nbsp;number&nbsp;from&nbsp;65&nbsp;to&nbsp;90</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;(These&nbsp;numbers&nbsp;equate&nbsp;to&nbsp;characters&nbsp;'A'&nbsp;to&nbsp;'Z'</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">RandomRange</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #000080;">65</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #000080;">90</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Return&nbsp;this&nbsp;value&nbsp;as&nbsp;a&nbsp;char&nbsp;type&nbsp;in&nbsp;the&nbsp;return&nbsp;variable,&nbsp;Result</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">Result&nbsp;:=&nbsp;Chr(i);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">btnClearClick</span><span class="f_CodeExample" style="color: #000000;">(Sender:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TObject</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Let&nbsp;us&nbsp;call&nbsp;this&nbsp;function</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">ShowMessage(</span><span class="f_CodeExample" style="color: #000080;">'Char&nbsp;chosen&nbsp;is&nbsp;:&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">RandomChar</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Result is: </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Char chosen is : W</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A2_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A2','$TOGGLE0186A2_ICON')">JS&nbsp;output:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A2" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;RandomChar()&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;RandomRange(</span><span class="f_CodeExample" style="color: #800000;">65</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">90</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Result&nbsp;=&nbsp;Chr(i);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;RandomRange(AFrom,&nbsp;ATo)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(AFrom&gt;ATo)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;=&nbsp;RandomInt(AFrom-ATo)+ATo;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;=&nbsp;RandomInt(ATo-AFrom)+AFrom;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample" style="text-indent: -18px; margin: 0px 0px 0px 18px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">It&nbsp;is&nbsp;important&nbsp;to&nbsp;note&nbsp;that&nbsp;we&nbsp;return&nbsp;the&nbsp;value&nbsp;from&nbsp;a&nbsp;function&nbsp;in&nbsp;a&nbsp;special&nbsp;variable&nbsp;called&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Result</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;that&nbsp;Pas2JS&nbsp;</span></p>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">secretly&nbsp;defines&nbsp;for&nbsp;us&nbsp;to&nbsp;be&nbsp;the&nbsp;same&nbsp;type&nbsp;as&nbsp;the&nbsp;return&nbsp;type&nbsp;of&nbsp;the&nbsp;function.&nbsp;We&nbsp;can&nbsp;assign&nbsp;to&nbsp;it&nbsp;at&nbsp;any&nbsp;point&nbsp;in&nbsp;the&nbsp;function.&nbsp;</span></p>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">When&nbsp;the&nbsp;function&nbsp;ends,&nbsp;the&nbsp;value&nbsp;then&nbsp;held&nbsp;in&nbsp;Result&nbsp;is&nbsp;then&nbsp;returned&nbsp;to&nbsp;the&nbsp;caller.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span><br>
+<a name="_fx01"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">A&nbsp;function&nbsp;with&nbsp;parameters&nbsp;in&nbsp;Pas2JS</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #800000;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Example code : Calculate the mean of a set of 3 numbers using Delphi</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Average</span><span class="f_CodeExample" style="color: #000000;">(a,&nbsp;b,&nbsp;c&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Extended</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Extended</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;return&nbsp;the&nbsp;average&nbsp;of&nbsp;the&nbsp;3&nbsp;passed&nbsp;numbers</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">Result&nbsp;:=&nbsp;Mean(a,&nbsp;b,&nbsp;c);</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Let&nbsp;us&nbsp;call&nbsp;this&nbsp;function</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">ShowMessageFmt</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #000080;">'Average&nbsp;of&nbsp;2,&nbsp;13&nbsp;and&nbsp;56&nbsp;=&nbsp;%f'</span><span class="f_CodeExample" style="color: #000000;">,[Average(</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #000080;">13</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #000080;">56</span><span class="f_CodeExample" style="color: #000000;">)]);</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 0px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">NOTE: </span><span style="font-size: 16px; font-family: 'Times New Roman';">I would like to calculate the average of a set of three numbers. In Delphi you could use the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">mean</span><span style="font-size: 16px; font-family: 'Times New Roman';"> function.</span></p>
+<p style="margin: 0px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">The </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000080;">Mean</span><span style="font-size: 16px; font-family: 'Times New Roman';"> function returns the average of a set of Double values in a </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">DataArray</span><span style="font-size: 16px; font-family: 'Times New Roman';">. As you can see, such function uses a</span></p>
+<p style="margin: 0px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">low level function </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000080;">SUM</span><span style="font-size: 16px; font-family: 'Times New Roman';"> coded in</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"> Assembler language</span><span style="font-size: 16px; font-family: 'Times New Roman';">. </span></p>
+<p style="margin: 0px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Mean</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Data:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Double</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Extended</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;SUM(Data)&nbsp;/&nbsp;(High(Data)&nbsp;-&nbsp;Low(Data)&nbsp;+&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;SUM(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Data:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Double</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Extended</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">asm</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;IN:&nbsp;EAX&nbsp;=&nbsp;ptr&nbsp;to&nbsp;Data,&nbsp;EDX&nbsp;=&nbsp;High(Data)&nbsp;=&nbsp;Count&nbsp;-&nbsp;1</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Uses&nbsp;4&nbsp;accumulators&nbsp;to&nbsp;minimize&nbsp;read-after-write&nbsp;delays&nbsp;and&nbsp;loop&nbsp;overhead</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;5&nbsp;clocks&nbsp;per&nbsp;loop,&nbsp;4&nbsp;items&nbsp;per&nbsp;loop&nbsp;=&nbsp;1.2&nbsp;clocks&nbsp;per&nbsp;item</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLDZ</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ECX,&nbsp;EDX</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST(</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">AND</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EDX,&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">not</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #000080;">3</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST(</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">AND</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ECX,&nbsp;</span><span class="f_CodeExample" style="color: #000080;">3</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FLD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST(</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">SHL</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EDX,&nbsp;</span><span class="f_CodeExample" style="color: #000080;">3</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;count&nbsp;*&nbsp;sizeof(Double)&nbsp;=&nbsp;count&nbsp;*&nbsp;8</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JMP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Vector.Pointer[ECX*</span><span class="f_CodeExample" style="color: #000080;">4</span><span class="f_CodeExample" style="color: #000000;">]</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">@Vector:</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DD&nbsp;@@</span><span class="f_CodeExample" style="color: #000080;">1</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DD&nbsp;@@</span><span class="f_CodeExample" style="color: #000080;">2</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DD&nbsp;@@</span><span class="f_CodeExample" style="color: #000080;">3</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DD&nbsp;@@</span><span class="f_CodeExample" style="color: #000080;">4</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">@@</span><span class="f_CodeExample" style="color: #000080;">4</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;&nbsp;&nbsp;FADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qword&nbsp;ptr&nbsp;[EAX+EDX+</span><span class="f_CodeExample" style="color: #000080;">24</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;1</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FXCH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST(</span><span class="f_CodeExample" style="color: #000080;">3</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;0</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">@@</span><span class="f_CodeExample" style="color: #000080;">3</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;&nbsp;&nbsp;FADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qword&nbsp;ptr&nbsp;[EAX+EDX+</span><span class="f_CodeExample" style="color: #000080;">16</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;1</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FXCH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST(</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;0</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">@@</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;&nbsp;&nbsp;FADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qword&nbsp;ptr&nbsp;[EAX+EDX+</span><span class="f_CodeExample" style="color: #000080;">8</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;1</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FXCH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST(</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;0</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">@@</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;&nbsp;&nbsp;FADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qword&nbsp;ptr&nbsp;[EAX+EDX]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;1</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FXCH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST(</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;0</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EDX,&nbsp;</span><span class="f_CodeExample" style="color: #000080;">32</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JNS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@</span><span class="f_CodeExample" style="color: #000080;">4</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FADDP&nbsp;&nbsp;&nbsp;&nbsp;ST(</span><span class="f_CodeExample" style="color: #000080;">3</span><span class="f_CodeExample" style="color: #000000;">),ST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;ST(3)&nbsp;:=&nbsp;ST&nbsp;+&nbsp;ST(3);&nbsp;Pop&nbsp;ST</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;ST(1)&nbsp;:=&nbsp;ST&nbsp;+&nbsp;ST(1);&nbsp;Pop&nbsp;ST</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;ST(1)&nbsp;:=&nbsp;ST&nbsp;+&nbsp;ST(1);&nbsp;Pop&nbsp;ST</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FWAIT</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;<br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #ffffff; background-color: #800000;">But under&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #ffffff; background-color: #800000;">Pas2JS</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #ffffff; background-color: #800000;">,&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #ffffff; background-color: #800000;">Assembler</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #ffffff; background-color: #800000;">&nbsp;is pure fun – because to a browser assembler is&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #ffffff; background-color: #800000;">JavaScript</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #ffffff; background-color: #800000;">!</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">See more about </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;"><a href="hm_asm_block.htm">ASM Block</a></span><span style="font-size: 16px; font-family: 'Times New Roman';">.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="margin: 7px 0px 7px 0px;"><a name="_mean"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Example code : Calculate the mean of a set of 3 numbers using Smart Mobile Studio</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Mean</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Data:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Float):&nbsp;Float;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;thisAverage&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Variant</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//Result&nbsp;:=&nbsp;SUM(Data)&nbsp;/&nbsp;(High(Data)&nbsp;-&nbsp;Low(Data)&nbsp;+&nbsp;1);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000; background-color: #f79646;">asm</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000; background-color: #f79646;">var</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">&nbsp;numberArray=[</span><span class="f_CodeExample" style="color: #000080; background-color: #f79646;">2</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">,</span><span class="f_CodeExample" style="color: #000080; background-color: #f79646;">13</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">,</span><span class="f_CodeExample" style="color: #000080; background-color: #f79646;">56</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">],&nbsp;thisTotal=</span><span class="f_CodeExample" style="color: #000080; background-color: #f79646;">0</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">,thisAverage=</span><span class="f_CodeExample" style="color: #000080; background-color: #f79646;">0</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080; background-color: #f79646;">//&nbsp;add&nbsp;elements&nbsp;of&nbsp;array&nbsp;together</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000; background-color: #f79646;">for</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000; background-color: #f79646;">var</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">&nbsp;i=</span><span class="f_CodeExample" style="color: #000080; background-color: #f79646;">0</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">;i&lt;numberArray.length;i++)</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080; background-color: #f79646;">{thisTotal+=numberArray[i];}</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080; background-color: #f79646;">//&nbsp;calculate&nbsp;average</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">&nbsp;@thisAverage=(thisTotal/numberArray.length);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000; background-color: #f79646;">end</span><span class="f_CodeExample" style="color: #000000; background-color: #f79646;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;display&nbsp;result</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;:=&nbsp;thisAverage;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Average</span><span class="f_CodeExample" style="color: #000000;">(a,&nbsp;b,&nbsp;c&nbsp;:&nbsp;Float)&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;return&nbsp;the&nbsp;average&nbsp;of&nbsp;the&nbsp;3&nbsp;passed&nbsp;numbers</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">Result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Mean</span><span class="f_CodeExample" style="color: #000000;">([a,&nbsp;b,&nbsp;c]);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">btnClearClick</span><span class="f_CodeExample" style="color: #000000;">(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Let&nbsp;us&nbsp;call&nbsp;this&nbsp;function</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'Average&nbsp;of&nbsp;2,&nbsp;13&nbsp;and&nbsp;56&nbsp;=&nbsp;%f'</span><span class="f_CodeExample" style="color: #000000;">,[</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Average</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #000080;">13</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #000080;">56</span><span class="f_CodeExample" style="color: #000000;">)]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 0px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Result is: </span><span style="font-size: 16px; font-family: 'Times New Roman';">Average of 2, 13 and 56 = 23.67</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A3_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A3','$TOGGLE0186A3_ICON')">JS output:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 18px;"><table id="TOGGLE0186A3" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Mean(Data)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;thisAverage&nbsp;=&nbsp;undefined;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;numberArray=[</span><span class="f_CodeExample" style="color: #800000;">2</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">13</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">56</span><span class="f_CodeExample" style="color: #000000;">],&nbsp;thisTotal=</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,thisAverage=</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #008000;">//&nbsp;add&nbsp;elements&nbsp;of&nbsp;array&nbsp;together</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i=</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;i&lt;numberArray.length;i++)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;{thisTotal+=numberArray[i];}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #008000;">//&nbsp;calculate&nbsp;average</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;thisAverage=(thisTotal/numberArray.length);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;=&nbsp;Number(thisAverage);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Average$1(a$56,&nbsp;b$18,&nbsp;c)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Mean(([a$56,b$18,c].slice()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a name="_va1"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">VARIABLE BY VALUE</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In our example above, we declared an integer variable for use in a calculation by the function. </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Subroutines can have their own types, constants and variables, and these remain </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">local to the routine</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. </span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Variable values</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> are reset every time the routine is called (use a class object to hold onto data across routine calls). </span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Here is an illustration of this local variable action using Pas2JS.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">DoIt</span><span class="f_CodeExample" style="color: #000000;">(A&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Integer</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;A&nbsp;:=&nbsp;A&nbsp;*&nbsp;</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'A&nbsp;in&nbsp;the&nbsp;procedure&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[A]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">InitializeForm</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">A&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;this&nbsp;is&nbsp;a&nbsp;good&nbsp;place&nbsp;to&nbsp;initialize&nbsp;components</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;A&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">22</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'A&nbsp;in&nbsp;program&nbsp;before&nbsp;call&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[A]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Call&nbsp;the&nbsp;procedure</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">DoIt</span><span class="f_CodeExample" style="color: #000000;">(A);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'A&nbsp;in&nbsp;program&nbsp;now&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[A]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px; font-weight: bold; color: #000000;">The result is:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">A&nbsp;in&nbsp;program&nbsp;before&nbsp;call&nbsp;=&nbsp;22</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">A&nbsp;in&nbsp;the&nbsp;procedure&nbsp;=&nbsp;44</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">A&nbsp;in&nbsp;program&nbsp;now&nbsp;=&nbsp;22</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">------------------------------</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The&nbsp;procedure&nbsp;is&nbsp;passed&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">A</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">,&nbsp;updates&nbsp;it&nbsp;and&nbsp;displays&nbsp;it.&nbsp;The&nbsp;caller&nbsp;then&nbsp;displays&nbsp;the&nbsp;A&nbsp;that&nbsp;it&nbsp;passed&nbsp;to&nbsp;the&nbsp;procedure.&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">It is unchanged. The procedure sees this A as if it were defined as a local variable. </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Like local variables, when the procedure ends, their value is lost.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p>&nbsp;<br>
+<a name="_va2"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">VARIABLE BY REFERENCE</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #800000;"> </span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The default was of passing data is by what is called </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">by value</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. Literally, the parameter value is passed to the subroutine argument. </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">reference to the argument is then to this copy of the variable value.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Passing by reference means that the subroutine actually refers to the passed variable rather than its value. </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Any changes to the value will affect the caller variable. We declare a variable to be passed by reference with the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #ff0000;">var</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> prefix. </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Rewriting the above code to use by reference changes matters:</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: Here is an illustration of passing data by reference Pas2JS.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">DoIt</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;A&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Integer</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;A&nbsp;:=&nbsp;A&nbsp;*&nbsp;</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'A&nbsp;in&nbsp;the&nbsp;procedure&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[A]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">InitializeForm</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">A&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;this&nbsp;is&nbsp;a&nbsp;good&nbsp;place&nbsp;to&nbsp;initialize&nbsp;components</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;A&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">22</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'A&nbsp;in&nbsp;program&nbsp;before&nbsp;call&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[A]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Call&nbsp;the&nbsp;procedure</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">DoIt</span><span class="f_CodeExample" style="color: #000000;">(A);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'A&nbsp;in&nbsp;program&nbsp;now&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[A]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px; font-weight: bold; color: #000000;">The result is:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">A&nbsp;in&nbsp;program&nbsp;before&nbsp;call&nbsp;=&nbsp;22</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">A&nbsp;in&nbsp;the&nbsp;procedure&nbsp;=&nbsp;44</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">A&nbsp;in&nbsp;program&nbsp;now&nbsp;=&nbsp;&nbsp;&nbsp;44</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">------------------------------</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Now the caller </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">A</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> variable is updated by the procedure.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This is a very useful way of returning data from a procedure. It also allows us to return more than one value from a subroutine.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><a name="_co1"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Constant value parameters</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #800000;"> </span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">For code clarity, and performance, it is often wise to declare arguments that are only ever read by a subroutine as constants. This is done with the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #ff0000;">const</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> prefix. It can be used even when a non-constant parameter is passed. It simply means that the parameter is only ever read by the subroutine.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;DoIt(</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">Const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;A&nbsp;:&nbsp;Integer;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;B&nbsp;:&nbsp;Integer);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">B&nbsp;:=&nbsp;A&nbsp;*&nbsp;</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'A&nbsp;in&nbsp;the&nbsp;procedure&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[A]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">InitializeForm</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">A,B&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;this&nbsp;is&nbsp;a&nbsp;good&nbsp;place&nbsp;to&nbsp;initialize&nbsp;components</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">A&nbsp;:=&nbsp;22;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;</span><span class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #000080;">B&nbsp;is&nbsp;not&nbsp;defined&nbsp;here</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Call&nbsp;the&nbsp;procedure</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;DoIt(A,B);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;ShowMessage(Format(</span><span class="f_CodeExample" style="color: #000080;">'B&nbsp;has&nbsp;been&nbsp;set&nbsp;to&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[B]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Result is: B has been set to 44</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Notice that when defining two argument types, the arguments are separated with a </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A4_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A4','$TOGGLE0186A4_ICON')">Passing variable by value in JS (A : Integer)</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A4" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InitializeForm(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;A$9&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TW3CustomForm.InitializeForm(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A$9&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">22</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;A&nbsp;in&nbsp;program&nbsp;before&nbsp;call&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+A$9.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoIt(A$9);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;A&nbsp;in&nbsp;program&nbsp;now&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+A$10.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A5_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A5','$TOGGLE0186A5_ICON')">Passing variable by reference in JS (var A : Integer)</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A5" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InitializeForm(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;A$9&nbsp;=&nbsp;{};</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A$9.v&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TW3CustomForm.InitializeForm(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A$9.v&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">22</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;A&nbsp;in&nbsp;program&nbsp;before&nbsp;call&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+A$9.v.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoIt(A$9);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;A&nbsp;in&nbsp;program&nbsp;now&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+A$9.v.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A6_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A6','$TOGGLE0186A6_ICON')">Passing variable by reference in JS (Const A : Integer; var B : Integer)</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A6" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InitializeForm(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;A$9&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;B$3&nbsp;=&nbsp;{};</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B$3.v&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TW3CustomForm.InitializeForm(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A$9&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">22</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoIt(A$9,B$3);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;B&nbsp;has&nbsp;been&nbsp;set&nbsp;to&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+B$3.v.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-indent: -18px; margin: 0px 0px 0px 18px;">&nbsp;</p>
+<p style="text-indent: -18px; margin: 0px 0px 0px 18px;">&nbsp;</p>
+<p style="text-indent: -18px; margin: 0px 0px 0px 18px;">&nbsp;</p>
+<p style="text-indent: -18px; margin: 0px 0px 0px 18px;"><a name="_pr1"></a><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Same routine, different parameters</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #800000;"> </span></p>
+<p style="text-indent: -18px; margin: 0px 0px 0px 18px;">&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">One of the benefits of Object Oriented programming is that some of the rigidity of procedural languages was relaxed. This has spilled over into non object orientation subroutines (as opposed to class methods).</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">One of the benefits is that we can define two or more subroutines that have exactly the same name. Pas2JS is able to tell them apart by the different number or types of parameters.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">The example below illustrates this with two versions of the DoIt procedure using Pas2JS.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="middle" width="624" style="width:624px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">DoIt</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">overload</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">ShowMessage(</span><span class="f_CodeExample" style="color: #000080;">'DoIt&nbsp;with&nbsp;no&nbsp;parameters&nbsp;called'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">DoIt</span><span class="f_CodeExample" style="color: #000000;">(msg&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">overload</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">ShowMessage(</span><span class="f_CodeExample" style="color: #000080;">'DoIt&nbsp;called&nbsp;with&nbsp;parameter&nbsp;:&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+msg);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">InitializeForm</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Call&nbsp;the&nbsp;procedure&nbsp;using&nbsp;no&nbsp;parameters</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">DoIt</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Now&nbsp;call&nbsp;the&nbsp;procedure&nbsp;using&nbsp;one&nbsp;parameter</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">DoIt</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #000080;">'Hi&nbsp;there'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px; color: #000000;">Result is:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">DoIt&nbsp;with&nbsp;no&nbsp;parameters&nbsp;called</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">DoIt&nbsp;called&nbsp;with&nbsp;parameter&nbsp;:&nbsp;Hi&nbsp;There</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A7_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A7','$TOGGLE0186A7_ICON')">Pas2JS has generated 2 JS functions!</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A7" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;DoIt()&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;alert(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;DoIt&nbsp;with&nbsp;no&nbsp;parameters&nbsp;called&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;DoIt$1(msg$1)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;alert(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;DoIt&nbsp;called&nbsp;with&nbsp;parameter&nbsp;:&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+msg$1);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+myInitToggle('TOGGLE0186A2','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A2_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A2\',\'\$TOGGLE0186A2_ICON\')');
+myInitToggle('TOGGLE0186A3','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A3_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A3\',\'\$TOGGLE0186A3_ICON\')');
+myInitToggle('TOGGLE0186A4','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A4_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A4\',\'\$TOGGLE0186A4_ICON\')');
+myInitToggle('TOGGLE0186A5','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A5_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A5\',\'\$TOGGLE0186A5_ICON\')');
+myInitToggle('TOGGLE0186A6','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A6_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A6\',\'\$TOGGLE0186A6_ICON\')');
+myInitToggle('TOGGLE0186A7','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A7_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A7\',\'\$TOGGLE0186A7_ICON\')');
+}
+</script>
+</body>
+</html>

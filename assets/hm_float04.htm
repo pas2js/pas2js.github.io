@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="Sign,IsFinite,IsInfinite,IsNaN,ToString (Float),Clamp" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Information functions (Float)</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Sign, IsFinite, IsInfinite, IsNaN, ToString, Clamp</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button23Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;f&nbsp;:&nbsp;Double;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;amount1,&nbsp;amount2,&nbsp;amount3&nbsp;:&nbsp;Extended;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Sign&nbsp;-510.825&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Sign(-</span><span class="f_CodeExample" style="color: #0000ff;">510</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">825</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'----------------'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Set&nbsp;the&nbsp;number&nbsp;to&nbsp;infinity</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;f&nbsp;:=&nbsp;Infinity;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Equivalent&nbsp;to&nbsp;1.0/0.0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Although&nbsp;infinite,&nbsp;we&nbsp;can&nbsp;still&nbsp;display&nbsp;it</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'f&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(f));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;And&nbsp;we&nbsp;can&nbsp;test&nbsp;to&nbsp;see&nbsp;if&nbsp;it&nbsp;is&nbsp;infinite</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;IsInfinite(f)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'f&nbsp;is&nbsp;infinite'</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'f&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(f));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'----------------'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Set&nbsp;the&nbsp;number&nbsp;to&nbsp;an&nbsp;invalid&nbsp;number</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;f&nbsp;:=&nbsp;NAN;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Equivalent&nbsp;to&nbsp;0.0/0.0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Although&nbsp;an&nbsp;invalid&nbsp;number,&nbsp;we&nbsp;can&nbsp;still&nbsp;display&nbsp;it</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'f&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(f));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;And&nbsp;we&nbsp;can&nbsp;test&nbsp;to&nbsp;see&nbsp;if&nbsp;it&nbsp;is&nbsp;a&nbsp;valid&nbsp;number</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;IsNaN(f)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'f&nbsp;is&nbsp;not&nbsp;a&nbsp;number'</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'f&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(f));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'----------------'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//Display&nbsp;various&nbsp;sizes&nbsp;of&nbsp;extended&nbsp;data&nbsp;values</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;amount1&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1234</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">123456789</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;High&nbsp;precision&nbsp;number</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;amount2&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1234</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">123</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;High&nbsp;mantissa&nbsp;digits</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;amount3&nbsp;:=&nbsp;1E100;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;High&nbsp;value&nbsp;number</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Amount1&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(amount1));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Amount2&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(amount2));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Amount3&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(amount3));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Clamp(500,&nbsp;499,&nbsp;502)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Clamp(</span><span class="f_CodeExample" style="color: #0000ff;">500</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">499</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">502</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(amount3.Clamp(amount1,amount2));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Sign&nbsp;-510.825&nbsp;=&nbsp;-1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">----------------</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">f&nbsp;=&nbsp;Infinity</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">f&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">is</span><span class="f_CodeExample" style="color: #000000;">&nbsp;infinite</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">----------------</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">f&nbsp;=&nbsp;NaN</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">f&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">is</span><span class="f_CodeExample" style="color: #000000;">&nbsp;not&nbsp;a&nbsp;number</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">----------------</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Amount1&nbsp;=&nbsp;1234.123456789</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Amount2&nbsp;=&nbsp;1234.123</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Amount3&nbsp;=&nbsp;1e+100</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Clamp(500,&nbsp;499,&nbsp;502)&nbsp;=&nbsp;500</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">1234.123&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span class="f_BodyText"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">JS&nbsp;output</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button23Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$21)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;f$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;amount1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;amount2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;amount3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Sign&nbsp;-510.825&nbsp;=&nbsp;-1&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;----------------&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f$3&nbsp;=&nbsp;Infinity;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;f&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(f$3)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(IsInfinite(f$3))&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;f&nbsp;is&nbsp;infinite&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;f&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(f$3)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;----------------&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f$3&nbsp;=&nbsp;NaN;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;f&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(f$3)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(isNaN(f$3))&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;f&nbsp;is&nbsp;not&nbsp;a&nbsp;number&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;f&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(f$3)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;----------------&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1234</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">123456789</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1234</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">123</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1E100</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Amount1&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(amount1)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Amount2&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(amount2)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Amount3&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(amount3)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Clamp(500,&nbsp;499,&nbsp;502)&nbsp;=&nbsp;500&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(Clamp(amount3,amount1,amount2));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+}
+</script>
+</body>
+</html>

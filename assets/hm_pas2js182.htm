@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Function Pointer ex02</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js181.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js183.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Function Pointer example 02
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TMyProcStr = procedure(s: String);
+
+type
+  TMyProcInts = procedure(i1, i2: Integer);
+
+procedure TestS1(s: String);
+begin
+  WriteLn('Hello ' + s)
+end;
+
+procedure TestS2(str: String);
+begin
+  WriteLn('Bye bye ' + str)
+end;
+
+procedure TestI1(i1, i2: Integer);
+begin
+  WriteLn(i1 + i2);
+end;
+
+procedure TestI2(i1, i2: Integer);
+begin
+  WriteLn(i1 - i2);
+end;
+
+var ps: TMyProcStr;
+
+var pis: TMyProcInts;
+
+procedure RunPtrs;
+begin
+  ps('Run');
+  pis(20, 3);
+end;
+
+ps := TestS1;
+pis := TestI1;
+ps('World');
+pis(10, 5);
+
+RunPtrs;
+
+ps := TestS2;
+pis := TestI2;
+
+ps('World');
+pis(10, 5);
+
+RunPtrs;
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+Hello World
+15
+Hello Run
+23
+Bye bye World
+5
+Bye bye Run
+17
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TObject={
+	$ClassName: "TObject",
+	$Parent: null,
+	ClassName: function (s) { return s.$ClassName },
+	ClassType: function (s) { return s },
+	ClassParent: function (s) { return s.$Parent },
+	$Init: function () {},
+	Create: function (s) { return s },
+	Destroy: function (s) { for (var prop in s) if (s.hasOwnProperty(prop)) delete s.prop },
+	Destroy$: function(s) { return s.ClassType.Destroy(s) },
+	Free: function (s) { if (s!==null) s.ClassType.Destroy(s) }
+}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i }
+function $CheckFunc(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Function pointer is nil"+z); }
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+function TestS2(str) {
+   WriteLn(("Bye bye "+str));
+};
+function TestS1(s) {
+   WriteLn(("Hello "+s));
+};
+function TestI2(i1, i2) {
+   WriteLn((i1-i2));
+};
+function TestI1(i1$1, i2$1) {
+   WriteLn((i1$1+i2$1));
+};
+function RunPtrs() {
+   $CheckFunc(ps,"")("Run");
+   $CheckFunc(pis,"")(20,3);
+};
+var ps = null;
+var pis = null;
+
+/* <<< main JS >>> */
+
+   ps = TestS1;
+   pis = TestI1;
+   $CheckFunc(ps,"")("World");
+   $CheckFunc(pis,"")(10,5);
+   RunPtrs();
+   ps = TestS2;
+   pis = TestI2;
+   $CheckFunc(ps,"")("World");
+   $CheckFunc(pis,"")(10,5);
+   RunPtrs();
+</code></pre></div>
+</div>
+</body>
+</html>

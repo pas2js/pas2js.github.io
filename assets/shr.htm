@@ -1,0 +1,134 @@
+<!-- (0046)Shr -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Shr command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Shr, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Shr</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Shift an integer value right by a number of bits</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+Number <b>Shr</b> bits
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Shr</b></font> keyword performs a bitwise shift right of an Integer. The number is shifted <b>Bits</b> to the right.
+<br>&nbsp;<br>
+If <b>Bits</b> is greater than the size of the number type, the <b>Bits</b> value is Mod'ed by the number type size (minimum 32) before the shift.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#FF0000><b>Warning</b></font> Only use <font color=#996600><b>Shr</b></font> when a bit operation is required - do not use instead of a multiplication or division. First because it is unclear as to what is happening. Secondly, bits may be lost in the operation.<br>
+<br>
+<font color=#FF0000><b>Warning</b></font> The compiler will reject hardcoded shift right values that exceed 32, unless the data type is <b>Int64</b>. The same is not true for <b>Shl</b>.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="hi.htm">Hi</a></b></td>
+<td width="8"></td>
+<td align="left">Returns the hi-order byte of a (2 byte) Integer</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="lo.htm">Lo</a></b></td>
+<td width="8"></td>
+<td align="left">Returns the low-order byte of a (2 byte) Integer</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shl.htm">Shl</a></b></td>
+<td width="8"></td>
+<td align="left">Shift an integer value left by a number of bits</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Shifting left and losing high bits before shifting right</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;before, after : Word;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up out starting number</b></font><br>&nbsp;&nbsp;before := $3C;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Hex 3C = 003C in the Word</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Shift left by 12 will lose the top 12 bits of the Word</b></font><br>
+&nbsp;&nbsp;after := before Shl 12;<br><b>
+</b><br>
+&nbsp;&nbsp;ShowMessageFmt('Before : %x',[before]);<br>
+&nbsp;&nbsp;ShowMessageFmt('After shift left&nbsp;&nbsp;: %x',[after]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Shifting right by 12 will not recover the lost data</b></font><br>
+&nbsp;&nbsp;after := after <font color=#C00000><b>Shr</b></font> 12;<br><b>
+</b><br>
+&nbsp;&nbsp;ShowMessageFmt('After shift right : %x',[after]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="shr&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Before : 3C<br>&nbsp;&nbsp;
+After shift left&nbsp;&nbsp;: C000<br>&nbsp;&nbsp;
+After shift right : C<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

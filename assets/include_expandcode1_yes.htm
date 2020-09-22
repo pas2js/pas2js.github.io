@@ -1,0 +1,146 @@
+<!-- (0066)Include&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Include command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Include, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Include</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Include a value in a set variable</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>Include</b></font>
+
+(
+<b>var SetVariable </b> : set of SetValues;<b> OneOfSet </b> : SetValues
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Include</b></font> procedure includes a set value in a set variable.
+<br>&nbsp;<br>
+A set variable is one that can contain 0, some, or all values of a set. When you <font color=#996600><b>Include</b></font> a set value in a set variable, you are adding to the included values in the variable.
+<br>&nbsp;<br>
+<font color=#996600><b>Include</b></font> is equivalent to the <b>+</b> operator, as shown here :
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>
+Include(CardHand, JackOfClubs);<br>
+CardHand := CardHand + [JackOfClubs];
+</font></font>
+<br>&nbsp;<br>
+For example, you can insert a playing card into a players hand - where the hand is based on a set of all playing cards in a deck. 
+<br>&nbsp;<br>
+Use <b>Exclude</b> to remove a value from a set variable. This would, for example, allow a card to be removed from a player's hand.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="exclude.htm">Exclude</a></b></td>
+<td width="8"></td>
+<td align="left">Exclude a value in a set variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="in.htm">In</a></b></td>
+<td width="8"></td>
+<td align="left">Used to test if a value is a member of a set</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="set.htm">Set</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a set of up to 255 distinct values</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Creating a variable containing only positive numbers 0 to 10</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;<font color=#008000>// The System unit does not need to be defined</font><br>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;evenNumbers : Set of 0..10;<br>
+&nbsp;&nbsp;i : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Make sure that evenNumbers only contains even numbers</b></font><br>
+&nbsp;&nbsp;evenNumbers := [];<br>
+&nbsp;&nbsp;for i := 0 to 10 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (i mod 2) = 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;then <font color=#C00000><b>Include</b></font>(evenNumbers, i);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display the set contents</b></font><br>
+&nbsp;&nbsp;for i := 0 to 10 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if i in evenNumbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;then ShowMessage(IntToStr(i)+' is even');<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="include.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;0 is even<br>&nbsp;&nbsp;
+2 is even<br>&nbsp;&nbsp;
+4 is even<br>&nbsp;&nbsp;
+6 is even<br>&nbsp;&nbsp;
+8 is even<br>&nbsp;&nbsp;
+10 is even<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

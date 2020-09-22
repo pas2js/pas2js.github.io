@@ -1,0 +1,242 @@
+<!-- (0055)TFloatFormat -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TFloatFormat command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TFloatFormat, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TFloatFormat</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Formats for use in floating point number display functions</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>TFloatFormat</b> = (<b>ffGeneral, ffExponent, ffFixed, ffNumber, ffCurrency</b>);
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>TFloatFormat</b></font> type is used by the following <b>SysUtils</b> functions :
+<br>&nbsp;<br>
+<b>CurrToStrF</b>? For displaying currency values
+<b>FloatToStrF</b> For general float displaying
+<b>FloatToText</b> For formatting to an array
+<br>&nbsp;<br>
+The possible values of <font color=#996600><b>TFloatFormat</b></font> are :
+<br>&nbsp;<br>
+<font color=#FF0000><b>ffGeneral</b></font>
+<br>&nbsp;<br>
+Defines general number formatting that aims to keep the resultant value as compact as possible. It removes trailing zeros and the decimal point where appropriate. No thousand separators are shown. Exponent format is used if the mantissa is too large for the specified <b>Precision</b> value of the formatting command. In this case, the <b>Digits</b> value (0..4) determines the minimum number of exponent digits shown. The decimal point character is determined by the <b>DecimalSeparator</b> variable.
+<br>&nbsp;<br>
+<font color=#FF0000><b>ffExponent</b></font>
+<br>&nbsp;<br>
+Commonly referred to as the Scientific or Engineering format, the exponent refers to the letter <b>E</b> followed by a number. The number gives the power of 10 of the number. For example, <b>E+15</b> means <b>10<sup>15</sup></b>. The exponent always has a <b>+</b> or <b>-</b> sign. This exponent is preceded by a number that always has one digit before the decimal place.
+<br>&nbsp;<br>
+For example : 
+<b>123.456</b> formats as <b>1.23456E+2</b>
+<b>0.00123</b> formats as <b>1.23E-3</b>
+<br>&nbsp;<br>
+The using function <b>Precision</b> parameter gives the number of displayed digits before the <b>E</b>, and the <b>Digits</b> parameter gives the number (0..4) of digits after the <b>E</b>.
+<br>&nbsp;<br>
+ The decimal point character is determined by the <b>DecimalSeparator</b> variable.
+<br>&nbsp;<br>
+<font color=#FF0000><b>ffFixed</b></font>
+<br>&nbsp;<br>
+This format again uses no thousands separator. It displays <b>Precision</b> digits before the decimal point, and <b>Digits</b> digits after. If there are too many digits before the decimal point, then the Exponent format is used instead.
+<br>&nbsp;<br>
+The decimal point character is determined by the <b>DecimalSeparator</b> variable.
+<br>&nbsp;<br>
+<font color=#FF0000><b>ffNumber</b></font>
+<br>&nbsp;<br>
+Same as ffFixed, except that thousand separators are used. These are defined by the <b>ThousandSeparator</b> variable.
+<br>&nbsp;<br>
+<font color=#FF0000><b>ffCurrency</b></font>
+<br>&nbsp;<br>
+Same as ffNumber, but with a currency symbol (string) added, as defined by the <b>CurrencyString</b> variable. Additionally, the formatting is influenced by the <b>CurrencyFormat</b> and <b>NegCurrFormat</b> variables.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Note above that the <b>Precision</b> and <b>Digits</b> values of the function using <font color=#996600><b>TFloatFormat</b></font> depend on the format chosen.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="currencydecimals.htm">CurrencyDecimals</a></b></td>
+<td width="8"></td>
+<td align="left">Defines decimal digit count in the Format function</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currencyformat.htm">CurrencyFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Defines currency string placement in curr display functions</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currencystring.htm">CurrencyString</a></b></td>
+<td width="8"></td>
+<td align="left">The currency string used in currency display functions</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currtostrf.htm">CurrToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a currency value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="decimalseparator.htm">DecimalSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to display the decimal point</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="floattostrf.htm">FloatToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a floating point value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="negcurrformat.htm">NegCurrFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Defines negative amount formatting in currency displays</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="thousandseparator.htm">ThousandSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to display the thousands separator</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate the 5 different types of formatting</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;amount : Extended;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;amount := 1234.56;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display using ffGeneral formatting</b></font><br>
+&nbsp;&nbsp;WriteLn('General 4,0 = '+FloatToStrF(amount, <b>ffGeneral</b>, 4, 0));<br>
+&nbsp;&nbsp;WriteLn('General 6,0 = '+FloatToStrF(amount, <b>ffGeneral</b>, 6, 0));<br>
+&nbsp;&nbsp;WriteLn('General 6,2 = '+FloatToStrF(amount, <b>ffGeneral</b>, 6, 2));<br>
+&nbsp;&nbsp;WriteLn('General 3,2 = '+FloatToStrF(amount, <b>ffGeneral</b>, 3, 2));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display using ffExponent formatting</b></font><br>
+&nbsp;&nbsp;WriteLn('Exponent 4,0 = '+FloatToStrF(amount, <b>ffExponent</b>, 4, 0));<br>
+&nbsp;&nbsp;WriteLn('Exponent 6,0 = '+FloatToStrF(amount, <b>ffExponent</b>, 6, 0));<br>
+&nbsp;&nbsp;WriteLn('Exponent 6,2 = '+FloatToStrF(amount, <b>ffExponent</b>, 6, 2));<br>
+&nbsp;&nbsp;WriteLn('Exponent 3,2 = '+FloatToStrF(amount, <b>ffExponent</b>, 3, 2));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display using ffFixed formatting</b></font><br>
+&nbsp;&nbsp;WriteLn('Fixed 4,0 = '+FloatToStrF(amount, <b>ffFixed</b>, 4, 0));<br>
+&nbsp;&nbsp;WriteLn('Fixed 6,0 = '+FloatToStrF(amount, <b>ffFixed</b>, 6, 0));<br>
+&nbsp;&nbsp;WriteLn('Fixed 6,2 = '+FloatToStrF(amount, <b>ffFixed</b>, 6, 2));<br>
+&nbsp;&nbsp;WriteLn('Fixed 3,2 = '+FloatToStrF(amount, <b>ffFixed</b>, 3, 2));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display using ffNumber formatting</b></font><br>
+&nbsp;&nbsp;WriteLn('Number 4,0 = '+FloatToStrF(amount, <b>ffNumber</b>, 4, 0));<br>
+&nbsp;&nbsp;WriteLn('Number 6,0 = '+FloatToStrF(amount, <b>ffNumber</b>, 6, 0));<br>
+&nbsp;&nbsp;WriteLn('Number 6,2 = '+FloatToStrF(amount, <b>ffNumber</b>, 6, 2));<br>
+&nbsp;&nbsp;WriteLn('Number 3,2 = '+FloatToStrF(amount, <b>ffNumber</b>, 3, 2));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display using ffCurrency formatting</b></font><br>
+&nbsp;&nbsp;WriteLn('Currency 4,0 = '+FloatToStrF(amount, <b>ffCurrency</b>, 4, 0));<br>
+&nbsp;&nbsp;WriteLn('Currency 6,0 = '+FloatToStrF(amount, <b>ffCurrency</b>, 6, 0));<br>
+&nbsp;&nbsp;WriteLn('Currency 6,2 = '+FloatToStrF(amount, <b>ffCurrency</b>, 6, 2));<br>
+&nbsp;&nbsp;WriteLn('Currency 3,2 = '+FloatToStrF(amount, <b>ffCurrency</b>, 3, 2));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="tfloatformat&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;General 4,0 = 1235<br>&nbsp;&nbsp;
+General 6,0 = 1234.56<br>&nbsp;&nbsp;
+General 6,2 = 1234.56<br>&nbsp;&nbsp;
+General 3,2 = 1.23E03<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Exponent 4,0 = 1.235E+3<br>&nbsp;&nbsp;
+Exponent 6,0 = 1.23456E+3<br>&nbsp;&nbsp;
+Exponent 6,2 = 1.23456E+03<br>&nbsp;&nbsp;
+Exponent 3,2 = 1.23E+03<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Fixed 4,0 = 1235<br>&nbsp;&nbsp;
+Fixed 6,0 = 1235<br>&nbsp;&nbsp;
+Fixed 6,2 = 1234.56<br>&nbsp;&nbsp;
+Fixed 3,2 = 1.23E03<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Number 4,0 = 1,235<br>&nbsp;&nbsp;
+Number 6,0 = 1,235<br>&nbsp;&nbsp;
+Number 6,2 = 1,234.56<br>&nbsp;&nbsp;
+Number 3,2 = 1.23E03<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Currency 4,0 = ?1,235<br>&nbsp;&nbsp;
+Currency 6,0 = ?1,235<br>&nbsp;&nbsp;
+Currency 6,2 = ?1,234.56<br>&nbsp;&nbsp;
+Currency 3,2 = 1.23E03<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Inherited constructor</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js228.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js230.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Inherited constructor
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+function CreateElement: TObject;
+begin
+  Result := new TObject;
+end;
+
+Type
+  TComponent = Class(TObject)
+  Private
+    FObjRef: TObject;
+  Public
+    Property Handle: TObject read FObjRef;
+    Constructor Create(AOwner: TComponent); virtual;
+  End;
+
+Constructor TComponent.Create(AOwner: TComponent);
+Begin
+  FObjRef := CreateElement;
+end;
+
+Type
+  TCustomControl = Class(TComponent)
+  public
+    Constructor Create(AOwner: TComponent); override;
+  End;
+
+Constructor TCustomControl.Create(AOwner: TComponent);
+Begin
+  if assigned(Handle) then
+    writeln('We have a handle')
+  else
+    writeln('We dont have a handle');
+end;
+
+Type
+  TCustomControl2 = Class(TComponent)
+  public
+    Constructor Create(AOwner: TComponent); override;
+  End;
+
+Constructor TCustomControl2.Create(AOwner: TComponent);
+Begin
+  inherited Create(AOwner);
+  if assigned(Handle) then
+    writeln('We have a handle')
+  else
+    writeln('We dont have a handle');
+end;
+
+var mObj: TComponent;
+	mObj := TCustomControl.Create(NIL);
+	mObj := TCustomControl2.Create(NIL);
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+Errors >>>>
+Hint: "createElement" does not match case of declaration ("CreateElement") [line: 17, column: 12]
+Hint: "assigned" does not match case of declaration ("Assigned") [line: 28, column: 6]
+Hint: "println" does not match case of declaration ("PrintLn") [line: 29, column: 3]
+Hint: "println" does not match case of declaration ("PrintLn") [line: 30, column: 3]
+Hint: "assigned" does not match case of declaration ("Assigned") [line: 42, column: 6]
+Hint: "println" does not match case of declaration ("PrintLn") [line: 43, column: 3]
+Hint: "println" does not match case of declaration ("PrintLn") [line: 44, column: 3]
+Result >>>>
+We dont have a handle
+We have a handle
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TComponent = {
+   $ClassName:"TComponent",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FObjRef = null;
+   }
+   ,Create$3:function(Self, AOwner) {
+      $Check(Self,"").FObjRef = CreateElement();
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+   ,Create$3$:function($){return $.ClassType.Create$3.apply($.ClassType, arguments)}
+};
+var TCustomControl2 = {
+   $ClassName:"TCustomControl2",$Parent:TComponent
+   ,$Init:function ($) {
+      TComponent.$Init($);
+   }
+   ,Create$3:function(Self, AOwner$1) {
+      TComponent.Create$3(Self,AOwner$1);
+      if ($Check(Self,"").FObjRef) {
+         WriteLn("We have a handle");
+      } else {
+         WriteLn("We dont have a handle");
+      }
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+   ,Create$3$:function($){return $.ClassType.Create$3.apply($.ClassType, arguments)}
+};
+var TCustomControl = {
+   $ClassName:"TCustomControl",$Parent:TComponent
+   ,$Init:function ($) {
+      TComponent.$Init($);
+   }
+   ,Create$3:function(Self, AOwner$2) {
+      if ($Check(Self,"").FObjRef) {
+         WriteLn("We have a handle");
+      } else {
+         WriteLn("We dont have a handle");
+      }
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+   ,Create$3$:function($){return $.ClassType.Create$3.apply($.ClassType, arguments)}
+};
+function CreateElement() {
+   return TObject.Create($New(TObject));
+};
+var mObj$4 = null;
+
+/* <<< main JS >>> */
+
+   mObj$4 = TComponent.Create$3$($New(TCustomControl),null);
+   mObj$4 = TComponent.Create$3$($New(TCustomControl2),null);
+</code></pre></div>
+</div>
+</body>
+</html>

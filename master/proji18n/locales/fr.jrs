@@ -1,0 +1,9 @@
+{
+  "menu" : {
+    "Good_bye" : "Au revoir ! $t(menu.country)",
+    "Hello" : "Bonjour ! $t(menu.country)",
+    "Selectyourlanguage" : "Sélectionner votre langage: $t(menu.country)",
+    "country" : "France",
+	"add": "Ajouter"	
+  }
+}

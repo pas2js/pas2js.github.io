@@ -1,0 +1,190 @@
+<!-- (0054)TThreadFunc -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TThreadFunc command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TThreadFunc, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TThreadFunc</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines the function to be called by <b>BeginThread</b></font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>TThreadFunc</b> : Function(Parameter : Pointer) : Integer;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>TThreadFunc</b></font> type defines a function rather than data. This function is normally used as a parameter to a <b>BeginThread</b> function call when starting a separate thread of operation. The defined function performs the thread activities.
+<br>&nbsp;<br>
+The return code for the function is the exit code for the thread.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="beginthread.htm">BeginThread</a></b></td>
+<td width="8"></td>
+<td align="left">Begins a separate thread of code execution</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="endthread.htm">EndThread</a></b></td>
+<td width="8"></td>
+<td align="left">Terminates a thread with an exit code</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="threadvar.htm">ThreadVar</a></b></td>
+<td width="8"></td>
+<td align="left">Defines variables that are given separate instances per thread</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Forms, Dialogs, Windows, SysUtils;<br><b>
+</b><br><b>
+type</b><br>
+&nbsp;&nbsp;TMsgRecord = record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;thread : Integer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;&nbsp;&nbsp;&nbsp;: string[30];<br>
+&nbsp;&nbsp;end;<br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+Implementation</b><br><b>
+{$R *.dfm}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Include form definitions</b><br><b>
+</b><br><b>
+ThreadVar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // We must allow each thread its own instances</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// of the passed record variable</b></font><br>
+&nbsp;&nbsp;msgPtr : ^TMsgRecord;<br><b>
+</b><br><font color=#008000><b>// Private thread procedure to show a string</b></font><br><b>
+function ShowMsg(Parameter : Pointer) : Integer;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up a 0 return value</b></font><br>
+&nbsp;&nbsp;Result := 0;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Map the pointer to the passed data</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note that each thread has a separate copy of msgPtr</b></font><br>
+&nbsp;&nbsp;msgPtr := Parameter;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display this message</b></font><br>
+&nbsp;&nbsp;ShowMessagePos('Thread '+IntToStr(msgPtr.thread)+' '+msgPtr.msg,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 200*msgPtr.thread, 100);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// End the thread</b></font><br>
+&nbsp;&nbsp;EndThread(0);<br><b>
+end;</b><br><b>
+</b><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;id1, id2 : LongWord;<br>
+&nbsp;&nbsp;thread1, thread2 : Integer;<br>
+&nbsp;&nbsp;msg1, msg2 : TMsgRecord;<br>
+&nbsp;&nbsp;showMsgFunc : <font color=#C00000><b>TThreadFunc</b></font>;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the thread function</b></font><br>
+&nbsp;&nbsp;showMsgFunc := Addr(ShowMsg);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up our display messages</b></font><br>
+&nbsp;&nbsp;msg1.thread := 1;<br>
+&nbsp;&nbsp;msg1.msg&nbsp;&nbsp;&nbsp;&nbsp;:= 'Hello World';<br>
+&nbsp;&nbsp;msg2.thread := 2;<br>
+&nbsp;&nbsp;msg2.msg&nbsp;&nbsp;&nbsp;&nbsp;:= 'Goodbye World';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Start the first thread running asking for users first name</b></font><br>
+&nbsp;&nbsp;thread1 := BeginThread(nil,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; showMsgFunc,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Addr(msg1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id1);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And also ask for the surname</b></font><br>
+&nbsp;&nbsp;thread2 := BeginThread(nil,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; showMsgFunc,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Addr(msg2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id2);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Ensure that the threads are only closed when all done</b></font><br>
+&nbsp;&nbsp;ShowMessagePos('Press this when other dialogs finished.', 200, 300);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Finally, tidy up by closing the threads</b></font><br>
+&nbsp;&nbsp;CloseHandle(thread1);<br>
+&nbsp;&nbsp;CloseHandle(thread2);<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Three dialogs are displayed:<br>&nbsp;&nbsp;
+&nbsp;&nbsp; <br>&nbsp;&nbsp;
+Thread 1 Hello World<br>&nbsp;&nbsp;
+Thread 2 Goodbye World<br>&nbsp;&nbsp;
+Press this when other dialogs finished.<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>question03</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">question03</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_q02.htm">Previous</a>&nbsp;
+     <a href="hm_question04.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><a name="100doors"></a><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">You have 100 doors in a row that are all initially closed. You make 100 passes by the doors. </span></p>
+<p><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">a) The first time through, you visit every door and toggle the door (if the door is closed, you open it; if it is open, you close it). </span></p>
+<p><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">b) The second time you only visit every 2nd door (door #2, #4, #6, ...). </span></p>
+<p><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">c) The third time, every 3rd door (door #3, #6, #9, ...), etc, until you only visit the 100th door.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">Question: What state are the doors in after the last pass? Which doors are open?</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">See the solution:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;doors&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;[</span><span class="f_CodeExample" style="color: #ff0000;">1</span><span class="f_CodeExample" style="color: #000000;">..</span><span class="f_CodeExample" style="color: #ff0000;">100</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Boolean;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i,&nbsp;j&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">100</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;j&nbsp;:=&nbsp;i&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">100</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(j&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">mod</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i)&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doors[j]&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">not</span><span class="f_CodeExample" style="color: #000000;">&nbsp;doors[j];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">100</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;doors[i]&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #000080;">'Door&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(i)+</span><span class="f_CodeExample" style="color: #000080;">'&nbsp;is&nbsp;open'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;1&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;4&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;9&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;16&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;25&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;36&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;49&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;64&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;81&nbsp;is&nbsp;open&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">Door&nbsp;100&nbsp;is&nbsp;open</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A2_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A2','$TOGGLE0186A2_ICON')">See JS output</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 18px;"><table id="TOGGLE0186A2" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #0000ff;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;doors&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;()&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(</span><span class="f_CodeExample" style="color: #0000ff;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;r=[],i=</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;i&lt;</span><span class="f_CodeExample" style="color: #800000;">100</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;i++)&nbsp;r.push(</span><span class="f_CodeExample" style="color: #0000ff;">false</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;r</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">}();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #0000ff;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #0000ff;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;j&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(i=</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;i&lt;=</span><span class="f_CodeExample" style="color: #800000;">100</span><span class="f_CodeExample" style="color: #000000;">;i++)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(j=i;j&lt;=</span><span class="f_CodeExample" style="color: #800000;">100</span><span class="f_CodeExample" style="color: #000000;">;j++)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(!(j%i))&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doors[(j)-</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;=&nbsp;!doors[(j)-</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(i=</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;i&lt;=</span><span class="f_CodeExample" style="color: #800000;">100</span><span class="f_CodeExample" style="color: #000000;">;i++)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(doors[(i)-</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">])&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;document.writeln((</span><span class="f_CodeExample" style="color: #800000;">&quot;Door&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+i.toString()+</span><span class="f_CodeExample" style="color: #800000;">&quot;&nbsp;is&nbsp;open&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-indent: -18px; margin: 7px 0px 7px 18px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+myInitToggle('TOGGLE0186A2','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A2_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A2\',\'\$TOGGLE0186A2_ICON\')');
+}
+</script>
+</body>
+</html>

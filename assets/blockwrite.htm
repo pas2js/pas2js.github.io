@@ -1,0 +1,187 @@
+<!-- (0053)BlockWrite -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : BlockWrite command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, BlockWrite, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>BlockWrite</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Writes a block of data records to an untyped binary file</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>BlockWrite</b></font>
+
+(
+<b>var FileHandle </b> : File; var Buffer;<b> RecordCount </b> : Integer {;<b> var RecordsWritten</b> : Integer}
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>BlockWrite</b></font> procedure is used to write to <b>RecordCount</b> data records from <b>Buffer</b> to an untyped binary file given by the <b>FileHandle</b>.
+<br>&nbsp;<br>
+The file must have been assigned using <b>AssignFile</b> and opened with <b>Reset</b> or <b>ReWrite</b>.
+<br>&nbsp;<br>
+The <b>Reset</b> and <b>ReWrite</b> routines by default will open the file with a record size of 128 bytes. This can be overriden in these routines to a value more useful to yourself (see example).
+<br>&nbsp;<br>
+Data is taken from the <b>Buffer</b> (normally a string or byte array) and written to the file. If the recordSize is 10 bytes, and <b>RecordCount</b> is 3, then 3 x 10 byte records are written, with 30 bytes taken from the buffer to do this.
+<br>&nbsp;<br>
+The actual number of records written is stored in the optional <b>RecordsWritten</b> variable, if provided. It may be les than <b>RecordCount</b> if, for example, the hard disk was full.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="blockread.htm">BlockRead</a></b></td>
+<td width="8"></td>
+<td align="left">Reads a block of data records from an untyped binary file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="file.htm">File</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a typed or untyped file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="read.htm">Read</a></b></td>
+<td width="8"></td>
+<td align="left">Read data from a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="readln.htm">ReadLn</a></b></td>
+<td width="8"></td>
+<td align="left">Read a complete line of data from a text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="write.htm">Write</a></b></td>
+<td width="8"></td>
+<td align="left">Write data to a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="writeln.htm">WriteLn</a></b></td>
+<td width="8"></td>
+<td align="left">Write a complete line of data to a text file</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Writing three 4-byte records in 2 block write to a binary file.</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myFile&nbsp;&nbsp;&nbsp;&nbsp;: File;<br>
+&nbsp;&nbsp;byteArray : array[1..8] of byte;<br>
+&nbsp;&nbsp;oneByte&nbsp;&nbsp; : byte;<br>
+&nbsp;&nbsp;i, count&nbsp;&nbsp;: Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Test.byt file for writing to</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'Test.byt');<br>&nbsp;&nbsp;ReWrite(myFile, 4);&nbsp;&nbsp; <font color=#008000><b>// Define a single 'record' as 4 bytes</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Fill out the data array</b></font><br>
+&nbsp;&nbsp;for i := 1 to 8 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;byteArray[i] := i;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write the data array to the file</b></font><br>&nbsp;&nbsp;<font color=#C00000><b>BlockWrite</b></font>(myFile, byteArray, 2);&nbsp;&nbsp; <font color=#008000><b>// Write 2 'records' of 4 bytes</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Fill out the data array with different data</b></font><br>
+&nbsp;&nbsp;for i := 1 to 4 do<br>&nbsp;&nbsp;&nbsp;&nbsp;byteArray[i] := i*i;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Value : 1, 4, 9, 16</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write only the first 4 items from the data array to the file</b></font><br>&nbsp;&nbsp;<font color=#C00000><b>BlockWrite</b></font>(myFile, byteArray, 1);&nbsp;&nbsp; <font color=#008000><b>// Write 1 record of 4 bytes</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file for reading only</b></font><br>
+&nbsp;&nbsp;FileMode := fmOpenRead;<br>&nbsp;&nbsp;Reset(myFile, 1);&nbsp;&nbsp; <font color=#008000><b>// Now we define one record as 1 byte</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Start with a read of the first 6 bytes. 'count' is set to the</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// actual number read</b></font><br>
+&nbsp;&nbsp;WriteLn('Reading first set of bytes :');<br>
+&nbsp;&nbsp;BlockRead(myFile, byteArray, 6, count);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the byte values read</b></font><br>
+&nbsp;&nbsp;for i := 1 to count do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(byteArray[i]));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now read one byte at a time to the end of the file</b></font><br>
+&nbsp;&nbsp;WriteLn('Reading remaining bytes :');<br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>&nbsp;&nbsp;&nbsp;&nbsp;BlockRead(myFile, oneByte, 1);&nbsp;&nbsp; <font color=#008000><b>// Read and display one byte at a time</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(oneByte));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file for the last time</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="blockwrite&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Reading first set of bytes :<br>&nbsp;&nbsp;
+1<br>&nbsp;&nbsp;
+2<br>&nbsp;&nbsp;
+3<br>&nbsp;&nbsp;
+4<br>&nbsp;&nbsp;
+5<br>&nbsp;&nbsp;
+6<br>&nbsp;&nbsp;
+Reading remaining bytes :<br>&nbsp;&nbsp;
+7<br>&nbsp;&nbsp;
+8<br>&nbsp;&nbsp;
+1<br>&nbsp;&nbsp;
+4<br>&nbsp;&nbsp;
+9<br>&nbsp;&nbsp;
+16<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

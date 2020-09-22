@@ -1,0 +1,208 @@
+<!-- (0053)WideString -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : WideString command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, WideString, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>WideString</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">A data type that holds a string of WideChars</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>WideString</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>WideString</b></font> data type is used to hold sequences of International characters, like sentences.
+<br>&nbsp;<br>
+Each character is a <b>WideChar</b>, guaranteed to be 16 bits in size.
+<br>&nbsp;<br>
+<b>WideChar</b> types provide support for multi-byte International character sets such as Chinese, which have vast numbers of characters (idiograms) in their character sets.
+<br>&nbsp;<br>
+Unlike <b>ShortStrings</b>, <font color=#996600><b>WideString</b></font>s are pointer referenced variables (for Windows - for Linux, they are not). Storage is allocated for an AnsiString only when needed. For example, assigning the value of one AnsiString to another does not allocate storage for a copy of the first string. Instead, the reference count of the first string is incremented, and the second AnsiString set to point to it. 
+<br>&nbsp;<br>
+But when the second string is changed, new storage is obtained for this new string, and the reference count for the first string is decremented.
+<br>&nbsp;<br>
+When a string is no longer referenced (the last AnsiString referer is set to nil), it is discarded. This is an example of Delphi managing storage on your behalf.
+<br>&nbsp;<br>
+<font color=#996600><b>WideString</b></font>s can be assigned from other strings, from functions that return a string, and with concatenations as in the sample code.
+<br>&nbsp;<br>
+When assigning to a 'narrow' string, such as an <b>AnsiString</b>, the double to single byte conversion can have unpredictable results. Use with care.
+<br>&nbsp;<br>
+Converting from <b>AnsiString</b> to <font color=#996600><b>WideString</b></font> is trouble free.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Strings are indexed with 1 for the first character (arrays start with 0 for the first element).<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="ansicomparestr.htm">AnsiCompareStr</a></b></td>
+<td width="8"></td>
+<td align="left">Compare two strings for equality</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansilowercase.htm">AnsiLowerCase</a></b></td>
+<td width="8"></td>
+<td align="left">Change upper case characters in a string to lower case</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansipos.htm">AnsiPos</a></b></td>
+<td width="8"></td>
+<td align="left">Find the position of one string in another</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="ansiuppercase.htm">AnsiUpperCase</a></b></td>
+<td width="8"></td>
+<td align="left">Change lower case characters in a string to upper case</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="concat.htm">Concat</a></b></td>
+<td width="8"></td>
+<td align="left">Concatenates one or more strings into one string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="copy.htm">Copy</a></b></td>
+<td width="8"></td>
+<td align="left">Create a copy of part of  a string or an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="delete">Delete</a></b></td>
+<td width="8"></td>
+<td align="left">Delete a section of characters from a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="length.htm">Length</a></b></td>
+<td width="8"></td>
+<td align="left">Return the number of elements in an array or string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="move.htm">Move</a></b></td>
+<td width="8"></td>
+<td align="left">Copy bytes of data from a source to a destination</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="pwidestring.htm">PWideString</a></b></td>
+<td width="8"></td>
+<td align="left">Pointer to a WideString value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setlength.htm">SetLength</a></b></td>
+<td width="8"></td>
+<td align="left">Changes the size of a string, or the size(s) of an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="string.htm">String</a></b></td>
+<td width="8"></td>
+<td align="left">A data type that holds a string of characters</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="widechar.htm">WideChar</a></b></td>
+<td width="8"></td>
+<td align="left">Variable type holding a single International character</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Assign to two WideStrings and manipulate these</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;string1, string2 : <font color=#C00000><b>WideString</b></font>;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Assign a famous sentence to the first string</b></font><br>
+&nbsp;&nbsp;string1 := 'Hello World';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Assign to the second string</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// This simply points string2 at string1</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// The 'Hello World' string storage has a reference count of 2</b></font><br>
+&nbsp;&nbsp;string2 := string1;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Add to the second string</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// This disassociates from string1 - new string storage is</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// created to hold the string2 value</b></font><br>
+&nbsp;&nbsp;string2 := string2 + ', how is everyone?';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And finally, set the length of the first string to 5</b></font><br>
+&nbsp;&nbsp;SetLength(string1, 5);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display both strings</b></font><br>
+&nbsp;&nbsp;WriteLn('String1 = '+string1);<br>
+&nbsp;&nbsp;WriteLn('String2 = '+string2);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/widestring&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;String1 = Hello<br>&nbsp;&nbsp;
+String2 = Hello World, how is everyone?<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

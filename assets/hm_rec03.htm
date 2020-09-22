@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Creating JSON object with Records</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : A more complex JSON structure with Records</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TRecordEnum&nbsp;=&nbsp;(reOne,&nbsp;reTwo,&nbsp;reLast);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;define&nbsp;some&nbsp;record&nbsp;types,&nbsp;used&nbsp;as&nbsp;properties&nbsp;below</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TTestCustomJSONArraySimpleArray&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;F:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;G:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;H:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H1:&nbsp;integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H3:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H3a:&nbsp;boolean;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H3b:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;I:&nbsp;TDateTime;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;J:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J1:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J2:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J3:&nbsp;TRecordEnum;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">///&nbsp;which&nbsp;kind&nbsp;of&nbsp;document&nbsp;the&nbsp;TJSONVariantData&nbsp;contains</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TJSONVariantKind&nbsp;=&nbsp;(jvUndefined,&nbsp;jvObject,&nbsp;jvArray);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">///&nbsp;convert&nbsp;a&nbsp;text&nbsp;or&nbsp;integer&nbsp;enumeration&nbsp;representation&nbsp;into&nbsp;its&nbsp;ordinal&nbsp;value</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;VariantToEnum(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Value:&nbsp;variant;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TextValues:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;str:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;&nbsp;{$ifdef&nbsp;ISSMS}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TVariant.IsNumber(Value)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;&nbsp;{$else}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;&nbsp;if&nbsp;VarIsOrdinal(Value)&nbsp;then&nbsp;//&nbsp;Value&nbsp;is&nbsp;integer</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;&nbsp;{$endif}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;:=&nbsp;Value&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;:=&nbsp;Value;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;str&lt;&gt;</span><span class="f_CodeExample" style="color: #0000ff;">''</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">high</span><span class="f_CodeExample" style="color: #000000;">(TextValues)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;str=TextValues[result]&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">exit</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;return&nbsp;first&nbsp;item&nbsp;by&nbsp;default</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;VariantType(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Value:&nbsp;variant):&nbsp;TJSONVariantKind;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">asm</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(@Value&nbsp;===&nbsp;null)&nbsp;return&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(typeof(@Value)&nbsp;!==&nbsp;&quot;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">object</span><span class="f_CodeExample" style="color: #000000;">&quot;)&nbsp;return&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Object</span><span class="f_CodeExample" style="color: #000000;">.prototype.toString.call(@Value)&nbsp;===&nbsp;&quot;[</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">object</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Array</span><span class="f_CodeExample" style="color: #000000;">]&quot;)&nbsp;return&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Variant2TRecordEnum(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;_variant:&nbsp;variant):&nbsp;TRecordEnum;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">asm</span><span class="f_CodeExample" style="color: #000000;">&nbsp;return&nbsp;@VariantToEnum(@_variant,@TRecordEnum);&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Variant2TTestCustomJSONArraySimpleArray(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Value:&nbsp;variant):&nbsp;TTestCustomJSONArraySimpleArray;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;result.F&nbsp;:=&nbsp;Value.F;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;VariantType(Value.G)=jvArray&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;integer(Value.G.</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">length</span><span class="f_CodeExample" style="color: #000000;">)-</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.G.Add(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">(Value.G[i]));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;result.H.H1&nbsp;:=&nbsp;Value.H.H1;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;result.H.H2&nbsp;:=&nbsp;Value.H.H2;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;result.H.H3.H3a&nbsp;:=&nbsp;Value.H.H3.H3a;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;result.H.H3.H3b&nbsp;:=&nbsp;(Value.H.H3.H3b);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;result.I&nbsp;:=&nbsp;Iso8601ToDateTime(Value.I);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;VariantType(Value.J)=jvArray&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;tmp:&nbsp;TTestCustomJSONArraySimpleArray;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;tmp.J.SetLength(</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;n&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;integer(Value.J.</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">length</span><span class="f_CodeExample" style="color: #000000;">)-</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;source&nbsp;:=&nbsp;Value.J[n];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;dest&nbsp;:=&nbsp;tmp.J[</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dest.J1&nbsp;:=&nbsp;source.J1;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dest.J2&nbsp;:=&nbsp;(source.J2);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dest.J3&nbsp;:=&nbsp;Variant2TRecordEnum(source.J3);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.J.Add(dest);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button4Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;abc&nbsp;:&nbsp;TTestCustomJSONArraySimpleArray;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;abc.F&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'warleyalex'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;abc.G&nbsp;:=&nbsp;[</span><span class="f_CodeExample" style="color: #0000ff;">'Delphi'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'Java'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'C++'</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;abc.H.H1&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">123</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;abc.H.H2&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Jesus&nbsp;Cristo'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;abc.H.H3.H3a&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">True</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;abc.H.H3.H3b&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Smart&nbsp;Mobile&nbsp;Studio'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;abc.I&nbsp;:=&nbsp;now();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;WriteLn(abc);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&quot;F&quot;&nbsp;:&nbsp;&quot;warleyalex&quot;,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&quot;G$3&quot;&nbsp;:&nbsp;[&quot;Delphi&quot;,&nbsp;&quot;Java&quot;,&nbsp;&quot;C++&quot;],</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&quot;H$1&quot;&nbsp;:&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;H1&quot;&nbsp;:&nbsp;123,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;H2&quot;&nbsp;:&nbsp;&quot;Jesus&nbsp;Cristo&quot;,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;H3&quot;&nbsp;:&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;H3a&quot;&nbsp;:&nbsp;true,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;H3b&quot;&nbsp;:&nbsp;&quot;Smart&nbsp;Mobile&nbsp;Studio&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;},</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&quot;I&quot;&nbsp;:&nbsp;41864.09710032407,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;&nbsp;&nbsp;&quot;J&quot;&nbsp;:&nbsp;[]</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">JS&nbsp;output:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">W3Button4Click</span><span class="f_CodeExample" style="color: #000000;">(Self,&nbsp;Sender$7)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;abc&nbsp;=&nbsp;{F:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,G$3:[],H$1:{H1:</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,H2:</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">,H3:{H3a:</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">false</span><span class="f_CodeExample" style="color: #000000;">,H3b:undefined}},I:</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,J:[]};</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abc.F&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;warleyalex&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abc.G$3&nbsp;=&nbsp;[</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Delphi&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Java&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;C++&quot;</span><span class="f_CodeExample" style="color: #000000;">].slice();</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abc.H$1.H1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">123</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abc.H$1.H2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Jesus&nbsp;Cristo&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abc.H$1.H3.H3a&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">true</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abc.H$1.H3.H3b&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Smart&nbsp;Mobile&nbsp;Studio&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abc.I&nbsp;=&nbsp;Now();</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">end;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="background-color: #ffcc99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Copy$TTestCustomJSONArraySimpleArray(s,d)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.F$1=s.F$1;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.G$1=s.G$1;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Copy$a$6(s.H$1,d.H$1);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.I=s.I;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.J$1=s.J$1;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;d;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Clone$TTestCustomJSONArraySimpleArray($)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F$1:$.F$1,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G$1:$.G$1,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H$1:Clone$a$6($.H$1),</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I:$.I,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J$1:$.J$1</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="background-color: #ffcc99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #808080;">///</span><span class="f_CodeExample" style="color: #008000;">&nbsp;anonymous&nbsp;TRecordSymbol</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Copy$a$5(s,d)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.H3a=s.H3a;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.H3b=s.H3b;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;d;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Clone$a$5($)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H3a:$.H3a,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H3b:$.H3b</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Pub$a$5($)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;H3a&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;$.H3a</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;H3b&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;$.H3b</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #808080;">///</span><span class="f_CodeExample" style="color: #008000;">&nbsp;anonymous&nbsp;TRecordSymbol</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Copy$a$6(s,d)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.H1=s.H1;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.H2=s.H2;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Copy$a$5(s.H3,d.H3);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;d;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Clone$a$6($)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H1:$.H1,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H2:$.H2,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H3:Clone$a$5($.H3)</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Pub$a$6($)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;H1&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;$.H1</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;H2&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;$.H2</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;H3&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;Pub$a$5($.H3)</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #808080;">///</span><span class="f_CodeExample" style="color: #008000;">&nbsp;anonymous&nbsp;TRecordSymbol</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Copy$a$7(s,d)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.J1=s.J1;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.J2=s.J2;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;d.J3=s.J3;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;d;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Clone$a$7($)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J1:$.J1,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J2:$.J2,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;J3:$.J3</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Pub$a$7($)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&quot;J1&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;$.J1</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;J2&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;$.J2</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,</span><span class="f_CodeExample" style="color: #0000ff;">&quot;J3&quot;</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;$.J3</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p style="background: #ffcc99;"><span style="background-color: #ffcc99;">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

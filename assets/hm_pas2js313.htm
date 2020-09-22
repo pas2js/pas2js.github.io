@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">record passing IV</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js312.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js314.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	record passing IV
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TRec = record
+    Left, Right: Integer;
+    procedure WriteLnMe;
+    begin
+      WriteLn(Left);
+      WriteLn(Right);
+    end;
+  end;
+
+procedure DoIt(r1, r2: TRec);
+begin
+  r1.WriteLnMe;
+  r2.WriteLnMe;
+end;
+
+procedure StartIt(r1, r2: TRec);
+var ra: TRec;
+  rb: TRec;
+begin
+  ra := r1;
+  rb := r2;
+  DoIt(ra, rb);
+  DoIt(rb, ra);
+end;
+
+var r1, r2: TRec;
+
+r1.Left := 1;
+r1.Right := 2;
+r2.Left := 3;
+r2.Right := 4;
+
+StartIt(r1, r2);
+StartIt(r2, r1);
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+12
+34
+34
+12
+34
+12
+12
+34
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+function Copy$TRec(s,d) {
+   d.Left=s.Left;
+   d.Right=s.Right;
+   return d;
+}
+function Clone$TRec($) {
+   return {
+      Left:$.Left,
+      Right:$.Right
+   }
+}
+function TRec$WriteLnMe(Self$1) {
+   WriteLn(Self$1.Left);
+   WriteLn(Self$1.Right);
+}
+function StartIt(r1$1, r2$1) {
+   var ra = {Left:0,Right:0};
+   var rb = {Left:0,Right:0};
+   Copy$TRec(r1$1,ra);
+   Copy$TRec(r2$1,rb);
+   DoIt(Clone$TRec(ra),Clone$TRec(rb));
+   DoIt(Clone$TRec(rb),Clone$TRec(ra));
+};
+function DoIt(r1$2, r2$2) {
+   TRec$WriteLnMe(r1$2);
+   TRec$WriteLnMe(r2$2);
+};
+var r1 = {Left:0,Right:0};
+var r2 = {Left:0,Right:0};
+
+/* <<< main JS >>> */
+
+   r1.Left = 1;
+   r1.Right = 2;
+   r2.Left = 3;
+   r2.Right = 4;
+   StartIt(Clone$TRec(r1),Clone$TRec(r2));
+   StartIt(Clone$TRec(r2),Clone$TRec(r1));
+</code></pre></div>
+</div>
+</body>
+</html>

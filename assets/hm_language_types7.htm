@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Helpers</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Helpers</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_interface.htm">Previous</a>&nbsp;
+     <a href="hm_language_types8.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">Class&nbsp;Helpers&nbsp;and&nbsp;Record&nbsp;Helpers</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">A&nbsp;class&nbsp;or&nbsp;a&nbsp;record&nbsp;helper&nbsp;is&nbsp;a&nbsp;type&nbsp;that&nbsp;-&nbsp;when&nbsp;associated&nbsp;with&nbsp;another&nbsp;class&nbsp;or&nbsp;a&nbsp;record&nbsp;-&nbsp;introduces&nbsp;additional&nbsp;method&nbsp;names&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">and&nbsp;properties&nbsp;that&nbsp;may&nbsp;be&nbsp;used&nbsp;in&nbsp;the&nbsp;context&nbsp;of&nbsp;the&nbsp;associated&nbsp;type&nbsp;(or&nbsp;its&nbsp;descendants).&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Helpers&nbsp;are&nbsp;a&nbsp;way&nbsp;to&nbsp;extend&nbsp;a&nbsp;class&nbsp;without&nbsp;using&nbsp;inheritance,&nbsp;which&nbsp;is&nbsp;also&nbsp;useful&nbsp;for&nbsp;records&nbsp;that&nbsp;do&nbsp;not&nbsp;allow&nbsp;inheritance&nbsp;at&nbsp;all.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">A&nbsp;helper&nbsp;simply&nbsp;introduces&nbsp;a&nbsp;wider&nbsp;scope&nbsp;for&nbsp;the&nbsp;compiler&nbsp;to&nbsp;use&nbsp;when&nbsp;resolving&nbsp;identifiers.&nbsp;When&nbsp;you&nbsp;declare&nbsp;a&nbsp;class&nbsp;or&nbsp;a&nbsp;record&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">helper,&nbsp;you&nbsp;state&nbsp;the&nbsp;helper&nbsp;name,&nbsp;and&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;type&nbsp;you&nbsp;are&nbsp;going&nbsp;to&nbsp;extend&nbsp;with&nbsp;the&nbsp;helper.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;use&nbsp;the&nbsp;helper&nbsp;any&nbsp;place&nbsp;where&nbsp;you&nbsp;can&nbsp;legally&nbsp;use&nbsp;the&nbsp;extended&nbsp;class&nbsp;or&nbsp;record.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Class&nbsp;and&nbsp;record&nbsp;helpers&nbsp;provide&nbsp;a&nbsp;way&nbsp;to&nbsp;extend&nbsp;a&nbsp;type,&nbsp;but&nbsp;they&nbsp;should&nbsp;not&nbsp;be&nbsp;viewed&nbsp;as&nbsp;a&nbsp;design&nbsp;tool&nbsp;to&nbsp;be&nbsp;used&nbsp;when&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">developing&nbsp;new&nbsp;code.&nbsp;For&nbsp;new&nbsp;code&nbsp;you&nbsp;should&nbsp;always&nbsp;rely&nbsp;on&nbsp;normal&nbsp;class&nbsp;inheritance&nbsp;and&nbsp;interface&nbsp;implementations.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">Using&nbsp;Helpers&nbsp;with&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Smart&nbsp;Mobile&nbsp;Studio&nbsp;supports&nbsp;helper&nbsp;objects&nbsp;for&nbsp;various&nbsp;elements,&nbsp;including&nbsp;classes,&nbsp;records&nbsp;and&nbsp;arrays.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Helper’s&nbsp;are&nbsp;extremely&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">valuable&nbsp;in&nbsp;leveraging&nbsp;complex&nbsp;data-structures.&nbsp;This&nbsp;is&nbsp;a&nbsp;very&nbsp;powerful&nbsp;addition&nbsp;to&nbsp;Smart’s&nbsp;already&nbsp;impressive&nbsp;list&nbsp;of&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">"must&nbsp;have"&nbsp;features&nbsp;when&nbsp;working&nbsp;with&nbsp;javascript.&nbsp;Features&nbsp;that&nbsp;no&nbsp;existing&nbsp;javascript&nbsp;framework&nbsp;or&nbsp;utility&nbsp;provides.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">Why&nbsp;not&nbsp;just&nbsp;use&nbsp;another&nbsp;interface?</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Presumably&nbsp;because&nbsp;you&nbsp;are&nbsp;not&nbsp;in&nbsp;a&nbsp;position&nbsp;to&nbsp;modify&nbsp;the&nbsp;implementing&nbsp;object.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">That's&nbsp;why&nbsp;one&nbsp;uses&nbsp;helpers&nbsp;/&nbsp;extension&nbsp;methods.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Helpers&nbsp;in&nbsp;Smart&nbsp;Pascal&nbsp;are&nbsp;a&nbsp;generalization&nbsp;of&nbsp;Delphi’s&nbsp;class&nbsp;helpers&nbsp;and&nbsp;can&nbsp;be&nbsp;applied&nbsp;to&nbsp;(almost)&nbsp;any&nbsp;type,&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">even&nbsp;to&nbsp;built-in&nbsp;types.&nbsp;You&nbsp;can&nbsp;also&nbsp;have&nbsp;multiple&nbsp;helpers&nbsp;per&nbsp;type.&nbsp;The&nbsp;syntax&nbsp;is&nbsp;as&nbsp;following:&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="555" style="width:555px; border: solid 1px #000000;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TMyHelper</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">helper</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">sometype</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">private</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;private&nbsp;&nbsp;helper&nbsp;&nbsp;methods,&nbsp;&nbsp;class&nbsp;&nbsp;vars&nbsp;&nbsp;&amp;&nbsp;&nbsp;class&nbsp;&nbsp;consts</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;public&nbsp;&nbsp;helper&nbsp;&nbsp;methods,&nbsp;&nbsp;class&nbsp;&nbsp;vars&nbsp;&nbsp;&amp;&nbsp;&nbsp;class&nbsp;&nbsp;consts</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Smart&nbsp;Mobile&nbsp;Studio&nbsp;supports&nbsp;helper&nbsp;objects&nbsp;for&nbsp;various&nbsp;elements,&nbsp;including&nbsp;classes,&nbsp;records&nbsp;and&nbsp;arrays.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;have&nbsp;helpers&nbsp;for&nbsp;base&nbsp;types,&nbsp;classes,&nbsp;records,&nbsp;interfaces&nbsp;or&nbsp;arrays.&nbsp;For&nbsp;instance&nbsp;if&nbsp;you&nbsp;write:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Code&nbsp;Example:&nbsp;Declaring&nbsp;a&nbsp;helper&nbsp;for&nbsp;base&nbsp;type&nbsp;float</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="626" style="width:626px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TFloatHelper</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">helper&nbsp;&nbsp;for&nbsp;&nbsp;Float</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;NPI&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">141592</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ToStr:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TFloatHelper.ToStr&nbsp;&nbsp;:&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result:=&nbsp;&nbsp;FloatToStr(</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">Self</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button2Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ReturnValue&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;ReturnValue&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">71</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage((ReturnValue&nbsp;*&nbsp;TFloatHelper.NPI).ToStr);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #008000;">//8.51371432</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(TFloatHelper.ToStr(ReturnValue&nbsp;*&nbsp;Float.NPI));&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #008000;">//8.51371432</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(&nbsp;(ReturnValue&nbsp;*&nbsp;ReturnValue.NPI).ToStr&nbsp;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #008000;">//8.51371432</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Result&nbsp;will&nbsp;be:&nbsp;8.51371432</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">---------------------------</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;write&nbsp;literal&nbsp;expressions&nbsp;such&nbsp;as:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Float.NPI</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TFloatHelper.NPI</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000080;">myFloatVar</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">.ToStr&nbsp;</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TFloatHelper.ToStr(</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000080;">myFloatVar</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">)</span></p>
+<p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">It&nbsp;is&nbsp;possible&nbsp;to&nbsp;have&nbsp;class&nbsp;methods&nbsp;in&nbsp;helpers;&nbsp;for&nbsp;types&nbsp;with&nbsp;a&nbsp;meta-symbol,&nbsp;Self&nbsp;will&nbsp;be&nbsp;that&nbsp;meta-symbol.</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">(for&nbsp;instance,&nbsp;for&nbsp;a&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">TObject</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;helper,&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Self</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;would&nbsp;be&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">TClass</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">),&nbsp;for&nbsp;others&nbsp;(like&nbsp;Float),&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Self</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;will&nbsp;not&nbsp;be&nbsp;defined.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">For&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">records</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">,&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Self</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;is&nbsp;passed&nbsp;as&nbsp;a&nbsp;const&nbsp;parameter&nbsp;therefore&nbsp;record&nbsp;helpers&nbsp;cannot&nbsp;modify&nbsp;the&nbsp;record&nbsp;being&nbsp;operated&nbsp;upon.</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Smart&nbsp;also&nbsp;supports&nbsp;a&nbsp;simplified&nbsp;helper&nbsp;syntax&nbsp;where&nbsp;you&nbsp;just&nbsp;declare&nbsp;a&nbsp;method&nbsp;and&nbsp;mark&nbsp;it&nbsp;as&nbsp;a&nbsp;helper.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;for&nbsp;example&nbsp;declare&nbsp;a&nbsp;following&nbsp;helper&nbsp;called&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Prepend&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">a</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">nd&nbsp;then&nbsp;use&nbsp;it&nbsp;on&nbsp;any&nbsp;data&nbsp;of&nbsp;the&nbsp;string&nbsp;type.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Code&nbsp;example:&nbsp;Declaring&nbsp;method&nbsp;as&nbsp;a&nbsp;helper</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="560" style="width:560px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Concat(s:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;prefix:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">helper&nbsp;Prepend;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;:=&nbsp;prefix&nbsp;+&nbsp;s;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button3Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;s&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;s:=&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Hello&nbsp;&nbsp;world'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;WriteLn(s);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Hello&nbsp;world</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Writeln(s.Prepend(</span><span class="f_CodeExample" style="color: #0000ff;">'ABC:'</span><span class="f_CodeExample" style="color: #000000;">));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;ABC:Hello&nbsp;world</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Writeln((</span><span class="f_CodeExample" style="color: #0000ff;">'my&nbsp;string'</span><span class="f_CodeExample" style="color: #000000;">).Prepend(</span><span class="f_CodeExample" style="color: #0000ff;">'***&nbsp;&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">));&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;***&nbsp;&nbsp;my&nbsp;string</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Hello&nbsp;world</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ABC:Hello&nbsp;world</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">***&nbsp;&nbsp;my&nbsp;string</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">-----------------</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">The&nbsp;following&nbsp;code&nbsp;demonstrates&nbsp;the&nbsp;declaration&nbsp;of&nbsp;a&nbsp;class&nbsp;helper&nbsp;(record&nbsp;helpers&nbsp;behave&nbsp;in&nbsp;the&nbsp;same&nbsp;manner):</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_helper01.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">&nbsp;A&nbsp;class&nbsp;helper&nbsp;example.&nbsp;&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_helper02.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">&nbsp;Class&nbsp;and&nbsp;Record&nbsp;helper&nbsp;example:&nbsp;how&nbsp;old&nbsp;are&nbsp;you?</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Multiple&nbsp;class&nbsp;helpers&nbsp;within&nbsp;scope&nbsp;are&nbsp;supported!</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">That&nbsp;is,&nbsp;MORE&nbsp;THAN&nbsp;ONE&nbsp;class&nbsp;helper&nbsp;for&nbsp;a&nbsp;given&nbsp;class&nbsp;may&nbsp;be&nbsp;in&nbsp;scope&nbsp;at&nbsp;any&nbsp;time.&nbsp;For&nbsp;instance,&nbsp;if&nbsp;you&nbsp;have&nbsp;two&nbsp;helpers&nbsp;in&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">scope,&nbsp;ALL&nbsp;OF&nbsp;THEM&nbsp;will&nbsp;be&nbsp;recognised&nbsp;by&nbsp;the&nbsp;compiler.&nbsp;You&nbsp;won't&nbsp;get&nbsp;any&nbsp;warnings&nbsp;or&nbsp;even&nbsp;hints&nbsp;about&nbsp;any&nbsp;other&nbsp;helpers&nbsp;that&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">may&nbsp;be&nbsp;hidden.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_helper03.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">&nbsp;Multiple&nbsp;class&nbsp;helper&nbsp;within&nbsp;the&nbsp;same&nbsp;class&nbsp;scope&nbsp;are&nbsp;supported&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Added&nbsp;a&nbsp;bunch&nbsp;of&nbsp;helpers&nbsp;for&nbsp;String,&nbsp;Integer,&nbsp;Float&nbsp;and&nbsp;Boolean&nbsp;type.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">See&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #0000ff;">https://code.google.com/p/dwscript/wiki/BaseTypes</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;for&nbsp;a&nbsp;full&nbsp;list.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">NOTES:&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Class&nbsp;helpers&nbsp;can&nbsp;be&nbsp;stored&nbsp;in&nbsp;a&nbsp;separate&nbsp;unit,&nbsp;so&nbsp;you&nbsp;can&nbsp;add&nbsp;your&nbsp;own&nbsp;nifty&nbsp;class&nbsp;helpers.&nbsp;</span></td></tr></table></div><p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;&nbsp;&nbsp;Be&nbsp;sure&nbsp;to&nbsp;give&nbsp;these&nbsp;units&nbsp;a&nbsp;easy&nbsp;to&nbsp;remember&nbsp;name&nbsp;like&nbsp;ClassesHelpers&nbsp;for&nbsp;helpers&nbsp;for&nbsp;the&nbsp;Classes&nbsp;unit.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">There&nbsp;are&nbsp;also&nbsp;record&nbsp;helpers.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Helpers&nbsp;on&nbsp;functions&nbsp;pointers&nbsp;or&nbsp;delegates&nbsp;types&nbsp;aren’t&nbsp;yet&nbsp;allowed,&nbsp;mostly&nbsp;because&nbsp;of&nbsp;ambiguity.</span></td></tr></table></div><p class="p_CodeExample" style="margin: 0px 0px 0px 24px;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Code&nbsp;example:&nbsp;Helpers&nbsp;on&nbsp;functions&nbsp;pointers&nbsp;or&nbsp;delegates&nbsp;are&nbsp;not&nbsp;supported.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="560" style="width:560px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TFunc&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TFuncHelper&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">helper</span><span class="f_CodeExample" style="color: #000080;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000080;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">TFunc&nbsp;</span><span class="f_CodeExample" style="color: #008000;">//&nbsp;this&nbsp;is&nbsp;not&nbsp;allowed</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ToString2&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TIntegerHelper&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">helper&nbsp;for&nbsp;Integer</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ToString2&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;f&nbsp;:&nbsp;TFunc;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">f.ToString;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">f.ToString2</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;could&nbsp;be&nbsp;understood&nbsp;as&nbsp;meaning&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TFuncHelper.ToString2(f)</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;or&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TIntegerHelper.ToString2(f())</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">if&nbsp;helpers&nbsp;on&nbsp;function&nbsp;pointers&nbsp;were&nbsp;allowed.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

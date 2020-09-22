@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">The Const keyword</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js107.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js109.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	The Const keyword | parameters | record | expressions | Block
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+// ######## CASE I ########################
+const ONE = 1;
+const TWO = ONE + ONE;
+const MINUS_ONE = -ONE;
+
+procedure WriteLnOut(Value: Integer = MINUS_ONE);
+begin
+  Writeln(IntToStr(Value));
+end;
+
+WriteLnOut();
+WriteLnOut(TWO + MINUS_ONE - ONE);
+WriteLnOut(ONE);
+WriteLnOut(TWO);
+WriteLnOut($100);
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  -1
+  0
+  1
+  2
+  256
+}
+
+// ######## CASE II ########################
+const X = 1024;
+const Y = Round(X / 5);
+const Z = Trunc(X / 5);
+
+  Writeln(IntToStr(Y));
+  Writeln(IntToStr(Z));
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  205
+  204
+}
+
+// ######## CASE III ########################
+// EMPTY ARRAY ----> VAR X CONST <-----
+
+//var ARR := [];
+Const ARR = [];
+var i := 0;
+try
+   WriteLn(ARR[i]);
+except
+   on E: Exception do
+      WriteLn(E.Message);
+end;
+
+// ######## CASE IV ########################
+// -----> CONST BLOCK <-------
+procedure Stuff1;
+const
+   a = 1;
+   b = 2;
+var
+   c : Integer;
+   d : Integer;
+begin
+   c:=d;
+end;
+
+procedure Stuff2;
+var
+   c : Integer;
+   d : Integer;
+const
+   a = 1;
+   b = 2;
+begin
+   c:=d;
+end;
+
+procedure Stuff3;
+var
+   c : Integer;
+   d : Integer;
+begin
+   c:=d;
+end;
+
+procedure Stuff4;
+const
+   a = 1;
+   b = 2;
+begin
+end;
+
+
+// ######## CASE V ########################
+// -----> CONST IN PARAMETERS <-------
+procedure Test(const i : Integer);
+begin
+   WriteLn(i);
+end;
+
+Test(1);
+Test(1+2);
+
+var j = 10;
+Test(j+1);
+Test(2*j);
+Test(Round(j*PI));
+
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  1
+  3
+  11
+  20
+  31
+}
+
+// ######## CASE VI ########################
+// -----> CONST IN PARAMETERS II <-------
+
+type
+TRec = record
+  Field: Integer;
+end;
+
+function Func1(const r: TRec): Integer;
+begin
+  Result := r.Field;
+end;
+
+function Func2(const r: TRec): TRec;
+begin
+  Result.Field := r.Field + 1;
+end;
+
+var
+  r: TRec;
+  Writeln(Func1(r));
+  Writeln(Func1(Func2(r)));
+  r := Func2(r);
+  Writeln(Func1(r));
+  Writeln(Func1(Func2(r)));
+
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  0
+  1
+  1
+  2
+}
+
+// ######## CASE VII ########################
+// --- CONST with RECORD TYPE --
+type
+TRec1 = record
+  w, x, y: Integer;
+  z: Float;
+  Name: string;
+end;
+
+const
+  c: TRec1 = (x: 1; y: 2; z: 3.1; Name: 'hello');
+
+  Writeln(c.w);
+  Writeln(c.x);
+  Writeln(c.y);
+  Writeln(c.z);
+  Writeln(c.Name);
+
+{ <<<<<<<<<<<< CONSOLE OUTPUTS >>>>>>>>>>>>>>>>>>>
+  0
+  1
+  2
+  3.1
+  hello
+}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var i = 0,
+j = 0,
+r = {
+	Field : 0
+};
+function WriteLnOut(Value) {
+	WriteLn(Value.toString());
+};
+/// TRec1 = record
+///  [line: 227, column: 1, file: uMain]
+function Copy$TRec1(s, d) {
+	d.w = s.w;
+	d.x$1 = s.x$1;
+	d.y = s.y;
+	d.z = s.z;
+	d.Name$3 = s.Name$3;
+	return d;
+}
+function Clone$TRec1($) {
+	return {
+		w : $.w,
+		x$1 : $.x$1,
+		y : $.y,
+		z : $.z,
+		Name$3 : $.Name$3
+	}
+}
+/// TRec = record
+///  [line: 195, column: 1, file: uMain]
+function Copy$TRec(s, d) {
+	d.Field = s.Field;
+	return d;
+}
+function Clone$TRec($) {
+	return {
+		Field : $.Field
+	}
+}
+function Test(i$1) {
+	WriteLn(i$1);
+};
+function Func2(r$1) {
+	var Result = {
+		Field : 0
+	};
+	Result.Field = r$1.Field + 1;
+	return Result
+};
+function Func1(r$2) {
+	return r$2.Field;
+};
+var ARR = [];
+WriteLnOut(-1);
+WriteLnOut(0);
+WriteLnOut(1);
+WriteLnOut(2);
+WriteLnOut(256);
+WriteLn("205");
+WriteLn("204");
+i = 0;
+try {
+	WriteLn(ARR[i]);
+} catch ($e) {
+	var E = $W($e);
+	WriteLn(E.FMessage)
+}
+Test(1);
+Test(3);
+j = 10;
+Test((j + 1));
+Test((j * 2));
+Test(Math.round(j * 3.14159265358979));
+WriteLn(Func1(r));
+WriteLn(Func1(Func2(r)));
+r = Func2(r);
+WriteLn(Func1(r));
+WriteLn(Func1(Func2(r)));
+WriteLn({
+	w : 0,
+	x$1 : 1,
+	y : 2,
+	z : 3.1,
+	Name$3 : "hello"
+}
+	.w);
+WriteLn({
+	w : 0,
+	x$1 : 1,
+	y : 2,
+	z : 3.1,
+	Name$3 : "hello"
+}
+	.x$1);
+WriteLn({
+	w : 0,
+	x$1 : 1,
+	y : 2,
+	z : 3.1,
+	Name$3 : "hello"
+}
+	.y);
+WriteLn({
+	w : 0,
+	x$1 : 1,
+	y : 2,
+	z : 3.1,
+	Name$3 : "hello"
+}
+	.z);
+WriteLn({
+	w : 0,
+	x$1 : 1,
+	y : 2,
+	z : 3.1,
+	Name$3 : "hello"
+}
+	.Name$3);
+
+
+</code></pre></div>
+</div>
+</body>
+</html>

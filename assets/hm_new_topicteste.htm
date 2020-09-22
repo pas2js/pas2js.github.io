@@ -1,0 +1,406 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Smart Banking Example</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Smart Banking example</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_ex2.htm">Previous</a>&nbsp;
+     <a href="hm_operators.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">This application is a simple bank account simulator, created originaly with delphi 7 and transpiling to javascript using Smart Mobile Studio.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">It asks your name and initial value in the account. The program will generate a account number. With theses data. Depending on the total balance, the account is classified – gold, silver or bronze.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">The account is classified in a way that determines if the services available are charged to the account. </span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">Code example: Class inheritance with Pas2JS</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">unit</span><span class="f_CodeExample" style="color: #000000;">&nbsp;conta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">interface</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;SmartCL.System;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TWEstadoConta&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TWConta&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Estado&nbsp;:&nbsp;TWEstadoConta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_NroConta&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_NomeCorrentista&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;VerificaStatus;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create(ANomeCorrentista:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Destroy;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Opera&ccedil;&otilde;es&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Sacar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AplicarRendimento;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ObtemSaldo&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ObtemNroConta&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ObtemEstado&nbsp;:&nbsp;TWEstadoConta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TWEstadoConta&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">protected</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Saldo&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_PorcRendim&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_LimInf,&nbsp;_LimSup&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Conta&nbsp;:&nbsp;TWConta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create&nbsp;(AConta&nbsp;:&nbsp;TWConta);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">virtual</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;CopyFrom&nbsp;(AContaOrg&nbsp;:&nbsp;TWEstadoConta);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">virtual</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Destroy;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">virtual</span><span class="f_CodeExample" style="color: #000000;">;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">abstract</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Sacar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AValor&nbsp;:&nbsp;Float);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">virtual</span><span class="f_CodeExample" style="color: #000000;">;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">abstract</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AplicarRendimento;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">virtual</span><span class="f_CodeExample" style="color: #000000;">;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">abstract</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TWContaComum&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">(TWEstadoConta)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">protected</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_TaxaServico&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create&nbsp;(AConta&nbsp;:&nbsp;TWConta);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Sacar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AValor&nbsp;:&nbsp;Float);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AplicarRendimento;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TWContaDiferenciada&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">(TWContaComum)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">protected</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_TaxaJuros&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create&nbsp;(AConta&nbsp;:&nbsp;TWConta);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Sacar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AValor&nbsp;:&nbsp;Float);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AplicarRendimento;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TWContaOuro&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">(TWEstadoConta)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">protected</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create&nbsp;(AConta&nbsp;:&nbsp;TWConta);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Sacar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AValor&nbsp;:&nbsp;Float);</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AplicarRendimento;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">implementation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;&nbsp;C&nbsp;l&nbsp;a&nbsp;s&nbsp;s&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;W&nbsp;C&nbsp;o&nbsp;n&nbsp;t&nbsp;a</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.Create(ANomeCorrentista:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Estado&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Nil</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_NroConta&nbsp;:=&nbsp;Trunc&nbsp;(Now&nbsp;*&nbsp;</span><span class="f_CodeExample" style="color: #000080;">100</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_NomeCorrentista&nbsp;:=&nbsp;ANomeCorrentista;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;VerificaStatus&nbsp;();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.Destroy;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;FreeAndNil&nbsp;(_Estado);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.ObtemNroConta&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;_NroConta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.ObtemEstado&nbsp;:&nbsp;TWEstadoConta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;_Estado;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.VerificaStatus;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;lNovoEstado&nbsp;:&nbsp;TWEstadoConta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;A&nbsp;conta&nbsp;&eacute;&nbsp;do&nbsp;tipo&nbsp;Comum&nbsp;por&nbsp;padr&atilde;o&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Estado&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Nil</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;_Estado&nbsp;:=&nbsp;TWContaComum.Create(Self);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Exit;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Testa&nbsp;as&nbsp;varia&ccedil;&otilde;es&nbsp;de&nbsp;estado&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;lNovoEstado&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Nil</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Estado._Saldo&nbsp;&lt;&nbsp;_Estado._LimInf)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Rebaixa&nbsp;de&nbsp;COMUM&nbsp;para&nbsp;DIFERENCIADA&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Estado&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">is</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaComum)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;WriteLn('C&nbsp;-&nbsp;D');</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lNovoEstado&nbsp;:=&nbsp;TWContaDiferenciada.Create&nbsp;(Self);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Rebaixa&nbsp;de&nbsp;OURO&nbsp;para&nbsp;COMUM&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Estado&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">is</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaOuro)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;WriteLn('o&nbsp;-&nbsp;c');</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lNovoEstado&nbsp;:=&nbsp;TWContaComum.Create&nbsp;(Self);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Estado._Saldo&nbsp;&gt;&nbsp;_Estado._LimSup)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Eleva&nbsp;de&nbsp;COMUM&nbsp;para&nbsp;OURO&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Estado&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">is</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaComum)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('c&nbsp;-&gt;&nbsp;O');</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lNovoEstado&nbsp;:=&nbsp;TWContaOuro.Create&nbsp;(Self);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Rebaixa&nbsp;de&nbsp;OURO&nbsp;para&nbsp;COMUM&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Estado&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">is</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaOuro)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;WriteLn('O&nbsp;-&gt;&nbsp;c');</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lNovoEstado&nbsp;:=&nbsp;TWContaComum.Create&nbsp;(Self);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Eleva&nbsp;de&nbsp;Diferenciada&nbsp;para&nbsp;Comum&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Estado&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">is</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaDiferenciada)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;WriteLn('D&nbsp;-&gt;&nbsp;c');</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lNovoEstado&nbsp;:=&nbsp;TWContaComum.Create&nbsp;(Self);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Efetiva&nbsp;a&nbsp;troca&nbsp;de&nbsp;estado&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(lNovoEstado&nbsp;&lt;&gt;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Nil</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Copia&nbsp;dados&nbsp;relevantes&nbsp;do&nbsp;estado&nbsp;atual&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;lNovoEstado.CopyFrom(_Estado);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Libera&nbsp;estado&nbsp;atual&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;_Estado.Free;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Considera&nbsp;novo&nbsp;Estado&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;_Estado&nbsp;:=&nbsp;lNovoEstado;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.ObtemSaldo&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;_Estado._Saldo;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Estado.Depositar(Avalor);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;VerificaStatus&nbsp;();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.Sacar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Estado.Sacar&nbsp;(AValor);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;VerificaStatus&nbsp;();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWConta.AplicarRendimento;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Estado.AplicarRendimento&nbsp;();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;VerificaStatus&nbsp;();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;&nbsp;C&nbsp;l&nbsp;a&nbsp;s&nbsp;s&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;W&nbsp;E&nbsp;s&nbsp;t&nbsp;a&nbsp;d&nbsp;o&nbsp;C&nbsp;o&nbsp;n&nbsp;t&nbsp;a</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWEstadoConta.Create&nbsp;(AConta&nbsp;:&nbsp;TWConta);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Conta&nbsp;:=&nbsp;AConta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_PorcRendim&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Valores&nbsp;de&nbsp;saldo&nbsp;que&nbsp;delimitam&nbsp;um&nbsp;estado&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_LimInf&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_LimSup&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWEstadoConta.Destroy;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Conta&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Nil</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWEstadoConta.CopyFrom&nbsp;(AContaOrg&nbsp;:&nbsp;TWEstadoConta);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Copia&nbsp;apenas&nbsp;as&nbsp;informa&ccedil;&otilde;es&nbsp;relevantes&nbsp;para&nbsp;a&nbsp;conta.&nbsp;As&nbsp;informa&ccedil;&otilde;es</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;&nbsp;&nbsp;&nbsp;que&nbsp;s&atilde;o&nbsp;espec&iacute;ficas&nbsp;do&nbsp;estado,&nbsp;como&nbsp;a&nbsp;taxa&nbsp;de&nbsp;rendimento,&nbsp;devem&nbsp;permanacer</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;&nbsp;&nbsp;&nbsp;conforme&nbsp;configuradas&nbsp;no&nbsp;pr&oacute;prio&nbsp;estado.&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;AContaOrg._Saldo;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Conta&nbsp;:=&nbsp;AContaOrg._Conta;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;&nbsp;C&nbsp;l&nbsp;a&nbsp;s&nbsp;s&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;W&nbsp;C&nbsp;o&nbsp;n&nbsp;t&nbsp;a&nbsp;C&nbsp;o&nbsp;m&nbsp;u&nbsp;m</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaComum.Create&nbsp;(AConta&nbsp;:&nbsp;TWConta);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;inherited;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_PorcRendim&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Rendimento&nbsp;padr&atilde;o&nbsp;:&nbsp;1%}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_TaxaServico&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">5</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">00</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Saques&nbsp;s&atilde;o&nbsp;cobrados&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Valores&nbsp;de&nbsp;saldo&nbsp;que&nbsp;delimitam&nbsp;um&nbsp;estado&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_LimInf&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">100</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">00</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_LimSup&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">999</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">99</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaComum.Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;_Saldo&nbsp;+&nbsp;AValor;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaComum.Sacar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;lValorReal&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;lValorReal&nbsp;:=&nbsp;AValor&nbsp;+&nbsp;_TaxaServico;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;_Saldo&nbsp;-&nbsp;lValorReal;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaComum.AplicarRendimento;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;_Saldo&nbsp;+&nbsp;(_Saldo&nbsp;*&nbsp;_PorcRendim)&nbsp;/&nbsp;</span><span class="f_CodeExample" style="color: #000080;">100</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;&nbsp;C&nbsp;l&nbsp;a&nbsp;s&nbsp;s&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;W&nbsp;C&nbsp;o&nbsp;n&nbsp;t&nbsp;a&nbsp;D&nbsp;i&nbsp;f&nbsp;e&nbsp;r&nbsp;e&nbsp;n&nbsp;c&nbsp;i&nbsp;a&nbsp;d&nbsp;a</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaDiferenciada.Create&nbsp;(AConta&nbsp;:&nbsp;TWConta);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;inherited;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_PorcRendim&nbsp;&nbsp;:=&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Sem&nbsp;rendimento&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_TaxaJuros&nbsp;&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">00</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Taxa&nbsp;de&nbsp;juros&nbsp;sobre&nbsp;saques&nbsp;qdo&nbsp;a&nbsp;conta&nbsp;fica&nbsp;sem&nbsp;saldo&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_TaxaServico&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">10</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">00</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Saques&nbsp;s&atilde;o&nbsp;cobrados&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Valores&nbsp;de&nbsp;saldo&nbsp;que&nbsp;delimitam&nbsp;um&nbsp;estado&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_LimInf&nbsp;:=&nbsp;-</span><span class="f_CodeExample" style="color: #000080;">100</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">00</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_LimSup&nbsp;:=&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">99</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">99</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaDiferenciada.Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;_Saldo&nbsp;+&nbsp;AValor;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaDiferenciada.Sacar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;lJuros,&nbsp;lValorReal&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;lValorReal&nbsp;:=&nbsp;AValor&nbsp;+&nbsp;_TaxaServico;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Saldo&nbsp;-&nbsp;lValorReal)&nbsp;&lt;&nbsp;_LimInf&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">raise</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Exception.Create(</span><span class="f_CodeExample" style="color: #000080;">'Saque&nbsp;n&atilde;o&nbsp;pode&nbsp;ser&nbsp;efetivado.&nbsp;Conta&nbsp;sem&nbsp;saldo.'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;lJuros&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(_Saldo&nbsp;-&nbsp;lValorReal)&nbsp;&lt;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;lJuros&nbsp;:=&nbsp;(lValorReal&nbsp;-&nbsp;_Saldo)&nbsp;*&nbsp;_TaxaJuros&nbsp;/&nbsp;</span><span class="f_CodeExample" style="color: #000080;">100</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;_Saldo&nbsp;-&nbsp;lValorReal&nbsp;-&nbsp;lJuros;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaDiferenciada.AplicarRendimento;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Esse&nbsp;tipo&nbsp;de&nbsp;conta&nbsp;n&atilde;o&nbsp;d&aacute;&nbsp;rendimentos&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;&nbsp;C&nbsp;l&nbsp;a&nbsp;s&nbsp;s&nbsp;e&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;W&nbsp;C&nbsp;o&nbsp;n&nbsp;t&nbsp;a&nbsp;O&nbsp;u&nbsp;r&nbsp;o</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaOuro.Create&nbsp;(AConta&nbsp;:&nbsp;TWConta);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;&nbsp;inherited;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_PorcRendim&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">2</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">00</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Rendimento&nbsp;Ouro&nbsp;:&nbsp;2%&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">{&nbsp;Valores&nbsp;de&nbsp;saldo&nbsp;que&nbsp;delimitam&nbsp;um&nbsp;estado&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_LimInf&nbsp;:=&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1000</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">00</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_LimSup&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">99999</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">99</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaOuro.Depositar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;_Saldo&nbsp;+&nbsp;AValor;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaOuro.Sacar&nbsp;(AValor&nbsp;:&nbsp;Float);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;_Saldo&nbsp;-&nbsp;AValor;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TWContaOuro.AplicarRendimento;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;_Saldo&nbsp;:=&nbsp;_Saldo&nbsp;+&nbsp;(_Saldo&nbsp;*&nbsp;_PorcRendim)&nbsp;/&nbsp;</span><span class="f_CodeExample" style="color: #000080;">100</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #000080;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<html oncontextmenu="return false">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>warleyalex - mobile web app template</title>
+<meta name="description" content="web app mobile template">
+<style>
+#i5,#i5_l{background-repeat:no-repeat;background-position:top left;margin:0 auto 0 auto;text-align:center}#i5{background-image:url(preview/images/i5p.png);width:586px;height:1001px}#i5_l{background-image:url("preview/images/i5l.png");width:1001px;height:586px;}#f_i5{width:320px;height:568px;margin:217px 0 0 3px}#f_i5_l {width: 568px;height:320px;margin: 131px 0 0 -1px;}.f_scroller{display:inline-block;-webkit-overflow-scrolling:touch;overflow:hidden}.f_scroller>iframe{width:100%;height:100%}
+</style>
+</head>
+<body>
+<div id="i5" style="-webkit-transform: scale(1); -webkit-transform-origin: 0px 0px;">
+  <div id="f_i5" class="f_scroller">
+	<iframe src="preview/banco/www/index.html" frameborder="0" style="background-color: #fff;"></iframe>
+  </div>
+</div>
+</body>
+</html>
+<p>&nbsp;</p>
+<p style="text-indent: -18px; margin: 0px 0px 0px 18px;">&nbsp;</p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+}
+</script>
+</body>
+</html>

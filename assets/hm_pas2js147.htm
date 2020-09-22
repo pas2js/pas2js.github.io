@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Exit | finally</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js146.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js148.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Exit | finally
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+{-------- TEST I ------}
+function Hello : String;
+begin
+   Result:='duh';
+   try
+      Result:='Hello';
+      if True then Exit;
+   finally
+      Result:=Result+' world';
+   end;
+   Result:='Bye bye';
+end;
+
+WriteLn(Hello);
+
+function Test(i : Integer) : Boolean;
+var
+   ts : TObject;
+begin
+   Result := False;
+   ts := TObject.Create;
+   try
+      if (i < 10) then Exit;
+   finally
+      ts.Free;
+   end;
+   Result := True;
+end;
+
+//if not Test(10) then WriteLn('Test bugged 10');
+if Test(5) then WriteLn('Test bugged 5');
+
+try
+   WriteLn('Try');
+   Exit;
+finally
+   WriteLn('Finally');
+end;
+WriteLn('Bug');
+  { <<< CONSOLE OUTPUTS >>>
+    Hello world
+    Try
+    Finally
+  }
+
+{------ TEST II ------}
+
+function Hello2(doExit : Boolean) : String;
+begin
+   Result:='duh';
+   try
+      try
+         Result:='Hello';
+         if doExit then Exit;
+	 Result+=' one';
+      finally
+         WriteLn('1st finally');
+      end;
+      Result+=' two';
+   finally
+      WriteLn('2nd finally');
+      Result+=' world'
+   end;
+   Result:='Bye bye';
+end;
+
+WriteLn(Hello2(False));
+WriteLn(Hello2(True));
+{
+  1st finally
+  2nd finally
+  Bye bye
+  1st finally
+  2nd finally
+  Hello world
+}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+  function Hello2(doExit) {
+	 var Result = {v:""};
+	 try {
+		Result.v = "duh";
+		try {
+		   try {
+			  Result.v = "Hello";
+			  if (doExit) {
+				 return Result.v;
+			  }
+			  Result.v+=" one";
+		   } finally {
+			  WriteLn("1st finally");
+		   }
+		   Result.v+=" two";
+		} finally {
+		   WriteLn("2nd finally");
+		   Result.v+=" world";
+		}
+		Result.v = "Bye bye";
+	 } finally {return Result.v}
+  };
+  function Test(i) {
+	 var Result = {v:false};
+	 try {
+		var ts = null;
+		Result.v = false;
+		ts = TObject.Create($New(TObject));
+		try {
+		   if (i<10) {
+			  return Result.v;
+		   }
+		} finally {
+		   TObject.Free(ts);
+		}
+		Result.v = true;
+	 } finally {return Result.v}
+  };
+  function Hello() {
+	 var Result = {v:""};
+	 try {
+		Result.v = "duh";
+		try {
+		   Result.v = "Hello";
+		   return Result.v;
+		} finally {
+		   Result.v+=" world";
+		}
+		Result.v = "Bye bye";
+	 } finally {return Result.v}
+  };
+  WriteLn(Hello());
+  if (Test(5)) {
+	 WriteLn("Test bugged 5");
+  }
+  try {
+	 WriteLn("Try");
+	 return;
+  } finally {
+	 WriteLn("Finally");
+  }
+  WriteLn("Bug");
+  WriteLn(Hello2(false));
+  WriteLn(Hello2(true));
+
+</code></pre></div>
+</div>
+</body>
+</html>

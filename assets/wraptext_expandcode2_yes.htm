@@ -1,0 +1,213 @@
+<!-- (0067)WrapText&ExpandCode2=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : WrapText command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, WrapText, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>WrapText</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Add line feeds into a string to simulate word wrap</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>WrapText</b></font>
+
+(
+<b>const SourceString {, MaxColumnSize</b> : Integer = 45}
+)
+ : string;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>WrapText</b></font>&nbsp;(
+<b>const SourceString, BreakString </b> : string;<b> BreakSet </b> : TSysCharSet;<b> MaxColumnSize </b> : Integer
+)  : string;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>WrapText</b></font> function effectively splits a line of text <b>SourceString</b> into multiple lines in the returned string.
+<br>&nbsp;<br>
+In actual fact, it simply inserts line breaks into the returned string, so that a display of the string would show as multiple lines.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+Is the simplest version, allowing a default line break substring (#13#10 - Carriage return + line feed) to be inserted after each set of words fitting <b>MaxColumnSize</b> characters is encountered in the source string. If the max column size is omitted, it defaults to 45.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+<br>&nbsp;<br>
+Allows the inserted line break characters <b>BreakString</b> to be inserted after the occurence of a character in the <b>BreakSet</b> is encountered before <b>MaxColumnSize</b> is reached.
+<br>&nbsp;<br>
+If none found <b>BreakString</b> is inserted anyway.
+<br>&nbsp;<br>
+In both cases, words are preserved - never split across lines.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="concat.htm">Concat</a></b></td>
+<td width="8"></td>
+<td align="left">Concatenates one or more strings into one string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="copy.htm">Copy</a></b></td>
+<td width="8"></td>
+<td align="left">Create a copy of part of  a string or an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="delete">Delete</a></b></td>
+<td width="8"></td>
+<td align="left">Delete a section of characters from a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="insert.htm">Insert</a></b></td>
+<td width="8"></td>
+<td align="left">Insert a string into another string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="move.htm">Move</a></b></td>
+<td width="8"></td>
+<td align="left">Copy bytes of data from a source to a destination</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="stringofchar.htm">StringOfChar</a></b></td>
+<td width="8"></td>
+<td align="left">Creates a string with one character repeated many times</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="stringreplace.htm">StringReplace</a></b></td>
+<td width="8"></td>
+<td align="left">Replace one or more substrings found within a string</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate the simple version</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;before, after : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up a long string</b></font><br>
+&nbsp;&nbsp;before := 'This is quite a long string, at least 50 chars long';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Split it into multiple lines, each 10 characters long</b></font><br>
+&nbsp;&nbsp;after := <font color=#C00000><b>WrapText</b></font>(before, 10);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the before and after strings</b></font><br>
+&nbsp;&nbsp;ShowMessage(before);<br>
+&nbsp;&nbsp;WriteLn('');<br>
+&nbsp;&nbsp;ShowMessage(after);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/wraptext&expandcode1=yes&expandcode2=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;This is quite a long string, at least 50 chars long<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+This is<br>&nbsp;&nbsp;
+quite a <br>&nbsp;&nbsp;
+long<br>&nbsp;&nbsp;
+string,<br>&nbsp;&nbsp;
+at least<br>&nbsp;&nbsp;
+50 chars<br>&nbsp;&nbsp;
+long<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Wrap on a special control letter</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the WrapText command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;before, after : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up a long string</b></font><br>
+&nbsp;&nbsp;before := 'Ten = 10. Eleven = 11. One hundred = 100.';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Split it into multiple lines, terminated by a dot</b></font><br>
+&nbsp;&nbsp;after := <font color=#C00000><b>WrapText</b></font>(before, #13#10, ['.'], 1);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the before and after strings</b></font><br>
+&nbsp;&nbsp;ShowMessage(before);<br>
+&nbsp;&nbsp;WriteLn('');<br>
+&nbsp;&nbsp;ShowMessage(after);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="wraptext.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Ten = 10. Eleven = 11. One hundred = 100.<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Ten = 10.<br>&nbsp;&nbsp;
+Eleven = 11.<br>&nbsp;&nbsp;
+One hundred = 100.<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Memory Model</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Memory Model</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm__directives.htm">Previous</a>&nbsp;
+     <a href="hm_application.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">garbage collector</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> ensures that no script-objects or structures are leaked, however, you can invoke destructors explicitly. Attempts to access a destroyed object will fail with an exception and is &quot;safe&quot;. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">ARC + GC hybrid</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The script engine uses an hybrid memory model, which is based upon Automatic Reference Counting to ensure timely, automated release of all dynamic objects (instances, strings, dynamic arrays). </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Reference-counting cycles are taken care of automatically by a special garbage collector, so tagging weak reference is not necessary. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The garbage collector is not the primary mean of managing memory (reference-counting is), it runs only infrequently as its sole purpose is taking care of cycles. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Manual management</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Invoking destructors explicitly on object is supported. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Once an object has been destroyed, further attempts to access it or its methods will fail with a guaranteed exception and is considered &quot;safe&quot; (no memory corruption can occur). </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Destroying objects can be used to release memory of large objects immediately.</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

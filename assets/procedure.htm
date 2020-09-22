@@ -1,0 +1,376 @@
+<!-- (0052)Procedure -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Procedure command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Procedure, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Procedure</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines a subroutine that does not return a value</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Procedure</b> Name; {Directives;}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Procedure</b> Name(Parameters); {Directives;}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type Name = <b>Procedure</b>{(Parameters)} {of object};
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Procedure</b></font> keyword defines a subroutine that does not return a value. See the <b>SubRoutines</b> tutorial for details on using procedures.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+Defines a procedure that operates with no parameters.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+Defines a procedure that is passed one or more parameters.
+<br>&nbsp;<br>
+When a procedure is defined in a class, it is commonly called a <b>Method</b>.
+<br>&nbsp;<br>
+The same name may be used for more than one procedure as long as the <b>Overload</b> directive is used. The other main directives, in the order that they should appear is given here:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>Reintroduce&nbsp;</b></td><td class=dd> : Redefines a suppressed function</td></tr>
+<tr><td class=dt align='right'><b>Overload&nbsp;</b></td><td class=dd> : Allows same name for 2 or more functions</td></tr>
+<tr><td class=dt align='right'><b>Virtual&nbsp;</b></td><td class=dd> : Can be redefined in a child class</td></tr>
+<tr><td class=dt align='right'><b>Override&nbsp;</b></td><td class=dd> : Redefines a parent class method</td></tr>
+<tr><td class=dt align='right'><b>Abstract&nbsp;</b></td><td class=dd> : Forces child class to implement</td></tr></table>
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 3</b></font>
+Defines a procedure as a data type. This allows the procedure to be passed as a parameter, and used as a variable. The type definition defines just the <b>profile</b> of the procedure - and not the name.
+<br>&nbsp;<br>
+A variable of such a type could be assigned the name of any procedure with that profile. When assigned, the variable name can be treated as if it were a procedure name. See the example code.
+<br>&nbsp;<br>
+Further still, the <b>Of Object</b> option allows you to refer to an object method. Access to a variable of such type would then behave as if you were calling the object method directly. See the second example.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="abstract.htm">Abstract</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a class method only implemented in subclasses</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="const.htm">Const</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of fixed data values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="out.htm">Out</a></b></td>
+<td width="8"></td>
+<td align="left">Identifies a routine parameter for output only</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="overload.htm">Overload</a></b></td>
+<td width="8"></td>
+<td align="left">Allows 2 or more routines to have the same name</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="override.htm">Override</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a method that replaces a virtual parent class method</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="var.htm">Var</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of a section of data variables</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="virtual.htm">Virtual</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a class method to be overriden in derived classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="dynamic.htm">Dynamic</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a class method to be overriden in derived classes</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br>
+ <br><b>
+unit Unit1;</b><br>
+ <br><b>
+interface</b><br>
+ <br><b>
+uses</b><br>&nbsp;&nbsp;<font color=#008000><b>// The System unit does not need to be defined</b></font><br>
+&nbsp;&nbsp;Forms, Dialogs;<br>
+ <br><b>
+type</b><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br>
+ <br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br>
+ <br><b>
+implementation</b><br><b>
+{$R *.dfm} // Include form definitions</b><br>
+ <br><b>
+<font color=#C00000><b>Procedure</b></font> ShowSum(a, b : Integer);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;total : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Add the two numbers together</b></font><br>
+&nbsp;&nbsp;total := a + b;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And display the sum</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('%d + %d = %d',[a,b,total]);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// The main form On Create routine - our main program</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the sum of a few number pairs</b></font><br>
+&nbsp;&nbsp;ShowSum(1,2);<br>
+&nbsp;&nbsp;ShowSum(245,62);<br><b>
+end;</b><br>
+ <br><b>
+end. </b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;1 + 2 = 3<br>&nbsp;&nbsp;
+245 + 62 = 307<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Illustrating a Procedure and a Procedure type</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,<br>
+&nbsp;&nbsp;Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// The form class itself</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><font color=#008000><b>// In line functions</b></font><br><b>
+<font color=#C00000><b>Procedure</b></font> ShowMsg(msg : string);</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;ShowMessage(msg);<br><b>
+end;</b><br><b>
+</b><br><b>
+<font color=#C00000><b>Procedure</b></font> ShowLongMsg(msg : string);</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;WriteLn('Message text = '+msg);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+type</b><br>
+&nbsp;&nbsp;TShowProc = <font color=#C00000><b>Procedure</b></font>(msg : string);<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;showProc : TShowProc;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the ShowMsg proc directly</b></font><br>
+&nbsp;&nbsp;WriteLn('Using ShowMsg directly :');<br>
+&nbsp;&nbsp;ShowMsg('Hello World');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use ShowMsg indirectly</b></font><br>
+&nbsp;&nbsp;WriteLn('Using ShowMsg indirectly :');<br>
+&nbsp;&nbsp;showProc := ShowMsg;<br>
+&nbsp;&nbsp;showProc('Hello again');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use ShowLongMsg indirectly</b></font><br>
+&nbsp;&nbsp;WriteLn('Using ShowLongMsg indirectly :');<br>
+&nbsp;&nbsp;showProc := ShowLongMsg;<br>
+&nbsp;&nbsp;showProc('Hello again');<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Using ShowMsg directly :<br>&nbsp;&nbsp;
+Hello World<br>&nbsp;&nbsp;
+Using ShowMsg indirectly :<br>&nbsp;&nbsp;
+Hello again<br>&nbsp;&nbsp;
+Using ShowLongMsg indirectly :<br>&nbsp;&nbsp;
+Message text = Hello again<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Using a type of a procedure of a class</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,<br>
+&nbsp;&nbsp;Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a simple class</b></font><br>
+&nbsp;&nbsp;TSimple = class<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string;<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetName : string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Procedure</b></font> SetName(name : string);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(name : string);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The form class itself</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><font color=#008000><b>// Create a simple object</b></font><br><b>
+constructor TSimple.Create(name: string);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Save the passed string</b></font><br>
+&nbsp;&nbsp;self.name := name;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Returns the simple name</b></font><br><b>
+function TSimple.GetName: string;</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Result := name;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Assigns the passed name</b></font><br><b>
+<font color=#C00000><b>Procedure</b></font> TSimple.SetName(name : string);</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;self.name := name;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+type</b><br>
+&nbsp;&nbsp;TNameProc = <font color=#C00000><b>Procedure</b></font>(name : string) of object;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;simple&nbsp;&nbsp; : TSimple;<br>
+&nbsp;&nbsp;nameProc : TNameProc;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create a simple object</b></font><br>
+&nbsp;&nbsp;simple := TSimple.Create('Brian');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And set the name</b></font><br>
+&nbsp;&nbsp;simple.SetName('New name');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the object name</b></font><br>
+&nbsp;&nbsp;WriteLn('Name now = '+simple.GetName);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Refer to the SetName method</b></font><br>
+&nbsp;&nbsp;nameProc := simple.SetName;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And set the name</b></font><br>
+&nbsp;&nbsp;nameProc('Even newer name');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the object name</b></font><br>
+&nbsp;&nbsp;WriteLn('Name now = '+simple.GetName);<br><b>
+end;</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Name now = New name<br>&nbsp;&nbsp;
+Name now = Even newer name<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

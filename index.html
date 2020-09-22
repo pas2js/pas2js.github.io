@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pas2JS Help</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script type="text/javascript" src="assets/js/jquery.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+  <link type="text/css" href="assets/css/styles.css" rel="stylesheet" />
+  <link type="text/css" href="assets/css/style_header.css" rel="stylesheet" />
+  
+
+  <style type="text/css">
+html {
+      overflow: hidden;
+    }
+    body { 
+      margin:0;
+      padding:0;
+      height:100%;
+      overflow:hidden; 
+      background: #fff;
+    }
+    #myheadbox {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      height: 130px;
+      background: #2C5D88;  /* #2C5D88; Header blue background */
+      }
+    #myheadbox .mobilemenu {
+      width: 32px;
+      height: 32px;
+      /* Mobile menu color: change the background-url to switch */
+      background:url('assets/css/img/hm_webhelp_buttons_white.png') top left no-repeat;
+      background-position: 0 0;
+      margin-right: 20px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      display: none;
+    }
+    #myheadbox .mobilemenu:hover {
+      /* Mobile menu highlight color: change the background-url to switch */
+      background:url('assets/css/img/hm_webhelp_buttons_orange.png') top left no-repeat;
+      opacity: 1;
+    }
+    #mycontentslider {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 70px;
+      bottom: 0;     
+      border-top: thin solid #95B3CA; 
+    }
+	#mycontentwrapper {
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	 }
+    #mysplitter { 
+      display: block; 
+    }
+    #navbar {    /* This is the small bar above TOC/index with 3 icons: TOC|Index|Search */
+      height: 60px;	
+    }
+    #navbar a {  /* Navigation buttons: change background-url to switch color */
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      margin: 10px 14px 0 10px;
+      background:url('assets/css/img/hm_webhelp_buttons_white.png') top left no-repeat;
+	  opacity: 0.7;
+    } 
+	#navbar a.current {
+		opacity: 1.0;
+		cursor: default;
+	}
+    #navbar a:hover {
+      background:url('assets/css/img/hm_webhelp_buttons_orange.png') top left no-repeat;
+      opacity: 1;
+    }
+	#navbar a.current:hover {
+	 background:url('assets/css/img/hm_webhelp_buttons_white.png');
+	}
+    #navbar a.hmbtntoc    { background-position: -32px 0 !important}
+    #navbar a.hmbtnindex  { background-position: -64px 0 !important}
+    #navbar a.hmbtnsearch { background-position: -96px 0 !important}
+    a.mobilemenu { cursor: pointer; }
+    #mynavbox {
+      position: absolute;
+      left: 0;
+      width: 29.7%;
+      min-width: 100px;
+      height: 100%;
+      }
+    #mynavframe {
+      position: absolute;
+      left: 0;
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      }
+    #mycontentbox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 30%;      
+      background: #FFF;
+      border-left: 1px dashed #ccc;
+    }
+
+    nav #menu-wrapper { max-width: 100% }
+
+    iframe { left:0;top:0;width:100%;height:100%;border:none;background:#ffffff; }
+    #mycontentbox iframe { position: absolute }
+	
+    /* This media query hides the navigation panel when window width <= 760px */
+    @media only screen and (max-width: 760px) {
+      #myheadbox {
+         font-size: 70%;	   
+      }
+      #myheadbox a.logo {  /* Your logo in the top-left corner  */
+         display: none;
+      }
+      #mycontentslider { 
+        /*top: 35px;      /* when you change the header height, changes this as well */ 
+        right: 0;
+	  overflow-y: hidden;
+	  overflow-x: hidden;
+	  -webkit-overflow-scrolling: touch;
+	  }
+	  #mycontentwrapper {
+	  overflow-y:hidden;
+	  width: 200%;
+	  }
+      #mysplitter { 
+        display: none;
+      }
+      #mynavbox { 
+	width: 50% !important;
+	left: 0;
+	bottom: 0;
+	overflow: auto;
+	}
+      #mycontentbox { 
+	width: 50% !important;
+	left: 50% !important;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	border: none;
+      }
+      #myheadbox .fullmenu {
+	display: none;
+      }
+      #myheadbox .mobilemenu {
+	display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="myheadbox">
+	<nav id="main-nav">
+    <div id="menu-wrapper">
+      <ul>
+        <li id="homebutton"><a href="index.html"><span class="f_Heading1">Pas2JS Home</span></a></li>
+        <li class="mobilemenu"><a href="javascript:showNav('toggle')" title="Show navigation"></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div id="mycontentslider">
+  <div id="mycontentwrapper"> 
+  <div id="mynavbox">
+    <!-- buttons to switch navigation panel --> 
+    <div id="navbar">
+         <a class="hmbtntoc" href="assets/hmcontent.htm" title="Table of Contents" target="hmnavigation"></a>
+	 <a class="hmbtnsearch" href="assets/hmkwindex.htm" title="Keyword Index" target="hmnavigation"></a>
+    </div>
+    <!-- the navigation panel -->
+    <div id="mynavframe"> 
+      <iframe name="hmnavigation" id="hmnavigation" src="assets/hmcontent.htm" seamless="seamless" title="Navigation Pane" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <div id="mycontentbox" >
+    <script type="text/javascript">
+      var defaulttopic="assets/index.htm";
+      var query = window.location.search.substring(1), hash = window.location.hash, xssTest = /&#39;|&#x27;|&#34;|&#x22;|&quot;|&#61;|&#x3D;|%27|%22|%3d|:|&#58;|&#x3a;|=|%3a|3a;|58;|\/|'|"/i, cntxRX = /contextid=\d*/, cntxMatch = cntxRX.exec(query), cntxSrc = "";
+      if (query != "") {
+        if (typeof(hmGetContextId) != "undefined") {
+          if (cntxMatch != null) {
+	    cntxSrc = hmGetContextId(cntxMatch[0]);
+          };
+          if (cntxSrc != "") {
+            defaulttopic = cntxSrc;
+          } else {
+            if (!xssTest.test(query) && !xssTest.test(hash))
+               defaulttopic = query + hash;
+          }
+        }
+      }
+      document.write('<iframe name="hmcontent" id="hmcontent" src="'+defaulttopic+'" seamless="seamless" title="Content Page" frameborder="0"></iframe>');
+    </script>
+    <noscript>
+      <iframe name="hmcontent" id="hmcontent" src="assets/index.htm" seamless="seamless" title="Content Page" frameborder="0"></iframe>
+    </noscript>
+  </div>
+  </div>
+</div>
+</body>
+</html>
+

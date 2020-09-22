@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>question02</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">question01</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_q01.htm">Previous</a>&nbsp;
+     <a href="hm_question03.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><a name="mdc"></a><img src="tipbulb.gif" width="32" height="32" border="0" alt="tipbulb"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Implement a static method to perform this problem: Two plots of land with areas of 23,500 m&sup2; (square meters) and 14,100m&sup2; (square meters) are divided into lots, as large as possible, all in the same area. The total number of lots obtained, is:</span></p>
+<p style="text-indent: -18px; margin: 7px 0px 7px 18px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-indent: -18px; margin: 7px 0px 7px 18px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note:</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> Here the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">exit</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> statement exits the method returning the left value. </span></p>
+<p style="text-align: justify; text-indent: -18px; margin: 7px 0px 7px 18px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> &nbsp; &nbsp;A </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">static method</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> (it does not need an instance of Utilities to be called) the euclidean algorithm for computing the greatest common divisor, finding a number both left and right can be divided by. This method can be reused from multiple places in code.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">See the solution:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Utilities&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">method</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GCD(left,&nbsp;right:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Integer</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">implementation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;Utilities&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">method</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Utilities.GCD(left,&nbsp;right:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Integer</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;repeat&nbsp;everything&nbsp;from&nbsp;begin&nbsp;to&nbsp;end&nbsp;as&nbsp;long&nbsp;as&nbsp;right&nbsp;is&nbsp;not&nbsp;0.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">while</span><span class="f_CodeExample" style="color: #000000;">&nbsp;right&nbsp;&lt;&gt;&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;defines&nbsp;a&nbsp;new&nbsp;variable&nbsp;that&nbsp;returns&nbsp;left&nbsp;modulus&nbsp;right.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;rem&nbsp;:=&nbsp;left&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">mod</span><span class="f_CodeExample" style="color: #000000;">&nbsp;right;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;sets&nbsp;left&nbsp;to&nbsp;right.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;left&nbsp;:=&nbsp;right;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;sets&nbsp;right&nbsp;to&nbsp;the&nbsp;earlier&nbsp;calculated&nbsp;remainder.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;right&nbsp;:=&nbsp;rem;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;return&nbsp;the&nbsp;left&nbsp;value.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">exit</span><span class="f_CodeExample" style="color: #000000;">&nbsp;left;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;x&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">x:=&nbsp;&nbsp;Utilities.GCD(</span><span class="f_CodeExample" style="color: #ff0000;">23500</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">14100</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(x);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//solution:&nbsp;4700</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-indent: -18px; margin: 7px 0px 7px 18px;"><span style="font-size: 13px;">&nbsp;</span></p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+}
+</script>
+</body>
+</html>

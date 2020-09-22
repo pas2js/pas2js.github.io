@@ -1,0 +1,171 @@
+<!-- (0065)Repeat&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Repeat command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Repeat, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Repeat</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Repeat statements until a ternmination condition is met</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Repeat</b> <br>&nbsp;
+&nbsp;&nbsp;Statement1; <br>&nbsp;
+ {Statement2;<br>&nbsp;
+&nbsp;&nbsp;...} <br>&nbsp;
+<b>Until</b> Expression
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Repeat</b></font> keyword starts a control loop that is always executed at least once, and which terminates when the <b>Expression</b> is satisfied (returns <b>True</b>).
+<br>&nbsp;<br>
+There is no need for <b>Begin</b> or <b>End</b> markers - the <font color=#996600><b>Repeat</b></font> and <b>Until</b> keywords serve that purpose.
+<br>&nbsp;<br>
+It is used when it is important that the statements are at least executed once.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The last <b>Statement</b> need not have a <b>;</b> terminator - it is entirely optional.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="begin.htm">Begin</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that starts a statement block</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="boolean.htm">Boolean</a></b></td>
+<td width="8"></td>
+<td align="left">Allows just <b>True</b> and <b>False</b> values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="do.htm">Do</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the start of some controlled action</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="end.htm">End</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that terminates statement blocks</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="for.htm">For</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a loop that executes a finite number of times</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="until.htm">Until</a></b></td>
+<td width="8"></td>
+<td align="left">Ends a <b>Repeat</b> control loop</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="while.htm">While</a></b></td>
+<td width="8"></td>
+<td align="left">Repeat statements whilst a continuation condition is met</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Display integer squares until we reach or exceed 100</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;num, sqrNum : Integer;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;num := 1;<br>
+&nbsp;&nbsp;sqrNum := num * num;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display squares of integers until we reach 100 in value</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>Repeat</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Show the square of num</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(num)+' squared = '+IntToStr(sqrNum));<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Increment the number</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Inc(num);<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Square the number</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;sqrNum := num * num;<br>
+&nbsp;&nbsp;until sqrNum > 100;<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="repeat.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;1 squared = 1<br>&nbsp;&nbsp;
+2 squared = 4<br>&nbsp;&nbsp;
+3 squared = 9<br>&nbsp;&nbsp;
+4 squared = 16<br>&nbsp;&nbsp;
+5 squared = 25<br>&nbsp;&nbsp;
+6 squared = 36<br>&nbsp;&nbsp;
+7 squared = 49<br>&nbsp;&nbsp;
+8 squared = 64<br>&nbsp;&nbsp;
+9 squared = 81<br>&nbsp;&nbsp;
+10 squared = 100<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

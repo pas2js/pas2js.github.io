@@ -1,0 +1,42 @@
+@charset "iso-8859-1";
+#list li {
+	padding: 5px;
+}
+
+.red {
+	color: #c00;
+}
+
+A {text-decoration: none;
+   color: MediumBlue}
+A.dark {text-decoration: none;
+        color: #404040}
+A:hover {color: green}
+CODE {font-family:"Courier New";
+      font-size:x-small}
+TD.h1 {font-family:Verdana, Arial,"Sans-Serif";
+       font-size:80%;
+	   color:DarkGreen}
+TD.h2 {font-family:Verdana, Arial,"Sans-Serif";
+       font-size:80%;
+	   color:DarkBlue}
+TD.title {font-family:Verdana, Arial,"Sans-Serif";
+          font-size:80%;
+	      color:Sienna}
+TD.head {font-family:Verdana, Arial,"Sans-Serif";
+         font-size:70%;
+	     color:DarkRed}
+TD.subhead {font-family:Verdana, Arial,"Sans-Serif";
+            font-size:70%;
+	        color:DarkGreen}
+TD.rightBorder {border-right: thin dotted Gray}
+TD {font-family:Verdana, Arial,"Sans-Serif";
+    font-size:70%}
+TD.dt {font-family:Verdana, Arial,"Sans-Serif";
+       font-size:70%;
+	   color:Sienna}
+TD.dd {font-family:Verdana, Arial,"Sans-Serif";
+       font-size:70%;
+	   color:DarkBlue}
+TD.mono {font-family:"Courier New";
+         font-size:80%}

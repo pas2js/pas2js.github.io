@@ -1,0 +1,552 @@
+unit Unit1;
+
+{$MODE objfpc}{$H+}
+
+interface
+
+uses
+  SysUtils, Classes, JS, Web,
+  WEBLib.Graphics, WEBLIB.Controls, WEBLib.StdCtrls, WEBLib.ExtCtrls,
+  WEBLib.Forms, WEBLib.Dialogs;
+
+type
+  { TForm1 }
+  TForm1 = class(TForm)
+  private
+    { Private declarations }
+    WebLabel5: TLabel;
+    WebGridPanel1: TGridPanel;
+    WebLabel1: TLabel;
+    WebLabel2: TLabel;
+    WebLabel3: TLabel;
+    WebLabel4: TLabel;
+    WebEdit1: TEdit;
+    WebButton1: TButton;
+    WebEdit2: TEdit;
+    WebButton2: TButton;
+    WebEdit3: TEdit;
+    WebButton3: TButton;
+    WebEdit4: TEdit;
+    WebButton4: TButton;
+    WebPanel1: TPanel;
+    WebLabel6: TLabel;
+    WebImageControl1: TImageControl;
+  public
+    { Public declarations }
+    procedure LoadDFMValues; override;
+    procedure WebButton1Click(Sender: TObject);
+    procedure WebComboBox1Change(Sender: TObject);
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.LoadDFMValues;
+var
+  c1, c2, c3: TGridPanelColumn;
+  i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15:
+  TControlCollectionItem;
+  r1, r2, r3, r4: TGridPanelRow;
+
+begin
+  inherited;
+  WebLabel5 := TLabel.Create(Self);
+  WebGridPanel1 := TGridPanel.Create(Self);
+  WebLabel1 := TLabel.Create(WebGridPanel1);
+  WebLabel2 := TLabel.Create(WebGridPanel1);
+  WebLabel3 := TLabel.Create(WebGridPanel1);
+  WebLabel4 := TLabel.Create(WebGridPanel1);
+  WebEdit1 := TEdit.Create(WebGridPanel1);
+  WebButton1 := TButton.Create(WebGridPanel1);
+  WebEdit2 := TEdit.Create(WebGridPanel1);
+  WebButton2 := TButton.Create(WebGridPanel1);
+  WebEdit3 := TEdit.Create(WebGridPanel1);
+  WebButton3 := TButton.Create(WebGridPanel1);
+  WebEdit4 := TEdit.Create(WebGridPanel1);
+  WebButton4 := TButton.Create(WebGridPanel1);
+  WebPanel1 := TPanel.Create(Self);
+  WebLabel6 := TLabel.Create(WebPanel1);
+  WebImageControl1 := TImageControl.Create(WebPanel1);
+
+  WebLabel5.BeginUpdate;
+  WebGridPanel1.BeginUpdate;
+  WebLabel1.BeginUpdate;
+  WebLabel2.BeginUpdate;
+  WebLabel3.BeginUpdate;
+  WebLabel4.BeginUpdate;
+  WebEdit1.BeginUpdate;
+  WebButton1.BeginUpdate;
+  WebEdit2.BeginUpdate;
+  WebButton2.BeginUpdate;
+  WebEdit3.BeginUpdate;
+  WebButton3.BeginUpdate;
+  WebEdit4.BeginUpdate;
+  WebButton4.BeginUpdate;
+  WebPanel1.BeginUpdate;
+  WebLabel6.BeginUpdate;
+  WebImageControl1.BeginUpdate;
+  try
+    Name := 'Form1';
+    Left := 0;
+    Top := 0;
+    Width := 640;
+    Height := 480;
+    Font.CharSet := 1;
+    Font.Color := 0;
+    Font.Height := -13;
+    Font.Name := 'Tahoma';
+    Font.Style := [];
+    FFormContainer := 'appcontent';
+    TabOrder := 1;
+
+    WebLabel5.Parent := Self;
+    WebLabel5.Name := 'WebLabel5';
+    WebLabel5.Left := 70;
+    WebLabel5.Top := 32;
+    WebLabel5.Width := 186;
+    WebLabel5.Height := 23;
+    WebLabel5.Caption := 'Grid Panel component';
+    WebLabel5.Font.CharSet := 1;
+    WebLabel5.Font.Color := 0;
+    WebLabel5.Font.Height := -19;
+    WebLabel5.Font.Name := 'Tahoma';
+    WebLabel5.Font.Style := [];
+    WebLabel5.ParentFont := false;
+
+    WebGridPanel1.Parent := Self;
+    WebGridPanel1.Name := 'WebGridPanel1';
+    WebGridPanel1.Left := 67;
+    WebGridPanel1.Top := 64;
+    WebGridPanel1.Width := 510;
+    WebGridPanel1.Height := 217;
+    (*
+       c1 := WebGridPanel1.ColumnCollection.Add;
+       c1.MarginLeft := 3;
+       c1.MarginRight := 3;
+       c1.SizeStyle := TSizeStyle.ssPercent;
+       c1.Value := 25;
+
+       c2 := WebGridPanel1.ColumnCollection.Add;
+       c2.Alignment := TAlignment.taCenter;
+       c2.MarginLeft := 3;
+       c2.MarginRight := 3;
+       c2.SizeStyle := TSizeStyle.ssPercent;
+       c2.Value := 50;
+
+       c3 := WebGridPanel1.ColumnCollection.Add;
+       c3.Alignment := TAlignment.taRightJustify;
+       c3.MarginLeft := 3;
+       c3.MarginRight := 3;
+       c3.SizeStyle := TSizeStyle.ssPercent;
+       c3.Value := 25;
+    *)
+    with WebGridPanel1.ColumnCollection.Add do
+    begin
+      MarginLeft := 3;
+      MarginRight := 3;
+      SizeStyle := TSizeStyle.ssPercent;
+      Value := 25;
+    end;
+
+    with WebGridPanel1.ColumnCollection.Add do
+    begin
+      Alignment := TAlignment.taCenter;
+      MarginLeft := 3;
+      MarginRight := 3;
+      SizeStyle := TSizeStyle.ssPercent;
+      Value := 50;
+    end;
+
+    with WebGridPanel1.ColumnCollection.Add do
+    begin
+      Alignment := TAlignment.taRightJustify;
+      MarginLeft := 3;
+      MarginRight := 3;
+      SizeStyle := TSizeStyle.ssPercent;
+      Value := 25;
+    end;
+
+    (*
+      i1 := WebGridPanel1.ControlCollection.Add;
+      i1.Column := 0;
+      i1.Row := 0;
+      i1.Control := WebLabel1;
+
+      i5 := WebGridPanel1.ControlCollection.Add;
+      i5.Column := 0;
+      i5.Row := 0;
+      i5.Control := WebEdit1;
+
+      i6 := WebGridPanel1.ControlCollection.Add;
+      i6.Column := 0;
+      i6.Row := 0;
+      i6.Control := WebButton1;
+
+      i7 := WebGridPanel1.ControlCollection.Add;
+      i7.Column := 0;
+      i7.Row := 0;
+      i7.Control := WebLabel2;
+
+      i8 := WebGridPanel1.ControlCollection.Add;
+      i8.Column := 0;
+      i8.Row := 0;
+      i8.Control := WebEdit2;
+
+      i9 := WebGridPanel1.ControlCollection.Add;
+      i9.Column := 0;
+      i9.Row := 0;
+      i9.Control := WebButton2;
+
+      i10 := WebGridPanel1.ControlCollection.Add;
+      i10.Column := 0;
+      i10.Row := 0;
+      i10.Control := WebLabel3;
+
+      i11 := WebGridPanel1.ControlCollection.Add;
+      i11.Column := 0;
+      i11.Row := 0;
+      i11.Control := WebEdit3;
+
+      i12 := WebGridPanel1.ControlCollection.Add;
+      i12.Column := 0;
+      i12.Row := 0;
+      i12.Control := WebButton3;
+
+      i13 := WebGridPanel1.ControlCollection.Add;
+      i13.Column := 0;
+      i13.Row := 0;
+      i13.Control := WebLabel4;
+
+      i14 := WebGridPanel1.ControlCollection.Add;
+      i14.Column := 0;
+      i14.Row := 0;
+      i14.Control := WebEdit4;
+
+      i15 := WebGridPanel1.ControlCollection.Add;
+      i15.Column := 0;
+      i15.Row := 0;
+      i15.Control := WebButton4;
+  *)
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebLabel1;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebEdit1;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebButton1;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebLabel2;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebEdit2;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebButton2;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebLabel3;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebEdit3;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebButton3;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebLabel4;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebEdit4;
+    end;
+
+    with WebGridPanel1.ControlCollection.Add do
+    begin
+      Column := 0;
+      Row := 0;
+      Control := WebButton4;
+    end;
+
+    WebGridPanel1.Color := 16777215;
+    WebGridPanel1.GridLineWidth := 1;
+    WebGridPanel1.GridLineColor := 12632256;
+    (*
+        r1 := WebGridPanel1.RowCollection.Add;
+        r1.Alignment := TVerticalAlignment.vaCenter;
+        r1.SizeStyle := TSizeStyle.ssPercent;
+        r1.Value := 25;
+
+        r2 := WebGridPanel1.RowCollection.Add;
+        r2.Alignment := TVerticalAlignment.vaCenter;
+        r2.SizeStyle := TSizeStyle.ssPercent;
+        r2.Value := 25;
+
+        r3 := WebGridPanel1.RowCollection.Add;
+        r3.Alignment := TVerticalAlignment.vaCenter;
+        r3.SizeStyle := TSizeStyle.ssPercent;
+        r3.Value := 25;
+
+        r4 := WebGridPanel1.RowCollection.Add;
+        r4.Alignment := TVerticalAlignment.vaCenter;
+        r4.SizeStyle := TSizeStyle.ssPercent;
+        r4.Value := 25;
+    *)
+
+    with WebGridPanel1.RowCollection.Add do
+    begin
+      Alignment := TVerticalAlignment.vaCenter;
+      SizeStyle := TSizeStyle.ssPercent;
+      Value := 25;
+    end;
+
+    with WebGridPanel1.RowCollection.Add do
+    begin
+      Alignment := TVerticalAlignment.vaCenter;
+      SizeStyle := TSizeStyle.ssPercent;
+      Value := 25;
+    end;
+
+    with WebGridPanel1.RowCollection.Add do
+    begin
+      Alignment := TVerticalAlignment.vaCenter;
+      SizeStyle := TSizeStyle.ssPercent;
+      Value := 25;
+    end;
+
+    with WebGridPanel1.RowCollection.Add do
+    begin
+      Alignment := TVerticalAlignment.vaCenter;
+      SizeStyle := TSizeStyle.ssPercent;
+      Value := 25;
+    end;
+
+    WebLabel1.Parent := WebGridPanel1;
+    WebLabel1.Name := 'WebLabel1';
+    WebLabel1.Left := 5;
+    WebLabel1.Top := 19;
+    WebLabel1.Width := 66;
+    WebLabel1.Height := 16;
+    WebLabel1.Caption := 'First name:';
+
+    WebLabel2.Parent := WebGridPanel1;
+    WebLabel2.Name := 'WebLabel2';
+    WebLabel2.Left := 5;
+    WebLabel2.Top := 73;
+    WebLabel2.Width := 64;
+    WebLabel2.Height := 16;
+    WebLabel2.Caption := 'Last name:';
+
+    WebLabel3.Parent := WebGridPanel1;
+    WebLabel3.Name := 'WebLabel3';
+    WebLabel3.Left := 5;
+    WebLabel3.Top := 127;
+    WebLabel3.Width := 36;
+    WebLabel3.Height := 16;
+    WebLabel3.Caption := 'Email:';
+
+    WebLabel4.Parent := WebGridPanel1;
+    WebLabel4.Name := 'WebLabel4';
+    WebLabel4.Left := 5;
+    WebLabel4.Top := 181;
+    WebLabel4.Width := 49;
+    WebLabel4.Height := 16;
+    WebLabel4.Caption := 'Country:';
+
+    WebEdit1.Parent := WebGridPanel1;
+    WebEdit1.Name := 'WebEdit1';
+    WebEdit1.Left := 156;
+    WebEdit1.Top := 15;
+    WebEdit1.Width := 196;
+    WebEdit1.Height := 24;
+    WebEdit1.TabOrder := 0;
+    WebEdit1.WidthStyle := TSizeStyle.ssPercent;
+    WebEdit1.WidthPercent := 80;
+
+    WebButton1.Parent := WebGridPanel1;
+    WebButton1.Name := 'WebButton1';
+    WebButton1.Left := 434;
+    WebButton1.Top := 12;
+    WebButton1.Width := 70;
+    WebButton1.Height := 30;
+    WebButton1.Caption := 'Edit';
+    WebButton1.TabOrder := 1;
+    WebButton1.WidthStyle := TSizeStyle.ssPercent;
+    WebButton1.WidthPercent := 60;
+
+    WebEdit2.Parent := WebGridPanel1;
+    WebEdit2.Name := 'WebEdit2';
+    WebEdit2.Left := 156;
+    WebEdit2.Top := 69;
+    WebEdit2.Width := 196;
+    WebEdit2.Height := 24;
+    WebEdit2.TabOrder := 2;
+    WebEdit2.WidthStyle := TSizeStyle.ssPercent;
+    WebEdit2.WidthPercent := 80;
+
+    WebButton2.Parent := WebGridPanel1;
+    WebButton2.Name := 'WebButton2';
+    WebButton2.Left := 434;
+    WebButton2.Top := 66;
+    WebButton2.Width := 70;
+    WebButton2.Height := 30;
+    WebButton2.Caption := 'Edit';
+    WebButton2.TabOrder := 3;
+    WebButton2.WidthStyle := TSizeStyle.ssPercent;
+    WebButton2.WidthPercent := 60;
+
+    WebEdit3.Parent := WebGridPanel1;
+    WebEdit3.Name := 'WebEdit3';
+    WebEdit3.Left := 156;
+    WebEdit3.Top := 123;
+    WebEdit3.Width := 196;
+    WebEdit3.Height := 24;
+    WebEdit3.TabOrder := 4;
+    WebEdit3.WidthStyle := TSizeStyle.ssPercent;
+    WebEdit3.WidthPercent := 80;
+
+    WebButton3.Parent := WebGridPanel1;
+    WebButton3.Name := 'WebButton3';
+    WebButton3.Left := 434;
+    WebButton3.Top := 120;
+    WebButton3.Width := 70;
+    WebButton3.Height := 30;
+    WebButton3.Caption := 'Edit';
+    WebButton3.TabOrder := 5;
+    WebButton3.WidthStyle := TSizeStyle.ssPercent;
+    WebButton3.WidthPercent := 60;
+
+    WebEdit4.Parent := WebGridPanel1;
+    WebEdit4.Name := 'WebEdit4';
+    WebEdit4.Left := 156;
+    WebEdit4.Top := 177;
+    WebEdit4.Width := 196;
+    WebEdit4.Height := 24;
+    WebEdit4.TabOrder := 6;
+    WebEdit4.WidthStyle := TSizeStyle.ssPercent;
+    WebEdit4.WidthPercent := 80;
+
+    WebButton4.Parent := WebGridPanel1;
+    WebButton4.Name := 'WebButton4';
+    WebButton4.Left := 434;
+    WebButton4.Top := 174;
+    WebButton4.Width := 70;
+    WebButton4.Height := 30;
+    WebButton4.Caption := 'Edit';
+    WebButton4.TabOrder := 7;
+    WebButton4.WidthStyle := TSizeStyle.ssPercent;
+    WebButton4.WidthPercent := 60;
+
+    WebPanel1.Parent := Self;
+    WebPanel1.Name := 'WebPanel1';
+    WebPanel1.Left := 64;
+    WebPanel1.Top := 304;
+    WebPanel1.Width := 513;
+    WebPanel1.Height := 89;
+    WebPanel1.WidthStyle := TSizeStyle.ssPercent;
+    WebPanel1.WidthPercent := 80;
+    WebPanel1.BorderStyle := TBorderStyle.bsSingle;
+
+    WebLabel6.Parent := WebPanel1;
+    WebLabel6.Name := 'WebLabel6';
+    WebLabel6.Left := 3;
+    WebLabel6.Top := 29;
+    WebLabel6.Width := 397;
+    WebLabel6.Height := 32;
+    WebLabel6.Caption :=
+      'The GridPanel allows easy control of alignment and sizing of controls within the panel.';
+    WebLabel6.WordWrap := true;
+    WebLabel6.WidthStyle := TSizeStyle.ssPercent;
+
+    WebImageControl1.Parent := WebPanel1;
+    WebImageControl1.Name := 'WebImageControl1';
+    WebImageControl1.Left := 6;
+    WebImageControl1.Top := 7;
+    WebImageControl1.Width := 16;
+    WebImageControl1.Height := 16;
+    WebImageControl1.AutoSize := true;
+    WebImageControl1.Picture.LoadFromFile('Picture.png');
+  finally
+    WebLabel5.EndUpdate;
+    WebGridPanel1.EndUpdate;
+    WebLabel1.EndUpdate;
+    WebLabel2.EndUpdate;
+    WebLabel3.EndUpdate;
+    WebLabel4.EndUpdate;
+    WebEdit1.EndUpdate;
+    WebButton1.EndUpdate;
+    WebEdit2.EndUpdate;
+    WebButton2.EndUpdate;
+    WebEdit3.EndUpdate;
+    WebButton3.EndUpdate;
+    WebEdit4.EndUpdate;
+    WebButton4.EndUpdate;
+    WebPanel1.EndUpdate;
+    WebLabel6.EndUpdate;
+    WebImageControl1.EndUpdate;
+  end;
+
+end;
+
+procedure TForm1.WebButton1Click(Sender: TObject);
+begin
+  console.log('button clicked');
+
+end;
+
+procedure TForm1.WebComboBox1Change(Sender: TObject);
+begin
+
+end;
+
+end.
+

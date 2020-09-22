@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Project types</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-family: 'Times New Roman'; font-weight: bold; color: #ffffff;">Project types</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_features.htm">Previous</a>&nbsp;
+     <a href="hm_forms.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In this chapter we are going to have a closer look at the different application types that you can make with smart mobile studio. There are radical differences between a game project and a visual application – but at the same time both types inherit from a common ancestor and thus share underlying mechanisms.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: center; margin: 0px 0px 7px 0px;"><img src="img1.png" width="730" height="512" border="0" alt="img1"></p>
+<p style="text-align: center; margin: 0px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Smart Mobile Project Types</span></p>
+<p style="margin: 7px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Canvas Project</span></p>
+<p style="margin: 7px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A canvas game project is an application which houses a single graphical viewport that is redrawn by a high speed timer. This is a low-level project type that requires experience in graphical programming to master.</span></p>
+<p style="margin: 7px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This project does not support any visual controls or user interface elements in order to archieve maximum rendering speeds. The main view is populated with a canvas based control and a high speed timer. Use the touch events to handle user input. </span></p>
+<p style="margin: 7px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Visual controls can be added manual since TScreen inherits from TCustomControl, but components often impact graphical performance. The project does not support any visual controls or user interface elements in order to achieve maximum rendering speeds. Due to the nature of the VJL (</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; color: #000000;">visual javascript component library</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">) an experienced developer can of-course add this manually, but games which are made using pixel graphics should try to avoid this.</span></p>
+<p style="margin: 7px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">As mentioned, the main view is dominated with a canvas based control and a single timer. To handle input control on mobile devices you must write handlers for the touch and gesture events of the control.</span></p>
+<p style="margin: 4px 0px 0px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 4px 0px 0px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Console Project</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A Console project creates an application which mimics the I/O prompt of a DOS or shell screen.</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This is a project type suitable for testing ideas, quick prototyping or just debugging portions of a larger framework. The command-line project does not support form navigation or visual controls, although they can be manually inserted be accessing TScreen directly.</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Node.js Project</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A Node.js project is a fast, even driven server-side application, with the same capacities as normal applications (file handling, database connections, etc).</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Espruino Project</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">An Espruino project creates an application which will run on the Espruino firmware.</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">WebWorker Project</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A WebWorker project creates a separate file, can be run as a WebWorker thread.</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Web worker</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> &nbsp;is a JavaScript script executed from an HTML page that runs in the background, independently of other user-interface scripts that may also have been executed from the same HTML page. Web workers are able to utilize multi-core CPUs more effectively.</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Template based Project</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A project is generated based on a template in the &quot;Template&quot; subdirectory.</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This project generator can be the basis for own template based project generators. Just change the name, description and subdirectory containing the template project.</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 4px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Visual Components Project</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A visual project creates an application based on forms. Each form can be populated with user interface elements such as buttons, lists, text fields and other visual controls. </span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A visual project usually contain several forms and the user can navigate between them using special effects. A visual project is a web application that makes use forms. Each form you add to the project can be populated with user interface elements such as buttons, edit boxes, menu items and more.</span></p>
+<p style="text-indent: -24px; margin: 0px 0px 7px 24px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">All forms consists of two aspects:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The source unit where you write the code that will respond to user events</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The form design where you can add controls using our mock designer</span></td></tr></table></div><p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Since Pas2JS is designed primarily for mobile web applications (with iOS and Android devices in mind), the forms do not have a visible header (like windows on a desktop have) and cannot be moved using a mouse or touch by default. You navigate between forms from your code using the </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">gotoform</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> method of your application object. The </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">gotoform</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> method has a parameter which defines the sliding effect made famous by the iPhone.</span></p>
+<p style="text-align: justify; line-height: 1.50; margin: 0px 0px 4px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; line-height: 1.50; margin: 0px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Real life programming</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">While our mock designer can alleviate some of the burden connected to visual programming, the world of mobile application design is still very much a source code affair. While we strive to deliver better and better design options, it is taken for granted that you craft your create, size and position controls via source code – and also create your own components. So you should not be afraid to roll up your sleeves and write code. You will find that the same rules apply to all the major development systems: monotouch C# for Android and iOS, Objective C for iOS and pretty much all the other languages that are pushing limits and fighting on the front lines of what is possible. And smart is no exception. It is a common mistake to compare smart to delphi, where in reality it is a web app development studio. More akin perhaps to monotouch, freepascal and C++ "mode" of thought.</span></p>
+<p style="margin: 7px 0px 4px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

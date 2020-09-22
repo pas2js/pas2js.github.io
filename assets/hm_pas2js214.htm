@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">IN class operator</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js213.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js215.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	IN class operator
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TMyRange = class
+    FMin, FMax: Integer;
+    constructor Create(min, max: Integer);
+    function Contains(i: Integer): Boolean;
+    function ContainsArray(i: array of Integer): Boolean;
+    class operator IN Integer uses Contains;
+    class operator IN array of Integer uses ContainsArray;
+  end;
+
+constructor TMyRange.Create(min, max: Integer);
+begin
+  FMin := min;
+  FMax := max;
+end;
+
+function TMyRange.Contains(i: Integer): Boolean;
+begin
+  Result := (i >= FMin) and (i <= FMax);
+end;
+
+function TMyRange.ContainsArray(i: array of Integer): Boolean;
+var k: Integer;
+begin
+  for k in i do
+    if k not in Self then
+      Exit(False);
+  Result := True;
+end;
+
+var range1to5 := TMyRange.Create(1, 5);
+
+var range3to7 := TMyRange.Create(3, 7);
+
+var i: Integer;
+
+WriteLn('Range 1-5:');
+for i := 1 to 9 do
+  if i in range1to5 then
+    WriteLn(i);
+WriteLn('');
+
+WriteLn('Range 3-7:');
+for i := 1 to 9 do
+  if i in range3to7 then
+    WriteLn(i);
+WriteLn('');
+
+var vals: array of Integer;
+vals := [1, 3];
+WriteLn(vals in range1to5);
+WriteLn(vals in range3to7);
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+Range 1-5:
+12345
+Range 3-7:
+34567
+True
+False
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TMyRange = {
+   $ClassName:"TMyRange",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FMax = $.FMin = 0;
+   }
+   ,Contains:function(Self, i$1) {
+      return i$1>=$Check(Self,"").FMin&&i$1<=$Check(Self,"").FMax;
+   }
+   ,ContainsArray:function(Self, i$2) {
+      var Result = false;
+      var k = 0;
+      var a$1 = 0;
+      var $temp1;
+      for(a$1=0,$temp1=i$2.length;a$1<$temp1;a$1++) {
+         k = $DIdxR(i$2,a$1,"");
+         if (!TMyRange.Contains(Self,k)) {
+            return false;
+         }
+      }
+      Result = true;
+      return Result
+   }
+   ,Create$3:function(Self, min, max) {
+      $Check(Self,"").FMin = min;
+      $Check(Self,"").FMax = max;
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+};
+var range1to5 = null,
+   range3to7 = null,
+   i = 0;
+var vals = [];
+
+/* <<< main JS >>> */
+
+   range1to5 = TMyRange.Create$3($New(TMyRange),1,5);
+   range3to7 = TMyRange.Create$3($New(TMyRange),3,7);
+   WriteLn("Range 1-5:");
+   for(i=1;i<=9;i++) {
+      if (TMyRange.Contains(range1to5,i)) {
+         WriteLn(i);
+      }
+   }
+   WriteLn("");
+   WriteLn("Range 3-7:");
+   for(i=1;i<=9;i++) {
+      if (TMyRange.Contains(range3to7,i)) {
+         WriteLn(i);
+      }
+   }
+   WriteLn("");
+   vals = [1, 3].slice();
+   WriteLn(TMyRange.ContainsArray(range1to5,vals));
+   WriteLn(TMyRange.ContainsArray(range3to7,vals));
+</code></pre></div>
+</div>
+</body>
+</html>

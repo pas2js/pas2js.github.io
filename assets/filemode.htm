@@ -1,0 +1,176 @@
+<!-- (0051)FileMode -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : FileMode command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, FileMode, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>FileMode</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Variable</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines how <b>Reset</b> opens a binary file</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+var <b>FileMode</b> : Integer;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>FileMode</b></font> variable defines the mode in which the <b>Reset</b> procedure opens a typed or untyped binary file.
+<br>&nbsp;<br>
+The <b>Reset</b> procedure opens a non-text file for read, write, or read+write access as defined by <font color=#996600><b>FileMode</b></font> :
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>fmOpenRead&nbsp;</b></td><td class=dd> = 0 = Read only</td></tr>
+<tr><td class=dt align='right'><b>fmOpenWrite&nbsp;</b></td><td class=dd> = 1 = Write only</td></tr>
+<tr><td class=dt align='right'><b>fmOpenReadWrite&nbsp;</b></td><td class=dd> = 2 = Read and write (default)</td></tr>
+</table>
+<br>&nbsp;<br>
+Use <b>Seek</b> to move the current file position. This is useful for selective updating or for appending to the end of the file.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#FF0000><b>Warning</b></font> : the default is <font color=#00A000><b>Read and write</b></font>. Opening a read-only file (such as on a CD Rom) would therefore fail.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="assignfile.htm">AssignFile</a></b></td>
+<td width="8"></td>
+<td align="left">Assigns a file handle to a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="reset.htm">Reset</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text file for reading, or binary file for read/write</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Demonstrate all 3 file access modes</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myWord, myWord1, myWord2, myWord3 : Word;<br>
+&nbsp;&nbsp;myFile : File of Word;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Test.cus binary file in write only mode</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'Test.cus');<br>
+&nbsp;&nbsp;<font color=#C00000><b>FileMode</b></font> := fmOpenWrite;<br>
+&nbsp;&nbsp;ReSet(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write a few lines of Word data to the file</b></font><br>
+&nbsp;&nbsp;myWord1 := 123;<br>
+&nbsp;&nbsp;myWord2 := 456;<br>
+&nbsp;&nbsp;myWord3 := 789;<br>
+&nbsp;&nbsp;Write(myFile, myWord1, myWord2, myWord3);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file in read only mode</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>FileMode</b></font> := fmOpenRead;<br>
+&nbsp;&nbsp;Reset(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>
+&nbsp;&nbsp;WriteLn('File contents at the start');<br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Read(myFile, myWord);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(myWord));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file again</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file in read+write mode</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>FileMode</b></font> := fmOpenReadWrite;<br>
+&nbsp;&nbsp;Reset(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Read one Word of data, then overwrite the next</b></font><br>
+&nbsp;&nbsp;Read(myFile, myWord);<br>
+&nbsp;&nbsp;myWord := 9876;<br>
+&nbsp;&nbsp;Write(myFile, myWord);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file in read only mode</b></font><br>
+&nbsp;&nbsp;FileMode := fmOpenRead;<br>
+&nbsp;&nbsp;Reset(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>
+&nbsp;&nbsp;WriteLn('Updated file contents');<br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Read(myFile, myWord);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(myWord));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file for the last time</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="filemode&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;File contents at the start<br>&nbsp;&nbsp;
+123<br>&nbsp;&nbsp;
+456<br>&nbsp;&nbsp;
+789<br>&nbsp;&nbsp;
+Updated file contents<br>&nbsp;&nbsp;
+123<br>&nbsp;&nbsp;
+9876<br>&nbsp;&nbsp;
+789<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

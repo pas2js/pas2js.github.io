@@ -1,0 +1,384 @@
+<!-- (0051)Function -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Function command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Function, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Function</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines a subroutine that returns a value</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Function</b> Name : Return type; {Directives;}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Function</b> Name(Parameters) : Return type; {Directives;}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type Name = <b>Function</b>{(Parameters)} : Return type {of object};
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Function</b></font> keyword defines a subroutine that returns a value. See the <b>SubRoutines</b> tutorial for details on using functions.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+Defines a function that simply returns a data type. Only one value can be returned from a function.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+<br>&nbsp;<br>
+Defines a function that is passed one or more parameters, and returns a data type. Only one value can be returned from a function. However, using the <b>out</b> or <b>var</b> keyword before a parameter allows the parameter to be treated as variable to contain return values.
+<br>&nbsp;<br>
+In both cases, the returned value is passed by assigning to the <b>Result</b> pseudo variable. Delphi creates this variable for you at the function start, with the correct return data type.
+<br>&nbsp;<br>
+(Older Pascal code assigned to a variable with the same name as the function).
+<br>&nbsp;<br>
+When a function is defined in a class, it is commonly called a <b>Method</b>.
+<br>&nbsp;<br>
+The same name may be used for more than one function as long as the <b>Overload</b> directive is used. The other main directives, in the order that they should appear is given here:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>Reintroduce&nbsp;</b></td><td class=dd> : Redefines a suppressed function</td></tr>
+<tr><td class=dt align='right'><b>Overload&nbsp;</b></td><td class=dd> : Allows same name for 2 or more functions</td></tr>
+<tr><td class=dt align='right'><b>Virtual&nbsp;</b></td><td class=dd> : Can be redefined in a child class</td></tr>
+<tr><td class=dt align='right'><b>Override&nbsp;</b></td><td class=dd> : Redefines a parent class method</td></tr>
+<tr><td class=dt align='right'><b>Abstract&nbsp;</b></td><td class=dd> : Forces child class to implement</td></tr></table>
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 3</b></font>
+<br>&nbsp;<br>
+Defines a function as a data type. This allows the function to be passed as a parameter, and used as a variable. The type definition defines just the <b>profile</b> of the function - and not the name.
+<br>&nbsp;<br>
+A variable of such a type could be assigned the name of any function with that profile. When assigned, the variable name can be treated as if it were a function name. See the example code.
+<br>&nbsp;<br>
+Further still, the <b>Of Object</b> option allows you to refer to an object method. Access to a variable of such type would then behave as if you were calling the object method directly. See the second example.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="abstract.htm">Abstract</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a class method only implemented in subclasses</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="const.htm">Const</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of fixed data values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="out.htm">Out</a></b></td>
+<td width="8"></td>
+<td align="left">Identifies a routine parameter for output only</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="override.htm">Override</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a method that replaces a virtual parent class method</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="result.htm">Result</a></b></td>
+<td width="8"></td>
+<td align="left">A variable used to hold the return value from a function</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="var.htm">Var</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of a section of data variables</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="virtual.htm">Virtual</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a class method to be overriden in derived classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="dynamic.htm">Dynamic</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a class method to be overriden in derived classes</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br>
+ <br><b>
+unit Unit1;</b><br>
+ <br><b>
+interface</b><br>
+ <br><b>
+uses</b><br>&nbsp;&nbsp;<font color=#008000><b>// The System unit does not need to be defined</b></font><br>
+&nbsp;&nbsp;Forms, Dialogs;<br>
+ <br><b>
+type</b><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br>
+ <br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br>
+ <br><b>
+implementation</b><br><b>
+{$R *.dfm} // Include form definitions</b><br>
+ <br><b>
+<font color=#C00000><b>Function</b></font> GetSum(a, b : Integer) : Integer;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Add the two numbers together, and return this value</b></font><br>
+&nbsp;&nbsp;Result := a + b;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// The main form On Create routine - our main program</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;total : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the sum of a few number pairs</b></font><br>
+&nbsp;&nbsp;total := GetSum(1,2);<br>
+&nbsp;&nbsp;ShowMessageFmt('%d + %d = %d',[1,2,total]);<br><b>
+</b><br>
+&nbsp;&nbsp;total := GetSum(62,444);<br>
+&nbsp;&nbsp;ShowMessageFmt('%d + %d = %d',[62,444,total]);<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;1 + 2 = 3<br>&nbsp;&nbsp;
+62 + 444 = 506<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Illustrating a function and a function type</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,<br>
+&nbsp;&nbsp;Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// The form class itself</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><font color=#008000><b>// In line functions</b></font><br><b>
+<font color=#C00000><b>Function</b></font> MaxValue(a, b : Integer) : Integer;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Return the highest of 2 numbers</b></font><br>
+&nbsp;&nbsp;if a > b<br>
+&nbsp;&nbsp;then Result := a<br>
+&nbsp;&nbsp;else Result := b;<br><b>
+end;</b><br><b>
+</b><br><b>
+<font color=#C00000><b>Function</b></font> MinValue(a, b : Integer) : Integer;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Return the lowest of 2 numbers</b></font><br>
+&nbsp;&nbsp;if a < b<br>
+&nbsp;&nbsp;then Result := a<br>
+&nbsp;&nbsp;else Result := b;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+type</b><br>
+&nbsp;&nbsp;TNumberFunc = <font color=#C00000><b>Function</b></font>(a, b : Integer) : Integer;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;numberFunc : TNumberFunc;<br>
+&nbsp;&nbsp;a, b, c : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the MaxValue function directly</b></font><br>
+&nbsp;&nbsp;a := 3;<br>
+&nbsp;&nbsp;b := 6;<br>
+&nbsp;&nbsp;c := MaxValue(a, b);<br>
+&nbsp;&nbsp;WriteLn('Direct call to MaxValue :');<br>
+&nbsp;&nbsp;ShowMessageFmt('Max of %d and %d is %d',[a,b,c]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now call it indirectly</b></font><br>
+&nbsp;&nbsp;numberFunc := MaxValue;<br>
+&nbsp;&nbsp;c := numberFunc(a, b);<br>
+&nbsp;&nbsp;WriteLn('Indirect call to MaxValue :');<br>
+&nbsp;&nbsp;ShowMessageFmt('Max of %d and %d is %d',[a,b,c]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And call it again for the MinValue function</b></font><br>
+&nbsp;&nbsp;numberFunc := MinValue;<br>
+&nbsp;&nbsp;c := numberFunc(a, b);<br>
+&nbsp;&nbsp;WriteLn('Indirect call to MinValue :');<br>
+&nbsp;&nbsp;ShowMessageFmt('Min of %d and %d is %d',[a,b,c]);<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Direct call to MaxValue :<br>&nbsp;&nbsp;
+Max of 3 and 6 is 6<br>&nbsp;&nbsp;
+Indirect call to MaxValue :<br>&nbsp;&nbsp;
+Max of 3 and 6 is 6<br>&nbsp;&nbsp;
+Indirect call to MinValue :<br>&nbsp;&nbsp;
+Min of 3 and 6 is 3<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Using a type of a function of a class</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,<br>
+&nbsp;&nbsp;Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a simple class</b></font><br>
+&nbsp;&nbsp;TSimple = class<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string;<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetName : string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(name : string);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The form class itself</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><font color=#008000><b>// Create a simple object</b></font><br><b>
+constructor TSimple.Create(name: string);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Save the passed string</b></font><br>
+&nbsp;&nbsp;self.name := name;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Returns the simple name</b></font><br><b>
+function TSimple.GetName: string;</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Result := name;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+type</b><br>
+&nbsp;&nbsp;TNameFunc = <font color=#C00000><b>Function</b></font> : string of object;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;simple&nbsp;&nbsp; : TSimple;<br>
+&nbsp;&nbsp;nameFunc : TNameFunc;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create a simple object</b></font><br>
+&nbsp;&nbsp;simple := TSimple.Create('Brian');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the object name</b></font><br>
+&nbsp;&nbsp;WriteLn('Name accessed directly = '+simple.GetName);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now refer to this method indirectly</b></font><br>
+&nbsp;&nbsp;nameFunc := simple.GetName;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the object name</b></font><br>
+&nbsp;&nbsp;WriteLn('Name accessed indirectly = '+nameFunc);<br><b>
+end;</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Name accessed directly = Brian<br>&nbsp;&nbsp;
+Name accessed indirectly = Brian<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">value type separation</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js361.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js363.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	value_type_separation
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+unit uMain;
+
+interface
+
+uses
+  SmartCL.System;
+
+type
+  TPoint = record
+    X, Y: Integer;
+  end;
+
+type
+  TTest = class
+    p1, p2: TPoint;
+    a1, a2: array [0 .. 0] of String;
+    procedure Test;
+    procedure WriteLine;
+    procedure Test2;
+  end;
+
+implementation
+
+procedure TTest.Test;
+begin
+  p1.X := 1;
+  p1.Y := 2;
+  p2.X := 3;
+  p2.Y := 4;
+  a1[0] := 'a';
+  a2[0] := 'b';
+end;
+
+procedure TTest.Test2;
+var lp1, lp2: TPoint;
+  la1, la2: array [0 .. 0] of String;
+begin
+  lp1.X := 11;
+  lp1.Y := 12;
+  lp2.X := 13;
+  lp2.Y := 14;
+  la1[0] := 'la';
+  la2[0] := 'lb';
+  p1 := lp1;
+  p2 := lp2;
+  a1 := la1;
+  a2 := la2;
+end;
+
+procedure TTest.WriteLine;
+begin
+  WriteLn(p1.X);
+  WriteLn(p1.Y);
+  WriteLn(p2.X);
+  WriteLn(p2.Y);
+  WriteLn(a1[0]);
+  WriteLn(a2[0])
+end;
+end.
+//-----------------
+
+{ unit1.pas }
+var t := TTest.Create;
+    t.WriteLine;
+    t.Test;
+    t.WriteLine;
+    t.Test2;
+    t.WriteLine;
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+00
+00
+
+12
+34
+ab
+1112
+1314
+lalb
+
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TTest = {
+   $ClassName:"TTest",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.a1 = [""];
+      $.a2 = [""];
+      $.p1 = {X:0,Y:0};
+      $.p2 = {X:0,Y:0};
+   }
+   /// procedure TTest.Test()
+   ///  [line: 38, column: 17, file: uMain]
+   ,Test:function(Self) {
+      Self.p1.X = 1;
+      Self.p1.Y = 2;
+      Self.p2.X = 3;
+      Self.p2.Y = 4;
+      Self.a1[0] = "a";
+      Self.a2[0] = "b";
+   }
+   /// procedure TTest.Test2()
+   ///  [line: 48, column: 17, file: uMain]
+   ,Test2:function(Self) {
+      var lp1 = {X:0,Y:0};
+      var lp2 = {X:0,Y:0};
+      var la1 = [""],
+         la2 = [""];
+      lp1.X = 11;
+      lp1.Y = 12;
+      lp2.X = 13;
+      lp2.Y = 14;
+      la1[0] = "la";
+      la2[0] = "lb";
+      Copy$TPoint(lp1,Self.p1);
+      Copy$TPoint(lp2,Self.p2);
+      Self.a1 = la1.slice(0);
+      Self.a2 = la2.slice(0);
+   }
+   /// procedure TTest.WriteLine()
+   ///  [line: 64, column: 17, file: uMain]
+   ,WriteLine:function(Self) {
+      WriteLn(Self.p1.X);
+      WriteLn(Self.p1.Y);
+      WriteLn(Self.p2.X);
+      WriteLn(Self.p2.Y);
+      WriteLn(Self.a1[0]);
+      WriteLn(Self.a2[0]);
+   }
+   
+  var t = null;
+  t = TObject.Create($New(TTest));
+  TTest.WriteLine(t);
+  TTest.Test(t);
+  TTest.WriteLine(t);
+  TTest.Test2(t);
+  TTest.WriteLine(t);
+</code></pre></div>
+</div>
+</body>
+</html>

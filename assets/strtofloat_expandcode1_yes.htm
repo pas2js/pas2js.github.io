@@ -1,0 +1,186 @@
+<!-- (0069)StrToFloat&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : StrToFloat command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, StrToFloat, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>StrToFloat</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Convert a number string into a floating point value</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>StrToFloat</b></font>
+
+(
+<b>FloatString </b> : string
+)
+ : Extended;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>StrToFloat</b></font>&nbsp;(
+<b>FloatString </b> : string;<b> const FormatSettings </b> : TFormatSettings
+)  : Extended;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>StrToFloat</b></font> function converts a number string, <b>FloatString</b> such as '123.456' into an Extended floating point number.
+<br>&nbsp;<br>
+It supports integer, floating point, and scientific (exponent) formats.
+<br>&nbsp;<br>
+If a decimal point appears in <b>FloatString</b>, then it must match the current <b>DecimalSeparator</b> value.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font> of this function is for use within threads. You furnish the FormatSettings record before invoking the call. It takes a local copy of global formatting variables that make the routine thread safe.
+<br>&nbsp;<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The <b>EConvertError</b> exception is thrown if there are errors in <b>FloatString</b>, such as trailing blanks or invalid decimal characters.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="extended.htm">Extended</a></b></td>
+<td width="8"></td>
+<td align="left">The floating point type with the highest capacity and precision</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="floattostr.htm">FloatToStr</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a floating point value to a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="floattostrf.htm">FloatToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a floating point value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tformatsettings.htm">TFormatSettings</a></b></td>
+<td width="8"></td>
+<td align="left">A record for holding locale values for thread-safe functions</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Converting a scientific format number string</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the StrToFloat command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;stringValue : string;<br>
+&nbsp;&nbsp;floatValue&nbsp;&nbsp;: Extended;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the source string containing a number representation</b></font><br>
+&nbsp;&nbsp;stringValue := '123.456E+002';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Convert it to a floating point number</b></font><br>
+&nbsp;&nbsp;floatValue&nbsp;&nbsp;:= <font color=#C00000><b>StrToFloat</b></font>(stringValue);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And display the value</b></font><br>
+&nbsp;&nbsp;ShowMessage(stringValue+' = '+FloatToStr(floatValue));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="strtofloat.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;123.456E+002 = 12345.6<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Catching string conversion errors</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;A : Extended;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// We will catch conversion errors</b></font><br>
+&nbsp;&nbsp;try<br>&nbsp;&nbsp;&nbsp;&nbsp;A := <font color=#C00000><b>StrToFloat</b></font>('10 E 2');&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Middle blanks are not supported</b></font><br>
+&nbsp;&nbsp;except<br>
+&nbsp;&nbsp;&nbsp;&nbsp;on Exception : EConvertError do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(Exception.Message);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>
+&nbsp;&nbsp;try<br>&nbsp;&nbsp;&nbsp;&nbsp;A := <font color=#C00000><b>StrToFloat</b></font>('$FF');&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Hexadecimal values are not supported</b></font><br>
+&nbsp;&nbsp;except<br>
+&nbsp;&nbsp;&nbsp;&nbsp;on Exception : EConvertError do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(Exception.Message);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/strtofloat&expandcode1=yes&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;'10 E 2' is not a valid floating point value<br>&nbsp;&nbsp;
+'$FF' is not a valid floating point value<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

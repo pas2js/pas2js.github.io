@@ -1,0 +1,187 @@
+<!-- (0052)$BoolEval -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : $BoolEval command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, $BoolEval, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>$BoolEval</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Compiler Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Whether to short cut <b>and</b> and <b>or</b> operations</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$BoolEval</b> Off}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$BoolEval</b> On}
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>$BoolEval</b></font> compiler directive tells Delphi whether to continue a multi argument boolean expression evaluation when the result is known before evaluation completes.
+<br>&nbsp;<br>
+{<font color=#996600><b>$BoolEval</b></font> Off} (default) means <b>no</b> continue
+{<font color=#996600><b>$BoolEval</b></font> On} means continue checking
+<br>&nbsp;<br>
+For example, by default, with an expression :
+<br>&nbsp;<br>
+<b>expr1 and expr2</b>
+<br>&nbsp;<br>
+<b>expr2</b> is not evaluated if <b>expr1</b> is false. With {<font color=#996600><b>$BoolEval</b></font> On}, checking would have continued.
+<br>&nbsp;<br>
+The example illustrates a normal use of the default.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#996600><b>$BoolEval</b></font> is equivalent to <b>$B</b>.<br>
+<br>
+This directive can be used multiple times within your code.<br>
+<br>
+The default value is $BoolEval Off<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$b.htm">$B</a></b></td>
+<td width="8"></td>
+<td align="left">Whether to short cut <b>and</b> and <b>or</b> operations</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="and.htm">And</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>and</b> or bitwise <b>and</b> of two arguments</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="if.htm">If</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a conditional expression to determine what to do next</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="or.htm">Or</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>or</b> or bitwise <b>or</b> of two arguments</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Checking string contents</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;FullString, EmptyString : string;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;FullString&nbsp;&nbsp;:= 'Fred';<br>
+&nbsp;&nbsp;EmptyString := '';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set full checking OFF</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$BoolEval</b></font> Off}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Check the 4th character of each string</b></font><br>
+&nbsp;&nbsp;if (Length(FullString) >= 4) and (FullString[4] = 'd')<br>
+&nbsp;&nbsp;then WriteLn('FullString 4th character is d')<br>
+&nbsp;&nbsp;else WriteLn('FullString 4th character is NOT d');<br><b>
+</b><br>
+&nbsp;&nbsp;if (Length(EmptyString) >= 4) and (EmptyString[4] = 'd')<br>
+&nbsp;&nbsp;then WriteLn('EmptyString 4th character is d')<br>
+&nbsp;&nbsp;else WriteLn('EmptyString 4th character is NOT d');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set full checking ON</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$BoolEval</b></font> On}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Check the 4th character of each string</b></font><br>
+&nbsp;&nbsp;if (Length(FullString) >= 4) and (FullString[4] = 'd')<br>
+&nbsp;&nbsp;then WriteLn('FullString 4th character is d')<br>
+&nbsp;&nbsp;else WriteLn('FullString 4th character is NOT d');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now we must protect the code from errors</b></font><br>
+&nbsp;&nbsp;try<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (Length(EmptyString) >= 4) and (EmptyString[4] = 'd')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;then WriteLn('EmptyString 4th character is d')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else WriteLn('EmptyString 4th character is NOT d');<br>
+&nbsp;&nbsp;except<br>
+&nbsp;&nbsp;&nbsp;&nbsp;on E : EAccessViolation do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(E.Message);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+end;</b><br><b>
+</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$booleval&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;The following is typical of the output from the above code:<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+FullString 4th character is d<br>&nbsp;&nbsp;
+EmptyString 4th character is NOT d<br>&nbsp;&nbsp;
+FullString 4th character is d<br>&nbsp;&nbsp;
+Access violation at address 00442196 in module<br>&nbsp;&nbsp;
+'PROJECT1.EXE'. Read of address FFFFFFFF<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

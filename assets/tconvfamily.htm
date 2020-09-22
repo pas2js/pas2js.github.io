@@ -1,0 +1,311 @@
+<!-- (0054)TConvFamily -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TConvFamily command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TConvFamily, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TConvFamily</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Variable</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines a family of measurement types as used by <b>Convert</b></font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>ConvUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+var<br>&nbsp;
+&nbsp;&nbsp;<b>cbArea</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: TConvFamily;<br>&nbsp;
+&nbsp;&nbsp;<b>cbDistance</b>&nbsp;&nbsp;&nbsp;&nbsp;: TConvFamily;<br>&nbsp;
+&nbsp;&nbsp;<b>cbMass</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: TConvFamily;<br>&nbsp;
+&nbsp;&nbsp;<b>cbTemperature</b> : TConvFamily;<br>&nbsp;
+&nbsp;&nbsp;<b>cbTime</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: TConvFamily;<br>&nbsp;
+&nbsp;&nbsp;<b>cbVolume</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: TConvFamily;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>TConvFamily</b></font> variables are families of measurement types used by the powerful and useful <b>Convert</b> measurement utility. 
+<br>&nbsp;<br>
+<b>Convert</b> can convert a measurement from one type in a <font color=#996600><b>TConvFamily</b></font> to another in the same family.
+<br>&nbsp;<br>
+It can also convert complex measurements, such as miles per gallon.
+<br>&nbsp;<br>
+The family contents are listed here:
+<br>&nbsp;<br>
+<font color=#008000><b>cbArea</b> family</font>
+<br>&nbsp;<br>
+<font color=#200080>&nbsp;&nbsp;auSquareMillimeters<br>
+&nbsp;&nbsp;auSquareCentimeters<br>
+&nbsp;&nbsp;auSquareDecimeters<br>
+&nbsp;&nbsp;auSquareMeters<br>
+&nbsp;&nbsp;auSquareDecameters<br>
+&nbsp;&nbsp;auSquareHectometers<br>
+&nbsp;&nbsp;auSquareKilometers<br>
+&nbsp;&nbsp;auSquareInches<br>
+&nbsp;&nbsp;auSquareFeet<br>
+&nbsp;&nbsp;auSquareYards<br>
+&nbsp;&nbsp;auSquareMiles<br>
+&nbsp;&nbsp;auAcres<br>
+&nbsp;&nbsp;auCentares<br>
+&nbsp;&nbsp;auAres<br>
+&nbsp;&nbsp;auHectares<br>
+&nbsp;&nbsp;auSquareRods
+</font>
+<br>&nbsp;<br>
+<font color=#008000><b>cbDistance</b> family</font>
+<br>&nbsp;<br>
+<font color=#200080>&nbsp;&nbsp;duMicromicrons<br>
+&nbsp;&nbsp;duAngstroms<br>
+&nbsp;&nbsp;duMillimicrons<br>
+&nbsp;&nbsp;duMicrons<br>
+&nbsp;&nbsp;duMillimeters<br>
+&nbsp;&nbsp;duCentimeters<br>
+&nbsp;&nbsp;duDecimeters<br>
+&nbsp;&nbsp;duMeters<br>
+&nbsp;&nbsp;duDecameters<br>
+&nbsp;&nbsp;duHectometers<br>
+&nbsp;&nbsp;duKilometers<br>
+&nbsp;&nbsp;duMegameters<br>
+&nbsp;&nbsp;duGigameters<br>
+&nbsp;&nbsp;duInches<br>
+&nbsp;&nbsp;duFeet<br>
+&nbsp;&nbsp;duYards<br>
+&nbsp;&nbsp;duMiles<br>
+&nbsp;&nbsp;duNauticalMiles<br>
+&nbsp;&nbsp;duAstronomicalUnits<br>
+&nbsp;&nbsp;duLightYears<br>
+&nbsp;&nbsp;duParsecs<br>
+&nbsp;&nbsp;duCubits<br>
+&nbsp;&nbsp;duFathoms<br>
+&nbsp;&nbsp;duFurlongs<br>
+&nbsp;&nbsp;duHands<br>
+&nbsp;&nbsp;duPaces<br>
+&nbsp;&nbsp;duRods<br>
+&nbsp;&nbsp;duChains<br>
+&nbsp;&nbsp;duLinks<br>
+&nbsp;&nbsp;duPicas<br>
+&nbsp;&nbsp;duPoints
+</font>
+<br>&nbsp;<br>
+<font color=#008000><b>cbMass</b> family</font>
+<br>&nbsp;<br>
+<font color=#200080>&nbsp;&nbsp;muNanograms<br>
+&nbsp;&nbsp;muMicrograms<br>
+&nbsp;&nbsp;muMilligrams<br>
+&nbsp;&nbsp;muCentigrams<br>
+&nbsp;&nbsp;muDecigrams<br>
+&nbsp;&nbsp;muGrams<br>
+&nbsp;&nbsp;muDecagrams<br>
+&nbsp;&nbsp;muHectograms<br>
+&nbsp;&nbsp;muKilograms<br>
+&nbsp;&nbsp;muMetricTons<br>
+&nbsp;&nbsp;muDrams<br>
+&nbsp;&nbsp;muGrains<br>
+&nbsp;&nbsp;muLongTons<br>
+&nbsp;&nbsp;muTons<br>
+&nbsp;&nbsp;muOunces<br>
+&nbsp;&nbsp;muPounds<br>
+&nbsp;&nbsp;muStones
+</font>
+<br>&nbsp;<br>
+<font color=#008000><b>cbTemperature</b> family</font>
+<br>&nbsp;<br>
+<font color=#200080>&nbsp;&nbsp;tuCelsius<br>
+&nbsp;&nbsp;tuKelvin<br>
+&nbsp;&nbsp;tuFahrenheit<br>
+&nbsp;&nbsp;tuRankine<br>
+&nbsp;&nbsp;tuReamur
+</font>
+<br>&nbsp;<br>
+<font color=#008000><b>cbTime</b> family</font>
+<br>&nbsp;<br>
+<font color=#200080>&nbsp;&nbsp;tuMilliSeconds<br>
+&nbsp;&nbsp;tuSeconds<br>
+&nbsp;&nbsp;tuMinutes<br>
+&nbsp;&nbsp;tuHours<br>
+&nbsp;&nbsp;tuDays<br>
+&nbsp;&nbsp;tuWeeks<br>
+&nbsp;&nbsp;tuFortnights<br>
+&nbsp;&nbsp;tuMonths<br>
+&nbsp;&nbsp;tuYears<br>
+&nbsp;&nbsp;tuDecades<br>
+&nbsp;&nbsp;tuCenturies<br>
+&nbsp;&nbsp;tuMillennia<br>
+&nbsp;&nbsp;tuDateTime<br>
+&nbsp;&nbsp;tuJulianDate<br>
+&nbsp;&nbsp;tuModifiedJulianDate
+</font>
+<br>&nbsp;<br>
+<font color=#008000><b>cbVolume</b> family</font>
+<br>&nbsp;<br>
+<font color=#200080>&nbsp;&nbsp;vuCubicMillimeters<br>
+&nbsp;&nbsp;vuCubicCentimeters<br>
+&nbsp;&nbsp;vuCubicDecimeters<br>
+&nbsp;&nbsp;vuCubicMeters<br>
+&nbsp;&nbsp;vuCubicDecameters<br>
+&nbsp;&nbsp;vuCubicHectometers<br>
+&nbsp;&nbsp;vuCubicKilometers<br>
+&nbsp;&nbsp;vuCubicInches<br>
+&nbsp;&nbsp;vuCubicFeet<br>
+&nbsp;&nbsp;vuCubicYards<br>
+&nbsp;&nbsp;vuCubicMiles<br>
+&nbsp;&nbsp;vuMilliLiters<br>
+&nbsp;&nbsp;vuCentiLiters<br>
+&nbsp;&nbsp;vuDeciLiters<br>
+&nbsp;&nbsp;vuLiters<br>
+&nbsp;&nbsp;vuDecaLiters<br>
+&nbsp;&nbsp;vuHectoLiters<br>
+&nbsp;&nbsp;vuKiloLiters<br>
+&nbsp;&nbsp;vuAcreFeet<br>
+&nbsp;&nbsp;vuAcreInches<br>
+&nbsp;&nbsp;vuCords<br>
+&nbsp;&nbsp;vuCordFeet<br>
+&nbsp;&nbsp;vuDecisteres<br>
+&nbsp;&nbsp;vuSteres<br>
+&nbsp;&nbsp;vuDecasteres<br>
+&nbsp;&nbsp;vuFluidGallons<br>
+&nbsp;&nbsp;vuFluidQuarts<br>
+&nbsp;&nbsp;vuFluidPints<br>
+&nbsp;&nbsp;vuFluidCups<br>
+&nbsp;&nbsp;vuFluidGills<br>
+&nbsp;&nbsp;vuFluidOunces<br>
+&nbsp;&nbsp;vuFluidTablespoons<br>
+&nbsp;&nbsp;vuFluidTeaspoons<br>
+&nbsp;&nbsp;vuDryGallons<br>
+&nbsp;&nbsp;vuDryQuarts<br>
+&nbsp;&nbsp;vuDryPints<br>
+&nbsp;&nbsp;vuDryPecks<br>
+&nbsp;&nbsp;vuDryBuckets<br>
+&nbsp;&nbsp;vuDryBushels<br>
+&nbsp;&nbsp;vuUKGallons<br>
+&nbsp;&nbsp;vuUKPottles<br>
+&nbsp;&nbsp;vuUKQuarts<br>
+&nbsp;&nbsp;vuUKPints<br>
+&nbsp;&nbsp;vuUKGills<br>
+&nbsp;&nbsp;vuUKOunces<br>
+&nbsp;&nbsp;vuUKPecks<br>
+&nbsp;&nbsp;vuUKBuckets<br>
+&nbsp;&nbsp;vuUKBushels</font>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="convert.htm">Convert</a></b></td>
+<td width="8"></td>
+<td align="left">Convert one measurement value to another</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tconvtype.htm">TConvType</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a measurement type as used by <b>Convert</b></td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Convert UK gallons to litres</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;gallons, litres : Double;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define the gallons value</b></font><br>
+&nbsp;&nbsp;gallons := 1;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Convert to litres</b></font><br>
+&nbsp;&nbsp;litres := Convert(gallons, vuUKGallons, vuLiters);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display both values</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('%f UK gallons = %f litres',[gallons, litres]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="tconvfamily&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;1.00 UK gallons = 4.55 litres<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Convert miles per gallon to kilometres per litre</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;milesPerGallon, kilometresPerLitre : Double;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// We have a very efficient car</b></font><br>
+&nbsp;&nbsp;milesPerGallon := 58.5;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Convert to kilometres per litre</b></font><br>
+&nbsp;&nbsp;kilometresPerLitre := Convert(milesPerGallon,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duMiles,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vuUKGallons,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duKilometers,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vuLiters);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display both values</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('%f UK miles per gallon = %f km per litre',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [milesPerGallon, kilometresPerLitre]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="tconvfamily&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;58.5 UK miles per gallon = 20.71 km per litre<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

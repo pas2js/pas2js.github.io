@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TMS Web Project</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="#" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://www.tmssoftware.com/site/css/bootstrap.min.css" type="text/css" />
+<!--	<link rel="stylesheet" href="https://www.tmssoftware.com/site/css/master.css?v=2" type="text/css" />
+	<link rel="stylesheet" href="https://www.tmssoftware.com/site/css/custom.css?v=2" type="text/css" />
+-->
+    <script type="text/javascript" src="project1.js"></script>
+    <style>
+.panel {
+  position: relative;
+  background: transparent;
+  border: 4px solid #f8f8f8;
+  border: 4px solid rgba(200,200,200,0.2);
+}
+
+.tms-panel-border {
+  position: absolute;
+  z-index: 10;
+  bottom: -4px;
+  left: 26px;
+  right: -4px;
+  height: 14px;
+  border-bottom: 4px solid #dee2e5;
+  border-right: 4px solid #dee2e5;
+  transition: 0.4s height;
+  pointer-events: none;
+}
+
+.panel .tms-btn-dot {
+  transition: 0.4s bottom;
+  z-index: 10;
+}
+
+html.no-touch .panel:hover .tms-btn-dot,
+.panel.active .tms-btn-dot {
+  bottom: 257px;
+}
+
+html.no-touch .panel:hover .tms-panel-border,
+.panel.active .tms-panel-border {
+  height: 262px;
+}
+
+.tms-panel-thumb {
+  background: #323232;
+  display: block;
+  width: 92px;
+  height: 92px;
+  line-height: 92px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.tms-product .panel-body .tms-panel-thumb {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+}
+
+.tms-product .panel-body p {
+  position: relative;
+  z-index: -1;
+  min-height: 60px;
+}
+
+.tms-product p {
+  color: #323232;
+  margin-bottom: 30px;
+}
+</style>
+  </head>
+  <body>
+<div class="container-fluid">
+    <div class="row">
+        <h3 class="col-sm-12">Template Feature</h3>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-md-3 col-sm-4">
+            <div class="panel panel-recent tms-product">
+                <div class="panel-body">
+                    <span><input type="TEXT" id="edt">
+			<button type="BUTTON" id="btn">Add</button>
+			</span>
+                    <br>
+                    <i class="tms-panel-border"></i>
+                    <i class="tms-btn-dot"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4">
+            <div class="panel panel-recent tms-product">
+                <div class="panel-body">
+                    <textarea id="mem" style="width:150px;height:150px"></textarea>
+                    <br>
+                    <select id="sel" style="width:150px;"></select>
+                    <br>
+                    <i class="tms-panel-border"></i>
+                    <i class="tms-btn-dot"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4">
+            <div class="panel panel-recent tms-product">
+                <div class="panel-body">
+                    <table>
+                        <tr>
+                            <td>Selected value:</td>
+                            <td>
+                                <div id="lbl"><span style="padding-left:5px;"></span></div>
+                            </td>
+                        </tr>
+                    </table>
+                    <i class="tms-panel-border"></i>
+                    <i class="tms-btn-dot"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+  <script type="text/javascript">
+      window.addEventListener("load", rtl.run);
+  </script>
+  </body>
+</html>

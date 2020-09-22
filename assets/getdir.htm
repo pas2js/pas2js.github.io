@@ -1,0 +1,169 @@
+<!-- (0049)GetDir -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : GetDir command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, GetDir, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>GetDir</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Get the default directory (drive plus path) for a specified drive</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>GetDir</b></font>
+
+(
+<b>Drive </b> : Byte;<b> var Directory </b> : string
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>GetDir</b></font> procedure stores in the passed parameter <b>Directory</b> string the drive plus path name of the default directory on the specified <b>Drive</b>.
+<br>&nbsp;<br>
+<b>Drive</b> values :
+<br>&nbsp;<br>
+<table>
+<tr><td class=dt align='right'><b>0&nbsp;</b></td><td class=dd> = Default drive</td></tr>
+<tr><td class=dt align='right'><b>1&nbsp;</b></td><td class=dd> = A: drive</td></tr>
+<tr><td class=dt align='right'><b>2&nbsp;</b></td><td class=dd> = B: drive</td></tr>
+<tr><td class=dt align='right'><b>3&nbsp;</b></td><td class=dd> = C: drive</td></tr>
+<tr><td class=dt align='right'><b>4&nbsp;</b></td><td class=dd> = D: drive</td></tr>
+<tr><td class=dt align='right'><b>and so on.&nbsp;</b></td><td class=dd></table>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="chdir.htm">ChDir</a></b></td>
+<td width="8"></td>
+<td align="left">Change the working drive plus path for a specified drive</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="createdir.htm">CreateDir</a></b></td>
+<td width="8"></td>
+<td align="left">Create a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="getcurrentdir.htm">GetCurrentDir</a></b></td>
+<td width="8"></td>
+<td align="left">Get the current directory (drive plus directory)</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="forcedirectories.htm">ForceDirectories</a></b></td>
+<td width="8"></td>
+<td align="left">Create a new path of directories</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="mkdir.htm">MkDir</a></b></td>
+<td width="8"></td>
+<td align="left">Make a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="removedir.htm">RemoveDir</a></b></td>
+<td width="8"></td>
+<td align="left">Remove a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="rmdir.htm">RmDir</a></b></td>
+<td width="8"></td>
+<td align="left">Remove a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="selectdirectory.htm">SelectDirectory</a></b></td>
+<td width="8"></td>
+<td align="left">Display a dialog to allow user selection of a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setcurrentdir.htm">SetCurrentDir</a></b></td>
+<td width="8"></td>
+<td align="left">Change the current directory</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Getting the directory for the C: drive</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;DirName : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#C00000><b>GetDir</b></font>(3, DirName);&nbsp;&nbsp; <font color=#008000><b>// Store C: directory in the DirName variable</b></font><br>
+&nbsp;&nbsp;ShowMessage(DirName);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="getdir&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;The following output is representative, and will necessarily vary <br>&nbsp;&nbsp;
+from PC to PC:<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+C:\Program Files\Borland\Delphi7\Projects<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

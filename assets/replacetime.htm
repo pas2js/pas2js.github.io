@@ -1,0 +1,162 @@
+<!-- (0054)ReplaceTime -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : ReplaceTime command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, ReplaceTime, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>ReplaceTime</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Change only the time part of a TDateTime variable</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>ReplaceTime</b></font>
+
+(
+<b>var DateTimeVar </b> : TDateTime;<b> const NewTimeValue </b> : TDateTime
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>ReplaceTime</b></font> function updates the time part of a TDateTime variable <b>DateTimeVar</b> with the time part of another TDateTime value <b>NewTimeValue</b> without affecting the date.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="decodedate.htm">DecodeDate</a></b></td>
+<td width="8"></td>
+<td align="left">Extracts the year, month, day values from a TDateTime var.</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="decodedatetime.htm">DecodeDateTime</a></b></td>
+<td width="8"></td>
+<td align="left">Breaks a TDateTime variable into its date/time parts</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="decodetime.htm">DecodeTime</a></b></td>
+<td width="8"></td>
+<td align="left">Break a TDateTime value into individual time values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="encodedate.htm">EncodeDate</a></b></td>
+<td width="8"></td>
+<td align="left">Build a TDateTime value from year, month and day values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="encodedatetime.htm">EncodeDateTime</a></b></td>
+<td width="8"></td>
+<td align="left">Build a TDateTime value from day and time values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="encodetime.htm">EncodeTime</a></b></td>
+<td width="8"></td>
+<td align="left">Build a TDateTime value from hour, min, sec and msec values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="recodedate.htm">RecodeDate</a></b></td>
+<td width="8"></td>
+<td align="left">Change only the date part of a TDateTime variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="recodetime.htm">RecodeTime</a></b></td>
+<td width="8"></td>
+<td align="left">Change only the time part of a TDateTime variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="replacedate.htm">ReplaceDate</a></b></td>
+<td width="8"></td>
+<td align="left">Change only the date part of a TDateTime variable</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Change the time without changing the date</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myDateTime, newTime : TDateTime;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set the date to 29/10/2002 at 12:34:56</b></font><br>
+&nbsp;&nbsp;myDateTime := EncodeDateTime(2002, 10, 29, 12, 34, 56, 0);<br>
+&nbsp;&nbsp;WriteLn('The starting date/time = '+DateTimeToStr(myDateTime));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now change the time portion without touching the date</b></font><br>
+&nbsp;&nbsp;newTime := EncodeTime(9, 45, 52, 0);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ReplaceTime</b></font>(myDateTime, newTime);<br>
+&nbsp;&nbsp;WriteLn('The new date/time = '+DateTimeToStr(myDateTime));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="replacetime&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;The starting date/time = 29/10/2002 12:34:56<br>&nbsp;&nbsp;
+The new date/time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 29/10/2002 09:45:52<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

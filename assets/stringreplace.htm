@@ -1,0 +1,165 @@
+<!-- (0056)StringReplace -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : StringReplace command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, StringReplace, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>StringReplace</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Replace one or more substrings found within a string</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>StringReplace</b></font>
+
+(
+<b>const SourceString, OldPattern, NewPattern </b> : string;<b> Flags </b> : TReplaceFlags
+)
+ : string;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>StringReplace</b></font> function replaces the first or all occurences of a substring <b>OldPattern</b> in <b>SourceString</b> with <b>NewPattern</b> according to <b>Flags</b> settings.
+<br>&nbsp;<br>
+The changed string is returned.
+<br>&nbsp;<br>
+The <b>Flags</b> may be none, one, or both of these set values:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>rfReplaceAll&nbsp;</b></td><td class=dd> : Change all occurrences</td></tr>
+<tr><td class=dt align='right'><b>rfIgnoreCase&nbsp;</b></td><td class=dd> : Ignore case when searching</td></tr></table>
+<br>&nbsp;<br>
+These values are specified in square brackets, as in the example.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="ansireplacestr.htm">AnsiReplaceStr</a></b></td>
+<td width="8"></td>
+<td align="left">Replaces a part of one string with another</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="concat.htm">Concat</a></b></td>
+<td width="8"></td>
+<td align="left">Concatenates one or more strings into one string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="copy.htm">Copy</a></b></td>
+<td width="8"></td>
+<td align="left">Create a copy of part of  a string or an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="delete">Delete</a></b></td>
+<td width="8"></td>
+<td align="left">Delete a section of characters from a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="insert.htm">Insert</a></b></td>
+<td width="8"></td>
+<td align="left">Insert a string into another string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="move.htm">Move</a></b></td>
+<td width="8"></td>
+<td align="left">Copy bytes of data from a source to a destination</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="stuffstring.htm">StuffString</a></b></td>
+<td width="8"></td>
+<td align="left">Replaces a part of one string with another</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="wraptext.htm">WrapText</a></b></td>
+<td width="8"></td>
+<td align="left">Add line feeds into a string to simulate word wrap</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Change <b>a</b> to <b>THE</b> in a sentence</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;before, after : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to replace all occurrences of a or A to THE</b></font><br>
+&nbsp;&nbsp;before := 'This is a way to live A big life';<br><b>
+</b><br>
+&nbsp;&nbsp;after&nbsp;&nbsp;:= <font color=#C00000><b>StringReplace</b></font>(before, ' a ', ' THE ',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[rfReplaceAll, rfIgnoreCase]);<br>
+&nbsp;&nbsp;WriteLn('Before = '+before);<br>
+&nbsp;&nbsp;WriteLn('After&nbsp;&nbsp;= '+after);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="stringreplace&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Before = This is a way to live A big life<br>&nbsp;&nbsp;
+After&nbsp;&nbsp;= This is THE way to live THE big life<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

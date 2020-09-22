@@ -1,0 +1,1166 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+       a {color: black; text-decoration: none }
+       a:visited {color: black;}
+	   a:hover {color: #E4641C; text-decoration: underline }
+</style>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <title></title>
+  </head>
+  <body>
+  <form style="background-color: rgb(242, 245, 250);">
+    <fieldset>
+      <input type="text" name="search" value="" id="id_search" placeholder="Type To Filter" onkeyup="filter(this)" />
+	  <button onclick="id_search.value = '';">clear</button>
+    </fieldset>
+  </form>
+  <br />
+<DIV id="filtro_mod">
+<UL id="indexList" style="list-style: none">
+<LI><DIV><a target="hmcontent" href="hm_pas2js001a.htm">extractfilename example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfiledir.htm">extractfiledir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfiledrive.htm">extractfiledrive</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfileext.htm">extractfileext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfilename.htm">extractfilename</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfilepath.htm">extractfilepath</a></DIV></LI>
+
+
+
+<!--
+<LI><DIV><a target="hmcontent" href="$a.htm">$a</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$align.htm">$align</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$apptype.htm">$apptype</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$b.htm">$b</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$booleval.htm">$booleval</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$d.htm">$d</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$debuginfo.htm">$debuginfo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$define.htm">$define</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$definitioninfo.htm">$definitioninfo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$else.htm">$else</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$endif.htm">$endif</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$extendedsyntax.htm">$extendedsyntax</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$h.htm">$h</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$hints.htm">$hints</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$i.htm">$i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$ifdef.htm">$ifdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$ifndef.htm">$ifndef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$ifopt.htm">$ifopt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$include.htm">$include</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$iochecks.htm">$iochecks</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$l.htm">$l</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$localsymbols.htm">$localsymbols</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$longstrings.htm">$longstrings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$minenumsize.htm">$minenumsize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$o.htm">$o</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$optimization.htm">$optimization</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$overflowchecks.htm">$overflowchecks</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$q.htm">$q</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$r.htm">$r</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$rangechecks.htm">$rangechecks</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$referenceinfo.htm">$referenceinfo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$resource.htm">$resource</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$undef.htm">$undef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$warnings.htm">$warnings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$x.htm">$x</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$y.htm">$y</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="$z.htm">$z</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q03.htm#100doors">% eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_Pas2JS.htm#ifthenelse2">?: ifthenelse</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q03.htm#100doors">100 doors</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="abort.htm">abort</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="abs.htm">abs</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="abstract.htm">abstract</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="abstracterrorproc.htm">abstracterrorproc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q05.htm#acker">ackermann</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js009.htm">ackermann</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js014.htm">add subclasses types to the end of an array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="addr.htm">addr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js012.htm">adds new items (cast instance of type) to the end of an array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">after example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">after str manipulation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js010.htm">alias to float type</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="and.htm">and</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js118.htm">anonymous dynamic record</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js003.htm">anonymous method as a delegate method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansichar.htm">ansichar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansicomparestr.htm">ansicomparestr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansicomparetext.htm">ansicomparetext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansicontainsstr.htm">ansicontainsstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansicontainstext.htm">ansicontainstext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansiendsstr.htm">ansiendsstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansiindexstr.htm">ansiindexstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansileftstr.htm">ansileftstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansilowercase.htm">ansilowercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansimatchstr.htm">ansimatchstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansimidstr.htm">ansimidstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansipos.htm">ansipos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansireplacestr.htm">ansireplacestr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansireversestring.htm">ansireversestring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansirightstr.htm">ansirightstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansistartsstr.htm">ansistartsstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansistring.htm">ansistring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ansiuppercase.htm">ansiuppercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="append.htm">append</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="appendstr.htm">appendstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="arccos.htm">arccos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arccos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arccosh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="arcsin.htm">arcsin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arcsin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arcsinh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="arctan.htm">arctan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arctan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">arctanh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js011.htm">arithmetic operators (StrToIntDef, div, mod)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="array.htm">array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js062.htm">array [boolean] of integer/string</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js017.htm">array bounds</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_introduction.htm#arr_const">array constants</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js025.htm">array dyanmic (sort, reverse methods)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js119.htm">array dyn - delete method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js122.htm">array dyn of records</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js022.htm">array dynamic (copy method)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js023.htm">array dynamic (preset default values)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js024.htm">array dynamic (remove, push methods)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js027.htm">array dynamic (swap, reverse methods)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js026.htm">array dynamic stack (pop method)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js033.htm">array initialization</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#enumset">array of enum</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js037.htm">array of metaclasses</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js038.htm">array of procedure as parameter</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js039.htm">array of record type</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js040.htm">array of record type add create</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js041.htm">array of record type initialization</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q01.htm#java">array of strings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js042.htm">array of variant</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js043.htm">array parameter expressions</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js044.htm">array plus assign (+=)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js046.htm">array properties read subclass</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js047.htm">array ranges</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js012.htm">Arrays: adds new items to the end of an array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="as.htm">as</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">asdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js053.htm">assert method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="assign.htm">assign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js015.htm">assign an array #slice</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js018.htm">assign array (minus range)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js016.htm">assign subclass type to an array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="assigned.htm">assigned</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js055.htm">assigned function result | exceptobject</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js054.htm">assigned method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="assignfile.htm">assignfile</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js056.htm">assignments | -= / +=</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="assignprn.htm">assignprn</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_mean">average</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm">base types</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="beep.htm">beep</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">before example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">before str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="begin.htm">begin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="beginthread.htm">beginthread</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js057.htm">binary literal</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js058.htm">bitwise, sar, shl, shr, shift operators</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="blockread.htm">blockread</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="blockwrite.htm">blockwrite</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="boolean.htm">boolean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js061.htm">boolean with and |&&</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js059.htm">boolean with logic operators ( and | or | xor | not )</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js063.htm">boolean with or ( || )</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js064.htm">booleans expressions</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js060.htm">booltostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="bounds.htm">bounds</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="break.htm">break</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js065.htm">break | continue | while | repeat | upward for | downward for</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js066.htm">break in exception block try..except..finally</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="byte.htm">byte</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">byte</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js067.htm">call methods conventions | safecall | stdcall | cdecl | register</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="cardinal.htm">cardinal</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">cardinal</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="case.htm">case</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_Pas2JS.htm#casest">case</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js068.htm">case statement with non-ordinal datatypes</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js070.htm">case..of statement | boolean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js071.htm">case..of statement | break</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js072.htm">case..of statement | range a..b</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js069.htm">case..of statement | variant condition</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js073.htm">cast base types</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">ceiling</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="celsiustofahrenheit.htm">celsiustofahrenheit</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="changefileext.htm">changefileext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="char.htm">char</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">char</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#charloop">character loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="chdir.htm">chdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="chr.htm">chr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">clamp example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">clamp str manipulation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="class.htm">class</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js074.htm">class abstract method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js075.htm">class cast</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js077.htm">class const as property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js078.htm">class forward keyword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js079.htm">class initialization</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js080.htm">class inline declared</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js081.htm">class method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js005.htm">class method example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js082.htm">class of | metaclass</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js083.htm">class of cast</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js084.htm">class operator +=</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js086.htm">class property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js088.htm">class scoping</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js089.htm">class self</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js076.htm">class type with const keyword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js091.htm">class var as property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js087.htm">class var dynamic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js092.htm">classname ancestor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js093.htm">classname nil</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js094.htm">classtype</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js095.htm">classtype nil</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="close.htm">close</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="closefile.htm">closefile</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="cmdline.htm">cmdline</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js096.htm">comments source code | empty comments</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="comp.htm">comp</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js097.htm">compare boolean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js098.htm">compare enumerations | in keyword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js099.htm">compare floats</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js103.htm">compare integer table</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js100.htm">compare integers</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js101.htm">compare string</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js102.htm">compare variant</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="comparestr.htm">comparestr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="comparetext.htm">comparetext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">comparetext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">comparetext str manipulation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">compareto</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">compareto str manipulation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="comparevalue.htm">comparevalue</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js019.htm">compounds operators with array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="concat.htm">concat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js020.htm">concatenate arrays (map, join methods)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js105.htm">conditionals $ifndef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js106.htm">conditionals nested</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js104.htm">conditionals using $else</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="const.htm">const</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_co1">const</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js107.htm">const array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="constructor.htm">constructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_introduction.htm#constructor">constructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js004.htm">constructor override</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str02.htm#c13">contains</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_testing">contains str test</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="continue.htm">continue</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js109.htm">contracts in smart pascal | ensure | require | old</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="convert.htm">convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="copy.htm">copy</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="cos.htm">cos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">cos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">cosh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">cotan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#forloop">count loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="createdir.htm">createdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currency.htm">currency</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">currency</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currencydecimals.htm">currencydecimals</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currencyformat.htm">currencyformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currencystring.htm">currencystring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currtostr.htm">currtostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="currtostrf.htm">currtostrf</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js110.htm">custom array type</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="date.htm">date</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">date</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dateseparator.htm">dateseparator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="datetimetofiledate.htm">datetimetofiledate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetimetoiso8601</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="datetimetostr.htm">datetimetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">datetimetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetimetostr example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="datetimetostring.htm">datetimetostring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="datetostr.htm">datetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">datetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetostr example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetoweeknumber</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">datetoyearofweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">dayofmonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayofthemonth.htm">dayofthemonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayoftheweek.htm">dayoftheweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">dayoftheweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayoftheyear.htm">dayoftheyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayofweek.htm">dayofweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">dayofweek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">dayofyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="daysbetween.htm">daysbetween</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="daysinamonth.htm">daysinamonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="daysinayear.htm">daysinayear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dayspan.htm">dayspan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dec.htm">dec</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="decimalseparator.htm">decimalseparator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js112.htm">declared helper</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js111.htm">declared keyword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="decodedate.htm">decodedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="decodedatetime.htm">decodedatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="decodetime.htm">decodetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="default.htm">default</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js113.htm">default parameters</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js114.htm">default parameters expressions</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js115.htm">defined keyword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="degtorad.htm">degtorad</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">degtorad</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js003.htm">delegate method as closure</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">deleteleft</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">deleteleft str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">deleteright</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">deleteright str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js116.htm">destroy keyword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="destructor.htm">destructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="directoryexists.htm">directoryexists</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="diskfree.htm">diskfree</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="disksize.htm">disksize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dispose.htm">dispose</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="div.htm">div</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">div eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js117.htm">division by zero | divide assign /=</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="do.htm">do</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="double.htm">double</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">double</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="downto.htm">downto</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">dupe</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">dupe str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dupestring.htm">dupestring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_faq1.htm#dws">dwscript</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js120.htm">dyn array - no unused hint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js121.htm">dyn array of objects</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="dynamic.htm">dynamic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js021.htm">dynamic array of integer (length, setlength methods)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">eabort</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="else.htm">else</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_Pas2JS.htm#ifthenelse">else</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js125.htm">empty body</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="encodedate.htm">encodedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">encodedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="encodedatetime.htm">encodedatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="encodetime.htm">encodetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="end.htm">end</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="endofaday.htm">endofaday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="endofamonth.htm">endofamonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str02.htm#c13">endswith</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_testing">endswith str test</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="endthread.htm">endthread</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js133.htm">enum | succ | pred</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js127.htm">enum bounds</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js132.htm">enum case of</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js128.htm">enum const</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js129.htm">enum flags</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js134.htm">enum names | step to</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js135.htm">enum qualifiedname</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js130.htm">enum scope</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js131.htm">enum to integer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js126.htm">enum with boolean operators</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#enumset">enumerations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="eof.htm">eof</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="eoln.htm">eoln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str02.htm#c13">equalstext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_testing">equalstext str test</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="erase.htm">erase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="erroraddr.htm">erroraddr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js136.htm">event virtual</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="except.htm">except</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc1">except</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc1">exception</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js140.htm">exception custom</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js138.htm">exception handling</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js137.htm">exception log</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js142.htm">exception nested call</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js141.htm">exception scoping</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js139.htm">exception trigger</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js143.htm">exceptobject</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="exclude.htm">exclude</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="exit.htm">exit</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js145.htm">exit | case of</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js147.htm">exit | finally</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js149.htm">exit | result</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js146.htm">exit constructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q02.htm#mdc">exit ex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js144.htm">exit keyword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js148.htm">exit method | result</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="exitcode.htm">exitcode</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="exp.htm">exp</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">exp</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="export.htm">export</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extended.htm">extended</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">extended</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js150.htm">external | class | procedure</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfiledir.htm">extractfiledir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfiledrive.htm">extractfiledrive</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfileext.htm">extractfileext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfilename.htm">extractfilename</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="extractfilepath.htm">extractfilepath</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="fahrenheittocelsius.htm">fahrenheittocelsius</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">fatorial</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js153.htm">field scope | class scope</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js154.htm">field typed default | default field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="file.htm">file</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="fileage.htm">fileage</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filedatetodatetime.htm">filedatetodatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="fileexists.htm">fileexists</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filegetattr.htm">filegetattr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filemode.htm">filemode</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filepos.htm">filepos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filesearch.htm">filesearch</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filesetattr.htm">filesetattr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filesetdate.htm">filesetdate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="filesize.htm">filesize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="fillchar.htm">fillchar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="finally.htm">finally</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">finally</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="findclose.htm">findclose</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="findcmdlineswitch.htm">findcmdlineswitch</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="findfirst.htm">findfirst</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="findnext.htm">findnext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">float</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js010.htm">float type alias</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="floattostr.htm">floattostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="floattostrf.htm">floattostrf</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">floor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="flush.htm">flush</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">fmtlongdaynames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">fmtlongmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">fmtshortdaynames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">fmtshortmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="for.htm">for</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js164.htm">for | step</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js165.htm">for | step flow</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js155.htm">for bounds change | loop for</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js156.htm">for downto</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js157.htm">for in array | step</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js159.htm">for in array of tprocedure</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js158.htm">for in enum</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js160.htm">for in str</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js163.htm">for in subclass</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#forloop">for loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js166.htm">for step overflow</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js167.htm">for step sign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js168.htm">for to 100</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js169.htm">for to variant</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js170.htm">for var in array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js171.htm">for var in enum</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js172.htm">for var in field array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js173.htm">for var in string</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js174.htm">for var to</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js162.htm">for.. in str global</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js161.htm">for..in string ex2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="forcedirectories.htm">forcedirectories</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="format.htm">format</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">format</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">format eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js176.htm">format float | string</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js177.htm">format incorrect params</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js175.htm">format integer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">format str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="formatcurr.htm">formatcurr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="formatdatetime.htm">formatdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">formatdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="formatfloat.htm">formatfloat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="frac.htm">frac</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">fraction</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js178.htm">free | destroy</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="freeandnil.htm">freeandnil</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="freemem.htm">freemem</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="function.htm">function</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js179.htm">function inline</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js180.htm">function nested in method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js002.htm">function pointer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js199.htm">function pointer as byref</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js186.htm">function pointer assigned</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js187.htm">function pointer class method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js188.htm">function pointer classname</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js189.htm">function pointer constant</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js190.htm">function pointer default parameter</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js182.htm">function pointer ex02</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js183.htm">function pointer ex03</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js184.htm">function pointer ex04</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js185.htm">function pointer ex05</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js181.htm">function pointer ex1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js191.htm">function pointer field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js192.htm">function pointer field no param</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js193.htm">function pointer params</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js194.htm">function pointer property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js195.htm">function pointer property alias</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js196.htm">function pointer symbol field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js197.htm">function pointer var</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js198.htm">function pointer var param</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js029.htm">function pointer with in keyword and arrays</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js200.htm">function subfield</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_fx01">function with paramenters</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm">functions</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q02.htm#mdc">gcd ex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getcurrentdir.htm">getcurrentdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getdir.htm">getdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getlasterror.htm">getlasterror</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getlocaleformatsettings.htm">getlocaleformatsettings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="getmem.htm">getmem</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="goto.htm">goto</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="halt.htm">halt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js201.htm">heredoc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js202.htm">heredoc indent</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js203.htm">heredoc special</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">hextointeger</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">hextointeger str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hi.htm">hi</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="high.htm">high</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str01.htm#h3">high</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_informations">high str info</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js204.htm">hint warning</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="if.htm">if</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_Pas2JS.htm#ifthenelse">if</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js205.htm">if empty terms</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js206.htm">if then else expression case i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js207.htm">if then else expression case ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js208.htm">if then else expression case iii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js209.htm">if then else expression case iv</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js210.htm">if then else expression case v</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js211.htm">if then else optimize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js212.htm">ignore result</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="implementation.htm">implementation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js213.htm">implies</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="in.htm">in</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js214.htm">in class operator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js028.htm">in keyword with dynamic array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js215.htm">in operator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js216.htm">in string</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inc.htm">inc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js218.htm">inc | dec side effect</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js217.htm">inc dec field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incday.htm">incday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inchour.htm">inchour</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="include.htm">include</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js219.htm">include</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js220.htm">include expressions</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js221.htm">include once</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js222.htm">include once ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js223.htm">includesym</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incmillisecond.htm">incmillisecond</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incminute.htm">incminute</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incmonth.htm">incmonth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incsecond.htm">incsecond</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="incyear.htm">incyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js224.htm">index property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="indexb.htm">indexb</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js031.htm">indexof() method with array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js032.htm">indexof() with function pointer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js030.htm">indexof() with record type</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js225.htm">inference i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js226.htm">inference ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="infinity.htm">infinity</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inherited.htm">inherited</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js229.htm">inherited constructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js227.htm">inherited i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js228.htm">inherited ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_introduction.htm#def_var">inline variables</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="input.htm">input</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inputbox.htm">inputbox</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inputquery.htm">inputquery</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="insert.htm">insert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js034.htm">insert method with arrays</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="int.htm">int</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">int</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js230.htm">int float</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js231.htm">int hex constant | shr | shl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="int64.htm">int64</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">int64</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="integer.htm">integer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js152.htm">integer field as float</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="interface.htm">interface</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inttohex.htm">inttohex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="inttostr.htm">inttostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ioresult.htm">ioresult</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="is.htm">is</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">isfinite</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="isinfinite.htm">isinfinite</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">isinfinite exceptions</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">isinfinite topic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="isleapyear.htm">isleapyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ismultithread.htm">ismultithread</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="isnan.htm">isnan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">isnan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">isprime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js007.htm">iterating through bidimentional arrays</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3JObject.htm">JObject</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="lastdelimiter.htm">lastdelimiter</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js232.htm">lazy</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js233.htm">lazy recursive</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js234.htm">lazy sqr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">leastfactor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">left</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">left str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">leftstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">leftstr str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="length.htm">length</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str01.htm#h3">length</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_informations">length str info</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ln.htm">ln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">ln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="lo.htm">lo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="log10.htm">log10</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">log10</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">log2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">logn</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js235.htm">long name</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longdateformat.htm">longdateformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longdaynames.htm">longdaynames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longint.htm">longint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longmonthnames.htm">longmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longtimeformat.htm">longtimeformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="longword.htm">longword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#forloop">loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js236.htm">loop and half</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js237.htm">loop over arrays</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="low.htm">low</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str01.htm#h3">low</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js238.htm">low | high</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_informations">low str info</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="lowercase.htm">lowercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str03.htm#u7">lowercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_case_convert">lowercase case convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js035.htm">map method with arrays</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">matches</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">matches str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js124.htm">matrix dyn</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="max.htm">max</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">max</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">max topic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="maxint.htm">maxint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="maxlongint.htm">maxlongint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="mean.htm">mean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_mean">mean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="messagedlg.htm">messagedlg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="messagedlgpos.htm">messagedlgpos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js240.htm">method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js241.htm">method contracts | require | ensure</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q02.htm#mdc">method ex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js242.htm">method implementation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js239.htm">method pointer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js243.htm">method with name of property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">midstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">midstr str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="min.htm">min</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">min</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">min topic</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="minsperday.htm">minsperday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js244.htm">minus assign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js245.htm">missing semicolon</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js246.htm">mixed nil array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="mkdir.htm">mkdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="mod.htm">mod</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js247.htm">mod by zero int</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q03.htm#100doors">mod example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q02.htm#mdc">mod math</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">mod operators</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="monthdays.htm">monthdays</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="monthoftheyear.htm">monthoftheyear</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="move.htm">move</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js249.htm">multiplication assign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js248.htm">multiplication division</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js250.htm">multiply by 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="nan.htm">nan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="negcurrformat.htm">negcurrformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js251.htm">nested declarations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="new.htm">new</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js252.htm">new class 1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js253.htm">new class 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js254.htm">new class 3</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js255.htm">new class 4</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js256.htm">new class alias</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="nil.htm">nil</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js257.htm">nil meta parameter</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="not.htm">not</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js258.htm">not in operator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="now.htm">now</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">now</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="null.htm">null</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="null .htm">null </a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="object.htm">object</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js259.htm">object orientated programming demo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="odd.htm">odd</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="of.htm">of</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="on.htm">on</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">on exception</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js260.htm">oop compare</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js261.htm">oop field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js262.htm">oop is as</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js263.htm">open array 1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js264.htm">open array 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js265.htm">open array 3</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js266.htm">open array bounds</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js267.htm">operator in overloading</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js268.htm">operator overloading 1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js269.htm">operator overloading 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js270.htm">operator precedence 1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="or.htm">or</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ord.htm">ord</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js271.htm">ord</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js272.htm">ord string op</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js273.htm">ord surrogate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="out.htm">out</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="output.htm">output</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="overload.htm">overload</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js004.htm">overload / override the constructor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="override.htm">override</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js274.htm">override deep</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="packed.htm">packed</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pansichar.htm">pansichar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pansistring.htm">pansistring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="paramcount.htm">paramcount</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js275.htm">params autocast</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="paramstr.htm">paramstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js085.htm">parent class</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js276.htm">partial class 1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js277.htm">partial class 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js278.htm">partial class subclass</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js279.htm">partial class unit</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js050.htm">pass static array as parameter</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pchar.htm">pchar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pcurrency.htm">pcurrency</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pdatetime.htm">pdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pextended.htm">pextended</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pi.htm">pi</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pint64.htm">pint64</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js280.htm">plus assign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="point.htm">point</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pointer.htm">pointer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pointsequal.htm">pointsequal</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pos.htm">pos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">power</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">power eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pred.htm">pred</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="printer.htm">printer</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="private.htm">private</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js281.htm">proc of method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="procedure.htm">procedure</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js282.htm">procedure contracts</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_pr1">procedure with different parameters</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm">procedures</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="processpath.htm">processpath</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="program.htm">program</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js283.htm">program</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js284.htm">program dot</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="promptforfilename.htm">promptforfilename</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="property.htm">property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js285.htm">property call</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js286.htm">property chain</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js287.htm">property index</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js288.htm">property of as</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js289.htm">property promotion</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js290.htm">property sub default</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js045.htm">property using array field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="protected.htm">protected</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pshortstring.htm">pshortstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pstring.htm">pstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="ptinrect.htm">ptinrect</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="public.htm">public</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q01.htm#java">public static void main</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="published.htm">published</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q03.htm#100doors">push math</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pvariant.htm">pvariant</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pwidechar.htm">pwidechar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="pwidestring.htm">pwidestring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">quotedstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">quotedstring str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="radtodeg.htm">radtodeg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">radtodeg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="raise.htm">raise</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc1">raise</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js291.htm">raise nil</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="random.htm">random</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="randomize.htm">randomize</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="randomrange.htm">randomrange</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="randomseed.htm">randomseed</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="randseed.htm">randseed</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js292.htm">re raise</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="read.htm">read</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="readln.htm">readln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="real.htm">real</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">real</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="real48.htm">real48</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="reallocmem.htm">reallocmem</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="recodedate.htm">recodedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="recodetime.htm">recodetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="record.htm">record</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js293.htm">record aliased field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js294.htm">record booleans</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js295.htm">record class field init</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js296.htm">record clone 1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js297.htm">record const</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js298.htm">record const as prop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js299.htm">record field init</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js300.htm">record in copy</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js301.htm">record metaclass field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js305.htm">record method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js302.htm">record method 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js303.htm">record method 3</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js304.htm">record method 4</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js306.htm">record method static</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js308.htm">record nested</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js307.htm">record nested 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js309.htm">record obj field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js310.htm">record passing i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js311.htm">record passing ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js312.htm">record passing iii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js313.htm">record passing iv</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js314.htm">record property</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js315.htm">record record field init</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js316.htm">record recursive dynarray</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js317.htm">record result i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js318.htm">record result ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js319.htm">record result iii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js320.htm">record result iv</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js321.htm">record static array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js322.htm">record var</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js323.htm">record var as prop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js324.htm">record var param 1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js325.htm">record var param 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="rect.htm">rect</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q05.htm#acker">recursive function</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js009.htm">recursive function</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js326.htm">recursive path</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js327.htm">reintroduce</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js328.htm">reintroduce virtual</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="removedir.htm">removedir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="rename.htm">rename</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="renamefile.htm">renamefile</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="repeat.htm">repeat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#repeatloop">repeat loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">replace</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">replace str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="replacedate.htm">replacedate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="replacetime.htm">replacetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js329.htm">reserved word</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="reset.htm">reset</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js330.htm">resourcestring 1</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="result.htm">result</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js331.htm">result direct</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js332.htm">result init</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">reverse</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">reverse str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="rewrite.htm">rewrite</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">right</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">right str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p2">rigthstr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">rigthstr str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="rmdir.htm">rmdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="round.htm">round</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">round</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="runerror.htm">runerror</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="secsperday.htm">secsperday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="seek.htm">seek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="seekeof.htm">seekeof</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="seekeoln.htm">seekeoln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="selectdirectory.htm">selectdirectory</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="self.htm">self</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js333.htm">self</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js090.htm">self reference</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="set.htm">set</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#enumset">set</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="setcurrentdir.htm">setcurrentdir</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="setlength.htm">setlength</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js048.htm">setlength and array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="setstring.htm">setstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shl.htm">shl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortdateformat.htm">shortdateformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortdaynames.htm">shortdaynames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortint.htm">shortint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortmonthnames.htm">shortmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#_fdt1">shortmonthnames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shortstring.htm">shortstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shorttimeformat.htm">shorttimeformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="showmessage.htm">showmessage</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="showmessagefmt.htm">showmessagefmt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="showmessagepos.htm">showmessagepos</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="shr.htm">shr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">sign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">sign example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sin.htm">sin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">sin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="single.htm">single</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">sinh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sizeof.htm">sizeof</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="slice.htm">slice</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="smallint.htm">smallint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js049.htm">sort method using custom function</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js036.htm">sort method with arrays</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js334.htm">special chars</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p1">split</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">split str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sqr.htm">sqr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">sqr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">sqr example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sqrt.htm">sqrt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float02.htm">sqrt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js335.htm">stack of proc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js336.htm">stack peek</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js337.htm">stacktrace</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str02.htm#c13">startswith</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_testing">startswith str test</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js338.htm">static array const</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js339.htm">static class</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q01.htm#java">static method example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js006.htm">static method example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js340.htm">static method i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js341.htm">static method ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js342.htm">static method iii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js343.htm">static to dynamic empty array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="str.htm">str</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="string.htm">string</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js344.htm">string array item get set</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js345.htm">string bounds</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js346.htm">string bounds 2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js347.htm">string builtin methods</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js348.htm">string class field get set</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js349.htm">string compare</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js350.htm">string manip</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js351.htm">string quotes</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js352.htm">string record field get set</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js353.htm">string static access</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="stringofchar.htm">stringofchar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="stringreplace.htm">stringreplace</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="stringtowidechar.htm">stringtowidechar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js013.htm">strjoin to add items to the end of an array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strscan.htm">strscan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js123.htm">strsplit</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtocurr.htm">strtocurr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtodate.htm">strtodate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtodatetime.htm">strtodatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtofloat.htm">strtofloat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtoint.htm">strtoint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtoint64.htm">strtoint64</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtoint64def.htm">strtoint64def</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtointdef.htm">strtointdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js008.htm">strToIntDef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q04.htm#ab">strtointdef eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q06.htm#ab">strtointdef example2</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="strtotime.htm">strtotime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="stuffstring.htm">stuffstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="succ.htm">succ</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="sum.htm">sum</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js354.htm">swap i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js355.htm">swap ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js051.htm">swap method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js356.htm">swap record</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js357.htm">swap static array</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tan.htm">tan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">tan</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float01.htm">tanh</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tbits.htm">tbits</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tcolor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tconvfamily.htm">tconvfamily</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tconvtype.htm">tconvtype</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tdatetime.htm">tdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tdatetime</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="text.htm">text</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="textfile.htm">textfile</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tfloatformat.htm">tfloatformat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tformatsettings.htm">tformatsettings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">thandle</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js108.htm">the const keyword</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="then.htm">then</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_programming_with_Pas2JS.htm#ifthenelse">then</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js382.htm">this JS reference</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js383.htm">this SMART reference</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="thousandseparator.htm">thousandseparator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="threadvar.htm">threadvar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="time.htm">time</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">time</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timeamstring.htm">timeamstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timepmstring.htm">timepmstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timeseparator.htm">timeseparator</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timetostr.htm">timetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datetimes">timetostr</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="timetostring.htm">timetostring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tintegerdynarray</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tlist.htm">tlist</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="to.htm">to</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int02.htm#int_02">tobin</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tobject.htm">tobject</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_tobject.htm#tobject">tobject</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tobject.htm">TObject</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js001.htm">TObject: the root type of Pas2JS</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tobjectlist</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t13">toboolean</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">toboolean str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t14">tofloat</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">tofloat str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t14">tofloatdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">tofloatdef str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int02.htm#int_02">tohexstring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t16">tointeger</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str04.htm#t16">tointegerdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_conversion">tointegerdef</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str03.htm#u7">tolower</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_case_convert">tolower</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tomorrow.htm">tomorrow</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="topendialog.htm">topendialog</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int02.htm#int_02">tostring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float04.htm">tostring (float)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">tostring (integer)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str03.htm#u7">toupper</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_case_convert">toupper</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tpersistent</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tpoint.htm">tpoint</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tprintdialog.htm">tprintdialog</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trect.htm">trect</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="treplaceflags.htm">treplaceflags</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trim.htm">trim</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p1">trim</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">trim str manipulations</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trimleft.htm">trimleft</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p1">trimleft</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">trimleft</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trimright.htm">trimright</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str05.htm#p1">trimrigth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_manipulations">trimrigth</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="trunc.htm">trunc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_operators.htm#aritop">trunc eg</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="truncate.htm">truncate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_float03.htm">truncate</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="try.htm">try</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc1">try</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js358.htm">try except finally</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tsavedialog.htm">tsavedialog</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tsearchrec.htm">tsearchrec</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tstringlist.htm">tstringlist</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tstringlist</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tsyscharset.htm">tsyscharset</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TypesSmartCL.htm#TTextAlign">TTextAlign</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="tthreadfunc.htm">tthreadfunc</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">tvariantdynarray</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3Border.htm">TW3Border</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TypesSmartCL.htm#TW3BorderEdge">TW3BorderEdge</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TypesSmartCL.htm#TW3BorderEdgeStyle">TW3BorderEdgeStyle</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3Borders.htm">TW3Borders</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_button.htm">TW3Button</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_checkbox.htm">TW3CheckBox</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_combobox.htm">TW3ComboBox</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3Component.htm">TW3Component</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3ControlBackground.htm">TW3ControlBackground</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3CSSClassStyleNames.htm">TW3CSSClassStyleNames</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3CustomControl.htm">TW3CustomControl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3CustomFont.htm">TW3CustomFont</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_element.htm">TW3DIVhtmlEl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_editbox.htm">TW3EditBox</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_element.htm">TW3FrameHtmlEl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3GraphicControl.htm">TW3GraphicControl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_grid.htm">TW3Grid</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_header.htm">TW3HeaderControl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_scrollbar.htm">TW3HorizScrollBar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_image.htm">TW3Image</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TypesSmartCL.htm#TW3InputType">TW3InputType</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_label.htm">TW3Label</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_listbox.htm">TW3ListBox</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3ListItem.htm">TW3ListItem</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3ListItem.htm">TW3ListItem</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3ListItems.htm">TW3ListItems</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_listmenu.htm">TW3ListMenu</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_memo.htm">TW3Memo</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TypesSmartCL.htm#TW3MemoScrollbarOption">TW3MemoScrollbarOption</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3MovableControl.htm">TW3MovableControl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_paintbox.htm">TW3PaintBox</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_panel.htm">TW3Panel</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_element.htm">TW3PREhtmlEl</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_progressbar.htm">TW3ProgressBar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_dates_and_times.htm#datrege">tw3regex</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_scrollbox.htm">TW3ScrollBox</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="TW3TagObj.htm">TW3TagObj</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_toggleswitch.htm">TW3ToggleSwitch</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_toolbar.htm">TW3Toolbar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_toolbutton.htm">TW3ToolbarButton</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_scrollbar.htm">TW3VertScrollBar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_webgl.htm">TW3WebGL</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="twodigityearcenturywindow.htm">twodigityearcenturywindow</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="type.htm">type</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm">type mappings</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js359.htm">unicode const</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js360.htm">unicode identifiers</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js361.htm">unicode print</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="unit.htm">unit</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_int01.htm">unsigned32</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="until.htm">until</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#repeatloop">until</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="upcase.htm">upcase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="uppercase.htm">uppercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_str03.htm#u7">uppercase</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_string.htm#str_case_convert">uppercase str convert</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="uses.htm">uses</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="val.htm">val</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js362.htm">value type separation</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="var.htm">var</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_co1">var</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js363.htm">var param casts</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js364.htm">var param obj method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js365.htm">var param rec field</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js366.htm">var param rec method</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js367.htm">var param record</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js151.htm">var parameter</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_va2">variable by reference</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_subroutines.htm#_va1">variable by value</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js368.htm">variable initialization i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js369.htm">variable initialization ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="variant.htm">variant</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js370.htm">variant compound ops</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js371.htm">variant logical ops</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js372.htm">variant ops</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js052.htm">variant with array index</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js373.htm">variants</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js374.htm">variants binary bool int</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js375.htm">variants bool</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js376.htm">variants casts</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js377.htm">variants explicit casts</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="vartype.htm">vartype</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="vartypemask.htm">vartypemask</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="virtual.htm">virtual</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js379.htm">virtual constructor ii</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js378.htm">virtual_constructor i</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_tobject.htm#tobject">vmt (virtual method table)</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_q04.htm#ab">w3_prompt</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js008.htm">w3_prompt example</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js007.htm">which doors are open?</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="while.htm">while</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_looping.htm#whileloop">while loop</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js380.htm">while true</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="widechar.htm">widechar</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="widechartostring.htm">widechartostring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="widestring.htm">widestring</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="with.htm">with</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_pas2js381.htm">with</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="word.htm">word</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_datatypes.htm#typmap">word</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="wraptext.htm">wraptext</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="write.htm">write</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="writeln.htm">writeln</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="xor.htm">xor</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="yesterday.htm">yesterday</a></DIV></LI>
+<LI><DIV><a target="hmcontent" href="hm_exceptions.htm#_exc2">zero divide</a></DIV></LI>
+-->
+</UL> 
+</DIV>	
+<script type="text/javascript">
+function filter(element) {
+    var value = $(element).val().toUpperCase();
+
+    $("#filtro_mod > ul > li").each(function() {
+      if ($(this).text().toUpperCase().search(value) > -1) {
+          $(this).show();
+      }
+      else {
+           $(this).hide();
+      }
+    });
+}  
+</script>
+
+</body>
+</html>

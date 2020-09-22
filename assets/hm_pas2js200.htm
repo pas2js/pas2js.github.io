@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Function subfield</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js199.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js201.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Function subfield
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TObj1 = class
+    Field: TObject;
+    property Prop: TObject read Field;
+    function Get: TObject;
+  end;
+
+type
+  TObj2 = class
+    Field: TObj1;
+    function GetItem: TObj1;
+    function GetObjField: TObject;
+    function GetObjProp: TObject;
+    function GetObjGet: TObject;
+  end;
+
+function TObj1.Get: TObject;
+begin
+  Result := Field;
+end;
+
+function TObj2.GetItem: TObj1;
+begin
+  Result := Field;
+end;
+
+function TObj2.GetObjField: TObject;
+begin
+  Result := GetItem.Field;
+end;
+
+function TObj2.GetObjProp: TObject;
+begin
+  Result := GetItem.Prop;
+end;
+
+function TObj2.GetObjGet: TObject;
+begin
+  Result := GetItem.Get;
+end;
+
+var o1 := new TObj1;
+var o2 := new TObj2;
+
+o2.Field := o1;
+o1.Field := new TObject;
+
+WriteLn(o2.GetItem.ClassName);
+WriteLn(o2.GetObjField.ClassName);
+WriteLn(o2.GetObjProp.ClassName);
+WriteLn(o2.GetObjGet.ClassName);
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+TObj1
+TObject
+TObject
+TObject
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TObject={
+	$ClassName: "TObject",
+	$Parent: null,
+	ClassName: function (s) { return s.$ClassName },
+	ClassType: function (s) { return s },
+	ClassParent: function (s) { return s.$Parent },
+	$Init: function () {},
+	Create: function (s) { return s },
+	Destroy: function (s) { for (var prop in s) if (s.hasOwnProperty(prop)) delete s.prop },
+	Destroy$: function(s) { return s.ClassType.Destroy(s) },
+	Free: function (s) { if (s!==null) s.ClassType.Destroy(s) }
+}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $ToClassType(o) {
+	if (o===null) return o;
+	return o.ClassType
+}
+;
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i }
+function $Check(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Object not instantiated"+z); }
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+function ClassName$1(Self$1) {
+   return "Helper1."+TObject.ClassName($Check(Self$1,""));
+}
+var TObj2 = {
+   $ClassName:"TObj2",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field = null;
+   }
+   ,GetItem:function(Self) {
+      return $Check(Self,"").Field;
+   }
+   ,GetObjField:function(Self) {
+      return $Check(TObj2.GetItem(Self),"").Field$1;
+   }
+   ,GetObjProp:function(Self) {
+      return $Check(TObj2.GetItem(Self),"").Field$1;
+   }
+   ,GetObjGet:function(Self) {
+      return TObj1.Get(TObj2.GetItem(Self));
+   }
+   ,Destroy:TObject.Destroy
+};
+var TObj1 = {
+   $ClassName:"TObj1",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field$1 = null;
+   }
+   ,Get:function(Self) {
+      return $Check(Self,"").Field$1;
+   }
+   ,Destroy:TObject.Destroy
+};
+var o1 = null,
+   o2 = null;
+
+/* <<< main JS >>> */
+
+   o1 = TObject.Create($New(TObj1));
+   o2 = TObject.Create($New(TObj2));
+   $Check(o2,"").Field = o1;
+   $Check(o1,"").Field$1 = TObject.Create($New(TObject));
+   WriteLn(ClassName$1($ToClassType(TObj2.GetItem(o2))));
+   WriteLn(ClassName$1($ToClassType(TObj2.GetObjField(o2))));
+   WriteLn(ClassName$1($ToClassType(TObj2.GetObjProp(o2))));
+   WriteLn(ClassName$1($ToClassType(TObj2.GetObjGet(o2))));
+</code></pre></div>
+</div>
+</body>
+</html>

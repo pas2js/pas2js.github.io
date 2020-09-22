@@ -1,0 +1,200 @@
+<!-- (0052)Published -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Published command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Published, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Published</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts a published externally accessible section of a class</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type Class declaration<br>&nbsp;
+<b>Published</b><br>&nbsp;
+&nbsp;&nbsp;Field | Property | Method declaration<br>&nbsp;
+ {...}<br>&nbsp;
+end;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Published</b></font> directive starts a declaration section of a class definition. In a published section, <b>Fields, Properties</b> and <b>Methods</b> are declared to be accessible to this class, classes descending from it, and code using object instances of the class. And information about these accesses are recorded in the run time information for the class.
+<br>&nbsp;<br>
+In Object Oriented terms, a class object is seen as a black box. The internal operations are not relevant. Public and published fields, properties and methods are the externally visible part of an object - a controlled access to the internals of the class.
+<br>&nbsp;<br>
+Because public and published access provides a linkage of sorts to external code, you should avoid wherever possible making changes to these sections.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#FF0000>Warning</font> : avoid making <b>fields</b> published - it is always better to define a property to access them instead. This provides some decoupling from the internals of the class.<br>
+<br>
+Only one <b>Constructor</b> may be declared as published - overloaded versions must be defined as public.<br>
+<br>
+<font color=#996600><b>Published</b></font> properties cannot return arrays.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="private.htm">Private</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the section of private data and methods in a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="property.htm">Property</a></b></td>
+<td width="8"></td>
+<td align="left">Defines controlled access to class fields</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="protected.htm">Protected</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a section of class private data accesible to sub-classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="public.htm">Public</a></b></td>
+<td width="8"></td>
+<td align="left">Starts an externally accessible section of a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="type.htm">Type</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a new category of variable or process</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Forms, Dialogs, Classes, Controls, StdCtrls, SysUtils;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a base TSquare class :</b></font><br>
+&nbsp;&nbsp;TSquare = class<br>&nbsp;&nbsp;private&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Only known internally</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;squareArea, squareWidth, squareHeight : Integer;<br>&nbsp;&nbsp;<font color=#C00000><b>Published</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Known externally : has run time info also</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;property width&nbsp;&nbsp;: Integer read squareWidth;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property height : Integer read squareHeight;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property area&nbsp;&nbsp; : Integer read squareArea;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(width, height : Integer);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define the form class used by this unit</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ Private declarations }<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ Public declarations }<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+{$R *.dfm} // Include form definitions</b><br><b>
+</b><br><font color=#008000><b>// Create the TSquare object</b></font><br><b>
+constructor TSquare.Create(width, height: Integer);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Save the width and height</b></font><br>
+&nbsp;&nbsp;squareWidth&nbsp;&nbsp;:= width;<br>
+&nbsp;&nbsp;squareHeight := height;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And calculate and save the square area</b></font><br>
+&nbsp;&nbsp;squareArea := width * height;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;mySquare : TSquare;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create a square object</b></font><br>
+&nbsp;&nbsp;mySquare := TSquare.Create(30, 40);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// What are the square attributes ? :</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('Square area = %d * %d = %d',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [mySquare.width, mySquare.height, mySquare.area]);<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Square area = 30 * 40 = 1200<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

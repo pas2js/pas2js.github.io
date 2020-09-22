@@ -1,0 +1,150 @@
+<!-- (0046)Low -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Low command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Low, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Low</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Returns the lowest value of a type or variable</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Low</b></font>
+
+(
+type or variable
+)
+ : Ordinal type;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Low</b></font> function lowest allowed value of either a type or variable of that type.
+<br>&nbsp;<br>
+It only applies to characters, arrays, enumerations and short strings.
+<br>&nbsp;<br>
+For arrays, it returns the lowest array index.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+For <b>multi-dimensional</b> arrays, it returns the lowest index of the first subarray (the left most definition of array range).<br>
+<br>
+The lowest element of an <b>open array</b> is given independent of the starting index of the array. It is always 0.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="high.htm">High</a></b></td>
+<td width="8"></td>
+<td align="left">Returns the highest value of a type or variable</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Low applied to character, array, enumeration and short strings</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare character, array and enumerated data types</b></font><br>
+&nbsp;&nbsp;TChar&nbsp;&nbsp;= char;<br>
+&nbsp;&nbsp;TArray = array [3..7] of Integer;<br>
+&nbsp;&nbsp;TEnum&nbsp;&nbsp;= (Mon=5, Tue, Wed, Thu, Fri, Sat, Sun);<br>
+&nbsp;&nbsp;TShort = shortstring;<br><b>
+</b><br><b>
+var</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare variables of the above data types</b></font><br>
+&nbsp;&nbsp;myChar&nbsp;&nbsp;: TChar;<br>
+&nbsp;&nbsp;myArray : TArray;<br>
+&nbsp;&nbsp;myEnum&nbsp;&nbsp;: TEnum;<br>
+&nbsp;&nbsp;myShort : TShort;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the low values of the types and variables</b></font><br>
+&nbsp;&nbsp;WriteLn('Low(TChar)&nbsp;&nbsp;&nbsp;&nbsp;= '+IntToStr(Ord(<font color=#C00000><b>Low</b></font>(TChar))));<br>
+&nbsp;&nbsp;WriteLn('Low(myChar)&nbsp;&nbsp; = '+IntToStr(Ord(<font color=#C00000><b>Low</b></font>(myChar))));<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('Low(TArray)&nbsp;&nbsp; = '+IntToStr(<font color=#C00000><b>Low</b></font>(TArray)));<br>
+&nbsp;&nbsp;WriteLn('Low(myArray)&nbsp;&nbsp;= '+IntToStr(<font color=#C00000><b>Low</b></font>(myArray)));<br>
+&nbsp;&nbsp;WriteLn('High(myArray) = '+IntToStr(High(myArray)));<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('Low(TEnum)&nbsp;&nbsp;&nbsp;&nbsp;= '+IntToStr(Ord(<font color=#C00000><b>Low</b></font>(TEnum))));<br>
+&nbsp;&nbsp;WriteLn('Low(myEnum)&nbsp;&nbsp; = '+IntToStr(Ord(<font color=#C00000><b>Low</b></font>(myEnum))));<br>
+&nbsp;&nbsp;WriteLn('High(myEnum)&nbsp;&nbsp;= '+IntToStr(Ord(High(myEnum))));<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('Low(TShort)&nbsp;&nbsp; = '+IntToStr(Ord(<font color=#C00000><b>Low</b></font>(TShort))));<br>
+&nbsp;&nbsp;WriteLn('Low(myShort)&nbsp;&nbsp;= '+IntToStr(Ord(<font color=#C00000><b>Low</b></font>(myShort))));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="low&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Low(TChar)&nbsp;&nbsp;&nbsp;&nbsp;= 0<br>&nbsp;&nbsp;
+Low(myChar)&nbsp;&nbsp; = 0<br>&nbsp;&nbsp;
+Low(TArray)&nbsp;&nbsp; = 3<br>&nbsp;&nbsp;
+Low(myArray)&nbsp;&nbsp;= 3<br>&nbsp;&nbsp;
+Hig( myArray) = 7<br>&nbsp;&nbsp;
+Low(TEnum)&nbsp;&nbsp;&nbsp;&nbsp;= 5<br>&nbsp;&nbsp;
+Low(myEnum)&nbsp;&nbsp; = 5<br>&nbsp;&nbsp;
+Hig( myEnum)&nbsp;&nbsp;= 11<br>&nbsp;&nbsp;
+Low(TShort)&nbsp;&nbsp; = 0<br>&nbsp;&nbsp;
+Low(myShort)&nbsp;&nbsp;= 0<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

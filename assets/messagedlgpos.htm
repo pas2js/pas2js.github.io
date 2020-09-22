@@ -1,0 +1,230 @@
+<!-- (0056)MessageDlgPos -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : MessageDlgPos command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, MessageDlgPos, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>MessageDlgPos</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Displays a message plus buttons at a given screen position</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Dialogs</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>MessageDlgPos</b></font>
+
+(
+<b>const Message </b> : string;<b> DialogType </b> : TMsgDlgType;<b> Buttons</b> : TMsgDlgButtons;<b> HelpContext</b> : Longint;<b> X, Y </b> : Integer
+)
+ : Integer;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>MessageDlgPos</b></font> function is used to display messages to the user at a given screen position. These messages may be informational, or warnings or whatever. There is complete freedom over the choice of buttons that the user may press to acknowledge the dialog.
+<br>&nbsp;<br>
+For example, the user may be shown an error message, and be allowed to abort, retry or cancel the erroneous process.
+<br>&nbsp;<br>
+The screen coordinates are given by the <b>X</b> and <b>Y</b> values.
+<br>&nbsp;<br>
+The <b>DialogType</b> may have one of the following enumerated values:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>mtWarning&nbsp;</b></td><td class=dd>Displays a exclamation mark</td></tr>
+<tr><td class=dt align='right'><b>mtError&nbsp;</b></td><td class=dd>Displays a red 'X'</td></tr>
+<tr><td class=dt align='right'><b>mtInformation&nbsp;</b></td><td class=dd>Displays an 'i' in a bubble</td></tr>
+<tr><td class=dt align='right'><b>mtConfirmation&nbsp;</b></td><td class=dd>Displays an question mark</td></tr>
+<tr><td class=dt align='right'><b>mtCustom&nbsp;</b></td><td class=dd>Displays just the message</td></tr></table>
+<br>&nbsp;<br>
+The <b>Buttons</b> value may be one or more of the following enumerated values :
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>mbYes&nbsp;</b></td><td class=dd>Displays a 'Yes' button</td></tr>
+<tr><td class=dt align='right'><b>mbNo&nbsp;</b></td><td class=dd>Displays a 'No' button</td></tr>
+<tr><td class=dt align='right'><b>mbOK&nbsp;</b></td><td class=dd>Displays an 'OK' button</td></tr>
+<tr><td class=dt align='right'><b>mbCancel&nbsp;</b></td><td class=dd>Displays a 'Cancel' button</td></tr>
+<tr><td class=dt align='right'><b>mbAbort&nbsp;</b></td><td class=dd>Displays an 'Abort' button</td></tr>
+<tr><td class=dt align='right'><b>mbRetry&nbsp;</b></td><td class=dd>Displays a 'Retry' button</td></tr>
+<tr><td class=dt align='right'><b>mbIgnore&nbsp;</b></td><td class=dd>Displays an 'Ignore' button</td></tr>
+<tr><td class=dt align='right'><b>mbAll&nbsp;</b></td><td class=dd>Displays an 'All' button</td></tr>
+<tr><td class=dt align='right'><b>mbNoToAll&nbsp;</b></td><td class=dd>Displays a 'No to all' button</td></tr>
+<tr><td class=dt align='right'><b>mbYesToAll&nbsp;</b></td><td class=dd>Displys a 'Yes to all' button</td></tr>
+<tr><td class=dt align='right'><b>mbHelp&nbsp;</b></td><td class=dd>Displays a 'Help' button</td></tr></table>
+<br>&nbsp;<br>
+You specify these values comma separated in square brackets, as in the second code example.
+<br>&nbsp;<br>
+Delphi provides a number of predefined button combinations:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>mbYesNoCancel&nbsp;</b></td><td class=dd>= [mbYes,mbNO,mbCancel]</td></tr>
+<tr><td class=dt align='right'><b>mbYesAllNoAllCancel&nbsp;</b></td><td class=dd>=[mbYes,mbYesToAll, mbNo,mbNoToAll,mbCancel]</td></tr>
+<tr><td class=dt align='right'><b>mbOKCancel&nbsp;</b></td><td class=dd>=[mbOK,mbCancel]</td></tr>
+<tr><td class=dt align='right'><b>mbAbortRetryCancel&nbsp;</b></td><td class=dd>=[mbAbort,mbRetry,mbCancel]</td></tr>
+<tr><td class=dt align='right'><b>mbAbortIgnore&nbsp;</b></td><td class=dd>=[mbAbort,mbIgnore]</td></tr></table>
+<br>&nbsp;<br>
+Now Delphi seem to have made a design error when setting the return value from the dialog box. Instead of specifying the enumeration value of the button pressed, it uses a completely different set of enumeration names:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>mrYes&nbsp;</b></td><td class=dd>= 6</td></tr>
+<tr><td class=dt align='right'><b>mrNo&nbsp;</b></td><td class=dd>= 7</td></tr>
+<tr><td class=dt align='right'><b>mrOK&nbsp;</b></td><td class=dd>= 1</td></tr>
+<tr><td class=dt align='right'><b>mrCancel&nbsp;</b></td><td class=dd>= 2</td></tr>
+<tr><td class=dt align='right'><b>mrAbort&nbsp;</b></td><td class=dd>= 3</td></tr>
+<tr><td class=dt align='right'><b>mrRetry&nbsp;</b></td><td class=dd>= 4</td></tr>
+<tr><td class=dt align='right'><b>mrIgnore&nbsp;</b></td><td class=dd>= 5</td></tr>
+<tr><td class=dt align='right'><b>mrAll&nbsp;</b></td><td class=dd>= 8</td></tr>
+<tr><td class=dt align='right'><b>mrNoToAll&nbsp;</b></td><td class=dd>= 9</td></tr>
+<tr><td class=dt align='right'><b>mrYesToAll&nbsp;</b></td><td class=dd>= 10</td></tr></table>
+<br>&nbsp;<br>
+The values given are the numerical values of these enumerations, given in the numerical order that the <b>mb</b> equivalents are defined. This is very odd.
+<br>&nbsp;<br>
+Additionally, these values are defined in the <b>Controls</b> unit, not the Dialogs unit.
+<br>&nbsp;<br>
+Note that the <b>Help</b> button has no equivalent return value. This is because it does not terminate the dialog.
+<br>&nbsp;<br>
+The <b>HelpContext</b> value is used in conjunction with the <b>Help</b> button. It's use is beyond the scope of Smart Pascal.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="inputbox.htm">InputBox</a></b></td>
+<td width="8"></td>
+<td align="left">Display a dialog that asks for user text input, with default</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inputquery.htm">InputQuery</a></b></td>
+<td width="8"></td>
+<td align="left">Display a dialog that asks for user text input</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="messagedlg.htm">MessageDlg</a></b></td>
+<td width="8"></td>
+<td align="left">Displays a message, symbol, and selectable buttons</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="showmessage.htm">ShowMessage</a></b></td>
+<td width="8"></td>
+<td align="left">Display a string in a simple dialog with an OK button</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="showmessagefmt.htm">ShowMessageFmt</a></b></td>
+<td width="8"></td>
+<td align="left">Display formatted data in a simple dialog with an OK button</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="showmessagepos.htm">ShowMessagePos</a></b></td>
+<td width="8"></td>
+<td align="left">Display a string in a simple dialog at a given screen position</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Display a confirmation dialog</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;buttonSelected : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show a confirmation dialog at 20,100</b></font><br>
+&nbsp;&nbsp;buttonSelected := <font color=#C00000><b>MessageDlgPos</b></font>('Confirmation',mtError, mbOKCancel, 0, 20, 100);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the button type selected</b></font><br>
+&nbsp;&nbsp;if buttonSelected = mrOK&nbsp;&nbsp;&nbsp;&nbsp; then WriteLn('OK pressed');<br>
+&nbsp;&nbsp;if buttonSelected = mrCancel then WriteLn('Cancel pressed');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/messagedlgpos&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;A confirmation dialog is displayed with OK and Cancel buttons at 20,100 coordinates.<br>&nbsp;&nbsp;
+The user presses OK :<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+OK pressed<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+is displayed in another dialog box.<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Displays a custom dialog with custom button selection</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;buttonSelected : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show a custom dialog at 20,100 coordinates</b></font><br>
+&nbsp;&nbsp;buttonSelected := <font color=#C00000><b>MessageDlgPos</b></font>('Custom dialog',mtCustom, [mbYes,mbAll,mbCancel], 0, 20, 100);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the button type selected</b></font><br>
+&nbsp;&nbsp;if buttonSelected = mrYes&nbsp;&nbsp;&nbsp;&nbsp;then WriteLn('Yes pressed');<br>
+&nbsp;&nbsp;if buttonSelected = mrAll&nbsp;&nbsp;&nbsp;&nbsp;then WriteLn('All pressed');<br>
+&nbsp;&nbsp;if buttonSelected = mrCancel then WriteLn('Cancel pressed');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/messagedlgpos&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;A dialog with no icon is displayed with Yes, Cancel and All buttons at 20,100 coordinates.<br>&nbsp;&nbsp;
+The user presses the All button :<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+All pressed<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+is shown in another dialog<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

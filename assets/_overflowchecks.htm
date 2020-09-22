@@ -1,0 +1,161 @@
+<!-- (0058)$OverFlowChecks -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : $OverFlowChecks command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, $OverFlowChecks, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>$OverFlowChecks</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Compiler Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Determines whether Delphi checks integer and enum bounds</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$OverFlowChecks</b> Off}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$OverFlowChecks</b> On}
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>$OverFlowChecks</b></font> compiler directive determines whether Delphi should add code to check for integer and enum operation value overflows.
+<br>&nbsp;<br>
+This is set <b>Off</b> by default, meaning that a bad integer or enum operation will pass unnoticed, revealing itself in a difficult to debug part of the code.
+<br>&nbsp;<br>
+It is recommended to switch on <font color=#996600><b>$OverFlowChecks</b></font> in order to detect overflows before they cause problems. This will result in the raising of an exception, allowing code testing to correctlt identify the point of failure.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#996600><b>$OverFlowChecks</b></font> is equivalent to <b>$Q</b>.<br>
+<br>
+It can and should only be set <b>once</b> in your code.<br>
+<br>
+The default value is <font color=#996600><b>$OverFlowChecks</b></font> Off.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$q.htm">$Q</a></b></td>
+<td width="8"></td>
+<td align="left">Determines whether Delphi checks integer and enum bounds</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Trapping overflow values</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myNumber : Byte;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set overflow checking on</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$OverFlowChecks</b></font> On}<br>&nbsp;&nbsp;<font color=#008000><b>// A byte can hold numbers up to 255</b></font><br>
+&nbsp;&nbsp;myNumber := 255;<br>
+&nbsp;&nbsp;WriteLn('myNumber = '+IntToStr(myNumber));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// But incrementing beyond 255 will throw an exception</b></font><br>
+&nbsp;&nbsp;Inc(myNumber);<br>
+&nbsp;&nbsp;WriteLn('myNumber = '+IntToStr(myNumber));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$overflowchecks&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;myNumber = 255<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Delphi throws the EIntOverflow exception<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Ignoring overflow values</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myNumber : Byte;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set overflow checking off</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$OverFlowChecks</b></font> Off}<br>&nbsp;&nbsp;<font color=#008000><b>// A byte can hold numbers up to 255</b></font><br>
+&nbsp;&nbsp;myNumber := 255;<br>
+&nbsp;&nbsp;WriteLn('myNumber = '+IntToStr(myNumber));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// But incrementing beyond 255 will wrap around to 0</b></font><br>
+&nbsp;&nbsp;Inc(myNumber);<br>
+&nbsp;&nbsp;WriteLn('myNumber = '+IntToStr(myNumber));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$overflowchecks&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;myNumber = 255<br>&nbsp;&nbsp;
+nyNumber = 0<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

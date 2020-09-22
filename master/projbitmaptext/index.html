@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>Project Bitmap Text</title>
+  <script src="projbitmaptext.js"></script>
+</head>
+<body>
+<style style="text/css">
+.outer{
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.inner{
+  position: absolute;
+  width: 400px;
+  height: 225px;
+  top: 137px;
+  left: 160px;
+  background-color: red;
+}
+.as-console-wrapper{
+   max-height:50px!important;
+}
+.bottomStuff {
+  position: fixed;
+  top: -170%;
+  height: 70%;
+  width: 100%;
+  text-align:center;
+  transition: top .5s;
+}
+.bottomStuff.active {
+  position: fixed;
+  top: 0;
+}
+.bottomStuff div {
+  display: inline-block;
+}
+</style>
+
+<div class="bottomStuff">
+  <div style="position: relative; left: 0; top: 0;">
+    <img src="images/console.png" class="outer"/>
+    <img  id="img1" src="images/gameover.jpg" class="inner"/>
+  </div>
+</div>
+
+  <script>window.addEventListener("load", rtl.run);</script>
+</body>
+</html>

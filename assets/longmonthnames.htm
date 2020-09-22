@@ -1,0 +1,133 @@
+<!-- (0057)LongMonthNames -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : LongMonthNames command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, LongMonthNames, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>LongMonthNames</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Variable</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">An array of days of the month names, starting 1 = January</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+var <b>LongMonthNames</b> : array[1..12] of string;<br>&nbsp;
+array[ 1] := 'January';<br>&nbsp;
+array[ 2] := 'February';<br>&nbsp;
+array[ 3] := 'March';<br>&nbsp;
+array[ 4] := 'April';<br>&nbsp;
+array[ 5] := 'May';<br>&nbsp;
+array[ 6] := 'June';<br>&nbsp;
+array[ 7] := 'July';<br>&nbsp;
+array[ 8] := 'August';<br>&nbsp;
+array[ 9] := 'September';<br>&nbsp;
+array[10] := 'October';<br>&nbsp;
+array[11] := 'November';<br>&nbsp;
+array[12] := 'December';<br>&nbsp;
+
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>LongMonthNames</b></font> variable provides an array of full string names of the months of the year.
+<br>&nbsp;<br>
+Since it is an array, you can update the default values (set by the Windows locale), but this is not advised.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="longdaynames.htm">LongDayNames</a></b></td>
+<td width="8"></td>
+<td align="left">An array of days of the week names, starting 1 = Sunday</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shortdaynames.htm">ShortDayNames</a></b></td>
+<td width="8"></td>
+<td align="left">An array of days of the week names, starting 1 = Sunday</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shortmonthnames.htm">ShortMonthNames</a></b></td>
+<td width="8"></td>
+<td align="left">An array of days of the month names, starting 1 = Jan</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Show the month name of month 12</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;month&nbsp;&nbsp;: string;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;month&nbsp;&nbsp;:= <font color=#C00000><b>LongMonthNames</b></font>[12];<br>
+&nbsp;&nbsp;WriteLn('Month 12 = '+month);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="longmonthnames&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Month 12 = December<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

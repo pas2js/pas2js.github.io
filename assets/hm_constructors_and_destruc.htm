@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Constructors and Destructors</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Constructors and Destructors</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_anonymous_methods.htm">Previous</a>&nbsp;
+     <a href="hm_property_expressions.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Constructors and Destructors are are supported as normal (a part of </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TObject</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">). It must be underlined that when writing components (derived from TW3CustomControl, TW3GraphicControl or TW3Component) you rarely override these directly like under Delphi or free pascal, instead you override the protected methods InitializeObject and FinalizeObject. This is to compensate for the lack of BeforeDestruction and AfterConstruction in our object model.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Constructors</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A constructor is a special method that creates and initializes instance objects. The declaration of a constructor looks like a procedure declaration, but it begins with the word constructor. Examples:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create(AOwner:&nbsp;TComponent);</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Constructors must use the default </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">register</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> calling convention. Although the declaration specifies no return value, a constructor returns a reference to the object it creates or is called in.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A class can have more than one constructor, but most have only one. It is conventional to call the constructor Create.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">To create an object, call the constructor method on a class type. For example:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">MyObject</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;:=&nbsp;TMyClass.Create;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This allocates storage for the new object, sets the values of all ordinal fields to zero, assigns </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">nil</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> to all pointer and class-type fields, and makes all string fields empty. Other actions specified in the constructor implementation are performed next; typically, objects are initialized based on values passed as parameters to the constructor. Finally, the constructor returns a reference to the newly allocated and initialized object. The type of the returned value is the same as the class type specified in the constructor call.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">If an exception is raised during the execution of a constructor that was invoked on a class reference, the Destroy destructor is automatically called to destroy the unfinished object.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">When a constructor is called using an object reference (rather than a class reference), it does not create an object. Instead, the constructor operates on the specified object, executing only the statements in the constructor's implementation, and then returns a reference to the object. A constructor is typically invoked on an object reference in conjunction with the reserved word </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">inherited</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> to execute an inherited constructor.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Here is an example of a class type and its constructor:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;TShape&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">(TGraphicControl)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPen:&nbsp;TPen;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FBrush:&nbsp;TBrush;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;PenChanged(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;BrushChanged(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create(Owner:&nbsp;TComponent);&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Destroy;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TShape.Create(Owner:&nbsp;TComponent);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">inherited</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create(Owner);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Initialize&nbsp;inherited&nbsp;parts</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Width&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">65</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Change&nbsp;inherited&nbsp;properties</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">65</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPen&nbsp;:=&nbsp;TPen.Create;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Initialize&nbsp;new&nbsp;fields</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPen.OnChange&nbsp;:=&nbsp;PenChanged;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FBrush&nbsp;:=&nbsp;TBrush.Create;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FBrush.OnChange&nbsp;:=&nbsp;BrushChanged;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The first action of a constructor is usually to call an inherited constructor to initialize the object's inherited fields. The constructor then initializes the fields introduced in the descendent class. Because a constructor always clears the storage it allocates for a new object, all fields start with a value of zero (ordinal types), </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">nil</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> (pointer and class types), empty (string types), or Unassigned (variants). Hence there is no need to initialize fields in a constructor's implementation except to nonzero or nonempty values.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">When invoked through a class-type identifier, a constructor declared </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">virtual</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> is equivalent to a static constructor. When combined with class-reference types, however, virtual constructors allow polymorphic construction of objects--that is, construction of objects whose types are not known at compile time. </span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Destructors</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A destructor is a special method that destroys the object where it is called and deallocates its memory. The declaration of a destructor looks like a procedure declaration, but it begins with the word </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">destructor</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. Example:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;SpecialDestructor(SaveData:&nbsp;Boolean);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Destroy;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Destructors on Win32 must use the default </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">register</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> calling convention. Although a class can have more than one destructor, it is recommended that each class override the inherited </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Destroy</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> method and declare no other destructors.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">To call a destructor, you must reference an instance object. For example:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">MyObject</span><span class="f_CodeExample" style="color: #000000;">.Destroy;&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">When a destructor is called, actions specified in the destructor implementation are performed first. Typically, these consist of destroying any embedded objects and freeing resources that were allocated by the object. Then the storage that was allocated for the object is disposed of.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Here is an example of a destructor implementation:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TShape.Destroy;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FBrush.Free;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPen.Free;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">inherited</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Destroy;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The&nbsp;last&nbsp;action&nbsp;in&nbsp;a&nbsp;destructor's&nbsp;implementation&nbsp;is&nbsp;typically&nbsp;to&nbsp;call&nbsp;the&nbsp;inherited&nbsp;destructor&nbsp;to&nbsp;destroy&nbsp;the&nbsp;object's&nbsp;inherited&nbsp;fields.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">When an exception is raised during the creation of an object, Destroy is automatically called to dispose of the unfinished object. This means that </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Destroy</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> must be prepared to dispose of partially constructed objects. Because a constructor sets the fields of a new object to zero or empty values before performing other actions, class-type and pointer-type fields in a partially constructed object are always </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">nil</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. A destructor should therefore check for </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">nil</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> values before operating on class-type or pointer-type fields. Calling the Free method (defined in TObject) rather than Destroy offers a convenient way to check for </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">nil</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> values before destroying an object.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Class Constructors</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">A class constructor is a special class method that is not accessible to developers. Calls to class constructors are inserted automatically by the compiler into the initialization section of the unit where the class is defined. Normally, class constructors are used to initialize the static fields of the class or to perform a type of initialization, which is required before the class or any class instance can function properly. Even though the same result can be obtained by placing class initialization code into the initialization section, class constructors have the benefit of helping the compiler decide which classes should be included into the final binary file and which should be removed from it.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The next example shows the usual way of initializing class fields:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TBox&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FList:&nbsp;TList&lt;Integer&gt;;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">implementation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">initialization</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;Initialize&nbsp;the&nbsp;static&nbsp;FList&nbsp;member&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TBox.FList&nbsp;:=&nbsp;TList&lt;Integer&gt;.Create();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This method has a big disadvantage: even though an application can include the unit in which </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TBox</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> is declared, it may never actually use the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TBox</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> class. In the current example, the TBox class is included into the resulting binary, because it is referenced in the initialization section. To alleviate this problem, consider using class constructors:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TBox&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FList:&nbsp;TList&lt;Integer&gt;;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">implementation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TBox.Create;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;Initialize&nbsp;the&nbsp;static&nbsp;FList&nbsp;member&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;FList&nbsp;:=&nbsp;TList&lt;Integer&gt;.Create();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In this case, the compiler checks whether TBox is actually used anywhere in the application, and if it is used, a call to the class constructor is added automatically to the initialization section of the unit.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">: Even though the compiler takes care of ordering the initialization of classes, in some complex scenarios, ordering may become random. This happens when the class constructor of a class depends on the state of another class that, in turn, depends on the first class.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">: The class constructor for a generic class or record may execute multiple times. The exact number of times the class constructor is executed in this case depends on the number of specialized versions of the generic type. For example, the class constructor for a specialized TList&lt;String&gt; class may execute multiple times in the same application.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Class Destructors</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Class destructors are the opposite of class constructors in that they perform the finalization of the class. Class destructors come with the same advantages as class constructors, except for </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">finalization</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> purposes.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The following example builds on the example shown in class constructors and introduces the finalization routine:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TBox&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FList:&nbsp;TList&lt;Integer&gt;;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Destroy;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">implementation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TBox.Create;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;Initialize&nbsp;the&nbsp;static&nbsp;FList&nbsp;member&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;FList&nbsp;:=&nbsp;TList&lt;Integer&gt;.Create();</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">destructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TBox.Destroy;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;Finalize&nbsp;the&nbsp;static&nbsp;FList&nbsp;member&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;FList.Free;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">.&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">: The class destructor for a generic class or record may execute multiple times. The exact number of times the class destructor is executed in this case depends on the number of specialized versions of the generic type. For example, the class destructor for a specialized TList&lt;String&gt; class may execute multiple times in the same application.</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

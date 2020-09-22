@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Event Virtual</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js135.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js137.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Event Virtual
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TBase = class
+    Field: Integer;
+    procedure Event(s: String); virtual;
+    begin
+      WriteLn('Base ' + s + ' ' + IntToStr(Field) + ' ' + ClassName);
+    end;
+  end;
+
+type
+  TChild = class(TBase)
+    procedure Event(s: String); override;
+    begin
+      WriteLn('Child ' + s + ' ' + IntToStr(Field) + ' ' + ClassName);
+    end;
+  end;
+
+type
+  TSubChild = class(TChild)
+  end;
+
+{ main.pas }
+
+Begin
+  var e: procedure(s: String);
+
+  var b := new TBase;
+  var c := new TChild;
+  var s := new TSubChild;
+  b.Field := 1;
+  c.Field := 2;
+  s.Field := 3;
+
+  e := b.Event;
+  e('a');
+
+  e := c.Event;
+  e('b');
+
+  e := s.Event;
+  e('c');
+
+  e := TBase(c).Event;
+  e('d');
+
+  e := TBase(s).Event;
+  e('f');
+
+  e := TChild(s).Event;
+  e('g');
+
+  { <<< CONSOLE OUTPUTS >>>
+    Base a 1 TBase
+    Child b 2 TChild
+    Child c 3 TSubChild
+    Child d 2 TChild
+    Child f 3 TSubChild
+    Child g 3 TSubChild
+  }
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+function $Event1(i,f) {
+	var li=i,lf=f;
+	return function(a) {
+		return lf.call(li,li,a)
+	}
+}
+
+  var e = null;
+  var b = null;
+  var c = null;
+  var s = null;
+  b = TObject.Create($New(TBase));
+  c = TObject.Create($New(TChild));
+  s = TObject.Create($New(TSubChild));
+  b.Field = 1;
+  c.Field = 2;
+  s.Field = 3;
+  e = $Event1(b,TBase.Event$);
+  e("a");
+  e = $Event1(c,TBase.Event$);
+  e("b");
+  e = $Event1(s,TBase.Event$);
+  e("c");
+  e = $Event1(c,TBase.Event$);
+  e("d");
+  e = $Event1(s,TBase.Event$);
+  e("f");
+  e = $Event1(s,TBase.Event$);
+  e("g");
+  
+/// TBase = class (TObject)
+///  [line: 35, column: 4, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field = 0;
+   }
+   /// procedure TBase.Event(s: String)
+   ///  [line: 37, column: 17, file: uMain]
+   ,Event:function(Self, s$1) {
+      WriteLn(("Base "+s$1+" "+Self.Field.toString()+" "+TObject.ClassName(Self.ClassType)));
+   }
+   ,Destroy:TObject.Destroy
+   ,Event$:function($){return $.ClassType.Event.apply($.ClassType, arguments)}
+};
+/// TChild = class (TBase)
+///  [line: 44, column: 4, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   /// procedure TChild.Event(s: String)
+   ///  [line: 45, column: 17, file: uMain]
+   ,Event:function(Self, s$2) {
+      WriteLn(("Child "+s$2+" "+Self.Field.toString()+" "+TObject.ClassName(Self.ClassType)));
+   }
+   ,Destroy:TObject.Destroy
+   ,Event$:function($){return $.ClassType.Event.apply($.ClassType, arguments)}
+};
+/// TSubChild = class (TChild)
+///  [line: 52, column: 4, file: uMain]
+var TSubChild = {
+   $ClassName:"TSubChild",$Parent:TChild
+   ,$Init:function ($) {
+      TChild.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+   ,Event:TChild.Event
+};  
+
+</code></pre></div>
+</div>
+</body>
+</html>

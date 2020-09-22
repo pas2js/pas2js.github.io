@@ -1,0 +1,273 @@
+<!-- (0052)Interface -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Interface command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Interface, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Interface</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Used for Unit external definitions, and as a Class skeleton</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+Unit Name;<br>&nbsp;
+<b>Interface</b><br>&nbsp;
+&nbsp;&nbsp;Declarations...<br>&nbsp;
+Implementation<br>&nbsp;
+&nbsp;&nbsp;Declarations...<br>&nbsp;
+end.
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type Name = <b>Interface</b>{(BaseInterface,...)};
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Interface</b></font> keyword is used in two different ways.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+It starts the definition of external interface of a Unit. Declarations here are externally visible by other units. All of these declarations must be implemented in the <b>Implementation</b> section.
+<br>&nbsp;<br>
+The <b>Uses</b> statement, if present, must be at the start.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+<br>&nbsp;<br>
+In Object Oriented programming, we often use <b>Abstract</b> class methods in a base class as a placeholder. All derived classes must implement these methods.
+<br>&nbsp;<br>
+Taking this one step further, an Interface defines a grouping of just abstract properties and methods. It provides a template for a class to use to ensure consistency. It is like a class with only abstract methods. It has the benefits that classes can be based on one parent class, and implement one or more interfaces. It adds a predictable flavour of operation to each class that implements the interface.
+<br>&nbsp;<br>
+Take a look at the Delphi tutorial for more on this complex subject.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+When implementing an interface, you must implement <b>QueryInterface, _AddRef</b> and <b>_Release</b> standard interface methods, unless you base your class on one that already has these implemented, such as <b>TInterfacedObject</b>.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="abstract.htm">Abstract</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a class method only implemented in subclasses</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="class.htm">Class</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the declaration of a type of object class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="constructor.htm">Constructor</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the method used to create an object from a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="destructor.htm">Destructor</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the method used to destroy an object</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="implementation.htm">Implementation</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the implementation (code) section of a Unit</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="object.htm">Object</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a subroutine data type to refer to an object method</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tobject.htm">TObject</a></b></td>
+<td width="8"></td>
+<td align="left">The base class type that is ancestor to all other classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="unit.htm">Unit</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the start of a unit file - a Delphi module</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="uses.htm">Uses</a></b></td>
+<td width="8"></td>
+<td align="left">Declares a list of <b>Units</b> to be imported</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Creating a car class from a vehicle interface</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,<br>
+&nbsp;&nbsp;Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// An interface definition</b></font><br>
+&nbsp;&nbsp;IVehicle = <font color=#C00000><b>Interface</b></font>(IInterface)<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Properties and their functions</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetAge&nbsp;&nbsp; : Integer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetMiles : Integer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property age&nbsp;&nbsp; : Integer read GetAge;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property miles : Integer read GetMiles;<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Non-property function</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetValue : Currency;<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Implement this interface in a car class</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note that TInterfaceObject defines QueryInterface, _AddRef</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// _AddRef functions for us</b></font><br>
+&nbsp;&nbsp;TCar = Class(TInterfacedObject, IVehicle)<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fAge, fMiles : Integer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fCarType : string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetAge&nbsp;&nbsp; : Integer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetMiles : Integer;<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property age&nbsp;&nbsp;&nbsp;&nbsp; : Integer read GetAge;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property miles&nbsp;&nbsp; : Integer read GetMiles;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property carType : string&nbsp;&nbsp;read fCarType;<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Non-property function</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetValue : Currency;<br>
+&nbsp;&nbsp;published<br>
+&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(age, miles : Integer; carType : string);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The form class itself</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><font color=#008000><b>// Car constructor</b></font><br><b>
+constructor TCar.Create(age, miles: Integer; carType: string);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Save parameters</b></font><br>
+&nbsp;&nbsp;fAge&nbsp;&nbsp;&nbsp;&nbsp; := age;<br>
+&nbsp;&nbsp;fMiles&nbsp;&nbsp; := miles;<br>
+&nbsp;&nbsp;fCarType := carType;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Get the age of the car</b></font><br><b>
+function TCar.GetAge: Integer;</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Result := fAge;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Get the mileage of the car</b></font><br><b>
+function TCar.GetMiles: Integer;</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Result := fMiles;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Calculate the car value</b></font><br><b>
+function TCar.GetValue: Currency;</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Result := 10000.0 - ((age * miles)/10.0);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;car : TCar;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create a car!</b></font><br>
+&nbsp;&nbsp;car := TCar.Create(1, 2076, 'Honda Jazz');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the current value of this car</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('My %s car is %d years old, %d miles, value %m',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [car.carType, car.age, car.miles, car.GetValue]);<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;My Honda Jazz car is 1 years old, 2076 miles, value ?9,792.40<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

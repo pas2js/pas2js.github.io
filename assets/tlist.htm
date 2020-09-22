@@ -1,0 +1,289 @@
+<!-- (0048)TList -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TList command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TList, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TList</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">General purpose container of a list of objects</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Classes</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type TList;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>TList</b></font> class is a very useful general purpose list container. 
+<br>&nbsp;<br>
+It differs from arrays in that it provides richer functionality.
+<br>&nbsp;<br>
+In particular, TList objects can be sorted. This sorting can be by any criteria you choose. For example, the list may contain a set of objects that have string and number fields. You could sort the list by string, number, both, ascending or descending as you wish. And resort by other criteria later. 
+<br>&nbsp;<br>
+The sample code shows such a sort.
+<br>&nbsp;<br>
+The key properties and methods are listed below.
+<br>&nbsp;<br>
+<font color=#008000><b>Capacity</b> property</font><br>
+Used to set the size (number object pointers) of the list. By presetting to a sensible value, multiple memory reallocations can be avoided.
+<br>&nbsp;<br>
+<font color=#008000><b>Count</b> property</font><br>
+The number of items (pointers) in the list. Can be read or written to. If the size is reduced as a result of a Count value change, items at the end of the list are removed.
+<br>&nbsp;<br>
+<font color=#008000><b>Items</b> property</font><br>
+Allows access to the items in the list. For example, <b>myList.Items[2];</b> returns the 3rd item in the list. This is the default property, so the above can be simplified to <b>myList[2];</b>.
+<br>&nbsp;<br>
+<font color=#008000><b>List</b> property</font><br>
+Returns the items in an array.
+<br>&nbsp;<br>
+<font color=#008000><b>Add</b> method</font><br>
+Add an item to the list. Gets added at the end.
+<br>&nbsp;<br>
+<font color=#008000><b>Assign</b> method</font><br>
+Replaces the list with the contents of another list.
+<br>&nbsp;<br>
+<font color=#008000><b>Clear</b> method</font><br>
+Removes all list items, setting the Count to 0.
+<br>&nbsp;<br>
+<font color=#008000><b>Delete</b> method</font><br>
+Removes an item from the list by its list position.
+<br>&nbsp;<br>
+<font color=#008000><b>Remove</b> method</font><br>
+Removes an item from the list by its object pointer.
+<br>&nbsp;<br>
+<font color=#008000><b>Exchange</b> method</font><br>
+Swaps the positions of two items
+<br>&nbsp;<br>
+<font color=#008000><b>Move</b> method</font><br>
+Moves an item to a new list position
+<br>&nbsp;<br>
+<font color=#008000><b>Insert</b> method</font><br>
+Inserts a new item into the list at a given index position.
+<br>&nbsp;<br>
+<font color=#008000><b>First</b> method</font><br>
+Gets the first item in the list
+<br>&nbsp;<br>
+<font color=#008000><b>Last</b> method</font><br>
+Gets the last item in the list
+<br>&nbsp;<br>
+<font color=#008000><b>Sort</b> method</font><br>
+Sorts the list by your specified criteria. The list sorting is carried out internally in TList, but each item pair compare invokes the function you name to this method.
+<br>&nbsp;<br>
+<font color=#008000><b>IndexOf</b> method</font><br>
+Gives the list position of a specified object in the list.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+You can add <b>Nil</b> pointers to the list. Delphi will add Nil pointers when you set the Count property higher than the current number of items in the list.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="tstringlist.htm">TStringList</a></b></td>
+<td width="8"></td>
+<td align="left">Holds a variable length list of strings</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="array.htm">Array</a></b></td>
+<td width="8"></td>
+<td align="left">A data type holding indexable collections of data</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Creating, furnishing, sorting, and tinkering with a list</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,<br>
+&nbsp;&nbsp;Dialogs, StdCtrls;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// The customer class definition</b></font><br>
+&nbsp;&nbsp;TCustomer = class<br>
+&nbsp;&nbsp;&nbsp;&nbsp;private<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// The data fields of this new class</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CustomerName&nbsp;&nbsp; : String;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CustomerNumber : Integer;<br><b>
+</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;public<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Properties to read these data values</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property Name : String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read CustomerName;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property Number : Integer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read CustomerNumber;<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Constructor</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(const CustomerName&nbsp;&nbsp; : String;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const CustomerNumber : Integer);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The form class definition</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br><b>
+</b><br>
+&nbsp;&nbsp;private<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// The TList object we use in this code</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;myList : TList;<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Method to show the contents of our list object</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure ShowListContents;<br><b>
+</b><br>
+&nbsp;&nbsp;public<br><b>
+</b><br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><b>
+</b><br><font color=#008000><b>// Customer constructor</b></font><br><font color=#008000><b>// --------------------------------------------------------------------------</b></font><br><b>
+constructor TCustomer.Create(const CustomerName&nbsp;&nbsp; : String;</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const CustomerNumber : Integer);<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Save the passed parameters</b></font><br>
+&nbsp;&nbsp;self.CustomerName&nbsp;&nbsp; := CustomerName;<br>
+&nbsp;&nbsp;self.CustomerNumber := CustomerNumber;<br><b>
+end;</b><br><b>
+</b><br><b>
+</b><br><font color=#008000><b>// TList sort routine : compare customers by name</b></font><br><font color=#008000><b>// --------------------------------------------------------------------------</b></font><br><font color=#008000><b>// The returned integer has the following value :</b></font><br><font color=#008000><b>//</b></font><br><font color=#008000><b>//&nbsp;&nbsp; > 0 : (positive)	Item1 is less than Item2</b></font><br><font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp; 0 : Item1 is equal to Item2</b></font><br><font color=#008000><b>//&nbsp;&nbsp; < 0 : (negative)	Item1 is greater than Item2</b></font><br><b>
+function compareByName(Item1 : Pointer; Item2 : Pointer) : Integer;</b><br><b>
+var</b><br>
+&nbsp;&nbsp;customer1, customer2 : TCustomer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// We start by viewing the object pointers as TCustomer objects</b></font><br>
+&nbsp;&nbsp;customer1 := TCustomer(Item1);<br>
+&nbsp;&nbsp;customer2 := TCustomer(Item2);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now compare by string</b></font><br>
+&nbsp;&nbsp;if&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;customer1.Name > customer2.Name<br>
+&nbsp;&nbsp;then Result := 1<br>
+&nbsp;&nbsp;else if customer1.Name = customer2.Name<br>
+&nbsp;&nbsp;then Result := 0<br>
+&nbsp;&nbsp;else Result := -1;<br><b>
+end;</b><br><b>
+</b><br><b>
+</b><br><font color=#008000><b>// A routine to display the contents of our list</b></font><br><font color=#008000><b>// --------------------------------------------------------------------------</b></font><br><b>
+procedure TForm1.ShowListContents;</b><br><b>
+var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// And redisplay the list</b></font><br>
+&nbsp;&nbsp;for i := 0 to myList.Count-1 do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(TCustomer(myList[i]).Name+' is customer number '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntToStr(TCustomer(myList[i]).Number));<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Form constructor</b></font><br><font color=#008000><b>// --------------------------------------------------------------------------</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;customer : TCustomer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create the TList object to hold a set of customer objects</b></font><br>
+&nbsp;&nbsp;myList := TList.Create;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create some customer objects and add to our object list</b></font><br>
+&nbsp;&nbsp;customer := TCustomer.Create('Neil Moffatt', 123);<br>
+&nbsp;&nbsp;myList.Add(customer);<br>
+&nbsp;&nbsp;customer := TCustomer.Create('Bill Gates', 64);<br>
+&nbsp;&nbsp;myList.Add(customer);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// We can add the object without assigning to an intermediate variable</b></font><br>
+&nbsp;&nbsp;myList.Add(TCustomer.Create('Henry Cooper', 999));<br>
+&nbsp;&nbsp;myList.Add(TCustomer.Create('Alan Sugar', 2));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display the list</b></font><br>
+&nbsp;&nbsp;ShowListContents;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// We will now sort the list into name sequence and redisplay</b></font><br>
+&nbsp;&nbsp;myList.Sort(compareByName);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And redisplay the list</b></font><br>
+&nbsp;&nbsp;ShowListContents;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now do some object inserts and deletes</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note that indices start at 0</b></font><br>
+&nbsp;&nbsp;myList.Insert(2, TCustomer.Create('Added as item 3', 33));<br>
+&nbsp;&nbsp;myList.Delete(4);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And redisplay the list</b></font><br>
+&nbsp;&nbsp;ShowListContents;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Free up the list</b></font><br>
+&nbsp;&nbsp;myList.free;<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/tlist&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Neil Moffatt is customer number 123<br>&nbsp;&nbsp;
+Bill Gates is customer number 64<br>&nbsp;&nbsp;
+Henry Cooper is customer number 999<br>&nbsp;&nbsp;
+Alan Sugar is customer number 2<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Alan Sugar is customer number 2<br>&nbsp;&nbsp;
+Bill Gates is customer number 64<br>&nbsp;&nbsp;
+Henry Cooper is customer number 999<br>&nbsp;&nbsp;
+Neil Moffatt is customer number 123<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Alan Sugar is customer number 2<br>&nbsp;&nbsp;
+Bill Gates is customer number 64<br>&nbsp;&nbsp;
+Added as item 3 is customer number 33<br>&nbsp;&nbsp;
+Henry Cooper is customer number 999<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

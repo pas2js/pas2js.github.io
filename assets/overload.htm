@@ -1,0 +1,493 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0051)Overload -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : Overload command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, Overload, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>Overload</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Directive</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Allows 2 or more routines to have the same
+                name</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size="2">&nbsp; Subroutine
+                declaration; <strong>Overload</strong>; {Other
+                directives...}</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>Overload</strong></font>
+                directive allows you to have different versions of
+                the same named function or procedure with different
+                arguments.<br />
+                &nbsp;<br />
+                This is useful when there are a number of ways that
+                code may want to use the routine. For example, if
+                the routine is a class constructor, you may want
+                one version of <strong>Create</strong> that sets
+                default values, and another that takes these values
+                as parameters.<br />
+                &nbsp;<br />
+                You must code the <font color=
+                "#996600"><strong>Overload</strong></font>
+                directive before any other directives.<br />
+                &nbsp;<br />
+                When calling an overloaded routine, Delphi chooses
+                the appropriate version based first on number of
+                arguments, then on the argument types. If it cannot
+                make a decision, it throws an exception.<br />
+                &nbsp;<br />
+                When the argument count is the same, it always
+                tries to satisfy the simplest/smallest data types
+                first - for example, the above value 23 would
+                satisfy a <strong>Byte</strong> argument ahead of
+                an <strong>Integer</strong> argument.<br />
+                &nbsp;<br />
+                Sometimes, you can avoid the need for overloading
+                by giving final arguments default values. The
+                caller can then call with or without these final
+                parameters.<br />
+                &nbsp;<br />
+                <font color="#200080"><font class="mono">procedure
+                MyProc(a : Byte; b : Byte =
+                23);</font></font><br />
+                &nbsp;<br />
+                can be called in two ways:<br />
+                &nbsp;<br />
+                <font color="#200080"><font class="mono">MyProc(15,
+                16);<br />
+                MyProc(45);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008000">//
+                Defaults b to value 23</font></font></font><br />
+                &nbsp;<br />
+                Overloading is <strong>not</strong> restricted to
+                class methods. In line functons and procedures can
+                be similarly overloaded.
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "abstract.htm">Abstract</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a class method only implemented in
+                      subclasses
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "function.htm">Function</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a subroutine that returns a value
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "override.htm">Override</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a method that replaces a virtual
+                      parent class method
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "procedure.htm">Procedure</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a subroutine that does not return a
+                      value
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code : Two
+                versions of a class constructor</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size="2"><font color=
+                "#008000"><strong>// Full Unit
+                code.</strong></font><br />
+                <font color="#008000"><strong>//
+                -----------------------------------------------------------</strong></font><br />
+
+                <font color="#008000"><strong>// You must store
+                this code in a unit called Unit1 with a
+                form</strong></font><br />
+                <font color="#008000"><strong>// called Form1 that
+                has an OnCreate event called
+                FormCreate.</strong></font><br />
+                <br />
+                <strong>unit Unit1;</strong><br />
+                <br />
+                <strong>interface</strong><br />
+                <br />
+                <strong>uses</strong><br />
+                &nbsp;&nbsp;Windows, Messages, SysUtils, Variants,
+                Classes, Graphics, Controls, Forms,<br />
+                &nbsp;&nbsp;Dialogs;<br />
+                <br />
+                <strong>type</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Class
+                with overloaded methods</strong></font><br />
+                &nbsp;&nbsp;TRectangle = class<br />
+                &nbsp;&nbsp;private<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;coords: array[0..3] of
+                Integer;<br />
+                &nbsp;&nbsp;public<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;constructor Create(left,
+                top, right, bottom : Integer); <font color=
+                "#C00000"><strong>Overload</strong></font>;<br />
+                &nbsp;&nbsp;published<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Only one version of an
+                overloaded method can be
+                published</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;constructor Create(topLeft,
+                bottomRight : TPoint); <font color=
+                "#C00000"><strong>Overload</strong></font>;<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// The
+                form class itself</strong></font><br />
+                &nbsp;&nbsp;TForm1 = class(TForm)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure
+                FormCreate(Sender: TObject);<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;Form1: TForm1;<br />
+                <br />
+                <strong>implementation</strong><br />
+                <br />
+                <strong>{$R *.dfm}</strong><br />
+                <br />
+                <font color="#008000"><strong>// Constructor
+                version 1 : takes integers as the coordinate
+                values</strong></font><br />
+                <strong>constructor TRectangle.Create(left, top,
+                right, bottom: Integer);</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Save
+                the passed values</strong></font><br />
+                &nbsp;&nbsp;coords[0] := left;<br />
+                &nbsp;&nbsp;coords[1] := top;<br />
+                &nbsp;&nbsp;coords[2] := right;<br />
+                &nbsp;&nbsp;coords[3] := bottom;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// Constructor
+                version 2 : takes points as the coordinate
+                values</strong></font><br />
+                <strong>constructor TRectangle.Create(topLeft,
+                bottomRight: TPoint);</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Save
+                the passed values</strong></font><br />
+                &nbsp;&nbsp;coords[0] := topLeft.X;<br />
+                &nbsp;&nbsp;coords[1] := topLeft.Y;<br />
+                &nbsp;&nbsp;coords[2] := bottomRight.X;<br />
+                &nbsp;&nbsp;coords[3] := bottomRight.Y;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// Main line
+                code</strong></font><br />
+                <strong>procedure TForm1.FormCreate(Sender:
+                TObject);</strong><br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;rect1, rect2&nbsp;&nbsp; :
+                TRectangle;<br />
+                &nbsp;&nbsp;point1, point2 : TPoint;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;point1 := Point(122,133);<br />
+                &nbsp;&nbsp;point2 := Point(144,155);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Create
+                two rectangles using two different
+                constructors</strong></font><br />
+                &nbsp;&nbsp;rect1 := TRectangle.Create(22, 33, 44,
+                55);<br />
+                &nbsp;&nbsp;rect2 := TRectangle.Create(point1,
+                point2);<br />
+                <strong>end;</strong><br />
+                <br />
+                <strong>end.</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td></td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;The program runs wihtout
+                producing any output<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex2"></a><strong>Example code :
+                Ilustrating how Delphi chooses routines according
+                to parameter value</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size="2"><font color=
+                "#008000"><strong>// Full Unit
+                code.</strong></font><br />
+                <font color="#008000"><strong>//
+                -----------------------------------------------------------</strong></font><br />
+
+                <font color="#008000"><strong>// You must store
+                this code in a unit called Unit1 with a
+                form</strong></font><br />
+                <font color="#008000"><strong>// called Form1 that
+                has an OnCreate event called
+                FormCreate.</strong></font><br />
+                <br />
+                <strong>unit Unit1;</strong><br />
+                <br />
+                <strong>interface</strong><br />
+                <br />
+                <strong>uses</strong><br />
+                &nbsp;&nbsp;Windows, Messages, SysUtils, Variants,
+                Classes, Graphics, Controls, Forms,<br />
+                &nbsp;&nbsp;Dialogs, StdCtrls;<br />
+                <br />
+                <strong>type</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// The
+                form class itself</strong></font><br />
+                &nbsp;&nbsp;TForm1 = class(TForm)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Button1: TButton;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure
+                FormCreate(Sender: TObject);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure
+                Button1Click(Sender: TObject);<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;Form1: TForm1;<br />
+                <br />
+                <strong>implementation</strong><br />
+                <br />
+                <strong>{$R *.dfm}</strong><br />
+                <br />
+                <strong>procedure TForm1.Button1Click(Sender:
+                TObject);</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;form1.close;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// In line overloaded
+                functions</strong></font><br />
+                <strong>function MaxValue(a, b : Byte) : string;
+                <font color=
+                "#C00000"><strong>Overload</strong></font>;</strong><br />
+
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;if a &gt; b<br />
+                &nbsp;&nbsp;then ShowMessageFmt('%d byte
+                &gt;&nbsp;&nbsp;%d',[a,b])<br />
+                &nbsp;&nbsp;else ShowMessageFmt('%d byte &lt;=
+                %d',[a,b]);<br />
+                <strong>end;</strong><br />
+                <br />
+                <strong>function MaxValue(a, b : Integer) : string;
+                <font color=
+                "#C00000"><strong>Overload</strong></font>;</strong><br />
+
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;if a &gt; b<br />
+                &nbsp;&nbsp;then ShowMessageFmt('%d integer
+                &gt;&nbsp;&nbsp;%d',[a,b])<br />
+                &nbsp;&nbsp;else ShowMessageFmt('%d integer &lt;=
+                %d',[a,b]);<br />
+                <strong>end;</strong><br />
+                <br />
+                <strong>function MaxValue(a, b : Extended) :
+                string; <font color=
+                "#C00000"><strong>Overload</strong></font>;</strong><br />
+
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;if a &gt; b<br />
+                &nbsp;&nbsp;then ShowMessageFmt('%f extended
+                &gt;&nbsp;&nbsp;%f',[a,b])<br />
+                &nbsp;&nbsp;else ShowMessageFmt('%f extended &lt;=
+                %f',[a,b]);<br />
+                <strong>end;</strong><br />
+                <br />
+                <strong>function MaxValue(a, b : string) : string;
+                <font color=
+                "#C00000"><strong>Overload</strong></font>;</strong><br />
+
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;if a &gt; b<br />
+                &nbsp;&nbsp;then ShowMessageFmt('''%s'' string
+                &gt;&nbsp;&nbsp;''%s''',[a,b])<br />
+                &nbsp;&nbsp;else ShowMessageFmt('''%s'' string
+                &lt;= ''%s''',[a,b]);<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// Main line
+                code</strong></font><br />
+                <strong>procedure TForm1.FormCreate(Sender:
+                TObject);</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>//
+                Demonstrate different calls using the same
+                name</strong></font><br />
+                &nbsp;&nbsp;MaxValue(15&nbsp;&nbsp;, 23);<br />
+                &nbsp;&nbsp;MaxValue(1500, 23);<br />
+                &nbsp;&nbsp;MaxValue(15.0, 23.0);<br />
+                &nbsp;&nbsp;MaxValue('15', '23');<br />
+                <strong>end;</strong><br />
+                <strong>end.</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td></td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;15 byte &lt;= 23<br />
+                &nbsp;&nbsp; 1500 integer &gt; 23<br />
+                &nbsp;&nbsp; 15.0 extended &lt;= 23.0<br />
+                &nbsp;&nbsp; '15' string &lt;= '23'<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

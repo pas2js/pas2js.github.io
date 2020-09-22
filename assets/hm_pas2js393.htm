@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+.note {padding: 12px;margin: 6px;border-top: 1px;border-right: 1px;border-bottom: 1px;border-left: 1px;border-style: solid;border-color: #D3D3D3;background-color: #E5EFFB;}
+.pas2js-table{border-collapse:collapse}.pas2js-table tr:nth-child(odd){background-color:#f9f9f9}.pas2js-table tr:nth-child(even){background-color:#ededed}.pas2js-table th{color:#fff;background-color:#555;border:1px solid #555;padding:3px;vertical-align:middle;text-align:left;text-transform:uppercase}a,h1,h2{background:0 0}.pas2js-table td{border:1px solid #d4d4d4;padding:7px 5px;vertical-align:middle}a{text-decoration:none;color:#3296c8}a:focus,a:hover{color:#32c864;text-decoration:underline}a:active{color:#43d072}a:visited{color:#2db45a}a.new{color:#c8324b}a.new:visited{color:#d0435b}
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Using Arrays</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js392.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js394.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+<table style="width:100%;border:none;margin:50px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>	
+	<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp; An <strong>array</strong> is a collection of values, all of the same type. The values in an array are referred to as the array's elements. Each item in an array is called an element, and each element is accessed by its numerical index. As shown in the following illustration, numbering begins with 0. The 9th element, for example, would therefore be accessed at index 8. More info about Array keyword, see <strong><a href="array.htm">Array</a></strong>.</div>
+	<center><img src="objects-tenElementArray.gif" width="335" height="124" align="bottom"></center>	
+	</td>
+  </tr>
+</table>
+<!-- https://www.w3schools.com/jsref/jsref_obj_array.asp -->
+
+<h2><span><img src="Event-icon.png" width="16" height="14"> TJSArray</span></h2>	
+    <table class="pas2js-table" style="margin-left: 50px; width:90%;">
+      <tbody>
+        <tr>
+          <th style="width: 140px;" colspan="2">Class Functions</th>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="Protected_method-icon.png" alt="Protected methodicon.png" width="16" height="16" /> 
+          <a href="#">_of</a></td>
+          <td>Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="Protected_method-icon.png" alt="Protected methodicon.png" width="16" height="16" /> 
+          <a href="#">isArray</a></td>
+          <td>This function returns true if the object is an array, and false if not.</td>
+        </tr>
+        <tr>
+          <th style="width: 140px;" colspan="2">Public Methods</th>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="Event-icon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">new</a></td>
+          <td><a href="hm_array01.htm"><img src="btn.jpg" border="0"></a>Array constructor.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">concat</a></td>
+          <td>Joins two or more arrays, and returns a copy of the joined arrays.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">copyWithin</a></td>
+          <td>Copies array elements within the array, to and from specified positions.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">every</a></td>
+          <td>Returns true if every element in this array satisfies the provided testing function.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">filter</a></td>
+          <td>Creates a new array with all of the elements of this array for which the provided filtering function returns true.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">fill</a></td>
+          <td>Fill the elements in an array with a static value.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">find</a></td>
+          <td>Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">findIndex</a></td>
+          <td>Returns the index of the first element in an array that pass a test.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">forEach</a></td>
+          <td>Calls a function for each array element.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">includes</a></td>
+          <td>Check if an array contains the specified element.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">indexOf</a></td>
+          <td>Search the array for an element and returns its position.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">join</a></td>
+          <td>Joins all elements of an array into a string.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">lastIndexOf</a></td>
+          <td>Search the array for an element, starting at the end, and returns its position.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">map</a></td>
+          <td>Creates a new array with the results of calling a provided function on every element in this array.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">pop</a></td>
+          <td>Removes the last element from an array and returns that element.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">push</a></td>
+          <td>Adds one or more elements to the end of an array and returns the new length of the array.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">reduce</a></td>
+          <td>Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">reduceRight</a></td>
+          <td>Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">reverse</a></td>
+          <td>Reverses the order of the elements of an array in place — the first becomes the last, and the last becomes the first.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">shift</a></td>
+          <td>Removes the first element from an array and returns that element.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">slice</a></td>
+          <td>Extracts a section of an array and returns a new array.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">some</a></td>
+          <td>Checks if any of the elements in an array pass a test.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">sort</a></td>
+          <td>Sorts the elements of an array in place and returns the array.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">splice</a></td>
+          <td>adds and/or removes elements from an array.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">toLocaleString</a></td>
+          <td>Returns a string representing the elements of the array.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">toString</a></td>
+          <td>Returns a string representing the array and its elements.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+          <a href="#">unshift</a></td>
+          <td>Adds one or more elements to the front of an array and returns the new length of the array.</td>
+        </tr>
+        <tr>
+          <th style="width: 140px;" colspan="2">Properties</th>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="propertyicon.png" alt="propertyicon.png" width="16" height="14" /> 
+          <a href="#">Length</a></td>
+          <td>Sets or returns the number of elements in an array.</td>
+        </tr>
+        <tr>
+          <td style="width: 140px;">
+          <img src="propertyicon.png" alt="propertyicon.png" width="16" height="14" /> 
+          <a href="#">Elements</a></td>
+          <td>Get value at a specific index of array.</td>
+        </tr>
+      </tbody>
+    </table>
+
+<div><h2><span><img src="folder_wrench.png" width="20" height="20"> Constant Arrays</span></h2>
+<a href="hm_array01.htm"><img src="btn.jpg" border="0"></a>	
+</div>	
+
+<div>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"><img id="callout-icon" src="tipbulb.gif" width="32" height="32" border="0" alt="tipbulb"/>Constant arrays </span><strong><a href="array.htm">Array</a></strong></p></div>
+	
+<pre><span id="code" class="language-css">Defining Arrays I</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+program projArrays;
+
+{$mode objfpc}
+
+uses
+  JS, Classes, SysUtils, Web;
+
+type
+   TDays = array[1..7] of string;
+
+const
+   Days: TDays = ('Mon','Tue','Wed','Thu','Fri','Sat','Sun');
+
+const
+   Dias: array[1..7] of string = ('Mon','Tue','Wed','Thu','Fri','Sat','Sun');
+
+var
+   i : Integer;
+begin
+// Note: The Days array above was defined with a fixed 1..7 dimension. Such an array is indexable by values 1 to 7.
+  for i := 1 to 5 do      // Show the weekdays
+    WriteLn(Format('Day %d = %s',[i,Days[i]]));
+
+{ ┌────────────────┐
+  │ Console output │
+  └────────────────┘
+  Bluebird
+  Galaxy
+}
+
+end.
+</code></pre>
+
+<button type="button" id="checkoutbutton" onclick="showme('widget0');">Show JS code</button>
+<div id="widget0" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.Days = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+  this.Dias = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+  this.i = 0;
+  $mod.$main = function () {
+    for ($mod.i = 1; $mod.i <= 5; $mod.i++) pas.System.Writeln(pas.SysUtils.Format("Day %d = %s",[$mod.i,$mod.Days[$mod.i - 1]]));
+    for ($mod.i = 1; $mod.i <= 5; $mod.i++) pas.System.Writeln(pas.SysUtils.Format("Day %d = %s",[$mod.i,$mod.Dias[$mod.i - 1]]));
+  };
+});
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Arrays using enumerations</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+program projArrays;
+
+{$mode delphi}
+
+uses
+  JS, Classes, SysUtils, Web;
+
+type
+   TCars  = (Ford, Vauxhall, GM, Nissan, Toyota, Honda);
+
+var
+   cars    : array[TCars] of string;          // Range is 0..5
+   //japCars : array[Nissan..Honda] of string;  // Range is 3..5
+   japCars : array[Ord(TCars.Nissan)..Ord(TCars.Honda)] of string;  // Range is 3..5
+
+begin
+// Note: The cars array is defined using just a data type - TCars. The size and range of the data type dictates how we use the array.
+
+  // We must use the appropriate enumeration value to index our arrays:
+    japCars[Ord(TCars.Nissan)] := 'Bluebird';   // Allowed
+    //japCars[Nissan] := 'Bluebird';   // not allowed in pas2js
+
+    japCars[Ord(TCars.Toyota)] := 'Galaxy';     // Allowed in pas2js
+    //japCars[Toyota] := 'Galaxy';     // not allowed in pas2js
+
+  // japCars[4]      := 'Corolla';    // allowed in pas2js
+  // japCars[4]      := 'Corolla';    // Not allowed in delphi
+
+    japCars[Ord(TCars.Ford)]   := 'Galaxy';     // allowed in pas2js
+    //japCars[Ford]   := 'Galaxy';     // Not allowed in delphi
+
+    //WriteLn(japCars[Nissan]);  // not alowed in pas2js
+    //WriteLn(japCars[Toyota]); // not alowed in pas2js
+
+    WriteLn(japCars[3]);  // allowed in pas2js
+    WriteLn(japCars[4]); // allowed in pas2js
+
+    WriteLn(japCars[Ord(TCars.Nissan)]);   // allowed in pas2js
+    WriteLn(japCars[Ord(TCars.Toyota)]); // allowed in pas2js
+
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+    Bluebird
+    Galaxy
+  }
+
+end.
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget1');">Show JS code</button>
+<div id="widget1" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.TCars = {"0": "Ford", Ford: 0, "1": "Vauxhall", Vauxhall: 1, "2": "GM", GM: 2, "3": "Nissan", Nissan: 3, "4": "Toyota", Toyota: 4, "5": "Honda", Honda: 5};
+  this.japCars = rtl.arraySetLength(null,"",3);
+  $mod.$main = function () {
+    $mod.japCars[$mod.TCars.Nissan - 3] = "Bluebird";
+    $mod.japCars[$mod.TCars.Toyota - 3] = "Galaxy";
+    $mod.japCars[$mod.TCars.Ford - 3] = "Galaxy";
+    pas.System.Writeln($mod.japCars[0]);
+    pas.System.Writeln($mod.japCars[1]);
+    pas.System.Writeln($mod.japCars[$mod.TCars.Nissan - 3]);
+    pas.System.Writeln($mod.japCars[$mod.TCars.Toyota - 3]);
+  };
+});
+</code></pre></div>
+</div>
+
+
+<pre><span id="code" class="language-css">Array Iterations using for..in</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+program projArrays;
+
+{$mode delphi}
+
+uses
+  JS, Classes, SysUtils, Web;
+
+type
+  // We can not use nonconsecutive enums in pas2js --> not yet implemented
+  TSuit = (Hearts = 1, Clubs, Diamonds = 10, Spades);
+
+const
+  values: array[0..3] of Integer = (20,5,10,1);
+
+var
+  numbers: array of Integer;
+  a, b : Integer;
+  suit: TSuit;
+  suitEnum: array [1..4] of TSuit;
+  i : Integer = 0;
+begin
+    SetLength(numbers, 4);
+    numbers[0] := 20;
+    numbers[1] := 10;
+    numbers[2] := 5;
+    numbers[3] := 1;
+    for b in numbers do
+    begin
+      Inc(a);
+      WriteLn('Iteration = '+ IntToStr(a) +   'value = '+ IntToStr(b));
+    end;
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+    Iteration = 1value = 20
+    Iteration = 2value = 10
+    Iteration = 3value = 5
+    Iteration = 4value = 1
+  }
+
+//---> Using for..in to loop on Const elements <----
+  a := 0;
+   for b in values do
+   begin
+     a := a + 1;
+     WriteLn('Iteration = '+ IntToStr(a) +   'value = '+ IntToStr(b));
+   end;
+   { ┌────────────────┐
+     │ Console output │
+     └────────────────┘
+     Iteration = 1value = 20
+     Iteration = 2value = 5
+     Iteration = 3value = 10
+     Iteration = 4value = 1
+   }
+
+ //---> Using for..in with nonconsecutive enum const <----
+
+   //initialization
+   suitEnum[1] := Hearts;
+   suitEnum[2] := Clubs;
+   suitEnum[3] := Diamonds;
+   suitEnum[4] := Spades;
+
+   // nonconsecutive enumeration
+   for suit in suitEnum do
+     begin
+       i := i + 1;
+       WriteLn('Myenum'+ IntToStr(i) +'= '+ IntToStr(Ord(suit)));
+     end;
+
+   { ┌────────────────┐
+     │ Console output │
+     └────────────────┘
+     Myenum1= 1
+     Myenum2= 2
+     Myenum3= 10
+     Myenum4= 11
+   }
+end.
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget2');">Show JS code</button>
+<div id="widget2" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","JS","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.TSuit = {"1": "Hearts", Hearts: 1, "2": "Clubs", Clubs: 2, "10": "Diamonds", Diamonds: 10, "11": "Spades", Spades: 11};
+  this.values = [20,5,10,1];
+  this.numbers = [];
+  this.a = 0;
+  this.b = 0;
+  this.suit = 0;
+  this.suitEnum = rtl.arraySetLength(null,0,4);
+  this.i = 0;
+  $mod.$main = function () {
+    $mod.numbers = rtl.arraySetLength($mod.numbers,0,4);
+    $mod.numbers[0] = 20;
+    $mod.numbers[1] = 10;
+    $mod.numbers[2] = 5;
+    $mod.numbers[3] = 1;
+    for (var $in1 = $mod.numbers, $l2 = 0, $end3 = rtl.length($in1) - 1; $l2 <= $end3; $l2++) {
+      $mod.b = $in1[$l2];
+      $mod.a += 1;
+      pas.System.Writeln((("Iteration = " + pas.SysUtils.IntToStr($mod.a)) + "value = ") + pas.SysUtils.IntToStr($mod.b));
+    };
+    $mod.a = 0;
+    for (var $in4 = $mod.values, $l5 = 0, $end6 = rtl.length($in4) - 1; $l5 <= $end6; $l5++) {
+      $mod.b = $in4[$l5];
+      $mod.a = $mod.a + 1;
+      pas.System.Writeln((("Iteration = " + pas.SysUtils.IntToStr($mod.a)) + "value = ") + pas.SysUtils.IntToStr($mod.b));
+    };
+    $mod.suitEnum[0] = $mod.TSuit.Hearts;
+    $mod.suitEnum[1] = $mod.TSuit.Clubs;
+    $mod.suitEnum[2] = $mod.TSuit.Diamonds;
+    $mod.suitEnum[3] = $mod.TSuit.Spades;
+    for (var $in7 = $mod.suitEnum, $l8 = 0, $end9 = rtl.length($in7) - 1; $l8 <= $end9; $l8++) {
+      $mod.suit = $in7[$l8];
+      $mod.i = $mod.i + 1;
+      pas.System.Writeln((("Myenum" + pas.SysUtils.IntToStr($mod.i)) + "= ") + pas.SysUtils.IntToStr($mod.suit));
+    };
+  };
+});
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Defining static arrays in Pas2JS</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+program projArrays;
+
+{$mode delphi}
+
+uses
+  JS, Classes, SysUtils, Web;
+
+Type
+  TIntegerArray = Array of integer;
+
+type
+  TDays = array[1..7] of string;
+  TCars  = (Ford, Vauxhall, GM, Nissan, Toyota, Honda);
+//TEnum  = (Mon=5, Tue, Wed, Thu, Fri, Sat, Sun); // nonconsecutive not supported yet
+  TEnum  = (Mon, Tue, Wed, Thu, Fri, Sat, Sun);
+//Static arrays are supported as value types, they have a fixed size with user-specified bounds:
+  TZeroToTen  =  array  [0..10]  of  Integer;
+  TTenToTwenty  =  array  [10..20]  of  String;
+//Multi-dimensional arrays are supported, with two forms:
+  TCompactForm  =  array  [1..3,  1..5]  of  Double;
+  TVerboseForm  =  array  [1..3]  of  array  [1..5]  of  Double;
+
+  TIntArray = array [3..5] of Integer;
+  TIntArr  = array of Integer;
+  TStringArr = array of String;
+  TFloatArr = array of Double;
+
+  const Days : TDays = ('Mon','Tue','Wed','Thu','Fri','Sat','Sun');
+
+//Constant static arrays can not be initialized using square brackets [  ]:
+  const  a: array[0..2] of String = ('zero','one','two');
+
+//Constant static/dynamic arrays can be initialized using standard Delphi syntax:
+  const  b:  array[0..2] of String = ('zero','one','two');
+
+var
+  staticArray:  array  [0..2]  of  String;
+  dynamicArray:  array of String;
+  cars    : array[TCars] of string;          // Range is 0..5
+//japCars : array[Nissan..Honda] of string;  // Range is 3..5  // arrays using enums not supported yet
+  japCars : array[Ord(TCars.Nissan)..Ord(TCars.Honda)] of string;  // Range is 3..5
+  myEnum  : TEnum;                           // Range is 0..6 { 5..11 }
+  myArray : TIntArray;                       // Range is 3..5
+  myChar  : TIntArr;                         // Range is 0..-1
+  myShort : TStringArr;                      // Range is 0..-1
+  myNum   : TFloatArr;                       // Range is 0..-1
+  myZeroToTen      : TZeroToTen;             // Range is 0..10
+  myTenToTwenty    : TTenToTwenty;           // Range is 10..20
+  myCompactForm    : TCompactForm;           // Range is 1..3
+  myVerboseForm    : TVerboseForm;           // Range is 1..3
+  IntArr: TIntegerArray = (1,2,3);
+
+begin
+  WriteLn('Low(cars)  = ',(Low(cars)));
+  WriteLn('High(cars)  = ',(High(cars)));
+
+  WriteLn('Low(japCars)  = ',(Low(japCars)));
+  WriteLn('High(japCars)  = ',(High(japCars)));
+
+  WriteLn('Low(myEnum)  = ',(Low(myEnum)));
+  WriteLn('High(myEnum)  = ',(High(myEnum)));
+
+  WriteLn('Low(myArray)  = ',(Low(myArray)));
+  WriteLn('High(myArray)  = ',(High(myArray)));
+
+  WriteLn('Low(myChar)  = ',((Low(myChar))));
+  WriteLn('High(myChar)  = ',((High(myChar))));
+
+  WriteLn('Low(myShort)  = ',(Low(myShort)));
+  WriteLn('High(myShort)  = ',(High(myShort)));
+
+  WriteLn('Low(myNum)  = ',(Low(myNum)));
+  WriteLn('High(myNum)  = ',(High(myNum)));
+
+  WriteLn('Low(myZeroToTen)  = ',(Low(myZeroToTen)));
+  WriteLn('High(myZeroToTen)  = ',(High(myZeroToTen)));
+
+  WriteLn('Low(myTenToTwenty)  = ',(Low(myTenToTwenty)));
+  WriteLn('High(myTenToTwenty)  = ',(High(myTenToTwenty)));
+
+  WriteLn('Low(myCompactForm)  = ',(Low(myCompactForm)));
+  WriteLn('High(myCompactForm)  = ',(High(myCompactForm)));
+
+  WriteLn('Low(myVerboseForm)  = ',(Low(myVerboseForm)));
+  WriteLn('High(myVerboseForm)  = ',(High(myVerboseForm)));
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+    Low(cars)  = 0
+    High(cars)  = 5
+
+    Low(japCars)  = 3
+    High(japCars)  = 5
+
+    Low(myEnum)  = 0
+    High(myEnum)  = 6
+
+    Low(myArray)  = 3
+    High(myArray)  = 5
+
+    Low(myChar)  = 0
+    High(myChar)  = -1
+
+    Low(myShort)  = 0
+    High(myShort)  = -1
+
+    Low(myNum)  = 0
+    High(myNum)  = -1
+
+    Low(myZeroToTen)  = 0
+    High(myZeroToTen)  = 10
+
+    Low(myTenToTwenty)  = 10
+    High(myTenToTwenty)  = 20
+
+    Low(myCompactForm)  = 1
+    High(myCompactForm)  = 3
+
+    Low(myVerboseForm)  = 1
+    High(myVerboseForm)  = 3
+  }
+end.
+
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget3');">Show JS code</button>
+<div id="widget3" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.TCars = {"0": "Ford", Ford: 0, "1": "Vauxhall", Vauxhall: 1, "2": "GM", GM: 2, "3": "Nissan", Nissan: 3, "4": "Toyota", Toyota: 4, "5": "Honda", Honda: 5};
+  this.TEnum = {"0": "Mon", Mon: 0, "1": "Tue", Tue: 1, "2": "Wed", Wed: 2, "3": "Thu", Thu: 3, "4": "Fri", Fri: 4, "5": "Sat", Sat: 5, "6": "Sun", Sun: 6};
+  this.cars = rtl.arraySetLength(null,"",6);
+  this.japCars = rtl.arraySetLength(null,"",3);
+  this.myEnum = 0;
+  this.myArray = rtl.arraySetLength(null,0,3);
+  this.myChar = [];
+  this.myShort = [];
+  this.myNum = [];
+  this.myZeroToTen = rtl.arraySetLength(null,0,11);
+  this.myTenToTwenty = rtl.arraySetLength(null,"",11);
+  this.myCompactForm = rtl.arraySetLength(null,0.0,3,5);
+  this.myVerboseForm = rtl.arraySetLength(null,0.0,3,5);
+  this.IntArr = [1,2,3];
+  $mod.$main = function () {
+    $mod.IntArr = [];
+    $mod.IntArr = rtl.arraySetLength($mod.IntArr,0,4);
+    $mod.IntArr[2] = 2;
+    $mod.IntArr[1] = rtl.length($mod.IntArr);
+    pas.System.Writeln(rtl.length($mod.IntArr) - 1);
+    pas.System.Writeln($mod.TCars.Honda);
+    pas.System.Writeln("Low(cars)  = ",$mod.TCars.Ford);
+    pas.System.Writeln("High(cars)  = ",$mod.TCars.Honda);
+    pas.System.Writeln("Low(japCars)  = ",3);
+    pas.System.Writeln("High(japCars)  = ",5);
+    pas.System.Writeln("Low(myEnum)  = ",$mod.TEnum.Mon);
+    pas.System.Writeln("High(myEnum)  = ",$mod.TEnum.Sun);
+    pas.System.Writeln("Low(myArray)  = ",3);
+    pas.System.Writeln("High(myArray)  = ",5);
+    pas.System.Writeln("Low(myChar)  = ",0);
+    pas.System.Writeln("High(myChar)  = ",rtl.length($mod.myChar) - 1);
+    pas.System.Writeln("Low(myShort)  = ",0);
+    pas.System.Writeln("High(myShort)  = ",rtl.length($mod.myShort) - 1);
+    pas.System.Writeln("Low(myNum)  = ",0);
+    pas.System.Writeln("High(myNum)  = ",rtl.length($mod.myNum) - 1);
+    pas.System.Writeln("Low(myZeroToTen)  = ",0);
+    pas.System.Writeln("High(myZeroToTen)  = ",10);
+    pas.System.Writeln("Low(myTenToTwenty)  = ",10);
+    pas.System.Writeln("High(myTenToTwenty)  = ",20);
+    pas.System.Writeln("Low(myCompactForm)  = ",1);
+    pas.System.Writeln("High(myCompactForm)  = ",3);
+    pas.System.Writeln("Low(myVerboseForm)  = ",1);
+    pas.System.Writeln("High(myVerboseForm)  = ",3);
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Multidimensional array 11x11 in Pas2JS - Using TJSArray</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+program projArrays;
+
+{$mode delphi}
+
+uses
+  JS, Classes, SysUtils, Web;
+
+var CreateArray: TJSArray; external name '[]';
+
+function CreateMatrix( rows, cols: Integer; defaultValue: JSValue): TJSArray;
+var
+  arr : TJSArray;
+  i, j: integer;
+
+begin
+  arr := CreateArray;
+  // Creates all lines:
+  for i:=0 to rows - 1 do
+  begin
+    // Creates an empty line
+    arr.push( CreateArray );
+    // Adds cols to the empty line:
+    TJSArray(arr.Elements[i]).push( TJSArray.new(cols));
+    for j:=0 to cols - 1 do
+      // Initializes:
+      TJSArray(arr.Elements[i]).Elements[j] := defaultValue;
+  end;
+
+  result := arr;
+end;
+
+var
+  A1 : TJSArray;
+  rows, cols: Integer;
+begin
+  A1 := CreateMatrix(11, 11, 0);
+
+  for rows := 0 to A1.Length - 1 do begin
+    for cols := 0 to A1.Length - 1 do
+      TJSArray(A1[rows]).Elements[cols] := rows + cols;
+  end;
+(*
+  for rows := 0 to A1.Length - 1 do begin
+    for cols := 0 to A1.Length - 1 do
+    WriteLn(TJSArray(A1[rows]).Elements[cols]);
+  end;
+*)  
+  { ┌───────────────────┐
+    │ Console output A1 │
+    └───────────────────┘
+  [
+	[0,  1,  2,   3,  4,  5,  6,  7,  8,  9, 10], 
+	[1,  2,  3,   4,  5,  6,  7,  8,  9, 10, 11], 
+	[2,  3,  4,   5 , 6,  7,  8,  9, 10, 11, 12], 
+	[3,  4,  5,   6,  7,  8,  9, 10, 11, 12, 13], 
+	[4,  5,  6,   7,  8,  9, 10, 11, 12, 13, 14], 
+	[5,  6,  7,   8,  9, 10, 11, 12, 13, 14, 15], 
+	[6,  7,  8,   9, 10, 11, 12, 13, 14, 15, 16], 
+	[7,  8,  9,  10, 11, 12, 13, 14, 15, 16, 17], 
+	[8,  9,  10, 11, 12, 13, 14, 15, 16, 17, 18], 
+	[9,  10, 11, 12, 13, 14, 15, 16, 17, 18, 19], 
+	[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  ]
+
+  }
+end.
+
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget4');">Show JS code</button>
+<div id="widget4" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","JS","Classes","SysUtils","Web"],function () {
+  "use strict";
+  var $mod = this;
+  this.CreateMatrix = function (rows, cols, defaultValue) {
+    var Result = null;
+    var arr = null;
+    var i = 0;
+    var j = 0;
+    arr = [];
+    for (var $l1 = 0, $end2 = rows - 1; $l1 <= $end2; $l1++) {
+      i = $l1;
+      arr.push([]);
+      rtl.getObject(arr[i]).push(new Array(cols));
+      for (var $l3 = 0, $end4 = cols - 1; $l3 <= $end4; $l3++) {
+        j = $l3;
+        rtl.getObject(arr[i])[j] = defaultValue;
+      };
+    };
+    Result = arr;
+    return Result;
+  };
+  this.A1 = null;
+  this.rows = 0;
+  this.cols = 0;
+  $mod.$main = function () {
+    $mod.A1 = $mod.CreateMatrix(11,11,0);
+    for (var $l1 = 0, $end2 = $mod.A1.length - 1; $l1 <= $end2; $l1++) {
+      $mod.rows = $l1;
+      for (var $l3 = 0, $end4 = $mod.A1.length - 1; $l3 <= $end4; $l3++) {
+        $mod.cols = $l3;
+        rtl.getObject($mod.A1[$mod.rows])[$mod.cols] = $mod.rows + $mod.cols;
+      };
+    };
+    window.console.log($mod.A1);
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Multidimensional array 11x11 in Pas2JS - Using SetLength</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+program projArrays;
+
+{$mode delphi}
+
+uses
+  JS, Classes, SysUtils, Web;
+
+type
+  TIntegerDynArray = array of Integer;
+  
+ var
+  A1 : array of TIntegerDynArray; 
+  rows, cols: Integer;
+  
+begin
+  SetLength(A1, 11);
+  for rows := 0 to 10 do
+  begin
+    SetLength(A1[rows], 11);
+    for cols := 0 to 10 do
+      A1[rows][cols] := rows + cols;
+  end;
+  console.log(A1);
+
+  { ┌───────────────────┐
+    │ Console output A1 │
+    └───────────────────┘
+  [
+	[0,  1,  2,   3,  4,  5,  6,  7,  8,  9, 10], 
+	[1,  2,  3,   4,  5,  6,  7,  8,  9, 10, 11], 
+	[2,  3,  4,   5 , 6,  7,  8,  9, 10, 11, 12], 
+	[3,  4,  5,   6,  7,  8,  9, 10, 11, 12, 13], 
+	[4,  5,  6,   7,  8,  9, 10, 11, 12, 13, 14], 
+	[5,  6,  7,   8,  9, 10, 11, 12, 13, 14, 15], 
+	[6,  7,  8,   9, 10, 11, 12, 13, 14, 15, 16], 
+	[7,  8,  9,  10, 11, 12, 13, 14, 15, 16, 17], 
+	[8,  9,  10, 11, 12, 13, 14, 15, 16, 17, 18], 
+	[9,  10, 11, 12, 13, 14, 15, 16, 17, 18, 19], 
+	[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  ]
+
+}
+end.
+
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget5');">Show JS code</button>
+<div id="widget5" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils","Web"],function () {
+  "use strict";
+  var $mod = this;
+  this.A1 = [];
+  this.rows = 0;
+  this.cols = 0;
+  $mod.$main = function () {
+    $mod.A1 = rtl.arraySetLength($mod.A1,[],11);
+    for ($mod.rows = 0; $mod.rows <= 10; $mod.rows++) {
+      $mod.A1[$mod.rows] = rtl.arraySetLength($mod.A1[$mod.rows],0,11);
+      for ($mod.cols = 0; $mod.cols <= 10; $mod.cols++) $mod.A1[$mod.rows][$mod.cols] = $mod.rows + $mod.cols;
+    };
+    window.console.log($mod.A1);
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Multidimensional array 11x11 in Pas2JS - Using Auxiliar Array</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TIntegerDynArray = array of Integer;
+
+var
+  A1: array of TIntegerDynArray;
+  A2: TIntegerDynArray; //array of integer;
+  rows, cols: Integer;
+
+Begin
+  for rows := 0 to 10 do
+  begin
+    for cols := 0 to 10 do
+    begin
+    A2 := TIntegerDynArray(CreateArray); // lame way to initialize the array = []
+    TJSArray(A1).push( A2 );
+
+      for cols := 0 to 10 do
+        TJSArray(A2).push( rows + cols );
+    end;
+  end;
+
+	(*
+	  for rows := Low(A1) to High(A1) do Begin
+		for cols := Low(A1) to High(A1) do
+		  WriteLn(A1[rows][cols]);
+	  end;
+	*)
+
+  { ┌───────────────────┐
+    │ Console output A1 │
+    └───────────────────┘
+  [
+	[0,  1,  2,   3,  4,  5,  6,  7,  8,  9, 10], 
+	[1,  2,  3,   4,  5,  6,  7,  8,  9, 10, 11], 
+	[2,  3,  4,   5 , 6,  7,  8,  9, 10, 11, 12], 
+	[3,  4,  5,   6,  7,  8,  9, 10, 11, 12, 13], 
+	[4,  5,  6,   7,  8,  9, 10, 11, 12, 13, 14], 
+	[5,  6,  7,   8,  9, 10, 11, 12, 13, 14, 15], 
+	[6,  7,  8,   9, 10, 11, 12, 13, 14, 15, 16], 
+	[7,  8,  9,  10, 11, 12, 13, 14, 15, 16, 17], 
+	[8,  9,  10, 11, 12, 13, 14, 15, 16, 17, 18], 
+	[9,  10, 11, 12, 13, 14, 15, 16, 17, 18, 19], 
+	[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+  ]
+
+} 
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget6');">Show JS code</button>
+<div id="widget6" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","JS","Classes","SysUtils","Web"],function () {
+  "use strict";
+  var $mod = this;
+  this.A1 = [];
+  this.A2 = [];
+  this.rows = 0;
+  this.cols = 0;
+  $mod.$main = function () {
+    for ($mod.rows = 0; $mod.rows <= 10; $mod.rows++) {
+      for ($mod.cols = 0; $mod.cols <= 10; $mod.cols++) {
+        $mod.A2 = [];
+        $mod.A1.push($mod.A2);
+        for ($mod.cols = 0; $mod.cols <= 10; $mod.cols++) $mod.A2.push($mod.rows + $mod.cols);
+      };
+    };
+    window.console.log($mod.A1);
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Bi-dimensional array in Pas2JS - Array of Const</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TDayTable = array[1..12] of Integer;
+
+const
+  LeapMonthDays: TDayTable = (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+
+const
+  NormalMonthDays: TDayTable = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+
+const
+  MonthDays1: array[boolean] of TDayTable =
+    ((31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31),
+     (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31));
+	 
+(*  
+const
+  MonthDays: array[boolean] of TDayTable = (NormalMonthDays, LeapMonthDays);
+*)
+
+begin
+  WriteLn(MonthDays1[false, 2]);
+    // LeapMonthDays = false and Month = February --> 28 days
+  WriteLn(MonthDays1[true, 2]);
+    // LeapMonthDays = true  and Month = February --> 29 days
+	
+	(*  Array const not implemented yet
+	  WriteLn(MonthDays[false, 2]);
+		// LeapMonthDays = false and Month = February --> 28 days
+	  WriteLn(MonthDays[true, 2]);
+		// LeapMonthDays = true  and Month = February --> 29 days
+	*)	
+	
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+	28
+	29
+  }
+end.     
+</code></pre>
+<p style="font-size:smaller;"><strong>Note: Const MonthDays and MonthDays1 are equivalents. Currently, array of const is not implemented in pas2js.</strong></p>
+<button type="button" id="checkoutbutton" onclick="showme('widget7');">Show JS code</button>
+<div id="widget7" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.MonthDays1 = [[31,28,31,30,31,30,31,31,30,31,30,31],[31,29,31,30,31,30,31,31,30,31,30,31]];
+  $mod.$main = function () {
+    pas.System.Writeln($mod.MonthDays1[0][1]);
+    pas.System.Writeln($mod.MonthDays1[1][1]);
+    pas.System.Writeln($mod.MonthDays1[0][11]);
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Initialize dynamic arrays in Pas2JS</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TStringDynArray = array of String;
+  TIntegerDynArray = array of Integer;
+
+function CloneArray(const A: array of string): TStringDynArray; overload;
+var
+  Idx: Integer;
+begin
+  SetLength(Result, Length(A));
+  for Idx := Low(A) to High(A) do
+    Result[Idx - Low(A)] := A[Idx];
+end;
+
+function CloneArray(const A: array of integer): TIntegerDynArray; overload;
+var
+  Idx: Integer;
+begin
+  SetLength(Result, Length(A));
+  for Idx := Low(A) to High(A) do
+    Result[Idx - Low(A)] := A[Idx];
+end;
+
+var
+  dynamicArray  : array of String;
+  dynamicArray1 : array of String = ('one', 'two', 'three');
+  dynamicArray3: TStringDynArray;
+  dynamicArray4: TIntegerDynArray; 
+  
+begin
+   //dynamicArray := ('one', 'two', 'three');  // not allowed in pas2js
+   
+   SetLength(dynamicArray, 2);
+
+   dynamicArray[0] := 'one';
+   dynamicArray[1] := 'two';
+   dynamicArray[2] := 'three';
+// workaround ---->  
+   dynamicArray3 := CloneArray(['one', 'two', 'three']);
+   dynamicArray4 := CloneArray([1,2,3,4,5]);
+
+   dynamicArray3[3] := 'teste';
+   console.log(dynamicArray3);
+   console.log(dynamicArray4);
+
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+	["one", "two", "three", "teste"] 
+	[1, 2, 3, 4, 5] 
+  }
+end.
+
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget8');">Show JS code</button>
+<div id="widget8" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Types","JS","Classes","SysUtils","Web"],function () {
+  "use strict";
+  var $mod = this;
+  this.CloneArray = function (A) {
+    var Result = [];
+    var Idx = 0;
+    Result = rtl.arraySetLength(Result,"",rtl.length(A));
+    for (var $l1 = 0, $end2 = rtl.length(A) - 1; $l1 <= $end2; $l1++) {
+      Idx = $l1;
+      Result[Idx - 0] = A[Idx];
+    };
+    return Result;
+  };
+  this.CloneArray$1 = function (A) {
+    var Result = [];
+    var Idx = 0;
+    Result = rtl.arraySetLength(Result,0,rtl.length(A));
+    for (var $l1 = 0, $end2 = rtl.length(A) - 1; $l1 <= $end2; $l1++) {
+      Idx = $l1;
+      Result[Idx - 0] = A[Idx];
+    };
+    return Result;
+  };
+  this.dynamicArray = [];
+  this.dynamicArray3 = [];
+  this.dynamicArray4 = [];
+  $mod.$main = function () {
+    $mod.dynamicArray = rtl.arraySetLength($mod.dynamicArray,"",2);
+    $mod.dynamicArray[0] = "one";
+    $mod.dynamicArray[1] = "two";
+    $mod.dynamicArray[2] = "three";
+
+    $mod.dynamicArray3 = $mod.CloneArray(["one","two","three"]);
+    $mod.dynamicArray4 = $mod.CloneArray$1([1,2,3,4,5]);
+    $mod.dynamicArray3[3] = "teste";
+    window.console.log($mod.dynamicArray3);
+    window.console.log($mod.dynamicArray4);
+  };
+});
+           
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Pass dynamic array as a parameter ->  you always end up passing them by reference! </span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TStringDynArray = array of String;
+  TIntegerDynArray = array of Integer;
+  
+// Pass by Value
+procedure IncArray1(const data: TIntegerDynArray);
+var
+  i: integer;
+begin
+  for i := Low(data) to High(data) do
+    data[i] := data[i] + 5;
+end;
+
+// Pass by Reference
+procedure IncArray2(var data: TIntegerDynArray);
+var
+  i: integer;
+begin
+  for i := Low(data) to High(data) do
+    data[i] := data[i] + 5;
+end;
+
+var
+  data: TIntegerDynArray;
+begin
+   SetLength(data, 1);
+   data[0] := 37;
+   IncArray1(data);
+   WriteLn( (data) );  //42
+
+   WriteLn('-----------');
+
+   IncArray2(data);
+   WriteLn((data) );   //47
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+     42
+     47
+  }
+end.                  
+</code></pre>
+<p style="font-size:smaller;">Note: the dynamic array is always <strong>passed as a reference</strong> if declared as a type! Adding a const or var doesn’t change anything.</p>
+<button type="button" id="checkoutbutton" onclick="showme('widget9');">Show JS code</button>
+<div id="widget9" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.IncArray1 = function (data) {
+    var i = 0;
+    for (var $l1 = 0, $end2 = rtl.length(data) - 1; $l1 <= $end2; $l1++) {
+      i = $l1;
+      data[i] = data[i] + 5;
+    };
+  };
+  this.IncArray2 = function (data) {
+    var i = 0;
+    for (var $l1 = 0, $end2 = rtl.length(data.get()) - 1; $l1 <= $end2; $l1++) {
+      i = $l1;
+      data.get()[i] = data.get()[i] + 5;
+    };
+  };
+  this.data = [];
+  $mod.$main = function () {
+    $mod.data = rtl.arraySetLength($mod.data,0,1);
+    $mod.data[0] = 37;
+    $mod.IncArray1($mod.data);
+    pas.System.Writeln($mod.data);
+    pas.System.Writeln("-----------");
+    $mod.IncArray2({p: $mod, get: function () {
+        return this.p.data;
+      }, set: function (v) {
+        this.p.data = v;
+      }});
+    pas.System.Writeln($mod.data);
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Using the prefix var to return a different dynamic array</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TIntegerDynArray = array of Integer;
+  
+procedure PickOne(var output : TIntegerDynArray; input1, input2 : TIntegerDynArray);
+var x : integer;
+begin
+   x := Random(100);
+   if x >50 then
+      output   := input1
+   else output := input2;
+end;
+
+var
+    d1 : TIntegerDynArray;
+    d2 : TIntegerDynArray;
+    d3 : TIntegerDynArray;
+begin
+  d1[0] :=100;
+   d2[0] :=200;
+   d3[0] :=300;
+
+   PickOne(d1,d2,d3);
+   WriteLn(IntToStr( d1[0]) );
+   WriteLn(IntToStr( d2[0]) );
+   WriteLn(IntToStr( d3[0]) );
+
+  // at this point d1[0] = ?
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+    Note that d1[0] will be changed if
+    IF x > 50 then d1[0] :=  200;
+    IF x < 50 then d1[0] :=  300;
+
+  }
+end.                                     
+  
+</code></pre>
+<p style="font-size:smaller;">Note: that d1[0] will be updated, <strong>(dynamic array)</strong> is treated as a reference.</p>
+<button type="button" id="checkoutbutton" onclick="showme('widget10');">Show JS code</button>
+<div id="widget10" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.PickOne = function (output, input1, input2) {
+    var x = 0;
+    x = pas.System.Random(100);
+    if (x > 50) {
+      output.set(input1)}
+     else output.set(input2);
+  };
+  this.d1 = [];
+  this.d2 = [];
+  this.d3 = [];
+  $mod.$main = function () {
+    $mod.d1[0] = 100;
+    $mod.d2[0] = 200;
+    $mod.d3[0] = 300;
+    $mod.PickOne({p: $mod, get: function () {
+        return this.p.d1;
+      }, set: function (v) {
+        this.p.d1 = v;
+      }},$mod.d2,$mod.d3);
+    pas.System.Writeln(pas.SysUtils.IntToStr($mod.d1[0]));
+    pas.System.Writeln(pas.SysUtils.IntToStr($mod.d2[0]));
+    pas.System.Writeln(pas.SysUtils.IntToStr($mod.d3[0]));
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Passing static array parameter in Pas2JS</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+   TFixedSizeArray = array [0..9] of Integer;
+   TDynamicArray = array of Integer;
+
+procedure SomeProc(fixed : TFixedSizeArray; dynamico : TDynamicArray);
+begin
+  fixed[0]   := fixed[0] + 1;
+  SetLength(dynamico, 20);
+  dynamico[0] := fixed[0] + dynamico[0];
+end;
+
+
+var f : TFixedSizeArray;
+    d : TDynamicArray;
+
+begin
+  f[0] := 100;
+  SetLength(d, 10);
+  d[0] := 50;
+
+  SomeProc(f, d);
+
+  WriteLn(IntToStr( f[0]) );   //100
+  WriteLn(IntToStr( d[0]) );   //151
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+    100
+    151
+  }
+end.      
+</code></pre>
+<p style="font-size:smaller;">Note: f[0] will be unchanged after call SomeProc method! <strong>f is a TFixedSizeArray.</strong></p>
+
+<button type="button" id="checkoutbutton" onclick="showme('widget11');">Show JS code</button>
+<div id="widget11" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","JS","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.SomeProc = function (fixed, dynamico) {
+    fixed[0] = fixed[0] + 1;
+    dynamico = rtl.arraySetLength(dynamico,0,20);
+    dynamico[0] = fixed[0] + dynamico[0];
+  };
+  this.f = rtl.arraySetLength(null,0,10);
+  this.d = [];
+  $mod.$main = function () {
+    $mod.f[0] = 100;
+    $mod.d = rtl.arraySetLength($mod.d,0,10);
+    $mod.d[0] = 50;
+	//$mod.SomeProc($mod.f,$mod.d);
+    $mod.SomeProc($mod.f.slice(0),$mod.d);	
+	
+    pas.System.Writeln(pas.SysUtils.IntToStr($mod.f[0]));
+    pas.System.Writeln(pas.SysUtils.IntToStr($mod.d[0]));
+  };
+});
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Set the capacity of a array to 3 elements in Pas2JS</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TStringDynArray = array of String;
+
+var
+  wishes: TStringDynArray;     // No size given
+
+begin
+SetLength(wishes, 3);   // Set the capacity to 3 elements
+
+WriteLn('Low(wishes)  = '+IntToStr(Low(wishes)));
+WriteLn('High(wishes)  = '+IntToStr(High(wishes)));
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+    0
+    2
+  }
+end.   
+</code></pre>
+<p style="font-size:smaller;"><strong>Note:</strong> Here we have defined a wishes array containing string elements. We use the SetLength routine to set the array size. Such arrays are called dynamic because their size is determined dynamically (at run time). The SetLength routine can be used to change the array size more than once - decresaing or increasing the size as desired. My wishes array (list) may indeed grow quite large over time.
+Note that we have not given the starting index of the array. This is because we cannot - dynamic arrays always start at index 0.</p>
+<button type="button" id="checkoutbutton" onclick="showme('widget12');">Show JS code</button>
+<div id="widget12" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.wishes = [];
+  $mod.$main = function () {
+    $mod.wishes = rtl.arraySetLength($mod.wishes,"",3);
+    pas.System.Writeln("Low(wishes)  = " + pas.SysUtils.IntToStr(0));
+    pas.System.Writeln("High(wishes)  = " + pas.SysUtils.IntToStr(rtl.length($mod.wishes) - 1));
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">Array 4 x 5 in Pas2JS using SetLength</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TIntegerDynArray = array of Integer;
+
+var
+   // Define dynamic array
+   multiArray : Array of TIntegerDynArray;  // Multi-dimension array
+   i,j : Integer;
+
+ begin
+   SetLength(multiArray, 4, 5); //--> 4 rows x 5 cols
+   // Set the length of the 1st dimension of the multi-dim array
+   SetLength(multiArray, 5);
+
+   // Set the length of the 4 sub-arrays to different sizes
+   SetLength(multiArray[0], 5);
+   SetLength(multiArray[1], 5);
+   SetLength(multiArray[2], 5);
+   SetLength(multiArray[3], 5);
+
+   // Set and show all elements of this array
+   for i := 0 to High(multiArray) do
+     for j := 0 to High(multiArray[i]) do
+     begin
+       multiArray[i,j] := i+j;
+       WriteLn('multiArray['+IntToStr(i)+','+IntToStr(j)+'] = '+
+                   IntToStr(multiArray[i,j]));
+     end;
+
+  { ┌────────────────┐
+    │ Console output │
+    └────────────────┘
+    multiArray[0,0] = 0
+    multiArray[0,1] = 1
+    multiArray[0,2] = 2
+    multiArray[0,3] = 3
+    multiArray[0,4] = 4
+    multiArray[1,0] = 1
+    multiArray[1,1] = 2
+    multiArray[1,2] = 3
+    multiArray[1,3] = 4
+    multiArray[1,4] = 5
+    multiArray[2,0] = 2
+    multiArray[2,1] = 3
+    multiArray[2,2] = 4
+    multiArray[2,3] = 5
+    multiArray[2,4] = 6
+    multiArray[3,0] = 3
+    multiArray[3,1] = 4
+    multiArray[3,2] = 5
+    multiArray[3,3] = 6
+    multiArray[3,4] = 7
+--------------------------
+    0 1 2 3 4
+    1 2 3 4 5
+    2 3 4 5 6
+    3 4 5 6 7
+  }
+end.
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget13');">Show JS code</button>
+<div id="widget13" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.multiArray = [];
+  this.i = 0;
+  this.j = 0;
+  $mod.$main = function () {
+    $mod.multiArray = rtl.arraySetLength($mod.multiArray,0,4,5);
+    $mod.multiArray = rtl.arraySetLength($mod.multiArray,[],5);
+    $mod.multiArray[0] = rtl.arraySetLength($mod.multiArray[0],0,5);
+    $mod.multiArray[1] = rtl.arraySetLength($mod.multiArray[1],0,5);
+    $mod.multiArray[2] = rtl.arraySetLength($mod.multiArray[2],0,5);
+    $mod.multiArray[3] = rtl.arraySetLength($mod.multiArray[3],0,5);
+    for (var $l1 = 0, $end2 = rtl.length($mod.multiArray) - 1; $l1 <= $end2; $l1++) {
+      $mod.i = $l1;
+      for (var $l3 = 0, $end4 = rtl.length($mod.multiArray[$mod.i]) - 1; $l3 <= $end4; $l3++) {
+        $mod.j = $l3;
+        $mod.multiArray[$mod.i][$mod.j] = $mod.i + $mod.j;
+        pas.System.Writeln((((("multiArray[" + pas.SysUtils.IntToStr($mod.i)) + ",") + pas.SysUtils.IntToStr($mod.j)) + "] = ") + pas.SysUtils.IntToStr($mod.multiArray[$mod.i][$mod.j]));
+      };
+    };
+  };
+});
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">L</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget14');">Show JS code</button>
+<div id="widget14" style="display:none;">
+<pre>
+<code class="javascript">
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">M</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget15');">Show JS code</button>
+<div id="widget15" style="display:none;">
+<pre>
+<code class="javascript">
+
+</code></pre></div>
+</div>
+
+<pre><span id="code" class="language-css">N</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+
+</code></pre>
+<button type="button" id="checkoutbutton" onclick="showme('widget16');">Show JS code</button>
+<div id="widget16" style="display:none;">
+<pre>
+<code class="javascript">
+
+</code></pre></div>
+</div>
+
+</body>
+</html>

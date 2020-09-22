@@ -1,0 +1,345 @@
+<!-- (0064)Write&ExpandCode2=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Write command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Write, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Write</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Write data to a binary or text file</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>Write</b></font>
+
+(
+Expression1 {options} {, Expression2 {options} ...}
+)
+;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>Write</b></font>&nbsp;(
+<b>var FileHandle </b> : TextFile; Expression1 {options} {, Expression2 {options} ...}
+) ;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>Write</b></font>&nbsp;(
+<b>var FileHandle </b> : File; var Value1 {,var Value2 ...}
+) ;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Write</b></font> procedure writes a single line of data to a file or to the console.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+Is used to write a line of text to the console.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+<br>&nbsp;<br>
+Is used to write a line of text to a text file with the given <b>FileHandle</b>.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 3</b></font>
+<br>&nbsp;<br>
+Is used to write a line of data to a binary file with the given <b>FileHandle</b>.
+<br>&nbsp;<br>
+You must use <b>AssignFile</b> to assign a file to the <b>FileHandle</b> and open the file with <b>Reset</b> or <b>ReWrite</b> before using <font color=#996600><b>Write</b></font>.
+<br>&nbsp;<br>
+For <b>text</b> files, the text written may be any valid <b>Expression(s)</b>. Often these will be strings, but may also be expressions that result in strings or numbers.
+<br>&nbsp;<br>
+After each expression, you can add formatting options:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>:width&nbsp;</b></td><td class=dd> Field width for strings + numbers</td></tr>
+<tr><td class=dt align='right'><b>:precision&nbsp;</b></td><td class=dd> Decimal digits for numbers</td></tr></table>
+<br>&nbsp;<br>
+For typed <b>binary</b> files, data values <b>Value1, Value2</b> etc, are written as data lines to the file. These values must be of the same type as the file.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+You cannot use <font color=#996600><b>Write</b></font> to write to an untyped binary file (one declared as <b>File</b> with no following <b>of type</b>).<br>
+<br>
+To write to a binary file, use <b>BlockWrite</b>.<br>
+<br>
+<font color=#996600><b>Write</b></font> does not buffer records, so it is more efficient to use <b>BlockWrite</b>.<br>
+<br>
+<font color=#996600><b>Write</b></font> is also a <font color=#FF0000><b>Delphi directive</font></b>. It is used with the <b>Property</b> keyword.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="assignfile.htm">AssignFile</a></b></td>
+<td width="8"></td>
+<td align="left">Assigns a file handle to a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="blockread.htm">BlockRead</a></b></td>
+<td width="8"></td>
+<td align="left">Reads a block of data records from an untyped binary file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="blockwrite.htm">BlockWrite</a></b></td>
+<td width="8"></td>
+<td align="left">Writes a block of data records to an untyped binary file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="file.htm">File</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a typed or untyped file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="read.htm">Read</a></b></td>
+<td width="8"></td>
+<td align="left">Read data from a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="readln.htm">ReadLn</a></b></td>
+<td width="8"></td>
+<td align="left">Read a complete line of data from a text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="reset.htm">Reset</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text file for reading, or binary file for read/write</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="rewrite.htm">ReWrite</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text or binary file for write access</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="textfile.htm">TextFile</a></b></td>
+<td width="8"></td>
+<td align="left">Declares a file type for storing lines of text</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="writeln.htm">WriteLn</a></b></td>
+<td width="8"></td>
+<td align="left">Write a complete line of data to a text file</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrating single, multiple and formatted text line writing</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myFile : TextFile;<br>
+&nbsp;&nbsp;text&nbsp;&nbsp; : string;<br>
+&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Test.txt file for writing to</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'Test.txt');<br>
+&nbsp;&nbsp;ReWrite(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write a couple of well known words to this file</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>Write</b></font>(myFile, 'Hello ');<br>
+&nbsp;&nbsp;<font color=#C00000><b>Write</b></font>(myFile, 'World');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Terminate this line</b></font><br>
+&nbsp;&nbsp;WriteLn(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write some numbers to the file as a single line</b></font><br>
+&nbsp;&nbsp;for i := 2 to 4 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Write</b></font>(myFile, i/2, '&nbsp;&nbsp;');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Terminate this line</b></font><br>
+&nbsp;&nbsp;WriteLn(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Repeat the above, but with number formatting</b></font><br>
+&nbsp;&nbsp;for i := 2 to 4 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Write</b></font>(myFile, i/2:5:1);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Terminate this line</b></font><br>
+&nbsp;&nbsp;WriteLn(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file for reading only</b></font><br>
+&nbsp;&nbsp;Reset(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReadLn(myFile, text);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(text);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file for the last time</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/write&expandcode1=yes&expandcode2=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Hello World<br>&nbsp;&nbsp;
+1.00000000000000E+0000&nbsp;&nbsp;1.50000000000000E+0000&nbsp;&nbsp;2.00000000000000E+0000<br>&nbsp;&nbsp;
+1.0&nbsp;&nbsp;1.5&nbsp;&nbsp;2.0<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Write typed records to a record type binary file</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;<font color=#008000>// The System unit does not need to be defined</font><br>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> type</b><br>
+&nbsp;&nbsp;TCustomer = record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string[20];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age&nbsp;&nbsp;: Integer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;male : Boolean;<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>&nbsp;&nbsp;myFile&nbsp;&nbsp; : File of TCustomer;&nbsp;&nbsp;<font color=#008000><b>// A file of customer record</b></font><br>
+&nbsp;&nbsp;customer : TCustomer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Test.cus binary file for writing to</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'Test.cus');<br>
+&nbsp;&nbsp;ReWrite(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write a couple of customer records to the file</b></font><br>
+&nbsp;&nbsp;customer.name := 'Fred Bloggs';<br>
+&nbsp;&nbsp;customer.age&nbsp;&nbsp;:= 21;<br>
+&nbsp;&nbsp;customer.male := true;<br>
+&nbsp;&nbsp;<font color=#C00000><b>Write</b></font>(myFile, customer);<br><b>
+</b><br>
+&nbsp;&nbsp;customer.name := 'Jane Turner';<br>
+&nbsp;&nbsp;customer.age&nbsp;&nbsp;:= 45;<br>
+&nbsp;&nbsp;customer.male := false;<br>
+&nbsp;&nbsp;<font color=#C00000><b>Write</b></font>(myFile, customer);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file in read only mode</b></font><br>
+&nbsp;&nbsp;FileMode := fmOpenRead;<br>
+&nbsp;&nbsp;Reset(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Read(myFile, customer);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if customer.male<br>
+&nbsp;&nbsp;&nbsp;&nbsp;then WriteLn('Man with name '+customer.name+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' is '+IntToStr(customer.age))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else WriteLn('Lady with name '+customer.name+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' is '+IntToStr(customer.age));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file for the last time</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="write.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Man with name Fred Bloggs is 21<br>&nbsp;&nbsp;
+Lady with name Jane Turner is 45<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Writing to a Word type binary file</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myWord, myWord1, myWord2 : Word;<br>
+&nbsp;&nbsp;myFile : File of Word;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Test.bin binary file for writing to</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'Test.bin');<br>
+&nbsp;&nbsp;ReWrite(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write a couple of lines of Word data to the file</b></font><br>
+&nbsp;&nbsp;myWord1 := 234;<br>
+&nbsp;&nbsp;myWord2 := 567;<br>
+&nbsp;&nbsp;<font color=#C00000><b>Write</b></font>(myFile, myWord1, myWord2);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file in read only mode</b></font><br>
+&nbsp;&nbsp;FileMode := fmOpenRead;<br>
+&nbsp;&nbsp;Reset(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Read(myFile, myWord);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(myWord));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file for the last time</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/write&expandcode2=yes&expandcode3=yes.htm#Ex3"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;234<br>&nbsp;&nbsp;
+567<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

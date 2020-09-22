@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Crypto</title>
+  <script type="text/javascript" src="lib/aes.min.js"></script>
+  
+  <script src="project1.js"></script>
+  <style>body{margin:40px}.wrapper{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr 1fr 1fr;grid-column-gap:0;grid-row-gap:0;background-color:#fff;color:#444;border:groove}.box{border-radius:5px;padding:10px;font-size:100%}.div1{grid-area:1/1/2/7;text-align:center;border-bottom:2px solid #1c6ea4;background-color:#d1d9e2}.div2{grid-area:2/1/3/4}.div3{grid-area:2/4/3/7}.div4{grid-area:3/1/4/7}.div5{grid-area:4/1/5/2}.div6{grid-area:4/2/5/7}.div7{grid-area:5/1/6/4}.div8{grid-area:5/4/6/7}.fieldset1{border:2px solid #1c6ea4;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.btn{background:#eb94d0;background-image:-webkit-linear-gradient(top,#444,#2079b0);background-image:-moz-linear-gradient(top,#444,#2079b0);background-image:-ms-linear-gradient(top,#444,#2079b0);background-image:-o-linear-gradient(top,#444,#2079b0);background-image:linear-gradient(to bottom,#444,#2079b0);-webkit-border-radius:28;-moz-border-radius:28;border-radius:28px;text-shadow:3px 2px 1px #9daef5;-webkit-box-shadow:6px 5px 24px #666;-moz-box-shadow:6px 5px 24px #666;box-shadow:6px 5px 24px #666;font-family:Arial;color:#fafafa;font-size:18px;margin:5px;text-decoration:none}fieldset{border:none}.container{width:800px;background:rgba(89,178,255,.48);margin:10px auto;min-height:100px;border:1px solid #000;border-radius:3px;box-shadow:inset 0 0 84px rgba(0,154,255,.43)}.title{font-size:16px;font-weight:700;font-family:arial;text-shadow:-1px 3px 10px rgba(255,255,255,.61),2px 0 8px #fff;padding:4px 36px;background:url(https://cdn4.iconfinder.com/data/icons/seed-png/program_group.png) no-repeat 1% 85%;background-size:24px}.main{padding:10px;border:1px solid #000;margin:5px;background:#fff}input{width:100%}</style>
+</head>
+<body>
+
+<div class="container">
+<div class="title"><a href="https://cdnjs.com/libraries/crypto-js" style="text-decoration:none">Crypto - pas2js demo</a></div>
+  <div class="main">
+	<div class="wrapper">
+	  <div class="box div1"><h1><a href="https://cdnjs.com/libraries/crypto-js" style="text-decoration:none">Crypto - pas2js demo</a></h1></div>
+	  <div class="box div2"><label for="">Encrypt the text: </label><button class="btn encrypt"> Encrypt </button><input type="text" placeholder="" id="en"/></div>
+	  <div class="box div3"><label for="">Decrypt the text: </label><button class="btn decrypt"> Decrypt </button><input type="text" placeholder="" id="de"/></div>
+	  <div class="box div4"><fieldset class="fieldset1">Encrypted cipher:<div class="box bb" id="resultado"></div></fieldset></div>
+	  <div class="box div5"><fieldset><div>Key size:</div><select id="keysize"><option>128</option><option>192</option><option>256</option></select></fieldset></div>
+	  <div class="box div6"><button class="btn genkey">generate Key</button><input type="text" placeholder="" id="key" style='width:50%'/></div>
+	  <div class="box div7"><fieldset>Gen UUID1: <input type="text" placeholder="" id="d1" /><button class="btn uuid1">gen UUID1</button></fieldset></div>
+	  <div class="box div8"><fieldset>Gen UUID2: <input type="text" placeholder="" id="d2" /><button class="btn uuid2">gen UUID2</button></fieldset></div>
+	</div>	
+  </div>
+	<div class="footer"></div>
+</div>
+
+  <script>window.addEventListener("load", rtl.run);</script>
+</body>
+</html>

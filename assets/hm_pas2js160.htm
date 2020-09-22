@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">for in Str</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js159.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js161.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	for..in String
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+var c: Integer;
+var s: String;
+
+const
+  cHello = 'Hello';
+
+for c in cHello do
+  WriteLn(Chr(c) + ': ' + IntToStr(c));
+
+s := #$1D538#$3B1#$1D516;
+
+for c in s do
+  WriteLn('unicode $' + UpperCase(IntToHex(c, 5)));
+
+var i: Integer;
+for i := Low(s) to High(s) do
+begin
+  c := Ord(s[i]);
+  WriteLn('ord $' + UpperCase(IntToHex(c, 5)));
+end;
+
+var trap := 'trap';
+
+function TrapIt: String;
+begin
+  Result := trap;
+  trap := 'bug';
+end;
+
+for c in TrapIt do
+  WriteLn(Chr(c) + ': $' + UpperCase(IntToHex(c, 5)));
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+H: 72
+e: 101
+l: 108
+l: 108
+o: 111
+unicode $1D538
+unicode $003B1
+unicode $1D516
+ord $0D835
+ord $0DD38
+ord $003B1
+ord $0D835
+ord $0DD16
+t: $00074
+r: $00072
+a: $00061
+p: $00070
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TObject = {
+	$ClassName : "TObject",
+	$Parent : null,
+	ClassName : function (s) {
+		return s.$ClassName
+	},
+	ClassType : function (s) {
+		return s
+	},
+	ClassParent : function (s) {
+		return s.$Parent
+	},
+	$Init : function () {},
+	Create : function (s) {
+		return s
+	},
+	Destroy : function (s) {
+		for (var prop in s)
+			if (s.hasOwnProperty(prop))
+				delete s.prop
+	},
+	Destroy$ : function (s) {
+		return s.ClassType.Destroy(s)
+	},
+	Free : function (s) {
+		if (s !== null)
+			s.ClassType.Destroy(s)
+	}
+}
+function IntToHex(v, d) {
+	var r = v.toString(16);
+	return "00000000".substr(0, d - r.length) + r
+}
+var Exception = {
+	$ClassName : "Exception",
+	$Parent : TObject,
+	$Init : function () {
+		FMessage = ""
+	},
+	Create : function (s, Msg) {
+		s.FMessage = Msg;
+		return s
+	}
+}
+function Chr(c) {
+	if (c <= 0xFFFF)
+		return String.fromCharCode(c);
+	c -= 0x10000;
+	return String.fromCharCode(0xD800 + (c >> 10)) + String.fromCharCode(0xDC00 + (c & 0x3FF));
+}
+// inspired from
+// https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String/charCodeAt
+function $uniCharCodeAt(str, idx) {
+	var c = str.charCodeAt(idx);
+	if (0xD800 <= c && c <= 0xDBFF) { // High surrogate
+		var lo = str.charCodeAt(idx + 1);
+		if (isNaN(lo))
+			return c;
+		return ((c - 0xD800) * 0x400) + (lo - 0xDC00) + 0x10000;
+	}
+	if (0xDC00 <= c && c <= 0xDFFF) { // Low surrogate
+		return -1;
+	}
+	return c;
+}
+function $SCodeIdx(s, i, z) {
+	if (i < 1)
+		throw Exception.Create($New(Exception), "Lower bound exceeded! Index " + i.toString() + z);
+	if (i > s.length)
+		throw Exception.Create($New(Exception), "Upper bound exceeded! Index " + i.toString() + z);
+	return s.charCodeAt(i - 1);
+}
+function $New(c) {
+	var i = {
+		ClassType : c
+	};
+	c.$Init(i);
+	return i
+}
+function WriteLn(value) {
+	if (window.console) {
+		window.console.log(value);
+	}
+};
+function TrapIt() {
+	var Result = "";
+	Result = trap;
+	trap = "bug";
+	return Result
+};
+var c = 0;
+var s = "";
+var i = 0;
+var trap = "";
+
+/* <<< main JS >>> */
+
+var $temp1 = "Hello";
+for (var $temp2 = 0; $temp2 < $temp1.length; $temp2++) {
+	c = $uniCharCodeAt($temp1, $temp2);
+	if (c < 0)
+		continue;
+	WriteLn((Chr(c) + ": " + c.toString()))
+}
+s = "\uD835\uDD38\u03B1\uD835\uDD16";
+for (var $temp3 = 0; $temp3 < s.length; $temp3++) {
+	c = $uniCharCodeAt(s, $temp3);
+	if (c < 0)
+		continue;
+	WriteLn(("unicode $" + (IntToHex(c, 5)).toUpperCase()))
+}
+var $temp4;
+for (i = 1, $temp4 = s.length; i <= $temp4; i++) {
+	c = $SCodeIdx(s, i, "");
+	WriteLn(("ord $" + (IntToHex(c, 5)).toUpperCase()));
+}
+trap = "trap";
+var $temp5 = TrapIt();
+for (var $temp6 = 0; $temp6 < $temp5.length; $temp6++) {
+	c = $uniCharCodeAt($temp5, $temp6);
+	if (c < 0)
+		continue;
+	WriteLn((Chr(c) + ": $" + (IntToHex(c, 5)).toUpperCase()))
+}
+</code></pre></div>
+</div>
+</body>
+</html>

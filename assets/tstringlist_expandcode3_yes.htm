@@ -1,0 +1,305 @@
+<!-- (0070)TStringList&ExpandCode3=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TStringList command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TStringList, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TStringList</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Holds a variable length list of strings</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Classes</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>TStringList</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+<font color=#996600><b>TStringList</b></font> is a utility class type. It is extremely useful for many kinds of list processing. Items in a string list may be inserted, moved and sorted.
+<br>&nbsp;<br>
+The list can be built string by string, or loaded from a comma separated big string, or even from a text file.
+<br>&nbsp;<br>
+<font color=#996600><b>TStringList</b></font> is derived from <b>TStrings</b>. Whilst you can use TStrings, it is not recommended since it is incomplete - some of the methods are abstract. TStringList implements these abstract methods (Clear, Delete and Insert). We'll cover the main properties and methods of <font color=#996600><b>TStringList</b></font>, including those derived from <b>TStrings</b>
+<br>&nbsp;<br>
+<font color=#008000><b>Count</b> property</font><br>
+Returns the number of strings in the list
+<br>&nbsp;<br>
+<font color=#008000><b>Capacity</b> property</font><br>
+Set or get the current capacity of the string list. You would manage this capacity for performance reasons.
+<br>&nbsp;<br>
+<font color=#008000><b>Strings</b> property</font><br>
+Get or update the string at a given index in the list (the first list item has index 0).
+<br>&nbsp;<br>
+Note that the <b>Strings</b> property is the default property. This means that you can use it without specifying its name:
+<br>&nbsp;<br>
+<font class=mono><font color=#200080>&nbsp;&nbsp;myName := names.Strings[4];</font></font>
+<br>&nbsp;<br>
+is equivalent to :
+<br>&nbsp;<br>
+<font class=mono><font color=#200080>&nbsp;&nbsp;myName := names[4];</font></font>
+<br>&nbsp;<br>
+<font color=#008000><b>Text</b> property</font><br>
+Set or get the list via a big string. This string will have each string terminated with a carriage return and line feed combination (CRLF). Useful for loading from a visual object that can hold multiple lines of text.
+<br>&nbsp;<br>
+<font color=#008000><b>CommaText</b> property</font><br>
+Get or set the list via a big string. This string will have the list strings separated by commas. This is useful for loading from a text spreadsheet export. When getting, if a string contains embedded spaces, it will be enclosed in double quote marks.
+<br>&nbsp;<br>
+<font color=#008000><b>DelimitedText</b> property</font><br>
+Get or set the list via a big string. This string will have the list strings separated by the <b>Delimiter</b> value (default is a comma). Strings containing embedded blanks must be enclosed in the <b>QuoteChar</b> (default is ").
+<br>&nbsp;<br>
+<font color=#008000><b>QuoteChar</b> property</font><br>
+Used to enclose strings that have embedded blanks when using <b>DelimitedText</b>.
+<br>&nbsp;<br>
+<font color=#008000><b>Delimiter</b> property</font><br>
+Used to separate strings when using <b>DelimitedText</b>.
+<br>&nbsp;<br>
+<font color=#008000><b>Names</b> property</font><br>
+Strings in a string list can be treated as name/value pairs, as in the second code example. Each string must have no embedded blanks, and contain an embedded = sign (or whatever the current <b>NameValueSeparator</b> variable is).
+<br>&nbsp;<br>
+This is a very useful concept. See the <b>Value</b> and <b>ValueFromIndex</b> properties, and the <b>IndexOfName</b> method.
+<br>&nbsp;<br>
+<font color=#008000><b>Values</b> property</font><br>
+Returns the value for a given name when using name/value pair strings (see above).
+<br>&nbsp;<br>
+<font color=#008000><b>ValueFromIndex</b> property</font><br>
+Returns the value by string index (starting at 0) when using name/value pairs.
+<br>&nbsp;<br>
+<font color=#008000><b>CaseSensitive</b> property</font><br>
+When <b>true</b>, Delphi treats strings as mixed case when perforing certain operations, such as <b>Sort</b>.
+<br>&nbsp;<br>
+<font color=#008000><b>Duplicates</b> property</font><br>
+This property may have one of the following <b>TDuplicates</b> enumeration values:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>dupIgnore&nbsp;</b></td><td class=dd>Ignore (discard) duplicates</td></tr>
+<tr><td class=dt align='right'><b>dupAccept&nbsp;</b></td><td class=dd>Allow duplicates</td></tr>
+<tr><td class=dt align='right'><b>dupError&nbsp;</b></td><td class=dd>Throw exception if duplicates</td></tr></table>
+<br>&nbsp;<br>
+You should of course set this property to the desired value before adding strings.
+<br>&nbsp;<br>
+<font color=#008000><b>Sorted</b> property</font><br>
+When <b>true</b> all strings added will into a sorted sequence. When <b>false</b>, they are added at the end. See also the <b>Sort</b> method.
+<br>&nbsp;<br>
+<font color=#008000><b>Objects</b> property</font><br>
+Returns the object associated with the string at the given index, if present.
+<br>&nbsp;<br>
+<font color=#008000><b>Add</b> method</font><br>
+Will add the given string to the list, returning its allocated index position (starting with 0).
+<br>&nbsp;<br>
+<font color=#008000><b>Append</b> method</font><br>
+As <b>Add</b> but does not return the index value.
+<br>&nbsp;<br>
+<font color=#008000><b>Insert</b> method</font><br>
+Inserts a string at the given index position. Position 0 will force an insert at the start.
+<br>&nbsp;<br>
+<font color=#008000><b>Delete</b> method</font><br>
+Deletes the string at the given index.
+<br>&nbsp;<br>
+<font color=#008000><b>Clear</b> method</font><br>
+Deletes all strings from the list.
+<br>&nbsp;<br>
+<font color=#008000><b>Move</b> method</font><br>
+Moves a string from one index position to another, shifting other strings around as appropriate.
+<br>&nbsp;<br>
+<font color=#008000><b>Exchange</b> method</font><br>
+Swaps two strings in the list, as identified by their index positions.
+<br>&nbsp;<br>
+<font color=#008000><b>IndexOf</b> method</font><br>
+Gets the index position of the first string matching the given string. Or -1 if not found.
+<br>&nbsp;<br>
+<font color=#008000><b>IndexOfName</b> method</font><br>
+Gets the index position of the first name/value pair string where the name matches the given string. Or -1 if not found.
+<br>&nbsp;<br>
+<font color=#008000><b>Find</b> method</font><br>
+Same as <b>IndexOf</b> but used with sorted string lists.
+<br>&nbsp;<br>
+<font color=#008000><b>Sort</b> method</font><br>
+When <b>Sorted</b> is false, this will force a sort of the list.
+<br>&nbsp;<br>
+<font color=#008000><b>AddStrings</b> method</font><br>
+Adds the strings from another list into this one.
+<br>&nbsp;<br>
+<font color=#008000><b>Assign</b> method</font><br>
+Replaces the current list with the contents of another list.
+<br>&nbsp;<br>
+<font color=#008000><b>LoadFromFile</b> method</font><br>
+Very useful indeed - loads a string list from a text file. Each text line (as terminated by CRLF - see <b>DelimitedText</b>) becomes a list string.
+<br>&nbsp;<br>
+<font color=#008000><b>SaveToFile</b> method</font><br>
+Will save a string list to a text file.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="ansistring.htm">AnsiString</a></b></td>
+<td width="8"></td>
+<td align="left">A data type that holds a string of AnsiChars</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="array.htm">Array</a></b></td>
+<td width="8"></td>
+<td align="left">A data type holding indexable collections of data</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="string.htm">String</a></b></td>
+<td width="8"></td>
+<td align="left">A data type that holds a string of characters</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tlist.htm">TList</a></b></td>
+<td width="8"></td>
+<td align="left">General purpose container of a list of objects</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;animals : <font color=#C00000><b>TStringList</b></font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Define our string list variable</b></font><br>
+&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a string list object, and point our variable at it</b></font><br>
+&nbsp;&nbsp;animals := TStringList.Create;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now add some names to our list</b></font><br>
+&nbsp;&nbsp;animals.Add('Cat');<br>
+&nbsp;&nbsp;animals.Add('Mouse');<br>
+&nbsp;&nbsp;animals.Add('Giraffe');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display these animals</b></font><br>
+&nbsp;&nbsp;for i := 0 to animals.Count-1 do<br>&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(animals[i]);&nbsp;&nbsp;<font color=#008000><b>// animals[i] equates to animals.Strings[i]</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Free up the list object</b></font><br>
+&nbsp;&nbsp;animals.Free;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/tstringlist&expandcode1=yes&expandcode3=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Cat<br>&nbsp;&nbsp;
+Mouse<br>&nbsp;&nbsp;
+Giraffe<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Using name-value strings</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;names&nbsp;&nbsp;: <font color=#C00000><b>TStringList</b></font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Define our string list variable</b></font><br>
+&nbsp;&nbsp;ageStr : String;<br>
+&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a string list object, and point our variable at it</b></font><br>
+&nbsp;&nbsp;names := TStringList.Create;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now add some names to our list</b></font><br>
+&nbsp;&nbsp;names.CommaText := 'Neil=45, Brian=63, Jim=22';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And now find Brian's age</b></font><br>
+&nbsp;&nbsp;ageStr := names.Values['Brian'];<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display this value</b></font><br>
+&nbsp;&nbsp;WriteLn('Brians age = '+ageStr);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display all name and age pair values</b></font><br>
+&nbsp;&nbsp;for i := 0 to names.Count-1 do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(names.Names[i]+' is '+names.ValueFromIndex[i]);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Free up the list object</b></font><br>
+&nbsp;&nbsp;names.Free;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/tstringlist&expandcode2=yes&expandcode3=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Brians age is 63<br>&nbsp;&nbsp;
+Neil is 45<br>&nbsp;&nbsp;
+Brian is 63<br>&nbsp;&nbsp;
+Jim is 22<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Using <b>DelimitedText, Delimiter</b> and <b>QuoteChar</b></b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Classes, <font color=#008000>&nbsp;&nbsp;// Unit containing the TStringList command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>&nbsp;&nbsp;cars : <font color=#C00000><b>TStringList</b></font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Define our string list variable</b></font><br>
+&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;: Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a string list object, and point our variable at it</b></font><br>
+&nbsp;&nbsp;cars := TStringList.Create;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now add some cars to our list - using the DelimitedText property</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// with overriden control variables</b></font><br>&nbsp;&nbsp;cars.Delimiter := ' ';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Each list item will be blank separated</b></font><br>&nbsp;&nbsp;cars.QuoteChar := '|';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// And each item will be quoted with |'s</b></font><br>
+&nbsp;&nbsp;cars.DelimitedText := '|Honda Jazz| |Ford Mondeo| |Jaguar "E-type"|';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display these cars</b></font><br>
+&nbsp;&nbsp;for i := 0 to cars.Count-1 do<br>&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(cars[i]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// cars[i] equates to cars.Strings[i]</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Free up the list object</b></font><br>
+&nbsp;&nbsp;cars.Free;<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="tstringlist.htm#Ex3"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Honda Jazz<br>&nbsp;&nbsp;
+Ford Mondeo<br>&nbsp;&nbsp;
+Jaguar "E-type"<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

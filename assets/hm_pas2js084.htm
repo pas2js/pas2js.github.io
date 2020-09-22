@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Class operator += </span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js083.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js085.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Class operator example
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+TTest = class
+ Field : String;
+ procedure AppendString(str : String);
+ class operator += String uses AppendString;
+end;
+
+type
+  TSubTest = class(TTest)
+end;
+
+procedure TTest.AppendString(str : String);
+begin
+   Field:=Field+str+',';
+end;
+
+{ << TEST II >> }
+type
+TTest2 = class
+ Field : String;
+ procedure AppendString(str : String);
+ procedure AppendInteger(i : Integer);
+ class operator += String uses AppendString;
+ class operator += Integer uses AppendInteger;
+end;
+
+procedure TTest2.AppendString(str : String);
+begin
+   Field:=Field+'"'+str+'",';
+end;
+
+procedure TTest2.AppendInteger(i : Integer);
+begin
+   Field:=Field+IntToStr(i)+',';
+end;
+
+{ << TEST III >> }
+type
+   toa = array of const;
+
+type
+TTest3 = class
+ Field : String;
+ procedure AppendStrings(const str : toa);
+ class operator += toa uses AppendStrings;
+end;
+
+procedure TTest3.AppendStrings(const str : array of const);
+var
+   i : Integer;
+begin
+   for i:=0 to High(str) do
+      Field+=str[i];
+end;
+
+{ main.pas }
+
+var
+  t = TTest.Create;
+ st = TSubTest.Create;
+ t2 = TTest2.Create;
+ t3 = TTest3.Create;
+
+Begin
+t.AppendString('first');
+WriteLn(t.Field);
+
+t += 'second';
+WriteLn(t.Field);
+
+st.Field:='Hello ';
+st += 'World';
+WriteLn(st.Field);
+{ ### CONSOLE OUTPUTS ###
+  first,
+  first,second,
+  Hello World,
+}
+
+{ << TEST II >> }
+t2 += 1;
+WriteLn(t2.Field);
+
+t2 += 'second';
+WriteLn(t2.Field);
+
+t2 += 3;
+WriteLn(t2.Field);
+{ ### CONSOLE OUTPUTS ###
+1,
+1,"second",
+1,"second",3,
+}
+
+{ << TEST III >> }
+t3 += [1, 2];
+WriteLn(t3.Field);
+
+t3 += ['a', 'b', 'c'];
+WriteLn(t3.Field);
+
+t3 += [];
+WriteLn(t3.Field);
+{ ### CONSOLE OUTPUTS ###
+  12
+  12abc
+  12abc
+}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+      var t = null,
+         t = TObject.Create($New(TTest));
+      var st = null,
+         st = TObject.Create($New(TSubTest));
+      var t2 = null,
+         t2 = TObject.Create($New(TTest2));
+      var t3 = null,
+         t3 = TObject.Create($New(TTest3));
+      TTest.AppendString$1(t,"first");
+      WriteLn(t.Field$2);
+      TTest.AppendString$1(t,"second");
+      WriteLn(t.Field$2);
+      st.Field$2 = "Hello ";
+      TTest.AppendString$1(st,"World");
+      WriteLn(st.Field$2);
+      TTest2.AppendInteger(t2,1);
+      WriteLn(t2.Field$1);
+      TTest2.AppendString(t2,"second");
+      WriteLn(t2.Field$1);
+      TTest2.AppendInteger(t2,3);
+      WriteLn(t2.Field$1);
+      TTest3.AppendStrings(t3,[1, 2]);
+      WriteLn(t3.Field);
+      TTest3.AppendStrings(t3,["a", "b", "c"]);
+      WriteLn(t3.Field);
+      TTest3.AppendStrings(t3,[]);
+      WriteLn(t3.Field);
+	  
+/// TTest3 = class (TObject)
+///  [line: 112, column: 1, file: uMain]
+var TTest3 = {
+   $ClassName:"TTest3",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field = "";
+   }
+   /// procedure TTest3.AppendStrings(const str: toa)
+   ///  [line: 118, column: 18, file: uMain]
+   ,AppendStrings:function(Self, str) {
+      var i = 0;
+      var $temp1;
+      for(i=0,$temp1=str.length;i<$temp1;i++) {
+         Self.Field+=String(str[i]);
+      }
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TTest2 = class (TObject)
+///  [line: 89, column: 1, file: uMain]
+var TTest2 = {
+   $ClassName:"TTest2",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field$1 = "";
+   }
+   /// procedure TTest2.AppendString(str: String)
+   ///  [line: 97, column: 18, file: uMain]
+   ,AppendString:function(Self, str$1) {
+      Self.Field$1 = Self.Field$1+"\""+str$1+"\",";
+   }
+   /// procedure TTest2.AppendInteger(i: Integer)
+   ///  [line: 102, column: 18, file: uMain]
+   ,AppendInteger:function(Self, i$1) {
+      Self.Field$1 = Self.Field$1+i$1.toString()+",";
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TTest = class (TObject)
+///  [line: 72, column: 1, file: uMain]
+var TTest = {
+   $ClassName:"TTest",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field$2 = "";
+   }
+   /// procedure TTest.AppendString(str: String)
+   ///  [line: 82, column: 17, file: uMain]
+   ,AppendString$1:function(Self, str$2) {
+      Self.Field$2 = Self.Field$2+str$2+",";
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TSubTest = class (TTest)
+///  [line: 79, column: 3, file: uMain]
+var TSubTest = {
+   $ClassName:"TSubTest",$Parent:TTest
+   ,$Init:function ($) {
+      TTest.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};	  
+
+</code></pre></div>
+</div>
+</body>
+</html>

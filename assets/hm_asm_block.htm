@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>ASM Blocks</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-family: 'Times New Roman'; font-weight: bold; color: #ffffff;">ASM Blocks</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_themes.htm">Previous</a>&nbsp;
+     <a href="hm__directives.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify; background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">ASM blocks</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In the world of Delphi or free pascal, it’s quite rare to find people that write assembler side by side with their pascal code anymore. Real assembler is complex, error prone and tricky to master (which is why so few people are good at it). But under Smart assembler is pure fun – because to a browser assembler is JavaScript! Unlike x86 assembler, JavaScript is reasonably easy to work with (although abhorrently difficult to get right beyond 20.000 lines) and if you want to interface more closely with the browser – you have no other option but to use an ASM section. So ASM sections contain normal JavaScript, not machine instructions. Let us have a look at the ground rules:</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TMyObject.Testing;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #800000;">mRef</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TObject</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">mRef&nbsp;</span><span class="f_CodeExample" style="color: #000000;">:=&nbsp;tagRef;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;asm</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;(</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">@mRef</span><span class="f_CodeExample" style="color: #000000;">).style.width=100&nbsp;+&nbsp;&quot;px&quot;;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">What we do here is to first get a handle to the our tag (the tagRef is a public property of TW3TagObject, the base class for all our controls and components). We then enter the ASM section, use that reference to access and alter the width style property of our control. Of-course you don’t have to do things this way, our RTL is quite rich in functions to deal with such simple tasks. But learning how to benefit from your JavaScript skills is a great bonus. You get the best of both worlds. The same could easily be achieved with a function from our w3systems.pas RTL unit:</span></p>
+<p style="text-align: justify; border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99; margin: 0px 0px 9px 0px;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;"> TMyObject.Testing;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">asm</span><br>
+<span class="f_CodeExample" style="color: #000000;"> </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">w3_setStyle</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">tagRef</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">'width'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">w3_intToPxStr(100)</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">There is one important rule when mixing raw JavaScript with Object Pascal code though, and that is that you </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; color: #000000;">must prefix</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> any variables comming from the pascal side with the @ character. The reason is that when our obfuscator (a process that makes the generated sourcecode "unreadable" to human eyes) examines your code, all the names, variables and tokens are altered. As such, the compiler needs something extra to distinguish pascal symbols from raw JavaScript symbols. So all Object Pascal variables (or references) must be prefixed. Due to the nature of JavaScript, in some cases you also have to isolate references inside a ( .. ) block, like this:</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;"> </span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">TMyObject</span><span class="f_CodeExample" style="color: #000000;">.Testing;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">asm</span><br>
+<span class="f_CodeExample" style="color: #000000;"> (</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">@self.FWidth</span><span class="f_CodeExample" style="color: #000000;">) = </span><span class="f_CodeExample" style="color: #0000ff;">parseInt</span><span class="f_CodeExample" style="color: #000000;">( (</span><span class="f_CodeExample" style="color: #ff0000;">@mRef</span><span class="f_CodeExample" style="color: #000000;">).style.width );</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Of-course, you can use functions in w3system.pas to achieve the exact same thing:</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;"> </span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">TMyObject</span><span class="f_CodeExample" style="color: #000000;">.Testing;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;"> &nbsp;self.width := </span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">w3_getStyleAsInt</span><span class="f_CodeExample" style="color: #000000;">(tagRef,</span><span class="f_CodeExample" style="color: #0000ff;">'width'</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note:</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> The above is </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">not</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> an example of how to size a control. TW3CustomControl have ample properties and methods for moving and resizing, just like TCustomControl have in Delphi.</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">How would you &quot;export&quot; a function created in Smart Pascal to use outside of Pas2JS closure?</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Myfunction();</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;WriteLn('test');</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">initialization</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">asm</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;window.Myfunction&nbsp;=&nbsp;@Myfunction;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

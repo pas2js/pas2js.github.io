@@ -1,0 +1,189 @@
+<!-- (0058)$ExtendedSyntax -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : $ExtendedSyntax command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, $ExtendedSyntax, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>$ExtendedSyntax</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Compiler Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Controls some Pascal extension handling</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$ExtendedSyntax</b> Off}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$ExtendedSyntax</b> On}
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>$ExtendedSyntax</b></font> compiler directive determines whether Delphi includes a number of Pascal language extensions or not.
+<br>&nbsp;<br>
+This affects three areas:
+<br>&nbsp;<br>
+<font color=#FF0000><b>1.</b>Treating functions as procedures</font>
+<br>&nbsp;<br>
+The example code shows the before and after effect of <font color=#996600><b>$ExtendedSyntax</b></font>. When <b>On</b>, Delphi will allow a function result to be ignored - unassigned - thereby treating the function as if it were a procedure.
+<br>&nbsp;<br>
+<font color=#FF0000><b>2.</b>Using <b>Result</b> in functions</font>
+<br>&nbsp;<br>
+With <font color=#996600><b>$ExtendedSyntax</b></font> Off, you must return a function value by assigning to the pseudo variable of the same name as the function. For example :
+<font class=mono><font color=#008000>
+function GetValue : Integer;
+begin
+&nbsp;&nbsp;GetValue := 23;
+end;</font></font>
+<br>&nbsp;<br>
+With <font color=#996600><b>$ExtendedSyntax</b></font> On, you can also assign to the pseudo variable <b>Result</b> as in the example code.
+<br>&nbsp;<br>
+<font color=#FF0000><b>3.</b>Treating Char arrays as strings</font>
+<br>&nbsp;<br>
+With <font color=#996600><b>$ExtendedSyntax</b></font> On, a zero base array of Char variables can be assigned a string value. It can also be assigned from, as long as the array has a #0 value element to signify the string end. 
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#996600><b>$ExtendedSyntax</b></font> is equivalent to <b>$X</b>.<br>
+<br>
+The default value is <font color=#996600><b>$ExtendedSyntax</b></font> On<br>
+<br>
+<font color=#996600><b>$ExtendedSyntax</b></font> should be set just once in your code.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$booleval.htm">$BoolEval</a></b></td>
+<td width="8"></td>
+<td align="left">Whether to short cut <b>and</b> and <b>or</b> operations</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$x.htm">$X</a></b></td>
+<td width="8"></td>
+<td align="left">Controls some Pascal extension handling</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Fail to compile code that does not assign a function result</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set extended syntax off</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$ExtendedSyntax</b></font> Off}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Call the GetValue function without assigning the result</b></font><br>
+&nbsp;&nbsp;GetValue;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// A function that simply returns the value 1</b></font><br><b>
+function TForm1.GetValue: Integer;</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Result := 1;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$extendedsyntax&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Compiltaion fails :<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+[Error] Unit1.pas(39): Statement expected, but expression of type 'Integer' found<br>&nbsp;&nbsp;
+[Error] Unit1.pas(45) Undeclared identifier: 'Result'<br>&nbsp;&nbsp;
+[Fatal Error] Project1.dpr(5): Could not compile used unit 'Unit1.pas'<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Code that does not assign a function result compiles OK</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set extended syntax on</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$ExtendedSyntax</b></font> On}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Call the GetValue function without assigning the result</b></font><br>
+&nbsp;&nbsp;GetValue;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// A function that simply returns the value 1</b></font><br><b>
+function TForm1.GetValue: Integer;</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Result := 1;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$extendedsyntax&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Code compiles OK and runs without doing anything.<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

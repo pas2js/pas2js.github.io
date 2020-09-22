@@ -1,0 +1,233 @@
+<!-- (0047)File -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : File command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, File, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>File</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines a typed or untyped file</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+var UntypedFile : <b>File</b>;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+var TypedFile : <b>File</b> of some type;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>File</b></font> keyword is used to define a variable as a binary file, normally as written to and read from a storage device.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+Gives a base untyped file. Such a file can only be read from and written to using <b>BlockRead</b> and <b>BlockWrite</b>. The basic data type is a byte. 
+<br>&nbsp;<br>
+<b>AssignFile</b> must be used to get a file handle.
+<br>&nbsp;<br>
+<b>Reset</b> or <b>ReWrite</b> must then be used to open the file for read and/or write access. These specify the number of bytes that comprise one 'record' as seen by the BlockRead and BlockWrite routines.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+<br>&nbsp;<br>
+Defines the file with a base data type. For example, a simple type such as a <b>char</b> or a complex type such as a <b>Record</b>. 
+<br>&nbsp;<br>
+<b>AssignFile</b> must be used to get a file handle.
+<br>&nbsp;<br>
+<b>Reset</b> or <b>ReWrite</b> must then be used to open the file for read and/or write access. <b>Read</b> and <b>Write</b> must be used to access the file.
+<br>&nbsp;<br>
+In all cases, the type must be of fixed size, and access to the file must be in units of that type.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+When using <b>Records</b>, make sure that they are <b>Packed</b> to prevent alignment problems.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="append.htm">Append</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text file to allow appending of text to the end</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="assignfile.htm">AssignFile</a></b></td>
+<td width="8"></td>
+<td align="left">Assigns a file handle to a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="closefile.htm">CloseFile</a></b></td>
+<td width="8"></td>
+<td align="left">Closes an open file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="reset.htm">Reset</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text file for reading, or binary file for read/write</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="rewrite.htm">ReWrite</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text or binary file for write access</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="textfile.htm">TextFile</a></b></td>
+<td width="8"></td>
+<td align="left">Declares a file type for storing lines of text</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Read and write access to an untyped binary file</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myFile&nbsp;&nbsp;&nbsp;&nbsp;: <font color=#C00000><b>File</b></font>;<br>
+&nbsp;&nbsp;byteArray : array[1..8] of byte;<br>
+&nbsp;&nbsp;oneByte&nbsp;&nbsp; : byte;<br>
+&nbsp;&nbsp;i, count&nbsp;&nbsp;: Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Test.byt file for writing to</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'Test.byt');<br>&nbsp;&nbsp;ReWrite(myFile, 4);&nbsp;&nbsp; <font color=#008000><b>// Define a single 'record' as 4 bytes</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Fill out the data array</b></font><br>
+&nbsp;&nbsp;for i := 1 to 8 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;byteArray[i] := i;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write the data array to the file</b></font><br>&nbsp;&nbsp;BlockWrite(myFile, byteArray, 2);&nbsp;&nbsp; <font color=#008000><b>// Write 2 'records' of 4 bytes</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file for reading</b></font><br>&nbsp;&nbsp;Reset(myFile, 1);&nbsp;&nbsp; <font color=#008000><b>// Now we define one record as 1 byte</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>&nbsp;&nbsp;&nbsp;&nbsp;BlockRead(myFile, oneByte, 1);&nbsp;&nbsp; <font color=#008000><b>// Read and display one byte at a time</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(oneByte));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file for the last time</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+end;</b><br><b>
+</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/file&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;1<br>&nbsp;&nbsp;
+2<br>&nbsp;&nbsp;
+3<br>&nbsp;&nbsp;
+4<br>&nbsp;&nbsp;
+5<br>&nbsp;&nbsp;
+6<br>&nbsp;&nbsp;
+7<br>&nbsp;&nbsp;
+8<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Writing to a typed binary file</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myWord, myWord1, myWord2 : Word;<br>
+&nbsp;&nbsp;myFile : <font color=#C00000><b>File</b></font> of Word;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Test.bin binary file for writing to</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'Test.cus');<br>
+&nbsp;&nbsp;ReWrite(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write a couple of lines of Word data to the file</b></font><br>
+&nbsp;&nbsp;myWord1 := 234;<br>
+&nbsp;&nbsp;myWord2 := 567;<br>
+&nbsp;&nbsp;Write(myFile, myWord1, myWord2);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file in read only mode</b></font><br>
+&nbsp;&nbsp;Reset(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Read(myFile, myWord);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(myWord));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file for the last time</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+end;</b><br><b>
+</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/file&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;234<br>&nbsp;&nbsp;
+567<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Using Map in Pas2JS</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Mapping an array of numbers to an array of square roots / squares</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;points&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Float&nbsp;=&nbsp;[</span><span class="f_CodeExample" style="color: #0000ff;">4</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">400</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">9</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">81</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">25</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">100</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;roots&nbsp;:=&nbsp;points.Map(Sqrt);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Index</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Low</span><span class="f_CodeExample" style="color: #000000;">(roots)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">High</span><span class="f_CodeExample" style="color: #000000;">(roots)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(roots[</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Index</span><span class="f_CodeExample" style="color: #000000;">]);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;squares&nbsp;:=&nbsp;points.Map(Sqr);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Index</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Low</span><span class="f_CodeExample" style="color: #000000;">(squares)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">High</span><span class="f_CodeExample" style="color: #000000;">(squares)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(squares[</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Index</span><span class="f_CodeExample" style="color: #000000;">]);</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; font-weight: bold; color: #000000;">Result is:</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">2</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">20</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">3</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">9</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">5</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">10</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">16</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">160000</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">81</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">6561</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">625</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">10000</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000; background-color: #fdfdfd;">---------------------------------</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000; background-color: #fdfdfd;">The following code takes an array of numbers and creates a new array containing the double of the numbers in the first array. In the second, a new array is created with the first letter.</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Mapping an array of numbers to an array of doubles</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;points&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Float&nbsp;=&nbsp;[</span><span class="f_CodeExample" style="color: #0000ff;">4</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">400</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">9</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">81</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">25</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">100</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;palav&nbsp;&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;(&quot;Hello&nbsp;World&quot;,&quot;Galo&quot;,&quot;Cruzeiro&quot;);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;doubles&nbsp;:=&nbsp;points.map(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">(num:&nbsp;Float)&nbsp;:&nbsp;Float</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;:=&nbsp;(num&nbsp;*&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;:=&nbsp;num;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">&nbsp;);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Index</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Low</span><span class="f_CodeExample" style="color: #000000;">(doubles)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">High</span><span class="f_CodeExample" style="color: #000000;">(doubles)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(doubles[</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Index</span><span class="f_CodeExample" style="color: #000000;">]);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;myWord&nbsp;:=&nbsp;palav.Map(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">(x:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">String</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;:=&nbsp;CharAt(x,</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">&nbsp;);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Index</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Low</span><span class="f_CodeExample" style="color: #000000;">(myWord)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">High</span><span class="f_CodeExample" style="color: #000000;">(myWord)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(myWord[</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Index</span><span class="f_CodeExample" style="color: #000000;">]);</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; font-weight: bold; color: #000000;">Result is:</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">8</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">800</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">18</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">162</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">50</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">200</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">H</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">G</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000;">C </span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; color: #000000; background-color: #fdfdfd;">---------------------------------</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; font-weight: bold; color: #000000; background-color: #fdfdfd;">JS output:</span></p>
+<div style="text-align: left; text-indent: 0px; background: #fdfdfd; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">function</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;W3Button2Click</span><span class="f_CodeExample" style="color: #000000;">(Self,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">points</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[];</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">points</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[</span><span class="f_CodeExample" style="color: #800000;">4</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">400</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">9</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">81</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">25</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">100</span><span class="f_CodeExample" style="color: #000000;">].slice();</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">palav</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[];</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">palav</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[</span><span class="f_CodeExample" style="color: #800000;">&quot;Hello&nbsp;World&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Galo&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Cruzeiro&quot;</span><span class="f_CodeExample" style="color: #000000;">].slice();</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">roots</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[];</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Index</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">squares</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[];</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Index$1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">doubles</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[];</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Index$2</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">myWord</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[];</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Index$3</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a$54&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a$55&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a$56&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a$57&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">roots</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">points.map</span><span class="f_CodeExample" style="color: #000000;">(Sqrt);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$temp24;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(Index&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,$temp24&nbsp;=&nbsp;roots.length;Index&lt;$temp24;Index++)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn($DIdxR(roots,Index,</span><span class="f_CodeExample" style="color: #800000;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">squares</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">points.map</span><span class="f_CodeExample" style="color: #000000;">(Sqr$_Float_);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$temp25;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(Index$1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,$temp25&nbsp;=&nbsp;squares.length;Index$1&lt;$temp25;Index$1++)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn($DIdxR(squares,Index$1,</span><span class="f_CodeExample" style="color: #800000;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">doubles</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">points.map</span><span class="f_CodeExample" style="color: #000000;">(function&nbsp;(num)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;Result&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num*=</span><span class="f_CodeExample" style="color: #800000;">2</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;=&nbsp;num;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$temp26;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(Index$2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,$temp26&nbsp;=&nbsp;doubles.length;Index$2&lt;$temp26;Index$2++)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn($DIdxR(doubles,Index$2,</span><span class="f_CodeExample" style="color: #800000;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">myWord</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">palav.map</span><span class="f_CodeExample" style="color: #000000;">(function&nbsp;(x$15)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">return</span><span class="f_CodeExample" style="color: #000000;">&nbsp;CharAt(x$15,</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$temp27;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(Index$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">,$temp27&nbsp;=&nbsp;myWord.length;Index$3&lt;$temp27;Index$3++)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn($DIdxR(myWord,Index$3,</span><span class="f_CodeExample" style="color: #800000;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

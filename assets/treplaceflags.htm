@@ -1,0 +1,117 @@
+<!-- (0056)TReplaceFlags -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TReplaceFlags command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TReplaceFlags, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TReplaceFlags</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines options for the <b>StringReplace</b> routine</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>TReplaceFlags</b> = set of (<b>rfReplaceAll, rfIgnoreCase</b>);
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>TReplaceFlags</b></font> enumeration type gives the options for the <b>StringReplace</b> routine :
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>rfReplaceAll&nbsp;</b></td><td class=dd> Replace all find occurences</td></tr>
+<tr><td class=dt align='right'><b>rfIgnoreCase&nbsp;</b></td><td class=dd> Find ignores case</td></tr></table>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="stringreplace.htm">StringReplace</a></b></td>
+<td width="8"></td>
+<td align="left">Replace one or more substrings found within a string</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Change all occurences regardless of case</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;before, after : string;<br>
+&nbsp;&nbsp;options&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <font color=#C00000><b>TReplaceFlags</b></font>;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to replace all occurrences of a or A to THE</b></font><br>
+&nbsp;&nbsp;before := 'This is a way to live A big life';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set the options to change all occurences regardless of case</b></font><br>
+&nbsp;&nbsp;options := [<b>rfReplaceAll, rfIgnoreCase</b>];<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now change 'a' or 'A' to 'THE' throughout</b></font><br>
+&nbsp;&nbsp;after&nbsp;&nbsp;:= StringReplace(before, ' a ', ' THE ', options);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the before and after</b></font><br>
+&nbsp;&nbsp;WriteLn('Before = '+before);<br>
+&nbsp;&nbsp;WriteLn('After&nbsp;&nbsp;= '+after);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/treplaceflags&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;This is a way to live A big life<br>&nbsp;&nbsp;
+This is THE way to live THE big life<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

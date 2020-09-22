@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Partial classes</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Partial classes</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_anonymous_classes.htm">Previous</a>&nbsp;
+     <a href="hm_external_classes.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Partial classes</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Partial&nbsp;classes&nbsp;allow&nbsp;splitting&nbsp;the&nbsp;definition&nbsp;and&nbsp;implementation&nbsp;of&nbsp;a&nbsp;class&nbsp;over&nbsp;multiple&nbsp;files,&nbsp;or&nbsp;over&nbsp;multiple&nbsp;sections&nbsp;of&nbsp;the&nbsp;same&nbsp;file.&nbsp;Partial&nbsp;declarations&nbsp;must&nbsp;have&nbsp;the&nbsp;same&nbsp;modifiers&nbsp;(abstract,&nbsp;sealed,&nbsp;…),&nbsp;must&nbsp;specify&nbsp;the&nbsp;same&nbsp;ancestor&nbsp;(or&nbsp;none),&nbsp;however&nbsp;each&nbsp;partial&nbsp;declaration&nbsp;is&nbsp;allowed&nbsp;to&nbsp;introduce&nbsp;new&nbsp;interfaces&nbsp;and&nbsp;their&nbsp;implementations.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Partial&nbsp;classes&nbsp;can&nbsp;be&nbsp;declared&nbsp;as&nbsp;class&nbsp;partial&nbsp;&nbsp;(TAncestor)&nbsp;as&nbsp;well&nbsp;as&nbsp;with&nbsp;the&nbsp;Oxygene&nbsp;partial&nbsp;class&nbsp;&nbsp;(TAncestor)&nbsp;syntax.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Partial classes is yet a feature that has not made it into the Object Pascal standard. It basically means that the full declaration and implementation of a class or record type can be spread over multiple source-files. You can also pre-compile one part while you leave the other part open for implementation by others. This is the case for Mono C# under iOS for instance, where the pre-compiled application controller is expected to be completed by the framework user.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Partial classes is a very helpful feature when deployed with care. It is especially handy for large class hierarchies which target different models. Depending on the model set by the programmer- the implementation of certain features will differ according to the source-files included.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Smart Pascal supports two declaration formats of partial classes. The </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">RemObjects Oxygene Pascal</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> syntax, and also the more intuitive &quot;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">type mytype = partial class(ancestor type)</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&quot; variation. Partial classes are used throughout the Smart Pascal run-time library:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TW3CustomControl&nbsp;=&nbsp;partial&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">(TW3MovableControl)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">private</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;FAngle:&nbsp;Float;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;FScrollInfo:&nbsp;TW3ScrollInfo;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;FClassNames:&nbsp;TW3CSSClassStyleNames;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;FFont:&nbsp;TW3ControlFont;</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

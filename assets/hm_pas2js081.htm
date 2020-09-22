@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Class method</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js080.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js082.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Class method
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+TMyClass = class
+  class procedure WriteLnMyName;
+  class function GetMyName : String; virtual;
+end;
+
+type
+TMyOtherClass = class (TMyClass)
+  class procedure WriteLnMyName;
+  class function GetMyName : String; override;
+end;
+
+class procedure TMyClass.WriteLnMyName;
+begin
+   WriteLn('TMyClass');
+end;
+
+class function TMyClass.GetMyName : String;
+begin
+   Result:='This is TMyClass';
+end;
+
+class procedure TMyOtherClass.WriteLnMyName;
+begin
+   WriteLn('TMyOtherClass');
+end;
+
+class function TMyOtherClass.GetMyName : String;
+begin
+   Result:='I''m TMyOtherClass';
+end;
+
+{ TEST II }
+type
+TClassB = class
+  class procedure ClassProc;
+  method DoIt;
+end;
+
+class procedure TClassB.ClassProc;
+begin
+ WriteLn(ClassName+' ClassProc');
+end;
+
+method TClassB.DoIt;
+begin
+ ClassProc;
+ Self.ClassProc;
+end;
+
+{ TEST III }
+type
+   TBase = class
+      class method Test; virtual;
+      class method Test2;
+      class method CallVirtual; virtual;
+      class method Call;
+   end;
+
+type
+   TChild = class(TBase)
+      class method CallVirtual; override;
+   end;
+
+class method TBase.Test;
+begin
+   WriteLn('test '+ClassName);
+end;
+
+class method TBase.Test2;
+begin
+   WriteLn('test2 '+ClassName);
+end;
+
+class method TBase.CallVirtual;
+begin
+   Test;
+   Test2;
+end;
+
+class method TBase.Call;
+begin
+   Test;
+   Test2;
+end;
+
+class method TChild.CallVirtual;
+begin
+   WriteLn('overridden');
+   inherited CallVirtual;
+end;
+
+{ unit1.pas }
+
+var
+  my : TMyClass;
+ myo : TMyOtherClass;
+   b := TClassB.Create;
+   c : TChild := new TChild;
+   d : TClass := TObject.ClassType;
+
+Begin
+TMyClass.WriteLnMyName;
+TMyOtherClass.WriteLnMyName;
+WriteLn(TMyClass.GetMyName);
+WriteLn(TMyOtherClass.GetMyName);
+
+my:=TMyClass.Create;
+my.WriteLnMyName;
+WriteLn(my.GetMyName);
+
+my:=TMyOtherClass.Create;
+my.WriteLnMyName;
+WriteLn(my.GetMyName);
+
+myo:=TMyOtherClass.Create;
+myo.WriteLnMyName;
+WriteLn(myo.GetMyName);
+
+myo:=nil;
+try
+   myo.WriteLnMyName;
+except
+   on E: Exception do
+      WriteLn(e.Message);
+end;
+
+{ ### CONSOLE OUTPUTS ###
+  TMyClass
+  TMyOtherClass
+  This is TMyClass
+  I'm TMyOtherClass
+  TMyClass
+  This is TMyClass
+  TMyClass
+  I'm TMyOtherClass
+  TMyOtherClass
+  I'm TMyOtherClass
+  TypeError, Cannot read property 'ClassType' of null
+}
+{ TEST II }
+b.ClassProc;
+TClassB.ClassProc;
+b.DoIt;
+{ ### CONSOLE OUTPUTS ###
+  TClassB ClassProc
+  TClassB ClassProc
+  TClassB ClassProc
+  TClassB ClassProc
+}
+{ TEST III }
+c.Test;
+TChild.Test;
+c.Test2;
+TChild.Test2;
+
+c.Call;
+c.CallVirtual;
+
+TChild.Call;
+TChild.CallVirtual;
+{ ### CONSOLE OUTPUTS ###
+  test TChild
+  test TChild
+  test2 TChild
+  test2 TChild
+  test TChild
+  test2 TChild
+  overridden
+  test TChild
+  test2 TChild
+  test TChild
+  test2 TChild
+  overridden
+  test TChild
+  test2 TChild
+}
+{ TEST IV }
+WriteLn(TClass.ClassName);
+WriteLn(TClass.ClassType.ClassName);
+
+WriteLn(d.ClassName);
+WriteLn(d.ClassType.ClassName);
+{ ### CONSOLE OUTPUTS ###
+  TObject
+  TObject
+  TObject
+  TObject
+}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $W(e) { return e.ClassType?e:Exception.Create($New(Exception),e.constructor.name+", "+e.message) }
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i }
+function $Is(o,c) {
+	if (o===null) return false;
+	return $Inh(o.ClassType,c);
+};
+function $Inh(s,c) {
+	if (s===null) return false;
+	while ((s)&&(s!==c)) s=s.$Parent;
+	return (s)?true:false;
+};
+
+      var my = null;
+      var myo = null;
+      var b = null,
+         b = TObject.Create($New(TClassB));
+      var c = null,
+         c = TObject.Create($New(TChild));
+      var d = null,
+         d = TObject.ClassType(TObject);
+      TMyClass$1.WriteLnMyName(TMyClass$1);
+      TMyOtherClass.WriteLnMyName$1(TMyOtherClass);
+      WriteLn(TMyClass$1.GetMyName$(TMyClass$1));
+      WriteLn(TMyClass$1.GetMyName$(TMyOtherClass));
+      my = TObject.Create($New(TMyClass$1));
+      TMyClass$1.WriteLnMyName(my.ClassType);
+      WriteLn(TMyClass$1.GetMyName$(my.ClassType));
+      my = TObject.Create($New(TMyOtherClass));
+      TMyClass$1.WriteLnMyName(my.ClassType);
+      WriteLn(TMyClass$1.GetMyName$(my.ClassType));
+      myo = TObject.Create($New(TMyOtherClass));
+      TMyOtherClass.WriteLnMyName$1(myo.ClassType);
+      WriteLn(TMyClass$1.GetMyName$(myo.ClassType));
+      myo = null;
+      try {
+         TMyOtherClass.WriteLnMyName$1(myo.ClassType);
+      } catch ($e) {
+         var E = $W($e);
+         WriteLn(E.FMessage)      }
+      TClassB.ClassProc(b.ClassType);
+      TClassB.ClassProc(TClassB);
+      TClassB.DoIt(b);
+      TBase.Test(c.ClassType);
+      TBase.Test(TChild);
+      TBase.Test2$1(c.ClassType);
+      TBase.Test2$1(TChild);
+      TBase.Call$1(c.ClassType);
+      TBase.CallVirtual$(c.ClassType);
+      TBase.Call$1(TChild);
+      TBase.CallVirtual$(TChild);
+      WriteLn(ClassName$1(TObject));
+      WriteLn(ClassName$1(TObject.ClassType(TObject)));
+      WriteLn(ClassName$1(d));
+      WriteLn(ClassName$1(TObject.ClassType(d)));
+/// TBase = class (TObject)
+///  [line: 123, column: 4, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// method TBase.Test()
+   ///  [line: 135, column: 20, file: uMain]
+   ,Test:function(Self) {
+      WriteLn(("test "+TObject.ClassName(Self)));
+   }
+   /// method TBase.Test2()
+   ///  [line: 140, column: 20, file: uMain]
+   ,Test2$1:function(Self) {
+      WriteLn(("test2 "+TObject.ClassName(Self)));
+   }
+   /// method TBase.CallVirtual()
+   ///  [line: 145, column: 20, file: uMain]
+   ,CallVirtual:function(Self) {
+      TBase.Test(Self);
+      TBase.Test2$1(Self);
+   }
+   /// method TBase.Call()
+   ///  [line: 151, column: 20, file: uMain]
+   ,Call$1:function(Self) {
+      TBase.Test(Self);
+      TBase.Test2$1(Self);
+   }
+   ,Destroy:TObject.Destroy
+   ,CallVirtual$:function($){return $.CallVirtual($)}
+};
+/// TChild = class (TBase)
+///  [line: 131, column: 4, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   /// method TChild.CallVirtual()
+   ///  [line: 157, column: 21, file: uMain]
+   ,CallVirtual:function(Self) {
+      WriteLn("overridden");
+      TBase.CallVirtual(Self);
+   }
+   ,Destroy:TObject.Destroy
+   ,CallVirtual$:function($){return $.CallVirtual($)}
+};
+/// TClassB = class (TObject)
+///  [line: 105, column: 1, file: uMain]
+var TClassB = {
+   $ClassName:"TClassB",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// procedure TClassB.ClassProc()
+   ///  [line: 110, column: 25, file: uMain]
+   ,ClassProc:function(Self) {
+      WriteLn((TObject.ClassName(Self)+" ClassProc"));
+   }
+   /// method TClassB.DoIt()
+   ///  [line: 115, column: 16, file: uMain]
+   ,DoIt:function(Self) {
+      TClassB.ClassProc(Self.ClassType);
+      TClassB.ClassProc(Self.ClassType);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TMyClass = class (TObject)
+///  [line: 72, column: 4, file: uMain]
+var TMyClass$1 = {
+   $ClassName:"TMyClass",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// procedure TMyClass.WriteLnMyName()
+   ///  [line: 83, column: 26, file: uMain]
+   ,WriteLnMyName:function(Self) {
+      WriteLn("TMyClass");
+   }
+   /// function TMyClass.GetMyName() : String
+   ///  [line: 88, column: 25, file: uMain]
+   ,GetMyName:function(Self) {
+      return "This is TMyClass";
+   }
+   ,Destroy:TObject.Destroy
+   ,GetMyName$:function($){return $.GetMyName($)}
+};
+/// TMyOtherClass = class (TMyClass)
+///  [line: 78, column: 4, file: uMain]
+var TMyOtherClass = {
+   $ClassName:"TMyOtherClass",$Parent:TMyClass$1
+   ,$Init:function ($) {
+      TMyClass$1.$Init($);
+   }
+   /// procedure TMyOtherClass.WriteLnMyName()
+   ///  [line: 93, column: 31, file: uMain]
+   ,WriteLnMyName$1:function(Self) {
+      WriteLn("TMyOtherClass");
+   }
+   /// function TMyOtherClass.GetMyName() : String
+   ///  [line: 98, column: 30, file: uMain]
+   ,GetMyName:function(Self) {
+      return "I'm TMyOtherClass";
+   }
+   ,Destroy:TObject.Destroy
+   ,GetMyName$:function($){return $.GetMyName($)}
+};	  
+
+</code></pre></div>
+</div>
+</body>
+</html>

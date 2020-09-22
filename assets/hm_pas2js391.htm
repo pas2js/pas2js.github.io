@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+.note {padding: 12px;margin: 6px;border-top: 1px;border-right: 1px;border-bottom: 1px;border-left: 1px;border-style: solid;border-color: #D3D3D3;background-color: #E5EFFB;}
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Using Properties</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js390.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js392.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>	
+	<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp; Properties can be described as object-oriented data members. External to the class, properties look just like data members. Internally, however, properties can be implemented as methods. Properties promote encapsulation by allowing the class to hide the internal representation of its data. Also, by implementing only a getter (also known as an accessor) method or a setter (also known as a mutator) method, a property can be made read-only or write-only respectively, thus allowing the class to provide access control. Delphi and C# have support for properties built into the language.</div>
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+unit Unit9;
+
+{$mode objfpc}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+ TRectangle = class
+ private
+   FHeight: Cardinal;
+   FWidth: Cardinal;
+ protected
+   function GetArea: Cardinal;
+ public
+   function ToString: string; virtual;
+   constructor Create(const Width, Height: Cardinal);
+   property Area: Cardinal read GetArea;
+   property Height: Cardinal read FHeight write FHeight;
+   property Width: Cardinal read FWidth write FWidth;
+ end;
+
+implementation
+
+{ TRectangle }
+
+constructor TRectangle.Create(const Width, Height: Cardinal);
+begin
+ inherited Create;
+ FHeight := Height;
+ FWidth := Width;
+end;
+
+function TRectangle.GetArea: Cardinal;
+begin
+ Result := FWidth * FHeight;
+end;
+
+function TRectangle.ToString: string;
+begin
+ Result := Format('Height: %d, Width: %d, Area: %d', [Height, Width, Area]);
+end;
+
+end.
+
+
+{ *** main program *** }
+
+begin
+  with TRectangle.Create(2, 3) do
+  try
+    WriteLn(ToString);
+    Height := 4;
+    Width := 3;
+    WriteLn(ToString);
+  finally
+    Free;
+  end;
+  
+end.
+
+{ --- CONSOLE OUTPUT ---- }
+(*
+	Height: 3, Width: 2, Area: 6 
+	Height: 4, Width: 3, Area: 12 
+*)
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("Unit9",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass($mod,"TRectangle",pas.System.TObject,function () {
+    this.$init = function () {
+      pas.System.TObject.$init.call(this);
+      this.FHeight = 0;
+      this.FWidth = 0;
+    };
+    this.GetArea = function () {
+      var Result = 0;
+      Result = this.FWidth * this.FHeight;
+      return Result;
+    };
+    this.ToString$1 = function () {
+      var Result = "";
+      Result = pas.SysUtils.Format("Height: %d, Width: %d, Area: %d",[this.FHeight,this.FWidth,this.GetArea()]);
+      return Result;
+    };
+    this.Create$1 = function (Width, Height) {
+      pas.System.TObject.Create.call(this);
+      this.FHeight = Height;
+      this.FWidth = Width;
+    };
+  });
+});
+
+rtl.module("program",["System","Classes","SysUtils","Unit9"],function () {
+  "use strict";
+  var $mod = this;
+  $mod.$main = function () {
+    var $with1 = pas.Unit9.TRectangle.$create("Create$1",[2,3]);
+    try {
+      pas.System.Writeln($with1.ToString$1());
+      $with1.FHeight = 4;
+      $with1.FWidth = 3;
+      pas.System.Writeln($with1.ToString$1());
+    } finally {
+      $with1 = rtl.freeLoc($with1);
+    };
+  };
+});
+
+</code></pre></div>
+</div>
+</body>
+</html>

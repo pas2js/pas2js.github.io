@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Which doors are open?</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js006.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js008.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+You have 100 doors in a row that are all initially closed. You make 100 passes by the doors. <br>
+<b>a)</b> The first time through, you visit every door and toggle the door (if the door is closed, you open it; if it is open, you close it); <br>
+<b>b)</b> The second time you only visit every 2nd door (door #2, #4, #6, ...); <br>
+<b>c)</b> The third time, every 3rd door (door #3, #6, #9, ...), etc, until you only visit the 100th door.
+<br><br>
+<u>Question:</u> <b>What state are the doors in after the last pass? Which doors are open?</b>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+var doors : array [1..100] of Boolean;
+var i, j : Integer;
+begin
+for i := 1 to 100 do
+   for j := i to 100 do
+      if (j mod i) = 0 then
+         doors[j] := not doors[j];
+
+for i := 1 to 100 do
+   if doors[i] then
+      WriteLn('Door '+IntToStr(i)+' is open');
+end;
+
+{
+Door 1 is open 
+Door 4 is open 
+Door 9 is open 
+Door 16 is open 
+Door 25 is open 
+Door 36 is open 
+Door 49 is open 
+Door 64 is open 
+Door 81 is open 
+Door 100 is open
+}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var doors = function () {
+ for (var r=[],i=0; i<100; i++) r.push(false);
+ return r
+}();
+var i = 0;
+var j = 0;
+for(i=1;i<=100;i++) {
+ for(j=i;j<=100;j++) {
+   if (!(j%i)) {
+      doors[(j)-1] = !doors[(j)-1];
+   }
+ }
+}
+for(i=1;i<=100;i++) {
+ if (doors[(i)-1]) {
+   document.writeln(("Door "+i.toString()+" is open"));
+ }
+}
+
+</code></pre></div>
+</div>
+</body>
+</html>

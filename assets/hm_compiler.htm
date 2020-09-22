@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Compiler Options</span></h1>
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+	<h1>Compiler Options Explained</h1>
+<p>Since there are currently no in-depth information available this post tries to clarify the topic a bit. Let's first start with the basic compiler options as can be seen in the screenshot below:.</p>
+<p>In the above example, we might well use the If statement to check for the Enter key.</p>
+<h2>Basic Compiler Options</h2>
+<p>Under 'Compiler Options' the user can adjust the internal DWScript compiler, which is responsible for compiling the Object Pascal source code into an internal representation. While the DWScript compiler offers a few more options, these are the only ones the user can play with.</p>
+<img src="compiler_op1.png" title="File" alt="file">
+<h3>Assertions</h3>
+<p>If ‘Assertions’ is checked statements like Assert(BoolExpression) will be compiled. If you’re not familiar with asserts, just think of them as additional stability checks you can add every here and there. They are translated to something like:</p>
+<pre>
+<code class="delphi" style="background-color: #FFFEEB;">
+<strong>if&nbsp;not</strong> BoolExpression <strong>then</strong>
+&nbsp; <strong>raise</strong> EAssertionFailed.Create('Assertion failed');</code></pre>
+
+<p>where the Boolean experession can be something like “SomeValue &lt; AnotherValue” or a function call like "IsValueValid(SomeValue)".As soon as any assertion appears in your source code the following lines will be added to your JavaScript source code:</p>
+<pre>
+<code class="javascript" style="background-color: #FFFEEB;">
+var EAssertionFailed={
+  $ClassName: "EAssertionFailed",
+  $Parent: Exception,
+  $Init: Exception.$Init
+}
+function $Assert(b,m,z) { if (!b) throw Exception.Create($New(EAssertionFailed),
+                                  "Assertion failed"+z+((m=="")?"":" : ")+m); }
+</code></pre>
+
+<p>If you uncheck this option, the entire statement will be replaced by&nbsp;/* null */ in the JavaScript source code. If you call a function in that expression, it won’t be called at all. So be careful to only put checks in an assertion.</p>
+
+
+<h3>Optimization</h3>
+<p>If&nbsp;‘Optimization’ is checked the internal&nbsp;coOptimize is passed to the DWScript. This triggers several countless&nbsp;optimizations in the DWScript compiler. A detailed list of&nbsp;what this influences is yet missing, but in general it tries to omit empty statements or eliminate dead code. Here’s a brief list of what is done</p>
+
+<ul><li>removes empty initialization/finalization blocks</li><li>optimizes const assignments (not&nbsp;active in some versions)</li><li>optimizes function expressions (e.g. constant functions -&gt; constants)</li><li>optimize comparisons (constant comparison is done at compile-time)</li></ul>
+
+<p>It adds another pass to the compilation, which results in longer compilation times.</p>
+<p><strong>NOTE:</strong> At the time of writing&nbsp;it seems as if this option is not&nbsp;taken into account (even if enabled) in Smart Mobile Studio due to an improper&nbsp;setup. It will be fixed as soon as possible.</p>
+<p><strong>Hints</strong>
+With ‘Hints’ several options about the hinting level of the compiler are available. If set to&nbsp;‘Disabled’ no hints will be shown in the compiler message list. If set to ‘Normal’ the usual hints are emitted. Even more hints are emited with ‘Strict’ and in ‘Pedantic’ it will even complain&nbsp;differences&nbsp;in case sensitivity. The latter can be in particular useful if interfacing the case sensitive JavaScript language.</p>
+
+<h3>Predefined Conditions</h3>
+<p>The predefined conditions are nothing more than a convenient way to specify some compiler definitions. These correspond to:</p>
+<ul><li>Handle uncaught exceptions -&gt; {$DEFINE SMART_INTERNAL_HANDLE_EXCEPTIONS}</li><li>Automatically refresh in the browser -&gt; {$DEFINE SMART_INTERNAL_AUTO_REFRESH}</li><li>Legacy support for IE9 (and below) -&gt; {$DEFINE SMART_LEGACY_INTERNET_EXPLORER}</li></ul>
+<p>and will be set&nbsp;at a compiler level (for all units).</p>
+<p>In addition the linker will&nbsp;output a file called ‘timestamp.txt’ if the ‘Automatically refresh in the browser’ is checked. This will be used to identify if the file has been changed.</p>
+<p>You can set up your smart mobile program to be automatically reloaded when it is recompiled. That is, whenever you change the smart program and recompile it, the index.html will automatically be reloaded in the browser, it is not necessary, for instance, refresh the browser manually - but it's necessary a local web server running, because this autorefresh option will use ajax to ping to project generated files. 
+ 
+If you wouldn't like to use this trick, just uncheck this option:
+just go to the "Project Options" --> Compiler --> uncheck "Automatically refresh in browser".
+ 
+If you check this option, make sure a local web server should is running up, your project uses a directive such as
+(DEFINES SMART_INTERNAL_AUTOREFRESH internally so that the program unit can make use of it)
+</p>
+
+<h3>Custom conditional defines</h3>
+<p>In addition to the predefined conditions you can specify custom conditional defines. These will add to the compiler and similar to the predefined conditions set&nbsp;at the compiler level (i.E. set&nbsp;in all units).</p>
+
+<h2>Code Generation</h2>
+<p>Previously&nbsp;the DWScript compiler options were described. This section now covers the code generation options. These correspond to the DWScript JSCodeGen, which&nbsp;was to some point available as open source. As it hasn’t evolved much in regards of the basic options, you can still find it around&nbsp;if you need more details.</p>
+<img src="compiler_op2.png" title="File" alt="file">
+<p>The ‘Code Generation’ section is combined with the ‘Runtime Checks’ section. The latter sits in between the compiler and the&nbsp;code generation as it adds runtime&nbsp;checks at compile time, which are then transpiled to JavaScript.</p>
+<h3>Inline Magic</h3>
+<p>With inline magic the compiler will inline the DWScript’s mini RTL functions:<b>&nbsp;AnsiLowerCase,&nbsp;AnsiUpperCase,&nbsp;ArcCos, ArcSin, ArcTan, ArcTan2, Ceil, Cos, Copy, MidStr, Exp, FloatToStr, Floor, Format, HexToInt, Infinity, IntPower, IntToHex, IntToStr, IsFinite, IsNaN, LeftStr, Ln, LowerCase, Max, Min, MaxInt, MinInt, NaN, Pi, Pos, PosEx, Power, Round, Sign, Sin, Sqr, Sqrt, StrBeginsWith, StrDeleteLeft, StrContains, StrFind, StrJoin, StrMatches, StrSplit, StrToFloat, StrToInt, SubStr, SubString, Tan, TypeOf, Unsigned32, UpperCase, VarIsNull, VarIsClear and VarIsArray </b>with direct JS code instead of call them as functions.</p>
+<p>This typically speeds up the application as typically less code is generated.</p>
+
+<h3>Emit RTTI information</h3>
+<p>With ‘Emit RTTI information’ the compiler will output RTTI information.&nbsp;It&nbsp;can be left&nbsp;unchecked if no&nbsp;RTTI is needed.</p>
+
+<h3>Ignore published in implementation</h3>
+<p>No information available so far.</p>
+
+<h3>De-virtualization</h3>
+<p>Often methods are declared as virtual, but there is no override used in the source code. In this case it might make sense to unmark it as virtual to improve its performance upon calls. Since&nbsp;it is cumbersome to maintain by hand (especially if overrides are planned to be implemented in the future) and sometimes difficult (if an&nbsp;overrided function doesn’t call the inherited function) to find, this feature&nbsp;de-virtualizes your code.</p>
+<p>The feature&nbsp;takes time to perform, but might result in a major boost if enough de-virtualize opportunities exist (ie. if virtual methods are not called directly or indirectly in initialization sections or constructors)</p>
+
+<h3>Emit source locations</h3>
+<p>This controls whether source locations are emitted or not. This feature links to the verbosity options.</p>
+<h3>Smart linking</h3>
+<p>Checks if the function&nbsp;is used at all. If not, it is not&nbsp;generated at all.</p>
+<p>As a dedicated stage in the code generation process this takes time, but it might be well worth it. In order to work decently, the units shouldn’t have much cross-dependencies.</p>
+<p><strong>NOTE:</strong> This feature still contains a bug for functions that are only called from within a lambda statement.</p>
+
+<h3>Code packing</h3>
+<p>If enabled the code will be packed by&nbsp;stripping empty lines. It is marked as recommended, especially for a release.</p>
+
+<h3>Code Obfuscation</h3>
+<p>If enabled the code will be obfuscated by replacing the function names with strings from a random generator. This will make deciphering of the JS source code much harder.</p>
+<p>It is marked as recommended, especially for a release, when it is important to protect your source. If you want others to read your code, you should of course uncheck this option.</p>
+<p><strong>NOTE:&nbsp;</strong>Class names will not be obfuscated as RTTI or other functions such as comparing the ClassName won’t work. This is important to know as this can be the reason why tools like Google’s&nbsp;closure compiler might not work as expected although it does similar techniques like obfuscation.</p>
+
+<h3>Use main body</h3>
+<p>If ‘Use main body’ is checked the entire code is wrapped into a main function by the compiler. This might or might not necessary depending on the&nbsp;context where you want to use the script. For example the default HTML&nbsp;template already adds another main body, so it might not be needed. 'main body' in this context means:</p>
+<pre>
+<code class="delphi" style="background-color: #FFFEEB;">
+var $Application = function() {
+  <span style="color: #008000;">// your code will appear here</span>
+}
+$Application();
+</code></pre>
+
+<p>Especially for environments where less is more (e.g. microcontroller programming), this just adds an unnecessary overhead.</p>
+
+<h3>Verbose</h3>
+<p>With ‘Verbosity’ the verbosity of the generated JavaScript code can be controlled. If set to ‘None’, the JavaScript output will not contain any comments that link to the original Object Pascal source. With ‘Normal’ it will contain comments with the function names and&nbsp;position in the original source code. And with ‘Verbose’ it will&nbsp;contain even more&nbsp;comments (about the classes etc.).</p>
+
+<h3>Runtime checks</h3>
+<p>If checked the code generation will add several runtime checks. JavaScript itself is not very critical so eventually an access beyond the bounds might just create a new field you are not aware of.</p>
+<p>For example the code below&nbsp;will compile and&nbsp;run without complains.</p>
+<pre>
+<code class="delphi" style="background-color: #FFFEEB;">
+<strong>var</strong> MyArray: <strong>array</strong> [0 .. 1] <strong>of</strong> Integer;
+<strong>for var</strong> Index := 0 <strong>to</strong> 9 <strong>do</strong>
+&nbsp;&nbsp;MyArray[Index] := Index;</code></pre>
+<p>As can be seen easily the code is&nbsp;not&nbsp;doing right as the array index clearly exceeds the range of elements. This would result in a hidden issue that can be very hard to locate. With ‘range checking’ enabled, an exception is raised, which points you to the location in the source code where the range is exceeded.</p>
+
+<p><strong>NOTE:</strong>&nbsp;Due to a bug in the,&nbsp;range checking does not work with the code below when&nbsp;the array is allocated dynamically:</p>
+<pre>
+<code class="delphi" style="background-color: #FFFEEB;">
+<strong>var</strong> MyArray: <strong>array of</strong> Integer;
+MyArray.SetLength(2);
+<strong>for var</strong> Index := 0 <strong>to</strong> 9 <strong>do</strong>
+&nbsp;&nbsp;MyArray[Index] := Index;</code></pre>
+
+<p>This bug will hopefully be fixed in one of the next version 2.2.1</p>
+<p>Other runtime checks include</p>
+<ul><li>Instance checking</li><li>Condition checking</li><li>Loop step checking</li></ul>
+<p>At the time of writing several issues&nbsp;in the&nbsp;IDE could be revealed. These will (hopefully) be fixed and the article will be revised in the future.</p>
+<p>This also includes items that are not yet described perfectly clear in this article.</p>
+
+</body>
+</html>

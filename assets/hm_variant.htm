@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Variant</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-family: 'Times New Roman'; font-weight: bold; color: #ffffff;">Variant</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_string.htm">Previous</a>&nbsp;
+     <a href="hm_boolean.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Variants</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Variant</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> stores any Smart Pascal base or complex type, JavaScript object or array.</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">You can use </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">variant</span><span style="font-size: 16px; font-family: 'Times New Roman';"> to store object values, since you do not have to predefine the structure by hand. </span><span style="font-size: 16px; font-family: 'Times New Roman';">In Pas2JS these kind of structures can be achieved automatically using &quot;inline assembler&quot; by grace of targeting Javascript directly. </span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Variants holding a JavaScript object cannot be directly casted from/to </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TObject</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. One of the reason for this is the obfuscation but even with obfuscation disabled, Pas2JS compiler has to rename inherited methods, which are not supported in the JavaScript. Similar scoping issues happen in variety of other situations (nested procedures f.i.).</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Variant</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> is supported as a data-type, but can only be used as containers. The compiler has no operators that deals with them (so you cannot write: A := 1 + myVariant, because there is no way to predict the resulting type without considerable overhead and loss of performance).</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">When interacting with ordinary javascript libraries or a remote webservice you natually have to go native with your data structures. </span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">Under Pas2JS this can be handled in a variety of ways but the two most common approaches are to either use </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">records</span><span style="font-size: 16px; font-family: 'Times New Roman';"> or </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">variants</span><span style="font-size: 16px; font-family: 'Times New Roman';">.</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Using Records</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Records</span><span style="font-size: 16px; font-family: 'Times New Roman';"> in Pas2JS work just like they do in other object pascal environments. And since Smart compiles to javascript rather than machine opcodes, a record will always compile to an ordinary javascript structure. You should note that javascript really does not distinguish between what we would call a record and objects. In javascript everything is an object. </span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">So the following object pascal code:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="353" style="width:353px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Type</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TMyInfo</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">Record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;miName:&nbsp;String;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;miAge:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;miGender:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">End</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman';">will result in the following predictable javascript code:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="355" style="width:355px;"><p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;miName:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">&quot;&quot;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">,&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;miAge:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">0</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">,&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;miGender:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">0</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman';">This means that when you want to interact with native javascript libraries that expects a structure of values, you can use records to match it directly.</span></p>
+<p style="text-align: justify;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Published record properties can be automatically assigned to a field of a variant object (and not directly to the variant object itself).</span></p>
+<p style="text-align: justify;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Example code: Using variant object to create javascript object</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="442" style="width:442px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;TRec&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A:&nbsp;integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">published</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B:&nbsp;integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button7Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;r:&nbsp;&nbsp;TRec;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;v:&nbsp;&nbsp;Variant;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;s:&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;r.A&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">17</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;r.B&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">42</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;r.S&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Smart!'</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;:=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TVariant</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">CreateObject</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;v.field&nbsp;&nbsp;:=&nbsp;&nbsp;r;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">asm</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;@s&nbsp;&nbsp;=&nbsp;&nbsp;JSON.stringify(@v);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Writeln(s);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">will output:</span></p>
+<p>&nbsp;</p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="211" style="width:211px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">&quot;field&quot;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;:&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">&quot;B&quot;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">42</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">&quot;S&quot;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">&quot;Smart!&quot;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">You can use&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">TVariant</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">&nbsp;object to create javascript object structure exactly the same as that produced by the record.</span></p>
+<p style="margin: 0px 0px 8px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">For instance, this example <a href="hm_variant04.htm"><img src="btn.jpg" border="0"/></a>
+</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> will result</span><span style="font-size: 16px; font-family: 'Times New Roman';"> in a memory record structure like this:</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="496" style="width:496px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TMyData</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;test&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Record</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;somevalue:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;text:&nbsp;String;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">End</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p style="text-align: justify; background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Under Pas2JS, variants are used to transport information between raw JavaScript methods. You can however have variant parameters and function results, but these can only be accessed by methods using </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a href="hm_asm_block.htm">ASM section</a></span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. <a href="hm_variant03.htm"><img src="btn.jpg" border="0"/></a>
+</span></p>
+<p style="text-align: justify; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">The resulting javascript structure will be exactly the same as that produced by the record. One difference to keep in mind though, is that the compiler will output the names "as is". There is no way for Smart to map the content of a native object so make sure you get the names right. </span></p>
+<p style="text-align: justify; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">For instance, to create arbitrary inline JS object:  <a href="hm_variant05.htm"><img src="btn.jpg" border="0"/></a>
+</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Note:&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Field&nbsp;types&nbsp;can&nbsp;be&nbsp;type-inferenced&nbsp;or&nbsp;provided&nbsp;explicitly.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Initialization&nbsp;values&nbsp;can&nbsp;be&nbsp;constants&nbsp;of&nbsp;dynamic&nbsp;values.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Field&nbsp;names&nbsp;can&nbsp;be&nbsp;specified&nbsp;as&nbsp;strings&nbsp;to&nbsp;provide&nbsp;for&nbsp;naming&nbsp;conventions,&nbsp;valid&nbsp;in&nbsp;JavaScript&nbsp;but&nbsp;not&nbsp;in&nbsp;Object&nbsp;Pascal.</span></p>
+<p class="p_Heading1"><span class="f_Heading1">&nbsp;</span></p>
+<p class="p_Heading1"><span class="f_Heading1">&nbsp;</span></p>
+<p style="text-align: justify; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">JSON2Variant example</span></p>
+<p style="text-align: justify; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman';">Creating reader/writer class for storage is very easy. Once you have populated your object's data, you can use JSON to serialize and make it portable. Take a look at this example:</span></p>
+<p style="text-align: justify; margin: 0px 0px 9px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; margin: 0px 0px 9px 0px;"><a href="hm_variant02.htm"><img src="btn.jpg" border="0"/></a>
+<span style="font-size: 16px; font-family: 'Times New Roman';"> Code Example using JSON to Variant</span></p>
+<p style="text-align: justify; margin: 0px 0px 9px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; margin: 0px 0px 9px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">To force a variant cast explicitly, you can use </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TVariant</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> object that contains basic variant functions. </span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #008000;">TVariant</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AsInteger(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Integer;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AsString(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;String;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AsFloat(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Float;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AsObject(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;TObject;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;AsBool(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Boolean;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;IsNull(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Boolean;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;IsString(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Boolean;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;IsNumber(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Boolean;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;IsInteger(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Boolean;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;IsBool(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Boolean;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;IsNAN(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;Boolean;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Properties(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;TStrArray;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;OwnProperties(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aValue:&nbsp;Variant):&nbsp;TStrArray;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;CreateObject:&nbsp;Variant;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;CreateArray:&nbsp;Variant;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">static</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #008000;">//&nbsp;Variants&nbsp;support&nbsp;functions:</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">VarIsValidRef</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aRef:&nbsp;Variant):&nbsp;Boolean;&nbsp;&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">ObjToVariant</span><span class="f_CodeExample" style="color: #000000;">(value:&nbsp;TObject):&nbsp;Variant;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">VariantToObj</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Value:&nbsp;Variant):&nbsp;TObject;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">VariantExtend</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;target,&nbsp;prop:&nbsp;Variant)&nbsp;:&nbsp;Variant;&nbsp;overload;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">VariantExtend</span><span class="f_CodeExample" style="color: #000000;">(target:&nbsp;JObject;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;prop:&nbsp;Variant):&nbsp;JObject;&nbsp;overload;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">VarIsClear</span><span class="f_CodeExample" style="color: #000000;">(v:&nbsp;Variant)&nbsp;:&nbsp;Boolean;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">VarIsEmpty</span><span class="f_CodeExample" style="color: #000000;">(v:&nbsp;Variant)&nbsp;:&nbsp;Boolean;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">VarIsNull</span><span class="f_CodeExample" style="color: #000000;">(v:&nbsp;Variant)&nbsp;:&nbsp;Boolean;&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">VarIsValidRef function: </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Indicates whether the specified variant is neither Null nor undefined.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">VarIsNull function: </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">It returns true if the given variant contains the value Null. If the variant contains any other value, the function result is false.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">: Do not confuse a Null variant with an unassigned/undefined variant. A Null variant is still assigned, but has the value Null. Unlike unassigned variants, Null variants can be used in expressions and can be converted to other types of variants.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">VarIsEmpty function: </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">It returns true if the given variant contains the value Unassigned. If the variant contains any other value, the function result is false.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note: </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Do not confuse an unassigned/undefined variant with a Null variant. A Null variant is still assigned, but has the value Null. Unlike unassigned variants, Null variants can be used in expressions and can be converted to other types of variants.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">VarIsClear function: </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">It returns true if the given variant’s value is undefined. The value can be undefined for any of several reasons:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">- The Variant may have had its value set to Unassigned/undefined.</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">- The Variant’s value may be an interface type that has been set to nil (Delphi) or NULL (C++).</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">- The Variant may be a custom variant that returns true from its IsClear method.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In all other cases, the function result is false.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note: </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Do not confuse an unassigned variant with a Null variant. A Null variant is still assigned, but has the value Null. Unlike unassigned variants, Null variants can be used in expressions and can be converted to other types of variants.</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">*VarIsClear is not implemented in the Pas2JS 2.1.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><a href="hm_variant01.htm"><img src="btn.jpg" border="0"/></a>
+<span style="font-size: 16px; font-family: 'Times New Roman';"> Code Example using VarIsValidRef, VarIsEmpty and VarIsNull</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Methods</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">ToString() : String</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!-- (0068)StrToDate&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : StrToDate command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, StrToDate, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>StrToDate</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Converts a date string into a TDateTime value</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>StrToDate</b></font>
+
+(
+<b>const Date </b> : string
+)
+ : TDateTime;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>StrToDate</b></font>&nbsp;(
+<b>const Date </b> : string;<b> const FormatSettings </b> : TFormatSettings
+)  : TDateTime;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>StrToDate</b></font> function attempts to convert a date as a string <b>Date</b> into a TDateTime value.
+<br>&nbsp;<br>
+The date string must adhere to the format of the <b>ShortDateFormat</b> value, and use the <b>DateSeparator</b> character to separate the day, month and year values.
+<br>&nbsp;<br>
+The default format in the UK is <font color=#200080><b>day/month/year</b></font>, where :
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>The day&nbsp;</b></td><td class=dd> must be 1..31 (depending on month/year)</td></tr>
+<tr><td class=dt align='right'><b>The month&nbsp;</b></td><td class=dd> must be 1..12</td></tr>
+<tr><td class=dt align='right'><b>The year&nbsp;</b></td><td class=dd> must be 0..9999 (optional)
+</td></tr></table>
+<br>&nbsp;<br>
+Omitting the year results in the use of the current year.
+<br>&nbsp;<br>
+Note that year 0015, for example, must be given with the century digits; 15 on its own would be seen as a recent year. 
+<br>&nbsp;<br>
+If the <b>year</b> is 2 digits, the century is determined by the <b>TwoDigitYearCenturyWindow</b> value.
+<br>&nbsp;<br>
+The <b>time</b> is set to 0 - the start of the specified day.
+<br>&nbsp;<br>
+Any errors in the date string will yield <b>EConvertError</b>.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font> of this function is for use within threads. You furnish the <b>FormatSettings</b> record before invoking the call. It takes a local copy of global formatting variables that make the routine thread safe.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="dateseparator.htm">DateSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to separate display date fields</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="datetostr.htm">DateToStr</a></b></td>
+<td width="8"></td>
+<td align="left">Converts a TDateTime date value to a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shortdateformat.htm">ShortDateFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Compact version of the date to string format</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="strtodatetime.htm">StrToDateTime</a></b></td>
+<td width="8"></td>
+<td align="left">Converts a date+time string into a TDateTime value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="strtotime.htm">StrToTime</a></b></td>
+<td width="8"></td>
+<td align="left">Converts a time string into a TDateTime value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="twodigityearcenturywindow.htm">TwoDigitYearCenturyWindow</a></b></td>
+<td width="8"></td>
+<td align="left">Sets the century threshold for 2 digit year string conversions</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Showing 2 and 4 digit year date string conversions</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the StrToDate command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;myDate : TDateTime;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;myDate := <font color=#C00000><b>StrToDate</b></font>('15/03/75');<br>
+&nbsp;&nbsp;WriteLn('15/03/75&nbsp;&nbsp; = '+DateTimeToStr(myDate));<br>
+&nbsp;&nbsp;myDate := <font color=#C00000><b>StrToDate</b></font>('01/01/2075');<br>
+&nbsp;&nbsp;WriteLn('01/01/2075 = '+DateTimeToStr(myDate));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="strtodate.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;15/03/75&nbsp;&nbsp; = 15/03/1975<br>&nbsp;&nbsp;
+01/01/2075 = 01/01/2075 <br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

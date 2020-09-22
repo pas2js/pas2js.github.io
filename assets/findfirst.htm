@@ -1,0 +1,498 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0052)FindFirst -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : FindFirst command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, FindFirst, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>FindFirst</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Function</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Finds all files matching a file mask and
+                attributes</font>
+              </td>
+              <td align="right">
+                <font color="#000000" face=
+                "Arial,Helvetica,Sans-Serif" size=
+                "3"><strong>SysUtils</strong> unit</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;function&nbsp;<font color=
+                "#0000A0"><strong>FindFirst</strong></font> (
+                <strong>const FileMask</strong> : string;
+                <strong>Attributes</strong> : Integer; <strong>var
+                SearchResult</strong> : TSearchRec ) :
+                Integer;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>FindFirst</strong></font>
+                function searches for files matching a
+                <strong>FileMask</strong> and
+                <strong>Attributes</strong>, returning the first
+                match (if found) in
+                <strong>SearchResult</strong>.<br />
+                &nbsp;<br />
+                The <strong>Attributes</strong> define files to
+                search for <font color="#200080"><strong>in
+                addition</strong></font> to regular files.<br />
+                &nbsp;<br />
+                If a match is found, then the return value is 0,
+                otherwise, it is negative (and the result record is
+                not filled in).<br />
+                &nbsp;<br />
+                The <strong>FileMask</strong> may contain a path,
+                as well as a file name. The file name may contain
+                wild cards:<br />
+                &nbsp;<br />
+                <table>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>?&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Match any one character
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>*&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Match 0, 1 or more characters
+                    </td>
+                  </tr>
+                </table><br />
+                &nbsp;<br />
+                The <strong>Attributes</strong> may be set as
+                follows:<br />
+                &nbsp;<br />
+                <table>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>faAnyFile&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Any file
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>faReadOnly&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Read-only files
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>faHidden&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Hidden files
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>faSysFile&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : System files
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>faVolumeID&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Volume ID files
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>faDirectory&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Directory files
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>faArchive&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Archive files
+                    </td>
+                  </tr>
+                </table><br />
+                &nbsp;<br />
+                You may set <strong>Attributes</strong> from one or
+                more of the above by concatenating them.<br />
+                &nbsp;<br />
+                The <strong>SearchResult</strong> record comprises
+                many fields. Some are used by subsequent calls to
+                <strong>FindNext</strong>. Others are available to
+                your program :<br />
+                &nbsp;<br />
+                <table>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>Name&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Of the long name of the file found
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>Size&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : The size of the file in bytes
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>Time&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : Last modified date/time of the file
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>Attr&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      : The file attributes (as above)
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="title" bgcolor="#FFD6D4">
+                <strong>Notes</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFF5F3">
+              <td>
+                <font color=
+                "#FF0000"><strong>Warning</strong></font> : you
+                must call <strong>FindClose</strong> after a
+                successful <font color=
+                "#996600"><strong>FindFirst</strong></font> when
+                you have finished searching (finished calling
+                <strong>FindNext</strong>). This frees up resources
+                held by the find process (such as the
+                <strong>SearchResult</strong> record).<br />
+                <br />
+                If the <strong>FileMask</strong> contains no path
+                information, then the search is in the current
+                directory.<br />
+                <br />
+                Because the <strong>Attributes</strong> parameter
+                defines <strong>additional</strong> file types to
+                search for, you should filter the results
+                <strong>Attr</strong> value to select only the
+                desired file types.<br />
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "filesearch.htm">FileSearch</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Search for a file in one or more directories
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "findclose.htm">FindClose</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Closes a successful
+                      <strong>FindFirst</strong> file search
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "findnext.htm">FindNext</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Find the next file after a successful
+                      <strong>FindFirst</strong>
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "tsearchrec.htm">TSearchRec</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Record used to hold data for
+                      <strong>FindFirst</strong> and
+                      <strong>FindNext</strong>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code : Find all
+                Unit1.d* regular files in the current
+                directory</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size=
+                "2"><strong>var</strong><br />
+                &nbsp;&nbsp;searchResult : TSearchRec;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Try to
+                find regular files matching Unit1.d* in the current
+                dir</strong></font><br />
+                &nbsp;&nbsp;if <font color=
+                "#C00000"><strong>FindFirst</strong></font>('Unit1.d*',
+                faAnyFile, searchResult) = 0 then<br />
+                &nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;repeat<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('File
+                name = '+searchResult.Name);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('File
+                size = '+IntToStr(searchResult.Size));<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;until
+                FindNext(searchResult) &lt;&gt; 0;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Must free up resources used by
+                these successful finds</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;FindClose(searchResult);<br />
+
+                &nbsp;&nbsp;end;<br />
+                <strong>end;</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href=
+                "findfirst&amp;expandcode1=yes.htm#Ex1">
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Show full unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;File name = Unit1.dcu<br />
+                &nbsp;&nbsp; File size = 4382<br />
+                &nbsp;&nbsp; File name = Uni1.dfm<br />
+                &nbsp;&nbsp; File size = 524<br />
+                &nbsp;&nbsp; File name = Uni1.ddp<br />
+                &nbsp;&nbsp; File size = 51<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex2"></a><strong>Example code : Find all
+                directories above and including the current
+                one</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size=
+                "2"><strong>var</strong><br />
+                &nbsp;&nbsp;searchResult : TSearchRec;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Try to
+                find directories above the current
+                directory</strong></font><br />
+                &nbsp;&nbsp;SetCurrentDir('..');<br />
+                <br />
+                &nbsp;&nbsp;if <font color=
+                "#C00000"><strong>FindFirst</strong></font>('*',
+                faDirectory, searchResult) = 0 then<br />
+                &nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;repeat<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Only show
+                directories</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+                (searchResult.attr and faDirectory) =
+                faDirectory<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then
+                WriteLn('Directory =
+                '+searchResult.Name);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;until
+                FindNext(searchResult) &lt;&gt; 0;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Must free up resources used by
+                these successful finds</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;FindClose(searchResult);<br />
+
+                &nbsp;&nbsp;end;<br />
+                <strong>end;</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href=
+                "findfirst&amp;expandcode2=yes.htm#Ex2">
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Show full unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;Directory = .<br />
+                &nbsp;&nbsp; Directory = ..<br />
+                &nbsp;&nbsp; Directory = Bin<br />
+                &nbsp;&nbsp; Directory = Help<br />
+                &nbsp;&nbsp; Directory = Projects<br />
+                &nbsp;&nbsp; Directory = Demos<br />
+                &nbsp;&nbsp; Directory = Lib<br />
+                &nbsp;&nbsp; Directory = Objrepos<br />
+                &nbsp;&nbsp; Directory = MergeModules<br />
+                &nbsp;&nbsp; Directory = Imports<br />
+                &nbsp;&nbsp; Directory = Source<br />
+                &nbsp;&nbsp; Directory = Rave5<br />
+                &nbsp;&nbsp; Directory = Ocx<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

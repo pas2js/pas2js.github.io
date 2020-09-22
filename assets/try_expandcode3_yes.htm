@@ -1,0 +1,316 @@
+<!-- (0062)Try&ExpandCode3=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Try command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Try, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Try</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts code that has error trapping</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Try</b><br>&nbsp;
+&nbsp;&nbsp;Statement<br>&nbsp;
+ {Statement...}<br>&nbsp;
+<b>Finally</b><br>&nbsp;
+&nbsp;&nbsp;Statement<br>&nbsp;
+ {Statement...}<br>&nbsp;
+<b>End</b>;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Try</b><br>&nbsp;
+&nbsp;&nbsp;Statement<br>&nbsp;
+ {Statement...}<br>&nbsp;
+<b>Except</b><br>&nbsp;
+&nbsp;&nbsp;Statement<br>&nbsp;
+ {Statement...}<br>&nbsp;
+<b>End</b>;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Try</b><br>&nbsp;
+&nbsp;&nbsp;Statement<br>&nbsp;
+ {Statement...}<br>&nbsp;
+<b>Except</b><br>&nbsp;
+&nbsp;&nbsp;<b>On</b> {Name :} Exception type <b>Do</b> Statement<br>&nbsp;
+ {<b>Else</b> Statement}<br>&nbsp;
+<b>End</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Try</b></font> keyword is used to mark the start of a block of statements that have error trapping. If an error occurs, the program is not terminated. Instead, control is passed to either a <b>Finally</b> or <b>Except</b> section.
+<br>&nbsp;<br>
+<font color=#996600><b>Try</b></font> is used in a number of ways. 
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+In a <b>Try-Finally</b> construct, the <b>Finally</b> statement is guaranteed to be executed absolutely regardless of what happens in the <font color=#996600><b>Try</b></font> clause. However, the <b>Finally</b> clause does not actually handle any exceptions - the program will terminate if no Except clause is found (see notes below).
+<br>&nbsp;<br>
+<b>Try-Finally</b> is normally used by a routine to allow cleanup processing to take place, such as freeing resources, with the exception being correctly passed to the caller to handle.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+<br>&nbsp;<br>
+In this version, only if the <font color=#996600><b>Try</b></font> clause generates an exception will the <b>Except</b> clause be executed. This is used to take alternative action when something unexpected goes wrong. The except clause cannot determine the error type however.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 3</b></font>
+<br>&nbsp;<br>
+This is similar to version 2, but specifies different actions for different exception types, such as <b>EInOutError</b>. An <b>Else</b> clause can be used as a catch all for unexpected exception types. The general exception type <b>Exception</b> can be used to catch all exception types.
+<br>&nbsp;<br>
+By assigning a <b>Name</b> to the exception, the message text of the exception (Name.Message) can be obtained for display or other uses.
+<br>&nbsp;<br>
+When an exception is raised in a version 3 setup, if the exception is not acted upon by On or Else statements, then a check is made to see if we are in a nested Try block. If so, the Except clause of this parent Try is processed. If no On or Else clause is found, the program terminates.
+<br>&nbsp;<br>
+The <b>Else</b> clause is not really necessary - it is better to use <b>On E:Exception Do</b>, the generic exception handling, since it still provides the error message (E.Message).
+<br>&nbsp;<br>
+<font color=#FF0000>Important</font> : you can determine the type of error that occured by using the generic exception handling - <b>On E:Exception Do</b>. E is a pointer to the exception object that is created by the exception condition. <b>E.ClassName</b> gives the exception type, such as <b>'EDivByZero'</b>, as shown in the final example code.
+<br>&nbsp;<br>
+The following list of exceptions covers the basic types - there are hundreds of exception classes:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>Exception&nbsp;</b></td><td class=dd>Base class</td></tr>
+<tr><td class=dt align='right'><b>EAbort&nbsp;</b></td><td class=dd>Abort without dialog box</td></tr>
+<tr><td class=dt align='right'><b>EAbstractError&nbsp;</b></td><td class=dd>Abstract method error</td></tr>
+<tr><td class=dt align='right'><b>AssertionFailed&nbsp;</b></td><td class=dd>Assert call failed</td></tr>
+<tr><td class=dt align='right'><b>EBitsError&nbsp;</b></td><td class=dd>Boolean array error</td></tr>
+<tr><td class=dt align='right'><b>ECommonCalendarError&nbsp;</b></td><td class=dd>Calendar calc error</td></tr>
+<tr><td class=dt align='right'><b>EDateTimeError&nbsp;</b></td><td class=dd>&nbsp;&nbsp;DateTime calc error</td></tr>
+<tr><td class=dt align='right'><b>EMonthCalError&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Month calc error</td></tr>
+<tr><td class=dt align='right'><b>EConversionError&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Raised by Convert</td></tr>
+<tr><td class=dt align='right'><b>EConvertError&nbsp;</b></td><td class=dd>Object convert error</td></tr>
+<tr><td class=dt align='right'><b>EDatabaseError&nbsp;</b></td><td class=dd>Database error</td></tr>
+<tr><td class=dt align='right'><b>EExternal&nbsp;</b></td><td class=dd>Hardware/Windows error</td></tr>
+<tr><td class=dt align='right'><b>EAccessViolation&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Access violation</td></tr>
+<tr><td class=dt align='right'><b>EControlC&nbsp;</b></td><td class=dd>&nbsp;&nbsp;User abort occured</td></tr>
+<tr><td class=dt align='right'><b>EExternalException&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Other Internal error</td></tr>
+<tr><td class=dt align='right'><b>EIntError&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Integer calc error</td></tr>
+<tr><td class=dt align='right'><b>EDivByZero&nbsp;</b></td><td class=dd>&nbsp;&nbsp;&nbsp;&nbsp;Divide by zero</td></tr>
+<tr><td class=dt align='right'><b>EIntOverflow&nbsp;</b></td><td class=dd>&nbsp;&nbsp;&nbsp;&nbsp;Integer overflow</td></tr>
+<tr><td class=dt align='right'><b>ERangeError&nbsp;</b></td><td class=dd>&nbsp;&nbsp;&nbsp;&nbsp;Out of value range</td></tr>
+<tr><td class=dt align='right'><b>EMathError&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Floating point error</td></tr>
+<tr><td class=dt align='right'><b>EInvalidArgument&nbsp;</b></td><td class=dd>&nbsp;&nbsp;&nbsp;&nbsp;Bad argument value</td></tr>
+<tr><td class=dt align='right'><b>EInvalidOp&nbsp;</b></td><td class=dd>&nbsp;&nbsp;&nbsp;&nbsp;Inappropriate operation</td></tr>
+<tr><td class=dt align='right'><b>EOverflow&nbsp;</b></td><td class=dd>&nbsp;&nbsp;&nbsp;&nbsp;Value too large</td></tr>
+<tr><td class=dt align='right'><b>EUnderflow&nbsp;</b></td><td class=dd>&nbsp;&nbsp;&nbsp;&nbsp;Value too small</td></tr>
+<tr><td class=dt align='right'><b>EZeroDivide&nbsp;</b></td><td class=dd>&nbsp;&nbsp;&nbsp;&nbsp;Divide by zero</td></tr>
+<tr><td class=dt align='right'><b>EStackOverflow&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Severe Delphi problem</td></tr>
+<tr><td class=dt align='right'><b>EHeapException&nbsp;</b></td><td class=dd>Dynamic memory problem</td></tr>
+<tr><td class=dt align='right'><b>EInvalidPointer&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Bad memory pointer</td></tr>
+<tr><td class=dt align='right'><b>EOutOfMemory&nbsp;</b></td><td class=dd>&nbsp;&nbsp;Cannot allocate memory</td></tr>
+<tr><td class=dt align='right'><b>EInOutError&nbsp;</b></td><td class=dd>IO error</td></tr>
+<tr><td class=dt align='right'><b>EInvalidCast&nbsp;</b></td><td class=dd>Object casting error</td></tr>
+<tr><td class=dt align='right'><b>EInvalidOperation&nbsp;</b></td><td class=dd>Bad component op</td></tr>
+<tr><td class=dt align='right'><b>EMenuError&nbsp;</b></td><td class=dd>Menu item error</td></tr>
+<tr><td class=dt align='right'><b>EOSError&nbsp;</b></td><td class=dd>Operating system error</td></tr>
+<tr><td class=dt align='right'><b>EParserError&nbsp;</b></td><td class=dd>Parsing error</td></tr>
+<tr><td class=dt align='right'><b>EPrinter&nbsp;</b></td><td class=dd>Printer error</td></tr>
+<tr><td class=dt align='right'><b>EPropertyError&nbsp;</b></td><td class=dd>Class property error</td></tr>
+<tr><td class=dt align='right'><b>EPropReadOnly&nbsp;</b></td><td class=dd>Invalid property access</td></tr>
+<tr><td class=dt align='right'><b>EPropWriteOnly&nbsp;</b></td><td class=dd>Invalid property access</td></tr>
+<tr><td class=dt align='right'><b>EThread&nbsp;</b></td><td class=dd>Thread error</td></tr>
+<tr><td class=dt align='right'><b>EVariantError&nbsp;</b></td><td class=dd>Variant problem</td></tr></table>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+There are times when you want a construct like this :<br>
+<br>
+<font color=#200080>Try<br>
+&nbsp;&nbsp;...<br>
+Except<br>
+&nbsp;&nbsp;...<br>
+Finally<br>
+&nbsp;&nbsp;...<br>
+End;</font><br>
+<br>
+where exceptions are trapped and acted upon, but in all cases, a set of clean up statements are executed. This can be achieved with nested <font color=#996600><b>Try</b></font> statements :<br>
+<br>
+<font color=#200080>Try<br>
+&nbsp;&nbsp;Try<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;Except<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;End;<br>
+Finally<br>
+&nbsp;&nbsp;...<br>
+End;</font><br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="except.htm">Except</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the error trapping clause of a <b>Try</b> statement</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="finally.htm">Finally</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the unconditional code section of a <b>Try</b> statement</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="on.htm">On</a></b></td>
+<td width="8"></td>
+<td align="left">Defines exception handling in a <b>Try Except</b> clause</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="raise.htm">Raise</a></b></td>
+<td width="8"></td>
+<td align="left">Raise an exception</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Version 1 : Zero divide with a finally clause</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;number, zero : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to divide an integer by zero - to raise an exception</b></font><br>
+&nbsp;&nbsp;number := -1;<br>
+&nbsp;&nbsp;<font color=#C00000><b>Try</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;zero&nbsp;&nbsp; := 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number := 1 div zero;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('number / zero = '+IntToStr(number));<br>
+&nbsp;&nbsp;finally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if number = -1 then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Number was not assigned a value - using default');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number := 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end;<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/try&expandcode1=yes&expandcode3=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Number was not assigned a value - using default<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Then, the program terminates with an EDivByZero error message - the finally clause did not trap the error.<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Version 2 : Zero divide with a plain Except block</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;number, zero : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to divide an integer by zero - to raise an exception</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>Try</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;zero&nbsp;&nbsp; := 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number := 1 div zero;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('number / zero = '+IntToStr(number));<br>
+&nbsp;&nbsp;except<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Unknown error encountered');<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/try&expandcode2=yes&expandcode3=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Unknown error encountered<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Version 3 : Divide by zero with an Except On clause</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;number, zero : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to divide an integer by zero - to raise an exception</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>Try</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;zero&nbsp;&nbsp; := 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number := 1 div zero;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('number / zero = '+IntToStr(number));<br>
+&nbsp;&nbsp;except<br>
+&nbsp;&nbsp;&nbsp;&nbsp;on E : Exception do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(E.ClassName+' error raised, with message : '+E.Message);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="try.htm#Ex3"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;EDivByZero error raised with message : Division by zero<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

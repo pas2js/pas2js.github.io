@@ -1,0 +1,170 @@
+<!-- (0065)GetMem&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : GetMem command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, GetMem, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>GetMem</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Get a specified number of storage bytes</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>GetMem</b></font>
+
+(
+<b>var StoragePointer </b> : Pointer;<b> StorageSize </b> : Integer
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>GetMem</b></font> procedure attempts to get the specified <b>StorageSize</b> bytes of storage, storing a pointer to the storage in <b>StoragePointer</b>.
+<br>&nbsp;<br>
+If the allocation fails, then a <b>EOutOfMemory</b> exception is raised.
+<br>&nbsp;<br>
+The storage is not initialised in any way.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The <font color=#996600><b>GetMem</b></font> procedure is <b>Thread safe</b> as long as <b>IsMultiThread</b> is true.<br>
+<br>
+It is better to use <b>New</b> to allocate storage for records - the example is for illustration of <font color=#996600><b>GetMem</b></font> and pointer manipulation.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="dispose.htm">Dispose</a></b></td>
+<td width="8"></td>
+<td align="left">Dispose of storage used by a  pointer type variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="fillchar.htm">FillChar</a></b></td>
+<td width="8"></td>
+<td align="left">Fills out a section of storage with a fill character or byte value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="freemem.htm">FreeMem</a></b></td>
+<td width="8"></td>
+<td align="left">Free memory storage used by a variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="new.htm">New</a></b></td>
+<td width="8"></td>
+<td align="left">Create a new pointer type variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="reallocmem.htm">ReallocMem</a></b></td>
+<td width="8"></td>
+<td align="left">Reallocate an existing block of storage</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Get storage for 3 records and use this storage</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;<font color=#008000>// The System unit does not need to be defined</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> type</b><br>
+&nbsp;&nbsp;TRecord = Record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string[10];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age&nbsp;&nbsp;: Byte;<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;recPointer : ^TRecord;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Allocate storage for three records</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note : It is better to use <b>New</b> for this</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// It is used here for illustration purposes only</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>GetMem</b></font>(recPointer, 3 * SizeOf(TRecord));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Fill out these 3 records with values</b></font><br>
+&nbsp;&nbsp;recPointer.name := 'Brian';<br>
+&nbsp;&nbsp;recPointer.age&nbsp;&nbsp;:= 23;<br><b>
+</b><br>
+&nbsp;&nbsp;Inc(recPointer);<br>
+&nbsp;&nbsp;recPointer.name := 'Jim';<br>
+&nbsp;&nbsp;recPointer.age&nbsp;&nbsp;:= 55;<br><b>
+</b><br>
+&nbsp;&nbsp;Inc(recPointer);<br>
+&nbsp;&nbsp;recPointer.name := 'Sally';<br>
+&nbsp;&nbsp;recPointer.age&nbsp;&nbsp;:= 38;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display these values</b></font><br>
+&nbsp;&nbsp;Dec(recPointer, 2);<br>
+&nbsp;&nbsp;ShowMessageFmt('%s is %d',[recPointer.name, recPointer.age]);<br>
+&nbsp;&nbsp;Inc(recPointer);<br>
+&nbsp;&nbsp;ShowMessageFmt('%s is %d',[recPointer.name, recPointer.age]);<br>
+&nbsp;&nbsp;Inc(recPointer);<br>
+&nbsp;&nbsp;ShowMessageFmt('%s is %d',[recPointer.name, recPointer.age]);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="getmem.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Brian is 23<br>&nbsp;&nbsp;
+Jim is 55<br>&nbsp;&nbsp;
+Sally is 38<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

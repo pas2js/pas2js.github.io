@@ -1,0 +1,129 @@
+// Component serialized as Pascal - Begin
+// Format version 1
+WebEdit1:=TWebEdit.Create(Self);
+WebButton1:=TWebButton.Create(Self);
+WebMemo1:=TWebMemo.Create(Self);
+WebComboBox1:=TWebComboBox.Create(Self);
+WebPanel1:=TWebPanel.Create(Self);
+WebImageControl1:=TWebImageControl.Create(Self);
+WebLabel1:=TWebLabel.Create(Self);
+WebLabel2:=TWebLabel.Create(Self);
+WebEdit1.BeginUpdate;
+WebButton1.BeginUpdate;
+WebMemo1.BeginUpdate;
+WebComboBox1.BeginUpdate;
+WebPanel1.BeginUpdate;
+WebImageControl1.BeginUpdate;
+WebLabel1.BeginUpdate;
+WebLabel2.BeginUpdate;
+try
+  Name:='WebForm1';
+  Left:=198;
+  Height:=240;
+  Top:=250;
+  Width:=320;
+  Caption:='WebForm1';
+  ClientHeight:=240;
+  ClientWidth:=320;
+  with WebEdit1 do begin
+    Name:='WebEdit1';
+    Parent:=Self;
+    Left:=12;
+    Height:=21;
+    Top:=28;
+    Width:=181;
+    TabOrder:=0;
+    AlignWithMargins:=False;
+  end;
+  with WebButton1 do begin
+    Name:='WebButton1';
+    Parent:=Self;
+    Left:=200;
+    Height:=25;
+    Top:=24;
+    Width:=75;
+    Caption:='Add';
+    OnClick:=@WebButton1Click;
+    TabOrder:=1;
+    AlignWithMargins:=False;
+  end;
+  with WebMemo1 do begin
+    Name:='WebMemo1';
+    Parent:=Self;
+    Left:=11;
+    Height:=85;
+    Top:=59;
+    Width:=264;
+    TabOrder:=2;
+    AlignWithMargins:=False;
+    AutoSize:=False;
+    SelStart:=0;
+    SelLength:=0;
+  end;
+  with WebComboBox1 do begin
+    Name:='WebComboBox1';
+    Parent:=Self;
+    Left:=12;
+    Height:=21;
+    Top:=153;
+    Width:=263;
+    ItemHeight:=13;
+    OnChange:=@WebComboBox1Change;
+    TabOrder:=3;
+    AlignWithMargins:=False;
+  end;
+  with WebPanel1 do begin
+    Name:='WebPanel1';
+    Parent:=Self;
+    Left:=11;
+    Height:=41;
+    Top:=199;
+    Width:=264;
+    BorderColor:=16340992;
+    Caption:='WebPanel1';
+    Color:=clMoneyGreen;
+    with WebImageControl1 do begin
+      Name:='WebImageControl1';
+      Parent:=WebPanel1;
+      Left:=240;
+      Height:=16;
+      Top:=4;
+      Width:=16;
+      URL:='Picture.png';
+    end;
+    with WebLabel1 do begin
+      Name:='WebLabel1';
+      Parent:=WebPanel1;
+      Left:=8;
+      Height:=13;
+      Top:=4;
+      Width:=202;
+      Caption:='This Lab2 shows the use of basic controls.';
+      ParentColor:=False;
+      AlignWithMargins:=False;
+      EllipsisPosition:=epEndEllipsis;
+    end;
+  end;
+  with WebLabel2 do begin
+    Name:='WebLabel2';
+    Parent:=Self;
+    Left:=12;
+    Height:=13;
+    Top:=178;
+    Width:=33;
+    Caption:='-Label-';
+    ParentColor:=False;
+    AlignWithMargins:=False;
+    EllipsisPosition:=epEndEllipsis;
+  end;
+  // Component serialized as Pascal - End
+finally
+  WebEdit1.EndUpdate;
+  WebButton1.EndUpdate;
+  WebMemo1.EndUpdate;
+  WebComboBox1.EndUpdate;
+  WebPanel1.EndUpdate;
+  WebImageControl1.EndUpdate;
+  WebLabel1.EndUpdate;
+  WebLabel2.EndUpdate;
+end;

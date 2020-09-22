@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Classes</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Classes</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 21px; font-family: 'Times New Roman'; font-weight: bold;">Classes&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Classes all derive from the root TObject class and follow the classic Delphi syntax. They're reference types, see also </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">Records</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Named constructors are supported, as well as class methods, meta-classes, virtual methods, properties and destructors. Properties can optionally be array properties, and can feature an explicit index. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Classes can implement </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">Interfaces</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> and they can be partial. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">You can also declare class methods with &quot;method&quot; as in the </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">Oxygene</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> language, in addition to &quot;procedure&quot; and &quot;function&quot;. </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Additionally classes can be marked as &quot;external&quot;, in which case they're meant to expose classes that are not implemented in the script, and unlike interfaces, then can defined fields. </span></p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><img src="hm_clip0026.png" width="257" height="145" border="0" alt="hm_clip0026"></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Named&nbsp;constructors&nbsp;are&nbsp;supported,&nbsp;as&nbsp;well&nbsp;as&nbsp;class&nbsp;methods,&nbsp;meta-classes,&nbsp;virtual&nbsp;methods,&nbsp;properties&nbsp;and&nbsp;destructors.&nbsp;Properties&nbsp;can&nbsp;optionally&nbsp;be&nbsp;array&nbsp;properties,&nbsp;and&nbsp;can&nbsp;feature&nbsp;an&nbsp;explicit&nbsp;index.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;also&nbsp;declare&nbsp;class&nbsp;methods&nbsp;with&nbsp;method&nbsp;as&nbsp;in&nbsp;the&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #0000ff;">Oxygene&nbsp;language</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">,&nbsp;in&nbsp;addition&nbsp;to&nbsp;procedure&nbsp;and&nbsp;function.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Classic&nbsp;constructor&nbsp;syntax&nbsp;is&nbsp;supported,&nbsp;but&nbsp;you&nbsp;can&nbsp;also&nbsp;specify&nbsp;a&nbsp;default&nbsp;constructor&nbsp;and&nbsp;use&nbsp;the&nbsp;new&nbsp;keyword&nbsp;to&nbsp;instantiate&nbsp;classes.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Both&nbsp;lines&nbsp;of&nbsp;code&nbsp;below&nbsp;are&nbsp;equivalent:&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;obj&nbsp;&nbsp;:=&nbsp;&nbsp;TMyObject.Create(parameter);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;obj&nbsp;&nbsp;:=&nbsp;&nbsp;new&nbsp;&nbsp;TMyObject(parameter);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Visibilities&nbsp;are&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #0000ff;">private,&nbsp;protected,&nbsp;public&nbsp;&nbsp;and&nbsp;published</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">.&nbsp;Private&nbsp;&nbsp;and&nbsp;protected&nbsp;&nbsp;in&nbsp;Smart&nbsp;correspond&nbsp;to&nbsp;strict&nbsp;&nbsp;private&nbsp;and&nbsp;strict&nbsp;&nbsp;protected&nbsp;in&nbsp;Delphi.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Classes&nbsp;can&nbsp;implement&nbsp;Interfaces.&nbsp;(See&nbsp;example&nbsp;in&nbsp;the&nbsp;Interfaces&nbsp;section.)&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Properties</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Properties allow to encapsulate with a field-like syntax what can actually be methods (getter/setter). </span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">property Name[args : Type] : Type read Getter write Setter; default; </span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">a property can optionally have arguments/indexes, such properties can optionally be marked as default </span></td></tr></table></div><div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">the Getter can be a method returning, a field, another property, or an expression (enclosed between brackets) </span></td></tr></table></div><div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">the Setter can be a method, a field, another property or an expression (enclosed between brackets, with Value being the pseudo-variable that receives the value assigned to the property) </span></td></tr></table></div><p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The following form property Name : Type; declares a property backed by a hidden (inaccessible) field. The field can optionally be initialized. </span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The following form property Name; can be used to promote the visibility of a property without altering it in any other way, for instance to make public a property that was previously protected. </span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Properties can also be prefixed by 'class' in which case they will be restricted to class variables, class methods and class properties, but can then be used on the class type (metaclass) and not just on instance. </span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 19px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Default&nbsp;Field&nbsp;Values</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Class&nbsp;fields&nbsp;can&nbsp;have&nbsp;default&nbsp;values.&nbsp;Types&nbsp;for&nbsp;fields&nbsp;with&nbsp;default&nbsp;values&nbsp;can&nbsp;be&nbsp;type-inferenced.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TMyClass&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Field1&nbsp;&nbsp;:=&nbsp;&nbsp;'hello';</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Field2&nbsp;&nbsp;:&nbsp;&nbsp;Integer&nbsp;&nbsp;=&nbsp;&nbsp;123;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Constructors and Destructors</span></p>
+<p style="background: #fdfdfd; margin: 0px 0px 9px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">These are supported as normal (a part of </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TObject</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">). It must be underlined that when writing components (derived from TW3CustomControl, TW3GraphicControl or TW3Component) you rarely override these directly like under Delphi or free pascal, instead you override the protected methods InitializeObject and FinalizeObject. This is to compensate for the lack of BeforeDestruction and AfterConstruction in our object model.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">See&nbsp;<a href="hm_external_classes.htm">Partial&nbsp;Classes</a></span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">See&nbsp;<a href="hm_external_classes.htm">External&nbsp;Classes</a></span></p>
+
+</td></tr></table>
+
+</body>
+</html>

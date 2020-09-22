@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html><head>
+   <title>Smart Mobile Studio - User Help</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta name=viewport content="width=device-width, initial-scale=1">
+   <meta name="robots" content="noindex,follow" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link type="text/css" href="css/styles.css" rel="stylesheet" />
+   <style type="text/css">
+       body { font-size: 1em }
+       .heading1 { color: #000; text-decoration: none; }
+       .heading2 { color: #000; text-decoration: none; }
+       .heading3 { color: #000; text-decoration: none; font-size: 0.95em}
+       /* TOC LIST CSS */
+       #toc    { padding:0; margin:0 }
+       #toc li { margin-top:2px; margin-left:0; padding:1px }
+       #toc ul { padding-left:0; margin-left:0px }       
+       /* TOC LIST CSS */
+   </style>
+   <script type="text/javascript" src="js/jquery.js"></script>
+   <script type="text/javascript" src="js/app.js"></script> 
+    <script type="text/javascript">
+     var parentScope = (parent.hmNavigationFrame);
+	 function loadicons() { var icons = new Array(); for (i=0; i<arguments.length; i++) { icons[i] = new Image(); icons[i].src = arguments[i]; } }
+     function loadtoc() { if (parentScope) parent.loadstate(document.getElementById("toc")); else loadstate(document.getElementById("toc")); }
+     function savetoc() { if (parentScope) parent.savestate(document.getElementById("toc")); else savestate(document.getElementById("toc")); }
+     function clicked(node, event) { deselect(); if (parentScope) parent.hmNodeClicked(node, event); else hmNodeClicked(node, event); }
+     function dblclicked(node) { if (parentScope) parent.hmNodeDblclicked(node); else hmNodeDblclicked(node); }
+     function deselect() { if (window.getSelection) window.getSelection().removeAllRanges(); else if (document.selection) document.selection.empty(); }
+     $(document).ready(function(){
+       loadtoc();
+       $(window).onunload = savetoc;
+     });
+   </script>
+</head>
+<body>
+<ul id="toc" style="list-style-type:none;display:block;padding-left:0">
+
+<!--<li class="heading1" id="i1" data-img="hm7-welcome-feature.png" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading1" id="a1" href="hm_welcome.htm" target="hmcontent"><span class="heading1" id="s1">Welcome to Smart Mobile Studio</span></a>
+</li>-->
+<li class="heading2" id="i1" data-bg="ibook.png;ibookopen.png" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a1" target="hmcontent"><span class="heading2" id="s1" ondblclick="return dblclicked(this)">PAS 2 JS</span></a>
+<ul id="ul1" style="list-style-type:none">
+
+<li class="heading3" id="i1.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1" href="hm_pas2js001.htm" target="hmcontent"><span class="heading3" id="s1.1">TObject: the root type</span></a></li>
+
+<li class="heading3" id="i1.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.2" href="hm_pas2js002.htm" target="hmcontent"><span class="heading3" id="s1.2">Function Pointer</span></a></li>
+
+<li class="heading3" id="i1.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.3" href="hm_pas2js003.htm" target="hmcontent"><span class="heading3" id="s1.3">Anonymous method as a delegate method</span></a></li>
+
+<li class="heading3" id="i1.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.4" href="hm_pas2js004.htm" target="hmcontent"><span class="heading3" id="s1.4">Overload / Override the constructor</span></a></li>
+
+<li class="heading3" id="i1.5" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.5" href="hm_pas2js005.htm" target="hmcontent"><span class="heading3" id="s1.5">Class method</span></a></li>
+
+<li class="heading3" id="i1.6" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.6" href="hm_pas2js006.htm" target="hmcontent"><span class="heading3" id="s1.6">Static method</span></a></li>
+
+<li class="heading3" id="i1.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.7" href="hm_pas2js007.htm" target="hmcontent"><span class="heading3" id="s1.7">Which doors are open?</span></a></li>
+
+<li class="heading3" id="i1.8" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.8" href="hm_pas2js008.htm" target="hmcontent"><span class="heading3" id="s1.8">w3_Prompt</span></a></li>
+
+<li class="heading3" id="i1.9" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.9" href="hm_pas2js009.htm" target="hmcontent"><span class="heading3" id="s1.9">Recursive function</span></a></li>
+
+<li class="heading3" id="i1.10" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.10" href="hm_pas2js010.htm" target="hmcontent"><span class="heading3" id="s1.10">Alias to Float Type</span></a></li>
+
+<li class="heading3" id="i1.11" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.11" href="hm_pas2js011.htm" target="hmcontent"><span class="heading3" id="s1.11">Arithmetic operators</span></a></li>
+
+<li class="heading3" id="i1.12" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.12" href="hm_pas2js012.htm" target="hmcontent"><span class="heading3" id="s1.12">Array cast instance of type</span></a></li>
+
+<li class="heading3" id="i1.13" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.13" href="hm_pas2js013.htm" target="hmcontent"><span class="heading3" id="s1.13">StrJoin to add items to Array</span></a></li>
+
+<li class="heading3" id="i1.14" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.14" href="hm_pas2js014.htm" target="hmcontent"><span class="heading3" id="s1.14">Add Subclasses types to Array</span></a></li>
+
+<li class="heading3" id="i1.15" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.15" href="hm_pas2js015.htm" target="hmcontent"><span class="heading3" id="s1.15">Assign an Array (Slice)</span></a>
+</li>
+
+<li class="heading3" id="i1.16" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.16" href="hm_pas2js016.htm" target="hmcontent"><span class="heading3" id="s1.16">Assign subclass type to Array</span></a></li>
+<li class="heading3" id="i1.17" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.17" href="hm_pas2js017.htm" target="hmcontent"><span class="heading3" id="s1.17">Array bounds</span></a></li>
+<li class="heading3" id="i1.18" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.18" href="hm_pas2js018.htm" target="hmcontent"><span class="heading3" id="s1.18">Assign Array (minus range)</span></a></li>
+<li class="heading3" id="i1.19" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.19" href="hm_pas2js019.htm" target="hmcontent"><span class="heading3" id="s1.19">Compounds operators</span></a></li>
+<li class="heading3" id="i1.20" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.20" href="hm_pas2js020.htm" target="hmcontent"><span class="heading3" id="s1.20">Concatenate Arrays (Map, Join)</span></a></li>
+<li class="heading3" id="i1.21" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.21" href="hm_pas2js021.htm" target="hmcontent"><span class="heading3" id="s1.21">DynArray (Length, SetLength)</span></a></li>
+<li class="heading3" id="i1.22" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.22" href="hm_pas2js022.htm" target="hmcontent"><span class="heading3" id="s1.22">DynArray (Copy)</span></a></li>
+<li class="heading3" id="i1.23" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.23" href="hm_pas2js023.htm" target="hmcontent"><span class="heading3" id="s1.23">DynArray Default values</span></a></li>
+<li class="heading3" id="i1.24" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.24" href="hm_pas2js024.htm" target="hmcontent"><span class="heading3" id="s1.24">DynArray (remove, push)</span></a></li>
+<li class="heading3" id="i1.25" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.25" href="hm_pas2js025.htm" target="hmcontent"><span class="heading3" id="s1.25">DynArray (Sort)</span></a></li>
+<li class="heading3" id="i1.26" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.26" href="hm_pas2js026.htm" target="hmcontent"><span class="heading3" id="s1.26">DynArray Stack (Pop)</span></a></li>
+<li class="heading3" id="i1.27" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.27" href="hm_pas2js027.htm" target="hmcontent"><span class="heading3" id="s1.27">DynArray (Swap, Reverse)</span></a></li>
+<li class="heading3" id="i1.28" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.28" href="hm_pas2js028.htm" target="hmcontent"><span class="heading3" id="s1.28">IN keyword DynArray</span></a></li>
+<li class="heading3" id="i1.29" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.29" href="hm_pas2js029.htm" target="hmcontent"><span class="heading3" id="s1.29">Function pointer with IN keyword</span></a></li>
+<li class="heading3" id="i1.30" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.30" href="hm_pas2js030.htm" target="hmcontent"><span class="heading3" id="s1.30">The indexOf() with Record Type</span></a></li>
+<li class="heading3" id="i1.31" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.31" href="hm_pas2js031.htm" target="hmcontent"><span class="heading3" id="s1.31">The indexOf() method with Array</span></a></li>
+<li class="heading3" id="i1.32" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.32" href="hm_pas2js032.htm" target="hmcontent"><span class="heading3" id="s1.32">The indexOf() with Function Pointer</span></a></li>
+<li class="heading3" id="i1.33" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.33" href="hm_pas2js033.htm" target="hmcontent"><span class="heading3" id="s1.33">Array Initialization</span></a></li>
+<li class="heading3" id="i1.34" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.34" href="hm_pas2js034.htm" target="hmcontent"><span class="heading3" id="s1.34">The Insert method with Arrays</span></a></li>
+<li class="heading3" id="i1.35" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.35" href="hm_pas2js035.htm" target="hmcontent"><span class="heading3" id="s1.35">The Map method with Arrays</span></a></li>
+<li class="heading3" id="i1.36" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.36" href="hm_pas2js036.htm" target="hmcontent"><span class="heading3" id="s1.36">The Sort Method with Arrays</span></a></li>
+<li class="heading3" id="i1.37" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.37" href="hm_pas2js037.htm" target="hmcontent"><span class="heading3" id="s1.37">Array of MetaClasses</span></a></li>
+<li class="heading3" id="i1.38" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.38" href="hm_pas2js038.htm" target="hmcontent"><span class="heading3" id="s1.38">Array of procedure as Parameter</span></a></li>
+<li class="heading3" id="i1.39" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.39" href="hm_pas2js039.htm" target="hmcontent"><span class="heading3" id="s1.39">Array of Record Type</span></a></li>
+<li class="heading3" id="i1.40" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.40" href="hm_pas2js040.htm" target="hmcontent"><span class="heading3" id="s1.40">Array of Record Type Add Create</span></a></li>
+<li class="heading3" id="i1.41" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.41" href="hm_pas2js041.htm" target="hmcontent"><span class="heading3" id="s1.41">Array of Record Type Initialization</span></a></li>
+<li class="heading3" id="i1.42" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.42" href="hm_pas2js042.htm" target="hmcontent"><span class="heading3" id="s1.42">Array of Variant</span></a></li>
+<li class="heading3" id="i1.43" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.43" href="hm_pas2js043.htm" target="hmcontent"><span class="heading3" id="s1.43">Array parameter expressions</span></a></li>
+<li class="heading3" id="i1.44" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.44" href="hm_pas2js044.htm" target="hmcontent"><span class="heading3" id="s1.44">Array plus assign (+=)</span></a></li>
+<li class="heading3" id="i1.45" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.45" href="hm_pas2js045.htm" target="hmcontent"><span class="heading3" id="s1.45">Property using Array field</span></a></li>
+<li class="heading3" id="i1.46" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.46" href="hm_pas2js046.htm" target="hmcontent"><span class="heading3" id="s1.46">Array Properties read SubClass</span></a></li>
+<li class="heading3" id="i1.47" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.47" href="hm_pas2js047.htm" target="hmcontent"><span class="heading3" id="s1.47">Array Ranges</span></a></li>
+<li class="heading3" id="i1.48" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.48" href="hm_pas2js048.htm" target="hmcontent"><span class="heading3" id="s1.48">SetLength and Array</span></a></li>
+<li class="heading3" id="i1.49" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.49" href="hm_pas2js049.htm" target="hmcontent"><span class="heading3" id="s1.49">Sort method using custom function</span></a></li>
+<li class="heading3" id="i1.50" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.50" href="hm_pas2js050.htm" target="hmcontent"><span class="heading3" id="s1.50">Pass static array as parameter</span></a></li>
+<li class="heading3" id="i1.51" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.51" href="hm_pas2js051.htm" target="hmcontent"><span class="heading3" id="s1.51">The Swap method</span></a></li>
+<li class="heading3" id="i1.52" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.52" href="hm_pas2js052.htm" target="hmcontent"><span class="heading3" id="s1.52">Variant with Array Index</span></a></li>
+<li class="heading3" id="i1.53" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.53" href="hm_pas2js053.htm" target="hmcontent"><span class="heading3" id="s1.53">The Assert method</span></a></li>
+<li class="heading3" id="i1.54" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.54" href="hm_pas2js054.htm" target="hmcontent"><span class="heading3" id="s1.54">Assigned method</span></a></li>
+<li class="heading3" id="i1.55" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.55" href="hm_pas2js055.htm" target="hmcontent"><span class="heading3" id="s1.55">Assigned Function Result | ExceptObject</span></a></li>
+<li class="heading3" id="i1.56" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.56" href="hm_pas2js056.htm" target="hmcontent"><span class="heading3" id="s1.56">Assignments | -= / +=</span></a></li>
+<li class="heading3" id="i1.57" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.57" href="hm_pas2js057.htm" target="hmcontent"><span class="heading3" id="s1.57">Binary literal</span></a></li>
+<li class="heading3" id="i1.58" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.58" href="hm_pas2js058.htm" target="hmcontent"><span class="heading3" id="s1.58">Bitwise, sar, shl, shr, shift operators</span></a></li>
+<li class="heading3" id="i1.59" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.59" href="hm_pas2js059.htm" target="hmcontent"><span class="heading3" id="s1.59">Boolean with logic operators</span></a></li>
+<li class="heading3" id="i1.60" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.60" href="hm_pas2js060.htm" target="hmcontent"><span class="heading3" id="s1.60">BoolToStr</span></a></li>
+<li class="heading3" id="i1.61" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.61" href="hm_pas2js061.htm" target="hmcontent"><span class="heading3" id="s1.61">Boolean with AND | &&</span></a></li>
+<li class="heading3" id="i1.62" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.62" href="hm_pas2js062.htm" target="hmcontent"><span class="heading3" id="s1.62">array [Boolean] of Integer/String</span></a></li>
+<li class="heading3" id="i1.63" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.63" href="hm_pas2js063.htm" target="hmcontent"><span class="heading3" id="s1.63">Boolean with OR ( || )</span></a></li>
+<li class="heading3" id="i1.64" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.64" href="hm_pas2js064.htm" target="hmcontent"><span class="heading3" id="s1.64">Booleans expressions</span></a></li>
+<li class="heading3" id="i1.65" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.65" href="hm_pas2js065.htm" target="hmcontent"><span class="heading3" id="s1.65">Break | Continue</span></a></li>
+<li class="heading3" id="i1.66" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.66" href="hm_pas2js066.htm" target="hmcontent"><span class="heading3" id="s1.66">Break in Exception block</span></a></li>
+<li class="heading3" id="i1.67" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.67" href="hm_pas2js067.htm" target="hmcontent"><span class="heading3" id="s1.67">Call methods conventions</span></a></li>
+<li class="heading3" id="i1.68" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.68" href="hm_pas2js068.htm" target="hmcontent"><span class="heading3" id="s1.68">case statement with non-ordinal datatypes</span></a></li>
+<li class="heading3" id="i1.69" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.69" href="hm_pas2js069.htm" target="hmcontent"><span class="heading3" id="s1.69">case..of statement | Variant condition</span></a></li>
+<li class="heading3" id="i1.70" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.70" href="hm_pas2js070.htm" target="hmcontent"><span class="heading3" id="s1.70">case..of statement | Boolean</span></a></li>
+<li class="heading3" id="i1.71" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.71" href="hm_pas2js071.htm" target="hmcontent"><span class="heading3" id="s1.71">case..of statement | Break</span></a></li>
+<li class="heading3" id="i1.72" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.72" href="hm_pas2js072.htm" target="hmcontent"><span class="heading3" id="s1.72">case..of statement | range a..b</span></a></li>
+<li class="heading3" id="i1.73" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.73" href="hm_pas2js073.htm" target="hmcontent"><span class="heading3" id="s1.73">Cast base types</span></a></li>
+<li class="heading3" id="i1.74" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.74" href="hm_pas2js074.htm" target="hmcontent"><span class="heading3" id="s1.74">Class Abstract method</span></a></li>
+<li class="heading3" id="i1.75" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.75" href="hm_pas2js075.htm" target="hmcontent"><span class="heading3" id="s1.75">Class cast</span></a></li>
+<li class="heading3" id="i1.76" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.76" href="hm_pas2js076.htm" target="hmcontent"><span class="heading3" id="s1.76">Class type with Const keyword</span></a></li>
+<li class="heading3" id="i1.77" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.77" href="hm_pas2js077.htm" target="hmcontent"><span class="heading3" id="s1.77">Class Const as Property</span></a></li>
+<li class="heading3" id="i1.78" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.78" href="hm_pas2js078.htm" target="hmcontent"><span class="heading3" id="s1.78">Class forward keyword</span></a></li>
+<li class="heading3" id="i1.79" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.79" href="hm_pas2js079.htm" target="hmcontent"><span class="heading3" id="s1.79">Class initialization</span></a></li>
+<li class="heading3" id="i1.80" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.80" href="hm_pas2js080.htm" target="hmcontent"><span class="heading3" id="s1.80">Class inline declared</span></a></li>
+<li class="heading3" id="i1.81" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.81" href="hm_pas2js081.htm" target="hmcontent"><span class="heading3" id="s1.81">Class method</span></a></li>
+<li class="heading3" id="i1.82" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.82" href="hm_pas2js082.htm" target="hmcontent"><span class="heading3" id="s1.82">Class of | metaclass</span></a></li>
+<li class="heading3" id="i1.83" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.83" href="hm_pas2js083.htm" target="hmcontent"><span class="heading3" id="s1.83">Class Of Cast</span></a></li>
+<li class="heading3" id="i1.84" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.84" href="hm_pas2js084.htm" target="hmcontent"><span class="heading3" id="s1.84">Class operator +=</span></a></li>
+<li class="heading3" id="i1.85" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.85" href="hm_pas2js085.htm" target="hmcontent"><span class="heading3" id="s1.85">Class parent</span></a></li>
+<li class="heading3" id="i1.86" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.86" href="hm_pas2js086.htm" target="hmcontent"><span class="heading3" id="s1.86">Class Property</span></a></li>
+<li class="heading3" id="i1.87" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.87" href="hm_pas2js087.htm" target="hmcontent"><span class="heading3" id="s1.87">Class var dynamic</span></a></li>
+<li class="heading3" id="i1.88" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.88" href="hm_pas2js088.htm" target="hmcontent"><span class="heading3" id="s1.88">Class scoping</span></a></li>
+<li class="heading3" id="i1.89" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.89" href="hm_pas2js089.htm" target="hmcontent"><span class="heading3" id="s1.89">Class Self</span></a></li>
+<li class="heading3" id="i1.90" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.90" href="hm_pas2js090.htm" target="hmcontent"><span class="heading3" id="s1.90">Self reference</span></a></li>
+<li class="heading3" id="i1.91" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.91" href="hm_pas2js091.htm" target="hmcontent"><span class="heading3" id="s1.91">Class var as Property</span></a></li>
+<li class="heading3" id="i1.92" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.92" href="hm_pas2js092.htm" target="hmcontent"><span class="heading3" id="s1.92">ClassName Ancestor</span></a></li>
+<li class="heading3" id="i1.93" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.93" href="hm_pas2js093.htm" target="hmcontent"><span class="heading3" id="s1.93">
+ClassName nil</span></a></li>
+<li class="heading3" id="i1.94" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.94" href="hm_pas2js094.htm" target="hmcontent"><span class="heading3" id="s1.94">ClassType</span></a></li>
+<li class="heading3" id="i1.95" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.95" href="hm_pas2js095.htm" target="hmcontent"><span class="heading3" id="s1.95">ClassType nil</span></a></li>
+<li class="heading3" id="i1.96" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.96" href="hm_pas2js096.htm" target="hmcontent"><span class="heading3" id="s1.96">Comments | empty comments</span></a></li>
+<li class="heading3" id="i1.97" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.97" href="hm_pas2js097.htm" target="hmcontent"><span class="heading3" id="s1.97">Compare boolean</span></a></li>
+<li class="heading3" id="i1.98" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.98" href="hm_pas2js098.htm" target="hmcontent"><span class="heading3" id="s1.98">Compare enumerations</span></a></li>
+<li class="heading3" id="i1.99" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.99" href="hm_pas2js099.htm" target="hmcontent"><span class="heading3" id="s1.99">
+Compare Floats</span></a></li>
+<li class="heading3" id="i1.100" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.100" href="hm_pas2js100.htm" target="hmcontent"><span class="heading3" id="s1.100">Compare Integers</span></a></li>
+<li class="heading3" id="i1.101" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.101" href="hm_pas2js101.htm" target="hmcontent"><span class="heading3" id="s1.101">Compare String</span></a></li>
+<li class="heading3" id="i1.102" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.102" href="hm_pas2js102.htm" target="hmcontent"><span class="heading3" id="s1.102">Compare Variant</span></a></li>
+<li class="heading3" id="i1.103" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.103" href="hm_pas2js103.htm" target="hmcontent"><span class="heading3" id="s1.103">Compare Integer table</span></a></li>
+<li class="heading3" id="i1.104" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.104" href="hm_pas2js104.htm" target="hmcontent"><span class="heading3" id="s1.104">Conditionals using $ELSE</span></a></li>
+<li class="heading3" id="i1.105" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.105" href="hm_pas2js105.htm" target="hmcontent"><span class="heading3" id="s1.105">Conditionals $IFNDEF</span></a></li>
+<li class="heading3" id="i1.106" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.106" href="hm_pas2js106.htm" target="hmcontent"><span class="heading3" id="s1.106">Conditionals nested</span></a></li>
+<li class="heading3" id="i1.107" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.107" href="hm_pas2js107.htm" target="hmcontent"><span class="heading3" id="s1.107">Const Array</span></a></li>
+<li class="heading3" id="i1.108" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.108" href="hm_pas2js108.htm" target="hmcontent"><span class="heading3" id="s1.108">The Const keyword</span></a></li>
+<li class="heading3" id="i1.109" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.109" href="hm_pas2js109.htm" target="hmcontent"><span class="heading3" id="s1.109">Contracts | ensure | require | old</span></a></li>
+<li class="heading3" id="i1.110" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.110" href="hm_pas2js110.htm" target="hmcontent"><span class="heading3" id="s1.110">
+Custom Array type</span></a></li>
+<li class="heading3" id="i1.111" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.111" href="hm_pas2js111.htm" target="hmcontent"><span class="heading3" id="s1.111">Declared keyword</span></a></li>
+<li class="heading3" id="i1.112" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.112" href="hm_pas2js112.htm" target="hmcontent"><span class="heading3" id="s1.112">Declared Helper</span></a></li>
+<li class="heading3" id="i1.113" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.113" href="hm_pas2js113.htm" target="hmcontent"><span class="heading3" id="s1.113">Default Parameters</span></a></li>
+<li class="heading3" id="i1.114" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.114" href="hm_pas2js114.htm" target="hmcontent"><span class="heading3" id="s1.114">Default Parameters expressions</span></a></li>
+<li class="heading3" id="i1.1115" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1115" href="hm_pas2js115.htm" target="hmcontent"><span class="heading3" id="s1.1115">Defined keyword</span></a></li>
+<li class="heading3" id="i1.116" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.116" href="hm_pas2js116.htm" target="hmcontent"><span class="heading3" id="s1.116">Destroy keyword</span></a></li>
+<li class="heading3" id="i1.117" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.117" href="hm_pas2js117.htm" target="hmcontent"><span class="heading3" id="s1.117">Division by zero | Divide assign</span></a></li>
+<li class="heading3" id="i1.118" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.118" href="hm_pas2js118.htm" target="hmcontent"><span class="heading3" id="s1.118">Anonymous Dynamic Record</span></a></li>
+<li class="heading3" id="i1.119" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.119" href="hm_pas2js119.htm" target="hmcontent"><span class="heading3" id="s1.119">Array Dyn - Delete method</span></a></li>
+<li class="heading3" id="i1.120" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.120" href="hm_pas2js120.htm" target="hmcontent"><span class="heading3" id="s1.120">Array Dyn - no unused hint</span></a></li>
+<li class="heading3" id="i1.121" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.121" href="hm_pas2js121.htm" target="hmcontent"><span class="heading3" id="s1.121"> Array Dyn of Objects</span></a></li>
+<li class="heading3" id="i1.122" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.122" href="hm_pas2js122.htm" target="hmcontent"><span class="heading3" id="s1.122">Array Dyn of Records</span></a></li>
+<li class="heading3" id="i1.123" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.123" href="hm_pas2js123.htm" target="hmcontent"><span class="heading3" id="s1.123">StrSplit</span></a></li>
+<li class="heading3" id="i1.124" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.124" href="hm_pas2js124.htm" target="hmcontent"><span class="heading3" id="s1.124">Matrix Dyn</span></a></li>
+<li class="heading3" id="i1.125" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.125" href="hm_pas2js125.htm" target="hmcontent"><span class="heading3" id="s1.125">Empty body</span></a></li>
+<li class="heading3" id="i1.126" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.126" href="hm_pas2js126.htm" target="hmcontent"><span class="heading3" id="s1.126">Enum with boolean operators</span></a></li>
+<li class="heading3" id="i1.127" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.127" href="hm_pas2js127.htm" target="hmcontent"><span class="heading3" id="s1.127">Enum bounds</span></a></li>
+<li class="heading3" id="i1.128" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.128" href="hm_pas2js128.htm" target="hmcontent"><span class="heading3" id="s1.128">Enum Const</span></a></li>
+<li class="heading3" id="i1.129" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.129" href="hm_pas2js129.htm" target="hmcontent"><span class="heading3" id="s1.129">Enum flags</span></a></li>
+<li class="heading3" id="i1.130" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.130" href="hm_pas2js130.htm" target="hmcontent"><span class="heading3" id="s1.130">Enum Scope</span></a></li>
+<li class="heading3" id="i1.131" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.131" href="hm_pas2js131.htm" target="hmcontent"><span class="heading3" id="s1.131">Enum to integer</span></a></li>
+<li class="heading3" id="i1.132" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.132" href="hm_pas2js132.htm" target="hmcontent"><span class="heading3" id="s1.132">Enum Case Of</span></a></li>
+<li class="heading3" id="i1.133" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.133" href="hm_pas2js133.htm" target="hmcontent"><span class="heading3" id="s1.133">Enum | Succ | Pred</span></a></li>
+<li class="heading3" id="i1.134" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.134" href="hm_pas2js134.htm" target="hmcontent"><span class="heading3" id="s1.134">Enum Names | step to</span></a></li>
+<li class="heading3" id="i1.135" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.135" href="hm_pas2js135.htm" target="hmcontent"><span class="heading3" id="s1.135">Enum QualifiedName</span></a></li>
+<li class="heading3" id="i1.136" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.136" href="hm_pas2js136.htm" target="hmcontent"><span class="heading3" id="s1.136">Event Virtual</span></a></li>
+<li class="heading3" id="i1.137" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.137" href="hm_pas2js137.htm" target="hmcontent"><span class="heading3" id="s1.137">Exception log</span></a></li>
+<li class="heading3" id="i1.138" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.138" href="hm_pas2js138.htm" target="hmcontent"><span class="heading3" id="s1.138">Exception handling</span></a></li>
+<li class="heading3" id="i1.139" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.139" href="hm_pas2js139.htm" target="hmcontent"><span class="heading3" id="s1.139">Exception trigger</span></a></li>
+<li class="heading3" id="i1.140" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.140" href="hm_pas2js140.htm" target="hmcontent"><span class="heading3" id="s1.140">Exception custom</span></a></li>
+<li class="heading3" id="i1.141" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.141" href="hm_pas2js141.htm" target="hmcontent"><span class="heading3" id="s1.141">Exception scoping</span></a></li>
+<li class="heading3" id="i1.142" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.142" href="hm_pas2js142.htm" target="hmcontent"><span class="heading3" id="s1.142">Exception nested call</span></a></li>
+<li class="heading3" id="i1.143" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.143" href="hm_pas2js143.htm" target="hmcontent"><span class="heading3" id="s1.143">ExceptObject</span></a></li>
+<li class="heading3" id="i1.144" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.144" href="hm_pas2js144.htm" target="hmcontent"><span class="heading3" id="s1.144">Exit keyword</span></a></li>
+<li class="heading3" id="i1.145" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.145" href="hm_pas2js145.htm" target="hmcontent"><span class="heading3" id="s1.145">Exit | Case Of</span></a></li>
+<li class="heading3" id="i1.146" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.146" href="hm_pas2js146.htm" target="hmcontent"><span class="heading3" id="s1.146">Exit constructor</span></a></li>
+<li class="heading3" id="i1.147" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.147" href="hm_pas2js147.htm" target="hmcontent"><span class="heading3" id="s1.147">Exit | finally</span></a></li>
+<li class="heading3" id="i1.148" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.148" href="hm_pas2js148.htm" target="hmcontent"><span class="heading3" id="s1.148">Exit method | Result</span></a></li>
+<li class="heading3" id="i1.149" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.149" href="hm_pas2js149.htm" target="hmcontent"><span class="heading3" id="s1.149">Exit | Result</span></a></li>
+<li class="heading3" id="i1.1500" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1500" href="hm_pas2js150.htm" target="hmcontent"><span class="heading3" id="s1.1500">External | class | procedure</span></a></li>
+<li class="heading3" id="i1.1511" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1511" href="hm_pas2js151.htm" target="hmcontent"><span class="heading3" id="s1.1511">var parameter</span></a></li>
+<li class="heading3" id="i1.1522" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1522" href="hm_pas2js152.htm" target="hmcontent"><span class="heading3" id="s1.1522">integer field as float</span></a></li>
+<li class="heading3" id="i1.1533" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1533" href="hm_pas2js153.htm" target="hmcontent"><span class="heading3" id="s1.1533">field scope | class scope</span></a></li>
+<li class="heading3" id="i1.1544" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1544" href="hm_pas2js154.htm" target="hmcontent"><span class="heading3" id="s1.1544">field typed default | default field</span></a></li>
+<li class="heading3" id="i1.1555" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1555" href="hm_pas2js155.htm" target="hmcontent"><span class="heading3" id="s1.1555">for bounds change | loop for</span></a></li>
+<li class="heading3" id="i1.1566" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1566" href="hm_pas2js156.htm" target="hmcontent"><span class="heading3" id="s1.1566">for downto</span></a></li>
+<li class="heading3" id="i1.1577" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1577" href="hm_pas2js157.htm" target="hmcontent"><span class="heading3" id="s1.1577">for in array | step</span></a></li>
+<li class="heading3" id="i1.1588" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1588" href="hm_pas2js158.htm" target="hmcontent"><span class="heading3" id="s1.1588">for in enum</span></a></li>
+<li class="heading3" id="i1.1599" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.1599" href="hm_pas2js159.htm" target="hmcontent"><span class="heading3" id="s1.1599">for in array of Tprocedure</span></a></li>
+<li class="heading3" id="i1.160" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.160" href="hm_pas2js160.htm" target="hmcontent"><span class="heading3" id="s1.160">for in str</span></a></li>
+<li class="heading3" id="i1.161" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.161" href="hm_pas2js161.htm" target="hmcontent"><span class="heading3" id="s1.161">for..in string ex2</span></a></li>
+<li class="heading3" id="i1.162" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.162" href="hm_pas2js162.htm" target="hmcontent"><span class="heading3" id="s1.162">for.. in str global</span></a></li>
+<li class="heading3" id="i1.163" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.163" href="hm_pas2js163.htm" target="hmcontent"><span class="heading3" id="s1.163">for in subclass</span></a></li>
+<li class="heading3" id="i1.164" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.164" href="hm_pas2js164.htm" target="hmcontent"><span class="heading3" id="s1.164">for | step</span></a></li>
+<li class="heading3" id="i1.165" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.165" href="hm_pas2js165.htm" target="hmcontent"><span class="heading3" id="s1.165">for | step flow</span></a></li>
+<li class="heading3" id="i1.166" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.166" href="hm_pas2js166.htm" target="hmcontent"><span class="heading3" id="s1.166">for step overflow</span></a></li>
+<li class="heading3" id="i1.167" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.167" href="hm_pas2js167.htm" target="hmcontent"><span class="heading3" id="s1.167">for step sign</span></a></li>
+<li class="heading3" id="i1.168" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.168" href="hm_pas2js168.htm" target="hmcontent"><span class="heading3" id="s1.168">for to 100</span></a></li>
+<li class="heading3" id="i1.169" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.169" href="hm_pas2js169.htm" target="hmcontent"><span class="heading3" id="s1.169">for to variant</span></a></li>
+<li class="heading3" id="i1.170" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.170" href="hm_pas2js170.htm" target="hmcontent"><span class="heading3" id="s1.170">for var in array</span></a></li>
+<li class="heading3" id="i1.171" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.171" href="hm_pas2js171.htm" target="hmcontent"><span class="heading3" id="s1.171">for var in enum</span></a></li>
+<li class="heading3" id="i1.172" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.172" href="hm_pas2js172.htm" target="hmcontent"><span class="heading3" id="s1.172">for var in field array</span></a></li>
+<li class="heading3" id="i1.173" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.173" href="hm_pas2js173.htm" target="hmcontent"><span class="heading3" id="s1.173">for var in string</span></a></li>
+<li class="heading3" id="i1.174" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.174" href="hm_pas2js174.htm" target="hmcontent"><span class="heading3" id="s1.174">for var to</span></a></li>
+<li class="heading3" id="i1.175" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.175" href="hm_pas2js175.htm" target="hmcontent"><span class="heading3" id="s1.175">format integer</span></a></li>
+<li class="heading3" id="i1.176" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.176" href="hm_pas2js176.htm" target="hmcontent"><span class="heading3" id="s1.176">format string | float</span></a></li>
+<li class="heading3" id="i1.177" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.177" href="hm_pas2js177.htm" target="hmcontent"><span class="heading3" id="s1.177">format incorrect params</span></a></li>
+<li class="heading3" id="i1.178" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.178" href="hm_pas2js178.htm" target="hmcontent"><span class="heading3" id="s1.178">free | destroy</span></a></li>
+<li class="heading3" id="i1.179" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.179" href="hm_pas2js179.htm" target="hmcontent"><span class="heading3" id="s1.179">function inline</span></a></li>
+<li class="heading3" id="i1.180" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.180" href="hm_pas2js180.htm" target="hmcontent"><span class="heading3" id="s1.180">function nested in method</span></a></li>
+<li class="heading3" id="i1.181" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.181" href="hm_pas2js181.htm" target="hmcontent"><span class="heading3" id="s1.181">function pointer ex01</span></a></li>
+<li class="heading3" id="i1.182" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.182" href="hm_pas2js182.htm" target="hmcontent"><span class="heading3" id="s1.182">function pointer ex02</span></a></li>
+<li class="heading3" id="i1.183" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.183" href="hm_pas2js183.htm" target="hmcontent"><span class="heading3" id="s1.183">function pointer ex03</span></a></li>
+<li class="heading3" id="i1.184" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.184" href="hm_pas2js184.htm" target="hmcontent"><span class="heading3" id="s1.184">function pointer ex04</span></a></li>
+<li class="heading3" id="i1.185" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.185" href="hm_pas2js185.htm" target="hmcontent"><span class="heading3" id="s1.185">function pointer ex05</span></a></li>
+<li class="heading3" id="i1.186" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.186" href="hm_pas2js186.htm" target="hmcontent"><span class="heading3" id="s1.186">function pointer assigned</span></a></li>
+<li class="heading3" id="i1.187" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.187" href="hm_pas2js187.htm" target="hmcontent"><span class="heading3" id="s1.187">function pointer class method</span></a></li>
+<li class="heading3" id="i1.188" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.188" href="hm_pas2js188.htm" target="hmcontent"><span class="heading3" id="s1.188">function pointer classname</span></a></li>
+<li class="heading3" id="i1.189" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.189" href="hm_pas2js189.htm" target="hmcontent"><span class="heading3" id="s1.189">function pointer constant</span></a></li>
+<li class="heading3" id="i1.190" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.190" href="hm_pas2js190.htm" target="hmcontent"><span class="heading3" id="s1.190">function pointer default parameter</span></a></li>
+<li class="heading3" id="i1.191" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.191" href="hm_pas2js191.htm" target="hmcontent"><span class="heading3" id="s1.191">function pointer field</span></a></li>
+<li class="heading3" id="i1.192" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.192" href="hm_pas2js192.htm" target="hmcontent"><span class="heading3" id="s1.192">function pointer field no param</span></a></li>
+<li class="heading3" id="i1.193" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.193" href="hm_pas2js193.htm" target="hmcontent"><span class="heading3" id="s1.193">function pointer params</span></a></li>
+<li class="heading3" id="i1.194" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.194" href="hm_pas2js194.htm" target="hmcontent"><span class="heading3" id="s1.194">function pointer property</span></a></li>
+<li class="heading3" id="i1.195" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.195" href="hm_pas2js195.htm" target="hmcontent"><span class="heading3" id="s1.195">function pointer property alias</span></a></li>
+<li class="heading3" id="i1.196" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.196" href="hm_pas2js196.htm" target="hmcontent"><span class="heading3" id="s1.196">function pointer symbol field</span></a></li>
+<li class="heading3" id="i1.197" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.197" href="hm_pas2js197.htm" target="hmcontent"><span class="heading3" id="s1.197">function pointer var</span></a></li>
+<li class="heading3" id="i1.198" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.198" href="hm_pas2js198.htm" target="hmcontent"><span class="heading3" id="s1.198">function pointer var param</span></a></li>
+<li class="heading3" id="i1.199" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.199" href="hm_pas2js199.htm" target="hmcontent"><span class="heading3" id="s1.199">function pointer as byref</span></a></li>
+<li class="heading3" id="i1.200" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.200" href="hm_pas2js200.htm" target="hmcontent"><span class="heading3" id="s1.200">function subfield</span></a></li>
+<li class="heading3" id="i1.201" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.201" href="hm_pas2js201.htm" target="hmcontent"><span class="heading3" id="s1.201">heredoc</span></a></li>
+<li class="heading3" id="i1.202" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.202" href="hm_pas2js202.htm" target="hmcontent"><span class="heading3" id="s1.202">heredoc indent</span></a></li>
+<li class="heading3" id="i1.203" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.203" href="hm_pas2js203.htm" target="hmcontent"><span class="heading3" id="s1.203">heredoc special</span></a></li>
+<li class="heading3" id="i1.204" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.204" href="hm_pas2js204.htm" target="hmcontent"><span class="heading3" id="s1.204">hint warning</span></a></li>
+<li class="heading3" id="i1.205" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.205" href="hm_pas2js205.htm" target="hmcontent"><span class="heading3" id="s1.205">if empty terms</span></a></li>
+<li class="heading3" id="i1.206" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.206" href="hm_pas2js206.htm" target="hmcontent"><span class="heading3" id="s1.206">if then else expression case i</span></a></li>
+<li class="heading3" id="i1.207" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.207" href="hm_pas2js207.htm" target="hmcontent"><span class="heading3" id="s1.207">if then else expression case ii</span></a></li>
+<li class="heading3" id="i1.208" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.208" href="hm_pas2js208.htm" target="hmcontent"><span class="heading3" id="s1.208">if then else expression case iii</span></a></li>
+<li class="heading3" id="i1.209" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.209" href="hm_pas2js209.htm" target="hmcontent"><span class="heading3" id="s1.209">if then else expression case iv</span></a></li>
+<li class="heading3" id="i1.210" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.210" href="hm_pas2js210.htm" target="hmcontent"><span class="heading3" id="s1.210">if then else expression case v</span></a></li>
+<li class="heading3" id="i1.211" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.211" href="hm_pas2js211.htm" target="hmcontent"><span class="heading3" id="s1.211">if then else optimize</span></a></li>
+<li class="heading3" id="i1.212" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.212" href="hm_pas2js212.htm" target="hmcontent"><span class="heading3" id="s1.212">ignore result</span></a></li>
+<li class="heading3" id="i1.213" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.213" href="hm_pas2js213.htm" target="hmcontent"><span class="heading3" id="s1.213">implies</span></a></li>
+<li class="heading3" id="i1.214" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.214" href="hm_pas2js214.htm" target="hmcontent"><span class="heading3" id="s1.214">in class operator</span></a></li>
+<li class="heading3" id="i1.2215" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.2215" href="hm_pas2js215.htm" target="hmcontent"><span class="heading3" id="s1.2215">in operator</span></a></li>
+<li class="heading3" id="i1.216" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.216" href="hm_pas2js216.htm" target="hmcontent"><span class="heading3" id="s1.216">in string</span></a></li>
+<li class="heading3" id="i1.217" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.217" href="hm_pas2js217.htm" target="hmcontent"><span class="heading3" id="s1.217">inc dec field</span></a></li>
+<li class="heading3" id="i1.218" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.218" href="hm_pas2js218.htm" target="hmcontent"><span class="heading3" id="s1.218">inc | dec side effect</span></a></li>
+<li class="heading3" id="i1.219" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.219" href="hm_pas2js219.htm" target="hmcontent"><span class="heading3" id="s1.219">include</span></a></li>
+<li class="heading3" id="i1.220" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.220" href="hm_pas2js220.htm" target="hmcontent"><span class="heading3" id="s1.220">include expressions</span></a></li>
+<li class="heading3" id="i1.221" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.221" href="hm_pas2js221.htm" target="hmcontent"><span class="heading3" id="s1.221">include once</span></a></li>
+<li class="heading3" id="i1.222" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.222" href="hm_pas2js222.htm" target="hmcontent"><span class="heading3" id="s1.222">include once ii</span></a></li>
+<li class="heading3" id="i1.223" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.223" href="hm_pas2js223.htm" target="hmcontent"><span class="heading3" id="s1.223">includesym</span></a></li>
+<li class="heading3" id="i1.224" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.224" href="hm_pas2js224.htm" target="hmcontent"><span class="heading3" id="s1.224">index property</span></a></li>
+<li class="heading3" id="i1.225" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.225" href="hm_pas2js225.htm" target="hmcontent"><span class="heading3" id="s1.225">inference i</span></a></li>
+<li class="heading3" id="i1.226" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.226" href="hm_pas2js226.htm" target="hmcontent"><span class="heading3" id="s1.226">inference ii</span></a></li>
+<li class="heading3" id="i1.227" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.227" href="hm_pas2js227.htm" target="hmcontent"><span class="heading3" id="s1.227">inherited i</span></a></li>
+<li class="heading3" id="i1.228" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.228" href="hm_pas2js228.htm" target="hmcontent"><span class="heading3" id="s1.228">inherited ii</span></a></li>
+<li class="heading3" id="i1.229" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.229" href="hm_pas2js229.htm" target="hmcontent"><span class="heading3" id="s1.229">inherited constructor</span></a></li>
+<li class="heading3" id="i1.230" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.230" href="hm_pas2js230.htm" target="hmcontent"><span class="heading3" id="s1.230">int float</span></a></li>
+<li class="heading3" id="i1.231" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.231" href="hm_pas2js231.htm" target="hmcontent"><span class="heading3" id="s1.231">int hex constant | shr | shl</span></a></li>
+<li class="heading3" id="i1.232" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.232" href="hm_pas2js232.htm" target="hmcontent"><span class="heading3" id="s1.232">lazy</span></a></li>
+<li class="heading3" id="i1.233" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.233" href="hm_pas2js233.htm" target="hmcontent"><span class="heading3" id="s1.233">lazy recursive</span></a></li>
+<li class="heading3" id="i1.234" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.234" href="hm_pas2js234.htm" target="hmcontent"><span class="heading3" id="s1.234">lazy sqr</span></a></li>
+<li class="heading3" id="i1.235" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.235" href="hm_pas2js235.htm" target="hmcontent"><span class="heading3" id="s1.235">long name</span></a></li>
+<li class="heading3" id="i1.236" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.236" href="hm_pas2js236.htm" target="hmcontent"><span class="heading3" id="s1.236">loop and half</span></a></li>
+<li class="heading3" id="i1.237" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.237" href="hm_pas2js237.htm" target="hmcontent"><span class="heading3" id="s1.237">loop over arrays</span></a></li>
+<li class="heading3" id="i1.238" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.238" href="hm_pas2js238.htm" target="hmcontent"><span class="heading3" id="s1.238">low | high</span></a></li>
+<li class="heading3" id="i1.239" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.239" href="hm_pas2js239.htm" target="hmcontent"><span class="heading3" id="s1.239">method pointer</span></a></li>
+<li class="heading3" id="i1.240" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.240" href="hm_pas2js240.htm" target="hmcontent"><span class="heading3" id="s1.240">method</span></a></li>
+<li class="heading3" id="i1.241" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.241" href="hm_pas2js241.htm" target="hmcontent"><span class="heading3" id="s1.241">method contracts | require | ensure</span></a></li>
+<li class="heading3" id="i1.242" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.242" href="hm_pas2js242.htm" target="hmcontent"><span class="heading3" id="s1.242">method implementation</span></a></li>
+<li class="heading3" id="i1.243" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.243" href="hm_pas2js243.htm" target="hmcontent"><span class="heading3" id="s1.243">method with name of property</span></a></li>
+<li class="heading3" id="i1.244" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.244" href="hm_pas2js244.htm" target="hmcontent"><span class="heading3" id="s1.244">minus assign</span></a></li>
+<li class="heading3" id="i1.245" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.245" href="hm_pas2js245.htm" target="hmcontent"><span class="heading3" id="s1.245">missing semicolon</span></a></li>
+<li class="heading3" id="i1.246" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.246" href="hm_pas2js246.htm" target="hmcontent"><span class="heading3" id="s1.246">mixed nil array</span></a></li>
+<li class="heading3" id="i1.247" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.247" href="hm_pas2js247.htm" target="hmcontent"><span class="heading3" id="s1.247">mod by zero int</span></a></li>
+<li class="heading3" id="i1.248" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.248" href="hm_pas2js248.htm" target="hmcontent"><span class="heading3" id="s1.248">multiplication division</span></a></li>
+<li class="heading3" id="i1.249" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.249" href="hm_pas2js249.htm" target="hmcontent"><span class="heading3" id="s1.249">multiplication assign</span></a></li>
+<li class="heading3" id="i1.250" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.250" href="hm_pas2js250.htm" target="hmcontent"><span class="heading3" id="s1.250">multiply by 2</span></a></li>
+<li class="heading3" id="i1.251" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.251" href="hm_pas2js251.htm" target="hmcontent"><span class="heading3" id="s1.251">nested declarations</span></a></li>
+<li class="heading3" id="i1.252" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.252" href="hm_pas2js252.htm" target="hmcontent"><span class="heading3" id="s1.252">new class 1</span></a></li>
+<li class="heading3" id="i1.253" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.253" href="hm_pas2js253.htm" target="hmcontent"><span class="heading3" id="s1.253">new class 2</span></a></li>
+<li class="heading3" id="i1.254" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.254" href="hm_pas2js254.htm" target="hmcontent"><span class="heading3" id="s1.254">new class 3</span></a></li>
+<li class="heading3" id="i1.255" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.255" href="hm_pas2js255.htm" target="hmcontent"><span class="heading3" id="s1.255">new class 4</span></a></li>
+<li class="heading3" id="i1.256" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.256" href="hm_pas2js256.htm" target="hmcontent"><span class="heading3" id="s1.256">new class alias</span></a></li>
+<li class="heading3" id="i1.257" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.257" href="hm_pas2js257.htm" target="hmcontent"><span class="heading3" id="s1.257">nil meta parameter</span></a></li>
+<li class="heading3" id="i1.258" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.258" href="hm_pas2js258.htm" target="hmcontent"><span class="heading3" id="s1.258">not in operator</span></a></li>
+<li class="heading3" id="i1.259" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.259" href="hm_pas2js259.htm" target="hmcontent"><span class="heading3" id="s1.259">object orientated programming demo</span></a></li>
+<li class="heading3" id="i1.260" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.260" href="hm_pas2js260.htm" target="hmcontent"><span class="heading3" id="s1.260">oop compare</span></a></li>
+<li class="heading3" id="i1.261" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.261" href="hm_pas2js261.htm" target="hmcontent"><span class="heading3" id="s1.261">oop field</span></a></li>
+<li class="heading3" id="i1.262" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.262" href="hm_pas2js262.htm" target="hmcontent"><span class="heading3" id="s1.262">oop is as</span></a></li>
+<li class="heading3" id="i1.263" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.263" href="hm_pas2js263.htm" target="hmcontent"><span class="heading3" id="s1.263">open array 1</span></a></li>
+<li class="heading3" id="i1.264" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.264" href="hm_pas2js264.htm" target="hmcontent"><span class="heading3" id="s1.264">open array 2</span></a></li>
+<li class="heading3" id="i1.265" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.265" href="hm_pas2js265.htm" target="hmcontent"><span class="heading3" id="s1.265">open array 3</span></a></li>
+<li class="heading3" id="i1.266" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.266" href="hm_pas2js266.htm" target="hmcontent"><span class="heading3" id="s1.266">open array bounds</span></a></li>
+<li class="heading3" id="i1.267" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.267" href="hm_pas2js267.htm" target="hmcontent"><span class="heading3" id="s1.267">operator in overloading</span></a></li>
+<li class="heading3" id="i1.268" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.268" href="hm_pas2js268.htm" target="hmcontent"><span class="heading3" id="s1.268">operator overloading 1</span></a></li>
+<li class="heading3" id="i1.269" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.269" href="hm_pas2js269.htm" target="hmcontent"><span class="heading3" id="s1.269">operator overloading 2</span></a></li>
+<li class="heading3" id="i1.270" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.270" href="hm_pas2js270.htm" target="hmcontent"><span class="heading3" id="s1.270">operator precedence 1</span></a></li>
+<li class="heading3" id="i1.271" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.271" href="hm_pas2js271.htm" target="hmcontent"><span class="heading3" id="s1.271">ord</span></a></li>
+<li class="heading3" id="i1.272" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.272" href="hm_pas2js272.htm" target="hmcontent"><span class="heading3" id="s1.272">ord string op</span></a></li>
+<li class="heading3" id="i1.273" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.273" href="hm_pas2js273.htm" target="hmcontent"><span class="heading3" id="s1.273">ord surrogate</span></a></li>
+<li class="heading3" id="i1.274" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.274" href="hm_pas2js274.htm" target="hmcontent"><span class="heading3" id="s1.274">override deep</span></a></li>
+<li class="heading3" id="i1.275" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.275" href="hm_pas2js275.htm" target="hmcontent"><span class="heading3" id="s1.275">params autocast</span></a></li>
+<li class="heading3" id="i1.276" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.276" href="hm_pas2js276.htm" target="hmcontent"><span class="heading3" id="s1.276">partial class 1</span></a></li>
+<li class="heading3" id="i1.277" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.277" href="hm_pas2js277.htm" target="hmcontent"><span class="heading3" id="s1.277">partial class 2</span></a></li>
+<li class="heading3" id="i1.278" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.278" href="hm_pas2js278.htm" target="hmcontent"><span class="heading3" id="s1.278">partial class subclass</span></a></li>
+<li class="heading3" id="i1.279" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.279" href="hm_pas2js279.htm" target="hmcontent"><span class="heading3" id="s1.279">partial class unit</span></a></li>
+<li class="heading3" id="i1.280" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.280" href="hm_pas2js280.htm" target="hmcontent"><span class="heading3" id="s1.280">plus assign</span></a></li>
+<li class="heading3" id="i1.281" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.281" href="hm_pas2js281.htm" target="hmcontent"><span class="heading3" id="s1.281">proc of method</span></a></li>
+<li class="heading3" id="i1.282" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.282" href="hm_pas2js282.htm" target="hmcontent"><span class="heading3" id="s1.282">procedure contracts</span></a></li>
+<li class="heading3" id="i1.283" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.283" href="hm_pas2js283.htm" target="hmcontent"><span class="heading3" id="s1.283">program</span></a></li>
+<li class="heading3" id="i1.284" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.284" href="hm_pas2js284.htm" target="hmcontent"><span class="heading3" id="s1.284">program dot</span></a></li>
+<li class="heading3" id="i1.285" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.285" href="hm_pas2js285.htm" target="hmcontent"><span class="heading3" id="s1.285">property call</span></a></li>
+<li class="heading3" id="i1.286" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.286" href="hm_pas2js286.htm" target="hmcontent"><span class="heading3" id="s1.286">property chain</span></a></li>
+<li class="heading3" id="i1.287" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.287" href="hm_pas2js287.htm" target="hmcontent"><span class="heading3" id="s1.287">property index</span></a></li>
+<li class="heading3" id="i1.288" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.288" href="hm_pas2js288.htm" target="hmcontent"><span class="heading3" id="s1.288">property of as</span></a></li>
+<li class="heading3" id="i1.289" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.289" href="hm_pas2js289.htm" target="hmcontent"><span class="heading3" id="s1.289">property promotion</span></a></li>
+<li class="heading3" id="i1.290" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.290" href="hm_pas2js290.htm" target="hmcontent"><span class="heading3" id="s1.290">property sub default</span></a></li>
+<li class="heading3" id="i1.291" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.291" href="hm_pas2js291.htm" target="hmcontent"><span class="heading3" id="s1.291">raise nil</span></a></li>
+<li class="heading3" id="i1.292" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.292" href="hm_pas2js292.htm" target="hmcontent"><span class="heading3" id="s1.292">re raise</span></a></li>
+<li class="heading3" id="i1.293" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.293" href="hm_pas2js293.htm" target="hmcontent"><span class="heading3" id="s1.293">record aliased field</span></a></li>
+<li class="heading3" id="i1.294" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.294" href="hm_pas2js294.htm" target="hmcontent"><span class="heading3" id="s1.294">record booleans</span></a></li>
+<li class="heading3" id="i1.295" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.295" href="hm_pas2js295.htm" target="hmcontent"><span class="heading3" id="s1.295">record class field init</span></a></li>
+<li class="heading3" id="i1.296" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.296" href="hm_pas2js296.htm" target="hmcontent"><span class="heading3" id="s1.296">record clone 1</span></a></li>
+<li class="heading3" id="i1.297" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.297" href="hm_pas2js297.htm" target="hmcontent"><span class="heading3" id="s1.297">record const</span></a></li>
+<li class="heading3" id="i1.298" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.298" href="hm_pas2js298.htm" target="hmcontent"><span class="heading3" id="s1.298">record const as prop</span></a></li>
+<li class="heading3" id="i1.299" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.299" href="hm_pas2js299.htm" target="hmcontent"><span class="heading3" id="s1.299">record field init</span></a></li>
+<li class="heading3" id="i1.300" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.300" href="hm_pas2js300.htm" target="hmcontent"><span class="heading3" id="s1.300">record in copy</span></a></li>
+<li class="heading3" id="i1.301" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.301" href="hm_pas2js301.htm" target="hmcontent"><span class="heading3" id="s1.301">record metaclass field</span></a></li>
+<li class="heading3" id="i1.302" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.302" href="hm_pas2js302.htm" target="hmcontent"><span class="heading3" id="s1.302">record method 2</span></a></li>
+<li class="heading3" id="i1.303" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.303" href="hm_pas2js303.htm" target="hmcontent"><span class="heading3" id="s1.303">record method 3</span></a></li>
+<li class="heading3" id="i1.304" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.304" href="hm_pas2js304.htm" target="hmcontent"><span class="heading3" id="s1.304">record method 4</span></a></li>
+<li class="heading3" id="i1.305" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.305" href="hm_pas2js305.htm" target="hmcontent"><span class="heading3" id="s1.305">record method</span></a></li>
+<li class="heading3" id="i1.306" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.306" href="hm_pas2js306.htm" target="hmcontent"><span class="heading3" id="s1.306">record method static</span></a></li>
+<li class="heading3" id="i1.307" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.307" href="hm_pas2js307.htm" target="hmcontent"><span class="heading3" id="s1.307">record nested 2</span></a></li>
+<li class="heading3" id="i1.308" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.308" href="hm_pas2js308.htm" target="hmcontent"><span class="heading3" id="s1.308">record nested</span></a></li>
+<li class="heading3" id="i1.309" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.309" href="hm_pas2js309.htm" target="hmcontent"><span class="heading3" id="s1.309">record obj field</span></a></li>
+<li class="heading3" id="i1.310" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.310" href="hm_pas2js310.htm" target="hmcontent"><span class="heading3" id="s1.310">record passing i</span></a></li>
+<li class="heading3" id="i1.311" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.311" href="hm_pas2js311.htm" target="hmcontent"><span class="heading3" id="s1.311">record passing ii</span></a></li>
+<li class="heading3" id="i1.312" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.312" href="hm_pas2js312.htm" target="hmcontent"><span class="heading3" id="s1.312">record passing iii</span></a></li>
+<li class="heading3" id="i1.313" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.313" href="hm_pas2js313.htm" target="hmcontent"><span class="heading3" id="s1.313">record passing iv</span></a></li>
+<li class="heading3" id="i1.314" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.314" href="hm_pas2js314.htm" target="hmcontent"><span class="heading3" id="s1.314">record property</span></a></li>
+<li class="heading3" id="i1.3315" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.3315" href="hm_pas2js315.htm" target="hmcontent"><span class="heading3" id="s1.3315">record record field init</span></a></li>
+<li class="heading3" id="i1.316" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.316" href="hm_pas2js316.htm" target="hmcontent"><span class="heading3" id="s1.316">record recursive dynarray</span></a></li>
+<li class="heading3" id="i1.317" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.317" href="hm_pas2js317.htm" target="hmcontent"><span class="heading3" id="s1.317">record result i</span></a></li>
+<li class="heading3" id="i1.318" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.318" href="hm_pas2js318.htm" target="hmcontent"><span class="heading3" id="s1.318">record result ii</span></a></li>
+<li class="heading3" id="i1.319" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.319" href="hm_pas2js319.htm" target="hmcontent"><span class="heading3" id="s1.319">record result iii</span></a></li>
+<li class="heading3" id="i1.320" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.320" href="hm_pas2js320.htm" target="hmcontent"><span class="heading3" id="s1.320">record result iv</span></a></li>
+<li class="heading3" id="i1.321" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.321" href="hm_pas2js321.htm" target="hmcontent"><span class="heading3" id="s1.321">record static array</span></a></li>
+<li class="heading3" id="i1.322" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.322" href="hm_pas2js322.htm" target="hmcontent"><span class="heading3" id="s1.322">record var</span></a></li>
+<li class="heading3" id="i1.323" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.323" href="hm_pas2js323.htm" target="hmcontent"><span class="heading3" id="s1.323">record var as prop</span></a></li>
+<li class="heading3" id="i1.324" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.324" href="hm_pas2js324.htm" target="hmcontent"><span class="heading3" id="s1.324">record var param 1</span></a></li>
+<li class="heading3" id="i1.325" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.325" href="hm_pas2js325.htm" target="hmcontent"><span class="heading3" id="s1.325">record var param 2</span></a></li>
+<li class="heading3" id="i1.326" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.326" href="hm_pas2js326.htm" target="hmcontent"><span class="heading3" id="s1.326">recursive path</span></a></li>
+<li class="heading3" id="i1.327" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.327" href="hm_pas2js327.htm" target="hmcontent"><span class="heading3" id="s1.327">reintroduce</span></a></li>
+<li class="heading3" id="i1.328" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.328" href="hm_pas2js328.htm" target="hmcontent"><span class="heading3" id="s1.328">reintroduce virtual</span></a></li>
+<li class="heading3" id="i1.329" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.329" href="hm_pas2js329.htm" target="hmcontent"><span class="heading3" id="s1.329">reserved word</span></a></li>
+<li class="heading3" id="i1.330" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.330" href="hm_pas2js330.htm" target="hmcontent"><span class="heading3" id="s1.330">resourcestring 1</span></a></li>
+<li class="heading3" id="i1.331" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.331" href="hm_pas2js331.htm" target="hmcontent"><span class="heading3" id="s1.331">result direct</span></a></li>
+<li class="heading3" id="i1.332" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.332" href="hm_pas2js332.htm" target="hmcontent"><span class="heading3" id="s1.332">result init</span></a></li>
+<li class="heading3" id="i1.333" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.333" href="hm_pas2js333.htm" target="hmcontent"><span class="heading3" id="s1.333">self</span></a></li>
+<li class="heading3" id="i1.334" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.334" href="hm_pas2js334.htm" target="hmcontent"><span class="heading3" id="s1.334">special chars</span></a></li>
+<li class="heading3" id="i1.335" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.335" href="hm_pas2js335.htm" target="hmcontent"><span class="heading3" id="s1.335">stack of proc</span></a></li>
+<li class="heading3" id="i1.336" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.336" href="hm_pas2js336.htm" target="hmcontent"><span class="heading3" id="s1.336">stack peek</span></a></li>
+<li class="heading3" id="i1.337" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.337" href="hm_pas2js337.htm" target="hmcontent"><span class="heading3" id="s1.337">stacktrace</span></a></li>
+<li class="heading3" id="i1.338" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.338" href="hm_pas2js338.htm" target="hmcontent"><span class="heading3" id="s1.338">static array const</span></a></li>
+<li class="heading3" id="i1.339" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.339" href="hm_pas2js339.htm" target="hmcontent"><span class="heading3" id="s1.339">static class</span></a></li>
+<li class="heading3" id="i1.340" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.340" href="hm_pas2js340.htm" target="hmcontent"><span class="heading3" id="s1.340">static method i</span></a></li>
+<li class="heading3" id="i1.341" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.341" href="hm_pas2js341.htm" target="hmcontent"><span class="heading3" id="s1.341">static method ii</span></a></li>
+<li class="heading3" id="i1.342" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.342" href="hm_pas2js342.htm" target="hmcontent"><span class="heading3" id="s1.342">static method iii</span></a></li>
+<li class="heading3" id="i1.343" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.343" href="hm_pas2js343.htm" target="hmcontent"><span class="heading3" id="s1.343">static to dynamic empty array</span></a></li>
+<li class="heading3" id="i1.344" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.344" href="hm_pas2js344.htm" target="hmcontent"><span class="heading3" id="s1.344">string array item get set</span></a></li>
+<li class="heading3" id="i1.345" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.345" href="hm_pas2js345.htm" target="hmcontent"><span class="heading3" id="s1.345">string bounds</span></a></li>
+<li class="heading3" id="i1.346" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.346" href="hm_pas2js346.htm" target="hmcontent"><span class="heading3" id="s1.346">string bounds 2</span></a></li>
+<li class="heading3" id="i1.347" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.347" href="hm_pas2js347.htm" target="hmcontent"><span class="heading3" id="s1.347">string builtin methods</span></a></li>
+<li class="heading3" id="i1.348" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.348" href="hm_pas2js348.htm" target="hmcontent"><span class="heading3" id="s1.348">string class field get set</span></a></li>
+<li class="heading3" id="i1.349" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.349" href="hm_pas2js349.htm" target="hmcontent"><span class="heading3" id="s1.349">string compare</span></a></li>
+<li class="heading3" id="i1.350" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.350" href="hm_pas2js350.htm" target="hmcontent"><span class="heading3" id="s1.350">string manip</span></a></li>
+<li class="heading3" id="i1.351" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.351" href="hm_pas2js351.htm" target="hmcontent"><span class="heading3" id="s1.351">string quotes</span></a></li>
+<li class="heading3" id="i1.352" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.352" href="hm_pas2js352.htm" target="hmcontent"><span class="heading3" id="s1.352">string record field get set</span></a></li>
+<li class="heading3" id="i1.353" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.353" href="hm_pas2js353.htm" target="hmcontent"><span class="heading3" id="s1.353">string static access</span></a></li>
+<li class="heading3" id="i1.354" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.354" href="hm_pas2js354.htm" target="hmcontent"><span class="heading3" id="s1.354">swap i</span></a></li>
+<li class="heading3" id="i1.355" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.355" href="hm_pas2js355.htm" target="hmcontent"><span class="heading3" id="s1.355">swap ii</span></a></li>
+<li class="heading3" id="i1.356" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.356" href="hm_pas2js356.htm" target="hmcontent"><span class="heading3" id="s1.356">swap record</span></a></li>
+<li class="heading3" id="i1.357" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.357" href="hm_pas2js357.htm" target="hmcontent"><span class="heading3" id="s1.357">swap static array</span></a></li>
+<li class="heading3" id="i1.358" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.358" href="hm_pas2js358.htm" target="hmcontent"><span class="heading3" id="s1.358">try except finally</span></a></li>
+<li class="heading3" id="i1.359" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.359" href="hm_pas2js359.htm" target="hmcontent"><span class="heading3" id="s1.359">unicode const</span></a></li>
+<li class="heading3" id="i1.360" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.360" href="hm_pas2js360.htm" target="hmcontent"><span class="heading3" id="s1.360">unicode identifiers</span></a></li>
+<li class="heading3" id="i1.361" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.361" href="hm_pas2js361.htm" target="hmcontent"><span class="heading3" id="s1.361">unicode print</span></a></li>
+<li class="heading3" id="i1.362" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.362" href="hm_pas2js362.htm" target="hmcontent"><span class="heading3" id="s1.362">value type separation</span></a></li>
+<li class="heading3" id="i1.363" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.363" href="hm_pas2js363.htm" target="hmcontent"><span class="heading3" id="s1.363">var param casts</span></a></li>
+<li class="heading3" id="i1.364" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.364" href="hm_pas2js364.htm" target="hmcontent"><span class="heading3" id="s1.364">var param obj method</span></a></li>
+<li class="heading3" id="i1.365" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.365" href="hm_pas2js365.htm" target="hmcontent"><span class="heading3" id="s1.365">var param rec field</span></a></li>
+<li class="heading3" id="i1.366" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.366" href="hm_pas2js366.htm" target="hmcontent"><span class="heading3" id="s1.366">var param rec method</span></a></li>
+<li class="heading3" id="i1.367" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.367" href="hm_pas2js367.htm" target="hmcontent"><span class="heading3" id="s1.367">var param record</span></a></li>
+<li class="heading3" id="i1.368" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.368" href="hm_pas2js368.htm" target="hmcontent"><span class="heading3" id="s1.368">variable initialization i</span></a></li>
+<li class="heading3" id="i1.369" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.369" href="hm_pas2js369.htm" target="hmcontent"><span class="heading3" id="s1.369">variable initialization ii</span></a></li>
+<li class="heading3" id="i1.370" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.370" href="hm_pas2js370.htm" target="hmcontent"><span class="heading3" id="s1.370">variant compound ops</span></a></li>
+<li class="heading3" id="i1.371" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.371" href="hm_pas2js371.htm" target="hmcontent"><span class="heading3" id="s1.371">variant logical ops</span></a></li>
+<li class="heading3" id="i1.372" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.372" href="hm_pas2js372.htm" target="hmcontent"><span class="heading3" id="s1.372">variant ops</span></a></li>
+<li class="heading3" id="i1.373" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.373" href="hm_pas2js373.htm" target="hmcontent"><span class="heading3" id="s1.373">variants</span></a></li>
+<li class="heading3" id="i1.374" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.374" href="hm_pas2js374.htm" target="hmcontent"><span class="heading3" id="s1.374">variants binary bool int</span></a></li>
+<li class="heading3" id="i1.375" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.375" href="hm_pas2js375.htm" target="hmcontent"><span class="heading3" id="s1.375">variants bool</span></a></li>
+<li class="heading3" id="i1.376" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.376" href="hm_pas2js376.htm" target="hmcontent"><span class="heading3" id="s1.376">variants casts</span></a></li>
+<li class="heading3" id="i1.377" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.377" href="hm_pas2js377.htm" target="hmcontent"><span class="heading3" id="s1.377">variants explicit casts</span></a></li>
+<li class="heading3" id="i1.378" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.378" href="hm_pas2js378.htm" target="hmcontent"><span class="heading3" id="s1.378">virtual_constructor i</span></a></li>
+<li class="heading3" id="i1.379" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.379" href="hm_pas2js379.htm" target="hmcontent"><span class="heading3" id="s1.379">virtual constructor ii</span></a></li>
+<li class="heading3" id="i1.380" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.380" href="hm_pas2js380.htm" target="hmcontent"><span class="heading3" id="s1.380">while true</span></a></li>
+<li class="heading3" id="i1.381" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.381" href="hm_pas2js381.htm" target="hmcontent"><span class="heading3" id="s1.381">with</span></a></li>
+<li class="heading3" id="i1.382" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.382" href="hm_pas2js382.htm" target="hmcontent"><span class="heading3" id="s1.382">Issue 382</span></a></li>
+<li class="heading3" id="i1.383" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.383" href="hm_pas2js383.htm" target="hmcontent"><span class="heading3" id="s1.383">Issue 383</span></a></li>
+<li class="heading3" id="i1.384" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.384" href="hm_pas2js384.htm" target="hmcontent"><span class="heading3" id="s1.384">Issue 384</span></a></li>
+<li class="heading3" id="i1.385" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.385" href="hm_pas2js385.htm" target="hmcontent"><span class="heading3" id="s1.385">Issue 385</span></a></li>
+<li class="heading3" id="i1.386" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.386" href="hm_pas2js386.htm" target="hmcontent"><span class="heading3" id="s1.386">Issue 386</span></a></li>
+<li class="heading3" id="i1.387" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.387" href="hm_pas2js387.htm" target="hmcontent"><span class="heading3" id="s1.387">Issue 387</span></a></li>
+<li class="heading3" id="i1.388" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.388" href="hm_pas2js388.htm" target="hmcontent"><span class="heading3" id="s1.388">Issue 388</span></a></li>
+<li class="heading3" id="i1.389" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.389" href="hm_pas2js389.htm" target="hmcontent"><span class="heading3" id="s1.389">Issue 389</span></a></li>
+<li class="heading3" id="i1.390" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.390" href="hm_pas2js390.htm" target="hmcontent"><span class="heading3" id="s1.390">Issue 390</span></a></li>
+<li class="heading3" id="i1.391" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.391" href="hm_pas2js391.htm" target="hmcontent"><span class="heading3" id="s1.391">Issue 391</span></a></li>
+<li class="heading3" id="i1.392" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.392" href="hm_pas2js392.htm" target="hmcontent"><span class="heading3" id="s1.392">Issue 392</span></a></li>
+<li class="heading3" id="i1.393" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.393" href="hm_pas2js393.htm" target="hmcontent"><span class="heading3" id="s1.393">Issue 393</span></a></li>
+<li class="heading3" id="i1.394" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.394" href="hm_pas2js394.htm" target="hmcontent"><span class="heading3" id="s1.394">Issue 394</span></a></li>
+<li class="heading3" id="i1.395" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.395" href="hm_pas2js395.htm" target="hmcontent"><span class="heading3" id="s1.395">Issue 395</span></a></li>
+<li class="heading3" id="i1.396" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.396" href="hm_pas2js396.htm" target="hmcontent"><span class="heading3" id="s1.396">Issue 396</span></a></li>
+<li class="heading3" id="i1.397" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.397" href="hm_pas2js397.htm" target="hmcontent"><span class="heading3" id="s1.397">Issue 397</span></a></li>
+<li class="heading3" id="i1.398" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.398" href="hm_pas2js398.htm" target="hmcontent"><span class="heading3" id="s1.398">Issue 398</span></a></li>
+<li class="heading3" id="i1.399" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.399" href="hm_pas2js399.htm" target="hmcontent"><span class="heading3" id="s1.399">Issue 399</span></a></li>
+<li class="heading3" id="i1.400" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.400" href="hm_pas2js400.htm" target="hmcontent"><span class="heading3" id="s1.400">Issue 400</span></a></li>
+<li class="heading3" id="i1.401" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.401" href="hm_pas2js401.htm" target="hmcontent"><span class="heading3" id="s1.401">Issue 401</span></a></li>
+<li class="heading3" id="i1.402" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.402" href="hm_pas2js402.htm" target="hmcontent"><span class="heading3" id="s1.402">Issue 402</span></a></li>
+<li class="heading3" id="i1.403" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.403" href="hm_pas2js403.htm" target="hmcontent"><span class="heading3" id="s1.403">Issue 403</span></a></li>
+<li class="heading3" id="i1.404" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.404" href="hm_pas2js404.htm" target="hmcontent"><span class="heading3" id="s1.404">Issue 404</span></a></li>
+<li class="heading3" id="i1.405" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.405" href="hm_pas2js405.htm" target="hmcontent"><span class="heading3" id="s1.405">Issue 405</span></a></li>
+<li class="heading3" id="i1.406" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.406" href="hm_pas2js406.htm" target="hmcontent"><span class="heading3" id="s1.406">Issue 406</span></a></li>
+<li class="heading3" id="i1.407" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.407" href="hm_pas2js407.htm" target="hmcontent"><span class="heading3" id="s1.407">Issue 407</span></a></li>
+<li class="heading3" id="i1.408" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.408" href="hm_pas2js408.htm" target="hmcontent"><span class="heading3" id="s1.408">Issue 408</span></a></li>
+<li class="heading3" id="i1.409" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.409" href="hm_pas2js409.htm" target="hmcontent"><span class="heading3" id="s1.409">Issue 409</span></a></li>
+<li class="heading3" id="i1.410" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.410" href="hm_pas2js410.htm" target="hmcontent"><span class="heading3" id="s1.410">Issue 410</span></a></li>
+<li class="heading3" id="i1.411" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.411" href="hm_pas2js411.htm" target="hmcontent"><span class="heading3" id="s1.411">Issue 411</span></a></li>
+<li class="heading3" id="i1.412" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.412" href="hm_pas2js412.htm" target="hmcontent"><span class="heading3" id="s1.412">Issue 412</span></a></li>
+<li class="heading3" id="i1.413" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.413" href="hm_pas2js413.htm" target="hmcontent"><span class="heading3" id="s1.413">Issue 413</span></a></li>
+<li class="heading3" id="i1.414" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.414" href="hm_pas2js414.htm" target="hmcontent"><span class="heading3" id="s1.414">Issue 414</span></a></li>
+<li class="heading3" id="i1.4415" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.4415" href="hm_pas2js415.htm" target="hmcontent"><span class="heading3" id="s1.4415">Issue 415</span></a></li>
+<li class="heading3" id="i1.416" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.416" href="hm_pas2js416.htm" target="hmcontent"><span class="heading3" id="s1.416">Issue 416</span></a></li>
+<li class="heading3" id="i1.417" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.417" href="hm_pas2js417.htm" target="hmcontent"><span class="heading3" id="s1.417">Issue 417</span></a></li>
+<li class="heading3" id="i1.418" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.418" href="hm_pas2js418.htm" target="hmcontent"><span class="heading3" id="s1.418">Issue 418</span></a></li>
+<li class="heading3" id="i1.419" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.419" href="hm_pas2js419.htm" target="hmcontent"><span class="heading3" id="s1.419">Issue 419</span></a></li>
+<li class="heading3" id="i1.420" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.420" href="hm_pas2js420.htm" target="hmcontent"><span class="heading3" id="s1.420">Issue 420</span></a></li>
+<li class="heading3" id="i1.421" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.421" href="hm_pas2js421.htm" target="hmcontent"><span class="heading3" id="s1.421">Issue 421</span></a></li>
+<li class="heading3" id="i1.422" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.422" href="hm_pas2js422.htm" target="hmcontent"><span class="heading3" id="s1.422">Issue 422</span></a></li>
+<li class="heading3" id="i1.423" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.423" href="hm_pas2js423.htm" target="hmcontent"><span class="heading3" id="s1.423">Issue 423</span></a></li>
+<li class="heading3" id="i1.424" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.424" href="hm_pas2js424.htm" target="hmcontent"><span class="heading3" id="s1.424">Issue 424</span></a></li>
+<li class="heading3" id="i1.425" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.425" href="hm_pas2js425.htm" target="hmcontent"><span class="heading3" id="s1.425">Issue 425</span></a></li>
+<li class="heading3" id="i1.426" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.426" href="hm_pas2js426.htm" target="hmcontent"><span class="heading3" id="s1.426">Issue 426</span></a></li>
+<li class="heading3" id="i1.427" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.427" href="hm_pas2js427.htm" target="hmcontent"><span class="heading3" id="s1.427">Issue 427</span></a></li>
+<li class="heading3" id="i1.428" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.428" href="hm_pas2js428.htm" target="hmcontent"><span class="heading3" id="s1.428">Issue 428</span></a></li>
+<li class="heading3" id="i1.429" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.429" href="hm_pas2js429.htm" target="hmcontent"><span class="heading3" id="s1.429">Issue 429</span></a></li>
+<li class="heading3" id="i1.430" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.430" href="hm_pas2js430.htm" target="hmcontent"><span class="heading3" id="s1.430">Issue 430</span></a></li>
+<li class="heading3" id="i1.431" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.431" href="hm_pas2js431.htm" target="hmcontent"><span class="heading3" id="s1.431">Issue 431</span></a></li>
+<li class="heading3" id="i1.432" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.432" href="hm_pas2js432.htm" target="hmcontent"><span class="heading3" id="s1.432">Issue 432</span></a></li>
+<li class="heading3" id="i1.433" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.433" href="hm_pas2js433.htm" target="hmcontent"><span class="heading3" id="s1.433">Issue 433</span></a></li>
+<li class="heading3" id="i1.434" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.434" href="hm_pas2js434.htm" target="hmcontent"><span class="heading3" id="s1.434">Issue 434</span></a></li>
+<li class="heading3" id="i1.435" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.435" href="hm_pas2js435.htm" target="hmcontent"><span class="heading3" id="s1.435">Issue 435</span></a></li>
+<li class="heading3" id="i1.436" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.436" href="hm_pas2js436.htm" target="hmcontent"><span class="heading3" id="s1.436">Issue 436</span></a></li>
+<li class="heading3" id="i1.437" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.437" href="hm_pas2js437.htm" target="hmcontent"><span class="heading3" id="s1.437">Issue 437</span></a></li>
+<li class="heading3" id="i1.438" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.438" href="hm_pas2js438.htm" target="hmcontent"><span class="heading3" id="s1.438">Issue 438</span></a></li>
+<li class="heading3" id="i1.439" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.439" href="hm_pas2js439.htm" target="hmcontent"><span class="heading3" id="s1.439">Issue 439</span></a></li>
+<li class="heading3" id="i1.440" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.440" href="hm_pas2js440.htm" target="hmcontent"><span class="heading3" id="s1.440">Issue 440</span></a></li>
+<li class="heading3" id="i1.441" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.441" href="hm_pas2js441.htm" target="hmcontent"><span class="heading3" id="s1.441">Issue 441</span></a></li>
+<li class="heading3" id="i1.442" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.442" href="hm_pas2js442.htm" target="hmcontent"><span class="heading3" id="s1.442">Issue 442</span></a></li>
+<li class="heading3" id="i1.443" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.443" href="hm_pas2js443.htm" target="hmcontent"><span class="heading3" id="s1.443">Issue 443</span></a></li>
+<li class="heading3" id="i1.444" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.444" href="hm_pas2js444.htm" target="hmcontent"><span class="heading3" id="s1.444">Issue 444</span></a></li>
+<li class="heading3" id="i1.445" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.445" href="hm_pas2js445.htm" target="hmcontent"><span class="heading3" id="s1.445">Issue 445</span></a></li>
+<li class="heading3" id="i1.446" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.446" href="hm_pas2js446.htm" target="hmcontent"><span class="heading3" id="s1.446">Issue 446</span></a></li>
+<li class="heading3" id="i1.447" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.447" href="hm_pas2js447.htm" target="hmcontent"><span class="heading3" id="s1.447">Issue 447</span></a></li>
+<li class="heading3" id="i1.448" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.448" href="hm_pas2js448.htm" target="hmcontent"><span class="heading3" id="s1.448">Issue 448</span></a></li>
+<li class="heading3" id="i1.449" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.449" href="hm_pas2js449.htm" target="hmcontent"><span class="heading3" id="s1.449">Issue 449</span></a></li>
+<li class="heading3" id="i1.450" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.450" href="hm_pas2js450.htm" target="hmcontent"><span class="heading3" id="s1.450">Issue 450</span></a></li>
+<li class="heading3" id="i1.451" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.451" href="hm_pas2js451.htm" target="hmcontent"><span class="heading3" id="s1.451">Issue 451</span></a></li>
+<li class="heading3" id="i1.452" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.452" href="hm_pas2js452.htm" target="hmcontent"><span class="heading3" id="s1.452">Issue 452</span></a></li>
+<li class="heading3" id="i1.453" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.453" href="hm_pas2js453.htm" target="hmcontent"><span class="heading3" id="s1.453">Issue 453</span></a></li>
+<li class="heading3" id="i1.454" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.454" href="hm_pas2js454.htm" target="hmcontent"><span class="heading3" id="s1.454">Issue 454</span></a></li>
+<li class="heading3" id="i1.455" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.455" href="hm_pas2js455.htm" target="hmcontent"><span class="heading3" id="s1.455">Issue 455</span></a></li>
+<li class="heading3" id="i1.456" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.456" href="hm_pas2js456.htm" target="hmcontent"><span class="heading3" id="s1.456">Issue 456</span></a></li>
+<li class="heading3" id="i1.457" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.457" href="hm_pas2js457.htm" target="hmcontent"><span class="heading3" id="s1.457">Issue 457</span></a></li>
+<li class="heading3" id="i1.458" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.458" href="hm_pas2js458.htm" target="hmcontent"><span class="heading3" id="s1.458">Issue 458</span></a></li>
+<li class="heading3" id="i1.459" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.459" href="hm_pas2js459.htm" target="hmcontent"><span class="heading3" id="s1.459">Issue 459</span></a></li>
+<li class="heading3" id="i1.460" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.460" href="hm_pas2js460.htm" target="hmcontent"><span class="heading3" id="s1.460">Issue 460</span></a></li>
+<li class="heading3" id="i1.461" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.461" href="hm_pas2js461.htm" target="hmcontent"><span class="heading3" id="s1.461">Issue 461</span></a></li>
+<li class="heading3" id="i1.462" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.462" href="hm_pas2js462.htm" target="hmcontent"><span class="heading3" id="s1.462">Issue 462</span></a></li>
+<li class="heading3" id="i1.463" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.463" href="hm_pas2js463.htm" target="hmcontent"><span class="heading3" id="s1.463">Issue 463</span></a></li>
+<li class="heading3" id="i1.464" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.464" href="hm_pas2js464.htm" target="hmcontent"><span class="heading3" id="s1.464">Issue 464</span></a></li>
+<li class="heading3" id="i1.465" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.465" href="hm_pas2js465.htm" target="hmcontent"><span class="heading3" id="s1.465">Issue 465</span></a></li>
+<li class="heading3" id="i1.466" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.466" href="hm_pas2js466.htm" target="hmcontent"><span class="heading3" id="s1.466">Issue 466</span></a></li>
+<li class="heading3" id="i1.467" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.467" href="hm_pas2js467.htm" target="hmcontent"><span class="heading3" id="s1.467">Issue 467</span></a></li>
+<li class="heading3" id="i1.468" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.468" href="hm_pas2js468.htm" target="hmcontent"><span class="heading3" id="s1.468">Issue 468</span></a></li>
+<li class="heading3" id="i1.469" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.469" href="hm_pas2js469.htm" target="hmcontent"><span class="heading3" id="s1.469">Issue 469</span></a></li>
+<li class="heading3" id="i1.470" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.470" href="hm_pas2js470.htm" target="hmcontent"><span class="heading3" id="s1.470">Issue 470</span></a></li>
+<li class="heading3" id="i1.471" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.471" href="hm_pas2js471.htm" target="hmcontent"><span class="heading3" id="s1.471">Issue 471</span></a></li>
+<li class="heading3" id="i1.472" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.472" href="hm_pas2js472.htm" target="hmcontent"><span class="heading3" id="s1.472">Issue 472</span></a></li>
+<li class="heading3" id="i1.473" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.473" href="hm_pas2js473.htm" target="hmcontent"><span class="heading3" id="s1.473">Issue 473</span></a></li>
+<li class="heading3" id="i1.474" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.474" href="hm_pas2js474.htm" target="hmcontent"><span class="heading3" id="s1.474">Issue 474</span></a></li>
+<li class="heading3" id="i1.475" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.475" href="hm_pas2js475.htm" target="hmcontent"><span class="heading3" id="s1.475">Issue 475</span></a></li>
+<li class="heading3" id="i1.476" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.476" href="hm_pas2js476.htm" target="hmcontent"><span class="heading3" id="s1.476">Issue 476</span></a></li>
+<li class="heading3" id="i1.477" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.477" href="hm_pas2js477.htm" target="hmcontent"><span class="heading3" id="s1.477">Issue 477</span></a></li>
+<li class="heading3" id="i1.478" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.478" href="hm_pas2js478.htm" target="hmcontent"><span class="heading3" id="s1.478">Issue 478</span></a></li>
+<li class="heading3" id="i1.479" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.479" href="hm_pas2js479.htm" target="hmcontent"><span class="heading3" id="s1.479">Issue 479</span></a></li>
+<li class="heading3" id="i1.480" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.480" href="hm_pas2js480.htm" target="hmcontent"><span class="heading3" id="s1.480">Issue 480</span></a></li>
+<li class="heading3" id="i1.481" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.481" href="hm_pas2js481.htm" target="hmcontent"><span class="heading3" id="s1.481">Issue 481</span></a></li>
+<li class="heading3" id="i1.482" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.482" href="hm_pas2js482.htm" target="hmcontent"><span class="heading3" id="s1.482">Issue 482</span></a></li>
+<li class="heading3" id="i1.483" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.483" href="hm_pas2js483.htm" target="hmcontent"><span class="heading3" id="s1.483">Issue 483</span></a></li>
+<li class="heading3" id="i1.484" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.484" href="hm_pas2js484.htm" target="hmcontent"><span class="heading3" id="s1.484">Issue 484</span></a></li>
+<li class="heading3" id="i1.485" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.485" href="hm_pas2js485.htm" target="hmcontent"><span class="heading3" id="s1.485">Issue 485</span></a></li>
+<li class="heading3" id="i1.486" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.486" href="hm_pas2js486.htm" target="hmcontent"><span class="heading3" id="s1.486">Issue 486</span></a></li>
+<li class="heading3" id="i1.487" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.487" href="hm_pas2js487.htm" target="hmcontent"><span class="heading3" id="s1.487">Issue 487</span></a></li>
+<li class="heading3" id="i1.488" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.488" href="hm_pas2js488.htm" target="hmcontent"><span class="heading3" id="s1.488">Issue 488</span></a></li>
+<li class="heading3" id="i1.489" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.489" href="hm_pas2js489.htm" target="hmcontent"><span class="heading3" id="s1.489">Issue 489</span></a></li>
+<li class="heading3" id="i1.490" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a1.490" href="hm_pas2js490.htm" target="hmcontent"><span class="heading3" id="s1.490">Issue 490</span></a></li>
+</ul>
+</li>
+
+
+<li class="heading1" id="i2" data-bg="ibook.png;ibookopen.png" data-img="feature-00-new.jpg" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading1" id="a2" href="index.htm?index.htm" target="hmcontent"><span class="heading1" id="s2" ondblclick="return dblclicked(this)">Smart Mobile Studio</span></a>
+<ul id="ul2" style="list-style-type:none">
+<li class="heading2" id="i2.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a2.1" href="hm_programming_with_Pas2JS.htm" target="hmcontent"><span class="heading2" id="s2.1">Programming Logic</span></a>
+</li>
+<li class="heading2" id="i2.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a2.2" href="hm_subroutines.htm" target="hmcontent"><span class="heading2" id="s2.2">SubRoutines</span></a>
+</li>
+<li class="heading2" id="i2.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a2.3" href="hm_looping.htm" target="hmcontent"><span class="heading2" id="s2.3">Looping</span></a>
+</li>
+<li class="heading2" id="i2.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a2.4" href="hm_exceptions.htm" target="hmcontent"><span class="heading2" id="s2.4">Exceptions</span></a>
+</li>
+<li class="heading2" id="i2.5" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a2.5" href="hm_dates_and_times.htm" target="hmcontent"><span class="heading2" id="s2.5">Dates and Times</span></a>
+</li>
+<li class="heading2" id="i2.6" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a2.6" href="hm_faq1.htm" target="hmcontent"><span class="heading2" id="s2.6">FAQ</span></a>
+</li>
+<li class="heading2" id="i2.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a2.7" href="hm_keywords.htm" target="hmcontent"><span class="heading2" id="s2.7">Keywords</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i3" data-bg="ibook.png;ibookopen.png" data-img="feature-01-intro.jpg" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading1" id="a3" href="hm_introduction.htm
+" target="hmcontent"><span class="heading1" id="s3" ondblclick="return dblclicked(this)">Overview</span></a>
+<ul id="ul3" style="list-style-type:none">
+<li class="heading2" id="i3.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.1" href="hm_ide.htm" target="hmcontent"><span class="heading2" id="s3.1">IDE</span></a>
+</li>
+<li class="heading2" id="i3.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.2" href="hm_features.htm" target="hmcontent"><span class="heading2" id="s3.2">Language Features</span></a>
+</li>
+
+<li class="heading2" id="i3.3" data-bg="ibook.png;ibookopen.png" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.3" href="hm_application.htm" target="hmcontent"><span class="heading2" id="s3.3" ondblclick="return dblclicked(this)">Application Architecture</span></a>
+<ul id="ul3.3" style="list-style-type:none">
+<li class="heading3" id="i3.3.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a3.3.1" href="hm_application_1.htm" target="hmcontent"><span class="heading3" id="s3.3.1">The application object</span></a>
+</li>
+</ul>
+</li>
+
+<li class="heading2" id="i3.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.4" href="hm_types.htm" target="hmcontent"><span class="heading2" id="s3.4">Project types</span></a>
+</li>
+<li class="heading2" id="i3.5" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.5" href="hm_forms.htm" target="hmcontent"><span class="heading2" id="s3.5">Forms and navigation</span></a>
+</li>
+<li class="heading2" id="i3.6" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.6" href="hm5_msg.htm" target="hmcontent"><span class="heading2" id="s3.6">Message dialogs</span></a>
+</li>
+<li class="heading2" id="i3.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.7" href="hm_themes.htm" target="hmcontent"><span class="heading2" id="s3.7">Themes and styles</span></a>
+</li>
+<li class="heading2" id="i3.8" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.8" href="hm_asm_block.htm" target="hmcontent"><span class="heading2" id="s3.8">ASM Blocks</span></a>
+</li>
+<li class="heading2" id="i3.9" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.9" href="hm__directives.htm" target="hmcontent"><span class="heading2" id="s3.9">Directives</span></a>
+</li>
+<li class="heading2" id="i3.10" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.10" href="hm_memory_model.htm" target="hmcontent"><span class="heading2" id="s3.10">Memory Model</span></a>
+</li>
+<li class="heading2" id="i3.11" data-bg="ibook.png;ibookopen.png" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.11" href="hm_ex1.htm" target="hmcontent"><span class="heading2" id="s3.11" ondblclick="return dblclicked(this)">Examples</span></a>
+<ul id="ul3.11" style="list-style-type:none">
+<li class="heading3" id="i3.11.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a3.11.1" href="hm_ex1.htm" target="hmcontent"><span class="heading3" id="s3.11.1">Console Example</span></a>
+</li>
+<li class="heading3" id="i3.11.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a3.11.2" href="hm_new_topicteste.htm" target="hmcontent"><span class="heading3" id="s3.11.2">Smart Banking Example</span></a>
+</li>
+<li class="heading3" id="i3.11.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a3.11.3" href="hm_ex3.htm" target="hmcontent"><span class="heading3" id="s3.11.3">Canvas Marine Creatures</span></a>
+</li>
+<li class="heading3" id="i3.11.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a3.11.4" href="hm_ex4.htm" target="hmcontent"><span class="heading3" id="s3.11.4">Smart with F7 webapp</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i3.12" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a3.12" href="hm_compiler.htm" target="hmcontent"><span class="heading2" id="s3.12">Compiler Options</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i4" data-bg="ibook.png;ibookopen.png" data-img="feature-02-get-started.jpg" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading1" id="a4" href="hm_operators.htm" target="hmcontent"><span class="heading1" id="s4" ondblclick="return dblclicked(this)">Operators</span></a>
+<ul id="ul4" style="list-style-type:none">
+<li class="heading2" id="i4.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a4.1" href="hm_operator_overloading.htm" target="hmcontent"><span class="heading2" id="s4.1">Operator Overloading</span></a>
+</li>
+<li class="heading2" id="i4.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a4.2" href="hm_helper_methods.htm" target="hmcontent"><span class="heading2" id="s4.2">Helper Methods</span></a>
+</li>
+</ul>
+</li>
+
+<li class="heading1" id="i5" data-bg="ibook.png;ibookopen.png" data-img="feature-02-get-started.jpg" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading1" id="a5" href="hm_datatypes.htm" target="hmcontent"><span class="heading1" id="s5" ondblclick="return dblclicked(this)">Base Types</span></a>
+<ul id="ul5" style="list-style-type:none">
+<li class="heading2" id="i5.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.1" href="tobject.htm" target="hmcontent"><span class="heading2" id="s5.1">TObject</span></a>
+</li>
+<li class="heading2" id="i5.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.2" href="hm_integer.htm" target="hmcontent"><span class="heading2" id="s5.2">Integer</span></a>
+</li>
+<li class="heading2" id="i5.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.3" href="hm_float.htm" target="hmcontent"><span class="heading2" id="s5.3">Float</span></a>
+</li>
+<li class="heading2" id="i5.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.4" href="hm_string.htm" target="hmcontent"><span class="heading2" id="s5.4">String</span></a>
+</li>
+<li class="heading2" id="i5.5" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.5" href="hm_boolean.htm" target="hmcontent"><span class="heading2" id="s5.5">Boolean</span></a>
+</li>
+<li class="heading2" id="i5.6" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a5.6" href="hm_variant.htm" target="hmcontent"><span class="heading2" id="s5.6">Variant</span></a>
+</li>
+</ul>
+</li>
+
+<li class="heading1" id="i6" data-bg="ibook.png;ibookopen.png" data-img="feature-02-get-started.jpg" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading1" id="a6" href="hm_language_types.htm" target="hmcontent"><span class="heading1" id="s6" ondblclick="return dblclicked(this)">Language Types</span></a>
+<ul id="ul6" style="list-style-type:none">
+<li class="heading2" id="i6.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.1" href="hm_language_types1.htm" target="hmcontent"><span class="heading2" id="s6.1">Enumerations</span></a>
+</li>
+
+<li class="heading2" id="i6.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.2" href="hm_language_types2.htm" target="hmcontent"><span class="heading2" id="s6.2">Sets</span></a>
+</li>
+<li class="heading2" id="i6.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.3" href="hm_language_types3.htm" target="hmcontent"><span class="heading2" id="s6.3">Arrays</span></a>
+</li>
+<li class="heading2" id="i6.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.4" href="hm_language_types4.htm" target="hmcontent"><span class="heading2" id="s6.4">Records</span></a>
+</li>
+<li class="heading2" id="i6.5" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.5" href="hm_interface.htm" target="hmcontent"><span class="heading2" id="s6.5">Interfaces</span></a>
+</li>
+<li class="heading2" id="i6.6" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.6" href="hm_language_types7.htm" target="hmcontent"><span class="heading2" id="s6.6">Helpers</span></a>
+</li>
+
+<li class="heading2" id="i6.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.7" href="hm_language_types8.htm" target="hmcontent"><span class="heading2" id="s6.7">Delegates</span></a>
+</li>
+
+<li class="heading2" id="i6.8" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.8" href="hm_language_types9.htm" target="hmcontent"><span class="heading2" id="s6.8">Closures</span></a>
+</li>
+
+<li class="heading2" id="i6.9" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.9" href="hm_language_types10.htm" target="hmcontent"><span class="heading2" id="s6.9">Lambdas</span></a>
+</li>
+
+<li class="heading2" id="i6.10" data-bg="ibook.png;ibookopen.png" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.10" href="hm_class.htm" target="hmcontent"><span class="heading2" id="s6.10" ondblclick="return dblclicked(this)">Classes</span></a>
+<ul id="ul6.10" style="list-style-type:none">
+
+<li class="heading3" id="i6.10.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.1" href="hm_fields.htm" target="hmcontent"><span class="heading3" id="s6.10.1">Fields</span></a>
+</li>
+
+<li class="heading3" id="i6.10.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.2" href="hm_properties.htm" target="hmcontent"><span class="heading3" id="s6.10.2">Properties</span></a>
+</li>
+
+<li class="heading3" id="i6.10.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.3" href="hm_methods.htm" target="hmcontent"><span class="heading3" id="s6.10.3">Methods</span></a>
+</li>
+
+<li class="heading3" id="i6.10.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.4" href="hm_anonymous_methods.htm" target="hmcontent"><span class="heading3" id="s6.10.4">Anonymous methods</span></a>
+</li>
+
+<li class="heading3" id="i6.10.5" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.5" href="hm_constructors_and_destructors.htm" target="hmcontent"><span class="heading3" id="s6.10.5">Constructors and Destructors</span></a>
+</li>
+
+<li class="heading3" id="i6.10.6" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.6" href="hm_property_expressions.htm" target="hmcontent"><span class="heading3" id="s6.10.6">Properties Expressions</span></a>
+</li>
+
+<li class="heading3" id="i6.10.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.7" href="hm_anonymous_classes.htm" target="hmcontent"><span class="heading3" id="s6.10.7">Anonymous classes</span></a>
+</li>
+
+<li class="heading3" id="i6.10.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.7" href="hm_partial_classes.htm" target="hmcontent"><span class="heading3" id="s6.10.7">Partial Classes</span></a>
+</li>
+
+
+<li class="heading3" id="i6.10.8" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.8" href="hm_external_classes.htm" target="hmcontent"><span class="heading3" id="s6.10.8">External Classes</span></a>
+</li>
+
+
+<li class="heading3" id="i6.10.9" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a6.10.9" href="hm_class_variables.htm" target="hmcontent"><span class="heading3" id="s6.10.9">Class variables</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+
+<li class="heading1" id="i7" data-bg="ibook.png;ibookopen.png" data-img="feature-02-get-started.jpg" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading1" id="a6" href="hm_publishing_3_8.htm
+" target="hmcontent"><span class="heading1" id="s7" ondblclick="return dblclicked(this)">Smart RTL</span></a>
+<ul id="ul7" style="list-style-type:none">
+
+<li class="heading2" id="i7.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a7.1" href="hm_rtti.htm" target="hmcontent"><span class="heading2" id="s7.1">RTTI</span></a>
+</li>
+
+<li class="heading2" id="i7.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a7.2" href="hm_rtlsystem.htm" target="hmcontent"><span class="heading2" id="s7.2">RTL System</span></a>
+</li>
+
+<li class="heading2" id="i7.3" data-bg="ibook.png;ibookopen.png" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.10" href="hm_rtlsmartcl.htm" target="hmcontent"><span class="heading2" id="s7.3" ondblclick="return dblclicked(this)">RTL SmartCL</span></a>
+<ul id="ul7.3" style="list-style-type:none">
+
+<li class="heading3" id="i7.3.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.1" href="hm_label.htm" target="hmcontent"><span class="heading3" id="s7.3.1">Label</span></a>
+</li>
+
+<li class="heading3" id="i7.3.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.2" href="hm_listbox.htm" target="hmcontent"><span class="heading3" id="s7.3.2">Listbox</span></a>
+</li>
+
+<li class="heading3" id="i7.3.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.3" href="hm_progressbar.htm" target="hmcontent"><span class="heading3" id="s7.3.3">ProgressBar</span></a>
+</li>
+
+<li class="heading3" id="i7.3.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.4" href="hm_memo.htm" target="hmcontent"><span class="heading3" id="s7.3.4">Memo</span></a>
+</li>
+
+<li class="heading3" id="i7.3.5" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.5" href="hm_combobox.htm" target="hmcontent"><span class="heading3" id="s7.3.5">ComboBox</span></a>
+</li>
+
+<li class="heading3" id="i7.3.6" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.6" href="hm_image.htm" target="hmcontent"><span class="heading3" id="s7.3.6">Image</span></a>
+</li>
+
+<li class="heading3" id="i7.3.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.7" href="hm_button.htm" target="hmcontent"><span class="heading3" id="s7.3.7">Button</span></a>
+</li>
+
+<li class="heading3" id="i7.3.7" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.7" href="hm_checkbox.htm" target="hmcontent"><span class="heading3" id="s7.3.7">CheckBox</span></a>
+</li>
+
+
+<li class="heading3" id="i7.3.8" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.8" href="hm_editbox.htm" target="hmcontent"><span class="heading3" id="s7.3.8">EditBox</span></a>
+</li>
+
+<li class="heading3" id="i7.3.9" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.9" href="hm_listmenu.htm" target="hmcontent"><span class="heading3" id="s7.3.9">ListMenu</span></a>
+</li>
+
+<li class="heading3" id="i7.3.10" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.10" href="hm_toolbutton.htm" target="hmcontent"><span class="heading3" id="s7.3.10">ToolButton</span></a>
+</li>
+
+<li class="heading3" id="i7.3.11" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.11" href="hm_toolbar.htm" target="hmcontent"><span class="heading3" id="s7.3.11">ToolBar</span></a>
+</li>
+
+<li class="heading3" id="i7.3.12" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.12" href="hm_header.htm" target="hmcontent"><span class="heading3" id="s7.3.12">Header</span></a>
+</li>
+
+<li class="heading3" id="i7.3.13" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.13" href="hm_paintbox.htm" target="hmcontent"><span class="heading3" id="s7.3.13">PaintBox</span></a>
+</li>
+
+<li class="heading3" id="i7.3.14" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.14" href="hm_toggleswitch.htm" target="hmcontent"><span class="heading3" id="s7.3.14">ToggleSwitch</span></a>
+</li>
+
+<li class="heading3" id="i7.3.15" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.15" href="hm_scrollbar.htm" target="hmcontent"><span class="heading3" id="s7.3.15">ScrollBar</span></a>
+</li>
+
+<li class="heading3" id="i7.3.16" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.16" href="hm_scrollbox.htm" target="hmcontent"><span class="heading3" id="s7.3.16">ScrollBox</span></a>
+</li>
+
+<li class="heading3" id="i7.3.17" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.17" href="hm_grid.htm" target="hmcontent"><span class="heading3" id="s7.3.17">Grid</span></a>
+</li>
+
+<li class="heading3" id="i7.3.18" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.18" href="hm_panel.htm" target="hmcontent"><span class="heading3" id="s7.3.18">Panel</span></a>
+</li>
+
+<li class="heading3" id="i7.3.19" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.19" href="hm_webgl.htm" target="hmcontent"><span class="heading3" id="s7.3.19">WebGL</span></a>
+</li>
+
+<li class="heading3" id="i7.3.20" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.20" href="hm_element.htm" target="hmcontent"><span class="heading3" id="s7.3.20">HTML Elements</span></a>
+</li>
+</ul>
+</li>
+
+<li class="heading2" id="i7.4" data-bg="ibook.png;ibookopen.png" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.10" href="hm_networking.htm" target="hmcontent"><span class="heading2" id="s7.4" ondblclick="return dblclicked(this)">Network</span></a>
+<ul id="ul7.4" style="list-style-type:none">
+
+<li class="heading3" id="i7.4.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.4.1" href="hm_tw3httprequest.htm" target="hmcontent"><span class="heading3" id="s7.4.1">Http Requests</span></a>
+</li>
+
+<li class="heading3" id="i7.4.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.4.2" href="hm_tw3jsonp.htm" target="hmcontent"><span class="heading3" id="s7.4.2">JSONP</span></a>
+</li>
+
+<li class="heading3" id="i7.4.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.4.3" href="hm_loadingfiles.htm" target="hmcontent"><span class="heading3" id="s7.4.3">Loading Files</span></a>
+</li>
+</ul>
+</li>
+
+<li class="heading2" id="i7.5" data-bg="ibook.png;ibookopen.png" style="background:url(ibookopen.png) no-repeat;cursor:pointer;padding-left:24px" onclick="return clicked(this,event)"><a class="heading2" id="a6.10" href="hm_qs_file.htm" target="hmcontent"><span class="heading2" id="s7.5" ondblclick="return dblclicked(this)">Layout manager</span></a>
+<ul id="ul7.5" style="list-style-type:none">
+
+<li class="heading3" id="i7.5.1" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.5.1" href="hm_layout_manager_i.htm" target="hmcontent"><span class="heading3" id="s7.5.1">Layout manager I</span></a>
+</li>
+
+<li class="heading3" id="i7.5.2" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.5.2" href="hm_layout_manager_ii.htm" target="hmcontent"><span class="heading3" id="s7.5.2">Layout manager II</span></a>
+</li>
+
+<li class="heading3" id="i7.5.3" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.5.3" href="hm_layout_manager_iii.htm" target="hmcontent"><span class="heading3" id="s7.5.3">Layout manager III</span></a>
+</li>
+
+<li class="heading3" id="i7.5.4" style="background:url(ipage.png) no-repeat;padding-left:24px" onclick="return clicked(this,event)"><a class="heading3" id="a7.5.4" href="hm_layout_manager_iv.htm" target="hmcontent"><span class="heading3" id="s7.5.4">Layout manager IV</span></a>
+</li>
+</ul>
+</li>
+
+<li></li>
+</ul>
+</li>
+
+</ul>
+<script type="text/javascript">loadicons('ipage.png','ibookopen.png','ibook.png');</script>
+</body>
+</html>

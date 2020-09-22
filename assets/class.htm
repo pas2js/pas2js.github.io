@@ -1,0 +1,315 @@
+<!-- (0048)Class -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Class command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Class, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Class</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts the declaration of a type of object class</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+<font color=#FF0000>1. </font>type <b>Name</b> = {packed} <b>class</b><br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; Definitions...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; {<b>class</b> function|procedure ...}<br>&nbsp;
+&nbsp;&nbsp; end;<br>&nbsp;
+<br>&nbsp;
+<font color=#FF0000>2. </font>type <b>Name = class</b>(BaseClass);<br>&nbsp;
+<br>&nbsp;
+<font color=#FF0000>3. </font>type <b>Name = class;</b><br>&nbsp;
+<br>&nbsp;
+<font color=#FF0000>4. </font>type <b>Name</b> = {packed} <b>class</b>(BaseClass)<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; Class definition...<br>&nbsp;
+&nbsp;&nbsp; end;<br>&nbsp;
+<br>&nbsp;
+<font color=#FF0000>5. </font>type <b>Name</b> = {packed} <b>class</b>(BaseClass {,Interfaces})<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; Class definition...<br>&nbsp;
+&nbsp;&nbsp; end;<br>&nbsp;
+<br>&nbsp;
+<font color=#FF0000>6. </font>type <b>MetaClassName = class</b> of <b>class type</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Class</b></font> keyword is the central part of Object Oriented code. It starts the definition of literally a 'class' of object types.
+<br>&nbsp;<br>
+This definition contains so-called 'members' - data and methods (subroutines). When an object of the class is created, it is a stand alone item - you can access the data and methods of the object independently of any other object. It is like a Delphi record, but with active components - methods.
+<br>&nbsp;<br>
+These elements are defined in the class type definition. The method elements are implemented in the implementation section of the Unit.
+<br>&nbsp;<br>
+A <b>class declaration</b> has this typical basic layout :
+<br>&nbsp;<br>
+<font color=#200080><font class=mono>
+type<br>
+&nbsp;&nbsp;className = class(BaseClass)<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000>// Data/method defs local to this Unit</font><br>
+&nbsp;&nbsp;protected<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000>// Data/method defs local to this class + descendants</font><br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000>// Data/method defs usable with all objects of this class</font><br>
+&nbsp;&nbsp;published<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000>// Externally interrogatable public definitions</font><br>
+end;</font></font>
+<br>&nbsp;<br>
+<font color=#200080>Parameters</font> can be passed when creating an object instance of a class. These are passed to the <b>Constructor</b> method of the class. The word <b>constructor</b> is used instead of function or method. You may have a number of constructors for different parameter sets. These are supplied with the <b>overload;</b> keyword after the end of the constructor definition.
+<br>&nbsp;<br>
+Normally, the constructor method name is <b>Create</b>.
+<br>&nbsp;<br>
+See the code for an example.
+<br>&nbsp;<br>
+When an object is destroyed, the <b>Destructor</b> method is called. You can use this to take special action before the object storage is reclaimed.
+<br>&nbsp;<br>
+Normally, the destructor method name is <b>Destroy</b>.
+<br>&nbsp;<br>
+<br>&nbsp;<br>
+There are a number of uses of the word <font color=#996600><b>Class</b></font>:
+<br>&nbsp;<br>
+<font color=#FF0000>1.</font>
+A class definition based on the TObject class by default. All classes must be based on another class, with TObject being the default, highest level class. TObject provides rudimentry functionality - you would normally define all of the data and methods yourself, and use none from TObject.
+<br>&nbsp;<br>
+Within the definitions of a <font color=#996600><b>Class</b></font>, you can prefix <b>function</b> or <b>procedure</b> definitions with the <font color=#996600><b>Class</b></font> keyword. This allows the subroutine to be called from the <font color=#996600><b>Class</b></font> itself in addition to an object instance of the class. Because a class is not a real object, it has no storage allocated to data. So a <font color=#996600><b>Class</b></font> subroutine must operate without reference to internal class data.
+<br>&nbsp;<br>
+<font color=#FF0000>2.</font>
+Class definition based on a specified class but with no local additions or changes. You have a new class that acts identically to the <b>BaseClass</b>
+<br>&nbsp;<br>
+<font color=#FF0000>3.</font>
+Forward class declaration. It allows all classes in a Unit to be listed at the start of the <b>type</b> section. So this is a matter of convenience rather than anything else.
+<br>&nbsp;<br>
+<font color=#FF0000>4.</font>
+Class definition based on a specified class. As 1 above, but you can specify which class you are basing your new class on. Your class will again be a mixture of ancestor and local declarations.
+<br>&nbsp;<br>
+<font color=#FF0000>5.</font>
+A class can contain implementations of externally predefined interfaces.
+<br>&nbsp;<br>
+<font color=#FF0000>6.</font>
+A metaclass reference allows a variable to be used to reference a class rather than an object.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The optional <b>packed</b> keyword tells Delphi to minimise storage taken by the class. It stops aligning data on 2, 4 or 8 byte boundaries, normally done for performance reasons.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="constructor.htm">Constructor</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the method used to create an object from a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="interface.htm">Interface</a></b></td>
+<td width="8"></td>
+<td align="left">Used for Unit external definitions, and as a Class skeleton</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="object.htm">Object</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a subroutine data type to refer to an object method</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="private.htm">Private</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the section of private data and methods in a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="property.htm">Property</a></b></td>
+<td width="8"></td>
+<td align="left">Defines controlled access to class fields</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="protected.htm">Protected</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a section of class private data accesible to sub-classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="public.htm">Public</a></b></td>
+<td width="8"></td>
+<td align="left">Starts an externally accessible section of a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="published.htm">Published</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a published externally accessible section of a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tobject.htm">TObject</a></b></td>
+<td width="8"></td>
+<td align="left">The base class type that is ancestor to all other classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="virtual.htm">Virtual</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a class method to be overriden in derived classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="dynamic.htm">Dynamic</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a class method to be overriden in derived classes</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A Unit with 2 class definitions and code that uses both</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;SysUtils, Forms, Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define the classes in this Unit at the very start for clarity</b></font><br>&nbsp;&nbsp;TForm1 = <font color=#C00000><b>Class</b></font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// This is a forward class definition</b></font><br><b>
+</b><br>&nbsp;&nbsp;TFruit = <font color=#C00000><b>Class</b></font>(TObject)&nbsp;&nbsp;<font color=#008000><b>// This is an actual class definition :</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Internal class field definitions - only accessible in this unit</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isRound&nbsp;&nbsp;: Boolean;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;length&nbsp;&nbsp; : single;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width&nbsp;&nbsp;&nbsp;&nbsp;: single;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diameter : single;<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Fields and methods only accessible by this class and descendants</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;protected<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Externally accessible fields and methods</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;public<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 2 constructors - one for round fruit, the other long fruit</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(diameter : single);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overload;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(length : single; width : single); overload;<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Externally accessible and inspectable fields and methods</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;published<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Note that properties must use different names to local defs</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property round : Boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read&nbsp;&nbsp; isRound;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property len&nbsp;&nbsp; : single<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read&nbsp;&nbsp; length;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property wide&nbsp;&nbsp;: single<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read&nbsp;&nbsp; width;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property diam&nbsp;&nbsp;: single<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read&nbsp;&nbsp; diameter;<br>&nbsp;&nbsp;end;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// End of the TFruit class definition</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The actual TForm1 class is now defined</b></font><br>
+&nbsp;&nbsp;TForm1 = <font color=#C00000><b>Class</b></font>(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure ShowFruit(fruit : TFruit);<br>
+&nbsp;&nbsp;private<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// No local data</b></font><br>
+&nbsp;&nbsp;public<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Uses just the TForm ancestor class public definitions</b></font><br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><font color=#008000><b>// Create a round fruit object</b></font><br><b>
+constructor TFruit.Create(diameter: single);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Indicate that we have a round fruit, and set its size</b></font><br>
+&nbsp;&nbsp;isRound&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; := true;<br>
+&nbsp;&nbsp;self.diameter := diameter;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Create a long fruit object</b></font><br><b>
+constructor TFruit.Create(length, width: single);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Indicate that we have a long fruit, and set its size</b></font><br>
+&nbsp;&nbsp;isRound&nbsp;&nbsp;&nbsp;&nbsp; := false;<br>
+&nbsp;&nbsp;self.length := length;<br>
+&nbsp;&nbsp;self.width&nbsp;&nbsp;:= width;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Form object - action taken when the form is created</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;apple, banana : TFruit;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Let us create our fruit objects</b></font><br>
+&nbsp;&nbsp;apple&nbsp;&nbsp;:= TFruit.Create(3.5);<br>
+&nbsp;&nbsp;banana := TFruit.Create(7.0, 1.75);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show details about our fruits</b></font><br>
+&nbsp;&nbsp;ShowFruit(apple);<br>
+&nbsp;&nbsp;ShowFruit(banana);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Show what the characteristics of our fruit are</b></font><br><b>
+procedure TForm1.ShowFruit(fruit: TFruit);</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;if fruit.round<br>
+&nbsp;&nbsp;then WriteLn('We have a round fruit, with diam = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStr(fruit.diam))<br>
+&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('We have a long fruit');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;it has length = '+FloatToStr(fruit.len));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('&nbsp;&nbsp;&nbsp;&nbsp;it has width&nbsp;&nbsp;= '+FloatToStr(fruit.wide));<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;We have a round fruit with diam = 3.5<br>&nbsp;&nbsp;
+We have a long fruit<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;it has a length = 7<br>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;it has a width = 1.75<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

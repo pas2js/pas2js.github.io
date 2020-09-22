@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">record in copy</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js299.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js301.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	record_in_copy
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TSubRec = record
+    i: Integer;
+    a: array [1 .. 2] of Boolean;
+  end;
+
+type
+  TRec = record
+    i: Integer;
+    s: String;
+    d: array of Integer;
+    r: TSubRec;
+  end;
+
+var sr, sr2: TSubRec;
+
+sr.i := 123;
+sr.a[1] := False;
+sr.a[2] := True;
+
+sr2 := sr;
+
+sr.i := 456;
+sr.a[1] := True;
+sr.a[2] := False;
+
+WriteLn(sr2.i);
+WriteLn(sr2.a[1]);
+WriteLn(sr2.a[2]);
+
+var r, r2: TRec;
+
+r.i := 789;
+r.s := 'Hello';
+r.d := new Integer[1];
+r.d[0] := 123456;
+r.r := sr2;
+
+r2 := r;
+
+r.i := 111;
+r.s := 'World';
+r.d[0] := 321;
+r.r := sr;
+sr2.i := 0;
+
+WriteLn(r2.i);
+WriteLn(r2.s);
+WriteLn(r2.d[0]);
+WriteLn(r2.r.i);
+WriteLn(r2.r.a[1]);
+WriteLn(r2.r.a[2]);
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+123
+False
+True
+789
+Hello
+321
+123
+False
+True
+
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+function Copy$TSubRec(s,d) {
+   d.i=s.i;
+   d.a=s.a.slice(0);
+   return d;
+}
+function Clone$TSubRec($) {
+   return {
+      i:$.i,
+      a:$.a.slice(0)
+   }
+}
+function Copy$TRec(s,d) {
+   d.i$1=s.i$1;
+   d.s=s.s;
+   d.d=s.d;
+   Copy$TSubRec(s.r,d.r);
+   return d;
+}
+function Clone$TRec($) {
+   return {
+      i$1:$.i$1,
+      s:$.s,
+      d:$.d,
+      r:Clone$TSubRec($.r)
+   }
+}
+var sr = {i:0,a:[false,false]};
+var sr2 = {i:0,a:[false,false]};
+var r$1 = {i$1:0,s:"",d:[],r:{i:0,a:[false,false]}};
+var r2 = {i$1:0,s:"",d:[],r:{i:0,a:[false,false]}};
+
+/* <<< main JS >>> */
+
+   sr.i = 123;
+   sr.a[(1)-1] = false;
+   sr.a[(2)-1] = true;
+   Copy$TSubRec(sr,sr2);
+   sr.i = 456;
+   sr.a[(1)-1] = true;
+   sr.a[(2)-1] = false;
+   WriteLn(sr2.i);
+   WriteLn(sr2.a[(1)-1]);
+   WriteLn(sr2.a[(2)-1]);
+   r$1.i$1 = 789;
+   r$1.s = "Hello";
+   r$1.d = [0];
+   $DIdxW(r$1.d,0,123456,"");
+   Copy$TSubRec(sr2,r$1.r);
+   Copy$TRec(r$1,r2);
+   r$1.i$1 = 111;
+   r$1.s = "World";
+   $DIdxW(r$1.d,0,321,"");
+   Copy$TSubRec(sr,r$1.r);
+   sr2.i = 0;
+   WriteLn(r2.i$1);
+   WriteLn(r2.s);
+   WriteLn($DIdxR(r2.d,0,""));
+   WriteLn(r2.r.i);
+   WriteLn(r2.r.a[(1)-1]);
+   WriteLn(r2.r.a[(2)-1]);
+</code></pre></div>
+</div>
+</body>
+</html>

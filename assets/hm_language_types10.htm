@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Lambdas</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Lambdas</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_language_types9.htm">Previous</a>&nbsp;
+     <a href="hm_class.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Lambda expressions</span><span style="font-size: 16px; font-family: 'Times New Roman';"> are a popular shorthand syntax for anonymous methods. In Pas2JS, you can use Lambda Expressions and anonymous methods together!  </span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #000000;">Lambda Function</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;"> are used when the code expects an anonymous function and when the code implementing this function is short. </span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Given a function like this:</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: anonymous methods reference to function type</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="432" style="width:432px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TIntegerConvertFunc&nbsp;=&nbsp;reference&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">(s:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;integer;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Has&nbsp;a&nbsp;return&nbsp;type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button18Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;myFunction:&nbsp;TIntegerConvertFunc;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;myfunction&nbsp;:=</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080; background-color: #93cddd;">function</span><span class="f_CodeExample" style="color: #000000; background-color: #93cddd;">(s:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080; background-color: #93cddd;">string</span><span class="f_CodeExample" style="color: #000000; background-color: #93cddd;">):&nbsp;integer</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000; background-color: #93cddd;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080; background-color: #93cddd;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000; background-color: #93cddd;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;:=&nbsp;StrToInt(s);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000; background-color: #93cddd;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080; background-color: #93cddd;">end</span><span class="f_CodeExample" style="color: #000000; background-color: #93cddd;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">myfunction(</span><span class="f_CodeExample" style="color: #0000ff;">'abcd'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman';">There are three main parts of the function.  </span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">The parameter list: (s: string)</span></td></tr></table></div><p style="text-align: justify; margin: 0px 0px 0px 24px;"><span style="font-size: 16px; font-family: 'Times New Roman';">Parameters are enclosed in parentheses. </span><span style="font-size: 16px; font-family: 'Times New Roman';">Multiple statements and parameters can be used, but much of the simplification goes away.  </span></p>
+<p style="text-align: justify; margin: 0px 0px 0px 24px;"><span style="font-size: 16px; font-family: 'Times New Roman';">Parameterless functions and procedures can also be used. &nbsp;Usually, an empty parameter list is provided with a pair of parentheses.</span></p>
+<p style="text-align: justify; margin: 0px 0px 0px 24px;">&nbsp;</p>
+<p style="text-align: justify; margin: 0px 0px 0px 24px;">&nbsp;</p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">The return type: &nbsp;integer</span></td></tr></table></div><p style="text-align: justify; margin: 0px 0px 0px 24px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">While functions are usually used with Lambda</span><span style="font-size: 16px; font-family: 'Times New Roman';"> expressions, procedures can be used too. &nbsp;If the expression does not evaluate to anything, it generally requires that the result not be assigned to anything. </span></p>
+<p style="text-align: justify; margin: 0px 0px 0px 24px;"><span style="font-size: 16px; font-family: 'Times New Roman';">In C# and to some extent in Pas2JS, the type of the parameters and the function result can be determined very effectively by the compiler based on context, alleviating the need to specify these types. &nbsp;This is called &quot;Type Inference&quot; and further simplifies the code.</span></p>
+<p style="text-align: justify; margin: 0px 0px 0px 24px;"> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">The method body: StrToInt(s)</span></td></tr></table></div><p style="text-align: justify; margin: 0px 0px 0px 24px;"><span style="font-size: 16px; font-family: 'Times New Roman';">Because there is only one line and it is the result assignment, the assignment to result can be omitted, leaving just an expression to be evaluated. &nbsp;Hence, the &quot;result :=&quot; is removed.</span></p>
+<p style="text-align: justify; margin: 0px 0px 0px 24px;">&nbsp;</p>
+<p style="text-align: justify; margin: 0px 0px 0px 24px;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman';">Here are examples in Pas2JS.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: Anonymous methods with lambdas</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="432" style="width:432px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TProc&nbsp;=&nbsp;reference&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TIntegerConvertFunc&nbsp;=&nbsp;reference&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">(s:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;integer;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Has&nbsp;a&nbsp;return&nbsp;type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{---------------}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button19Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;myAnonymousMethod:&nbsp;TProc;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;myFunction:&nbsp;TIntegerConvertFunc;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;myAnonymousMethod&nbsp;:=</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writeln(</span><span class="f_CodeExample" style="color: #0000ff;">'This&nbsp;was&nbsp;written&nbsp;from&nbsp;an&nbsp;anonymous&nbsp;method'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">myAnonymousMethod;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Invoking&nbsp;an&nbsp;anonymous&nbsp;method</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{-----------------------------------------}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;myfunction&nbsp;:=</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(s:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(&nbsp;StrToInt(s)&nbsp;);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">myfunction(</span><span class="f_CodeExample" style="color: #0000ff;">'123456'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #000000;">Lambda&nbsp;Statements:</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;&nbsp;The&nbsp;statement&nbsp;form&nbsp;is&nbsp;used&nbsp;when&nbsp;you&nbsp;want&nbsp;to&nbsp;put&nbsp;more&nbsp;than&nbsp;one&nbsp;statement&nbsp;inside&nbsp;the&nbsp;lambda.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">The&nbsp;syntax&nbsp;for&nbsp;lambda&nbsp;statement&nbsp;is:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="258" style="width:258px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">(parameter_list)</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #008000;">//statement;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #008000;">&nbsp;&nbsp;&nbsp;//statement;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #008000;">//statement;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">&nbsp;end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #000000;">A&nbsp;lambda&nbsp;statement&nbsp;can&nbsp;also&nbsp;implement&nbsp;a&nbsp;function;&nbsp;in&nbsp;that&nbsp;case&nbsp;you&nbsp;should&nbsp;return&nbsp;the&nbsp;result&nbsp;in&nbsp;a&nbsp;normal&nbsp;Delphi&nbsp;way&nbsp;by&nbsp;assigning&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #000000;">to&nbsp;a&nbsp;Result&nbsp;pseudo-variable.&nbsp;</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: Anonymous functions with lambdas</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="432" style="width:432px; border: solid 1px #000000;"><p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #800000;">client</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;TSQLRestClientHTTP.Create(ServerAddress.Text,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">888</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;model,&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">false</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #800000;">client.Connect(</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;client.ServerTimeStamp&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(</span><span class="f_CodeExample" style="color: #0000ff;">'Impossible&nbsp;to&nbsp;retrieve&nbsp;server&nbsp;time&nbsp;stamp'</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;writeln(</span><span class="f_CodeExample" style="color: #0000ff;">'ServerTimeStamp='</span><span class="f_CodeExample" style="color: #000000;">&nbsp;+&nbsp;IntToStr(client.ServerTimeStamp));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">not</span><span class="f_CodeExample" style="color: #000000;">&nbsp;client.SetUser(TSQLRestServerAuthenticationDefault,&nbsp;LogonName.Text,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;LogonPassWord.Text)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(</span><span class="f_CodeExample" style="color: #0000ff;">'Authentication&nbsp;Error'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;writeln(</span><span class="f_CodeExample" style="color: #0000ff;">'Safely&nbsp;connected&nbsp;with&nbsp;SessionID='</span><span class="f_CodeExample" style="color: #000000;">&nbsp;+</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;IntToStr(client.Authentication.SessionID));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;people&nbsp;:=&nbsp;TSQLRecordPeople.Create(client,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">assert</span><span class="f_CodeExample" style="color: #000000;">(people.ID&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;writeln(</span><span class="f_CodeExample" style="color: #0000ff;">'Disconnect&nbsp;from&nbsp;server'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;client.Free;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ShowMessage(</span><span class="f_CodeExample" style="color: #0000ff;">'Impossible&nbsp;to&nbsp;connect&nbsp;to&nbsp;the&nbsp;server'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">)</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Lambdas&nbsp;are&nbsp;also&nbsp;very&nbsp;helpful&nbsp;when&nbsp;defining&nbsp;event&nbsp;handlers.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="541" style="width:541px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button24Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">W3Button21.OnClick&nbsp;</span><span class="f_CodeExample" style="color: #000000;">:=</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Application.ShowDialog(</span><span class="f_CodeExample" style="color: #0000ff;">'Welcome'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'select&nbsp;something'</span><span class="f_CodeExample" style="color: #000000;">,aoYesNo);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: anonymous method version 1</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="586" style="width:586px; border: solid 2px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;MyProc;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;showmessage(</span><span class="f_CodeExample" style="color: #0000ff;">'You&nbsp;clicked&nbsp;the&nbsp;back&nbsp;button&nbsp;2&nbsp;seconds&nbsp;ago'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button20Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;proc&nbsp;:&nbsp;TProcedureRef;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">W3Button21.onClick&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(sender:TObject)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">w3_callback</span><span class="f_CodeExample" style="color: #000000;">(MyProc,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2000</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: anonymous method version 2</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="586" style="width:586px; border: solid 2px #000000;"><p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">W3Button21.onClick&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(sender:TObject)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">w3_callback</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure()</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showmessage(</span><span class="f_CodeExample" style="color: #0000ff;">'You&nbsp;clicked&nbsp;the&nbsp;back&nbsp;button&nbsp;2&nbsp;seconds&nbsp;ago'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2000</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: anonymous method with lambdas ver 1</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="586" style="width:586px; border: solid 2px #000000;"><p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">W3Button21.onClick&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(sender:TObject)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w3_callback(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showmessage(</span><span class="f_CodeExample" style="color: #0000ff;">'You&nbsp;clicked&nbsp;the&nbsp;back&nbsp;button&nbsp;2&nbsp;seconds&nbsp;ago'</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">End</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2000</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Code example: anonymous method with lambdas ver 2</span></p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="586" style="width:586px; border: solid 2px #000000;"><p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">W3Button21.onClick&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span><span class="f_CodeExample" style="color: #000000;">(sender)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;w3_SetTimeout(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">lambda</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showmessage(</span><span class="f_CodeExample" style="color: #0000ff;">'You&nbsp;clicked&nbsp;the&nbsp;back&nbsp;button&nbsp;2&nbsp;seconds&nbsp;ago'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2000</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;repeater&nbsp;&nbsp;:=&nbsp;&nbsp;TW3EventRepeater.Create(</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;(Sender:&nbsp;&nbsp;TObject):&nbsp;&nbsp;boolean</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Result&nbsp;&nbsp;:=&nbsp;&nbsp;MyFunction;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">,</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;5000);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Anonymous&nbsp;method&nbsp;calls&nbsp;some&nbsp;function&nbsp;in&nbsp;the&nbsp;code&nbsp;and&nbsp;returns&nbsp;its&nbsp;result.&nbsp;(False&nbsp;will&nbsp;trigger&nbsp;another&nbsp;event&nbsp;after&nbsp;the&nbsp;timeout&nbsp;(5000&nbsp;ms)&nbsp;and&nbsp;True&nbsp;will&nbsp;stop&nbsp;the&nbsp;repeater.)</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Let’s&nbsp;rewrite&nbsp;this&nbsp;code&nbsp;using&nbsp;a&nbsp;lambda&nbsp;function.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;repeater&nbsp;&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TW3EventRepeater.Create(lambda&nbsp;&nbsp;(Sender)&nbsp;&nbsp;=&gt;&nbsp;&nbsp;MyFunction,&nbsp;&nbsp;5000);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">As&nbsp;you&nbsp;can&nbsp;see,&nbsp;there’s&nbsp;no&nbsp;need&nbsp;to&nbsp;declare&nbsp;the&nbsp;parameter&nbsp;(Sender)&nbsp;type&nbsp;and&nbsp;the&nbsp;function&nbsp;result&nbsp;type;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Smart&nbsp;will&nbsp;detect&nbsp;them&nbsp;automatically.&nbsp;Even&nbsp;more,&nbsp;as&nbsp;we&nbsp;don’t&nbsp;use&nbsp;the&nbsp;Sender&nbsp;parameter,&nbsp;we&nbsp;can&nbsp;drop&nbsp;the&nbsp;parameter&nbsp;list&nbsp;and&nbsp;use&nbsp;an&nbsp;even&nbsp;shorter&nbsp;form.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;repeater&nbsp;&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TW3EventRepeater.Create(lambda&nbsp;&nbsp;=&gt;&nbsp;&nbsp;MyFunction,&nbsp;&nbsp;5000);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #000000;">Following&nbsp;example&nbsp;sets&nbsp;up&nbsp;a&nbsp;repeater&nbsp;that&nbsp;calls&nbsp;a&nbsp;method&nbsp;MyProc&nbsp;every&nbsp;three&nbsp;seconds.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;repeater&nbsp;&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TW3EventRepeater.Create(lambda&nbsp;&nbsp;=&gt;&nbsp;&nbsp;MyProc;&nbsp;&nbsp;Result&nbsp;&nbsp;:=&nbsp;&nbsp;false;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;&nbsp;5000);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;use&nbsp;variables&nbsp;inside&nbsp;a&nbsp;lambda&nbsp;statement,&nbsp;but&nbsp;only&nbsp;if&nbsp;they&nbsp;are&nbsp;declared&nbsp;inline.</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Lambdas&nbsp;are&nbsp;an&nbsp;excellent&nbsp;addition&nbsp;to&nbsp;the&nbsp;language,&nbsp;as&nbsp;they&nbsp;provide&nbsp;for&nbsp;a&nbsp;more&nbsp;compact&nbsp;code.&nbsp;For&nbsp;example,&nbsp;in&nbsp;Smart&nbsp;1.0&nbsp;the&nbsp;W3Layout&nbsp;unit&nbsp;used&nbsp;the&nbsp;following&nbsp;code:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">&nbsp;&nbsp;&nbsp;ResizeChildren</span><span class="f_CodeExample" style="color: #000000;">(FClientArea.Height,&nbsp;&nbsp;[TAlign.Top,&nbsp;&nbsp;TAlign.Bottom],</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;(layout:&nbsp;&nbsp;TLayoutImpl):&nbsp;&nbsp;Variant</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Result&nbsp;&nbsp;:=&nbsp;&nbsp;layout.GetConfig.GetHeight;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">,</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;(layout:&nbsp;&nbsp;TLayoutImpl;&nbsp;&nbsp;value:&nbsp;&nbsp;integer)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;layout.GetConfig.Height(value);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">In&nbsp;Smart&nbsp;1.1,&nbsp;this&nbsp;was&nbsp;simplified&nbsp;to:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #0000ff;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">ResizeChildren</span><span class="f_CodeExample" style="color: #0000ff;">(FClientArea.Height,&nbsp;&nbsp;[TAlign.Top,&nbsp;&nbsp;TAlign.Bottom],</span><br>
+<span class="f_CodeExample" style="color: #0000ff;">&nbsp;&nbsp;&nbsp;lambda&nbsp;&nbsp;(layout)&nbsp;&nbsp;=&gt;&nbsp;&nbsp;layout.GetConfig.GetHeight,</span><br>
+<span class="f_CodeExample" style="color: #0000ff;">&nbsp;&nbsp;&nbsp;lambda&nbsp;&nbsp;(layout,&nbsp;&nbsp;value)&nbsp;&nbsp;layout.GetConfig.Height(value)&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">end</span><span class="f_CodeExample" style="color: #0000ff;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

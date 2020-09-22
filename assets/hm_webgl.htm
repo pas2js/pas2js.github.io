@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>WebGL</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">WebGL</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_panel.htm">Previous</a>&nbsp;
+     <a href="hm_element.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: left; text-indent: 0px; border-color: #c0c0c0; border-style: solid; border-width: 1px; background: #f0f0f0; padding: 3px 3px 3px 3px; margin: 20px 0px 15px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="20"><img id="$TOGGLE0186A1_ICON" src="tog_minus.gif" width="16" height="16" border="0" alt="tog_minus" title="Click to expand/collapse"></td><td><span class="f_HeadingHowToToggle_atoc_" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"><a class="dropdown-toggle" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #000000; letter-spacing: -1px; background-color: transparent; text-decoration: none;" title="Click to expand/collapse" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">WebGL</a></span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">SmartCL.Controls.WebGL</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TW3WebGLScene = class(TObject)</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Properties:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Handle:&nbsp;JWebGLRenderingContext&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FDC;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TW3WebGL = class(TW3CustomControl)</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Public methods:</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;"> </span><span class="f_CodeExample" style="color: #000000;"> </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span><br>
+<span class="f_CodeExample" style="color: #000000;"> &nbsp;  </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;"> Invalidate; </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;"> &nbsp;  </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;"> Refresh;</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Properties:</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;"> </span><span class="f_CodeExample" style="color: #000000;"> </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span><span class="f_CodeExample" style="color: #000000;">  </span><br>
+<span class="f_CodeExample" style="color: #000000;"> &nbsp;  </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;"> DC: THandle </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;"> GetDC;</span><br>
+<span class="f_CodeExample" style="color: #000000;"> &nbsp;  </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;"> Scene: TW3WebGLScene </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;"> FScene;</span><br>
+<span class="f_CodeExample" style="color: #000000;"> &nbsp;  </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;"> Context: TW3CustomGraphicContext </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;"> FContext;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">  </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">published</span><br>
+<span class="f_CodeExample" style="color: #000000;"> &nbsp;  </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;"> OnRender: TRenderEvent </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;"> FOnRender </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;"> FOnRender;</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','tog_plus.gif','hm.src1','tog_minus.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+}
+</script>
+</body>
+</html>

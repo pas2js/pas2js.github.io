@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+        <MainUnitHasTitleStatement Value="False"/>
+        <MainUnitHasScaledStatement Value="False"/>
+        <Runnable Value="False"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="project1"/>
+      <UseAppBundle Value="False"/>
+      <ResourceType Value="res"/>
+    </General>
+    <CustomData Count="3">
+      <Item0 Name="MaintainHTML" Value="1"/>
+      <Item1 Name="PasJSWebBrowserProject" Value="1"/>
+      <Item2 Name="RunAtReady" Value="1"/>
+    </CustomData>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0"/>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="pas2js_rtl"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="38">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="www\index.html"/>
+        <IsPartOfProject Value="True"/>
+        <CustomData Count="1">
+          <Item0 Name="PasJSIsProjectHTMLFile" Value="1"/>
+        </CustomData>
+      </Unit1>
+      <Unit2>
+        <Filename Value="umain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uMain"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="lib\pas2js.element.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Element"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="lib\pas2js.application.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Application"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="lib\pas2js.form.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="lib\pas2js.panel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Panel"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="lib\pas2js.button.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Button"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="lib\pas2js.image.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Image"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="lib\pas2js.globals.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Globals"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="lib\pas2js.toolbar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.ToolBar"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="lib\pas2js.listbox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.ListBox"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="lib\pas2js.progressbar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.ProgressBar"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="lib\pas2js.video.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Video"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="lib\pas2js.anchor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Anchor"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="lib\pas2js.loader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Loader"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="lib\pas2js.iframe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Iframe"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="lib\pas2js.streetview.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.StreetView"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="lib\pas2js.grid.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Grid"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="lib\pas2js.stringtable.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.StringTable"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="lib\pas2js.canvas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Canvas"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="lib\pas2js.treeview.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.TreeView"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="lib\pas2js.checkbox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.CheckBox"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="lib\pas2js.spinner.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Spinner"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="lib\pas2js.fieldset.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.FieldSet"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="lib\pas2js.radiobutton.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.RadioButton"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="lib\pas2js.input.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Input"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="lib\pas2js.flipscroll.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.FlipScroll"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="lib\pas2js.dialog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Dialog"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="lib\pas2js.window.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Window"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="lib\pas2js.neuralnet.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.NeuralNet"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="lib\pas2js.webpagebuilder.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.WebPageBuilder"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="lib\pas2js.select.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Select"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="lib\pas2js.textarea.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.TextArea"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="lib\pas2js.objecttable.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.ObjectTable"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="form1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Form1"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="lib\pas2js.splitter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.Splitter"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="lib\pas2js.mutationobserver.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pas2js.MutationObserver"/>
+      </Unit37>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="lib;C:\fpc2js\pas2js-windows-0.9.25\packages\rtl\"/>
+    </SearchPaths>
+    <Other>
+      <ExecuteBefore>
+        <Command Value="$MakeExe(IDE,pas2js) -Jirtl.js -Jc -Jminclude -Tbrowser -Fu$(ProjUnitPath) $Name($(ProjFile)) -FE$(ProjOutDir)\www"/>
+        <ScanForFPCMsgs Value="True"/>
+        <ScanForMakeMsgs Value="True"/>
+      </ExecuteBefore>
+    </Other>
+    <CompileReasons Compile="False" Build="False" Run="False"/>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

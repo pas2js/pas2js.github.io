@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="projGMaps.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="project1"/>
+        <IsVisibleTab Value="True"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="index.html"/>
+        <IsPartOfProject Value="True"/>
+        <CustomData Count="1">
+          <Item0 Name="PasJSIsProjectHTMLFile" Value="1"/>
+        </CustomData>
+        <EditorIndex Value="3"/>
+        <CursorPos X="75" Y="7"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ugooglemaps.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uGoogleMaps"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="307"/>
+        <CursorPos X="10" Y="320"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucryptojs.pas"/>
+        <UnitName Value="uCryptoJS"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="6"/>
+        <UsageCount Value="35"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umain.pas"/>
+        <UnitName Value="uMain"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="15"/>
+        <UsageCount Value="35"/>
+      </Unit>
+      <Unit>
+        <Filename Value="System.Diagnostics.pas"/>
+        <UsageCount Value="35"/>
+      </Unit>
+      <Unit>
+        <Filename Value="syncrossplatformcrypto.pas"/>
+        <UnitName Value="SynCrossPlatformCrypto"/>
+        <UsageCount Value="35"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uformview.pas"/>
+        <UnitName Value="uFormView"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="282"/>
+        <CursorPos Y="288"/>
+        <UsageCount Value="35"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\pas2js-windows-1.5.1\packages\rtl\js.pas"/>
+        <UnitName Value="JS"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="15"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\pas2js-windows-1.5.1\packages\rtl\web.pas"/>
+        <UnitName Value="Web"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="57"/>
+        <CursorPos X="3" Y="62"/>
+        <UsageCount Value="15"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\pas2js-windows-1.5.1\packages\rtl\types.pas"/>
+        <UnitName Value="Types"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="15"/>
+      </Unit>
+      <Unit>
+        <Filename Value="D:\fpc2js\pas2js-windows-1.5.1\packages\rtl\js.pas"/>
+        <UnitName Value="JS"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="180"/>
+        <CursorPos Y="182"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="D:\fpc2js\pas2js-windows-1.5.1\packages\rtl\web.pas"/>
+        <UnitName Value="Web"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="3505"/>
+        <CursorPos Y="916"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="156" Column="9" TopLine="135"/>
+      </Position1>
+      <Position2>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="159" Column="6" TopLine="146"/>
+      </Position2>
+      <Position3>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="125" Column="34" TopLine="110"/>
+      </Position3>
+      <Position4>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="171" Column="72" TopLine="147"/>
+      </Position4>
+      <Position5>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="125" Column="24" TopLine="113"/>
+      </Position5>
+      <Position6>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="135" Column="11" TopLine="121"/>
+      </Position6>
+      <Position7>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="168" Column="24" TopLine="156"/>
+      </Position7>
+      <Position8>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="136" Column="15" TopLine="124"/>
+      </Position8>
+      <Position9>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="112" Column="12" TopLine="104"/>
+      </Position9>
+      <Position10>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="127" Column="7" TopLine="105"/>
+      </Position10>
+      <Position11>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="169" Column="6" TopLine="157"/>
+      </Position11>
+      <Position12>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="179" TopLine="155"/>
+      </Position12>
+      <Position13>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="117" Column="13" TopLine="110"/>
+      </Position13>
+      <Position14>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="154" Column="14" TopLine="144"/>
+      </Position14>
+      <Position15>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="110" Column="3" TopLine="97"/>
+      </Position15>
+      <Position16>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="152" Column="48" TopLine="136"/>
+      </Position16>
+      <Position17>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="121" Column="46" TopLine="112"/>
+      </Position17>
+      <Position18>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="152" Column="26" TopLine="110"/>
+      </Position18>
+      <Position19>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="52" Column="23" TopLine="94"/>
+      </Position19>
+      <Position20>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="157" Column="42" TopLine="144"/>
+      </Position20>
+      <Position21>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="194" Column="3" TopLine="182"/>
+      </Position21>
+      <Position22>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="63" Column="29" TopLine="184"/>
+      </Position22>
+      <Position23>
+        <Filename Value="ugooglemaps.pas"/>
+        <Caret Line="556" Column="3" TopLine="566"/>
+      </Position23>
+      <Position24>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="203" Column="52" TopLine="190"/>
+      </Position24>
+      <Position25>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="202" Column="58" TopLine="190"/>
+      </Position25>
+      <Position26>
+        <Filename Value="projGMaps.lpr"/>
+        <Caret Line="63" Column="50" TopLine="53"/>
+      </Position26>
+      <Position27>
+        <Filename Value="projGMaps.lpr"/>
+      </Position27>
+      <Position28>
+        <Filename Value="D:\fpc2js\pas2js-windows-1.5.1\packages\rtl\js.pas"/>
+      </Position28>
+      <Position29>
+        <Filename Value="D:\fpc2js\pas2js-windows-1.5.1\packages\rtl\js.pas"/>
+        <Caret Line="807" TopLine="777"/>
+      </Position29>
+      <Position30>
+        <Filename Value="projGMaps.lpr"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

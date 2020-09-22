@@ -1,0 +1,136 @@
+<!-- (0054)DaysBetween -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : DaysBetween command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, DaysBetween, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>DaysBetween</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Gives the whole number of days between 2 dates</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>DateUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>DaysBetween</b></font>
+
+(
+<b>const ToDate, FromDate </b> : TDateTime
+)
+ : Integer;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>DaysBetween</b></font> function subtracts the <b>FromDate</b> from the <b>ToDate</b>, returning the number whole days difference.
+<br>&nbsp;<br>
+The <b>time</b> value of each date is taken account of - only whole 24 hour chunks are counted as whole days.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+A whole day does not have to start at 00:00:00.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="daysinamonth.htm">DaysInAMonth</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the number of days in a month</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="daysinayear.htm">DaysInAYear</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the number of days in a year</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="dayspan.htm">DaySpan</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the fractional number of days between 2 dates</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Find the days difference between two date+time values.</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;fromdate, toDate : TDateTime;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up our date variables</b></font><br>
+&nbsp;&nbsp;fromDate := EncodeDateTime(2000, 02, 26, 10, 0, 0, 0);<br>
+&nbsp;&nbsp;toDate&nbsp;&nbsp; := EncodeDateTime(2000, 02, 29,&nbsp;&nbsp;9, 0, 0, 0);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display these dates and the days between them</b></font><br>
+&nbsp;&nbsp;WriteLn('From date = '+DateTimeToStr(fromDate));<br>
+&nbsp;&nbsp;WriteLn('To&nbsp;&nbsp; date = '+DateTimeToStr(toDate));<br>
+&nbsp;&nbsp;WriteLn('Whole days difference = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntToStr(<font color=#C00000><b>DaysBetween</b></font>(toDate, fromDate))+' days');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="daysbetween&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;From date = 26/02/2000 10:00:00<br>&nbsp;&nbsp;
+To&nbsp;&nbsp; date = 29/02/2000 09:00:00<br>&nbsp;&nbsp;
+Whole days difference = 2 days<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

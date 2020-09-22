@@ -1,0 +1,132 @@
+<!-- (0053)ParamCount -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : ParamCount command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, ParamCount, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>ParamCount</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Gives the number of parameters passed to the current program</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>ParamCount</b></font>
+ : Integer;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>ParamCount</b></font> function gives the number of command line parameters used to invoke the current executable.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The related <b>ParamStr</b> function returns these parameters as index values 1, 2 etc.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="cmdline.htm">CmdLine</a></b></td>
+<td width="8"></td>
+<td align="left">Holds the execution text used to start the current program</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="findcmdlineswitch.htm">FindCmdLineSwitch</a></b></td>
+<td width="8"></td>
+<td align="left">Determine whether a certain parameter switch was passed</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="paramstr.htm">ParamStr</a></b></td>
+<td width="8"></td>
+<td align="left">Returns one of the parameters used to run the current program</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Display command line parameters</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;cmd : string;<br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Before running this code, use the Run/parameters menu option</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// to set the following command line parameters : -parm1 -parm2</b></font><br>
+&nbsp;&nbsp;cmd := CmdLine;<br>&nbsp;&nbsp;ShowMessage(cmd);&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Show the execution command + parameters</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// How many parameters were passed?</b></font><br>
+&nbsp;&nbsp;WriteLn('There are '+IntToStr(<font color=#C00000><b>ParamCount</b></font>)+' parameters');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show these parameters - note that the 0th parameter is the</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// execution command on Windows</b></font><br>
+&nbsp;&nbsp;for i := 0 to ParamCount do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Parameter '+IntToStr(i)+' = '+ParamStr(i));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/paramcount&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;"C:\Program files\Borland\Delphi7\Projects\Project1.exe" -parm1 -parm2<br>&nbsp;&nbsp;
+There are 2 parameters<br>&nbsp;&nbsp;
+Parameter 0 = C:\PROGRAM FILES\BORLAND\DELPHI7\PROJECTS\PROJECT1.EXE<br>&nbsp;&nbsp;
+Parameter 1 = -parm1<br>&nbsp;&nbsp;
+Parameter 2 = -parm2<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

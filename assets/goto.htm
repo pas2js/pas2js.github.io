@@ -1,0 +1,162 @@
+<!-- (0047)Goto -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Goto command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Goto, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Goto</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Forces a jump to a label, regardless of nesting</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Goto</b> label
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Goto</b></font> keyword forces a jump to a given <b>label</b>. 
+<br>&nbsp;<br>
+It should <font color=#FF0000>Never</font> be used in modern code since it makes code very difficult to maintain.
+<br>&nbsp;<br>
+It is mostly used to force a termination of heavily nested code, where the logic to safely exit would be tortuous.
+<br>&nbsp;<br>
+<font color=#FF0000>Never</font> jump into or out of <b>try</b> statements, or into a loop or conditional block.
+<br>&nbsp;<br>
+<font color=#FF0000>Be careful!</font>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Use with <font color=#FF0000>extreme caution</font> and when fully justified.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="break.htm">Break</a></b></td>
+<td width="8"></td>
+<td align="left">Forces a jump out of a single loop</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="continue.htm">Continue</a></b></td>
+<td width="8"></td>
+<td align="left">Forces a jump to the next iteration of a loop</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="exit.htm">Exit</a></b></td>
+<td width="8"></td>
+<td align="left">Exit abruptly from a function or procedure</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="halt.htm">Halt</a></b></td>
+<td width="8"></td>
+<td align="left">Terminates the program with an optional dialog</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="runerror.htm">RunError</a></b></td>
+<td width="8"></td>
+<td align="left">Terminates the program with an error dialog</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="abort.htm">Abort</a></b></td>
+<td width="8"></td>
+<td align="left">Aborts the current processing with a silent exception</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : </b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+label</b><br>
+&nbsp;&nbsp;GotoLabel;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;for i := 1 to 10 do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('i = '+IntToStr(i));<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;if i = 4 then <font color=#C00000><b>Goto</b></font> GotoLabel;&nbsp;&nbsp; <font color=#008000><b>// Conditionally exit the loop</b></font><br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('The loop finished OK');<br><b>
+GotoLabel:</b><br>
+&nbsp;&nbsp;WriteLn('Loop finished with i = '+IntToStr(i));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/goto&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;i = 1<br>&nbsp;&nbsp;
+i = 2<br>&nbsp;&nbsp;
+i = 3<br>&nbsp;&nbsp;
+i = 4<br>&nbsp;&nbsp;
+Loop finished with i = 4<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

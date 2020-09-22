@@ -1,0 +1,189 @@
+<!-- (0057)Implementation -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Implementation command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Implementation, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Implementation</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts the implementation (code) section of a Unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+Unit UnitName;<br>&nbsp;
+Interface<br>&nbsp;
+&nbsp;&nbsp;Declarations...<br>&nbsp;
+<b>Implementation</b><br>&nbsp;
+&nbsp;&nbsp;Declarations...<br>&nbsp;
+End;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Implementation</b></font> keyword starts the active code section of a unit - where the interface declarations are implemented.
+<br>&nbsp;<br>
+A Delphi Unit is seen externally by its <b>Interface</b> declarations. Internally, these are implemented in the <font color=#996600><b>Implementation</b></font> section. Only chnages to the Interface will cause a recompile of external units.
+<br>&nbsp;<br>
+Within the <font color=#996600><b>Implementation</b></font> section, the functions and procedures defined in the <b>Interface</b> section are coded. This section may have its own functions, procedures and data over and above that defined by the Interface. These are in effect private to the unit.
+<br>&nbsp;<br>
+It may also have its own <b>Uses</b> statement, where Units are defined that are <b>only</b> used by the implementation. They are specific to the implementation, and external users of the Unit need not know about them.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="const.htm">Const</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of fixed data values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="interface.htm">Interface</a></b></td>
+<td width="8"></td>
+<td align="left">Used for Unit external definitions, and as a Class skeleton</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="type.htm">Type</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a new category of variable or process</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="unit.htm">Unit</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the start of a unit file - a Delphi module</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="uses.htm">Uses</a></b></td>
+<td width="8"></td>
+<td align="left">Declares a list of <b>Units</b> to be imported</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="var.htm">Var</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of a section of data variables</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Defines the external view of this unit</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Forms;<br><b>
+</b><br><b>
+type</b><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+<font color=#C00000><b>Implementation</b></font>&nbsp;&nbsp; // Implements the Interface of this unit</b><br><b>
+{$R *.dfm}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Include form definitions</b><br><b>
+</b><br><b>
+uses&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Private units</b><br>
+&nbsp;&nbsp;Dialogs;<br><b>
+</b><br><b>
+var&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Private variables</b><br>
+&nbsp;&nbsp;msg : string;<br><b>
+</b><br><b>
+const&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Private constants</b><br>
+&nbsp;&nbsp;MSG_TEXT = 'Hello World';<br><b>
+</b><br><font color=#008000><b>// A private routine - not predefined in the Interface section</b></font><br><b>
+procedure SayHello;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Say hello to the World</b></font><br>
+&nbsp;&nbsp;msg := MSG_TEXT;<br>
+&nbsp;&nbsp;ShowMessage(msg);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// A routine pre-defined in the Interface section</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Say hello</b></font><br>
+&nbsp;&nbsp;SayHello;<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Hello World<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

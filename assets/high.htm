@@ -1,0 +1,143 @@
+<!-- (0047)High -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : High command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, High, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>High</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Returns the highest value of a type or variable</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>High</b></font>
+
+(
+type or variable
+)
+ : Ordinal type;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>High</b></font> function returns the highest allowed value of either a type or variable of that type.
+<br>&nbsp;<br>
+It only applies to characters, arrays, enumerations and short strings. 
+<br>&nbsp;<br>
+For arrays, it returns the higest index.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+For <b>multi-dimensional</b> arrays, it returns the highest index of the first subarray (the left most definition of array range).<br>
+<br>
+The size of an <b>open array</b> is given independent of the starting index of the array. It is the length of the array - 1.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="low.htm">Low</a></b></td>
+<td width="8"></td>
+<td align="left">Returns the lowest value of a type or variable</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : High applied to character, array, enumeration and short strings</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare character, array and enumerated data types</b></font><br>
+&nbsp;&nbsp;TChar&nbsp;&nbsp;= char;<br>
+&nbsp;&nbsp;TArray = array [3..7] of Integer;<br>
+&nbsp;&nbsp;TEnum&nbsp;&nbsp;= (Mon=5, Tue, Wed, Thu, Fri, Sat, Sun);<br>
+&nbsp;&nbsp;TShort = shortstring;<br><b>
+</b><br><b>
+var</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare variables of the above data types</b></font><br>
+&nbsp;&nbsp;myChar&nbsp;&nbsp;: TChar;<br>
+&nbsp;&nbsp;myArray : TArray;<br>
+&nbsp;&nbsp;myEnum&nbsp;&nbsp;: TEnum;<br>
+&nbsp;&nbsp;myShort : TShort;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the high values of the types and variables</b></font><br>
+&nbsp;&nbsp;WriteLn('High(TChar)&nbsp;&nbsp; = '+IntToStr(Ord(<font color=#C00000><b>High</b></font>(TChar))));<br>
+&nbsp;&nbsp;WriteLn('High(myChar)&nbsp;&nbsp;= '+IntToStr(Ord(<font color=#C00000><b>High</b></font>(myChar))));<br>
+&nbsp;&nbsp;WriteLn('High(TArray)&nbsp;&nbsp;= '+IntToStr(<font color=#C00000><b>High</b></font>(TArray)));<br>
+&nbsp;&nbsp;WriteLn('High(myArray) = '+IntToStr(<font color=#C00000><b>High</b></font>(myArray)));<br>
+&nbsp;&nbsp;WriteLn('High(TEnum)&nbsp;&nbsp; = '+IntToStr(Ord(<font color=#C00000><b>High</b></font>(TEnum))));<br>
+&nbsp;&nbsp;WriteLn('High(myEnum)&nbsp;&nbsp;= '+IntToStr(Ord(<font color=#C00000><b>High</b></font>(myEnum))));<br>
+&nbsp;&nbsp;WriteLn('High(TShort)&nbsp;&nbsp;= '+IntToStr(Ord(<font color=#C00000><b>High</b></font>(TShort))));<br>
+&nbsp;&nbsp;WriteLn('High(myShort) = '+IntToStr(Ord(<font color=#C00000><b>High</b></font>(myShort))));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="high&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;High(TChar)&nbsp;&nbsp; = 255<br>&nbsp;&nbsp;
+High(myChar)&nbsp;&nbsp;= 255<br>&nbsp;&nbsp;
+High(TArray)&nbsp;&nbsp;= 7<br>&nbsp;&nbsp;
+High(myArray) = 7<br>&nbsp;&nbsp;
+High(TEnum)&nbsp;&nbsp; = 11<br>&nbsp;&nbsp;
+High(myEnum)&nbsp;&nbsp;= 11<br>&nbsp;&nbsp;
+High(TShort)&nbsp;&nbsp;= 255<br>&nbsp;&nbsp;
+High(myShort) = 255<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

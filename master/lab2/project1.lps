@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="7">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="index.html"/>
+        <IsPartOfProject Value="True"/>
+        <CustomData Count="1">
+          <Item0 Name="PasJSIsProjectHTMLFile" Value="1"/>
+        </CustomData>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="unit1.html"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="WebForm1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <CursorPos X="28" Y="51"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\lazarus\examples\pascalstream\CopyAsPasPkg\copyaspasdemounit1.pas"/>
+        <UnitName Value="CopyAsPasDemoUnit1"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="C:\lazarus\components\lazutils\compwriterpas.pas"/>
+        <UnitName Value="CompWriterPas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1653"/>
+        <CursorPos X="56" Y="1663"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\WEBLib\weblib.runner.pas"/>
+        <UnitName Value="WEBLib.Runner"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="22"/>
+        <CursorPos X="44" Y="32"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit6>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="55" Column="17" TopLine="36"/>
+      </Position1>
+      <Position2>
+        <Filename Value="project1.lpr"/>
+      </Position2>
+      <Position3>
+        <Filename Value="..\WEBLib\weblib.runner.pas"/>
+        <Caret Line="29" Column="67" TopLine="19"/>
+      </Position3>
+      <Position4>
+        <Filename Value="..\WEBLib\weblib.runner.pas"/>
+        <Caret Line="30" Column="68" TopLine="20"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\WEBLib\weblib.runner.pas"/>
+        <Caret Line="31" Column="43" TopLine="21"/>
+      </Position5>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1" ActiveMode="Default">
+        <Mode0 Name="Default">
+          <local>
+            <LaunchingApplication Use="True" PathPlusParams="$(Pas2JSBrowser) $(Pas2JSProjectURL)"/>
+          </local>
+        </Mode0>
+      </Modes>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

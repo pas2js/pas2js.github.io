@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Defining Arrays</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : How to define array I</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TDays&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">array</span><span class="f_CodeExample" style="color: #000000;">[</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">..</span><span class="f_CodeExample" style="color: #0000ff;">7</span><span class="f_CodeExample" style="color: #000000;">]&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">const</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Days&nbsp;:&nbsp;TDays&nbsp;=&nbsp;(</span><span class="f_CodeExample" style="color: #0000ff;">'Mon'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'Tue'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'Wed'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'Thu'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'Fri'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'Sat'</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #0000ff;">'Sun'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button2Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;i&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Begin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Show&nbsp;the&nbsp;weekdays</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'Day&nbsp;%d&nbsp;=&nbsp;%s'</span><span class="f_CodeExample" style="color: #000000;">,[i,Days[i]]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">End</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p><span style="font-size: 13px; font-weight: bold; color: #000000;">Result is:</span></p>
+<p><span style="font-size: 13px; color: #000000;">------------------------ </span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 1 = Mon</span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 2 = Tue</span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 3 = Wed</span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 4 = Thu</span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 5 = Fri</span></p>
+<p><span style="font-size: 13px; color: #000000;">------------------------</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Note: The Days array above was defined with a fixed </span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">1..7</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';"> dimension. Such an array is indexable by values 1 to 7.</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">JS&nbsp;output:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="100%" style="width:100%;"><p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">Days</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[</span><span class="f_CodeExample" style="color: #800000;">&quot;Mon&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Tue&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Wed&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Thu&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Fri&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Sat&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Sun&quot;</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="background-color: #ffcc99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button2Click(Self,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;i$3&lt;=</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;i$3++)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert((</span><span class="f_CodeExample" style="color: #800000;">&quot;Day&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+i$3.</span><span class="f_CodeExample" style="color: #008000;">toString</span><span class="f_CodeExample" style="color: #000000;">()+</span><span class="f_CodeExample" style="color: #800000;">&quot;&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">Days</span><span class="f_CodeExample" style="color: #000000;">[$Idx(i$3,</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">7</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">)].</span><span class="f_CodeExample" style="color: #008000;">toString</span><span class="f_CodeExample" style="color: #000000;">()));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="background-color: #ffcc99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">$Idx</span><span class="f_CodeExample" style="color: #000000;">(i,l,h,z)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">if&nbsp;(i&lt;l)&nbsp;throw&nbsp;Exception.Create($New(Exception),</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Lower&nbsp;bound&nbsp;exceeded!&nbsp;Index&nbsp;&quot;+i.toString()+z);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">if&nbsp;(i&gt;h)&nbsp;throw&nbsp;Exception.Create($New(Exception),</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Upper&nbsp;bound&nbsp;exceeded!&nbsp;Index&nbsp;&quot;+i.toString()+z);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">return&nbsp;i-l;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : How to define array II</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button2Click(Sender:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TObject</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #000080;">const</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; font-weight: bold; color: #000080;">Days</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">&nbsp;:&nbsp;array[1..7]&nbsp;of&nbsp;string&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #ff0000;">('Mon','Tue','Wed','Thu','Fri','Sat','Sun')</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;i&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">B</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">egin</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #000080;">1</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #000080;">5</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">do</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000080;">//&nbsp;Show&nbsp;the&nbsp;weekdays</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Format</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #000080;">'Day&nbsp;%d&nbsp;=&nbsp;%s'</span><span class="f_CodeExample" style="color: #000000;">,[i,</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">Days</span><span class="f_CodeExample" style="color: #000000;">[i]]));</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">End</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p><span style="font-size: 13px; font-weight: bold; color: #000000;">Result is:</span></p>
+<p><span style="font-size: 13px; color: #000000;">------------------------ </span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 1 = Mon</span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 2 = Tue</span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 3 = Wed</span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 4 = Thu</span></p>
+<p><span style="font-size: 13px; color: #000000;"> Day 5 = Fri</span></p>
+<p><span style="font-size: 13px; color: #000000;">------------------------</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">JS&nbsp;output:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="100%" style="width:100%;"><p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">function</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;W3Button2Click</span><span class="f_CodeExample" style="color: #000000;">(Self,&nbsp;Sender$5)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">Days</span><span class="f_CodeExample" style="color: #000000;">&nbsp;=&nbsp;[</span><span class="f_CodeExample" style="color: #800000;">&quot;Mon&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Tue&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Wed&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Thu&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Fri&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Sat&quot;</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;Sun&quot;</span><span class="f_CodeExample" style="color: #000000;">];</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">for</span><span class="f_CodeExample" style="color: #000000;">(i$3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;i$3&lt;=</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;i$3++)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert((</span><span class="f_CodeExample" style="color: #800000;">&quot;Day&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+i$3.toString()+</span><span class="f_CodeExample" style="color: #800000;">&quot;&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">Days</span><span class="f_CodeExample" style="color: #000000;">[$Idx(i$3,</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">7</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #800000;">&quot;&quot;</span><span class="f_CodeExample" style="color: #000000;">)].toString()));</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="background-color: #ffcc99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">$Idx</span><span class="f_CodeExample" style="color: #000000;">(i,l,h,z)&nbsp;{</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">if&nbsp;(i&lt;l)&nbsp;throw&nbsp;Exception.Create($New(Exception),</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Lower&nbsp;bound&nbsp;exceeded!&nbsp;Index&nbsp;&quot;+i.toString()+z);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">if&nbsp;(i&gt;h)&nbsp;throw&nbsp;Exception.Create($New(Exception),</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Upper&nbsp;bound&nbsp;exceeded!&nbsp;Index&nbsp;&quot;+i.toString()+z);</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">return&nbsp;i-l;</span></p>
+<p class="p_CodeExample" style="background: #ffcc99;"><span class="f_CodeExample" style="color: #000000;">};</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

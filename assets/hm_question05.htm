@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>question05</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">question04</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_question04.htm">Previous</a>&nbsp;
+     <a href="hm_question06.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><a name="acker"></a><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">Write a recursive function which returns the value of A(m,n). </span></p>
+<p><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">This function grows very quickly in value. This function A(m,n) is defined as:</span></p>
+<p>&nbsp;</p>
+<p><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">if m=0 then n+1</span></p>
+<p><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">if m&gt;0 and n=0 then A(m-1,1)</span></p>
+<p><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">if m&gt;0 and n&gt;0 then A(m-1,A(m,n-1))</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 2px #000000; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td colspan="2" valign="top" width="126" style="width:126px; border: solid 1px #000000;"><p style="text-align: center;"><span style="font-weight: bold; color: #800000;">INPUT</span></p>
+<p style="text-align: center;"><span style="font-weight: bold; color: #800000;">m &nbsp; &nbsp; n &nbsp;  </span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="font-weight: bold; color: #800000;">OUTPUT</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">0</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">0</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">0</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">0</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">3</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">0</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">3</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">4</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">0</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">4</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">5</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">0</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">3</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">4</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">3</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">5</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">4</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">6</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">0</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">3</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">1</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">5</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">7</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">3</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">9</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="56" style="width:56px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">2</span></p>
+</td>
+<td valign="top" width="70" style="width:70px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">4</span></p>
+</td>
+<td valign="top" width="91" style="width:91px; border: solid 1px #000000;"><p style="text-align: center;"><span style="color: #800000;">11</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">See the solution:</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Ackermann(m,&nbsp;n&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Integer</span><span class="f_CodeExample" style="color: #000000;">)&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Integer</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;m&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;:=&nbsp;n+</span><span class="f_CodeExample" style="color: #ff0000;">1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;n&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">then</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;:=&nbsp;Ackermann(m-</span><span class="f_CodeExample" style="color: #ff0000;">1</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">1</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Result&nbsp;:=&nbsp;Ackermann(m-</span><span class="f_CodeExample" style="color: #ff0000;">1</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Ackermann(m,&nbsp;n-</span><span class="f_CodeExample" style="color: #ff0000;">1</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{---}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;i&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">3</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;j&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">to</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="color: #ff0000;">4</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">do</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(&nbsp;Ackermann(i,j)&nbsp;);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #ff0000;">1</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">2</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">3</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">4</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">5</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #ff0000;">2</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">3</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">4</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">5</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">6</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #ff0000;">3</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">5</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">7</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">9</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">11</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #ff0000;">5</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">13</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">29</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">61</span><span class="f_CodeExample" style="color: #000000;">,</span><span class="f_CodeExample" style="color: #ff0000;">125</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>TW3HttpRequest</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">TW3HttpRequest</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_networking.htm">Previous</a>&nbsp;
+     <a href="hm_tw3jsonp.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The TW3Httprequest object is a fairly low level object for talking with servers via the HTTP protocol. As expected you can issue commands like GET and POST in order to retrieve or send data. There are also details like ready-state and status properties to keep an eye on while you work with the object. It is also important to note that all connectivity in the browser is a-sync (non blocking), so you must use the events to handle incoming data.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; text-decoration: underline;">NOTE:</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; color: #000000;"> </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">It is extremely important to remember that the browser is bound by something called "the same origin policy". This means that you can’t (unless the server allows it) download media from anywhere you like. The request has to be within the same domain as your application comes from. In short, you can only download things from your own server where the smart app is stored. Some servers allow cross domain downloading (google being a prime example) but there are security issues you must follow when working.</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #ff0000;">SmartCL.Inet</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TW3HttpRequest = class(TObject)</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Methods:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Get(aURL:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Open(aMeth,&nbsp;aURL:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;SetRequestHeader(headerName,&nbsp;value:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Send;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">overload</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Send(textData:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">overload</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Abort;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Status:&nbsp;Integer;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;StatusText:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ResponseXML:&nbsp;Variant;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ResponseText:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ReadyState:&nbsp;THttpRequestReadyState;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Properties:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Handle:&nbsp;THandle&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FReqObj;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;RequestHeaders[headerName:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">]:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;SetRequestHeader;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;OnDataReady:&nbsp;THttpRequestEvent&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnDataReady&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnDataReady;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;OnReadyStateChange:&nbsp;THttpRequestEvent&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnReadyStateChange&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnReadyStateChange;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;OnLoad:&nbsp;THttpRequestEvent&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnLoad&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnLoad;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;OnError:&nbsp;THttpRequestEvent&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnError&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnError;</span></p>
+<p>&nbsp;</p>
+<p style="margin: 16px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Downloading a HTML document</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Downloading a HTML document from a website (which of-course can be a PHP function or a REST method) is very straightforward. In this example I am using a visual application that has a form. So create a new visual project, add a button and a memo to the form – then type in the event handlers below:</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">(TW3Form)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">private</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">{&nbsp;Private&nbsp;methods&nbsp;}</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">{$I&nbsp;'Form1:intf'}</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;FHttp:&nbsp;TW3HttpRequest;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;HandleButtonClick(Sender:TObject);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;HandleHttpDataReady(Sender:TW3HttpRequest);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;HandleHttpReadyStateChanged(Sender:TW3HttpRequest);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">protected</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">{&nbsp;Protected&nbsp;methods&nbsp;}</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InitializeObject;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FinalizeObject;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;StyleTagObject;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">reintroduce</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">virtual</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Resize;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">override</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 16px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Setting up the HTTP request</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In the constructor we initialize the HTTP object so that everything is ready for use. In this example I have a couple of controls on the form, so just ignore that part if you like.</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.InitializeObject;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">{$I&nbsp;'Form1:impl'}</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;AdjustToParentBox;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;W3HeaderControl1.BackButton.Visible&nbsp;:=&nbsp;False;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;W3HeaderControl1.Title.Caption&nbsp;:=&nbsp;'Network&nbsp;test';</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">(*&nbsp;Setup&nbsp;the&nbsp;http&nbsp;request&nbsp;object&nbsp;*)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;FHttp&nbsp;:=&nbsp;TW3HttpRequest.Create;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;FHttp.OnDataReady&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=&nbsp;HandleHttpDataReady;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;FHttp.OnReadyStateChange&nbsp;:=&nbsp;HandleHttpReadyStateChanged;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">(*&nbsp;Add&nbsp;our&nbsp;event&nbsp;handler&nbsp;to&nbsp;Button1&nbsp;*)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;W3Button1.OnClick&nbsp;:=&nbsp;HandleButtonClick;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p style="margin: 16px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Taking care of events</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.HandleButtonClick(Sender:TObject);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">(*&nbsp;Try&nbsp;to&nbsp;download&nbsp;the&nbsp;html&nbsp;from&nbsp;google.com&nbsp;*)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;FHttp.Get('http://www.google.com');</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.HandleHttpReadyStateChanged(Sender:TW3HttpRequest);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">(*&nbsp;Just&nbsp;for&nbsp;watching&nbsp;the&nbsp;status&nbsp;codes&nbsp;*)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Sender.ReadyState=4&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(Sender.Status);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;WriteLn(Sender.ReadyState);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.HandleHttpDataReady(Sender:TW3HttpRequest);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #000000;">(*&nbsp;Document&nbsp;is&nbsp;downloaded,&nbsp;now&nbsp;display&nbsp;the&nbsp;text&nbsp;in&nbsp;our&nbsp;memo&nbsp;*)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;w3memo1.Text&nbsp;:=&nbsp;FHttp.ResponseText;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The end result is as expected:</span></p>
+<p><img src="hm_clip0019.png" width="329" height="470" border="0" alt="hm_clip0019"></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Downloading HTML is easy</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

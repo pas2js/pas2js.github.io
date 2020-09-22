@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Contracts in Smart Pascal | ensure | require | old</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js108.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js110.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Contracts in Smart Pascal
+	<ul>
+	<li><strong>Contracts </strong>are now partially supported: <strong>ensure</strong>, <strong>require </strong>and <strong>old </strong>are available and use the same syntax as Prism contracts, inheritance is supported.</li>
+	<li>the <strong>implies </strong>operator is now supported, “a implies b” is equivalent to “(not a) or b”, or in other words, it is false only if a is true and b is false.</li>
+	<li><strong>Assert()</strong> is supported, and will trigger <strong>EAssertionFailed </strong>in case of, well, an assertion failure. A compiler option has been added to control the generation of assertions.</li>
+	<li><strong>Exception </strong>now has a <strong>StackTrace </strong>method, which will return a textual stacktrace script-side. Runtime errors now also include a stack trace, and new Delphi-side methods provide access to even more details.</li>
+	<li>the <strong>in</strong> operator has been extended to allow class overloading, f.i. you can now use “if (aString in someStringList) then…”, the <strong>not in</strong> form is also supported.</li>
+	</ul>
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+function IncFunc(Val, delta: Integer): Integer;
+begin
+  Result := Val + delta;
+  ensure 
+  Result = old Val + 1;
+end;
+
+procedure IncProc(var Val: Integer; delta: Integer);
+begin
+  Val += delta;
+  ensure 
+  Val = old Val + 1;
+end;
+
+{ main.pas }
+  var
+    v: Integer = 1;
+
+Begin
+  v := IncFunc(v, 1);
+  Writeln(v);
+  IncProc(v, 1);
+  Writeln(v);
+
+  try
+    v := IncFunc(v, 2)
+  except
+    on E: Exception do
+      Writeln(E.Message);
+  end;
+  try
+    IncProc(v, 2)
+  except
+    on E: Exception do
+      Writeln(E.Message);
+  end;
+  Writeln(v); // 2  3  7
+  
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+      var v = {};
+      v.v = 1;
+      v.v = IncFunc(v.v,1);
+      WriteLn(v.v);
+      IncProc(v,1);
+      WriteLn(v.v);
+      try {
+         v.v = IncFunc(v.v,2);
+      } catch ($e) {
+         var E = $W($e);
+         WriteLn(E.FMessage)      }
+      try {
+         IncProc(v,2);
+      } catch ($e) {
+         var E$1 = $W($e);
+         WriteLn(E$1.FMessage)      }
+      WriteLn(v.v);
+
+function IncProc(Val, delta) {
+   var old$1 = Val.v;
+   Val.v+=delta;
+};
+function IncFunc(Val$1, delta$1) {
+   var Result = 0;
+   var old$1$1 = Val$1;
+   Result = Val$1+delta$1;
+   return Result
+};	  
+
+</code></pre></div>
+</div>
+</body>
+</html>

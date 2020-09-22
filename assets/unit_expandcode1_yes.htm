@@ -1,0 +1,199 @@
+<!-- (0063)Unit&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Unit command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Unit, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Unit</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines the start of a unit file - a Delphi module</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Unit</b> Name;<br>&nbsp;
+&nbsp;&nbsp;Interface<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>&nbsp;
+&nbsp;&nbsp;Implementation<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>&nbsp;
+ {Initialization<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;...}<br>&nbsp;
+ {Finalization<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;...}<br>&nbsp;
+end.&nbsp;&nbsp;<font color=#00A000>// Note terminating dot</font>
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Unit</b></font> keyword is fundamental to Delphi, defining the start of a module.
+<br>&nbsp;<br>
+Each Delphi module is stored in a Name.pas file, where Name must match the Unit <b>Name</b>.
+<br>&nbsp;<br>
+Each unit comprises a set of interface definitions. Do not confuse these with class interfaces - the unit interface is the external interface to the module. It defines to any user of the unit what it contains. These interface definitions define <b>private, protected, public</b> and <b>Published</b> data, types and routine declarations.
+<br>&nbsp;<br>
+Any routines defined in the interface must be implemented in the <b>Implementation</b> section. All function and procedure definitions must have exactly redefined arguments - see procedure and function information.
+<br>&nbsp;<br>
+Optionally, you may have <b>Initialization</b> and <b>Finalization</b> sections. These contain statements executed when the unit is loaded and when it terminates, respectively.
+<br>&nbsp;<br>
+If you only define an <b>Initialization</b> section, you may replace this keyword with <b>Begin</b>.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="implementation.htm">Implementation</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the implementation (code) section of a Unit</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="interface.htm">Interface</a></b></td>
+<td width="8"></td>
+<td align="left">Used for Unit external definitions, and as a Class skeleton</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="private.htm">Private</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the section of private data and methods in a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="property.htm">Property</a></b></td>
+<td width="8"></td>
+<td align="left">Defines controlled access to class fields</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="protected.htm">Protected</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a section of class private data accesible to sub-classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="public.htm">Public</a></b></td>
+<td width="8"></td>
+<td align="left">Starts an externally accessible section of a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="published.htm">Published</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a published externally accessible section of a class</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+<font color=#C00000><b>Unit</b></font> Unit1;</b><br><b>
+</b><br><font color=#008000><b>// External interface to this unit module</b></font><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Forms, Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define the form class used by this unit</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Define a procedure that must be implemented in the</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// implementation section below</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ Private declarations }<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ Public declarations }<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a form - can be referenced in the Implementation section</b></font><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><font color=#008000><b>// Implements the interface declarations above</b></font><br><b>
+implementation</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set and show the form title</b></font><br>
+&nbsp;&nbsp;Form1.Caption := 'Test program';<br>
+&nbsp;&nbsp;WriteLn('Running = '+Form1.Caption);<br><b>
+end;</b><br><b>
+</b><br><b>
+initialization</b><br>&nbsp;&nbsp;<font color=#008000><b>// Tell the user we are starting this unit</b></font><br>
+&nbsp;&nbsp;WriteLn('Initialising');<br><b>
+</b><br><b>
+end.</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="unit.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Initialising<br>&nbsp;&nbsp;
+Running Test program<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

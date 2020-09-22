@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>TW3JSONP</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">TW3JSONP</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_tw3httprequest.htm">Previous</a>&nbsp;
+     <a href="hm_loadingfiles.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Where the class TW3HttpRequest is more akin to an ordinary http client component under delphi or freepascal, it does come with some limitations. First and foremost the same origin policy and also the fact that it only deals with raw, unformatted data.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The alternative is the TW3JSONP class which is stored in the same unit (w3inet). It is very important to understand that these two classes utilize wildly different web technologies, and you simply cant switch one for the other. At least not without some control over the responding server.</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #ff0000;">SmartCL.Inet</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TW3JSONP = class</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Methods</span><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Request(url:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Allocate;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Release;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Properties</span><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Allocated:&nbsp;Boolean&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FAllocated;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Handle:&nbsp;THandle&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FHandle;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;URL:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetURL&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Request;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Data:&nbsp;Variant&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FData;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;OnDataReady:&nbsp;TW3JSONPEvent&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnDataReady&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOnDataReady;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Where TW3HttpRequest issues a raw http get or post command to your server (or a server that allow cross domain communication), TW3JSONP is all about webservices. So it expects the URL to be a program that executes on the server – and returns data in a very special way: namely as an executable script.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TW3JSONP</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> is actually a bit of a hack (like most javascript leaps of evolution are). What it does is this:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-weight: bold; font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Create a new script tag via code</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-weight: bold; font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Point the source for the script tag to the JSONP webservice</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-weight: bold; font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Add parameter to the source URL, telling the server what procedure to call</span></td></tr></table></div><p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">When the server is called, it parses the parameters it has received and generates not data, but rather, a javascript file which will inject the data into your webpage. When the script has been downloaded it will execute, build whatever data structure it needs to build – and then call your event handler with the result.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">If that sounds very dangerous then yes, we agree, you should never call a webservice you do not trust, quite simply because you have no control over what the script you get back contains.</span></p>
+<p style="margin: 16px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">How to use it</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The class that ships with smart is very easy to use. All in all you have to do only 3 things:</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">1.</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">write an event handler that will recieve the data</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">2.</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">call the Request method or set the url property</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 12pt; font-family: 'Times New Roman'; color: #000000;">3.</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">process the data returned</span></td></tr></table></div><p style="text-indent: -24px; margin: 7px 0px 7px 48px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TMainForm.HandleClick(Sender:TObject);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;mJSONP:&nbsp;TW3JSONP;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">Begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mJSONP:=TW3JSONP.Create;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mJSONP.OnDataReady:=</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(sender:TW3JSONP)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writeln(sender.data);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w3_WriteLn('You&nbsp;got&nbsp;data!');</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mJSONP.free;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mJSONP.Request('http://services.digg.com/stories/top?'</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+'appkey=http%3A%2F%2Fmashup.com'</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+'&amp;type=javascript&amp;callback=');</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The above example uses a relatively new pascal feature called anonymous procedures, so it might look a bit alien if you are used to classical event handlers, but at least it shows you how one could go about using it. The procedure above is an event handler for a button click, so add a button to a form and connect the HandleClick to the onClick event.</span></p>
+<p style="margin: 16px 0px 4px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Processing the data</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The data you get back from the above webservice, is a pretty dense array of records. Thankfully smart makes it childs play to work directly with untyped javascript data. But before we can actually work with it – we have to see it. If you have chrome or safari installed on your PC, then run the example there. And remember to activate the developer tools (see tools menu in either browser). I added the writeln call for a reason, namely to push the data into the console window of the debugger — hence you can inspect it:</span></p>
+<p><img src="hm_clip0020.png" width="727" height="391" border="0" alt="hm_clip0020"></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Easy enough to work with</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Now that we know how the data inside the variant we got back from the server is organized, extracting the values is easy enough. Drop a memo component on your form and alter the JSONP event handler to:</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TMainForm.HandleClick(Sender:&nbsp;TObject);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mJSONP:&nbsp;TW3JSONP;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mJSONP&nbsp;:=&nbsp;TW3JSONP.Create;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mJSONP.OnDataReady&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">(sender:&nbsp;TW3JSONP)</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;writeln(sender.data);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;sender.data.count&nbsp;&gt;&nbsp;0&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;w3memo1.text&nbsp;:=&nbsp;sender.data.stories[0].description</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;mJSONP.free;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">mJSONP.Request('http://services.digg.com/stories/top?'</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;+&nbsp;'appkey=http%3A%2F%2Fmashup.com'</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;+&nbsp;'&amp;type=javascript&amp;callback=');</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">And voila – run the test again, click the button, and your memo now contains the headline of the first story:</span></p>
+<p><img src="hm_clip0021.png" width="1166" height="777" border="0" alt="hm_clip0021"></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Working with javascript data is very easy with smart</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

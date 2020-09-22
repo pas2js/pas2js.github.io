@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Anonymous classes</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Anonymous classes</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_property_expressions.htm">Previous</a>&nbsp;
+     <a href="hm_partial_classes.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Anonymous classes</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In traditional Object Pascal all classes inherit from a root type called </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;"><a href="hm_tobject.htm
+">TObject</a></span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. Anonymous classes meant that Smart Pascal is able to directly import and make use of external classes. This allows the user to simply define a class as external, and classes written in JavaScript which match the interface can thus be created and used along-side those written in pascal. This is achieved by allowing objects to be rooted from nothing (i.e: no pre-defined constructor logic and behavior).</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;JCustomEventInit&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">external</span><span class="f_CodeExample" style="color: #000000;">&nbsp;'CustomEventInit'&nbsp;(JEventInit)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail&nbsp;:&nbsp;Variant</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;JEventTarget&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">external</span><span class="f_CodeExample" style="color: #000000;">&nbsp;'EventTarget'</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;addEventListener(aType&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;callback&nbsp;:&nbsp;JEventListener;&nbsp;capture&nbsp;&nbsp;:&nbsp;Boolean&nbsp;=&nbsp;false);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;removeEventListener(aType&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;callback&nbsp;:&nbsp;JEventListener;&nbsp;capture&nbsp;&nbsp;:&nbsp;Boolean&nbsp;=&nbsp;false);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;dispatchEvent(event&nbsp;:&nbsp;JEvent)&nbsp;:&nbsp;Boolean;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Note:</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;Anonymous&nbsp;classes&nbsp;can&nbsp;also&nbsp;be&nbsp;used&nbsp;as&nbsp;lightweight&nbsp;objects&nbsp;(without&nbsp;the&nbsp;external&nbsp;keyword),&nbsp;more&nbsp;akin&nbsp;to&nbsp;records</span></p>
+<p class="p_CodeExample"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(custom&nbsp;datatypes&nbsp;in&nbsp;other&nbsp;languages)&nbsp;since&nbsp;it&nbsp;does&nbsp;not&nbsp;include&nbsp;the&nbsp;life-cycle&nbsp;management&nbsp;provided&nbsp;by&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TObject</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">.</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="Sin,Cos,Tan,ArcSin,ArcCos,ArcTan,Cotan,RadToDeg,DegToRad,ArcSinh,ArcCosh,ArcTanh,Cosh,Sinh,Tanh" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Trigonometry functions (Float)</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Sin, Cos, Tan, ArcSin, ArcCos, ArcTan, Cotan, RadToDeg, DegToRad, ArcSinh, ArcCosh, ArcTanh, Cosh, Sinh, TanhSin, Cos, Tan, ArcSin, ArcCos, ArcTan, Cotan, RadToDeg, DegToRad, ArcSinh, ArcCosh, ArcTanh, Cosh, Sinh, Tanh</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button20Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;Sine&nbsp;of&nbsp;30&nbsp;degrees&nbsp;=&nbsp;0.5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Sin(PI/</span><span class="f_CodeExample" style="color: #0000ff;">6</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;=&nbsp;180/6&nbsp;=&nbsp;30&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Sin(PI/6)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;Sine&nbsp;of&nbsp;60&nbsp;degrees&nbsp;=&nbsp;0.5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Cos(PI/</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;=&nbsp;180/3&nbsp;=&nbsp;60&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Cos(PI/3)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;Tangent&nbsp;of&nbsp;45&nbsp;degrees&nbsp;=&nbsp;1.0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Tan(PI/</span><span class="f_CodeExample" style="color: #0000ff;">4</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;=&nbsp;180/4&nbsp;=&nbsp;45&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Tan(PI/4)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;ArcSin&nbsp;of&nbsp;0.5&nbsp;should&nbsp;give&nbsp;30&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;ArcSin(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;RadToDeg(v);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Convert&nbsp;result&nbsp;to&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'ArcSin&nbsp;of&nbsp;0.5&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v)+</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;degrees'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;ArcCos&nbsp;of&nbsp;0.5&nbsp;should&nbsp;give&nbsp;60&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;ArcCos(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;RadToDeg(v);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Convert&nbsp;result&nbsp;to&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'ArcCos&nbsp;of&nbsp;0.5&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v)+</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;degrees'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;ArcTan&nbsp;of&nbsp;PI/2&nbsp;should&nbsp;give&nbsp;1.0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;ArcTan(PI/</span><span class="f_CodeExample" style="color: #0000ff;">2</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'ArcTan&nbsp;of&nbsp;PI/2&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;Cotan&nbsp;of&nbsp;PI/4&nbsp;should&nbsp;give&nbsp;1.0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Cotan(PI/</span><span class="f_CodeExample" style="color: #0000ff;">4</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Cotan&nbsp;of&nbsp;PI/4&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;ArcSin&nbsp;of&nbsp;0.5&nbsp;should&nbsp;give&nbsp;30&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;ArcSin(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;RadToDeg(v);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Convert&nbsp;result&nbsp;to&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'ArcSin&nbsp;of&nbsp;0.5&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v)+</span><span class="f_CodeExample" style="color: #0000ff;">'&nbsp;degrees'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;Sine&nbsp;of&nbsp;30&nbsp;degrees&nbsp;=&nbsp;0.5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Sin(DegToRad(</span><span class="f_CodeExample" style="color: #0000ff;">30</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Sine&nbsp;off&nbsp;30&nbsp;degrees&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;ArcSinh&nbsp;of&nbsp;0.4&nbsp;should&nbsp;give&nbsp;22.347377683897445</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;ArcSinh(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">4</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;RadToDeg(v);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Convert&nbsp;result&nbsp;to&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'ArcSinh&nbsp;of&nbsp;0.4&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;ArcCosh&nbsp;of&nbsp;25&nbsp;should&nbsp;give&nbsp;224.11947549408853</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;ArcCosh(</span><span class="f_CodeExample" style="color: #0000ff;">25</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;RadToDeg(v);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Convert&nbsp;result&nbsp;to&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'ArcCosh&nbsp;of&nbsp;25&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;ArcTanh&nbsp;of&nbsp;0.4&nbsp;should&nbsp;give&nbsp;0.423648930193602</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;ArcTanh(</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">4</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'ArcTanh&nbsp;of&nbsp;0.4&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;Sine&nbsp;of&nbsp;30&nbsp;degrees&nbsp;=&nbsp;0.54785347388804</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Sinh(PI/</span><span class="f_CodeExample" style="color: #0000ff;">6</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;=&nbsp;180/6&nbsp;=&nbsp;30&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Sinh(PI/6)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;Sine&nbsp;of&nbsp;60&nbsp;degrees&nbsp;=&nbsp;1.60028685770239</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Cosh(PI/</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;=&nbsp;180/3&nbsp;=&nbsp;60&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Cosh(PI/3)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;Tangent&nbsp;of&nbsp;45&nbsp;degrees&nbsp;=&nbsp;0.655794202632672</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Tanh(PI/</span><span class="f_CodeExample" style="color: #0000ff;">4</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;=&nbsp;180/4&nbsp;=&nbsp;45&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Tanh(PI/4)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Sin(PI/6)&nbsp;=&nbsp;0.5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Cos(PI/3)&nbsp;=&nbsp;0.5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Tan(PI/4)&nbsp;=&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ArcSin&nbsp;of&nbsp;0.5&nbsp;=&nbsp;30.00000000000001&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ArcCos&nbsp;of&nbsp;0.5&nbsp;=&nbsp;60.000000000000135&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ArcTan&nbsp;of&nbsp;PI/2&nbsp;=&nbsp;1.00388482185389</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Cotan&nbsp;of&nbsp;PI/4&nbsp;=&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ArcSin&nbsp;of&nbsp;0.5&nbsp;=&nbsp;30.00000000000001&nbsp;degrees</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Sine&nbsp;off&nbsp;30&nbsp;degrees&nbsp;=&nbsp;0.5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ArcSinh&nbsp;of&nbsp;0.4&nbsp;=&nbsp;22.347377683897445</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ArcCosh&nbsp;of&nbsp;25&nbsp;=&nbsp;224.11947549408853</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">ArcTanh&nbsp;of&nbsp;0.4&nbsp;=&nbsp;0.423648930193602</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Sinh(PI/6)&nbsp;=&nbsp;0.54785347388804</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Cosh(PI/3)&nbsp;=&nbsp;1.60028685770239</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Tanh(PI/4)&nbsp;=&nbsp;0.655794202632672</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span class="f_BodyText"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">JS output</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button20Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$18)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Sin(PI/6)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Cos(PI/3)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Tan(PI/4)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">523598775598299</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;RadToDeg(v$4);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;ArcSin&nbsp;of&nbsp;0.5&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)+</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;degrees&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">0471975511966</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;RadToDeg(v$4);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;ArcCos&nbsp;of&nbsp;0.5&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)+</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;degrees&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">00388482185389</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;ArcTan&nbsp;of&nbsp;PI/2&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Cotan&nbsp;of&nbsp;PI/4&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">523598775598299</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;RadToDeg(v$4);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;ArcSin&nbsp;of&nbsp;0.5&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)+</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;degrees&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Sine&nbsp;off&nbsp;30&nbsp;degrees&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">390035319770715</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;RadToDeg(v$4);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;ArcSinh&nbsp;of&nbsp;0.4&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">3</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">91162276521459</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;RadToDeg(v$4);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;ArcCosh&nbsp;of&nbsp;25&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">423648930193602</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;ArcTanh&nbsp;of&nbsp;0.4&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">54785347388804</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Sinh(PI/6)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">1</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">60028685770239</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Cosh(PI/3)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$4&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">655794202632672</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Tanh(PI/4)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$4)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!-- (0065)Record&ExpandCode2=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Record command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Record, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Record</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">A structured data type - holding fields of data</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>Name</b> = {packed} <b>Record</b><br>&nbsp;
+&nbsp;&nbsp;Declarations ...<br>&nbsp;
+end;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>Name</b> = {packed} record<br>&nbsp;
+&nbsp;&nbsp; Declarations ...<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; <b>case {Tag :} Ordinal type</b> of<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Ordinal value {,Ordinal value...} : <b>(Declarations);</b><br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>{...}</b><br>&nbsp;
+end;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Record</b></font> keyword is one of the most useful, and distinguishing features of Delphi (and the Pascal language). It provides a means of collecting together a set of different data types into one named structure.
+<br>&nbsp;<br>
+Each field in the structure is referenced in the manner <font color=#200080><b>record.field</b></font>.
+<br>&nbsp;<br>
+When declared, the <b>Packed</b> option tells Delphi to minimise the storage taken by the record. This reduction in storage can impact performance, where data is not aligned to appropriate 2, 4 or 8 byte boundaries. The default is to align, with fillers where necessary.
+<br>&nbsp;<br>
+There are two basic types of record field, as shown in the two syntax types:
+<br>&nbsp;<br>
+<font color=#FF0000><b>1.Basic field declarations</b></font>
+<br>&nbsp;<br>
+These are standard Delphi variable declarations, such as :
+<br>&nbsp;<br>
+<font color=#008000><b>size : Integer;</b></font>
+<br>&nbsp;<br>
+with the exception that their size must be defined. For example :
+<br>&nbsp;<br>
+<font color=#008000><b>description : string[20];</b></font>
+<br>&nbsp;<br>
+because Delphi must know the precise amount of storage to allocate to that field in the record.
+<br>&nbsp;<br>
+<font color=#FF0000><b>2.Case (Variant) field sections</b></font>
+<br>&nbsp;<br>
+These must always follow any basic field declarations (which is why the case statement does not have a terminating <b>end;</b> clause).
+<br>&nbsp;<br>
+These allow different, alternative data types to overlay each other. For example, a patient record may have a different section of declarations for women compared to men. Using the same basic record with a Variant portion is sensible when the bulk of the record is common.
+<br>&nbsp;<br>
+By default, fields in a record are aligned on Byte and Word boundaries as appropriate for performance reasons. For both <font color=#996600><b>Record</b></font> types, the <b>packed</b> option allows this to be overriden to reduce storage requirements, with the necessary small performance penalty.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Using the <b>With</b> keyword, the fields of a record can be addressed without the need to prefix each with the record name.<br>
+<br>
+Unlike Object Oriented languages like <font color=#00A000><b>Java</b></font>, the Delphi <font color=#996600><b>Record</b></font> type provides a better performing mechanism for passing similar groups of data than data classes. They have their place in OO applications, especially where a class would otherwise have to be created for a structure of 2 or 3 fields.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="case.htm">Case</a></b></td>
+<td width="8"></td>
+<td align="left">A mechanism for acting upon different values of an Ordinal</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="packed.htm">Packed</a></b></td>
+<td width="8"></td>
+<td align="left">Compacts complex data types into minimal storage</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="with.htm">With</a></b></td>
+<td width="8"></td>
+<td align="left">A means of simplifying references to structured variables</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Standard record definition</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare a customer record</b></font><br>
+&nbsp;&nbsp;TCustomer = <font color=#C00000><b>Record</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;firstName : string[20];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lastName&nbsp;&nbsp;: string[20];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address1&nbsp;&nbsp;: string[100];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address2&nbsp;&nbsp;: string[100];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address3&nbsp;&nbsp;: string[100];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;city&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: string[20];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;postCode&nbsp;&nbsp;: string[8];<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;John, Sarah : TCustomer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the John's customer details</b></font><br>
+&nbsp;&nbsp;with John do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;firstName := 'John';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lastName&nbsp;&nbsp;:= 'Smith';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address1&nbsp;&nbsp;:= '7 Park Drive';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address2&nbsp;&nbsp;:= 'Branston';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;address3&nbsp;&nbsp;:= 'Grimworth';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;city&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:= 'Banmore';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;postCode&nbsp;&nbsp;:= 'BNM 1AB';<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up John's sister similarly - simply copying the whole record</b></font><br>
+&nbsp;&nbsp;Sarah := John;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And then changing the first name to suit</b></font><br>
+&nbsp;&nbsp;Sarah.firstName := 'Sarah';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now show the details of both customers</b></font><br>
+&nbsp;&nbsp;with John do ShowCustomer([firstName, lastName,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address1, address2, address3,city,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; postCode]);<br>
+&nbsp;&nbsp;WriteLn('');<br>
+&nbsp;&nbsp;with Sarah do ShowCustomer([firstName, lastName,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address1, address2, address3,city,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; postCode]);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// A procedure that displays a variable number of strings</b></font><br><b>
+procedure TForm1.ShowCustomer(const fields: array of string);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display all fields passed - note : arrays start at 0</b></font><br>
+&nbsp;&nbsp;for i := 0 to Length(fields)-1 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(fields[i]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/record&expandcode1=yes&expandcode2=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;John<br>&nbsp;&nbsp;
+Smith<br>&nbsp;&nbsp;
+7 Park Drive<br>&nbsp;&nbsp;
+Branston<br>&nbsp;&nbsp;
+Grimworth<br>&nbsp;&nbsp;
+Banmore<br>&nbsp;&nbsp;
+BNM 1AB<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Sarah<br>&nbsp;&nbsp;
+Smith<br>&nbsp;&nbsp;
+7 Park Drive<br>&nbsp;&nbsp;
+Branston<br>&nbsp;&nbsp;
+Grimworth<br>&nbsp;&nbsp;
+Banmore<br>&nbsp;&nbsp;
+BNM 1AB<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Record definition with a Case (Variant) tail section</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare a fruit record using case to choose the</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// diameter of a round fruit, or length and height ohterwise.</b></font><br>
+&nbsp;&nbsp;TFruit = <font color=#C00000><b>Record</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string[20];<br>&nbsp;&nbsp;&nbsp;&nbsp;Case isRound : Boolean of <font color=#008000><b>// Choose how to map the next section</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;&nbsp;:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(diameter : Single);&nbsp;&nbsp;<font color=#008000><b>// Maps to same storage as length</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False :<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(length&nbsp;&nbsp; : Single;&nbsp;&nbsp; <font color=#008000><b>// Maps to same storage as diameter</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width&nbsp;&nbsp;&nbsp;&nbsp;: Single);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;apple, banana, fruit : TFruit;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the apple as round, with appropriate dimensions</b></font><br>
+&nbsp;&nbsp;apple.name&nbsp;&nbsp;&nbsp;&nbsp; := 'Apple';<br>
+&nbsp;&nbsp;apple.isRound&nbsp;&nbsp;:= True;<br>
+&nbsp;&nbsp;apple.diameter := 3.2;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the banana as long, with appropriate dimensions</b></font><br>
+&nbsp;&nbsp;banana.name&nbsp;&nbsp;&nbsp;&nbsp;:= 'Banana';<br>
+&nbsp;&nbsp;banana.isRound := False;<br>
+&nbsp;&nbsp;banana.length&nbsp;&nbsp;:= 7.65;<br>
+&nbsp;&nbsp;banana.width&nbsp;&nbsp; := 1.3;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the attributes of the apple</b></font><br>
+&nbsp;&nbsp;fruit := apple;<br>
+&nbsp;&nbsp;if fruit.isRound<br>
+&nbsp;&nbsp;then ShowMessage(fruit.name +' diameter = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.diameter, ffFixed, 2, 1)+'"')<br>
+&nbsp;&nbsp;else ShowMessage(fruit.name +' length = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.length, ffFixed, 2, 1)+'" width = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.width, ffFixed, 2, 1)+'"');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the attributes of the banana</b></font><br>
+&nbsp;&nbsp;fruit := banana;<br>
+&nbsp;&nbsp;if fruit.isRound<br>
+&nbsp;&nbsp;then ShowMessage(fruit.name +' diameter = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.diameter, ffFixed, 2, 1)+'"')<br>
+&nbsp;&nbsp;else ShowMessage(fruit.name +' length = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.length, ffFixed, 2, 1)+'" width = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FloatToStrF(fruit.width, ffFixed, 2, 1)+'"');<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="record.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Apple diameter = 3.2"<br>&nbsp;&nbsp;
+Banana length = 7.7" width = 1.3"<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

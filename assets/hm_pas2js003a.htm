@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Intializing Variables</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js002.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js004.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+    The term <em><strong>initializing</strong></em> means to assign some value to the variable. 
+	Basically, the actual use of variables comes under the initialization part. In pas2js each data type has some default value which is used when there is no explicitly set value for a given variable. 
+	</td>
+  </tr>
+</table>
+<p>	<strong>Compile Time Initialization:</strong> It means to provide the value to the variable during the compilation of the program. If the programmer didn’t provide any value then the compiler will provide some default value to the variables in some cases.</p>
+<p>Variables are converted without type, because JavaScript lacks a clear type. They are however always initialized, which helps JavaScript engines to optimize.</p>
+<div>
+<strong><u>PAS2JS NOTES:</u></strong><ul>
+    <li>Type casting a <i><b>boolean</i> to <i>integer</b></i>, gives <i>0</i> for <i>false</i> and <i>1</i> for <i>true</i>.</li>
+    <li>Type casting an <i><b>integer</i> to <i>boolean</b></i>, gives <i>false</i> for <i>0</i> and <i>true</i> otherwise.</li>
+    <li>A <b>char</b> is translated to a <b>JS string</b>, because JS lacks a native char type.</li>
+    <li>A <b>char</b> is a single JS char code. An UTF-16 codepoint can contain one or two <b>char</b>.</li>
+    <li><b>Integers overflows</b> at runtime differ from Delphi/FPC, due to the double format.
+      <br><span>For example adding <i>var i: byte = 200; ... i:=i+100;</i> will result in
+      <i>i=300</i> instead of <i>i=44</i> as in Delphi/FPC.
+      When range checking <i>{$R+}</i> is enabled <i>i:=300</i> will raise an ERangeError.</span></li>
+    <li><b>type cast integer to integer</b>, e.g. <i>byte(aLongInt)</i>
+      <ul>
+        <li>with range checking enabled: error if outside range</li>
+        <li>without range checking: emulates the FPC/Delphi behaviour:
+          e.g. <i>byte(value)</i> translates to <i>value &amp; 0xff</i>,
+          <i>shortint(value)</i> translates to <i>value &amp; 0xff &lt;&lt;24 &gt;&gt; 24.</i></li>
+      </ul>
+    </li>
+    <li>The <b>mod-operator</b> works 32-bit signed in JS.</li>
+	
+	<li><b>Strings</b> are translated to JavaScript strings. They are initialized with <b>""</b>
+    and are never <b>null.</b></li>
+	<li>There are no <b><i>ShortString, AnsiString or RawByteString</i>.
+    <i>Unicodestring</i> and <i>Widestring</i></b> are alias of <i>String</i>.</li>
+	<li>JavaScript strings are immutable, which means
+    that changing a single character in a string, creates a new string. So a <i>s[2]:='c';</i>
+    is a slow operation in pas2js compared to Delphi/FPC.</li>
+    </ul>	
+	<p><b>_____</b> Although pas2js creates .js files encoded as UTF-8 with BOM, JavaScript strings are
+    UTF-16 at runtime. Keep in mind that one UTF-16 codepoint can need two <i>char</i>,
+    and a visible glyph can need several codepoints. Same as in Delphi.</p>	
+</div>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+{ filename: project1.lpr }
+program project1;
+
+{$mode objfpc}
+
+uses
+  Classes, SysUtils, JS;
+
+type
+  TForm = class
+  end;
+
+const
+  c1: integer=3;
+  c2 = 'abc';
+  c3 = 234;
+  c4 = 12.45;
+  c5 = nil;
+var
+  v1: string;
+  v2,v3: double;
+  v4 :byte=0;
+  v5 :TForm;
+  v6 :TIdentMapEntry;
+  v7 :string='abcäöü';
+  v8 :char='c';
+  v9 :array of byte;
+begin
+  // Your code here
+  
+end.
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Classes","SysUtils","JS"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass($mod,"TForm",pas.System.TObject,function () {
+  });
+  this.c1 = 3;
+  this.c2 = "abc";
+  this.c3 = 234;
+  this.c4 = 12.45;
+  this.c5 = null;
+  this.v1 = "";
+  this.v2 = 0.0;
+  this.v3 = 0.0;
+  this.v4 = 0;
+  this.v5 = null;
+  this.v6 = pas.Classes.TIdentMapEntry.$new();
+  this.v7 = "abcäöü";
+  this.v8 = "c";
+  this.v9 = [];
+  $mod.$main = function () {
+  };
+});
+</code></pre></div>
+</div>
+</body>
+</html>

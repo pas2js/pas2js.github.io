@@ -1,0 +1,141 @@
+<!-- (0048)TBits -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TBits command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TBits, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TBits</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">An object that can hold an infinite number of Boolean values</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Classes</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>TBits</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>TBits</b></font> type holds a flexible collection of bits (Boolean values). 
+<br>&nbsp;<br>
+The colection size can be altered at any time (using the <b>size</b> property).
+<br>&nbsp;<br>
+Bits are accessed using the <b>Bits</b> property, like this :
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>flag := myBits.Bits[2];</font></font>
+<br>&nbsp;<br>
+or, more simply:
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>flag := myBits[2];</font></font>
+<br>&nbsp;<br>
+There is one utility function - <b>OpenBit</b> - which returns the index of the first false value. There is no equivalent for true values.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="array.htm">Array</a></b></td>
+<td width="8"></td>
+<td align="left">A data type holding indexable collections of data</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="boolean.htm">Boolean</a></b></td>
+<td width="8"></td>
+<td align="left">Allows just <b>True</b> and <b>False</b> values</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A simple example</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;flags : <font color=#C00000><b>TBits</b></font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Our variable collection of Boolean values</b></font><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create our TBits object</b></font><br>
+&nbsp;&nbsp;flags := TBits.Create;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Add a few items to our Boolean flags collection</b></font><br>
+&nbsp;&nbsp;flags.Size := 5;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And set a few values</b></font><br>
+&nbsp;&nbsp;flags[0] := true;<br>
+&nbsp;&nbsp;flags[1] := true;<br>
+&nbsp;&nbsp;flags[4] := true;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now display the contents of the collection</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note that indexing starts at 0</b></font><br>
+&nbsp;&nbsp;for i := 0 to flags.Size-1 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if flags[i] = true<br>
+&nbsp;&nbsp;&nbsp;&nbsp;then ShowMessageFmt('Bit %d is true',[i])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else ShowMessageFmt('Bit %d is false',[i]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// TBits has one main method -</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// to find the index of the first false value</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('Index of the first false value is %d',[flags.OpenBit]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="tbits&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Bit 0 is true<br>&nbsp;&nbsp;
+Bit 1 is true<br>&nbsp;&nbsp;
+Bit 2 is false<br>&nbsp;&nbsp;
+Bit 3 is false<br>&nbsp;&nbsp;
+Bit 4 is true<br>&nbsp;&nbsp;
+Index of the first false value is 2<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

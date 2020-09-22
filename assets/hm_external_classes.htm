@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>External Classes</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">External Classes</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_partial_classes.htm">Previous</a>&nbsp;
+     <a href="hm_class_variables.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">External&nbsp;Classes&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Classes&nbsp;can&nbsp;be&nbsp;marked&nbsp;as&nbsp;external,&nbsp;in&nbsp;which&nbsp;case&nbsp;they’re&nbsp;meant&nbsp;to&nbsp;expose&nbsp;classes&nbsp;that&nbsp;are&nbsp;not&nbsp;implemented&nbsp;in&nbsp;the&nbsp;script,&nbsp;and&nbsp;unlike&nbsp;interfaces,&nbsp;then&nbsp;can&nbsp;define&nbsp;fields.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Following&nbsp;example&nbsp;(taken&nbsp;from&nbsp;the&nbsp;w3regex&nbsp;RTL&nbsp;unit)&nbsp;wraps&nbsp;JavaScript&nbsp;class&nbsp;RegExp</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;JRegExp&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">external</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;'RegExp'</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Create(regularExpression,&nbsp;&nbsp;flags:&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">overload</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Create(regularExpression:&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">overload</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Exec(s:&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;&nbsp;TStrArray;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">external</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;'exec';</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Test(s:&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;&nbsp;Boolean;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">external</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;'test';</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;global&nbsp;&nbsp;:&nbsp;&nbsp;Boolean;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;ignoreCase&nbsp;&nbsp;:&nbsp;&nbsp;Boolean;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;lastIndex&nbsp;&nbsp;:&nbsp;&nbsp;Integer;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;multiline&nbsp;&nbsp;:&nbsp;&nbsp;Boolean;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;source&nbsp;&nbsp;:&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">An&nbsp;external&nbsp;name&nbsp;can&nbsp;be&nbsp;provided&nbsp;for&nbsp;an&nbsp;external&nbsp;field.</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">External&nbsp;classes&nbsp;can&nbsp;be&nbsp;subclassed.&nbsp;All&nbsp;external&nbsp;classes&nbsp;are&nbsp;parented&nbsp;from&nbsp;the&nbsp;JObject&nbsp;class.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-style: normal;">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;FField:&nbsp;&nbsp;Integer;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">external</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&quot;Hello&quot;;&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!-- (0063)Move&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Move command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Move, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Move</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Copy bytes of data from a source to a destination</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>Move</b></font>
+
+(
+const SourcePointer; var DestinationPointer;<b> CopyCount</b> : Integer
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Move</b></font> procedure is a badly named method of copying a section of memory from one place to another.
+<br>&nbsp;<br>
+<b>CopyCount</b> bytes are copied from storage referenced by <b>SourcePointer</b> and written to <b>DestinationPointer</b>
+<br>&nbsp;<br>
+It can be used to take a copy of a substring from one string and overlay it on top of part of another string.
+<br>&nbsp;<br>
+If copying from the current string to another part of the same string, then <b>Copy</b> works intelligently, preserving data where appropriate.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The original data is always preserved, unless moving fronm and to the current string - so <font color=#996600><b>Move</b></font> is not very informative.<br>
+<br>
+There is no checking on the referenced storage areas - be careful about all direct storage operations such as this.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="ansireplacestr.htm">AnsiReplaceStr</a></b></td>
+<td width="8"></td>
+<td align="left">Replaces a part of one string with another</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="concat.htm">Concat</a></b></td>
+<td width="8"></td>
+<td align="left">Concatenates one or more strings into one string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="copy.htm">Copy</a></b></td>
+<td width="8"></td>
+<td align="left">Create a copy of part of  a string or an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="delete">Delete</a></b></td>
+<td width="8"></td>
+<td align="left">Delete a section of characters from a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="insert.htm">Insert</a></b></td>
+<td width="8"></td>
+<td align="left">Insert a string into another string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="stringofchar.htm">StringOfChar</a></b></td>
+<td width="8"></td>
+<td align="left">Creates a string with one character repeated many times</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="stringreplace.htm">StringReplace</a></b></td>
+<td width="8"></td>
+<td align="left">Replace one or more substrings found within a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="stuffstring.htm">StuffString</a></b></td>
+<td width="8"></td>
+<td align="left">Replaces a part of one string with another</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="wraptext.htm">WrapText</a></b></td>
+<td width="8"></td>
+<td align="left">Add line feeds into a string to simulate word wrap</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Copying a part of one string into the middle of another</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;<font color=#008000>// The System unit does not need to be defined</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;source, dest : string;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up our starting string</b></font><br>
+&nbsp;&nbsp;source := '123456789';<br>
+&nbsp;&nbsp;dest&nbsp;&nbsp; := '---------';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Copy a substring from source into the middle of dest</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>Move</b></font>(source[5], dest[3], 4);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the source and destination strings</b></font><br>
+&nbsp;&nbsp;WriteLn('Source = '+source);<br>
+&nbsp;&nbsp;WriteLn('Dest&nbsp;&nbsp; = '+dest);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="move.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Source = 123456789<br>&nbsp;&nbsp;
+Dest&nbsp;&nbsp; = --5678---<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

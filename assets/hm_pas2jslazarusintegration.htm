@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<!--<link type="text/css" href="css/custom.css" rel="stylesheet" />-->
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="application/javascript" src="js/project1.js"></script>
+<style>
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+p {padding:5px; line-height:1.5em;}
+.fishname{font-size:xx-large;text-align:center;font-style:italic;color:#FFF;font-weight:700;padding:3px}.fishname2{background:0 to(#000));font-size:xx-large;text-align:center}.aboutText{font-family:sans-serif;font-size:medium;color:#FFF;font-weight:700;text-align:left;padding:3px}.captiondiv{background: -moz-linear-gradient(#0DDAE2, #222222) repeat scroll 0 0 #222222;background: -webkit-gradient(linear, left top, left bottom, from(#0DDAE2), to(#222222));;padding:3px 0 5px 3px}.divpadding{height:100%;width:100%;padding:3px}table th{padding:10px}.memoDiv{font-size: larger;background-color:#FFF;height:80px;width:100%;overflow:auto;border-style:inset;border-width:1px;padding:3px}.imageDiv{padding-top:6px;background-color:#FFF;text-align:center;border-style:inset;border-width:1px}.innerTable{height:80%;width:100%}.outerTable{height:340px;width:800px;background-color:#DADBDC}.outerTableDiv{width:800px;border-style:outset;border-width:2px}td.innertable{background:0 to(#222222));height:100%;width:100%;vertical-align:top}table.detailstable{background: -moz-linear-gradient(#565656, #222222) repeat scroll 0 0 #222222;background: -webkit-gradient(linear, left top, left bottom, from(#565656), to(#222222));;border:1px solid #2A2A2A;color:#FFF;font-weight:400;border-collapse:collapse;font-size:Smaller;font-family:sans-serif;width:100%;height:75%;border-style:inset;border-width:1px}td.detailstable{width:25%;text-align:left;color:#000;background-color:#FFF;border-style:inset;border-width:1px;padding:2px}th.detailstable{text-align:left;border-style:inset;border-width:1px;padding:3px};
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Lazarus Integration for Pas2JS</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js002.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+<tbody style="line-height: 1.45;">
+  <tr>
+	<td>
+
+<h2><span id="gs" class="mw-headline" style="font-size: 22px;font-weight: bold;color: #314e64;"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"/> Lazarus IDE for Pas2JS</span></h2>
+
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"><img id="callout-icon" src="tipbulb.gif" width="32" height="32" border="0" alt="tipbulb"/>The Lazarus integration of pas2js is still under construction, but deep integration with lazarus is planned. For instance, it's on the oven a widget tool named PJ-Suite that claims to use the Delphi/Lazarus and its form designer to create web applications. Just drop components onto a form and set up at the objector inspector, the events and the properties. All of the above is great and it will no doubt give us the same benefits as Delphi/Lazarus developers currently enjoy. The whole point is that building your GUI using <strong>RAD</strong> is faster.  </span></p>
+
+<p style="padding: 5px 5px 5px 50px;font-size:smaller;border: 1px solid #ddd; color: black; background-color: #efefef;">Rapid application development (RAD) is a development process that allows a developer to quickly proceed from an application design to a fully-functional application by tightly integrating the design portion of application development with the coding/compilation/deployment portion of development.</p> 
+
+
+<p>Lazarus IDE brings the productivity features of a desktop IDE to web applications. Since Lazarus understands the concept of <strong>external classes</strong> as used by pas2js, <strong>the code completion</strong> will work! Just take a look how to proceed:</p> 
+
+	</td>
+  </tr>
+</tbody>  
+</table>
+
+<div id="contentdiv" class="contentdiv"><div class="outerTableDiv" ><table class="outerTable"><tr><td class="innertable" style="width:100%"><table class="innerTable"><tr><td class="innertable" style="width: 50%"><div class="divpadding"><table id="fishimageandtitle" class="innerTable"><tr><td class="innertable"><div class="imagediv"> <img id="image" src="pics/100.png" style="background-color:black;"/></div></td></tr><tr><td><div class="divpadding"><table class="innerTable"><tr><td><div class="captiondiv"><span id="about" class="aboutText">Lazarus Integration of pas2js</span></div></td></tr><tr><td class="innertable"><div id="memo" class="memoDiv">Lazarus integration of pas2js</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td class="innertable" colspan="2"><table style="padding: 5px; width: 150px; height: 35px; margin-left: auto; margin-right: auto;"><tbody><tr><td><button id="up" type="button" style="width: 100px; height: 32px; ">Previous</button></td><td><button id="down" type="button" style="width: 100px; height: 32px;">Next</button></td></tr></tbody></table></td></tr></table></td><td class="innertable" style="WIDTH: 0%"><table class="innerTable"><tr><td class="innerTable"><select id="l" onchange="onSelectionChange()" size="4" style="border-style: none; width: 100%; height: 100%"></select></td></tr></table></td></tr></table></div></div>
+<br><br>
+<h3><span id="inst" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> pas2js.cfg</span></h3>
+<p>You can create a simple config (pas2js.cfg) and put at the location of the pas2js binary and adapt the paths <em>e.g. bin/pas2js.cfg</em>. </p>
+
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"><img id="callout-icon" src="tipbulb.gif" width="32" height="32" border="0" alt="tipbulb"/>
+To let the compiler find the RTL and packages, you need to set up correctly the pas2js.cfg config file. 
+Move the rtl.js file to a folder <em>e.g. D:\FPC2JS\dist</em>,<br> this file is usually located under <strong>pas2js/compiler/utils/pas2js/dist</strong>, because it is tightly coupled to the compiler, not to the rtl. 
+From now on, the dependency is not necessary when compiling.</span><span class="f_HowToBulleted" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff; text-decoration: underline;"></span></p>
+
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em; width: 80%;"><pre style="margin: 0; line-height: 125%">
+#
+# Minimal config file for pas2js compiler
+#
+# -d is the same as #DEFINE
+# -u is the same as #UNDEF
+#
+# Write always a nice logo ;)
+-l
+
+# Display Warnings, Notes and Hints
+-vwnh
+# If you don't want so much verbosity use
+#-vw
+
+-Fu$CfgDir\..\packages\*
+-Fu$CfgDir\..\..\dist\
+
+#IFDEF nodejs
+-Jirtl.js
+#ENDIF
+
+# Put all generated JavaScript into one file
+-Jc
+
+# Allow C-operators
+-Sc
+# end.
+</pre></div>
+
+<br>
+
+<script type="application/javascript">window.onload = function(){rtl.run();}</script>
+</body>
+</html>

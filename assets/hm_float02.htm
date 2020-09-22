@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>MyTopic</title>
+   <meta name="keywords" content="Exp,Ln,Log10,Log2,LogN,Max,Min,Power,Sqr,Sqrt" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Transcendental functions (Float)</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table align="center" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px;"><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" bgcolor="#bcf6bb" style="width:1000px; height:31px; background-color:#bcf6bb; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #006400;">Example code : Exp, Ln, Log10, Log2, LogN, Max, Min, Power, Sqr, Sqrt</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="1000" style="width:1000px; border-color : #c0c0c0 #000000 #000000 #c0c0c0; border-style: solid; border-width: 1px;"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button21Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:&nbsp;Double;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int1,&nbsp;int2,&nbsp;int3&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;number,&nbsp;squared&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;num,&nbsp;squareRoot&nbsp;:&nbsp;Extended;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Calculate&nbsp;the&nbsp;exponent&nbsp;of&nbsp;2</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Get&nbsp;the&nbsp;natural&nbsp;logarithm&nbsp;of&nbsp;2</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Ln(</span><span class="f_CodeExample" style="color: #0000ff;">2</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Show&nbsp;this&nbsp;value</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Ln(2)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Get&nbsp;the&nbsp;exponent&nbsp;of&nbsp;this&nbsp;value&nbsp;-&nbsp;reverses&nbsp;the&nbsp;Ln&nbsp;operation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Exp(v);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Show&nbsp;this&nbsp;value</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Exp(Ln(2))&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Get&nbsp;the&nbsp;natural&nbsp;logarithm&nbsp;of&nbsp;2</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Ln(</span><span class="f_CodeExample" style="color: #0000ff;">2</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Show&nbsp;this&nbsp;value</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Ln(2)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Get&nbsp;the&nbsp;exponent&nbsp;of&nbsp;this&nbsp;value&nbsp;-&nbsp;reverses&nbsp;the&nbsp;Ln&nbsp;operation</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Exp(v);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Show&nbsp;this&nbsp;value</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Exp(Ln(2))&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Show&nbsp;the&nbsp;Log&nbsp;to&nbsp;base&nbsp;10&nbsp;values&nbsp;of&nbsp;3&nbsp;numbers</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Log10(1)&nbsp;&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Log10(</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Log10(5)&nbsp;&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Log10(</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Log10(10)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(Log10(</span><span class="f_CodeExample" style="color: #0000ff;">10</span><span class="f_CodeExample" style="color: #000000;">)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Example&nbsp;code&nbsp;:&nbsp;Illustrate&nbsp;integer&nbsp;use&nbsp;of&nbsp;Max</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int1&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">37</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int2&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">38</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int3&nbsp;:=&nbsp;Max(int1,&nbsp;int2);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'int1&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(int1));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'int2&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(int2));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Max(int1,&nbsp;int2)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(int3));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//Illustrating&nbsp;Max&nbsp;of&nbsp;mixed&nbsp;number&nbsp;types</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int1&nbsp;&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">37</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">37</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Max(v,&nbsp;int1);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Max(v,&nbsp;int1)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Illustrate&nbsp;integer&nbsp;use&nbsp;of&nbsp;Min</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int1&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">37</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int2&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">38</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int3&nbsp;:=&nbsp;Min(int1,&nbsp;int2);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'int1&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(int1));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'int2&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(int2));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Min(int1,&nbsp;int2)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+IntToStr(int3));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//Illustrating&nbsp;Min&nbsp;of&nbsp;mixed&nbsp;number&nbsp;types</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;int1&nbsp;&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">38</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">37</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">5</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Min(v,&nbsp;int1);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Min(v,&nbsp;int1)&nbsp;=&nbsp;'</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr(v));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//Find&nbsp;the&nbsp;square&nbsp;of&nbsp;various&nbsp;values</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;square&nbsp;of&nbsp;15&nbsp;=&nbsp;225</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;number&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">15</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;squared&nbsp;:=&nbsp;Sqr(number);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'%d&nbsp;squared&nbsp;=&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,[number,&nbsp;squared]));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;square&nbsp;of&nbsp;17&nbsp;=&nbsp;289</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;But&nbsp;result&nbsp;exceeds&nbsp;byte&nbsp;size,&nbsp;so&nbsp;result&nbsp;=&nbsp;289&nbsp;MOD&nbsp;256&nbsp;=&nbsp;33</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;number&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">17</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;squared&nbsp;:=&nbsp;Sqr(number);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'%d&nbsp;squared&nbsp;=&nbsp;%d&nbsp;(see&nbsp;code&nbsp;above)'</span><span class="f_CodeExample" style="color: #000000;">,[number,&nbsp;squared]));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;square&nbsp;of&nbsp;infinity&nbsp;is&nbsp;still&nbsp;infinity</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Infinity;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;:=&nbsp;Sqr(v);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'Infinity&nbsp;squared&nbsp;=&nbsp;%f'</span><span class="f_CodeExample" style="color: #000000;">,[v]));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'=========='</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//Find&nbsp;the&nbsp;square&nbsp;root&nbsp;of&nbsp;various&nbsp;values</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;square&nbsp;root&nbsp;of&nbsp;225&nbsp;=&nbsp;15</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;number&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">225</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;squareRoot&nbsp;:=&nbsp;Sqrt(number);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'Square&nbsp;root&nbsp;of&nbsp;%f&nbsp;=&nbsp;%f'</span><span class="f_CodeExample" style="color: #000000;">,[number,&nbsp;squareRoot]));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;square&nbsp;root&nbsp;of&nbsp;3.456&nbsp;=&nbsp;1.859...</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;num&nbsp;&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">3</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">456</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;squareRoot&nbsp;:=&nbsp;Sqrt(num);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'Square&nbsp;root&nbsp;of&nbsp;%7.3f&nbsp;=&nbsp;%12.12f'</span><span class="f_CodeExample" style="color: #000000;">,[num,&nbsp;squareRoot]));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;The&nbsp;square&nbsp;root&nbsp;of&nbsp;infinity&nbsp;is&nbsp;still&nbsp;infinity</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;num&nbsp;:=&nbsp;Infinity;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;num&nbsp;:=&nbsp;Sqrt(num);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'Square&nbsp;root&nbsp;of&nbsp;Infinity&nbsp;=&nbsp;%f'</span><span class="f_CodeExample" style="color: #000000;">,[num]));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Ln(2)&nbsp;=&nbsp;0.693147180559945</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Exp(Ln(2))&nbsp;=&nbsp;1.9999999999999993</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">==========</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Ln(2)&nbsp;=&nbsp;0.693147180559945</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Exp(Ln(2))&nbsp;=&nbsp;1.9999999999999993</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">==========</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Log10(1)&nbsp;&nbsp;=&nbsp;0</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Log10(5)&nbsp;&nbsp;=&nbsp;0.698970004336019</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Log10(10)&nbsp;=&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">==========</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">int1&nbsp;=&nbsp;37</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">int2&nbsp;=&nbsp;38</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Max(int1,&nbsp;int2)&nbsp;=&nbsp;38</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">==========</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Max(v,&nbsp;int1)&nbsp;=&nbsp;37.5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">==========</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">int1&nbsp;=&nbsp;37</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">int2&nbsp;=&nbsp;38</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Min(int1,&nbsp;int2)&nbsp;=&nbsp;37</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">==========</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Min(v,&nbsp;int1)&nbsp;=&nbsp;37.5</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">==========</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">15&nbsp;squared&nbsp;=&nbsp;225</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">17&nbsp;squared&nbsp;=&nbsp;289&nbsp;(see&nbsp;code&nbsp;above)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Infinity&nbsp;squared&nbsp;=&nbsp;Infinity</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">==========</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Square&nbsp;root&nbsp;of&nbsp;225&nbsp;=&nbsp;15</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Square&nbsp;root&nbsp;of&nbsp;&nbsp;&nbsp;3.456&nbsp;=&nbsp;1.859032006180</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Square&nbsp;root&nbsp;of&nbsp;Infinity&nbsp;=&nbsp;Infinity&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<p class="p_BodyText"><span class="f_BodyText">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="18"><img id="$TOGGLE0186A1_ICON" src="mytoggle_plus1.gif" width="9" height="9" border="0" alt="mytoggle_plus1"></td><td><span class="f_BodyText"><a class="dropdown-toggle" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">JS output</a></span></td></tr></table></div><div style="text-align: left; text-indent: -18px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 18px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button21Click(</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Self</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;Sender$19)&nbsp;{</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;v$5&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;int1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;int2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;int3&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;number&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;squared&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;num&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;squareRoot&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">693147180559945</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Ln(2)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$5)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;Math.exp(v$5);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Exp(Ln(2))&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$5)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">0</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">693147180559945</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Ln(2)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$5)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;Math.exp(v$5);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Exp(Ln(2))&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$5)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Log10(1)&nbsp;&nbsp;=&nbsp;0&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Log10(5)&nbsp;&nbsp;=&nbsp;0.698970004336019&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Log10(10)&nbsp;=&nbsp;1&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">37</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">38</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int3&nbsp;=&nbsp;Math.max(int1,int2);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;int1&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+int1.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;int2&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+int2.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Max(int1,&nbsp;int2)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+int3.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">37</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">37</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;Math.max(v$5,int1);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Max(v,&nbsp;int1)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$5)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">37</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int2&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">38</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int3&nbsp;=&nbsp;Math.min(int1,int2);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;int1&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+int1.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;int2&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+int2.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Min(int1,&nbsp;int2)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+int3.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">38</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">37</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">5</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;Math.min(v$5,int1);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Min(v,&nbsp;int1)&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+FloatToStr$_Float_(v$5)));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">15</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squared&nbsp;=&nbsp;(number*number);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((number.toString()+</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;squared&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+squared.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">17</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squared&nbsp;=&nbsp;(number*number);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((number.toString()+</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;squared&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+squared.toString()+</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;(see&nbsp;code&nbsp;above)&quot;</span><span class="f_CodeExample" style="color: #000000;">));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;Infinity;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v$5&nbsp;=&nbsp;(v$5*v$5);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Infinity&nbsp;squared&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+v$5.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;==========&quot;</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">225</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squareRoot&nbsp;=&nbsp;Math.sqrt(number);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Square&nbsp;root&nbsp;of&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+number.toString()+</span><span class="f_CodeExample" style="color: #0000ff;">&quot;&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+squareRoot.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;=&nbsp;</span><span class="f_CodeExample" style="color: #800000;">3</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #800000;">456</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;squareRoot&nbsp;=&nbsp;Math.sqrt(num);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">(Format(</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Square&nbsp;root&nbsp;of&nbsp;%7.3f&nbsp;=&nbsp;%12.12f&quot;</span><span class="f_CodeExample" style="color: #000000;">,[num,&nbsp;squareRoot]));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;=&nbsp;Infinity;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num&nbsp;=&nbsp;Math.sqrt(num);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">WriteLn</span><span class="f_CodeExample" style="color: #000000;">((</span><span class="f_CodeExample" style="color: #0000ff;">&quot;Square&nbsp;root&nbsp;of&nbsp;Infinity&nbsp;=&nbsp;&quot;</span><span class="f_CodeExample" style="color: #000000;">+num.toString()));</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;}</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','mytoggle_plus0.gif','hm.src1','mytoggle_plus1.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+}
+</script>
+</body>
+</html>

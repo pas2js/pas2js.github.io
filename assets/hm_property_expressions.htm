@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Property expressions</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Property expressions</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_constructors_and_destructors.htm">Previous</a>&nbsp;
+     <a href="hm_anonymous_classes.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Property expressions</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In Object Pascal a property is an exposed value that can either be linked to a class-field or a class-member method. This is the traditional way of exposing a value property, where the consumer of the property is abstracted from the reader and writer logic. The consumer does not know if the property is explicitly linked to a field or a writer method.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Smart Pascal has full support for the older paradigm but introduces a technique called &quot;</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">property expressions</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&quot;. It basically allows you to program reader and writer logic as a part of property declarations. This is completely unheard of under traditional Object Pascal, but common in other languages like C# and Objective-C.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">In classical Object Pascal you could write something like this:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Type</span><br>
+<span class="f_CodeExample" style="color: #000000;">TMyObject&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Class</span><span class="f_CodeExample" style="color: #000000;">(&nbsp;..&nbsp;)</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">private</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;FSubObj:&nbsp;TNameData;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">protected</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;getFirstName:</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;setFirstName(value:</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">published</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FirstName:</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;getFirstName&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;setFirstName;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TMyObject.getFirstName:</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;result:=FSubObj.FirstName;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TMyObject.setFirstName(value:</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;FSubObj.FirstName:=Value;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Using </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Smart Pascal with property expressions</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">, you can omit the </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">getFirstName</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">() and </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">setFirstName</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">() stubs - and implement the logic as part of the property declaration itself:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FirstName:</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(&nbsp;FSubObject.FirstName&nbsp;)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(&nbsp;FSubObject.FirstName&nbsp;);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Property expressions</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> is especially handy for classes with child objects. If a class exposes sub objects (object lists) you had, prior to generics, to write a lot of the same code over and over again, wrapping already existing code in a list object - which for complex class hierarchies reduces execution speed with unnecessary bloat. This has changed for the better with the introduction of generics, but you still have to isolate reader and writer logic in distinct class members. </span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Under Smart Pascal this is elegantly achieved using </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">arrays</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">TMyClass&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">private</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FList&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TElement;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Items[i:&nbsp;Integer]&nbsp;:&nbsp;TElement&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(FList[i])&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(FList[i]);&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">default</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Count&nbsp;:&nbsp;Integer&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(FList.Length);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The technique greatly simplifies number conversion, which can in some cases be done directly in the declaration:</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">TMyAngle&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">record</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">private</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAngle&nbsp;:&nbsp;Float;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Radians&nbsp;:&nbsp;Float&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FAngle&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FAngle;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Degrees&nbsp;:&nbsp;Float&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(RadToDeg(FAngle))&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(FAngle:=DegToRad(Value));</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">See <a href="hm_classes.htm">Properties</a></span></p>
+
+</td></tr></table>
+
+</body>
+</html>

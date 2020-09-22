@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Function Pointer ex03</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js182.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js184.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Function Pointer example 03
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TMyFunc = function(s: String): String;
+
+type
+  TMyRec = record
+    Proc1: TMyFunc;
+    Proc2: TMyFunc;
+  end;
+
+type
+  TMyClass = class
+    FRec: TMyRec;
+    FAFunc: TMyFunc;
+    procedure WriteLn;
+    function GetProc1: TMyFunc;
+    procedure SetProc1(f: TMyFunc);
+    property AFunc: TMyFunc read FAFunc write FAFunc;
+  end;
+
+procedure TMyClass.WriteLn;
+begin
+  WriteLn(FRec.Proc1('World'));
+  WriteLn(FRec.Proc2('world!'));
+  WriteLn(FAFunc('world'));
+end;
+
+function TMyClass.GetProc1: TMyFunc;
+begin
+  Result := FRec.Proc1;
+end;
+
+procedure TMyClass.SetProc1(f: TMyFunc);
+begin
+  FRec.Proc1 := f;
+end;
+
+function Func1(s: String): String;
+begin
+  Result := 'Hello ' + s;
+end;
+
+function Func2(str: String): String;
+begin
+  Result := 'ByeBye ' + str;
+end;
+
+function Func3(str: String): String;
+begin
+  Result := 'Ho ho ho ' + str;
+end;
+
+var
+o := TMyClass.Create;
+
+o.FRec.Proc1 := Func1;
+o.FRec.Proc2 := Func2;
+o.AFunc := Func3;
+
+o.WriteLn;
+
+WriteLn(o.GetProc1()('get'));
+
+WriteLn(o.AFunc('direct prop'));
+
+var old: TMyFunc := o.GetProc1();
+o.SetProc1(Func2);
+
+WriteLn(old('old'));
+old := o.FRec.Proc1;
+WriteLn(old('new'));
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+Hello World
+ByeBye world!
+Ho ho ho world
+Hello get
+Ho ho ho direct prop
+Hello old
+ByeBye new
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TObject={
+	$ClassName: "TObject",
+	$Parent: null,
+	ClassName: function (s) { return s.$ClassName },
+	ClassType: function (s) { return s },
+	ClassParent: function (s) { return s.$Parent },
+	$Init: function () {},
+	Create: function (s) { return s },
+	Destroy: function (s) { for (var prop in s) if (s.hasOwnProperty(prop)) delete s.prop },
+	Destroy$: function(s) { return s.ClassType.Destroy(s) },
+	Free: function (s) { if (s!==null) s.ClassType.Destroy(s) }
+}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i }
+function $CheckFunc(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Function pointer is nil"+z); }
+function $Check(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Object not instantiated"+z); }
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+function Copy$TMyRec(s,d) {
+   d.Proc1=s.Proc1;
+   d.Proc2=s.Proc2;
+   return d;
+}
+function Clone$TMyRec($) {
+   return {
+      Proc1:$.Proc1,
+      Proc2:$.Proc2
+   }
+}
+var TMyClass = {
+   $ClassName:"TMyClass",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FRec = {Proc1:null,Proc2:null};
+      $.FAFunc = null;
+   }
+   ,WriteLn2:function(Self) {
+      WriteLn($CheckFunc($Check(Self,"").FRec.Proc1,"")("World"));
+      WriteLn($CheckFunc($Check(Self,"").FRec.Proc2,"")("world!"));
+      WriteLn($CheckFunc($Check(Self,"").FAFunc,"")("world"));
+   }
+   ,GetProc1:function(Self) {
+      return $Check(Self,"").FRec.Proc1;
+   }
+   ,SetProc1:function(Self, f) {
+      $Check(Self,"").FRec.Proc1 = f;
+   }
+   ,Destroy:TObject.Destroy
+};
+function Func3(str) {
+   return "Ho ho ho "+str;
+};
+function Func2(str$1) {
+   return "ByeBye "+str$1;
+};
+function Func1(s) {
+   return "Hello "+s;
+};
+var o = null,
+   old = null;
+
+   /*   MAIN JS CODE  */
+
+   o = TObject.Create($New(TMyClass));
+   $Check(o,"").FRec.Proc1 = Func1;
+   $Check(o,"").FRec.Proc2 = Func2;
+   $Check(o,"").FAFunc = Func3;
+   TMyClass.WriteLn2(o);
+   WriteLn($CheckFunc(TMyClass.GetProc1(o),"")("get"));
+   WriteLn($CheckFunc($Check(o,"").FAFunc,"")("direct prop"));
+   old = TMyClass.GetProc1(o);
+   TMyClass.SetProc1(o,Func2);
+   WriteLn($CheckFunc(old,"")("old"));
+   old = $Check(o,"").FRec.Proc1;
+   WriteLn($CheckFunc(old,"")("new"));
+
+</code></pre></div>
+</div>
+</body>
+</html>

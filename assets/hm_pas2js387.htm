@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+.note {padding: 12px;margin: 6px;border-top: 1px;border-right: 1px;border-bottom: 1px;border-left: 1px;border-style: solid;border-color: #D3D3D3;background-color: #E5EFFB;}
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Using Constructors and Destructors</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js386.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js388.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>	
+	<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp; Constructors are special methods used to construct an instance of a class. They normally contain initialization code e.g. code for setting default values for data members, allocating resources, etc.. The objective of constructors is to allocate memory for the object and to initialize the object to a valid state before any processing is done.</div>
+	
+	<p>In Delphi, constructors are defined using the constructor keyword and destructors are defined using the destructor keyword. Delphi, by convention, names its constructor Create and its destructor Destroy, but these names are not requirements. Also, Delphi constructors can be made virtual and the default destructor Destroy is virtual. To invoke a constructor in Delphi, the convention ClassName.ConstructorName is used e.g. if a class named TMyClass has a constructor Create then constructing an instance is done using " := TMyClass.Create;" To invoke the destructor, call the Free method, not the Destroy method e.g. ".Free".</p>
+	
+	<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp; Destructors serve the opposite purpose of constructors. While constructors take care of allocating memory and other resources that the object requires during its lifetime, the destructor's purpose is to ensure that the resources are properly de-allocated as the object is being destroyed, and the memory being used by the object is freed. In Delphi/FPC (i.e. unmanaged environments) the programmer is responsible for ensuring that an object's destructor is called once the object is no longer needed.</div>
+	
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+unit Unit5;
+
+{$mode objfpc}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+ TBase = class
+   constructor Create;
+   destructor Destroy; override;
+ end;
+
+ TDerived = class(TBase)
+   constructor Create;
+   destructor Destroy; override;
+ end;
+
+ TMoreDerived = class(TDerived)
+   constructor Create;
+   destructor Destroy; override;
+ end;
+
+implementation
+
+{ TBase }
+
+constructor TBase.Create;
+begin
+ WriteLn('In TBase.Create');
+ inherited;
+end;
+
+destructor TBase.Destroy;
+begin
+ WriteLn('In TBase.Destroy');
+ inherited;
+end;
+
+{ TDerived }
+
+constructor TDerived.Create;
+begin
+ WriteLn('In TDerived.Create');
+ inherited;
+end;
+
+destructor TDerived.Destroy;
+begin
+ WriteLn('In TDerived.Destroy');
+ inherited;
+end;
+
+{ TMoreDerived }
+
+constructor TMoreDerived.Create;
+begin
+ WriteLn('In TMoreDerived.Create');
+ inherited;
+end;
+
+destructor TMoreDerived.Destroy;
+begin
+ WriteLn('In TMoreDerived.Destroy');
+ inherited;
+end;
+
+end.
+
+
+(* --- main program --- *)
+
+var
+ Foo: TBase;
+begin
+  Foo := TBase.Create;
+  Foo.Free;
+  WriteLn;
+
+  Foo := TDerived.Create;
+  Foo.Free;
+  WriteLn;
+
+  Foo := TMoreDerived.Create;
+  Foo.Free;
+  
+end.
+
+{ --- CONSOLE OUTPUT ----
+	In TBase.Create
+	In TBase.Destroy
+
+	In TDerived.Create
+	In TBase.Create
+	In TDerived.Destroy
+	In TBase.Destroy
+
+	In TMoreDerived.Create
+	In TDerived.Create
+	In TBase.Create
+	In TMoreDerived.Destroy
+	In TDerived.Destroy
+	In TBase.Destroy
+}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("Unit5",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass($mod,"TBase",pas.System.TObject,function () {
+    this.Create$1 = function () {
+      pas.System.Writeln("In TBase.Create");
+      pas.System.TObject.Create.apply(this,arguments);
+    };
+    this.Destroy = function () {
+      pas.System.Writeln("In TBase.Destroy");
+      pas.System.TObject.Destroy.apply(this,arguments);
+    };
+  });
+  rtl.createClass($mod,"TDerived",$mod.TBase,function () {
+    this.Create$2 = function () {
+      pas.System.Writeln("In TDerived.Create");
+      $mod.TBase.Create$1.apply(this,arguments);
+    };
+    this.Destroy = function () {
+      pas.System.Writeln("In TDerived.Destroy");
+      $mod.TBase.Destroy.apply(this,arguments);
+    };
+  });
+  rtl.createClass($mod,"TMoreDerived",$mod.TDerived,function () {
+    this.Create$3 = function () {
+      pas.System.Writeln("In TMoreDerived.Create");
+      $mod.TDerived.Create$2.apply(this,arguments);
+    };
+    this.Destroy = function () {
+      pas.System.Writeln("In TMoreDerived.Destroy");
+      $mod.TDerived.Destroy.apply(this,arguments);
+    };
+  });
+});
+
+rtl.module("program",["System","Classes","SysUtils","Unit5"],function () {
+  "use strict";
+  var $mod = this;
+  this.Foo = null;
+  $mod.$main = function () {
+    $mod.Foo = pas.Unit5.TBase.$create("Create$1");
+    rtl.free($mod,"Foo");
+    pas.System.Writeln();
+    $mod.Foo = pas.Unit5.TDerived.$create("Create$2");
+    rtl.free($mod,"Foo");
+    pas.System.Writeln();
+    $mod.Foo = pas.Unit5.TMoreDerived.$create("Create$3");
+    rtl.free($mod,"Foo");
+  };
+});
+
+
+</code></pre></div>
+</div>
+</body>
+</html>

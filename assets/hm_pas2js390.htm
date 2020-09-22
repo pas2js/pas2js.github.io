@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+.note {padding: 12px;margin: 6px;border-top: 1px;border-right: 1px;border-bottom: 1px;border-left: 1px;border-style: solid;border-color: #D3D3D3;background-color: #E5EFFB;}
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Using Exceptions</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js389.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js391.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>	
+	<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp; Exceptions provide a uniform mechanism for handling errors. Exceptions are created and raised or thrown when the code enters a condition that it cannot or should not handle by itself. Once the exception is raised or thrown, the exception handling mechanism breaks out of the normal flow of code execution and searches for an appropriate exception handler. If an appropriate exception handler is found, then the error condition is handled in an appropriate manner and normal code execution resumes. Otherwise, the application is assumed to be in an unstable / unpredictable state and exits with an error.</div>
+	
+	<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp; Delphi provides the <strong>raise keyword</strong> to create an exception and a <strong>try...except</strong> and <strong>try...finally</strong> construct (but no unified try...except...finally construct though a try...finally block can be nested within a try...except block to emulate this behavior) for exception handling. Code written in a <strong>try block</strong> is executed and if an exception occurs, the exception handling mechanism searches for an appropriate except block to handle the exception. The <strong>on keyword</strong> is used to specify which exceptions an except block can handle. A single <strong>except block</strong> can contain multiple on keywords. If the on keyword is not used, then the except block will handle all exceptions. Code written in a <strong>finally block</strong> is guaranteed to execute regardless of whether or not an exception is raised.</div>
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+unit Unit8;
+
+{$mode objfpc}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+ EMyException = class(Exception);
+
+ TMyClass = class
+ public
+   procedure MyMethod;
+   constructor Create;
+   destructor Destroy; override;
+ end;
+
+implementation
+
+{ TMyClass }
+
+procedure TMyClass.MyMethod;
+begin
+ WriteLn('Entering TMyClass.MyMethod');
+ raise EMyException.Create('Exception raised in TMyClass.MyMethod!');
+ WriteLn('Leaving TMyClass.MyMethod'); // this should never get executed
+end;
+
+constructor TMyClass.Create;
+begin
+ inherited Create;
+ WriteLn('In TMyClass.Create');
+end;
+
+destructor TMyClass.Destroy;
+begin
+ WriteLn('In TMyClass.Destroy');
+ inherited Destroy;
+end;
+
+end.
+
+{ *** main program *** }
+
+var
+ MyClass: TMyClass;
+
+begin
+  MyClass := TMyClass.Create;
+  try
+    try
+      MyClass.MyMethod;
+    except
+      on EMyException do
+        WriteLn('Caught an EMyException!');
+    end;
+  finally
+    MyClass.Free;
+  end;
+  
+end.
+{ --- CONSOLE OUTPUT ---- }
+(*
+	In TMyClass.Create
+	Entering TMyClass.MyMethod
+	Caught an EMyException!
+	In TMyClass.Destroy
+*)
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("Unit8",["System","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass($mod,"EMyException",pas.SysUtils.Exception,function () {
+  });
+  rtl.createClass($mod,"TMyClass",pas.System.TObject,function () {
+    this.MyMethod = function () {
+      pas.System.Writeln("Entering TMyClass.MyMethod");
+      throw $mod.EMyException.$create("Create$1",["Exception raised in TMyClass.MyMethod!"]);
+      pas.System.Writeln("Leaving TMyClass.MyMethod");
+    };
+    this.Create$1 = function () {
+      pas.System.TObject.Create.call(this);
+      pas.System.Writeln("In TMyClass.Create");
+    };
+    this.Destroy = function () {
+      pas.System.Writeln("In TMyClass.Destroy");
+      pas.System.TObject.Destroy.call(this);
+    };
+  });
+});
+
+rtl.module("program",["System","Classes","SysUtils","Unit8"],function () {
+  "use strict";
+  var $mod = this;
+  this.MyClass = null;
+  $mod.$main = function () {
+    $mod.MyClass = pas.Unit8.TMyClass.$create("Create$1");
+    try {
+      try {
+        $mod.MyClass.MyMethod();
+      } catch ($e) {
+        if (pas.Unit8.EMyException.isPrototypeOf($e)) {
+          pas.System.Writeln("Caught an EMyException!")}
+         else throw $e
+      };
+    } finally {
+      rtl.free($mod,"MyClass");
+    };
+  };
+});
+</code></pre></div>
+</div>
+</body>
+</html>

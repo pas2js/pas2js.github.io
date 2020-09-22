@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>RTL SmartCL</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">RTL SmartCL</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_rtlsystem.htm">Previous</a>&nbsp;
+     <a href="hm_label.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<div style="text-align: left; text-indent: 0px; border-color: #c0c0c0; border-style: solid; border-width: 1px; background: #f0f0f0; padding: 3px 3px 3px 3px; margin: 20px 0px 15px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="20"><img id="$TOGGLE0186A1_ICON" src="tog_minus.gif" width="16" height="16" border="0" alt="tog_minus" title="Click to expand/collapse"></td><td><span class="f_HeadingHowToToggle_atoc_" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"><a class="dropdown-toggle" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #000000; letter-spacing: -1px; background-color: transparent; text-decoration: none;" title="Click to expand/collapse" href="javascript:myToggle('toggle','TOGGLE0186A1','$TOGGLE0186A1_ICON')">TW3TagObj</a></span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table id="TOGGLE0186A1" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">SmartCL.Components</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TW3TagObj = class(TObject)</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">At the top of the control hierarchy is the TW3TagObj class. This is merely a TObject descendant that publishes a TagValue field. In this field programmer can store any integer value.</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Public Methods:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InnerHTML:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;getInnerHTML&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;setInnerHTML;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InnerText:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;getInnerText&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;setInnerText;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ObjectReady:&nbsp;Boolean&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FObjReady;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Owner:&nbsp;THandle&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FOwner;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TagId:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FTagId&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FTagId;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Handle:&nbsp;THandle&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FHandle;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Attached:&nbsp;Boolean&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;getAttached;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Updating:&nbsp;Boolean&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;getUpdating;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;BeginUpdate;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;EndUpdate;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">virtual</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InsertInto(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;OwnerHandle:&nbsp;THandle);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;RemoveFrom;</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Properties:</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;"> &nbsp;  </span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;"> TagValue: Integer;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0px; border-color: #c0c0c0; border-style: solid; border-width: 1px; background: #f0f0f0; padding: 3px 3px 3px 3px; margin: 20px 0px 15px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="20"><img id="$TOGGLE0186A2_ICON" src="tog_minus.gif" width="16" height="16" border="0" alt="tog_minus" title="Click to expand/collapse"></td><td><span class="f_HeadingHowToToggle_atoc_" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;"><a class="dropdown-toggle" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #000000; letter-spacing: -1px; background-color: transparent; text-decoration: none;" title="Click to expand/collapse" href="javascript:myToggle('toggle','TOGGLE0186A2','$TOGGLE0186A2_ICON')">TW3Component</a></span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;"><table id="TOGGLE0186A2" cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top"><p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">TW3Component = class(TW3TagObj)</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Next in hierarchy is the TW3Component. This class describes a non-visual control (a.k.a. a component ). It contains a public Parent property which holds the reference to the control’s parent and a published Name property where you can set the name for the control. This name is used to access control’s properties and methods from the code. </span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Public Methods:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;ChildByName(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;compName:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">):&nbsp;TW3Component;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;ChildByHandle(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aHandle:&nbsp;THandle):&nbsp;TW3Component;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;EnumChildren(childProc:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(child:&nbsp;TW3Component));</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TopLevelParent&nbsp;:&nbsp;TW3Component;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 19px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">Properties:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">public</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Parent:&nbsp;TW3Component&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FParent;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">published</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Name:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;FName&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">write</span><span class="f_CodeExample" style="color: #000000;">&nbsp;setName;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">• ChildByName </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Locates a child component by its name. </span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">• ChildByHandle </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Locates a child component by the handle. </span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">• EnumChildren </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Calls a worker procedure (passed as a parameter) for each child component. </span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">• TopLevelParent </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Returns the top parent control (parent of a parent of a …).</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+<script type="text/javascript">
+if (window.topicInitScriptAvailable) {
+myInitToggle('TOGGLE0186A1','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A1_ICON','hm.type','dropdown','hm.state','0','hm.src0','tog_plus.gif','hm.src1','tog_minus.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A1\',\'\$TOGGLE0186A1_ICON\')');
+myInitToggle('TOGGLE0186A2','hm.type','dropdown','hm.state','0');
+myInitToggle('$TOGGLE0186A2_ICON','hm.type','dropdown','hm.state','0','hm.src0','tog_plus.gif','hm.src1','tog_minus.gif','onclick','myToggle(\'toggle\',\'TOGGLE0186A2\',\'\$TOGGLE0186A2_ICON\')');
+}
+</script>
+</body>
+</html>

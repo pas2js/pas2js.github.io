@@ -1,0 +1,156 @@
+<!-- (0062)Not&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Not command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Not, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Not</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Boolean <b>Not</b> or bitwise <b>not</b> of one arguments</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Not</b> Boolean expression
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Not</b> Integer expression
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Not</b></font> keyword is used in two different ways:
+<br>&nbsp;<br>
+<font color=#FF0000><b>1.</b></font> To perform a logical or boolean 'Not' of a logical value.If True, the value becomes False. If False, the value becomes True.
+<br>&nbsp;<br>
+<font color=#FF0000><b>2.</b></font> To perform a mathematical 'Not' of an integer in a bitwise fashion. The result is a bitwise 'Not' of the number - every bit value is reversed - 0 to 1 and 1 to 0.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+If the boolean expression is calculated (as opposed to being a Boolean variable), then brackets are required to isolate it.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="and.htm">And</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>and</b> or bitwise <b>and</b> of two arguments</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="boolean.htm">Boolean</a></b></td>
+<td width="8"></td>
+<td align="left">Allows just <b>True</b> and <b>False</b> values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="if.htm">If</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a conditional expression to determine what to do next</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="or.htm">Or</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>or</b> or bitwise <b>or</b> of two arguments</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="xor.htm">Xor</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>Xor</b> or bitwise <b>Xor</b> of two arguments</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate both types of  Not usage</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;num1, num2 : Word;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;num1&nbsp;&nbsp; := $2C;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Binary value : 0000 0000 0010 1100</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Not'ed value : 1111 1111 1101 0011 = $FFD3</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And used to return a Boolean value</b></font><br>
+&nbsp;&nbsp;if <font color=#C00000><b>Not</b></font> (num1 > 0)<br>
+&nbsp;&nbsp;then WriteLn('num1 <= 0')<br>
+&nbsp;&nbsp;else WriteLn('num1 > 0');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And used to perform a mathematical NOT operation</b></font><br>
+&nbsp;&nbsp;num2 := <font color=#C00000><b>Not</b></font> num1;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the result</b></font><br>
+&nbsp;&nbsp;WriteLn('Not $2C = $'+IntToHex(num2,2));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="not.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;num1 > 0<br>&nbsp;&nbsp;
+Not $2C = $FFD3<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

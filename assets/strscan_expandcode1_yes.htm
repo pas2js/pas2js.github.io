@@ -1,0 +1,280 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0066)StrScan&ExpandCode1=Yes -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : StrScan command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, StrScan, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>StrScan</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Function</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Searches for a specific character in a constant
+                string</font>
+              </td>
+              <td align="right">
+                <font color="#000000" face=
+                "Arial,Helvetica,Sans-Serif" size=
+                "3"><strong>SysUtils</strong> unit</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;function&nbsp;<font color=
+                "#0000A0"><strong>StrScan</strong></font> (
+                <strong>const Characters</strong> : PAnsiChar;
+                <strong>SearchChar</strong> : Char ) :
+                PAnsiChar;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                <font color=
+                "#996600"><strong>StrScan</strong></font> is used
+                when you need to check a single character against a
+                list of known characters (Characters).<br />
+                &nbsp;<br />
+                If the <strong>SearchChar</strong> exists in
+                <strong>Characters</strong>, then a pointer to the
+                position in Characters is returned.<br />
+                &nbsp;<br />
+                If it does not exist, a <strong>nil</strong>
+                pointer is returned.
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "ansipos.htm">AnsiPos</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Find the position of one string in another
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "ansiindexstr.htm">AnsiIndexStr</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Compares a string with a list of strings -
+                      returns match index
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "ansimatchstr.htm">AnsiMatchStr</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Returns true if a string exactly matches one
+                      of a list of strings
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "lastdelimiter.htm">LastDelimiter</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Find the last position of selected characters
+                      in a string
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code : A simple
+                example</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size="2"><font color=
+                "#008000">// Full Unit code.<br />
+                //
+                -----------------------------------------------------------<br />
+
+                // You must store this code in a unit called
+                <strong>Unit1</strong> with a form<br />
+                // called <strong>Form1</strong> that has an
+                <strong>OnCreate</strong> event called
+                <strong>FormCreate</strong>.<br /></font>&nbsp;<br />
+
+                <font color="#808080"><strong>unit Unit1;<br />
+                &nbsp;<br />
+                interface<br />
+                &nbsp;<br />
+                uses<br /></strong>&nbsp;&nbsp;SysUtils,
+                <font color="#008000">&nbsp;&nbsp;// Unit
+                containing the StrScan command</font><br />
+                &nbsp;&nbsp;Forms, Dialogs;<br />
+                &nbsp;<br />
+                <strong>type<br /></strong>&nbsp;&nbsp;TForm1 =
+                class(TForm)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure
+                FormCreate(Sender: TObject);<br />
+                &nbsp;&nbsp;<strong>end;<br />
+                &nbsp;<br />
+                var<br />
+                &nbsp;&nbsp;</strong>Form1: TForm1;<br />
+                &nbsp;<br />
+                <strong>implementation<br />
+                <font color="#008800">{$R *.dfm} // Include form
+                definitions</font><br />
+                &nbsp;<br />
+                procedure TForm1.FormCreate(Sender:
+                TObject);</strong></font><br />
+                <strong>const</strong><br />
+                &nbsp;&nbsp;Numbers = '0123456789';<br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;if <font color=
+                "#C00000"><strong>StrScan</strong></font>(Numbers,
+                '2') &lt;&gt; nil<br />
+                &nbsp;&nbsp;then WriteLn('2 is a numeric
+                digit')<br />
+                &nbsp;&nbsp;else WriteLn('2 is not a numeric
+                digit');<br />
+                <br />
+                &nbsp;&nbsp;if <font color=
+                "#C00000"><strong>StrScan</strong></font>(Numbers,
+                'A') &lt;&gt; nil<br />
+                &nbsp;&nbsp;then WriteLn('A is a numeric
+                digit')<br />
+                &nbsp;&nbsp;else WriteLn('A is not a numeric
+                digit');<br />
+                <strong>end;</strong><br />
+                <font color="#808080">&nbsp;<br />
+                <strong>end.</strong></font></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href="strscan.htm#Ex1"><font face=
+                "Arial,Helvetica,Sans-Serif" size="1">Hide full
+                unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;2 is a numeric digit<br />
+                &nbsp;&nbsp; A is not a numeric digit<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

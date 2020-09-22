@@ -1,0 +1,418 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0053)Destructor -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : Destructor command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, Destructor, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>Destructor</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Keyword</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Defines the method used to destroy an
+                object</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size="2">&nbsp; type Class
+                declaration<br />
+                &nbsp; &nbsp;&nbsp;...<br />
+                &nbsp; &nbsp;&nbsp;<strong>Destructor</strong>
+                Destroy; Override;<br />
+                &nbsp; &nbsp;&nbsp;...<br />
+                &nbsp; end;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>Destructor</strong></font>
+                keyword defines a destructor procedure
+                <strong>Destroy</strong> for a class.<br />
+                &nbsp;<br />
+                When freeing an object, the <font color=
+                "#996600"><strong>Destructor</strong></font> is
+                called. This allows the object to free any storage
+                or other volatile resources it has acquired.<br />
+                &nbsp;<br />
+                The <strong>Name</strong> for the destructor is
+                normally <strong>destroy</strong>, but is not
+                restricted to this. It is very wise to keep to this
+                name.<br />
+                &nbsp;<br />
+                The <strong>Override</strong> directive must be
+                specified since we are overriding the virtual
+                TObject destroy method.
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="title" bgcolor="#FFD6D4">
+                <strong>Notes</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFF5F3">
+              <td>
+                At the <strong>end</strong> of a destructor, you
+                should call <strong>Inherited</strong> to invoke
+                the parent destructor.<br />
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "class.htm">Class</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts the declaration of a type of object
+                      class
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "constructor.htm">Constructor</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines the method used to create an object
+                      from a class
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "function.htm">Function</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a subroutine that returns a value
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "inherited.htm">Inherited</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Used to call the parent class constructor or
+                      destructor method
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "object.htm">Object</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Allows a subroutine data type to refer to an
+                      object method
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "procedure.htm">Procedure</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a subroutine that does not return a
+                      value
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "tobject.htm">TObject</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      The base class type that is ancestor to all
+                      other classes
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code : Example of
+                a destructor used to free up acquired
+                memory</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size="2"><font color=
+                "#008000"><strong>// Full Unit
+                code.</strong></font><br />
+                <font color="#008000"><strong>//
+                -----------------------------------------------------------</strong></font><br />
+
+                <font color="#008000"><strong>// You must store
+                this code in a unit called Unit1 with a
+                form</strong></font><br />
+                <font color="#008000"><strong>// called Form1 that
+                has an OnCreate event called
+                FormCreate.</strong></font><br />
+                <br />
+                <strong>unit Unit1;</strong><br />
+                <br />
+                <strong>interface</strong><br />
+                <br />
+                <strong>uses</strong><br />
+                &nbsp;&nbsp;Windows, Messages, SysUtils, Variants,
+                Classes, Graphics, Controls, Forms,<br />
+                &nbsp;&nbsp;Dialogs;<br />
+                <br />
+                <strong>type</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// String
+                holder record</strong></font><br />
+                &nbsp;&nbsp;TString = string[10];<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Define
+                a container class</strong></font><br />
+                &nbsp;&nbsp;TWords = class<br />
+                &nbsp;&nbsp;private<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;wordCount&nbsp;&nbsp;:
+                Integer;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;wordsStart : Pointer;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;function Get(Index:
+                Integer): string;<br />
+                &nbsp;&nbsp;public<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;property GetWord[Index :
+                Integer] : string read Get;<br />
+                &nbsp;&nbsp;published<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;constructor Create(count :
+                integer);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#C00000"><strong>Destructor</strong></font>&nbsp;&nbsp;Destroy;
+                override;<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// The
+                form class itself</strong></font><br />
+                &nbsp;&nbsp;TForm1 = class(TForm)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure
+                FormCreate(Sender: TObject);<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;Form1: TForm1;<br />
+                <br />
+                <strong>implementation</strong><br />
+                <br />
+                <strong>{$R *.dfm}</strong><br />
+                <br />
+                <br />
+                <font color="#008000"><strong>// TWords constructor
+                - build the word array</strong></font><br />
+                <strong>constructor TWords.Create(count:
+                integer);</strong><br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;i : Integer;<br />
+                &nbsp;&nbsp;wordsList&nbsp;&nbsp;: ^TString;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Get
+                storage for 'count' strings</strong></font><br />
+                &nbsp;&nbsp;GetMem(wordsStart,
+                count*SizeOf(TString));<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Fill
+                out this list</strong></font><br />
+                &nbsp;&nbsp;wordsList := wordsStart;<br />
+                &nbsp;&nbsp;wordCount := count;<br />
+                <br />
+                &nbsp;&nbsp;for i := 1 to count do<br />
+                &nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;wordsList^ := 'Word
+                '+IntToStr(i);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Inc(wordsList);<br />
+                &nbsp;&nbsp;end;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// TWords destructor
+                - release storage</strong></font><br />
+                <strong>destructor TWords.Destroy;</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>//
+                Release memory, if obtained</strong></font><br />
+                &nbsp;&nbsp;if wordsStart &lt;&gt; nil<br />
+                &nbsp;&nbsp;then FreeMem(wordsStart);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Always
+                call the parent destructor after running your own
+                code</strong></font><br />
+                &nbsp;&nbsp;inherited;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// GetWord property
+                read function</strong></font><br />
+                <strong>function TWords.Get(Index: Integer):
+                string;</strong><br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;wordsList&nbsp;&nbsp;: ^TString;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Read
+                the word at the given index, if in
+                range</strong></font><br />
+                &nbsp;&nbsp;if (Index &gt;= 1) and (Index &lt;=
+                wordCount)<br />
+                &nbsp;&nbsp;then<br />
+                &nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;wordsList :=
+                wordsStart;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Inc(wordsList,
+                Index-1);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Result := wordsList^;<br />
+                &nbsp;&nbsp;end;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// Main line
+                code</strong></font><br />
+                <strong>procedure TForm1.FormCreate(Sender:
+                TObject);</strong><br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;words : TWords;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Create
+                a TWords object</strong></font><br />
+                &nbsp;&nbsp;words := TWords.Create(4);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Now
+                show the 2nd word in this
+                object</strong></font><br />
+                &nbsp;&nbsp;WriteLn('2nd word =
+                '+words.GetWord[2]);<br />
+                <strong>end;</strong><br />
+                <br />
+                <strong>end.</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td></td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;2nd word = Word 2<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">for step overflow</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js165.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js167.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	for step overflow
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+var i: Integer;
+
+for i := Low(i) to High(i)step High(i) div 10 do
+  WriteLn(i);
+
+for i := High(i) downto Low(i)step High(i) div 10 do
+  WriteLn(i);
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+-9223372036854775808
+-8301034833169298228
+-7378697629483820648
+-6456360425798343068
+-5534023222112865488
+-4611686018427387908
+-3689348814741910328
+-2767011611056432748
+-1844674407370955168
+-922337203685477588
+-8
+922337203685477572
+1844674407370955152
+2767011611056432732
+3689348814741910312
+4611686018427387892
+5534023222112865472
+6456360425798343052
+7378697629483820632
+8301034833169298212
+9223372036854775792
+9223372036854775807
+8301034833169298227
+7378697629483820647
+6456360425798343067
+5534023222112865487
+4611686018427387907
+3689348814741910327
+2767011611056432747
+1844674407370955167
+922337203685477587
+7
+-922337203685477573
+-1844674407370955153
+-2767011611056432733
+-3689348814741910313
+-4611686018427387893
+-5534023222112865473
+-6456360425798343053
+-7378697629483820633
+-8301034833169298213
+-9223372036854775793
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+var i = 0;
+
+/* <<< main JS >>> */
+
+   for(i=-9223372036854775808;i<=9223372036854775807;i+=922337203685477580) {
+      WriteLn(i);
+   }
+   for(i=9223372036854775807;i>=(-9223372036854775808);i-=922337203685477580) {
+      WriteLn(i);
+   }
+</code></pre></div>
+</div>
+</body>
+</html>

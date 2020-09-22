@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Parent class</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js084.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js086.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Parent class
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TBase = class
+  end;
+
+type
+  TChild = class(TBase);
+
+type
+  TSubChild = class(TChild);
+
+type
+  TOtherChild = class(TBase);
+
+procedure WriteLnHierarchy(base: TClass);
+begin
+  while Assigned(base) do
+  begin
+    Writeln(' => ');
+    Writeln(base.ClassName);
+    base := base.ClassParent;
+  end;
+  Writeln('');
+end;
+
+{ main.pas }
+
+Begin
+  WriteLnHierarchy(TBase);
+  WriteLnHierarchy(TChild);
+  WriteLnHierarchy(TSubChild);
+  WriteLnHierarchy(TOtherChild);
+
+{ ### CONSOLE OUTPUTS ###
+   => TBase => TObject
+   => TChild => TBase => TObject
+   => TSubChild => TChild => TBase => TObject
+   => TOtherChild => TBase => TObject
+}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+      WriteLnHierarchy(TBase);
+      WriteLnHierarchy(TChild);
+      WriteLnHierarchy(TSubChild);
+      WriteLnHierarchy(TOtherChild);
+
+function WriteLnHierarchy(base) {
+   while (base!==null) {
+      WriteLn(" => ");
+      WriteLn(ClassName$1(base));
+      base = TObject.ClassParent(base);
+   }
+   WriteLn("");
+};
+/// TBase = class (TObject)
+///  [line: 72, column: 3, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TOtherChild = class (TBase)
+///  [line: 82, column: 3, file: uMain]
+var TOtherChild = {
+   $ClassName:"TOtherChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TChild = class (TBase)
+///  [line: 76, column: 3, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TSubChild = class (TChild)
+///  [line: 79, column: 3, file: uMain]
+var TSubChild = {
+   $ClassName:"TSubChild",$Parent:TChild
+   ,$Init:function ($) {
+      TChild.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+
+</code></pre></div>
+</div>
+</body>
+</html>

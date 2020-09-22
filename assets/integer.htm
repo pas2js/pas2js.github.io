@@ -1,0 +1,153 @@
+<!-- (0050)Integer -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Integer command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Integer, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Integer</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">The basic Integer type</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>Integer</b> = -2147483648..2147483647;&nbsp;&nbsp;<font color=#00A000>// At the time of writing</font>
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Integer</b></font> type is an Integer whose size is not guaranteed. It is the basic integer type in Delphi, and currently has the same capacity as the <b>LongInt</b> type - 1 bit sign, and 31 bits value.
+<br>&nbsp;<br>
+To hold very large integers, use the <b>Int64</b> type.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="byte.htm">Byte</a></b></td>
+<td width="8"></td>
+<td align="left">An integer  type supporting values 0 to 255</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="cardinal.htm">Cardinal</a></b></td>
+<td width="8"></td>
+<td align="left">The basic unsigned integer type</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="int64.htm">Int64</a></b></td>
+<td width="8"></td>
+<td align="left">A 64 bit sized integer - the largest in Delphi</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="longint.htm">LongInt</a></b></td>
+<td width="8"></td>
+<td align="left">An Integer whose size is guaranteed to be 32 bits</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="longword.htm">LongWord</a></b></td>
+<td width="8"></td>
+<td align="left">A 32 bit unsigned integer</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="shortint.htm">ShortInt</a></b></td>
+<td width="8"></td>
+<td align="left">An integer  type supporting values -128 to 127</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="smallint.htm">SmallInt</a></b></td>
+<td width="8"></td>
+<td align="left">An Integer type supporting values from -32768 to 32767</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="word.htm">Word</a></b></td>
+<td width="8"></td>
+<td align="left">An integer  type supporting values 0 to 65535</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Showing the capacity of Integer</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;min, max : <font color=#C00000><b>Integer</b></font>;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set the minimum and maximum values of this data type</b></font><br>
+&nbsp;&nbsp;min := Low(<font color=#C00000><b>Integer</b></font>);<br>
+&nbsp;&nbsp;max := High(<font color=#C00000><b>Integer</b></font>);<br>
+&nbsp;&nbsp;WriteLn('Min integer value = '+IntToStr(min));<br>
+&nbsp;&nbsp;WriteLn('Max integer value = '+IntToStr(max));<br><b>
+end;</b><br><b>
+</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="integer&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Min integer value = -2147483648<br>&nbsp;&nbsp;
+Max integer value = 2147483647<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

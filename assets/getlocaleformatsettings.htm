@@ -1,0 +1,137 @@
+<!-- (0066)GetLocaleFormatSettings -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : GetLocaleFormatSettings command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, GetLocaleFormatSettings, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>GetLocaleFormatSettings</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Gets locale values for thread-safe functions</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>GetLocaleFormatSettings</b></font>
+
+(
+<b>LCID </b> : Integer;<b> var FormatSettings </b> : TFormatSettings
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>GetLocaleFormatSettings</b></font> procedure gets the <b>LCID</b> Windows locale global variable values into a <b>TFormatSettings</b> record.
+<br>&nbsp;<br>
+This record is used by the thread-safe versions of a number of data conversion functions - it must be furnished using this function before the conversion function is invoked.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="currtostrf.htm">CurrToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a currency value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="datetimetostr.htm">DateTimeToStr</a></b></td>
+<td width="8"></td>
+<td align="left">Converts TDateTime date and time values to a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="floattostrf.htm">FloatToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a floating point value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="format.htm">Format</a></b></td>
+<td width="8"></td>
+<td align="left">Rich formatting of numbers and text into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tformatsettings.htm">TFormatSettings</a></b></td>
+<td width="8"></td>
+<td align="left">A record for holding locale values for thread-safe functions</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Use of the format settings record</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;formatSettings : TFormatSettings;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Furnish the locale format settings record</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>GetLocaleFormatSettings</b></font>(LOCALE_SYSTEM_DEFAULT, formatSettings);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And use it in the thread safe form of CurrToStrF</b></font><br>
+&nbsp;&nbsp;WriteLn('1234.56 formats as = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CurrToStrF(1234.56, ffCurrency, 4, formatSettings));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/getlocaleformatsettings&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;1234.56 formats as ?1,234.5600<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

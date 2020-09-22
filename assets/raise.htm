@@ -1,0 +1,435 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0048)Raise -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : Raise command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, Raise, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>Raise</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Keyword</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Raise an exception</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td width="15" align="right">
+                <font face="Courier New" size="2" color=
+                "#FF0000"><strong>1</strong></font>
+              </td>
+              <td>
+                <font face="Courier New" size="2">&nbsp;
+                <strong>Raise</strong></font>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td width="15" align="right">
+                <font face="Courier New" size="2" color=
+                "#FF0000"><strong>2</strong></font>
+              </td>
+              <td>
+                <font face="Courier New" size="2">&nbsp;
+                <strong>Raise</strong> Object reference</font>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td width="15" align="right">
+                <font face="Courier New" size="2" color=
+                "#FF0000"><strong>3</strong></font>
+              </td>
+              <td>
+                <font face="Courier New" size="2">&nbsp;
+                <strong>Raise</strong> Object reference
+                <strong>At</strong> Address pointer</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>Raise</strong></font> keyword
+                creates an exception object that is passed to the
+                Delphi exception handler.<br />
+                &nbsp;<br />
+                You would only raise an exception in literally
+                exceptional circumstances. This is partly because
+                of the resource and performance overheads incurred,
+                but also because there are neater ways for
+                application error handling, such as return codes
+                from functions.<br />
+                &nbsp;<br />
+                <font color="#FF0000"><strong>Version
+                1</strong></font><br />
+                &nbsp;<br />
+                On its own, <font color=
+                "#996600"><strong>Raise</strong></font> is used
+                inside the <strong>Except</strong> clause of a
+                <strong>Try</strong> statement. It simply re-raises
+                the current exception for handling at a higher
+                level in the application.<br />
+                &nbsp;<br />
+                <font color="#FF0000"><strong>Version
+                2</strong></font><br />
+                &nbsp;<br />
+                Uses an new exception object to report an
+                exception. Normally, you would use an
+                <strong>Exception</strong> object, or an inherited
+                Exception object, but you are not restricted to do
+                so. The exception address is that of the raise
+                statement.<br />
+                &nbsp;<br />
+                You can create the object at the time of the
+                raise:<br />
+                &nbsp;<br />
+                <font color="#200080">Raise Exception.Create('Error
+                happened');</font><br />
+                &nbsp;<br />
+                <font color="#FF0000"><strong>Version
+                3</strong></font> As for version 2, but overriding
+                the address value of the exception.<br />
+                &nbsp;<br />
+                In all cases, when the <font color=
+                "#996600"><strong>Raise</strong></font> call is
+                made, code execution jumps to the Delphi exception
+                handler - it either terminates the program, or uses
+                the current <strong>Try</strong> statement to
+                handle it.
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="title" bgcolor="#FFD6D4">
+                <strong>Notes</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFF5F3">
+              <td>
+                <font color="#FF0000">Warning</font> use only when
+                appropriate.<br />
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "except.htm">Except</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts the error trapping clause of a
+                      <strong>Try</strong> statement
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "finally.htm">Finally</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts the unconditional code section of a
+                      <strong>Try</strong> statement
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "on.htm">On</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines exception handling in a <strong>Try
+                      Except</strong> clause
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "try.htm">Try</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts code that has error trapping
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code : Use of
+                Raise in a function</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size=
+                "2"><strong>var</strong><br />
+                &nbsp;&nbsp;fred, jim : string;<br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Set up
+                some sample names</strong></font><br />
+                &nbsp;&nbsp;fred := 'Good name';<br />
+                &nbsp;&nbsp;jim&nbsp;&nbsp;:=
+                'Badname&nbsp;&nbsp;';<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Try to
+                swap these names</strong></font><br />
+                &nbsp;&nbsp;try<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(fred+' swapped
+                = '+SwapNames(fred));<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(jim+' swapped =
+                '+SwapNames(jim));<br />
+                &nbsp;&nbsp;except<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;On E : Exception do<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(E.Message);<br />
+
+                &nbsp;&nbsp;end;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// Swaps first and
+                second names in the passed name
+                string</strong></font><br />
+                <font color="#008000"><strong>// Raises an
+                exception if the name is
+                invalid</strong></font><br />
+                <strong>function TForm1.SwapNames(name: string):
+                string;</strong><br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;blankPos : Integer;<br />
+                &nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                Integer;<br />
+                &nbsp;&nbsp;nameLen&nbsp;&nbsp;: Integer;<br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Clear
+                the result string to indicate no success
+                yet</strong></font><br />
+                &nbsp;&nbsp;Result := '';<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Find
+                the position of the last name</strong></font><br />
+                &nbsp;&nbsp;blankPos := Pos(' ', name);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// If
+                found, and position is short of the name
+                end</strong></font><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// then
+                we are OK so far</strong></font><br />
+                &nbsp;&nbsp;nameLen := Length(name);<br />
+                &nbsp;&nbsp;if (blankPos &gt; 0) and (blankPos &lt;
+                nameLen)<br />
+                &nbsp;&nbsp;then<br />
+                &nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Find the start of the second
+                name</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;i := blankPos + 1;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;repeat<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// If last name start found, swap
+                first and last names</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if name[i]
+                &lt;&gt; ' '<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then Result :=
+                Copy(name, i, nameLen-i+1) + ' ' +<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Copy(name, 1, blankPos-1)<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else
+                Inc(i);<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;until (i &gt; nameLen) or
+                (Length(Result) &gt; 0);<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>//
+                Couldn't swap first and second names
+                ?</strong></font><br />
+                &nbsp;&nbsp;if Length(Result) = 0<br />
+                &nbsp;&nbsp;then <font color=
+                "#C00000"><strong>Raise</strong></font>
+                Exception.CreateFmt('Invalid name : ''%s''',
+                [name]);<br />
+                <strong>end;</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href=
+                "%&amp;ovr0/raise&amp;expandcode1=yes.htm#Ex1">
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Show full unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;Good name swapped = name
+                Good<br />
+                &nbsp;&nbsp; Invalid name : 'Badname '<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex2"></a><strong>Example code : Raise a
+                new exception type</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size=
+                "2"><strong>var</strong><br />
+                &nbsp;&nbsp;age : Integer;<br />
+                &nbsp;&nbsp;exc : EBadAge;<br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Simple
+                code that raises a new exception
+                type</strong></font><br />
+                &nbsp;&nbsp;age := 23;<br />
+                &nbsp;&nbsp;if age &lt; 30<br />
+                &nbsp;&nbsp;then<br />
+                &nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Create a new EBadAge exception
+                object</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;exc :=
+                EBadAge.CreateFmt('Bad age : %d',[age]);<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Now raise this new exception
+                object</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#C00000"><strong>Raise</strong></font> exc;<br />
+                &nbsp;&nbsp;end;<br />
+                <strong>end;</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href=
+                "%&amp;ovr0/raise&amp;expandcode2=yes.htm#Ex2">
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Show full unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;A Delphi error dialog is
+                shown with message :<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;&nbsp; Bad age : 23<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

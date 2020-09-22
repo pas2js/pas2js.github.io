@@ -1,0 +1,199 @@
+<!-- (0069)CurrToStrF&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : CurrToStrF command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, CurrToStrF, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>CurrToStrF</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Convert a currency value to a string with formatting</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>CurrToStrF</b></font>
+
+(
+<b>Value </b> : Currency;<b> Format </b> : TFloatFormat;<b> Digits </b> : Integer
+)
+ : string;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>CurrToStrF</b></font>&nbsp;(
+<b>Value </b> : Currency;<b> Format </b> : TFloatFormat;<b> Digits </b> : Integer;<b> const FormatSettings </b> : TFormatSettings
+)  : string;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>CurrToStrF</b></font> function converts a currency <b>Value</b> into a displayable string, with great control over the formatting via the <b>Format</b>, and <b>Digits</b> values.
+<br>&nbsp;<br>
+The <b>Digits</b> value determines how many decimal digits are displayed.
+<br>&nbsp;<br>
+The <b>Format</b> parameter is defined by the <b>TFloatFormat</b> (SysUtils) type :
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>ffCurrency&nbsp;</b></td><td class=dd> eg : ?2,345.60
+<tr><td class=dt align='right'><b>ffExponent&nbsp;</b></td><td class=dd> eg : 2.3456E+04
+<tr><td class=dt align='right'><b>ffFixed&nbsp;</b></td><td class=dd> eg : 2345.60
+<tr><td class=dt align='right'><b>ffGeneral&nbsp;</b></td><td class=dd> eg : 2345.6
+<tr><td class=dt align='right'><b>ffNumber&nbsp;</b></td><td class=dd> eg : 2,345.6</table>
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font> of this function is for use within threads. You furnish the <b>FormatSettings</b> record before invoking the call. It takes a local copy of global formatting variables that make the routine thread safe.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+You can change the currency string from the default (such as '$' in the USA, '?' in the UK) using the <b>CurrencyString</b> variable.<br>
+<br>
+You can change the position of the currency string using the <b>CurrencyFormat</b> variable.<br>
+<br>
+You can change the decimal point value by setting the <b>DecimalSeparator</b> character.<br>
+<br>
+You can change the thousands separator value by setting the <b>ThousandSeparator</b> character.<br>
+<br>
+The <b>NegCurrFormat</b> variable determines the formatting of negative amounts.<br>
+<br>
+If the full number of digits before the decimal point (the mantissa) cannot be displayed, then the display reverts to the exponent (scientific) format.<br>
+<br>
+See <b>FloatToStrF</b> and <b>TFloatFormat</b> for examples of all formatting options. Normally, you would probably use only the <b>ffCurrency</b> format.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="currencydecimals.htm">CurrencyDecimals</a></b></td>
+<td width="8"></td>
+<td align="left">Defines decimal digit count in the Format function</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currencyformat.htm">CurrencyFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Defines currency string placement in curr display functions</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currencystring.htm">CurrencyString</a></b></td>
+<td width="8"></td>
+<td align="left">The currency string used in currency display functions</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="decimalseparator.htm">DecimalSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to display the decimal point</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="floattostrf.htm">FloatToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a floating point value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="negcurrformat.htm">NegCurrFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Defines negative amount formatting in currency displays</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tfloatformat.htm">TFloatFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Formats for use in floating point number display functions</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="thousandseparator.htm">ThousandSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to display the thousands separator</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Display currency numbers as financial values</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the CurrToStrF command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;amount1 : Currency;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;amount1 := 1234.567;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display in a Currency format</b></font><br>
+&nbsp;&nbsp;CurrencyString := '? ';<br>
+&nbsp;&nbsp;WriteLn('Using 4 digits = '+<font color=#C00000><b>CurrToStrF</b></font>(amount1, ffCurrency, 4));<br>
+&nbsp;&nbsp;WriteLn('Using 2 digits = '+<font color=#C00000><b>CurrToStrF</b></font>(amount1, ffCurrency, 2));<br>
+&nbsp;&nbsp;WriteLn('Using 0 digits = '+<font color=#C00000><b>CurrToStrF</b></font>(amount1, ffCurrency, 0));<br><b>
+end;</b><br><b>
+</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="currtostrf.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Using 4 digits = ? 1,234.5670<br>&nbsp;&nbsp;
+Using 2 digits = ? 1,234.57<br>&nbsp;&nbsp;
+Using 0 digits = ? 1,235<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

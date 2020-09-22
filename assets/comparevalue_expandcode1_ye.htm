@@ -1,0 +1,164 @@
+<!-- (0071)CompareValue&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : CompareValue command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, CompareValue, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>CompareValue</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Compare numeric values with a tolerance</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Math</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>CompareValue</b></font>
+
+(
+<b>const A, B </b> : Integer|Int64
+)
+ : TValueRelationship;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>CompareValue</b></font>&nbsp;(
+<b>const A, B </b> : Single|Double|Extended;<b> delta </b> : Single|Double|Extended
+)  : TValueRelationship;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+<font color=#996600><b>CompareValue</b></font> allows floating point numbers to be compared in a tolerant way. If the two numbers are close enough together, they are deemed to be equal. The <b>delta</b> value is the permitted tolerance.
+<br>&nbsp;<br>
+There seems no point to the author in providing the Integer version of this function with no delta.
+<br>&nbsp;<br>
+<b>TValueRelationship</b> supports the following values :
+<table>
+<tr><td class=dt align='right'><b>LessThanValue&nbsp;</b></td><td class=dd>-1</td></tr>
+<tr><td class=dt align='right'><b>EqualsValue&nbsp;</b></td><td class=dd>0</td></tr>
+<tr><td class=dt align='right'><b>GreaterThanValue&nbsp;</b></td><td class=dd>1</td></tr>
+</table>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="max.htm">Max</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the maximum of two integer values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="min.htm">Min</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the minimum of two integer values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="mean.htm">Mean</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the <b>average</b> for a set of numbers</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Comparing floating point numbers</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Math, <font color=#008000>&nbsp;&nbsp;// Unit containing the CompareValue command</font><br>&nbsp;&nbsp;Types,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;A : Single;<br>
+&nbsp;&nbsp;B : Single;<br>
+&nbsp;&nbsp;C : Single;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;A := 23.0;<br>
+&nbsp;&nbsp;B := 23.0;<br>
+&nbsp;&nbsp;C := 23.1;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Compare 2 equal floats</b></font><br>
+&nbsp;&nbsp;case <font color=#C00000><b>CompareValue</b></font>(A, B) of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LessThanValue&nbsp;&nbsp;&nbsp;&nbsp;: WriteLn('A < B');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EqualsValue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: WriteLn('A = B');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GreaterThanValue : WriteLn('A > B');<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Compare 2 unequal floats</b></font><br>
+&nbsp;&nbsp;case <font color=#C00000><b>CompareValue</b></font>(A, C) of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LessThanValue&nbsp;&nbsp;&nbsp;&nbsp;: WriteLn('A < C');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EqualsValue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: WriteLn('A = C');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GreaterThanValue : WriteLn('A > C');<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Compare 2 unequal floats - but allow for a difference of up to +/- 0.2</b></font><br>
+&nbsp;&nbsp;case <font color=#C00000><b>CompareValue</b></font>(A, C, 0.2) of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LessThanValue&nbsp;&nbsp;&nbsp;&nbsp;: WriteLn('A < C');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EqualsValue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: WriteLn('A = C');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GreaterThanValue : WriteLn('A > C');<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="comparevalue.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;A = B<br>&nbsp;&nbsp;
+A < C<br>&nbsp;&nbsp;
+A = C<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

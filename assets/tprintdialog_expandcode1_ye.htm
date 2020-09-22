@@ -1,0 +1,563 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0071)TPrintDialog&ExpandCode1=Yes -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : TPrintDialog command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, TPrintDialog, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>TPrintDialog</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Type</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Class that creates a printer selection and
+                control dialog</font>
+              </td>
+              <td align="right">
+                <font color="#000000" face=
+                "Arial,Helvetica,Sans-Serif" size=
+                "3"><strong>Dialogs</strong> unit</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size="2">&nbsp; type
+                <strong>TPrintDialog</strong> = class;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>TPrintDialog</strong></font>
+                class is used to create a printer selection and
+                print control dialog.<br />
+                &nbsp;<br />
+                Before printing from your application, it is wise
+                to display a print dialog. This allows the user to
+                select the desired printer and attributes, along
+                with control over how the document is printed. Such
+                as multiple copies and pages to be printed.<br />
+                &nbsp;<br />
+                You first use the class by creating an object from
+                it, and then setting the required dialog attributes
+                from the following list:<br />
+                &nbsp;<br />
+                <table>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>Collate&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Whether to preset the Collate option
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>Copies&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      How many copies to print
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>FromPage&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Selected page in page range
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>ToPage&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Selected page in page range
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>MinPage&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Earliest selectable page
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>MaxPage&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Latest selectable page
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>PrintRange&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Starting page selection type
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>Options&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Various multi-selectable options
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>PrintToFile&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      If false, we print to paper
+                    </td>
+                  </tr>
+                </table><br />
+                &nbsp;<br />
+                The <strong>PrintRange</strong> values are:<br />
+                &nbsp;<br />
+                <table>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>prAllPages&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      All pages to print
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>prSelection&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Page selection to print
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>prPageNums&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Page number range to print
+                    </td>
+                  </tr>
+                </table><br />
+                &nbsp;<br />
+                You choose one before the dialog starts - and check
+                to see if the user has changed it when the dialog
+                ends.<br />
+                &nbsp;<br />
+                The <strong>Options</strong> values may be one of
+                the following:<br />
+                &nbsp;<br />
+                <table>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>poPrintToFile&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Print to file
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>poPageNums&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Print by page range
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>poSelection&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Print by page selection
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>poWarning&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Warning if bad printer
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>poHelp&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Disply help
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>poDisablePrintToFile&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      Print to file disallowed
+                    </td>
+                  </tr>
+                </table><br />
+                &nbsp;<br />
+                Some of these options may also be set by the dialog
+                user. Always check their values afterwards.<br />
+                &nbsp;<br />
+                After setting these options, use the
+                <strong>Execute</strong> method to display the
+                dialog, checking the Boolean outcome after it runs
+                to know whether to proceed with the printing.
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="title" bgcolor="#FFD6D4">
+                <strong>Notes</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFF5F3">
+              <td>
+                Used in conjunction with the
+                <strong>Printer</strong> object.<br />
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "printer.htm">Printer</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Returns a reference to the global
+                      <strong>Printer</strong> object
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "tobject.htm">TObject</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      The base class type that is ancestor to all
+                      other classes
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code : A
+                relatively simple example</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size="2"><font color=
+                "#008000">// Full Unit code.<br />
+                //
+                -----------------------------------------------------------<br />
+
+                // You must store this code in a unit called
+                <strong>Unit1</strong> with a form<br />
+                // called <strong>Form1</strong> that has an
+                <strong>OnCreate</strong> event called
+                <strong>FormCreate</strong>.<br /></font>&nbsp;<br />
+
+                <font color="#808080"><strong>unit Unit1;<br />
+                &nbsp;<br />
+                interface<br />
+                &nbsp;<br />
+                uses<br /></strong>&nbsp;&nbsp;Printers, SysUtils,
+                Graphics,<br />
+                &nbsp;&nbsp;Forms, Dialogs;<br />
+                &nbsp;<br />
+                <strong>type<br /></strong>&nbsp;&nbsp;TForm1 =
+                class(TForm)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure
+                FormCreate(Sender: TObject);<br />
+                &nbsp;&nbsp;<strong>end;<br />
+                &nbsp;<br />
+                var<br />
+                &nbsp;&nbsp;</strong>Form1: TForm1;<br />
+                &nbsp;<br />
+                <strong>implementation<br />
+                <font color="#008800">{$R *.dfm} // Include form
+                definitions</font><br />
+                &nbsp;<br />
+                procedure TForm1.FormCreate(Sender:
+                TObject);</strong></font><br />
+                <strong>const</strong><br />
+                &nbsp;&nbsp;TOTAL_PAGES =
+                4;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// How many pages to
+                print</strong></font><br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;printDialog&nbsp;&nbsp;&nbsp;&nbsp;:
+                <font color=
+                "#C00000"><strong>TPrintDialog</strong></font>;<br />
+
+                &nbsp;&nbsp;page, startPage, endPage :
+                Integer;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Create
+                a printer selection dialog</strong></font><br />
+                &nbsp;&nbsp;printDialog :=
+                TPrintDialog.Create(Form1);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Set up
+                print dialog options</strong></font><br />
+                &nbsp;&nbsp;printDialog.MinPage :=
+                1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <font color="#008000"><strong>// First allowed page
+                number</strong></font><br />
+                &nbsp;&nbsp;printDialog.MaxPage :=
+                TOTAL_PAGES;&nbsp;&nbsp;&nbsp;&nbsp; <font color=
+                "#008000"><strong>// Highest allowed page
+                number</strong></font><br />
+                &nbsp;&nbsp;printDialog.ToPage&nbsp;&nbsp;:=
+                TOTAL_PAGES;&nbsp;&nbsp;&nbsp;&nbsp; <font color=
+                "#008000"><strong>// 1 to ToPage page range
+                allowed</strong></font><br />
+                &nbsp;&nbsp;printDialog.Options :=
+                [poPageNums];&nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Allow page range
+                selection</strong></font><br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// If the
+                user has selected a printer (or default), then
+                print!</strong></font><br />
+                &nbsp;&nbsp;if printDialog.Execute then<br />
+                &nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Use the Printer function to
+                get access to the global TPrinter
+                object.</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Set to landscape
+                orientation</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Printer.Orientation :=
+                poLandscape;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Set the printjob title - as it
+                it appears in the print job
+                manager</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Printer.Title := 'Test
+                print for Delphi';<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Set the number of copies to
+                print each page</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// This is crude - it doies not
+                take Collation into account</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Printer.Copies :=
+                printDialog.Copies;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Start
+                printing</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Printer.BeginDoc;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Has the user selected a page
+                range?</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;if printDialog.PrintRange =
+                prPageNums then<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startPage :=
+                printDialog.FromPage;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endPage&nbsp;&nbsp;
+                := printDialog.ToPage;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;end<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;else <font color=
+                "#008000"><strong>// All
+                pages</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startPage :=
+                1;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endPage&nbsp;&nbsp;
+                := TOTAL_PAGES;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;end;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Set up the start page
+                number</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;page := startPage;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Keep printing whilst all
+                OK</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;while (not Printer.Aborted)
+                and Printer.Printing do<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Write out the page
+                number</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printer.Canvas.Font.Color
+                := clBlue;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printer.Canvas.TextOut(40,&nbsp;&nbsp;20,
+                'Page number = '+IntToStr(page));<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Increment the page
+                number</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inc(page);<br />
+
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Now start a new page - if not
+                the last</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (page &lt;=
+                endPage) and (not Printer.Aborted)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then
+                Printer.NewPage;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;end;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Finish
+                printing</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Printer.EndDoc;<br />
+                &nbsp;&nbsp;end;<br />
+                <strong>end;</strong><br />
+                <font color="#808080">&nbsp;<br />
+                <strong>end.</strong></font></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href=
+                "tprintdialog.htm#Ex1"><font face=
+                "Arial,Helvetica,Sans-Serif" size="1">Hide full
+                unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;The print dialog is
+                displayed, and various pages printed if the<br />
+                &nbsp;&nbsp; user hits OK. Otherwise, no pages are
+                printed.<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;&nbsp; If printed, the page number appears on
+                each page in blue<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="D:\fpc2js\pas2js-windows-1.5.1\bin\pas2js.exe" Date="1331401327"/>
+  <Params Value=" -Tbrowser -Pecmascript5 -MObjFPC -Sc -O1 -l -vewnhibq -FiD:\git\pas2js\pas2js.github.io\master\projhtmltemplateresource\js -FuD:\git\pas2js\pas2js.github.io\master\projhtmltemplateresource\ -FUD:\git\pas2js\pas2js.github.io\master\projhtmltemplateresource\js\ -FED:\git\pas2js\pas2js.github.io\master\projhtmltemplateresource\ -oD:\git\pas2js\pas2js.github.io\master\projhtmltemplateresource\projhtmltemplateresource.js -Jeutf-8 -Jirtl.js -Jc -Jminclude -JRjs projhtmltemplateresource.lpr"/>
+</CONFIG>

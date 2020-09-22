@@ -1,0 +1,156 @@
+<!-- (0073)CurrencyString&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : CurrencyString command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, CurrencyString, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>CurrencyString</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Variable</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">The currency string used in currency display functions</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+var <b>CurrencyString</b> : string;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>CurrencyString</b></font> variable is used in currency display functions. It is used to prefix or suffix the currency amount.
+<br>&nbsp;<br>
+For example, the UK default is <b>?</b>, so <b>1.23</b> is displayed as <b>?1.23</b> by default.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The <b>CurrencyFormat</b> value determines whether the currency string is placed before or after the amount, and whether a space is placed between it and the amount.<br>
+<br>
+<font color=#996600><b>CurrencyString</b></font> = <b>LOCALE_SCURRENCY</b> by default.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="currencydecimals.htm">CurrencyDecimals</a></b></td>
+<td width="8"></td>
+<td align="left">Defines decimal digit count in the Format function</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currencyformat.htm">CurrencyFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Defines currency string placement in curr display functions</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currtostrf.htm">CurrToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a currency value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="decimalseparator.htm">DecimalSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to display the decimal point</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="format.htm">Format</a></b></td>
+<td width="8"></td>
+<td align="left">Rich formatting of numbers and text into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="negcurrformat.htm">NegCurrFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Defines negative amount formatting in currency displays</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="thousandseparator.htm">ThousandSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to display the thousands separator</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Changing the currency character to a word</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the CurrencyString command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;amount : Currency;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;amount := 12;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 12 pounds</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display with the default currency string</b></font><br>
+&nbsp;&nbsp;WriteLn('Amount = '+CurrToStrF(amount, ffCurrency, 0));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display with the currency shown as a word after the amount</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>CurrencyString</b></font> := 'Pounds';<br>&nbsp;&nbsp;CurrencyFormat := 4;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 4 means after with a space</b></font><br>
+&nbsp;&nbsp;WriteLn('Amount = '+CurrToStrF(amount, ffCurrency, 0));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="currencystring.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Amount = ?12<br>&nbsp;&nbsp;
+Amount = 12 Pounds<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

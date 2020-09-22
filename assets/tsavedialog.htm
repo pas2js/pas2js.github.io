@@ -1,0 +1,420 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0054)TSaveDialog -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : TSaveDialog command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, TSaveDialog, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>TSaveDialog</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Type</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Displays a dialog for selecting a save file
+                name</font>
+              </td>
+              <td align="right">
+                <font color="#000000" face=
+                "Arial,Helvetica,Sans-Serif" size=
+                "3"><strong>Dialogs</strong> unit</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size="2">&nbsp; type
+                <strong>TSaveDialog</strong>;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>TSaveDialog</strong></font> is a
+                visual component. It is used to allow a user to
+                select the name of a file to save to.<br />
+                &nbsp;<br />
+                It can be defined by dragging the save dialog icon
+                from the Dialogs tab in Delphi, or by defining a
+                TSaveDialog variable.<br />
+                &nbsp;<br />
+                The <font color=
+                "#996600"><strong>TSaveDialog</strong></font> can
+                be configured to suit your needs. When using it,
+                you would proceed along the following steps:<br />
+                &nbsp;<br />
+                <font color="#FF0000"><strong>Creating the dialog
+                object</strong></font><br />
+                &nbsp;<br />
+                You define a TSaveDialog variable, and then assign
+                a new TSaveDialog object to it:<br />
+                &nbsp;<br />
+                <font class="mono"><font color="#008000">var<br />
+                &nbsp;&nbsp;saveDialog : TSaveDialog;<br />
+                begin<br />
+                &nbsp;&nbsp;saveDialog :=
+                TSaveDialog.Create(self);<br /></font></font><br />
+                &nbsp;<br />
+                Note that the dialog must have an anchor - here we
+                provide the current object - self - as the
+                anchor.<br />
+                &nbsp;<br />
+                <font color="#FF0000"><strong>Setting
+                options</strong></font><br />
+                &nbsp;<br />
+                Before displaying the dialog, you are likely to
+                configure it to your needs by setting the dialog
+                properties. Here are the main properties:<br />
+                &nbsp;<br />
+                <font color="#200080"><strong>Title</strong>
+                property</font><br />
+                Gives the caption to the dialog.<br />
+                &nbsp;<br />
+                <font color="#200080"><strong>FileName</strong>
+                property</font><br />
+                Gives a default file name to save. (Otherwise, the
+                file name field is blank).<br />
+                &nbsp;<br />
+                <font color="#200080"><strong>DefaultExt</strong>
+                property</font><br />
+                Defines the extension that will be added to the
+                user file name, if manually typed (rather than
+                selected from the file list). If their are two or
+                more save filter extension types, then this value
+                is ignored. However, it must be provided in order
+                for the drop down list extension values to be used.
+                Strange!<br />
+                &nbsp;<br />
+                <font color="#200080"><strong>Filter</strong>
+                property</font><br />
+                This allows only certain file types to be displayed
+                and selectable. The filter text is displayed in a
+                drop down below the file name field. The following
+                example selects for text files only:<br />
+                &nbsp;<br />
+                <font class="mono"><font color=
+                "#008000">saveDialog.Filter := 'Text files
+                only|*.txt';</font></font><br />
+                &nbsp;<br />
+                The drop down dialog shows the description before
+                the | separator. After the separator, you define a
+                mask that selects the files you want.<br />
+                &nbsp;<br />
+                <font class="mono"><font color=
+                "#008000">saveDialog.Filter := 'Text
+                files|*.txt|Word files|*.doc';</font></font><br />
+                &nbsp;<br />
+                Above we have allowed text and Word files as two
+                options in the drop down list.<br />
+                &nbsp;<br />
+                <font color="#200080"><strong>FilterIndex</strong>
+                property</font><br />
+                Defines which (starting at 1) of the drop down
+                filter choices will be displayed first.<br />
+                &nbsp;<br />
+                <font color="#200080"><strong>InitialDir</strong>
+                property</font><br />
+                Sets the starting directory in the dialog.<br />
+                &nbsp;<br />
+                <font color="#FF0000"><strong>Displaying the
+                dialog</strong></font><br />
+                &nbsp;<br />
+                We now call a method of TSaveDialog:<br />
+                &nbsp;<br />
+                <font class="mono"><font color="#008000">if
+                saveDialog.Execute<br />
+                then ...</font></font><br />
+                &nbsp;<br />
+                <strong>Execute</strong> returns
+                <strong>true</strong> if the user selected a file
+                and hit <strong>OK</strong>. You can then save to
+                the selected file:<br />
+                &nbsp;<br />
+                <font color="#FF0000"><strong>Finishing with the
+                dialog</strong></font><br />
+                &nbsp;<br />
+                The selected file obtained using the following
+                property:<br />
+                &nbsp;<br />
+                <font color="#200080"><strong>FileName</strong>
+                property</font><br />
+                This holds the full path plus file name of the
+                selected file. Finally, we must free the dialog
+                object:<br />
+                &nbsp;<br />
+                <font class="mono"><font color=
+                "#008000">saveDialog.free;</font></font>
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="title" bgcolor="#FFD6D4">
+                <strong>Notes</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFF5F3">
+              <td>
+                It is your responsibility to detect whether the
+                user has selected an existing file - you will want
+                to ask the user if the file should be
+                overriden.<br />
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "append.htm">Append</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Open a text file to allow appending of text
+                      to the end
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "assignfile.htm">AssignFile</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Assigns a file handle to a binary or text
+                      file
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "promptforfilename.htm">PromptForFileName</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Shows a dialog allowing the user to select a
+                      file
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "reset.htm">Reset</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Open a text file for reading, or binary file
+                      for read/write
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "topendialog.htm">TOpenDialog</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Displays a file selection dialog
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code :</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size=
+                "2"><strong>var</strong><br />
+                &nbsp;&nbsp;saveDialog : <font color=
+                "#C00000"><strong>TSaveDialog</strong></font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008000"><strong>//
+                Save dialog variable</strong></font><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Create
+                the save dialog object - assign to our save dialog
+                variable</strong></font><br />
+                &nbsp;&nbsp;saveDialog :=
+                TSaveDialog.Create(self);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Give
+                the dialog a title</strong></font><br />
+                &nbsp;&nbsp;saveDialog.Title := 'Save your text or
+                word file';<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Set up
+                the starting directory to be the current
+                one</strong></font><br />
+                &nbsp;&nbsp;saveDialog.InitialDir :=
+                GetCurrentDir;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Allow
+                only .txt and .doc file types to be
+                saved</strong></font><br />
+                &nbsp;&nbsp;saveDialog.Filter := 'Text
+                file|*.txt|Word file|*.doc';<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Set
+                the default extension</strong></font><br />
+                &nbsp;&nbsp;saveDialog.DefaultExt := 'txt';<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Select
+                text files as the starting filter
+                type</strong></font><br />
+                &nbsp;&nbsp;saveDialog.FilterIndex := 1;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>//
+                Display the open file dialog</strong></font><br />
+                &nbsp;&nbsp;if saveDialog.Execute<br />
+                &nbsp;&nbsp;then WriteLn('File :
+                '+saveDialog.FileName)<br />
+                &nbsp;&nbsp;else WriteLn('Save file was
+                cancelled');<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Free
+                up the dialog</strong></font><br />
+                &nbsp;&nbsp;saveDialog.Free;<br />
+                <strong>end;</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href=
+                "tsavedialog&amp;expandcode1=yes.htm#Ex1">
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Show full unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;An save file dialog is
+                displayed with two drop down filter choices:<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;&nbsp; &nbsp;&nbsp;Delphi project files<br />
+                &nbsp;&nbsp; &nbsp;&nbsp;Delphi pascal
+                files&nbsp;&nbsp;&nbsp;&nbsp;- this is displayed at
+                the start<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;&nbsp; The dialog is positioned to the
+                current directory (which will be<br />
+                &nbsp;&nbsp; the Delphi project directory if
+                running the code from within<br />
+                &nbsp;&nbsp; Delphi).<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;&nbsp; If you select a file, such as
+                'Unit1.pas' then it is displayed<br />
+                &nbsp;&nbsp; in the ShowMessage dialog like
+                this:<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;&nbsp; &nbsp;&nbsp;File : C:Program
+                FilesBorlandDelphi7ProjectsUnit1.pas<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

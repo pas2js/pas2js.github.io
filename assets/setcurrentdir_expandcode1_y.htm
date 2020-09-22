@@ -1,0 +1,160 @@
+<!-- (0072)SetCurrentDir&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : SetCurrentDir command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, SetCurrentDir, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>SetCurrentDir</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Change the current directory</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>SetCurrentDir</b></font>
+
+(
+<b>const Dir </b> : string
+)
+ : Boolean;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>SetCurrentDir</b></font> function sets the current directory to <b>Dir</b>, returning <b>True</b> if successful.
+<br>&nbsp;<br>
+If the directory does not exist, then <b>getLAstError</b> can be used to get the error code.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="chdir.htm">ChDir</a></b></td>
+<td width="8"></td>
+<td align="left">Change the working drive plus path for a specified drive</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="createdir.htm">CreateDir</a></b></td>
+<td width="8"></td>
+<td align="left">Create a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="getcurrentdir.htm">GetCurrentDir</a></b></td>
+<td width="8"></td>
+<td align="left">Get the current directory (drive plus directory)</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="getdir.htm">GetDir</a></b></td>
+<td width="8"></td>
+<td align="left">Get the default directory (drive plus path) for a specified drive</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="mkdir.htm">MkDir</a></b></td>
+<td width="8"></td>
+<td align="left">Make a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="removedir.htm">RemoveDir</a></b></td>
+<td width="8"></td>
+<td align="left">Remove a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="rmdir.htm">RmDir</a></b></td>
+<td width="8"></td>
+<td align="left">Remove a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="selectdirectory.htm">SelectDirectory</a></b></td>
+<td width="8"></td>
+<td align="left">Display a dialog to allow user selection of a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="forcedirectories.htm">ForceDirectories</a></b></td>
+<td width="8"></td>
+<td align="left">Create a new path of directories</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Show set and re-show the current directory</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the SetCurrentDir command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the current directory</b></font><br>
+&nbsp;&nbsp;WriteLn('Current directory = '+GetCurrentDir);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Change this value</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>SetCurrentDir</b></font>('C:\Program Files');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the current directory again</b></font><br>
+&nbsp;&nbsp;WriteLn('Current directory = '+GetCurrentDir);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="setcurrentdir.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Current directory = C:\Program Files\Borland\Delphi7\Projects<br>&nbsp;&nbsp;
+Current directory = C:\Program Files<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

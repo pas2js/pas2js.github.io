@@ -1,0 +1,145 @@
+<!-- (0046)Val -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Val command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Val, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Val</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Converts number strings to integer and floating point values</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>Val</b></font>
+
+(
+<b>const NumberString </b> : string;<b> var NumberVar </b> : Number Type;<b> var ErrorCode </b> : Integer
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Val</b></font> procedure is an older Delphi procedure that can convert a string <b>NumberString</b> into both integer and floating point variables.
+<br>&nbsp;<br>
+The variable <b>NumberVar</b> must be appropriate to the number string. Specifically, an integer string value must be provided when <b>NumberVar</b> is an Integer type.
+<br>&nbsp;<br>
+If the conversion succeeds, then <b>ErrorCode</b> is set to 0. Otherwise, it is set to the first character in <b>NumberString</b> that failed the conversion.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#FF0000>Warning</font> : it is safer to use the <b>SysUtils</b> conversion routines, such as <b>StrToFloat</b> where locale information is recognised. In particular, the character used for the decimal point.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="chr.htm">Chr</a></b></td>
+<td width="8"></td>
+<td align="left">Convert an integer into a character</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inttostr.htm">IntToStr</a></b></td>
+<td width="8"></td>
+<td align="left">Convert an integer into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="strtoint.htm">StrToInt</a></b></td>
+<td width="8"></td>
+<td align="left">Convert an integer string into an <b>Integer</b> value</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate successful and unsuccessful floating point number string conversions</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;numberString : string;<br>
+&nbsp;&nbsp;float&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Extended;<br>
+&nbsp;&nbsp;errorPos&nbsp;&nbsp;&nbsp;&nbsp; : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up a valid floating point number string</b></font><br>
+&nbsp;&nbsp;numberString := '12345.678';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Convert it into a value</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>Val</b></font>(numberString, float, errorPos);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the string and converted value</b></font><br>
+&nbsp;&nbsp;if errorPos = 0<br>
+&nbsp;&nbsp;then ShowMessageFmt('Val(%s) = %12.3f',[numberString,float]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Val ignores the Decimal Separator - SysUtils converters don't</b></font><br>
+&nbsp;&nbsp;DecimalSeparator := '_';<br>
+&nbsp;&nbsp;numberString := '12345_678';<br>
+&nbsp;&nbsp;<font color=#C00000><b>Val</b></font>(numberString, float, errorPos);<br>
+&nbsp;&nbsp;if errorPos = 0<br>
+&nbsp;&nbsp;then ShowMessageFmt('Val(%s) = %12.3f',[numberString,float])<br>
+&nbsp;&nbsp;else ShowMessageFmt('Val(%s) failed at position %d',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[numberString, errorPos]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="val&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Val(12345.678) = 12345.678<br>&nbsp;&nbsp;
+Val(12345_678) failed at position 6<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

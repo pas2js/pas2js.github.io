@@ -1,0 +1,187 @@
+<!-- (0048)Reset -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Reset command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Reset, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Reset</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Open a text file for reading, or binary file for read/write</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>Reset</b></font>
+
+(
+<b>var FileHandle </b> : TextFile
+)
+;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>Reset</b></font>&nbsp;(
+<b>var FileHandle </b> : File {RecordSize 
+) ;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Reset</b></font> procedure opens a file given by <b>FileHandle</b> for read, write or read and write access.
+<br>&nbsp;<br>
+You must use <b>AssignFile</b> to assign a file to the <b>FileHandle</b> before using <font color=#996600><b>Reset</b></font>.
+<br>&nbsp;<br>
+Use <b>Write</b> or <b>WriteLn</b> to write to the file after this <font color=#996600><b>Reset</b></font> is executed.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1</b></font>
+<br>&nbsp;<br>
+Is used for text files. They can only be read after opening with <font color=#996600><b>Reset</b></font>.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2</b></font>
+<br>&nbsp;<br>
+Is for binary files.
+Before using <font color=#996600><b>Reset</b></font>, you must set <b>FileMode</b> to one of the following:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>fmOpenRead&nbsp;</b></td><td class=dd> : Read only</td></tr>
+<tr><td class=dt align='right'><b>fmOpenWrite&nbsp;</b></td><td class=dd> : Write only</td></tr>
+<tr><td class=dt align='right'><b>fmOpenReadWrite&nbsp;</b></td><td class=dd> : Read and write</td></tr></table>
+<br>&nbsp;<br>
+The optional <b>RecordSize</b> value is used to override the default 128 byte record size for binary (untyped) files. For such files, only <b>BlockRead</b> and <b>BlockWrite</b> can be used.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="append.htm">Append</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text file to allow appending of text to the end</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="assignfile.htm">AssignFile</a></b></td>
+<td width="8"></td>
+<td align="left">Assigns a file handle to a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="closefile.htm">CloseFile</a></b></td>
+<td width="8"></td>
+<td align="left">Closes an open file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="file.htm">File</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a typed or untyped file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="rewrite.htm">ReWrite</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text or binary file for write access</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="textfile.htm">TextFile</a></b></td>
+<td width="8"></td>
+<td align="left">Declares a file type for storing lines of text</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Writing and reading lines of text to/from a text file</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myFile : TextFile;<br>
+&nbsp;&nbsp;text&nbsp;&nbsp; : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Try to open the Test.txt file for writing to</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'Test.txt');<br>
+&nbsp;&nbsp;ReWrite(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write a couple of well known words to this file</b></font><br>
+&nbsp;&nbsp;WriteLn(myFile, 'Hello');<br>
+&nbsp;&nbsp;WriteLn(myFile, 'World');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Reopen the file in read only mode</b></font><br>
+&nbsp;&nbsp;FileMode := fmOpenRead;<br>
+&nbsp;&nbsp;<font color=#C00000><b>Reset</b></font>(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the file contents</b></font><br>
+&nbsp;&nbsp;while not Eof(myFile) do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReadLn(myFile, text);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(text);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Close the file for the last time</b></font><br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="reset&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Hello<br>&nbsp;&nbsp;
+World<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

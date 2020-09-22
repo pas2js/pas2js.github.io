@@ -1,0 +1,123 @@
+<!-- (0052)MonthDays -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : MonthDays command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, MonthDays, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>MonthDays</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Constant</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Gives the number of days in a month</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+const <b>MonthDays</b> : array [Boolean] of TDayTable =<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;((31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31),<br>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31));
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>MonthDays</b></font> constant is a useful part of the SysUtils unit. It gives the number of days in a month, with 29 returned for February if the year is a leap year (<b>Boolean</b> first array parameter). This is best understood by looking at the sample code.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="daysinamonth.htm">DaysInAMonth</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the number of days in a month</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="daysinayear.htm">DaysInAYear</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the number of days in a year</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="minsperday.htm">MinsPerDay</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the number of minutes in a day</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="secsperday.htm">SecsPerDay</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the number of seconds in a day</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : How many days in February 2000 ?</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// How many days in February 2000 ?</b></font><br>
+&nbsp;&nbsp;WriteLn('Days in February 2000 = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntToStr(<font color=#C00000><b>MonthDays</b></font>[IsLeapYear(2000)][2]));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="monthdays&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Days in February 2000 = 29<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

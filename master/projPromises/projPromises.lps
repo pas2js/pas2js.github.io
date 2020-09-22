@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="6">
+      <Unit0>
+        <Filename Value="projPromises.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="6"/>
+        <CursorPos X="19" Y="27"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="projPromises.html"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="4"/>
+        <CursorPos X="42" Y="24"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="upromises.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uPromises"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="39" Y="57"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="umain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uMain"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="33"/>
+        <CursorPos X="44" Y="33"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\web.pas"/>
+        <UnitName Value="Web"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="852"/>
+        <CursorPos X="70" Y="862"/>
+        <UsageCount Value="15"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <UnitName Value="JS"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="606"/>
+        <CursorPos X="43" Y="636"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+      </Unit5>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="24" Column="52"/>
+      </Position1>
+      <Position2>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="94" Column="24" TopLine="67"/>
+      </Position2>
+      <Position3>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="95" Column="23" TopLine="68"/>
+      </Position3>
+      <Position4>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="96" Column="23" TopLine="69"/>
+      </Position4>
+      <Position5>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="308" Column="58" TopLine="281"/>
+      </Position5>
+      <Position6>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="310" Column="59" TopLine="283"/>
+      </Position6>
+      <Position7>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="315" Column="57" TopLine="288"/>
+      </Position7>
+      <Position8>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="317" Column="62" TopLine="291"/>
+      </Position8>
+      <Position9>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="319" Column="61" TopLine="293"/>
+      </Position9>
+      <Position10>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="330" Column="56" TopLine="305"/>
+      </Position10>
+      <Position11>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="343" Column="57" TopLine="318"/>
+      </Position11>
+      <Position12>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="454" Column="63" TopLine="427"/>
+      </Position12>
+      <Position13>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="459" Column="64" TopLine="432"/>
+      </Position13>
+      <Position14>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="461" Column="62" TopLine="434"/>
+      </Position14>
+      <Position15>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="463" Column="67" TopLine="437"/>
+      </Position15>
+      <Position16>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="465" Column="66" TopLine="439"/>
+      </Position16>
+      <Position17>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="475" Column="61" TopLine="450"/>
+      </Position17>
+      <Position18>
+        <Filename Value="..\..\pas2js-windows-0.9.0\packages\rtl\js.pas"/>
+        <Caret Line="487" Column="62" TopLine="462"/>
+      </Position18>
+      <Position19>
+        <Filename Value="projPromises.lpr"/>
+        <Caret Line="11"/>
+      </Position19>
+      <Position20>
+        <Filename Value="projPromises.lpr"/>
+        <Caret Line="23" Column="25"/>
+      </Position20>
+      <Position21>
+        <Filename Value="umain.pas"/>
+        <Caret Line="232" Column="20" TopLine="220"/>
+      </Position21>
+      <Position22>
+        <Filename Value="projPromises.lpr"/>
+        <Caret Line="35" Column="37" TopLine="9"/>
+      </Position22>
+      <Position23>
+        <Filename Value="projPromises.lpr"/>
+        <Caret Line="11" Column="26" TopLine="9"/>
+      </Position23>
+      <Position24>
+        <Filename Value="projPromises.lpr"/>
+        <Caret Line="35" Column="8" TopLine="9"/>
+      </Position24>
+      <Position25>
+        <Filename Value="projPromises.lpr"/>
+        <Caret Line="33" Column="36" TopLine="7"/>
+      </Position25>
+      <Position26>
+        <Filename Value="umain.pas"/>
+        <Caret Line="18"/>
+      </Position26>
+      <Position27>
+        <Filename Value="umain.pas"/>
+        <Caret Line="274" Column="18" TopLine="259"/>
+      </Position27>
+      <Position28>
+        <Filename Value="upromises.pas"/>
+        <Caret Line="29" Column="14" TopLine="22"/>
+      </Position28>
+      <Position29>
+        <Filename Value="upromises.pas"/>
+        <Caret Line="51" Column="13" TopLine="34"/>
+      </Position29>
+      <Position30>
+        <Filename Value="projPromises.lpr"/>
+        <Caret Line="27" Column="25" TopLine="4"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1" ActiveMode="Default">
+        <Mode0 Name="Default">
+          <local>
+            <LaunchingApplication Use="True" PathPlusParams="$(Pas2JSBrowser) $(Pas2JSProjectURL)"/>
+          </local>
+        </Mode0>
+      </Modes>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

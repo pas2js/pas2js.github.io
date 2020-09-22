@@ -1,0 +1,175 @@
+<!-- (0065)$Align&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : $Align command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, $Align, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>$Align</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Compiler Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Determines whether data is aligned or packed</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$Align</b> Off}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$Align</b> On}
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>$Align</b></font> compiler directive determines whether Delphi aligns data, or whether it packs the data into the smallest space.
+<br>&nbsp;<br>
+With <font color=#996600><b>$Align</b></font> On (default), complex data types, such as <b>records</b> have their elements aligned to 2, 4 or 8 byte boundaries, as appropriate to the data type. For example, a <b>Word</b> field would be aligned to a 4 byte boundary.
+<br>&nbsp;<br>
+With <font color=#996600><b>$Align</b></font> On, the default value, you can override this setting with the <b>packed</b> option for complex data structures.
+<br>&nbsp;<br>
+These alignments ensure optimal access performance.
+<br>&nbsp;<br>
+<font color=#996600><b>$Align</b></font> Off tells Delphi to ignore alignment, and thereby pack data.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Examples of unpacked alignments :<br>
+<font color=#00A000><font class=mono><b><br>
+Word&nbsp;&nbsp;&nbsp;&nbsp; = 2 bytes<br><br>
+LongWord = 4 bytes<br><br>
+Single&nbsp;&nbsp; = 4 bytes<br><br>
+Double&nbsp;&nbsp; = 8 bytes<br>
+</b></font></font><br>
+<font color=#996600><b>$Align</b></font> is equivalent to <b>$A</b>.<br>
+<br>
+This directive can be used multiple times within your code.<br>
+<br>
+The default value is $Align On<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$a.htm">$A</a></b></td>
+<td width="8"></td>
+<td align="left">Determines whether data is aligned or packed</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="packed.htm">Packed</a></b></td>
+<td width="8"></td>
+<td align="left">Compacts complex data types into minimal storage</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Packing a record to reduce storage</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use the default setting : $Align+</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Declare an unpacked, aligned record</b></font><br>
+&nbsp;&nbsp;TAlignedRecord = Record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name1&nbsp;&nbsp; : string[4];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;floater : single;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name2&nbsp;&nbsp; : char;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;&nbsp; : Integer;<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare a packed record</b></font><br>
+&nbsp;&nbsp;TPackedRecord = Packed Record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name1&nbsp;&nbsp; : string[4];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;floater : single;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name2&nbsp;&nbsp; : char;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;&nbsp; : Integer;<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set alignment off</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$Align</b></font> Off}<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare an unpacked record</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// This will get treated as if packed was on</b></font><br>
+&nbsp;&nbsp;TUnPackedRecord = Record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name1&nbsp;&nbsp; : string[4];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;floater : single;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name2&nbsp;&nbsp; : char;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;&nbsp; : Integer;<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;alignedRec&nbsp;&nbsp;: TAlignedRecord;<br>
+&nbsp;&nbsp;packedRec&nbsp;&nbsp; : TPackedRecord;<br>
+&nbsp;&nbsp;unPackedRec : TUnPackedRecord;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;WriteLn('Aligned record size = '+IntToStr(SizeOf(alignedRec)));<br>
+&nbsp;&nbsp;WriteLn('Packed record size = '+IntToStr(SizeOf(packedRec)));<br>
+&nbsp;&nbsp;WriteLn('UnPacked record size = '+IntToStr(SizeOf(unPackedRec)));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$align.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Aligned record size = 20<br>&nbsp;&nbsp;
+Packed record size = 14<br>&nbsp;&nbsp;
+UnPacked record size = 14<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

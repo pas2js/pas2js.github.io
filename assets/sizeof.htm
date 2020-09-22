@@ -1,0 +1,173 @@
+<!-- (0049)SizeOf -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : SizeOf command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, SizeOf, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>SizeOf</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Gives the storage byte size of a type or variable</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>SizeOf</b></font>
+
+(
+<b>Variable </b> : Any type
+)
+ : Integer;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>SizeOf</b></font>&nbsp;(
+Type
+)  : Integer;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>SizeOf</b></font> function returns the storage size, in bytes, of either a <b>Variable</b> or <b>Type</b>.
+<br>&nbsp;<br>
+It is often useful to know exactly how much space data is taking. This is especially true when using routines like <b>GetMem</b>.
+<br>&nbsp;<br>
+Some types always give the size of a pointer, since they are just that - pointers to where the type data is stored. For example, strings.
+<br>&nbsp;<br>
+Use the <b>InstanceSize</b> method to get the size of an object.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="length.htm">Length</a></b></td>
+<td width="8"></td>
+<td align="left">Return the number of elements in an array or string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setlength.htm">SetLength</a></b></td>
+<td width="8"></td>
+<td align="left">Changes the size of a string, or the size(s) of an array</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Show the sizes of some data types and variables</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;intNumber : Integer;<br>
+&nbsp;&nbsp;extNumber : Extended;<br>
+&nbsp;&nbsp;sentence&nbsp;&nbsp;: string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the sizes of a number of data types</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('&nbsp;&nbsp;SizeOf(Integer) = %d',[<font color=#C00000><b>SizeOf</b></font>(Integer)]);<br>
+&nbsp;&nbsp;ShowMessageFmt('SizeOf(intNumber) = %d',[<font color=#C00000><b>SizeOf</b></font>(intNumber)]);<br>
+&nbsp;&nbsp;ShowMessageFmt(' SizeOf(Extended) = %d',[<font color=#C00000><b>SizeOf</b></font>(Extended)]);<br>
+&nbsp;&nbsp;ShowMessageFmt('SizeOf(extNumber) = %d',[<font color=#C00000><b>SizeOf</b></font>(extNumber)]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// String types and variables are pointers to the actual strings</b></font><br>
+&nbsp;&nbsp;sentence := 'A long sentence, certainly longer than 4';<br>
+&nbsp;&nbsp;ShowMessageFmt('&nbsp;&nbsp; SizeOf(string) = %d',[<font color=#C00000><b>SizeOf</b></font>(string)]);<br>
+&nbsp;&nbsp;ShowMessageFmt(' SizeOf(sentence) = %d',[<font color=#C00000><b>SizeOf</b></font>(sentence)]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="sizeof&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SizeOf(Integer) = 4<br>&nbsp;&nbsp;
+SizeOf(intNumber) = 4<br>&nbsp;&nbsp;
+ SizeOf(Extended) = 10<br>&nbsp;&nbsp;
+SizeOf(extNumber) = 10<br>&nbsp;&nbsp;
+&nbsp;&nbsp; SizeOf(string) = 4<br>&nbsp;&nbsp;
+ SizeOf(sentence) = 4<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Use GetMem to allocate storage for ten records</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> type</b><br>
+&nbsp;&nbsp;TRecord = Record<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string[10];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;age&nbsp;&nbsp;: Byte;<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;recStorage : PChar;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the size of our record type</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt(' SizeOf(TRecord) = %d',[<font color=#C00000><b>SizeOf</b></font>(TRecord)]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Allocate storage for ten of these records</b></font><br>
+&nbsp;&nbsp;GetMem(recStorage, 10 * <font color=#C00000><b>SizeOf</b></font>(TRecord));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="sizeof&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;SizeOf(TRecord) = 12<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

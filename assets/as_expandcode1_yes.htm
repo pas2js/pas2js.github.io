@@ -1,0 +1,159 @@
+<!-- (0061)As&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : As command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, As, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>As</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Used for casting object references</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+Object reference <b>as</b> Class type
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+Object reference | Interface reference <b>as</b> Interface type
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>As</b></font> keyword is used for casting objects or interfaces of one type to another.
+<br>&nbsp;<br>
+Casting allows an object to be referenced by a parent class type. For example, all objects may be referred to as a TObject class type:
+<br>&nbsp;<br>
+button1 := Button1 <font color=#996600><b>As</b></font> TObject;
+<br>&nbsp;<br>
+If the object has already been cast to a parent class type, then casting to a valid child class type is allowed. The sample code shows this for the <b>TForm</b> class object when it is passed as a <b>TObject</b> type to the <b>OnCreate</b> method of the form.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Use the <b>Is</b> keyword to check for castability before attemting a cast.<br>
+<br>
+Invalid casting gives <b>EInvalidCast</b> when you try to use the cast value.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="is.htm">Is</a></b></td>
+<td width="8"></td>
+<td align="left">Tests whether an object is a certain class or ascendant</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Casting using traditional and <b>as</b> casting</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;myForm&nbsp;&nbsp;: TForm;<br>
+&nbsp;&nbsp;myForm1 : TForm1;<br><b>
+</b><br>
+&nbsp;&nbsp;myByte&nbsp;&nbsp;: Byte;<br>
+&nbsp;&nbsp;myChar&nbsp;&nbsp;: Char;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;myByte := 65;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Cast this Byte to Char using the standard casting method</b></font><br>
+&nbsp;&nbsp;myChar := Char(myByte);<br>
+&nbsp;&nbsp;WriteLn('myByte standard casting to Char = '+myChar);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Cast the Form to myForm using standard casting</b></font><br>
+&nbsp;&nbsp;myForm := TForm1(Sender);<br>
+&nbsp;&nbsp;WriteLn('Sender using standard casting = '+myForm.Caption);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Cast the form using the as keyword</b></font><br>
+&nbsp;&nbsp;myForm := Sender <font color=#C00000><b>As</b></font> TForm;<br>
+&nbsp;&nbsp;WriteLn('Sender as valid child = '+myForm.Caption);<br><b>
+</b><br>
+&nbsp;&nbsp;myForm := Sender <font color=#C00000><b>As</b></font> TForm1;<br>
+&nbsp;&nbsp;WriteLn('Sender as itself = '+myForm.Caption);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create a new TForm object rather than TForm1</b></font><br>
+&nbsp;&nbsp;myForm := TForm.Create(self);<br>
+&nbsp;&nbsp;myForm.Caption := 'New form';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Standard casting does no checking if we cast TForm to TForm1</b></font><br>
+&nbsp;&nbsp;myForm1 := TForm1(myForm);<br>
+&nbsp;&nbsp;WriteLn('Standard casting to bad child = '+myForm1.Caption);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Casting using 'as' rejects object to invalid child casting</b></font><br>
+&nbsp;&nbsp;myForm1 := myForm <font color=#C00000><b>As</b></font> TForm1;<br>&nbsp;&nbsp;<font color=#008000><b>// The following yields the EInvalidCast error</b></font><br>
+&nbsp;&nbsp;WriteLn('As casting to bad type = '+myForm1.Caption);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="as.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;myByte standard casting to Char = A<br>&nbsp;&nbsp;
+Sender using standard casting = Form1<br>&nbsp;&nbsp;
+Sender as valid child = Form1<br>&nbsp;&nbsp;
+Sender as itself = Form1<br>&nbsp;&nbsp;
+Standard casting to bad child = New form<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+EInvalidCast error : 'Invalid cast type'<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

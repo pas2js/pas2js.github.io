@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Arrays</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Arrays</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_language_types2.htm">Previous</a>&nbsp;
+     <a href="hm_language_types4.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Arrays&nbsp;are&nbsp;ordered&nbsp;collections&nbsp;of&nbsp;data&nbsp;of&nbsp;one&nbsp;type.&nbsp;Each&nbsp;data&nbsp;item&nbsp;is&nbsp;called&nbsp;an&nbsp;element,&nbsp;and&nbsp;is&nbsp;accessed&nbsp;by&nbsp;its&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">position&nbsp;(index)&nbsp;in&nbsp;the&nbsp;array.&nbsp;They&nbsp;are&nbsp;very&nbsp;useful&nbsp;for&nbsp;storing&nbsp;lists&nbsp;of&nbsp;data,&nbsp;such&nbsp;as&nbsp;customers,&nbsp;or&nbsp;lines&nbsp;of&nbsp;text.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">There&nbsp;are&nbsp;a&nbsp;number&nbsp;of&nbsp;types&nbsp;of&nbsp;array,&nbsp;and&nbsp;array&nbsp;may&nbsp;be&nbsp;single&nbsp;or&nbsp;multidimensional&nbsp;(lists&nbsp;of&nbsp;lists&nbsp;in&nbsp;effect).&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Constant&nbsp;arrays:</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">It&nbsp;is&nbsp;probably&nbsp;easiest&nbsp;to&nbsp;introduce&nbsp;arrays&nbsp;that&nbsp;are&nbsp;used&nbsp;to&nbsp;hold&nbsp;fixed,&nbsp;unchangeable&nbsp;information.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">These&nbsp;can&nbsp;be&nbsp;defined&nbsp;in&nbsp;two&nbsp;kinds&nbsp;of&nbsp;ways:</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array01.htm"><img src="btn.jpg" border="0"/></a>
+</p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Defining an array size using enumerations:</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Below, we define an enumeration, then a subrange of this enumeration, and define two arrays using these.</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array02.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Array operations</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Array operations</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> were added to the Smart Pascal syntax to better adapt to JavaScript. Since JavaScript has no concept of pointers or direct memory access, all attempts at dealing with lists, linked lists etc. in the traditional way would cause a massive speed penalty. So where you under Delphi or Free Pascal would allocate a </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">TList</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> or </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">TObjectList</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> instance - Smart Pascal achieves better performance and identical functionality using ordinary arrays. All arrays support a complete set of operations, regardless of datatype, for inserting, removing, sorting and otherwise manipulate the content.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Smart Pascal have this functionality &quot;built-in&quot; for all arrays, as long as the datatypes match. When you combine this with property expressions, the result is a powerful and alternative way of achieving the same with less resources and more speed than generics or traditional Object Pascal.</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">In&nbsp;addition&nbsp;to&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Low,&nbsp;High,&nbsp;Length&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">and</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">&nbsp;Count</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">,&nbsp;Pas2JS&nbsp;also&nbsp;support&nbsp;the&nbsp;following&nbsp;pseudo-methods:&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Add</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(item [,...]) / </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Push</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(item [,...]) : increases Length by one and adds one or more item at the end of the array, can also add arrays (concatenation). </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Clear</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">() : empties the array (equivalent to SetLength(0)) </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Copy</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(startIndex[, count]) : creates a new dynamic array containing count items from startIndex, if count isn't specified, copies to the end of the array. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Delete</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(index[, count]) : deletes the item at the specified index and reduces Length by count (default one). </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">IndexOf</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">([startIndex, ]item) : returns the index of an item, returns a negative value if not found. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Insert</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(index, item) : insert an item at the specified index. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Join</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(delimiter : String) : joins the elements of an array into a string, and returns the string.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Map</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">([map function]) : creates a new array by mapping elements of the array according to a map function. The map function takes a single parameter of the type of the array items and returns the mapped value. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Peek</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">() : returns the last item. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Pop</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">() : returns the last item and removes it from the array. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Remove</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">([startIndex, ]item) : removes the item if it can be found and returns its previous index, returns a negative value if not found. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Reverse</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">() : reverses the order of the items. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">SetLength</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(newLength) : defines the length of a dynamic array </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Sort</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">([compare function]) : sort an array according to the compare function, the comparison function can be omitted for arrays of String, Integer and Float. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Swap</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">(index1, index2) : swaps to items of specified indexes. </span></td></tr></table></div><p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<div style="text-align: justify; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 12pt; font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial'; color: #000000;">&#9642;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">Peek(), Pop(), Push()</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> method are typically used with FILO (first in, last out) and FIFO (first in, first out) stack objects. As such Smart Pascal </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">has no</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #0000ff;">need </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">for classes like </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TObjectlist</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">, </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TList</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">, </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TStringlist</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> and </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">TStack</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> (these are provided by the run-time library for legacy support with Delphi's Visual Component Library only).</span></td></tr></table></div><p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Using Arrays with StrSplit and StrJoin functions in Pas2JS</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">StrJoin()</span><span style="font-size: 16px; font-family: 'Times New Roman';"> takes an array of string and returns a string made by joining all the individual strings</span></td></tr></table></div><p><span style="font-size: 13px;">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">StrSplit()</span><span style="font-size: 16px; font-family: 'Times New Roman';"> splits a string on a delimiter and returns an array of string</span></td></tr></table></div><p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array03.htm"><img src="btn.jpg" border="0"/></a>
+</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">------------------------------------------------------------------------------------------------------------------------</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">See more at <a href="jsref_obj_array_htm.htm" title="jsref_obj_array.htm">Array object</a> JS </span><span class="f_BodyText" style="font-size: 16px; font-family: 'Times New Roman';">reference</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Array Iterations using for..in</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Pas2JS&nbsp;supports&nbsp;the&nbsp;statement&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">for&nbsp;in&nbsp;do</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;to&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">loop&nbsp;on&nbsp;elements&nbsp;of&nbsp;an&nbsp;array&nbsp;in&nbsp;a&nbsp;sequence,&nbsp;for&nbsp;instance.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array33.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Examples&nbsp;using&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">for&nbsp;in&nbsp;do</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Array Types:</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Arrays&nbsp;come&nbsp;in&nbsp;two&nbsp;varieties:&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">static&nbsp;arrays</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;where&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;array&nbsp;is&nbsp;known&nbsp;during&nbsp;the&nbsp;compilation&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">and&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">dynamic&nbsp;arrays</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;which&nbsp;can&nbsp;be&nbsp;resized&nbsp;during&nbsp;the&nbsp;program&nbsp;execution.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><a name="statarr"></a><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Static&nbsp;Arrays&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Static Arrays require the size to be defined as part of the array definition. They are called static because their size is static, and because they use static memory.</span><br>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array04.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Defining&nbsp;static&nbsp;arrays&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">How&nbsp;do&nbsp;I&nbsp;create&nbsp;a&nbsp;multidimensional&nbsp;array&nbsp;in&nbsp;Pas2JS?</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array05.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Multidimensional&nbsp;array&nbsp;11x11&nbsp;in&nbsp;Pas2JS&nbsp;Model&nbsp;1&nbsp;-&nbsp;using&nbsp;new</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array06.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Multidimensional&nbsp;array&nbsp;11x11&nbsp;in&nbsp;Pas2JS&nbsp;Model&nbsp;2&nbsp;-&nbsp;using&nbsp;SetLength</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">&nbsp;&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array07.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Multidimensional&nbsp;array&nbsp;11x11&nbsp;in&nbsp;Pas2JS&nbsp;Model&nbsp;3&nbsp;-&nbsp;using&nbsp;auxiliar&nbsp;array</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array08.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Bi-dimensional&nbsp;array&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><a name="dynarr"></a><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">Dynamic&nbsp;Arrays&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Dynamic&nbsp;arrays&nbsp;are&nbsp;supported&nbsp;as&nbsp;reference&nbsp;types.&nbsp;They&nbsp;are&nbsp;declared&nbsp;without&nbsp;bounds.&nbsp;Their&nbsp;lower&nbsp;bound&nbsp;is&nbsp;always&nbsp;zero.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Dynamic arrays can be initialized from inline or constant static arrays.</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array09.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Initialize&nbsp;dynamic&nbsp;arrays&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Declaring Arrays</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">First thing you have to do is define an array and then create it.</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Create an object Array</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Next step is create an object array (you instantiate with the keyword </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">new</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">).</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Pas2JS supports dynamic arrays in the form of objects (which in reality maps directly to JavaScript arrays). You allocate dynamic arrays using the classical "new" keyword, as such:</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array10.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Declaring&nbsp;and&nbsp;instantiate&nbsp;an&nbsp;array&nbsp;in&nbsp;Pas2JS&nbsp;example&nbsp;1</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array11.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Declaring&nbsp;and&nbsp;instantiate&nbsp;an&nbsp;array&nbsp;in&nbsp;Pas2JS&nbsp;example&nbsp;2</span></p>
+<p style="margin: 0px 234px 0px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Passing Dynamic Arrays by Reference in Pas2JS</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array12.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Passing&nbsp;Dynamic&nbsp;Arrays&nbsp;by&nbsp;Reference&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Using the prefix var to return a different dynamic array</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">var</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> keyword still makes sense if you want to return a different array.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array13.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;the&nbsp;prefix&nbsp;var&nbsp;to&nbsp;return&nbsp;a&nbsp;different&nbsp;dynamic&nbsp;array</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array14.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Passing&nbsp;array&nbsp;as&nbsp;reference&nbsp;in&nbsp;&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Single Dimensional arrays in Pas2JS</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">So far, we have only seen lists - single dimensional arrays.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array15.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Set&nbsp;the&nbsp;capacity&nbsp;of&nbsp;a&nbsp;array&nbsp;to&nbsp;3&nbsp;elements&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Multidimensional arrays in Pas2JS</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Pas2JS supports arrays of any numbers of dimensions. In reality, a multidimensional array is a collection of arrays - each element of the first array is another array. each element of that array is in turn another array and so on.</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Dynamic arrays do not have their size defined in their declaration.</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Multidimensional Arrays</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">In Delphi, we could have defined the array 4 rows per 5 colluns with one SetLength statement:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">SetLength(multiArray,&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #ff0000;">4</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #ff0000;">5</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">);&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In&nbsp;Pas2JS,&nbsp;we&nbsp;have&nbsp;to&nbsp;define&nbsp;the&nbsp;size&nbsp;of&nbsp;our&nbsp;multidimensional&nbsp;array&nbsp;in&nbsp;pieces&nbsp;(sized&nbsp;subarrays).&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Take&nbsp;a&nbsp;look&nbsp;at&nbsp;this&nbsp;code:</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array16.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Array&nbsp;4&nbsp;x&nbsp;5&nbsp;in&nbsp;Pas2JS</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Copying an Array</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">When copying single dimension arrays, we can use the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Copy(startIndex : Integer; count: Integer)</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> method. It allows us to copy all or part of one array to another, as in this example:</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array17.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Copy&nbsp;part&nbsp;of&nbsp;one&nbsp;Array&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Array of Records</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">Let's step into another dimension and create an array of records which allows you to store multiple records which can be returned to a calling form. Place the following declaration into the interface section of a form.</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array18.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Arrays&nbsp;of&nbsp;Records&nbsp;example&nbsp;in&nbsp;Pas2JS&nbsp;example&nbsp;1</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array19.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Arrays&nbsp;of&nbsp;Records&nbsp;example&nbsp;in&nbsp;Pas2JS&nbsp;example&nbsp;2</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">New X Copy()</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">Dynamic arrays in Pas2JS are pure reference types and they behave a bit like a TList&lt;T&gt; would in Delphi, as SetLength() is a method, which modifies the array, rather than a global procedure, which can create a new copy of the array &nbsp;(as in Delphi), ie. in Pas2JS, if you have:&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array20.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Dynamic&nbsp;array&nbsp;instance&nbsp;using&nbsp;New&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Copy method</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The Copy() method</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> creates a new dynamic array containing count items from startIndex, if count isn't specified, copies to the end of the array. </span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Copy()</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> copies the whole array.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Copy(index)</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> copies all items starting from index.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">Copy(index, count)</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> copies count items starting from index.</span></td></tr></table></div><p><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array21.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Copy&nbsp;to&nbsp;create&nbsp;a&nbsp;new&nbsp;dynamic&nbsp;array&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">IndexOf&nbsp;method</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">The&nbsp;indexOf()&nbsp;method&nbsp;searches&nbsp;the&nbsp;array&nbsp;for&nbsp;the&nbsp;specified&nbsp;item,&nbsp;and&nbsp;returns&nbsp;its&nbsp;position.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">The&nbsp;search&nbsp;will&nbsp;start&nbsp;at&nbsp;the&nbsp;specified&nbsp;position,&nbsp;or&nbsp;at&nbsp;the&nbsp;beginning&nbsp;if&nbsp;no&nbsp;start&nbsp;position&nbsp;is&nbsp;specified,&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">and&nbsp;end&nbsp;the&nbsp;search&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;array.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Returns&nbsp;-1&nbsp;if&nbsp;the&nbsp;item&nbsp;is&nbsp;not&nbsp;found.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">If&nbsp;the&nbsp;item&nbsp;is&nbsp;present&nbsp;more&nbsp;than&nbsp;once,&nbsp;the&nbsp;indexOf&nbsp;method&nbsp;returns&nbsp;the&nbsp;position&nbsp;of&nbsp;the&nbsp;first&nbsp;occurence.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Note:&nbsp;The&nbsp;first&nbsp;item&nbsp;has&nbsp;position&nbsp;0,&nbsp;the&nbsp;second&nbsp;item&nbsp;has&nbsp;position&nbsp;1,&nbsp;and&nbsp;so&nbsp;on.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array22.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;IndexOf&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Pop method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The pop() method removes the last element of an array, and returns that element. Note: This method changes the length of an array. Tip: To just return the last item, use the peek() method.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array23.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Pop&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Push method</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The push() method adds new items to the end of an array, and returns the new length.</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">Note: The new item(s) will be added at the end of the array.</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">Note: This method changes the length of the array.</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array24.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Push&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Insert method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The Insert() method insert an item at the specified index.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array25.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Insert&nbsp;to&nbsp;a</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">dd&nbsp;one&nbsp;item&nbsp;at&nbsp;specific&nbsp;index&nbsp;to&nbsp;an&nbsp;array</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Peek method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The Peek() method returns the last item.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array26.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Peek&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Swap method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The swap() method swaps to items of specified indexes.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array27.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Swap&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Reverse method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The Reverse() method reverses the order of the items.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array28.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Reverse&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Join method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The Join() method joins the elements of an array into a string, and returns the string.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array29.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Join&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Delete method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The Delete() method deletes the item at the specified index and reduces Length by count (default one).&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array30.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Delete&nbsp;to&nbsp;erase&nbsp;an&nbsp;item&nbsp;in&nbsp;Pas2JS</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Sort method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The sort order can be either alphabetic or numeric, and either ascending or descending.Default sort order is alphabetic and ascending. &nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array31.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Sort&nbsp;in&nbsp;arrays&nbsp;in&nbsp;ascending/descending&nbsp;order&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Map method</span></p>
+<p style="background: #fdfdfd; margin: 9px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The Map method creates a new array by mapping elements of the array according to a map function. The map function takes a single parameter of the type of the array items and returns the mapped value.&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">The following code takes an array of numbers and creates a new array containing the square roots / squares of the numbers in the first array.</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_array32.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;Map&nbsp;in&nbsp;Pas2JS</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+<p style="background: #fdfdfd;"><span style="font-size: 13px; background-color: #fdfdfd;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Message dialogs</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-family: 'Times New Roman'; font-weight: bold; color: #ffffff;">Message dialogs</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_forms.htm">Previous</a>&nbsp;
+     <a href="hm_themes.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Under Delphi you have several ways of displaying a messagebox. If you want a more elaborate messagebox you would call TApplication.messagebox which takes some flags as a parameter, or you can use good old </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; color: #000000;">showmessage()</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> to bring up a very simple message for the user.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Under smart we have almost the same thing, except here showmessage is called </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; color: #000000;">w3_showmessage()</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. This function can be found in w3system and simply calls the browser’s built in alert() javascript function.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">We also have a more advanced dialog which is a part of TCustomApplication that you invoke using </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; color: #000000;">ShowDialog()</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. Since there is no such thing as a modal requester under javascript, you have to catch the results via an event. You can also check to see if a dialog is presently showing. Here are the functions that deals with the dialog:</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ShowDialog(aCaption:</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;aText:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">;&nbsp;aOptions:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TW3AlertOptions</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;CloseDialog;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;DialogActive:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">Boolean</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;OnDialogSelect:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">TW3AlertSelectEvent;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">To display the dialog you could write:</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">Application.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">onDialogSelect</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;(Sender:TObject;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aResult:&nbsp;TW3AlertResult)</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">Begin</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;case</span><span class="f_CodeExample" style="color: #000000;">&nbsp;aResult&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">of</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;roYes,&nbsp;roOK:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin&nbsp;</span><span class="f_CodeExample" style="color: #000080;">{}</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;roNo,&nbsp;roCancel:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><span class="f_CodeExample" style="color: #000000;">&nbsp;{}&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">application.</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">showdialog</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="color: #ff0000;">'Welcome','select&nbsp;something'</span><span class="f_CodeExample" style="color: #000000;">,aoYesNo);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">And you get a styled dialog which also blocks any background controls from being accessed:</span></p>
+<p><img src="hm_clip0008.png" width="297" height="225" border="0" alt="hm_clip0008"></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">iOS themed alert dialog</span></p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

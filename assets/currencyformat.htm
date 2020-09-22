@@ -1,0 +1,168 @@
+<!-- (0057)CurrencyFormat -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : CurrencyFormat command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, CurrencyFormat, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>CurrencyFormat</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Variable</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines currency string placement in curr display functions</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+var <b>CurrencyFormat</b> : Byte;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>CurrencyFormat</b></font> variable is in effect an enumerated type. The values it can hold determine placement of the currency string in the currency display functions, such as <b>CurrToStr</b>.
+<br>&nbsp;<br>
+The allowed values are :
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>0&nbsp;</b></td><td class=dd> = Before amount</td></tr>
+<tr><td class=dt align='right'><b>1&nbsp;</b></td><td class=dd> = After amount</td></tr>
+<tr><td class=dt align='right'><b>2&nbsp;</b></td><td class=dd> = Before amount with space</td></tr>
+<tr><td class=dt align='right'><b>3&nbsp;</b></td><td class=dd> = After amount with space</td></tr></table>
+<br>&nbsp;<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+The <b>CurrencyString</b> variable determines the actual currency symbol or string. In the UK, the default is <b>?</b><br>
+<br>
+<font color=#996600><b>CurrencyFormat</b></font> = <b>LOCALE_ICURRENCY</b> by default.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="currencydecimals.htm">CurrencyDecimals</a></b></td>
+<td width="8"></td>
+<td align="left">Defines decimal digit count in the Format function</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currencystring.htm">CurrencyString</a></b></td>
+<td width="8"></td>
+<td align="left">The currency string used in currency display functions</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="currtostrf.htm">CurrToStrF</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a currency value to a string with formatting</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="decimalseparator.htm">DecimalSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to display the decimal point</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="format.htm">Format</a></b></td>
+<td width="8"></td>
+<td align="left">Rich formatting of numbers and text into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="negcurrformat.htm">NegCurrFormat</a></b></td>
+<td width="8"></td>
+<td align="left">Defines negative amount formatting in currency displays</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="thousandseparator.htm">ThousandSeparator</a></b></td>
+<td width="8"></td>
+<td align="left">The character used to display the thousands separator</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate the 4 currency formats</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;amount : Currency;<br>
+&nbsp;&nbsp;i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Byte;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;amount := 12;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 12 pounds</b></font><br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the amount using all 4 currency formats</b></font><br>
+&nbsp;&nbsp;for i := 0 to 3 do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>CurrencyFormat</b></font> := i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Format '+IntToStr(i)+' = '+CurrToStrF(amount, ffCurrency, 0));<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><b>
+</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="currencyformat&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Format 0 = ?12<br>&nbsp;&nbsp;
+Format 1 = 12?<br>&nbsp;&nbsp;
+Format 2 = ? 12<br>&nbsp;&nbsp;
+Format 3 = 12 ?<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

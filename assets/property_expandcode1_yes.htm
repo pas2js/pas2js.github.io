@@ -1,0 +1,271 @@
+<!-- (0067)Property&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Property command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Property, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Property</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines controlled access to class fields</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+<font color=#FF0000>?1.</font><b>Property</b> Name : Type <b>read</b> Getter|nodefault;<br>&nbsp;
+<font color=#FF0000>?2.</font><b>Property</b> Name : Type <b>write</b> Setter;<br>&nbsp;
+<font color=#FF0000>?3.</font><b>Property</b> Name : Type <b>read</b> Getter <b>write</b> Setter;<br>&nbsp;
+<font color=#FF0000>?4.</font><b>Property</b> Name : Type <b>Index</b> Constant <b>read</b> Getter {<b>default</b> : Constant|<b>nodefault</b>;} {<b>stored</b> : Boolean};<br>&nbsp;
+<font color=#FF0000>?5.</font><b>Property</b> Name : Type <b>Index</b> Constant <b>write</b> Setter {<b>default</b> : Constant|<b>nodefault</b>;} {<b>stored</b> : Boolean};<br>&nbsp;
+<font color=#FF0000>?6.</font><b>Property</b> Name : Type <b>Index</b> Constant <b>read</b> Getter <b>write</b> Setter {<b>default</b> : Constant|<b>nodefault</b>;} {<b>stored</b> : Boolean};<br>&nbsp;
+<font color=#FF0000>?7.</font><b>Property</b> Name[<b>Index</b> : IndexType] : BaseType <b>read</b> Getter {<b>default</b>;}<br>&nbsp;
+<font color=#FF0000>?8.</font><b>Property</b> Name[<b>Index</b> : IndexType] : BaseType <b>write</b> Setter; {<b>default</b>;}<br>&nbsp;
+<font color=#FF0000>?9.</font><b>Property</b> Name[<b>Index</b> : IndexType] : BaseType <b>read</b> Getter <b>write</b> Setter; {<b>default</b>;}<br>&nbsp;
+<font color=#FF0000>10.</font><b>Property</b> Name : Type <b>read</b> Getter <b>implements</b> Interfaces...;<br>&nbsp;
+<font color=#FF0000>11.</font><b>Property</b> Name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#00A000>// Redeclared base class property</font><br>&nbsp;
+<font color=#FF0000>12.</font><b>Property</b> Name : Type;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#00A000>// Dispinterface only </font><br>&nbsp;
+<font color=#FF0000>13.</font><b>Property</b> Name : Type readonly;&nbsp;&nbsp;<font color=#00A000>// Dispinterface only </font><br>&nbsp;
+<font color=#FF0000>14.</font><b>Property</b> Name : Type writeonly; <font color=#00A000>// Dispinterface only </font>
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Property</b></font> keyword defines a controlled access to class fields.
+<br>&nbsp;<br>
+It is an Object Oriented concept that internals of an object should be hidden from the outside. Whilst you can allow fields (data) in a class to be directly externally accessible (by placing in the public or published sections), this is unwise. Instead, <font color=#996600><b>Property</b></font> can be used to define how the data is read and written.
+<br>&nbsp;<br>
+<font color=#FF0000>Versions 1, 2 and 3</font>
+These basic forms define read, write or read and write access to class fields. The data <b>Type</b> is returned from the field or method called <b>Getter</b>. The data is updated via the <b>Setter</b> field or method.
+<br>&nbsp;<br>
+Note that you must use a different name for the <b>Name</b> and for <b>Getter</b> and <b>Setter</b>. For example:
+<font color=#200080>
+Property Age read fAge write fAge;
+</font>
+You would use field names when there is no vetting or retrieval processing required. When using a method to read or write, the read or written value can be a lot simpler than the stored value. The stored value can even be entirely different.
+<br>&nbsp;<br>
+<font color=#FF0000>Versions 4, 5 and 6</font>
+Using the <b>Index</b> keyword tells Delphi to pass the <b>Constant</b> value as the argument to the <b>Getter</b> and <b>Setter</b> methods. These must be functions that take this constant index value as an argument.
+<br>&nbsp;<br>
+For example:
+<font color=#200080>
+Property Item2 : string Index 2 read ItemGetter;
+</font>
+where ItemGetter is defined as :
+<font color=#200080>
+Function ItemGetter(Index : Integer) : string;
+</font>
+<b>Default</b> provides run time information for the property. <b>NoDefault</b> does not.
+<b>Stored</b> is beyond the scope of Smart Pascal.
+<br>&nbsp;<br>
+<font color=#FF0000>Versions 7, 8 and 9</font>
+This is a generalised version of versions 4,5 and 6. It requests the user to provide the index value for the Getter and Setter methods.
+<br>&nbsp;<br>
+<b>Default</b> allows the Getter and Setter method calls to be replaced as in the following example :
+<font color=#200080>
+myValue := MyClass.Getter(23);
+</font>
+can be replaced by :
+<font color=#200080>
+myValue := MyCLass[23];
+</font>
+<br>&nbsp;<br>
+<font color=#FF0000>Version 10</font>
+Allows the implementation of an Interface method to be delegated to a property. Access to the property invokes the interface implementation.
+<br>&nbsp;<br>
+<font color=#FF0000>Version 11</font>
+By redclaring a parent class property, you can do so in a public or published clause, thereby raising the access rights of the property.
+<br>&nbsp;<br>
+<font color=#FF0000>Versions 12, 13 and 14</font>
+Are relevant for dispinterfaces, outside the scope of Smart Pascal.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="index.htm">Index</a></b></td>
+<td width="8"></td>
+<td align="left">Principally defines indexed class data properties</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="private.htm">Private</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the section of private data and methods in a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="protected.htm">Protected</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a section of class private data accesible to sub-classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="public.htm">Public</a></b></td>
+<td width="8"></td>
+<td align="left">Starts an externally accessible section of a class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="published.htm">Published</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a published externally accessible section of a class</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrating basic and indexed properties</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;<font color=#008000>// The System unit does not need to be defined</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,<br>
+&nbsp;&nbsp;Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Class with Indexed properties</b></font><br>
+&nbsp;&nbsp;TRectangle = class<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fArea&nbsp;&nbsp; : LongInt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fCoords : array[0..3] of Longint;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;&nbsp;GetCoord(Index: Integer): Longint;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure SetCoord(Index: Integer; Value: Longint);<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Property</b></font> Area&nbsp;&nbsp; : Longint read fArea;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Property</b></font> Left&nbsp;&nbsp; : Longint Index 0 read GetCoord write SetCoord;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Property</b></font> Top&nbsp;&nbsp;&nbsp;&nbsp;: Longint Index 1 read GetCoord write SetCoord;<br><b>
+</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Property</b></font> Right&nbsp;&nbsp;: Longint Index 2 read GetCoord write SetCoord;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Property</b></font> Bottom : Longint Index 3 read GetCoord write SetCoord;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color=#C00000><b>Property</b></font> Coords[Index: Integer] : Longint read GetCoord write SetCoord;<br><b>
+</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;constructor Create;<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The form class itself</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><font color=#008000><b>// TRectangle property 'Getter' routine</b></font><br><font color=#008000><b>// TRectangle constructor</b></font><br><b>
+constructor TRectangle.Create;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Give default rectangle coordinates</b></font><br>
+&nbsp;&nbsp;left&nbsp;&nbsp; := 0;<br>
+&nbsp;&nbsp;right&nbsp;&nbsp;:= 100;<br>
+&nbsp;&nbsp;top&nbsp;&nbsp;&nbsp;&nbsp;:= 0;<br>
+&nbsp;&nbsp;bottom := 100;<br>
+&nbsp;&nbsp;fArea&nbsp;&nbsp;:= 100 * 100;<br><b>
+end;</b><br><b>
+</b><br><b>
+function TRectangle.GetCoord(Index: Integer): Longint;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Only allow valid index values</b></font><br>
+&nbsp;&nbsp;if (Index >= 0) and (Index <= 3)<br>
+&nbsp;&nbsp;then Result := fCoords[Index]<br>
+&nbsp;&nbsp;else Result := -1;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// TRectangle property 'Setter' routine</b></font><br><b>
+procedure TRectangle.SetCoord(Index, Value: Integer);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Only allow valid index values</b></font><br>
+&nbsp;&nbsp;if (Index >= 0) and (Index <= 3)<br>
+&nbsp;&nbsp;then<br>
+&nbsp;&nbsp;begin<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Save the new value</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;fCoords[Index] := Value;<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// And recreate the rectangle area</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;fArea := (right - left) * (bottom - top);<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;myRect : TRectangle;<br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create my little rectangle with default coordinates</b></font><br>
+&nbsp;&nbsp;myRect := TRectangle.Create;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And set the corner coordinates</b></font><br>&nbsp;&nbsp;myRect.Left := 22;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Left using direct method</b></font><br>
+&nbsp;&nbsp;myRect.Top&nbsp;&nbsp;:= 33;<br>&nbsp;&nbsp;myRect.SetCoord(2,44);&nbsp;&nbsp; <font color=#008000><b>// Right using indexed method</b></font><br>
+&nbsp;&nbsp;myRect.SetCoord(3,55);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And ask for these values</b></font><br>
+&nbsp;&nbsp;for i:= 0 to 3 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessageFmt('myRect coord %d = %d',[i,myRect.GetCoord(i)]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And show the rectangle area</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('myRect area = %d',[myRect.Area]);<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="property.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;myRect coord 0 = 22<br>&nbsp;&nbsp;
+myRect coord 1 = 33<br>&nbsp;&nbsp;
+myRect coord 2 = 44<br>&nbsp;&nbsp;
+myRect coord 3 = 55<br>&nbsp;&nbsp;
+myRect area = 484<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

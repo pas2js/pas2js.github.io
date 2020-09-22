@@ -1,0 +1,187 @@
+<!-- (0046)Var -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Var command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Var, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Var</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Starts the definition of a section of data variables</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Var</b><br>&nbsp;
+&nbsp;&nbsp;Name1 : Type;<br>&nbsp;
+ {...}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Var</b><br>&nbsp;
+&nbsp;&nbsp;Name1 : Type = Expression1;<br>&nbsp;
+ {...}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+Name (<b>Var</b> Var1 : type {;...});
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Var</b></font> keyword is used to start a section of variable definitions.
+<br>&nbsp;<br>
+The section is terminated by the next keyword in a program.
+<br>&nbsp;<br>
+Within the section, one or more variables may be defined. These can be of any data type.
+<br>&nbsp;<br>
+<font color=#FF0000><b>1.Variables with no initial value</b></font>
+<br>&nbsp;<br>
+These are defined with a given type, such as <b>string</b> or <b>Integer</b> but with no assigned default initial value.
+<br>&nbsp;<br>
+<font color=#FF0000><b>2.Variables with an initial value</b></font>
+<br>&nbsp;<br>
+These are defined with a given type, such as <b>string</b> or <b>Integer</b> with an assigned initial value. Only <b>global variables</b> may be initialised.
+<br>&nbsp;<br>
+<font color=#FF0000><b>3.Variable routine parameters</b></font>
+<br>&nbsp;<br>
+When passing data to a routine (function or procedure), you can prefix the parameter definition with <font color=#996600><b>Var</b></font> if the variable itself is to be updated by the routine. This allows a caller to pass data to a routine that will be enriched by the routine.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="const.htm">Const</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of fixed data values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="out.htm">Out</a></b></td>
+<td width="8"></td>
+<td align="left">Identifies a routine parameter for output only</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="type.htm">Type</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a new category of variable or process</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Defining local and parameter variables</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> <font color=#C00000><b>Var</b></font>&nbsp;&nbsp;// Local variables</b><br>
+&nbsp;&nbsp;apples, bananas : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Initialise our fruit counts</b></font><br>
+&nbsp;&nbsp;apples&nbsp;&nbsp;:= 1;<br>
+&nbsp;&nbsp;bananas := 1;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show their initial values</b></font><br>
+&nbsp;&nbsp;WriteLn('Apples&nbsp;&nbsp;= '+IntToStr(apples));<br>
+&nbsp;&nbsp;WriteLn('Bananas = '+IntToStr(bananas));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Increment them in the UpdateCounts routine</b></font><br>
+&nbsp;&nbsp;UpdateCounts(apples, bananas);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show their new values - only Bananas will be updated</b></font><br>
+&nbsp;&nbsp;WriteLn('Apples&nbsp;&nbsp;= '+IntToStr(apples));<br>
+&nbsp;&nbsp;WriteLn('Bananas = '+IntToStr(bananas));<br><b>
+end;</b><br><b>
+</b><br><b>
+</b><br><font color=#008000><b>// A procedure to increment the passed parameter values</b></font><br><b>
+procedure TForm1.UpdateCounts(count1: Integer; <font color=#C00000><b>Var</b></font> count2: Integer);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Increment both passed parameter values</b></font><br>
+&nbsp;&nbsp;Inc(count1);<br>
+&nbsp;&nbsp;Inc(count2);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="var&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Apples&nbsp;&nbsp;= 1<br>&nbsp;&nbsp;
+Bananas = 1<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Apples&nbsp;&nbsp;= 1<br>&nbsp;&nbsp;
+Bananas = 2<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

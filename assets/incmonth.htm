@@ -1,0 +1,154 @@
+<!-- (0051)IncMonth -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : IncMonth command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, IncMonth, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>IncMonth</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Increments a TDateTime variable by a number of  months</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>IncMonth</b></font>
+
+(
+<b>const StartDate </b> : TDateTime {;<b> NumberOfMonths </b> : Integer = 1}
+)
+ : TDateTime;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>IncMonth</b></font> function returns a TDateTime value that is <b>NumberOfMonths</b> greater than the passed <b>StartDate</b> value.
+<br>&nbsp;<br>
+The <b>time</b> component of the <b>StartDate</b> value is passed unchanged to the output value.
+<br>&nbsp;<br>
+The <b>year</b> value is incremented as appropriate.
+<br>&nbsp;<br>
+The increment value is optional, being 1 by default.
+<br>&nbsp;<br>
+After incrementing the month, if the day value is too high for that month/year, then it is reduced to the highest value for that month/year.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+There is <b>no <font color=#200080>DecMonth</font></b> function.<br>
+<br>
+Instead, use <font color=#996600><b>IncMonth</b></font> with a negative increment.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="incday.htm">IncDay</a></b></td>
+<td width="8"></td>
+<td align="left">Increments a TDateTime variable by + or - number of  days</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="incminute.htm">IncMinute</a></b></td>
+<td width="8"></td>
+<td align="left">Increments a TDateTime variable by + or - number of  minutes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="incyear.htm">IncYear</a></b></td>
+<td width="8"></td>
+<td align="left">Increments a TDateTime variable by a number of  years</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="incsecond.htm">IncSecond</a></b></td>
+<td width="8"></td>
+<td align="left">Increments a TDateTime variable by + or - number of  seconds</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="incmillisecond.htm">IncMillisecond</a></b></td>
+<td width="8"></td>
+<td align="left">Increments a TDateTime variable by + or - number of  milliseconds</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Add values to an example date</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myDate : TDateTime;<br><b>
+begin</b><br>&nbsp;&nbsp;myDate := StrToDate('31/01/2000');&nbsp;&nbsp; <font color=#008000><b>// End of Jan in a leap year</b></font><br>
+&nbsp;&nbsp;WriteLn('myDate = '+DateToStr(myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Increment by 1 (default)</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// 31st Jan 2000 ==> 31st Feb 2000 (illegal) ==> 29th Feb 2000</b></font><br>
+&nbsp;&nbsp;myDate := <font color=#C00000><b>IncMonth</b></font>(myDate);<br>
+&nbsp;&nbsp;WriteLn('myDate + 1 month = '+DateToStr(myDate));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Increment by 12 months</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// 29th Feb 2000 ==> 29th Feb 2000 (illegal) ==> 28th Feb 2001</b></font><br>&nbsp;&nbsp;myDate := <font color=#C00000><b>IncMonth</b></font>(myDate, 12);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Increment by 12 months</b></font><br>
+&nbsp;&nbsp;WriteLn('myDate + 12 months = '+DateToStr(myDate));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="incmonth&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;myDate = 31/01/2000<br>&nbsp;&nbsp;
+myDate + 1 month = 29/02/2000<br>&nbsp;&nbsp;
+myDate + 12 months = 28/02/2001<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,275 @@
+<!-- (0054)TOpenDialog -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : TOpenDialog command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, TOpenDialog, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>TOpenDialog</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Displays a file selection dialog</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Dialogs</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>TOpenDialog</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>TOpenDialog</b></font> is a visual component. It is used to allow a user to select one or more files to open.
+<br>&nbsp;<br>
+It can be defined by dragging the open dialog icon from the Dialogs tab in Delphi, or by defining a TOpenDialog variable.
+<br>&nbsp;<br>
+The <font color=#996600><b>TOpenDialog</b></font> can be configured to suit your needs. When using it, you would proceed along the following steps:
+<br>&nbsp;<br>
+<font color=#FF0000><b>Creating the dialog object</b></font>
+<br>&nbsp;<br>
+You define a TOpenDialog variable, and then assign a new TOpenDialog object to it:
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>var<br>
+&nbsp;&nbsp;openDialog : TOpenDialog;<br>
+begin<br>
+&nbsp;&nbsp;openDialog := TOpenDialog.Create(self);<br></font></font>
+<br>&nbsp;<br>
+Note that the dialog must have an anchor - here we provide the current object - self - as the anchor.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Setting options</b></font>
+<br>&nbsp;<br>
+Before displaying the dialog, you are likely to configure it to your needs by setting the dialog properties. Here are the main properties:
+<br>&nbsp;<br>
+<font color=#200080><b>Title</b> property</font><br>
+Used to set the caption for the dialog.
+<br>&nbsp;<br>
+<font color=#200080><b>FileName</b> property</font><br>
+Gives a default file name to open. (Otherwise, the file name field is blank). When returning from the dialog, if the user has hit OK, this property will contain the (first) selected file name, including its full path (see the first example).
+<br>&nbsp;<br>
+<font color=#200080><b>Filter</b> property</font><br>
+This allows only certain file types to be displayed and selectable. The filter text is displayed in a drop down below the file name field. The following example selects for text files only:
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>openDialog.Filter := 'Text files only|*.txt';</font></font>
+<br>&nbsp;<br>
+The drop down dialog shows the description before the | separator. After the separator, you define a mask that selects the files you want.
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>openDialog.Filter := 'Text and Word files only|*.txt;*.doc';</font></font>
+<br>&nbsp;<br>
+Above we have allowed two different file types, separated by a <b>;</b>.
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>openDialog.Filter := 'Text files|*.txt|Word files|*.doc';</font></font>
+<br>&nbsp;<br>
+Above we have allowed text and Word files as two options in the drop down list.
+<br>&nbsp;<br>
+<font color=#200080><b>FilterIndex</b> property</font><br>
+Defines which (starting at 1) of the drop down filter choices will be displayed first.
+<br>&nbsp;<br>
+<font color=#200080><b>InitialDir</b> property</font><br>
+Sets the starting directory in the dialog.
+<br>&nbsp;<br>
+<font color=#200080><b>Options</b> property</font><br>
+This is a set of TOpenOptions flags. These are quite extensive. The key values are:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>ofReadOnly&nbsp;</b></td><td class=dd>Opens the file for read only</td></tr>
+<tr><td class=dt align='right'><b>ofFileMustExist&nbsp;</b></td><td class=dd>Only existing file may be opened</td></tr>
+<tr><td class=dt align='right'><b>ofAllowMultiSelect&nbsp;</b></td><td class=dd>User can select 2 or more files</td></tr></table>
+<br>&nbsp;<br>
+<font color=#FF0000><b>Displaying the dialog</b></font>
+<br>&nbsp;<br>
+We now call a method of TOpenDialog:
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>if openDialog.Execute<br>
+then ...</font></font>
+<br>&nbsp;<br>
+<b>Execute</b> returns <b>true</b> if the user selected a file and hit <b>OK</b>. You can then use the selected file:
+<br>&nbsp;<br>
+<font color=#FF0000><b>Finishing with the dialog</b></font>
+<br>&nbsp;<br>
+The selected file or files are obtained using the following properties:
+<br>&nbsp;<br>
+<font color=#200080><b>FileName</b> property</font><br>
+This holds the full path plus file name of the selected file
+<br>&nbsp;<br>
+<font color=#200080><b>Files</b> property</font><br>
+This holds the full path plus file name of the a multiple file selection. The file names are held in the returned <b>TStrings</b> value (see the <b>TStringList</b> for more on string lists).
+<br>&nbsp;<br>
+Finally, we must free the dialog object:
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>openDialog.free;</font></font>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="append.htm">Append</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text file to allow appending of text to the end</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="assignfile.htm">AssignFile</a></b></td>
+<td width="8"></td>
+<td align="left">Assigns a file handle to a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="promptforfilename.htm">PromptForFileName</a></b></td>
+<td width="8"></td>
+<td align="left">Shows a dialog allowing the user to select a file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="reset.htm">Reset</a></b></td>
+<td width="8"></td>
+<td align="left">Open a text file for reading, or binary file for read/write</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tsavedialog.htm">TSaveDialog</a></b></td>
+<td width="8"></td>
+<td align="left">Displays a dialog for selecting a save file name</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tstringlist.htm">TStringList</a></b></td>
+<td width="8"></td>
+<td align="left">Holds a variable length list of strings</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrating single file selection</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;openDialog : <font color=#C00000><b>TOpenDialog</b></font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Open dialog variable</b></font><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create the open dialog object - assign to our open dialog variable</b></font><br>
+&nbsp;&nbsp;openDialog := TOpenDialog.Create(self);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the starting directory to be the current one</b></font><br>
+&nbsp;&nbsp;openDialog.InitialDir := GetCurrentDir;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Only allow existing files to be selected</b></font><br>
+&nbsp;&nbsp;openDialog.Options := [ofFileMustExist];<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Allow only .dpr and .pas files to be selected</b></font><br>
+&nbsp;&nbsp;openDialog.Filter := <br>
+&nbsp;&nbsp;&nbsp;&nbsp;'Delphi project files|*.dpr|Delphi pascal files|*.pas';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Select pascal files as the starting filter type</b></font><br>
+&nbsp;&nbsp;openDialog.FilterIndex := 2;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the open file dialog</b></font><br>
+&nbsp;&nbsp;if openDialog.Execute<br>
+&nbsp;&nbsp;then WriteLn('File : '+openDialog.FileName)<br>
+&nbsp;&nbsp;else WriteLn('Open file was cancelled');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Free up the dialog</b></font><br>
+&nbsp;&nbsp;openDialog.Free;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="topendialog&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;An open file dialog is displayed with two drop down filter choices:<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+&nbsp;&nbsp;Delphi project files<br>&nbsp;&nbsp;
+&nbsp;&nbsp;Delphi pascal files&nbsp;&nbsp;&nbsp;&nbsp;- this is displayed at the start<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+The dialog is positioned to the current directory (which will be<br>&nbsp;&nbsp;
+ the Delphi project directory if running the code from within<br>&nbsp;&nbsp;
+ Delphi).<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+If you select a file, such as 'Unit1.pas' then it is displayed <br>&nbsp;&nbsp;
+in the ShowMessage dialog like this:<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+&nbsp;&nbsp;File : C:\Program Files\Borland\Delphi7\Projects\Unit1.pas<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Selecting multiple files</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;openDialog : <font color=#C00000><b>TOpenDialog</b></font>;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Open dialog variable</b></font><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create the open dialog object - assign to our open dialog variable</b></font><br>
+&nbsp;&nbsp;openDialog := TOpenDialog.Create(self);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the starting directory to be the current one</b></font><br>
+&nbsp;&nbsp;openDialog.InitialDir := GetCurrentDir;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Allow multiple files to be selected - of any type</b></font><br>
+&nbsp;&nbsp;openDialog.Options := [ofAllowMultiSelect];<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the open file dialog</b></font><br>
+&nbsp;&nbsp;if not openDialog.Execute<br>
+&nbsp;&nbsp;then WriteLn('Open file was cancelled')<br>
+&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;begin<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Display the selected file names</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;for i := 0 to openDialog.Files.Count-1 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(openDialog.Files[i]);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Free up the dialog</b></font><br>
+&nbsp;&nbsp;openDialog.Free;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="topendialog&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;An open file dialog is displayed. Select a few files using <br>&nbsp;&nbsp;
+mouse drag or CTRL-click.<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+When you press OK, the selected files are shown. Like this:<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+&nbsp;&nbsp;C:\Program Files\Borland\Delphi7\Projects\Unit1.dcu<br>&nbsp;&nbsp;
+&nbsp;&nbsp;C:\Program Files\Borland\Delphi7\Projects\Unit1.pas<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

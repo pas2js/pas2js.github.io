@@ -1,0 +1,537 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0051)Property -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : Property command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, Property, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>Property</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Keyword</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Defines controlled access to class
+                fields</font>
+              </td>
+              <td align="right">
+                <font color="#000000" face=
+                "Arial,Helvetica,Sans-Serif" size=
+                "3"><strong>System</strong> unit</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size="2">&nbsp;
+                <font color=
+                "#FF0000">?1.</font><strong>Property</strong> Name
+                : Type <strong>read</strong>
+                Getter|nodefault;<br />
+                &nbsp; <font color=
+                "#FF0000">?2.</font><strong>Property</strong> Name
+                : Type <strong>write</strong> Setter;<br />
+                &nbsp; <font color=
+                "#FF0000">?3.</font><strong>Property</strong> Name
+                : Type <strong>read</strong> Getter
+                <strong>write</strong> Setter;<br />
+                &nbsp; <font color=
+                "#FF0000">?4.</font><strong>Property</strong> Name
+                : Type <strong>Index</strong> Constant
+                <strong>read</strong> Getter
+                {<strong>default</strong> :
+                Constant|<strong>nodefault</strong>;}
+                {<strong>stored</strong> : Boolean};<br />
+                &nbsp; <font color=
+                "#FF0000">?5.</font><strong>Property</strong> Name
+                : Type <strong>Index</strong> Constant
+                <strong>write</strong> Setter
+                {<strong>default</strong> :
+                Constant|<strong>nodefault</strong>;}
+                {<strong>stored</strong> : Boolean};<br />
+                &nbsp; <font color=
+                "#FF0000">?6.</font><strong>Property</strong> Name
+                : Type <strong>Index</strong> Constant
+                <strong>read</strong> Getter <strong>write</strong>
+                Setter {<strong>default</strong> :
+                Constant|<strong>nodefault</strong>;}
+                {<strong>stored</strong> : Boolean};<br />
+                &nbsp; <font color=
+                "#FF0000">?7.</font><strong>Property</strong>
+                Name[<strong>Index</strong> : IndexType] : BaseType
+                <strong>read</strong> Getter
+                {<strong>default</strong>;}<br />
+                &nbsp; <font color=
+                "#FF0000">?8.</font><strong>Property</strong>
+                Name[<strong>Index</strong> : IndexType] : BaseType
+                <strong>write</strong> Setter;
+                {<strong>default</strong>;}<br />
+                &nbsp; <font color=
+                "#FF0000">?9.</font><strong>Property</strong>
+                Name[<strong>Index</strong> : IndexType] : BaseType
+                <strong>read</strong> Getter <strong>write</strong>
+                Setter; {<strong>default</strong>;}<br />
+                &nbsp; <font color=
+                "#FF0000">10.</font><strong>Property</strong> Name
+                : Type <strong>read</strong> Getter
+                <strong>implements</strong> Interfaces...;<br />
+                &nbsp; <font color=
+                "#FF0000">11.</font><strong>Property</strong>
+                Name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00A000">//
+                Redeclared base class property</font><br />
+                &nbsp; <font color=
+                "#FF0000">12.</font><strong>Property</strong> Name
+                :
+                Type;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <font color="#00A000">// Dispinterface
+                only</font><br />
+                &nbsp; <font color=
+                "#FF0000">13.</font><strong>Property</strong> Name
+                : Type readonly;&nbsp;&nbsp;<font color=
+                "#00A000">// Dispinterface only</font><br />
+                &nbsp; <font color=
+                "#FF0000">14.</font><strong>Property</strong> Name
+                : Type writeonly; <font color="#00A000">//
+                Dispinterface only</font></font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>Property</strong></font> keyword
+                defines a controlled access to class fields.<br />
+                &nbsp;<br />
+                It is an Object Oriented concept that internals of
+                an object should be hidden from the outside. Whilst
+                you can allow fields (data) in a class to be
+                directly externally accessible (by placing in the
+                public or published sections), this is unwise.
+                Instead, <font color=
+                "#996600"><strong>Property</strong></font> can be
+                used to define how the data is read and
+                written.<br />
+                &nbsp;<br />
+                <font color="#FF0000">Versions 1, 2 and 3</font>
+                These basic forms define read, write or read and
+                write access to class fields. The data
+                <strong>Type</strong> is returned from the field or
+                method called <strong>Getter</strong>. The data is
+                updated via the <strong>Setter</strong> field or
+                method.<br />
+                &nbsp;<br />
+                Note that you must use a different name for the
+                <strong>Name</strong> and for
+                <strong>Getter</strong> and
+                <strong>Setter</strong>. For example: <font color=
+                "#200080">Property Age read fAge write fAge;</font>
+                You would use field names when there is no vetting
+                or retrieval processing required. When using a
+                method to read or write, the read or written value
+                can be a lot simpler than the stored value. The
+                stored value can even be entirely different.<br />
+                &nbsp;<br />
+                <font color="#FF0000">Versions 4, 5 and 6</font>
+                Using the <strong>Index</strong> keyword tells
+                Delphi to pass the <strong>Constant</strong> value
+                as the argument to the <strong>Getter</strong> and
+                <strong>Setter</strong> methods. These must be
+                functions that take this constant index value as an
+                argument.<br />
+                &nbsp;<br />
+                For example: <font color="#200080">Property Item2 :
+                string Index 2 read ItemGetter;</font> where
+                ItemGetter is defined as : <font color=
+                "#200080">Function ItemGetter(Index : Integer) :
+                string;</font> <strong>Default</strong> provides
+                run time information for the property.
+                <strong>NoDefault</strong> does not.
+                <strong>Stored</strong> is beyond the scope of
+                Smart Pascal.<br />
+                &nbsp;<br />
+                <font color="#FF0000">Versions 7, 8 and 9</font>
+                This is a generalised version of versions 4,5 and
+                6. It requests the user to provide the index value
+                for the Getter and Setter methods.<br />
+                &nbsp;<br />
+                <strong>Default</strong> allows the Getter and
+                Setter method calls to be replaced as in the
+                following example : <font color="#200080">myValue
+                := MyClass.Getter(23);</font> can be replaced by :
+                <font color="#200080">myValue :=
+                MyCLass[23];</font><br />
+                &nbsp;<br />
+                <font color="#FF0000">Version 10</font> Allows the
+                implementation of an Interface method to be
+                delegated to a property. Access to the property
+                invokes the interface implementation.<br />
+                &nbsp;<br />
+                <font color="#FF0000">Version 11</font> By
+                redclaring a parent class property, you can do so
+                in a public or published clause, thereby raising
+                the access rights of the property.<br />
+                &nbsp;<br />
+                <font color="#FF0000">Versions 12, 13 and 14</font>
+                Are relevant for dispinterfaces, outside the scope
+                of Smart Pascal.
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "index.htm">Index</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Principally defines indexed class data
+                      properties
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "private.htm">Private</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts the section of private data and
+                      methods in a class
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "protected.htm">Protected</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts a section of class private data
+                      accesible to sub-classes
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "public.htm">Public</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts an externally accessible section of a
+                      class
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "published.htm">Published</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts a published externally accessible
+                      section of a class
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code :
+                Illustrating basic and indexed properties</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size="2"><font color=
+                "#008000"><strong>// Full Unit
+                code.</strong></font><br />
+                <font color="#008000"><strong>//
+                -----------------------------------------------------------</strong></font><br />
+
+                <font color="#008000"><strong>// You must store
+                this code in a unit called Unit1 with a
+                form</strong></font><br />
+                <font color="#008000"><strong>// called Form1 that
+                has an OnCreate event called
+                FormCreate.</strong></font><br />
+                <br />
+                <strong>unit Unit1;</strong><br />
+                <br />
+                <strong>interface</strong><br />
+                <br />
+                <strong>uses</strong><br />
+                &nbsp;&nbsp;Windows, Messages, SysUtils, Variants,
+                Classes, Graphics, Controls, Forms,<br />
+                &nbsp;&nbsp;Dialogs;<br />
+                <br />
+                <strong>type</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Class
+                with Indexed properties</strong></font><br />
+                &nbsp;&nbsp;TRectangle = class<br />
+                &nbsp;&nbsp;private<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;fArea&nbsp;&nbsp; :
+                LongInt;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;fCoords : array[0..3] of
+                Longint;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;&nbsp;GetCoord(Index:
+                Integer): Longint;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure SetCoord(Index:
+                Integer; Value: Longint);<br />
+                &nbsp;&nbsp;public<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#C00000"><strong>Property</strong></font>
+                Area&nbsp;&nbsp; : Longint read fArea;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#C00000"><strong>Property</strong></font>
+                Left&nbsp;&nbsp; : Longint Index 0 read GetCoord
+                write SetCoord;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#C00000"><strong>Property</strong></font>
+                Top&nbsp;&nbsp;&nbsp;&nbsp;: Longint Index 1 read
+                GetCoord write SetCoord;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#C00000"><strong>Property</strong></font>
+                Right&nbsp;&nbsp;: Longint Index 2 read GetCoord
+                write SetCoord;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#C00000"><strong>Property</strong></font> Bottom :
+                Longint Index 3 read GetCoord write SetCoord;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#C00000"><strong>Property</strong></font>
+                Coords[Index: Integer] : Longint read GetCoord
+                write SetCoord;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;constructor Create;<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// The
+                form class itself</strong></font><br />
+                &nbsp;&nbsp;TForm1 = class(TForm)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure
+                FormCreate(Sender: TObject);<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;Form1: TForm1;<br />
+                <br />
+                <strong>implementation</strong><br />
+                <br />
+                <strong>{$R *.dfm}</strong><br />
+                <br />
+                <font color="#008000"><strong>// TRectangle
+                property 'Getter' routine</strong></font><br />
+                <font color="#008000"><strong>// TRectangle
+                constructor</strong></font><br />
+                <strong>constructor
+                TRectangle.Create;</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Give
+                default rectangle coordinates</strong></font><br />
+                &nbsp;&nbsp;left&nbsp;&nbsp; := 0;<br />
+                &nbsp;&nbsp;right&nbsp;&nbsp;:= 100;<br />
+                &nbsp;&nbsp;top&nbsp;&nbsp;&nbsp;&nbsp;:= 0;<br />
+                &nbsp;&nbsp;bottom := 100;<br />
+                &nbsp;&nbsp;fArea&nbsp;&nbsp;:= 100 * 100;<br />
+                <strong>end;</strong><br />
+                <br />
+                <strong>function TRectangle.GetCoord(Index:
+                Integer): Longint;</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Only
+                allow valid index values</strong></font><br />
+                &nbsp;&nbsp;if (Index &gt;= 0) and (Index &lt;=
+                3)<br />
+                &nbsp;&nbsp;then Result := fCoords[Index]<br />
+                &nbsp;&nbsp;else Result := -1;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// TRectangle
+                property 'Setter' routine</strong></font><br />
+                <strong>procedure TRectangle.SetCoord(Index, Value:
+                Integer);</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Only
+                allow valid index values</strong></font><br />
+                &nbsp;&nbsp;if (Index &gt;= 0) and (Index &lt;=
+                3)<br />
+                &nbsp;&nbsp;then<br />
+                &nbsp;&nbsp;begin<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// Save the new
+                value</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;fCoords[Index] :=
+                Value;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<font color=
+                "#008000"><strong>// And recreate the rectangle
+                area</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;fArea := (right - left) *
+                (bottom - top);<br />
+                &nbsp;&nbsp;end;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// Main line
+                code</strong></font><br />
+                <strong>procedure TForm1.FormCreate(Sender:
+                TObject);</strong><br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;myRect : TRectangle;<br />
+                &nbsp;&nbsp;i : Integer;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Create
+                my little rectangle with default
+                coordinates</strong></font><br />
+                &nbsp;&nbsp;myRect := TRectangle.Create;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// And
+                set the corner coordinates</strong></font><br />
+                &nbsp;&nbsp;myRect.Left :=
+                22;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <font color="#008000"><strong>// Left using direct
+                method</strong></font><br />
+                &nbsp;&nbsp;myRect.Top&nbsp;&nbsp;:= 33;<br />
+                &nbsp;&nbsp;myRect.SetCoord(2,44);&nbsp;&nbsp;
+                <font color="#008000"><strong>// Right using
+                indexed method</strong></font><br />
+                &nbsp;&nbsp;myRect.SetCoord(3,55);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// And
+                ask for these values</strong></font><br />
+                &nbsp;&nbsp;for i:= 0 to 3 do<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ShowMessageFmt('myRect
+                coord %d = %d',[i,myRect.GetCoord(i)]);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// And
+                show the rectangle area</strong></font><br />
+                &nbsp;&nbsp;ShowMessageFmt('myRect area =
+                %d',[myRect.Area]);<br />
+                <strong>end;</strong><br />
+                <br />
+                <strong>end.</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href=
+                "property&amp;expandcode1=yes.htm#Ex1">
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Show full unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;myRect coord 0 = 22<br />
+                &nbsp;&nbsp; myRect coord 1 = 33<br />
+                &nbsp;&nbsp; myRect coord 2 = 44<br />
+                &nbsp;&nbsp; myRect coord 3 = 55<br />
+                &nbsp;&nbsp; myRect area = 484<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,2299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=yes">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no"/>
+	<title>banco</title>
+
+
+ <style> 
+
+input[type="button"] {
+    background-color: blue;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: poiner;
+     border:none;
+}
+input[type="button"]:hover {
+    border: none;
+    background:red;
+    box-shadow: 0px 0px 1px #777;
+    
+}
+#wrapper {
+height: 400px;
+width: 400px;
+overflow: auto;
+}
+.DivToScroll {
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 0 4px 0;
+    color: #3B3C3E;
+    font-size: 12px;
+    font-weight: bold;
+    left: -1px;
+    padding: 10px 7px 5px;
+}
+.DivWithScroll {
+    height:120px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+        </style> 
+
+	<script type="text/javascript">
+var $R = [];
+function Trunc(v) { return (v>=0)?Math.floor(v):Math.ceil(v) };
+var TObject={
+	$ClassName: "TObject",
+	$Parent: null,
+	ClassName: function (s) { return s.$ClassName },
+	ClassType: function (s) { return s },
+	ClassParent: function (s) { return s.$Parent },
+	$Init: function () {},
+	Create: function (s) { return s },
+	Destroy: function (s) { for (var prop in s) if (s.hasOwnProperty(prop)) delete s.prop },
+	Destroy$: function(s) { return s.ClassType.Destroy(s) },
+	Free: function (s) { if (s!==null) s.ClassType.Destroy(s) }
+};
+function StrReplace(s,o,n) { return o?s.replace(new RegExp(StrRegExp(o), "g"), n):s };
+function StrRegExp(s) { return s.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&") };
+function Now() { var d=new Date(); return d.getTime()/8.64e7+25569 };
+function IntToHex(v,d) { var r=v.toString(16); return "00000000".substr(0, d-r.length)+r };
+/**
+sprintf() for JavaScript 0.7-beta1
+http://www.diveintojavascript.com/projects/javascript-sprintf
+
+Copyright (c) Alexandru Marasteanu <alexaholic [at) gmail (dot] com>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of sprintf() for JavaScript nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL Alexandru Marasteanu BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+**/
+
+var sprintf = (function() {
+	function get_type(variable) {
+		return Object.prototype.toString.call(variable).slice(8, -1).toLowerCase();
+	}
+	function str_repeat(input, multiplier) {
+		for (var output = []; multiplier > 0; output[--multiplier] = input) {/* do nothing */}
+		return output.join('');
+	}
+
+	var str_format = function() {
+		if (!str_format.cache.hasOwnProperty(arguments[0])) {
+			str_format.cache[arguments[0]] = str_format.parse(arguments[0]);
+		}
+		return str_format.format.call(null, str_format.cache[arguments[0]], arguments);
+	};
+
+	str_format.format = function(parse_tree, argv) {
+		var cursor = 1, tree_length = parse_tree.length, node_type = '', arg, output = [], i, k, match, pad, pad_character, pad_length;
+		for (i = 0; i < tree_length; i++) {
+			node_type = get_type(parse_tree[i]);
+			if (node_type === 'string') {
+				output.push(parse_tree[i]);
+			}
+			else if (node_type === 'array') {
+				match = parse_tree[i]; // convenience purposes only
+				if (match[2]) { // keyword argument
+					arg = argv[cursor];
+					for (k = 0; k < match[2].length; k++) {
+						if (!arg.hasOwnProperty(match[2][k])) {
+							throw(sprintf('[sprintf] property "%s" does not exist', match[2][k]));
+						}
+						arg = arg[match[2][k]];
+					}
+				}
+				else if (match[1]) { // positional argument (explicit)
+					arg = argv[match[1]];
+				}
+				else { // positional argument (implicit)
+					arg = argv[cursor++];
+				}
+
+				if (/[^s]/.test(match[8]) && (get_type(arg) != 'number')) {
+					throw(sprintf('[sprintf] expecting number but found %s', get_type(arg)));
+				}
+				switch (match[8]) {
+					case 'b': arg = arg.toString(2); break;
+					case 'c': arg = String.fromCharCode(arg); break;
+					case 'd': arg = String(parseInt(arg, 10)); if (match[7]) { arg = str_repeat('0', match[7]-arg.length)+arg } break;
+					case 'e': arg = match[7] ? arg.toExponential(match[7]) : arg.toExponential(); break;
+					case 'f': arg = match[7] ? parseFloat(arg).toFixed(match[7]) : parseFloat(arg); break;
+					case 'o': arg = arg.toString(8); break;
+					case 's': arg = ((arg = String(arg)) && match[7] ? arg.substring(0, match[7]) : arg); break;
+					case 'u': arg = Math.abs(arg); break;
+					case 'x': arg = arg.toString(16); break;
+					case 'X': arg = arg.toString(16).toUpperCase(); break;
+				}
+				arg = (/[def]/.test(match[8]) && match[3] && arg >= 0 ? '+'+ arg : arg);
+				pad_character = match[4] ? match[4] == '0' ? '0' : match[4].charAt(1) : ' ';
+				pad_length = match[6] - String(arg).length;
+				pad = match[6] ? str_repeat(pad_character, pad_length) : '';
+				output.push(match[5] ? arg + pad : pad + arg);
+			}
+		}
+		return output.join('');
+	};
+
+	str_format.cache = {};
+
+	str_format.parse = function(fmt) {
+		var _fmt = fmt, match = [], parse_tree = [], arg_names = 0;
+		while (_fmt) {
+			if ((match = /^[^\x25]+/.exec(_fmt)) !== null) {
+				parse_tree.push(match[0]);
+			}
+			else if ((match = /^\x25{2}/.exec(_fmt)) !== null) {
+				parse_tree.push('%');
+			}
+			else if ((match = /^\x25(?:([1-9]\d*)\$|\(([^\)]+)\))?(\+)?(0|'[^$])?(-)?(\d+)?(?:\.(\d+))?([b-fosuxX])/.exec(_fmt)) !== null) {
+				if (match[2]) {
+					arg_names |= 1;
+					var field_list = [], replacement_field = match[2], field_match = [];
+					if ((field_match = /^([a-z_][a-z_\d]*)/i.exec(replacement_field)) !== null) {
+						field_list.push(field_match[1]);
+						while ((replacement_field = replacement_field.substring(field_match[0].length)) !== '') {
+							if ((field_match = /^\.([a-z_][a-z_\d]*)/i.exec(replacement_field)) !== null) {
+								field_list.push(field_match[1]);
+							}
+							else if ((field_match = /^\[(\d+)\]/.exec(replacement_field)) !== null) {
+								field_list.push(field_match[1]);
+							}
+							else {
+								throw('[sprintf] huh?');
+							}
+						}
+					}
+					else {
+						throw('[sprintf] huh?');
+					}
+					match[2] = field_list;
+				}
+				else {
+					arg_names |= 2;
+				}
+				if (arg_names === 3) {
+					throw('[sprintf] mixing positional and named placeholders is not (yet) supported');
+				}
+				parse_tree.push(match);
+			}
+			else {
+				throw('[sprintf] huh?');
+			}
+			_fmt = _fmt.substring(match[0].length);
+		}
+		return parse_tree;
+	};
+
+	return str_format;
+})();
+function Format(f,a) { a.unshift(f); return sprintf.apply(null,a) };
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+};
+function ClampInt(v,mi,ma) { return v<mi ? mi : v>ma ? ma : v };
+function $W(e) { return e.ClassType?e:Exception.Create($New(Exception),e.constructor.name+", "+e.message) };
+function $Sign(v) { return v<0?-1:v>0?1:0 };
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i };
+function $Is(o,c) {
+	if (o===null) return false;
+	return $Inh(o.ClassType,c);
+}
+;
+function $Inh(s,c) {
+	if (s===null) return false;
+	while ((s)&&(s!==c)) s=s.$Parent;
+	return (s)?true:false;
+}
+;
+function $Div(a,b) { var r=a/b; return (r>=0)?Math.floor(r):Math.ceil(r) };
+function $DIdxR(a,i,z) {
+	if (i<0) throw Exception.Create($New(Exception),"Lower bound exceeded! Index "+i.toString()+z);
+	if (i>a.length) throw Exception.Create($New(Exception),"Upper bound exceeded! Index "+i.toString()+z);
+	return a[i];
+};
+function $CmpNum(a,b) { return a-b };
+function $CheckFunc(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Function pointer is nil"+z); };
+function $Check(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Object not instantiated"+z); };
+function WriteLn(value) {
+   if (window.console) {
+      window.console.log(value);
+   }
+};
+function w3_unbind(obj_ref, event_name) {
+   obj_ref[event_name] = null;
+};
+function w3_StrToArray(aText, aDelimiter) {
+   return (aText).split(aDelimiter);
+};
+function w3_StrLikeInArray(aLike, aArray) {
+   var Result = 0;
+   var x = 0;
+   var mLen1 = 0;
+   var mLen2 = 0;
+   Result = -1;
+   mLen1 = aLike.length;
+   if ((mLen1>0)&&(aArray.length>0)) {
+      var $temp1;
+      for(x = 0,$temp1 = aArray.length;x<$temp1;x++) {
+         mLen2 = $DIdxR(aArray,x,"").length;
+         if (mLen2>=mLen1) {
+            if ($DIdxR(aArray,x,"").substr(0,mLen1)==aLike) {
+               Result = x;
+               break;
+            }
+         }
+      }
+   }
+   return Result
+};
+function w3_StringReplace(aValue, aToReplace, aNewValue) {
+   return StrReplace(aValue,aToReplace,aNewValue);
+};
+function w3_ShowMessage(aText$1) {
+   alert(aText$1);
+};
+function w3_setStyle(tagRef, aStyleName, aStyleValue) {
+   if (tagRef) {
+      tagRef.style[aStyleName] = aStyleValue;
+   }
+};
+function w3_setProperty(tagRef$1, aPropName, aValue$1) {
+   tagRef$1[aPropName] = aValue$1;
+};
+function w3_SetInnerHtml(aRef, aValue$2) {
+   aRef.innerHTML = aValue$2;
+};
+function w3_setElementParentByRef(aElement, aParent) {
+   if (VarIsValidRef(aParent)) {
+      if (VarIsValidRef(aElement)) {
+         aParent.appendChild(aElement);
+      } else {
+         throw Exception.Create($New(Exception),"Failed to add element to parent, element is null");
+      }
+   }
+};
+function w3_setElementParentByName(aElement$1, aParentName) {
+   var mTemp = undefined;
+   mTemp = w3_getElementByName(aParentName);
+   if (VarIsValidRef(mTemp)) {
+      mTemp.appendChild(aElement$1);
+   }
+};
+function w3_setAttrib(tagRef$2, aAttribName, aValue$3) {
+   if (tagRef$2) {
+      tagRef$2.setAttribute(aAttribName,aValue$3);
+   }
+};
+function w3_RequestAnimationFrame(aMethod) {
+   var Result = undefined;
+   if (!vRequestAnimFrame) {
+      InitAnimationFrameShim();
+   }
+   Result = $CheckFunc(vRequestAnimFrame,"")(aMethod);
+   return Result
+};
+function w3_RemoveEvent(a_tagRef, a_eventName, a_callback, a_useCapture) {
+   if (a_eventName=="mousewheel") {
+      a_eventName = "DOMMouseScroll";
+   }
+   a_tagRef.removeEventListener(a_eventName,a_callback,a_useCapture);
+};
+function w3_RemoveElementByRef(aElement$2, aParent$1) {
+   if (aParent$1) {
+      aParent$1.removeChild(aElement$2);
+   }
+};
+function w3_RemoveClass(tagRef$3, aClassName) {
+   var reg = undefined;
+   if (w3_HasClass(tagRef$3,aClassName)) {
+      
+      reg = new RegExp("(\\s|^)" + aClassName + "(\\s|$)");
+      (tagRef$3).className=(tagRef$3).className.replace(reg," ").replace('  ',' ').trim();
+       }
+};
+function w3_RegisterBrowserAPI(aDriver) {
+   vDriver = aDriver;
+};
+function w3_Prompt(aText$2, aDefault) {
+   return ""+prompt(aText$2,aDefault);
+};
+function w3_NameToUrlStr(aUrl) {
+   return "url("+aUrl+")";
+};
+function w3_HasClass(tagRef$4, aClassName$1) {
+   var Result = false;
+   
+    Result = ((tagRef$4).className.match(new RegExp("(\\s|^)"+aClassName$1+"(\\s|$)")))?true:false;
+  return Result
+};
+function w3_GetUniqueObjId() {
+   var Result = "";
+   ++vUniqueNumber;
+   Result = "OBJ"+vUniqueNumber.toString();
+   return Result
+};
+function w3_GetUniqueNumber() {
+   var Result = 0;
+   ++vUniqueNumber;
+   Result = vUniqueNumber;
+   return Result
+};
+function w3_getStyleAsStr(tagRef$5, aStyleName$1) {
+   var Result = "";
+   var mData = undefined;
+   mData = w3_getStyle(tagRef$5,aStyleName$1);
+   if (TVariant.IsString(mData)) {
+      Result = TVariant.AsString(mData);
+   } else if (TVariant.IsNumber(mData)) {
+      Result = TVariant.AsInteger(mData).toString();
+   }
+   return Result
+};
+function w3_getStyleAsInt(tagRef$6, aStyleName$2) {
+   var Result = 0;
+   var mData$1 = undefined;
+   mData$1 = w3_getStyle(tagRef$6,aStyleName$2);
+   if (TVariant.IsNumber(mData$1)) {
+      Result = parseInt(mData$1,10);
+   } else if (TVariant.IsString(mData$1)) {
+      Result = parseInt(mData$1,10);
+   }
+   if (isNaN(Result)) {
+      Result = 0;
+   }
+   return Result
+};
+function w3_getStyleAsFloat(tagRef$7, aStyleName$3) {
+   var Result = 0;
+   var mData$2 = undefined;
+   mData$2 = w3_getStyle(tagRef$7,aStyleName$3);
+   if (VarIsValidRef(mData$2)) {
+      try {
+         if (TVariant.IsNumber(mData$2)) {
+            Result = TVariant.AsFloat(mData$2);
+            if (isNaN(Result)) {
+               Result = 0;
+            }
+         } else if (TVariant.IsString(mData$2)) {
+            Result = Number(mData$2);
+            if (isNaN(Result)) {
+               Result = 0;
+            }
+         }
+      } catch ($e) {
+         var e = $W($e);
+         /* null */
+      }
+   }
+   return Result
+};
+function w3_getStyle(tagRef$8, aStyleName$4) {
+   var Result = undefined;
+   var mObj = undefined;
+   mObj = document.defaultView.getComputedStyle(tagRef$8,null);
+   if (mObj) {
+      Result = mObj.getPropertyValue(aStyleName$4);
+   }
+   return Result
+};
+function w3_getPropertyAsStr(tagRef$9, aPropName$1) {
+   var Result = "";
+   if (tagRef$9) {
+      Result = ""+tagRef$9[aPropName$1];
+   }
+   return Result
+};
+function w3_getPropertyAsInt(tagRef$10, aPropName$2) {
+   var Result = 0;
+   if (tagRef$10) {
+      Result = parseInt(tagRef$10[aPropName$2],10);
+   }
+   return Result
+};
+function w3_getPropertyAsFloat(tagRef$11, aPropName$3) {
+   var Result = 0;
+   if (tagRef$11) {
+      Result = Number(tagRef$11[aPropName$3]);
+   }
+   return Result
+};
+function w3_getPropertyAsBool(tagRef$12, aPropName$4) {
+   var Result = false;
+   if (tagRef$12) {
+      Result = (tagRef$12[aPropName$4]?true:false);
+   }
+   return Result
+};
+function w3_getProperty(tagRef$13, aPropName$5) {
+   return tagRef$13[aPropName$5];
+};
+function w3_getIsSafari() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/Safari/i)) Result=true;
+  return Result
+};
+function w3_getIsOpera() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/Opera/i)) Result=true;
+  return Result
+};
+function w3_getIsMobile() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/mobi/i)) Result=true;
+  return Result
+};
+function w3_getIsIPod() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/iPod/i)) Result=true;
+  return Result
+};
+function w3_getIsIPhone() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/iPhone/i)) Result=true;
+  return Result
+};
+function w3_getIsIPad() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/iPad/i)) Result=true;
+  return Result
+};
+function w3_getIsInternetExplorer() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/MSIE/i)) Result=true;
+  return Result
+};
+function w3_getIsFirefox() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/Firefox/i)) Result=true;
+  return Result
+};
+function w3_getIsChrome() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/Chrome/i)) Result=true;
+  return Result
+};
+function w3_getIsAndroid() {
+   var Result = false;
+   
+    if (navigator.userAgent.match(/Android/i)) Result=true;
+  return Result
+};
+function w3_GetInnerHtml(aRef$1) {
+   return ""+aRef$1.innerHTML;
+};
+function w3_getElementByName(aElementName) {
+   return document.getElementByName(aElementName);
+};
+function w3_getCursorCSSName(aCursor) {
+   var Result = "";
+   switch (aCursor) {
+      case 0 :
+         Result = "auto";
+         break;
+      case 2 :
+         Result = "inherited";
+         break;
+      case 3 :
+         Result = "url";
+         break;
+      case 4 :
+         Result = "crosshair";
+         break;
+      case 5 :
+         Result = "help";
+         break;
+      case 6 :
+         Result = "move";
+         break;
+      case 7 :
+         Result = "pointer";
+         break;
+      case 8 :
+         Result = "progress";
+         break;
+      case 9 :
+         Result = "text";
+         break;
+      case 10 :
+         Result = "wait";
+         break;
+      case 11 :
+         Result = "n-resize";
+         break;
+      case 12 :
+         Result = "s-resize";
+         break;
+      case 13 :
+         Result = "e-resize";
+         break;
+      case 14 :
+         Result = "w-resize";
+         break;
+      case 15 :
+         Result = "ne-resize";
+         break;
+      case 16 :
+         Result = "nw-resize";
+         break;
+      case 17 :
+         Result = "se-resize";
+         break;
+      case 18 :
+         Result = "sw-resize";
+         break;
+      default :
+         Result = "default";
+   }
+   return Result
+};
+function w3_getCalcStyleFor(tagRef$14) {
+   return document.defaultView.getComputedStyle(tagRef$14,null);
+};
+function w3_GetBrowserName() {
+   var Result = "";
+   switch (w3_BrowserVendor()) {
+      case 0 :
+         Result = "Unknown browser";
+         break;
+      case 1 :
+         Result = "Safari mobile";
+         break;
+      case 2 :
+         Result = "Chrome mobile";
+         break;
+      case 3 :
+         Result = "Chrome";
+         break;
+      case 4 :
+         Result = "Safari";
+         break;
+      case 5 :
+         Result = "FireFox";
+         break;
+      case 6 :
+         Result = "Opera";
+         break;
+      case 7 :
+         Result = "Internet explorer";
+         break;
+   }
+   return Result
+};
+function w3_getAttribAsStr(tagRef$15, aAttribName$1) {
+   var Result = "";
+   var mValue = undefined;
+   mValue = tagRef$15.getAttribute(aAttribName$1,0);
+   if (mValue) {
+      Result = ""+mValue;
+   }
+   return Result
+};
+function w3_getAttribAsInt(tagRef$16, aAttribName$2) {
+   var Result = 0;
+   var mValue$1 = undefined;
+   mValue$1 = tagRef$16.getAttribute(aAttribName$2,0);
+   if (mValue$1) {
+      Result = parseInt(mValue$1,10);
+   }
+   return Result
+};
+function w3_getAttrib(tagRef$17, aAttribName$3) {
+   var Result = undefined;
+   if (tagRef$17) {
+      Result = tagRef$17.getAttribute(aAttribName$3);
+   }
+   return Result
+};
+function w3_Event() {
+   return event;
+};
+function w3_DOMReady() {
+   return document.readyState=="complete";
+};
+function w3_CSSPrefixDef(aCSS) {
+   return "-"+$Check(BrowserAPI(),"").FCSSToken+"-"+aCSS;
+};
+function w3_CSSPrefix(aCSS$1) {
+   return $Check(BrowserAPI(),"").FCSSToken+aCSS$1;
+};
+function w3_createHtmlElement(aTypeName) {
+   return document.createElement(aTypeName);
+};
+function w3_CancelAnimationFrame(handle) {
+   if (!vCancelAnimFrame) {
+      InitAnimationFrameShim();
+   }
+   $CheckFunc(vCancelAnimFrame,"")(handle);
+};
+function w3_Callback(aMethod$1, aDelay) {
+   setTimeout(aMethod$1,aDelay);
+};
+function w3_BrowserVendor() {
+   var Result = 0;
+   if (vDriver===null) {
+      BrowserAPI();
+   }
+   Result = vVendor;
+   return Result
+};
+function w3_bind2(obj_ref$1, event_name$1, callback) {
+   obj_ref$1[event_name$1] = callback;
+};
+function w3_bind(obj_id, event_name$2, callback$1) {
+   document.getElementById(obj_id)[event_name$2] = callback$1;
+};
+function w3_base64encode(aValue$4) {
+   var Result = "";
+   if (VarIsValidRef(aValue$4)) {
+      Result = ""+window.btoa(aValue$4);
+   }
+   return Result
+};
+function w3_base64decode(aValue$5) {
+   var Result = undefined;
+   if (aValue$5!="") {
+      Result = window.atob(aValue$5);
+   } else {
+      Result = undefined;
+   }
+   return Result
+};
+function w3_AddEvent(a_tagRef$1, a_eventName$1, a_callback$1, a_useCapture$1) {
+   if (a_eventName$1=="mousewheel") {
+      a_eventName$1 = "DOMMouseScroll";
+   }
+   a_tagRef$1.addEventListener(a_eventName$1,a_callback$1,a_useCapture$1);
+};
+function w3_AddClass(tagRef$18, aClassName$2) {
+   if (!w3_HasClass(tagRef$18,aClassName$2)) {
+      tagRef$18.className+=" "+aClassName$2;
+   }
+};
+var TW3CustomBrowserAPI = {
+   $ClassName:"TW3CustomBrowserAPI",
+   $Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FCSSAnimation = $.FCSSBackgroundColor = $.FCSSBackgroundImage = $.FCSSBackgroundPos = $.FCSSBackgroundSize = $.FCSSToken = $.FCSSTransform = "";
+   }
+   ,DevicePixelRatio:function() {
+      var Result = 0;
+      
+   Result = window.devicePixelRatio || 1;
+   return Result
+   }
+   ,Destroy:TObject.Destroy
+};
+var TW3WebkitBrowserAPI = {
+   $ClassName:"TW3WebkitBrowserAPI",
+   $Parent:TW3CustomBrowserAPI
+   ,$Init:function ($) {
+      TW3CustomBrowserAPI.$Init($);
+   }
+   ,Create$8:function(Self) {
+      $Check(Self,"").FCSSToken = "webkit";
+      $Check(Self,"").FCSSBackgroundImage = "background-image";
+      $Check(Self,"").FCSSBackgroundSize = "webkitbackgroundSize";
+      $Check(Self,"").FCSSBackgroundPos = "webkitbackgroundPosition";
+      $Check(Self,"").FCSSBackgroundColor = "webkitbackgroundColor";
+      $Check(Self,"").FCSSTransform = "webkitTransform";
+      $Check(Self,"").FCSSAnimation = "webkitAnimation";
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+};
+var TW3OwnedObject = {
+   $ClassName:"TW3OwnedObject",
+   $Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FOwner = null;
+   }
+   ,AcceptParent:function(Self, aObject) {
+      return true;
+   }
+   ,Create$9:function(Self, AOwner) {
+      TObject.Create(Self);
+      if (TW3OwnedObject.AcceptParent$($Check(Self,""),AOwner)) {
+         $Check(Self,"").FOwner = AOwner;
+      } else {
+         throw EW3Exception.CreateFmt($New(EW3OwnedObject),"Method %s in class %s threw exception [%s]",["constructor",TObject.ClassName($Check(Self,"").ClassType),"Unsuitable owner object-type error"]);
+      }
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+   ,AcceptParent$:function($){return $.ClassType.AcceptParent.apply($.ClassType, arguments)}
+   ,Create$9$:function($){return $.ClassType.Create$9.apply($.ClassType, arguments)}
+};
+var TW3OperaBrowserAPI = {
+   $ClassName:"TW3OperaBrowserAPI",
+   $Parent:TW3CustomBrowserAPI
+   ,$Init:function ($) {
+      TW3CustomBrowserAPI.$Init($);
+   }
+   ,Create$10:function(Self) {
+      $Check(Self,"").FCSSToken = "O";
+      $Check(Self,"").FCSSBackgroundImage = "OBackgroundImage";
+      $Check(Self,"").FCSSBackgroundSize = "OBackgroundSize";
+      $Check(Self,"").FCSSBackgroundPos = "OBackgroundPosition";
+      $Check(Self,"").FCSSBackgroundColor = "backgroundColor";
+      $Check(Self,"").FCSSTransform = "OTransform";
+      $Check(Self,"").FCSSAnimation = "OAnimation";
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+};
+var TW3IEBrowserAPI = {
+   $ClassName:"TW3IEBrowserAPI",
+   $Parent:TW3CustomBrowserAPI
+   ,$Init:function ($) {
+      TW3CustomBrowserAPI.$Init($);
+   }
+   ,Create$11:function(Self) {
+      $Check(Self,"").FCSSToken = "ms";
+      $Check(Self,"").FCSSBackgroundImage = "msBackgroundImage";
+      $Check(Self,"").FCSSBackgroundSize = "msBackgroundSize";
+      $Check(Self,"").FCSSBackgroundPos = "msBackgroundPosition";
+      $Check(Self,"").FCSSBackgroundColor = "backgroundColor";
+      $Check(Self,"").FCSSTransform = "msTransform";
+      $Check(Self,"").FCSSAnimation = "msAnimation";
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+};
+var TW3FirefoxBrowserAPI = {
+   $ClassName:"TW3FirefoxBrowserAPI",
+   $Parent:TW3CustomBrowserAPI
+   ,$Init:function ($) {
+      TW3CustomBrowserAPI.$Init($);
+   }
+   ,Create$12:function(Self) {
+      $Check(Self,"").FCSSToken = "Moz";
+      $Check(Self,"").FCSSBackgroundImage = "backgroundImage";
+      $Check(Self,"").FCSSBackgroundSize = "backgroundSize";
+      $Check(Self,"").FCSSBackgroundPos = "backgroundPosition";
+      $Check(Self,"").FCSSBackgroundColor = "backgroundColor";
+      $Check(Self,"").FCSSTransform = "MozTransform";
+      $Check(Self,"").FCSSAnimation = "MozAnimation";
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+};
+var TW3BrowserVendor = [ "bvUnknown", "bviOS", "bvAndroid", "bvChrome", "bvSafari", "bvFirefox", "bvOpera", "bvIE" ];
+var TCursor = [ "crAuto", "crDefault", "crInherited", "crURL", "crCrossHair", "crHelp", "crMove", "crPointer", "crProgress", "crText", "crWait", "crNResize", "crSResize", "crEResize", "crWResize", "crNEResize", "crNWReSize", "crSEResize", "crSWResize" ];
+function InitVendorInfo() {
+   /* null */
+};
+var EW3Exception = {
+   $ClassName:"EW3Exception",
+   $Parent:Exception
+   ,$Init:function ($) {
+      Exception.$Init($);
+   }
+   ,CreateFmt:function(Self, aText$3, aValues) {
+      Exception.Create(Self,Format(aText$3,aValues.slice(0)));
+      return Self
+   }
+   ,Destroy:Exception.Destroy
+};
+var EW3OwnedObject = {
+   $ClassName:"EW3OwnedObject",
+   $Parent:EW3Exception
+   ,$Init:function ($) {
+      EW3Exception.$Init($);
+   }
+   ,Destroy:Exception.Destroy
+};
+function BrowserAPI() {
+   var Result = null;
+   if (vDriver===null) {
+      InternalInitVendorInfo();
+   }
+   Result = vDriver;
+   return Result
+};
+function InternalInitVendorInfo() {
+   if (w3_getIsAndroid()) {
+      vVendor = 2;
+   } else if (w3_getIsSafari()) {
+      vVendor = 4;
+   } else if (w3_getIsFirefox()) {
+      vVendor = 5;
+   } else if (w3_getIsChrome()) {
+      vVendor = 3;
+   } else if (w3_getIsInternetExplorer()) {
+      vVendor = 7;
+   } else if (w3_getIsOpera()) {
+      vVendor = 6;
+   }
+   if (!vVendor) {
+      if ((w3_getIsIPhone()||w3_getIsIPad())||w3_getIsIPod()) {
+         vVendor = 1;
+      }
+   }
+   switch (vVendor) {
+      case 1 :
+      case 4 :
+      case 3 :
+      case 2 :
+         w3_RegisterBrowserAPI(TW3WebkitBrowserAPI.Create$8($New(TW3WebkitBrowserAPI)));
+         break;
+      case 5 :
+         w3_RegisterBrowserAPI(TW3FirefoxBrowserAPI.Create$12($New(TW3FirefoxBrowserAPI)));
+         break;
+      case 7 :
+         w3_RegisterBrowserAPI(TW3IEBrowserAPI.Create$11($New(TW3IEBrowserAPI)));
+         break;
+      case 6 :
+         w3_RegisterBrowserAPI(TW3OperaBrowserAPI.Create$10($New(TW3OperaBrowserAPI)));
+         break;
+      default :
+         w3_RegisterBrowserAPI(TW3FirefoxBrowserAPI.Create$12($New(TW3FirefoxBrowserAPI)))   }
+};
+function InitAnimationFrameShim() {
+   
+    vRequestAnimFrame = (function(){
+      return  window.requestAnimationFrame       ||
+              window.webkitRequestAnimationFrame ||
+              window.mozRequestAnimationFrame    ||
+              window.msRequestAnimationFrame     ||
+              function( callback ){
+                return window.setTimeout(callback, 1000 / 60);
+              };
+    })();
+    vCancelAnimFrame = (function(){
+      return  window.cancelAnimationFrame       ||
+              window.webkitCancelAnimationFrame ||
+              window.mozCancelAnimationFrame    ||
+              window.msCancelAnimationFrame     ||
+              function( handle ){
+                window.clearTimeout(handle);
+              };
+    })();
+  };
+function VarIsValidRef(aRef$2) {
+   var Result = false;
+   
+    Result = !((aRef$2 == null) || (aRef$2 == undefined));
+  return Result
+};
+function VariantToObj(Value) {
+   var Result = null;
+   
+    Result = Value;
+  return Result
+};
+function VariantExtend(target, prop) {
+   var Result = undefined;
+   var n = undefined;
+   
+     for (n in prop) if ((prop).hasOwnProperty(n)) target[n]=prop[n];
+     Result = target;
+   return Result
+};
+function VariantExtend$1(target$1, prop$1) {
+   var Result = null;
+   var n$1 = undefined;
+   
+     for (n$1 in prop$1) if ((prop$1).hasOwnProperty(n$1)) target$1[n$1]=prop$1[n];
+     Result = target$1;
+   return Result
+};
+var TVariant = {
+   $ClassName:"TVariant",
+   $Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,AsBool:function(aValue$6) {
+      var Result = false;
+      if (VarIsValidRef(aValue$6)) {
+         Result = (aValue$6?true:false);
+      }
+      return Result
+   }
+   ,AsFloat:function(aValue$7) {
+      var Result = 0;
+      if (VarIsValidRef(aValue$7)) {
+         Result = Number(aValue$7);
+      }
+      return Result
+   }
+   ,AsInteger:function(aValue$8) {
+      var Result = 0;
+      if (VarIsValidRef(aValue$8)) {
+         Result = parseInt(aValue$8,10);
+      }
+      return Result
+   }
+   ,AsObject:function(aValue$9) {
+      var Result = null;
+      if (VarIsValidRef(aValue$9)) {
+         
+      Result = aValue$9;
+          } else {
+         Result = null;
+      }
+      return Result
+   }
+   ,AsString:function(aValue$10) {
+      var Result = "";
+      if (VarIsValidRef(aValue$10)) {
+         Result = ""+aValue$10;
+      }
+      return Result
+   }
+   ,CreateArray:function() {
+      var Result = undefined;
+      
+    return [];
+  return Result
+   }
+   ,CreateObject:function() {
+      var Result = undefined;
+      
+    return {};
+  return Result
+   }
+   ,IsBool:function(aValue$11) {
+      var Result = false;
+      
+    if (aValue$11 == null) return false;
+    if (aValue$11 == undefined) return false;
+    if (typeof(aValue$11) === "boolean") return true;
+  return Result
+   }
+   ,IsInteger:function(aValue$12) {
+      var Result = false;
+      
+    if (aValue$12 == null) return false;
+    if (aValue$12 == undefined) return false;
+    if (typeof(aValue$12) === "number") if (parseInt(aValue$12) === aValue$12) return true;
+  return Result
+   }
+   ,IsNAN:function(aValue$13) {
+      return isNaN(Number(aValue$13));
+   }
+   ,IsNull:function(aValue$14) {
+      return (aValue$14===null);
+   }
+   ,IsNumber:function(aValue$15) {
+      var Result = false;
+      
+    if (aValue$15 == null) return false;
+    if (aValue$15 == undefined) return false;
+    if (typeof(aValue$15) === "number") return true;
+  return Result
+   }
+   ,IsString:function(aValue$16) {
+      var Result = false;
+      
+    if (aValue$16 == null) return false;
+    if (aValue$16 == undefined) return false;
+    if (typeof(aValue$16) === "string") return true;
+  return Result
+   }
+   ,OwnProperties:function(aValue$17) {
+      var Result = [];
+      var buf = undefined;
+      
+    for (buf in aValue$17) if ((aValue$17).hasOwnProperty(buf)) (Result).push(buf);
+  return Result
+   }
+   ,Properties:function(aValue$18) {
+      var Result = [];
+      var buf$1 = undefined;
+      
+    for (buf$1 in aValue$18) (Result).push(buf$1);
+  return Result
+   }
+   ,Destroy:TObject.Destroy
+};
+function Copy$TRectF(s,d) {
+   d.Bottom=s.Bottom;
+   d.Left=s.Left;
+   d.Right=s.Right;
+   d.Top=s.Top;
+   return d;
+}
+function Clone$TRectF($) {
+   return {
+      Bottom:$.Bottom,
+      Left:$.Left,
+      Right:$.Right,
+      Top:$.Top
+   }
+}
+function TRectF$BottomRight(Self$2) {
+   var Result = {X:0,Y:0};
+   Result.X = Self$2.Right;
+   Result.Y = Self$2.Bottom;
+   return Result
+}
+function TRectF$CenterPoint(Self$3) {
+   var Result = {X:0,Y:0};
+   Result.X = (Self$3.Right+Self$3.Left)*0.5;
+   Result.Y = (Self$3.Bottom+Self$3.Top)*0.5;
+   return Result
+}
+function TRectF$Clip(Self$4, RectToClip) {
+   var Result = {Bottom:0,Left:0,Right:0,Top:0};
+   Result.Left = Math.max(Self$4.Left,RectToClip.Left);
+   Result.Top = Math.max(Self$4.Top,RectToClip.Top);
+   Result.Right = Math.min(Self$4.Right,RectToClip.Right);
+   Result.Bottom = Math.min(Self$4.Bottom,RectToClip.Bottom);
+   return Result
+}
+function TRectF$Compare(Self$5, aRect) {
+   return (((Self$5.Left==aRect.Left)&&(Self$5.Top==aRect.Top))&&(Self$5.Right==aRect.Right))&&(Self$5.Bottom==aRect.Bottom);
+}
+function TRectF$ContainsCol(Self$6, aCol) {
+   return (aCol>=Self$6.Left)&&(aCol<=Self$6.Right);
+}
+function TRectF$ContainsPoint(Self$7, aPoint) {
+   return (((aPoint.X>=Self$7.Left)&&(aPoint.X<=Self$7.Right))&&(aPoint.Y>=Self$7.Top))&&(aPoint.Y<=Self$7.Bottom);
+}
+function TRectF$ContainsPos(Self$8, aLeft, aTop) {
+   return (((aLeft>=Self$8.Left)&&(aLeft<=Self$8.Right))&&(aTop>=Self$8.Top))&&(aTop<=Self$8.Bottom);
+}
+function TRectF$ContainsRect(Self$9, aRect$1) {
+   return TRectF$Expose(Self$9,aRect$1)!=2;
+}
+function TRectF$ContainsRow(Self$10, aRow) {
+   return (aRow>=Self$10.Top)&&(aRow<=Self$10.Bottom);
+}
+function Create$14(topLeft, bottomRight) {
+   var Result = {Bottom:0,Left:0,Right:0,Top:0};
+   Result.Left = topLeft.X;
+   Result.Top = topLeft.Y;
+   Result.Right = bottomRight.X;
+   Result.Bottom = bottomRight.Y;
+   return Result
+}
+function Create$13(aLeft$1, aTop$1, aRight, aBottom) {
+   var Result = {Bottom:0,Left:0,Right:0,Top:0};
+   Result.Left = aLeft$1;
+   Result.Top = aTop$1;
+   Result.Right = aRight;
+   Result.Bottom = aBottom;
+   return Result
+}
+function CreateBounded(x1, y1, x2, y2) {
+   var Result = {Bottom:0,Left:0,Right:0,Top:0};
+   if (x1<x2) {
+      Result.Left = x1;
+      Result.Right = x2;
+   } else {
+      Result.Left = x2;
+      Result.Right = x1;
+   }
+   if (y1<y2) {
+      Result.Top = y1;
+      Result.Bottom = y2;
+   } else {
+      Result.Top = y2;
+      Result.Bottom = y1;
+   }
+   return Result
+}
+function CreateSized$1(aWidth, aHeight) {
+   var Result = {Bottom:0,Left:0,Right:0,Top:0};
+   Result.Left = 0;
+   Result.Top = 0;
+   Result.Right = aWidth;
+   Result.Bottom = aHeight;
+   return Result
+}
+function CreateSized(aLeft$2, aTop$2, aWidth$1, aHeight$1) {
+   var Result = {Bottom:0,Left:0,Right:0,Top:0};
+   Result.Left = aLeft$2;
+   Result.Top = aTop$2;
+   Result.Right = aLeft$2+aWidth$1;
+   Result.Bottom = aTop$2+aHeight$1;
+   return Result
+}
+function TRectF$Empty(Self$11) {
+   return (Self$11.Left==Self$11.Right)&&(Self$11.Top==Self$11.Bottom);
+}
+function TRectF$Expose(Self$12, aChildRect) {
+   var Result = 0;
+   if ((((aChildRect.Left>=Self$12.Right)||(aChildRect.Top>=Self$12.Bottom))||(aChildRect.Right<=Self$12.Left))||(aChildRect.Bottom<=Self$12.Top)) {
+      Result = 2;
+   } else if ((((aChildRect.Left<Self$12.Left)||(aChildRect.Top<Self$12.Top))||(aChildRect.Right>(Self$12.Right-1)))||(aChildRect.Bottom>(Self$12.Bottom-1))) {
+      Result = 1;
+   } else {
+      Result = 0;
+   }
+   return Result
+}
+function TRectF$Extend$1(Self$13, x$1, y) {
+   var Result = false;
+   if (x$1<Self$13.Left) {
+      Self$13.Left = x$1;
+      Result = true;
+   } else if (x$1>Self$13.Right) {
+      Self$13.Right = x$1;
+      Result = true;
+   }
+   if (y<Self$13.Top) {
+      Self$13.Top = y;
+      Result = true;
+   } else if (y>Self$13.Bottom) {
+      Self$13.Bottom = y;
+      Result = true;
+   }
+   return Result
+}
+function TRectF$Extend(Self$14, aPoint$1) {
+   return TRectF$Extend$1(Self$14,aPoint$1.X,aPoint$1.Y);
+}
+function TRectF$FitWithin(Self$15, aChildRect$1) {
+   var Result = {Bottom:0,Left:0,Right:0,Top:0};
+   var x1$1 = 0;
+   var y1$1 = 0;
+   var rc = {Bottom:0,Left:0,Right:0,Top:0};
+   var x$2 = 0;
+   var y$1 = 0;
+   var wd = 0;
+   var hd = 0;
+   wd = TRectF$Width(aChildRect$1);
+   hd = TRectF$Height(aChildRect$1);
+   if ((wd<1)||(hd<1)) {
+      Copy$TRectF({Bottom:0,Left:0,Right:0,Top:0},Result);
+      return Result;
+   }
+   if ((TRectF$Width(Self$15)>wd)&&(TRectF$Height(Self$15)>hd)) {
+      Copy$TRectF(Self$15,Result);
+      x$2 = (TRectF$Width(Self$15)-wd)/2;
+      y$1 = (TRectF$Height(Self$15)-hd)/2;
+      Result = Create$13((Result.Left+x$2),(Result.Top+y$1),(Result.Left+wd),(Result.Top+hd));
+   } else {
+      x1$1 = TRectF$Width(Self$15)/wd;
+      y1$1 = TRectF$Height(Self$15)/hd;
+      if (x1$1>y1$1) {
+         x$2 = Trunc(wd*y1$1);
+         rc = Create$13(((TRectF$Width(Self$15)-x$2)/2),0,(rc.Left+x$2),TRectF$Height(Self$15));
+      } else {
+         y$1 = Trunc(hd*x1$1);
+         rc = Create$13(0,((TRectF$Height(Self$15)-y$1)/2),TRectF$Width(Self$15),(rc.Top+y$1));
+      }
+      Result = Create$13((rc.Left+Self$15.Left),(rc.Top+Self$15.Top),(rc.Right+Self$15.Left),(rc.Bottom+Self$15.Top));
+   }
+   return Result
+}
+function TRectF$Height(Self$16) {
+   return Self$16.Bottom-Self$16.Top;
+}
+function TRectF$Intersect(Self$17, aRect$2, intersection) {
+   var Result = false;
+   Copy$TRectF(Self$17,intersection);
+   if (aRect$2.Left>Self$17.Left) {
+      intersection.Left = aRect$2.Left;
+   }
+   if (aRect$2.Top>Self$17.Top) {
+      intersection.Top = aRect$2.Top;
+   }
+   if (aRect$2.Right<Self$17.Right) {
+      intersection.Right = aRect$2.Right;
+   }
+   if (aRect$2.Bottom<Self$17.Bottom) {
+      intersection.Bottom = aRect$2.Bottom;
+   }
+   Result = (intersection.Right>intersection.Left)&&(intersection.Bottom>intersection.Top);
+   if (!Result) {
+      Copy$TRectF({Bottom:0,Left:0,Right:0,Top:0},intersection);
+   }
+   return Result
+}
+function TRectF$Move(Self$18, aCol$1, aRow$1, Center) {
+   var wd$1 = 0;
+   var hd$1 = 0;
+   wd$1 = Self$18.Right-Self$18.Left;
+   hd$1 = Self$18.Bottom-Self$18.Top;
+   if (Center) {
+      Self$18.Left = aCol$1-(wd$1*0.5);
+      Self$18.Top = aRow$1-(hd$1*0.5);
+      Self$18.Right = aCol$1+(wd$1*0.5);
+      Self$18.Bottom = aCol$1+(hd$1*0.5);
+   } else {
+      Self$18.Left = aCol$1;
+      Self$18.Top = aRow$1;
+      Self$18.Right = aCol$1+wd$1;
+      Self$18.Bottom = aRow$1+hd$1;
+   }
+}
+function TRectF$MoveBy(Self$19, x$3, y$2) {
+   Self$19.Left+=x$3;
+   Self$19.Right+=x$3;
+   Self$19.Top+=y$2;
+   Self$19.Bottom+=y$2;
+}
+function TRectF$SetBounds(Self$20, aLeft$3, aTop$3, aRight$1, aBottom$1) {
+   Self$20.Left = aLeft$3;
+   Self$20.Top = aTop$3;
+   Self$20.Right = aRight$1;
+   Self$20.Bottom = aBottom$1;
+}
+function TRectF$TopLeft(Self$21) {
+   var Result = {X:0,Y:0};
+   Result.X = Self$21.Left;
+   Result.Y = Self$21.Top;
+   return Result
+}
+function TRectF$ToPolygon(Self$22) {
+   return [Create$17(Self$22.Left,Self$22.Top),Create$17(Self$22.Right,Self$22.Top),Create$17(Self$22.Right,Self$22.Bottom),Create$17(Self$22.Left,Self$22.Bottom)].slice();
+}
+function TRectF$ToString(Self$23) {
+   return (Self$23.Left.toString()+","+Self$23.Top.toString()+","+Self$23.Right.toString()+","+Self$23.Bottom.toString());
+}
+function TRectF$Width(Self$24) {
+   return Self$24.Right-Self$24.Left;
+}
+function Copy$TRect(s,d) {
+   d.Bottom$1=s.Bottom$1;
+   d.Left$1=s.Left$1;
+   d.Right$1=s.Right$1;
+   d.Top$1=s.Top$1;
+   return d;
+}
+function Clone$TRect($) {
+   return {
+      Bottom$1:$.Bottom$1,
+      Left$1:$.Left$1,
+      Right$1:$.Right$1,
+      Top$1:$.Top$1
+   }
+}
+function TRect$BottomRight$1(Self$25) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Self$25.Right$1;
+   Result.Y$1 = Self$25.Bottom$1;
+   return Result
+}
+function TRect$CenterPoint$1(Self$26) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = $Div(Self$26.Right$1+Self$26.Left$1,2);
+   Result.Y$1 = $Div(Self$26.Top$1+Self$26.Bottom$1,2);
+   return Result
+}
+function TRect$Clip$1(Self$27, RectToClip$1) {
+   var Result = {Bottom$1:0,Left$1:0,Right$1:0,Top$1:0};
+   Result.Left$1 = Math.max(Self$27.Left$1,RectToClip$1.Left$1);
+   Result.Top$1 = Math.max(Self$27.Top$1,RectToClip$1.Top$1);
+   Result.Right$1 = Math.min(Self$27.Right$1,RectToClip$1.Right$1);
+   Result.Bottom$1 = Math.min(Self$27.Bottom$1,RectToClip$1.Bottom$1);
+   return Result
+}
+function TRect$Compare$1(Self$28, aRect$3) {
+   return (((Self$28.Left$1==aRect$3.Left$1)&&(Self$28.Top$1==aRect$3.Top$1))&&(Self$28.Right$1==aRect$3.Right$1))&&(Self$28.Bottom$1==aRect$3.Bottom$1);
+}
+function TRect$ContainsCol$1(Self$29, aCol$2) {
+   return (aCol$2>=Self$29.Left$1)&&(aCol$2<=Self$29.Right$1);
+}
+function TRect$ContainsPoint$1(Self$30, aPoint$2) {
+   return (((aPoint$2.X$1>=Self$30.Left$1)&&(aPoint$2.X$1<=Self$30.Right$1))&&(aPoint$2.Y$1>=Self$30.Top$1))&&(aPoint$2.Y$1<=Self$30.Bottom$1);
+}
+function TRect$ContainsPos$1(Self$31, aLeft$4, aTop$4) {
+   return (((aLeft$4>=Self$31.Left$1)&&(aLeft$4<=Self$31.Right$1))&&(aTop$4>=Self$31.Top$1))&&(aTop$4<=Self$31.Bottom$1);
+}
+function TRect$ContainsRect$1(Self$32, aRect$4) {
+   return TRect$Expose$1(Self$32,aRect$4)!=2;
+}
+function TRect$ContainsRow$1(Self$33, aRow$2) {
+   return (aRow$2>=Self$33.Top$1)&&(aRow$2<=Self$33.Bottom$1);
+}
+function Create$16(topLeft$1, bottomRight$1) {
+   var Result = {Bottom$1:0,Left$1:0,Right$1:0,Top$1:0};
+   Result.Left$1 = topLeft$1.X$1;
+   Result.Top$1 = topLeft$1.Y$1;
+   Result.Right$1 = bottomRight$1.X$1;
+   Result.Bottom$1 = bottomRight$1.Y$1;
+   return Result
+}
+function Create$15(aLeft$5, aTop$5, aRight$2, aBottom$2) {
+   var Result = {Bottom$1:0,Left$1:0,Right$1:0,Top$1:0};
+   Result.Left$1 = aLeft$5;
+   Result.Top$1 = aTop$5;
+   Result.Right$1 = aRight$2;
+   Result.Bottom$1 = aBottom$2;
+   return Result
+}
+function CreateSized$3(aWidth$2, aHeight$2) {
+   var Result = {Bottom$1:0,Left$1:0,Right$1:0,Top$1:0};
+   Result.Left$1 = 0;
+   Result.Top$1 = 0;
+   Result.Right$1 = aWidth$2;
+   Result.Bottom$1 = aHeight$2;
+   return Result
+}
+function CreateSized$2(aLeft$6, aTop$6, aWidth$3, aHeight$3) {
+   var Result = {Bottom$1:0,Left$1:0,Right$1:0,Top$1:0};
+   Result.Left$1 = aLeft$6;
+   Result.Top$1 = aTop$6;
+   Result.Right$1 = aLeft$6+aWidth$3;
+   Result.Bottom$1 = aTop$6+aHeight$3;
+   return Result
+}
+function TRect$Empty$1(Self$34) {
+   return (Self$34.Left$1==Self$34.Right$1)&&(Self$34.Top$1==Self$34.Bottom$1);
+}
+function TRect$Expose$1(Self$35, aChildRect$2) {
+   var Result = 0;
+   if ((((aChildRect$2.Left$1>=Self$35.Right$1)||(aChildRect$2.Top$1>=Self$35.Bottom$1))||(aChildRect$2.Right$1<=Self$35.Left$1))||(aChildRect$2.Bottom$1<=Self$35.Top$1)) {
+      Result = 2;
+   } else if ((((aChildRect$2.Left$1<Self$35.Left$1)||(aChildRect$2.Top$1<Self$35.Top$1))||(aChildRect$2.Right$1>(Self$35.Right$1-1)))||(aChildRect$2.Bottom$1>(Self$35.Bottom$1-1))) {
+      Result = 1;
+   } else {
+      Result = 0;
+   }
+   return Result
+}
+function TRect$Extend$3(Self$36, aPoint$3) {
+   return TRect$Extend$2(Self$36,aPoint$3.X$1,aPoint$3.Y$1);
+}
+function TRect$Extend$2(Self$37, x$4, y$3) {
+   var Result = false;
+   if (x$4<Self$37.Left$1) {
+      Self$37.Left$1 = x$4;
+      Result = true;
+   } else if (x$4>Self$37.Right$1) {
+      Self$37.Right$1 = x$4;
+      Result = true;
+   }
+   if (y$3<Self$37.Top$1) {
+      Self$37.Top$1 = y$3;
+      Result = true;
+   } else if (y$3>Self$37.Bottom$1) {
+      Self$37.Bottom$1 = y$3;
+      Result = true;
+   }
+   return Result
+}
+function TRect$FitWithin$1(Self$38, aChildRect$3) {
+   var Result = {Bottom$1:0,Left$1:0,Right$1:0,Top$1:0};
+   var x1$2 = 0;
+   var y1$2 = 0;
+   var x$5 = 0;
+   var y$4 = 0;
+   var wd$2 = 0;
+   var hd$2 = 0;
+   wd$2 = TRect$Width$1(aChildRect$3);
+   hd$2 = TRect$Height$1(aChildRect$3);
+   if ((wd$2<1)||(hd$2<1)) {
+      Copy$TRect({Bottom$1:0,Left$1:0,Right$1:0,Top$1:0},Result);
+      return Result;
+   }
+   if ((TRect$Width$1(Self$38)>wd$2)&&(TRect$Height$1(Self$38)>hd$2)) {
+      Copy$TRect(Self$38,Result);
+      x$5 = $Div(TRect$Width$1(Self$38)-wd$2,2);
+      y$4 = $Div(TRect$Height$1(Self$38)-hd$2,2);
+      Result = Create$15((Result.Left$1+x$5),(Result.Top$1+y$4),(Result.Left$1+wd$2),(Result.Top$1+hd$2));
+   } else {
+      x1$2 = TRect$Width$1(Self$38)/wd$2;
+      y1$2 = TRect$Height$1(Self$38)/hd$2;
+      if (x1$2>y1$2) {
+         x$5 = Trunc(wd$2*y1$2);
+         Result = Create$15(((TRect$Width$1(Self$38)-x$5)>>>1),0,(aChildRect$3.Left$1+x$5),TRect$Height$1(Self$38));
+      } else {
+         y$4 = Trunc(hd$2*x1$2);
+         Result = Create$15(0,((TRect$Height$1(Self$38)-y$4)>>>1),TRect$Width$1(Self$38),(aChildRect$3.Top$1+y$4));
+      }
+      TRect$MoveBy$1(Result,Self$38.Left$1,Self$38.Top$1);
+   }
+   return Result
+}
+function TRect$Height$1(Self$39) {
+   return Self$39.Bottom$1-Self$39.Top$1;
+}
+function TRect$Intersect$1(Self$40, aRect$5, intersection$1) {
+   var Result = false;
+   Copy$TRect(Self$40,intersection$1);
+   if (aRect$5.Left$1>Self$40.Left$1) {
+      intersection$1.Left$1 = aRect$5.Left$1;
+   }
+   if (aRect$5.Top$1>Self$40.Top$1) {
+      intersection$1.Top$1 = aRect$5.Top$1;
+   }
+   if (aRect$5.Right$1<Self$40.Right$1) {
+      intersection$1.Right$1 = aRect$5.Right$1;
+   }
+   if (aRect$5.Bottom$1<Self$40.Bottom$1) {
+      intersection$1.Bottom$1 = aRect$5.Bottom$1;
+   }
+   Result = (intersection$1.Right$1>intersection$1.Left$1)&&(intersection$1.Bottom$1>intersection$1.Top$1);
+   if (!Result) {
+      Copy$TRect({Bottom$1:0,Left$1:0,Right$1:0,Top$1:0},intersection$1);
+   }
+   return Result
+}
+function TRect$Move$1(Self$41, aCol$3, aRow$3, Center$1) {
+   var wd$3 = 0;
+   var hd$3 = 0;
+   wd$3 = TRect$Width$1(Self$41);
+   hd$3 = TRect$Height$1(Self$41);
+   if (Center$1) {
+      Self$41.Left$1 = aCol$3-($Div(wd$3,2));
+      Self$41.Top$1 = aRow$3-($Div(hd$3,2));
+      Self$41.Right$1 = aCol$3+($Div(wd$3,2));
+      Self$41.Bottom$1 = aCol$3+($Div(hd$3,2));
+   } else {
+      Self$41.Left$1 = aCol$3;
+      Self$41.Top$1 = aRow$3;
+      Self$41.Right$1 = aCol$3+wd$3;
+      Self$41.Bottom$1 = aRow$3+hd$3;
+   }
+}
+function TRect$MoveBy$1(Self$42, dX, dY) {
+   (Self$42.Left$1+= dX);
+   (Self$42.Right$1+= dX);
+   (Self$42.Top$1+= dY);
+   (Self$42.Bottom$1+= dY);
+}
+function TRect$SetBounds$1(Self$43, aLeft$7, aTop$7, aRight$3, aBottom$3) {
+   Self$43.Left$1 = aLeft$7;
+   Self$43.Top$1 = aTop$7;
+   Self$43.Right$1 = aRight$3;
+   Self$43.Bottom$1 = aBottom$3;
+}
+function TRect$TopLeft$1(Self$44) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Self$44.Left$1;
+   Result.Y$1 = Self$44.Top$1;
+   return Result
+}
+function TRect$ToPolygon$1(Self$45) {
+   return [Create$18(Self$45.Left$1,Self$45.Top$1),Create$18(Self$45.Right$1,Self$45.Top$1),Create$18(Self$45.Right$1,Self$45.Bottom$1),Create$18(Self$45.Left$1,Self$45.Bottom$1)].slice();
+}
+function TRect$ToString$1(Self$46) {
+   return (Self$46.Left$1.toString()+","+Self$46.Top$1.toString()+","+Self$46.Right$1.toString()+","+Self$46.Bottom$1.toString());
+}
+function TRect$Width$1(Self$47) {
+   return Self$47.Right$1-Self$47.Left$1;
+}
+function Copy$TPointF(s,d) {
+   d.X=s.X;
+   d.Y=s.Y;
+   return d;
+}
+function Clone$TPointF($) {
+   return {
+      X:$.X,
+      Y:$.Y
+   }
+}
+function TPointF$AngleTo(Self$48, aPoint$4) {
+   return Math.atan2(aPoint$4.Y-Self$48.Y,aPoint$4.X-Self$48.X);
+}
+function TPointF$Compare$2(Self$49, aPoint$5) {
+   return (aPoint$5.X==Self$49.X)&&(aPoint$5.Y==Self$49.Y);
+}
+function Create$17(aCol$4, aRow$4) {
+   var Result = {X:0,Y:0};
+   Result.X = aCol$4;
+   Result.Y = aRow$4;
+   return Result
+}
+function TPointF$Displace(Self$50, radius, angle) {
+   var Result = {X:0,Y:0};
+   Result.X = Self$50.X+(radius*Math.cos(angle));
+   Result.Y = Self$50.Y+(radius*Math.sin(angle));
+   return Result
+}
+function TPointF$Distance(Self$51, aPoint$6) {
+   return Math.sqrt(Math.pow(Self$51.X-aPoint$6.X,2)+Math.pow(Self$51.Y-aPoint$6.Y,2));
+}
+function TPointF$Expand$1(Self$52, b) {
+   var Result = {X:0,Y:0};
+   Result.X = Self$52.X*b;
+   Result.Y = Self$52.Y*b;
+   return Result
+}
+function TPointF$Expand(Self$53, b$1) {
+   var Result = {X:0,Y:0};
+   Result.X = Self$53.X*b$1.X;
+   Result.Y = Self$53.Y*b$1.Y;
+   return Result
+}
+function TPointF$Offset$1(Self$54, b$2) {
+   var Result = {X:0,Y:0};
+   Result.X = Self$54.X+b$2;
+   Result.Y = Self$54.Y+b$2;
+   return Result
+}
+function TPointF$Offset(Self$55, b$3) {
+   var Result = {X:0,Y:0};
+   Result.X = Self$55.X+b$3.X;
+   Result.Y = Self$55.Y+b$3.Y;
+   return Result
+}
+function TPointF$ToString$2(Self$56) {
+   return (Self$56.X.toString()+","+Self$56.Y.toString());
+}
+function Copy$TPoint(s,d) {
+   d.X$1=s.X$1;
+   d.Y$1=s.Y$1;
+   return d;
+}
+function Clone$TPoint($) {
+   return {
+      X$1:$.X$1,
+      Y$1:$.Y$1
+   }
+}
+function TPoint$AngleTo$1(Self$57, aPoint$7) {
+   return Math.atan2(aPoint$7.Y$1-Self$57.Y$1,aPoint$7.X$1-Self$57.X$1);
+}
+function TPoint$Compare$3(Self$58, aPoint$8) {
+   return (aPoint$8.X$1==Self$58.X$1)&&(aPoint$8.Y$1==Self$58.Y$1);
+}
+function Create$18(aCol$5, aRow$5) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = aCol$5;
+   Result.Y$1 = aRow$5;
+   return Result
+}
+function TPoint$Displace$1(Self$59, radius$1, angle$1) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Math.round(Self$59.X$1+(radius$1*Math.cos(angle$1)));
+   Result.Y$1 = Math.round(Self$59.Y$1+(radius$1*Math.sin(angle$1)));
+   return Result
+}
+function TPoint$Distance$1(Self$60, aPoint$9) {
+   return Math.sqrt(Math.pow(Self$60.X$1-aPoint$9.X$1,2)+Math.pow(Self$60.Y$1-aPoint$9.Y$1,2));
+}
+function TPoint$Expand$3(Self$61, b$4) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Math.round(Self$61.X$1*b$4);
+   Result.Y$1 = Math.round(Self$61.Y$1*b$4);
+   return Result
+}
+function TPoint$Expand$2(Self$62, b$5) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Math.round(Self$62.X$1*b$5.X$1);
+   Result.Y$1 = Math.round(Self$62.Y$1*b$5.Y$1);
+   return Result
+}
+function TPoint$Offset$3(Self$63, b$6) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Self$63.X$1+b$6;
+   Result.Y$1 = Self$63.Y$1+b$6;
+   return Result
+}
+function TPoint$Offset$2(Self$64, b$7) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Self$64.X$1+b$7.X$1;
+   Result.Y$1 = Self$64.Y$1+b$7.Y$1;
+   return Result
+}
+function TPoint$ToString$3(Self$65) {
+   return (Self$65.X$1.toString()+","+Self$65.Y$1.toString());
+}
+var TInteger = {
+   $ClassName:"TInteger",
+   $Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,Average:function(anArray) {
+      var Result = 0;
+      var mCount = 0;
+      mCount = anArray.length;
+      if (!mCount) {
+         Result = 0;
+      } else {
+         Result = TInteger.Sum(anArray)/mCount;
+      }
+      return Result
+   }
+   ,Diff:function(Primary, Secondary) {
+      var Result = 0;
+      if (Primary!=Secondary) {
+         if (Primary>Secondary) {
+            Result = Primary-Secondary;
+         } else {
+            Result = Secondary-Primary;
+         }
+         if (Result<0) {
+            Result = (Result-1)^(-1);
+         }
+      } else {
+         Result = 0;
+      }
+      return Result
+   }
+   ,EnsureRange:function(aValue$19, aMin, aMax) {
+      return ClampInt(aValue$19,aMin,aMax);
+   }
+   ,GetBit:function(index, buffer) {
+      var Result = false;
+      if ((index>=0)&&(index<=31)) {
+         Result = ((buffer&(1<<index))!=0);
+      } else {
+         throw Exception.Create($New(Exception),"Invalid bit index, expected 0..31");
+      }
+      return Result
+   }
+   ,Largest$1:function(Self, anArray$1) {
+      var Result = 0;
+      var a$1 = 0;
+      var x$6 = 0;
+      var $temp2;
+      for(a$1 = 0,$temp2 = anArray$1.length;a$1<$temp2;a$1++) {
+         x$6 = $DIdxR(anArray$1,a$1,"");
+         if (x$6>Result) {
+            Result = x$6;
+         }
+      }
+      return Result
+   }
+   ,Largest:function(Self, Primary$1, Secondary$1) {
+      var Result = 0;
+      if (Primary$1>Secondary$1) {
+         Result = Primary$1;
+      } else {
+         Result = Secondary$1;
+      }
+      return Result
+   }
+   ,Middle:function(Primary$2, Secondary$2) {
+      return $Div(Primary$2+Secondary$2,2);
+   }
+   ,PercentOfValue:function(Value$1, Total) {
+      var Result = 0;
+      if (Value$1<=Total) {
+         Result = Trunc((Value$1/Total)*100);
+      } else {
+         Result = 0;
+      }
+      return Result
+   }
+   ,SetBit:function(index$1, aValue$20, buffer$1) {
+      if ((index$1>=0)&&(index$1<=31)) {
+         if (aValue$20) {
+            buffer$1.v = buffer$1.v|(1<<index$1);
+         } else {
+            buffer$1.v = buffer$1.v&(~(1<<index$1));
+         }
+      } else {
+         throw Exception.Create($New(Exception),"Invalid bit index, expected 0..31");
+      }
+   }
+   ,Sign$2:function(Self, Value$2) {
+      return $Sign(Value$2);
+   }
+   ,Smallest$1:function(Self, anArray$2) {
+      var Result = 0;
+      var a$2 = 0;
+      var x$7 = 0;
+      Result = (anArray$2.length-1);
+      if (Result>=0) {
+         Result = $DIdxR(anArray$2,0,"");
+         var $temp3;
+         for(a$2 = 0,$temp3 = anArray$2.length;a$2<$temp3;a$2++) {
+            x$7 = $DIdxR(anArray$2,a$2,"");
+            if (x$7<Result) {
+               Result = x$7;
+            }
+         }
+      } else {
+         Result = 0;
+      }
+      return Result
+   }
+   ,Smallest:function(Self, Primary$3, Secondary$3) {
+      var Result = 0;
+      if (Primary$3<Secondary$3) {
+         Result = Primary$3;
+      } else {
+         Result = Secondary$3;
+      }
+      return Result
+   }
+   ,Sort:function(Self, Domain) {
+      Domain.v.sort($CmpNum);
+   }
+   ,Sum:function(anArray$3) {
+      var Result = 0;
+      var a$3 = 0;
+      var x$8 = 0;
+      Result = 0;
+      var $temp4;
+      for(a$3 = 0,$temp4 = anArray$3.length;a$3<$temp4;a$3++) {
+         x$8 = $DIdxR(anArray$3,a$3,"");
+         Result+=x$8;
+      }
+      return Result
+   }
+   ,Swap:function(Primary$4, Secondary$4) {
+      var temp = 0;
+      temp = Primary$4.v;
+      Primary$4.v = Secondary$4.v;
+      Secondary$4.v = temp;
+   }
+   ,ToHex:function(aValue$21) {
+      var Result = "";
+      Result = IntToHex(aValue$21,16);
+      if (Result.length<2) {
+         do {
+            Result = "0"+Result;
+         } while (!(Result.length>=2));
+      }
+      Result = Result.substr((Result.length-1)-1,2);
+      return Result
+   }
+   ,ToNearest:function(Value$3, Factor) {
+      var Result = 0;
+      var FTemp = 0;
+      Result = Value$3;
+      FTemp = Value$3%Factor;
+      if (FTemp>0) {
+         (Result+= (Factor-FTemp));
+      }
+      return Result
+   }
+   ,ToNearestSigned:function(Value$4, Factor$1) {
+      return (1+($Div(Value$4-1,Factor$1)))*Factor$1;
+   }
+   ,ToPxStr:function(aValue$22) {
+      return aValue$22.toString()+"px";
+   }
+   ,WrapRange:function(aValue$23, aLowRange, aHighRange) {
+      var Result = 0;
+      if (aValue$23>aHighRange) {
+         Result = aLowRange+TInteger.Diff(aHighRange,(aValue$23-1));
+         if (Result>aHighRange) {
+            Result = TInteger.WrapRange(Result,aLowRange,aHighRange);
+         }
+      } else if (aValue$23<aLowRange) {
+         Result = aHighRange-TInteger.Diff(aLowRange,(aValue$23+1));
+         if (Result<aLowRange) {
+            Result = TInteger.WrapRange(Result,aLowRange,aHighRange);
+         }
+      } else {
+         Result = aValue$23;
+      }
+      return Result
+   }
+   ,Destroy:TObject.Destroy
+};
+var TFloat = {
+   $ClassName:"TFloat",
+   $Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,PercentOfValue$1:function(Value$5, Total$1) {
+      var Result = 0;
+      if (Value$5<=Total$1) {
+         Result = (Value$5/Total$1)*100;
+      } else {
+         Result = 0;
+      }
+      return Result
+   }
+   ,Destroy:TObject.Destroy
+};
+var TExposure = [ "esVisible", "esPartly", "esNone" ];
+function OffsetPoint(a, b$8) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = a.X$1+b$8.X$1;
+   Result.Y$1 = a.Y$1+b$8.Y$1;
+   return Result
+};
+function OffsetPoint$1(a$4, b$9) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = a$4.X$1+b$9;
+   Result.Y$1 = a$4.Y$1+b$9;
+   return Result
+};
+function OffsetPoint$2(a$5, b$10) {
+   var Result = {X:0,Y:0};
+   Result.X = a$5.X+b$10.X;
+   Result.Y = a$5.Y+b$10.Y;
+   return Result
+};
+function OffsetPoint$3(a$6, b$11) {
+   var Result = {X:0,Y:0};
+   Result.X = a$6.X+b$11;
+   Result.Y = a$6.Y+b$11;
+   return Result
+};
+function OffsetPoint$4(a$7, b$12) {
+   var Result = {X:0,Y:0};
+   Result.X = a$7.X+b$12;
+   Result.Y = a$7.Y+b$12;
+   return Result
+};
+function ObjToVariant(value$1) {
+   return value$1;
+};
+function MinusPoint(a$8, b$13) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = a$8.X$1-b$13.X$1;
+   Result.Y$1 = a$8.Y$1-b$13.Y$1;
+   return Result
+};
+function MinusPoint$1(a$9, b$14) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = a$9.X$1-b$14;
+   Result.Y$1 = a$9.Y$1-b$14;
+   return Result
+};
+function MinusPoint$2(a$10, b$15) {
+   var Result = {X:0,Y:0};
+   Result.X = a$10.X-b$15.X;
+   Result.Y = a$10.Y-b$15.Y;
+   return Result
+};
+function MinusPoint$3(a$11, b$16) {
+   var Result = {X:0,Y:0};
+   Result.X = a$11.X-b$16;
+   Result.Y = a$11.Y-b$16;
+   return Result
+};
+function MinusPoint$4(a$12, b$17) {
+   var Result = {X:0,Y:0};
+   Result.X = a$12.X-b$17;
+   Result.Y = a$12.Y-b$17;
+   return Result
+};
+function ExpandPoint(a$13, b$18) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Math.round(a$13.X$1*b$18.X$1);
+   Result.Y$1 = Math.round(a$13.Y$1*b$18.Y$1);
+   return Result
+};
+function ExpandPoint$1(a$14, b$19) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Math.round(a$14.X$1*b$19);
+   Result.Y$1 = Math.round(a$14.Y$1*b$19);
+   return Result
+};
+function ExpandPoint$2(a$15, b$20) {
+   var Result = {X$1:0,Y$1:0};
+   Result.X$1 = Math.round(a$15.X$1*b$20);
+   Result.Y$1 = Math.round(a$15.Y$1*b$20);
+   return Result
+};
+function ExpandPoint$3(a$16, b$21) {
+   var Result = {X:0,Y:0};
+   Result.X = a$16.X*b$21.X;
+   Result.Y = a$16.Y*b$21.Y;
+   return Result
+};
+function ExpandPoint$4(a$17, b$22) {
+   var Result = {X:0,Y:0};
+   Result.X = a$17.X*b$22;
+   Result.Y = a$17.Y*b$22;
+   return Result
+};
+function ExpandPoint$5(a$18, b$23) {
+   var Result = {X:0,Y:0};
+   Result.X = a$18.X*b$23;
+   Result.Y = a$18.Y*b$23;
+   return Result
+};
+var TWEstadoConta = {
+   $ClassName:"TWEstadoConta",
+   $Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $._Conta = null;
+      $._LimInf = $._LimSup = $._PorcRendim = $._Saldo = 0;
+   }
+   ,CopyFrom:function(Self, AContaOrg) {
+      $Check(Self,"")._Saldo = $Check(AContaOrg,"")._Saldo;
+      $Check(Self,"")._Conta = $Check(AContaOrg,"")._Conta;
+   }
+   ,Create$3:function(Self, AConta) {
+      $Check(Self,"")._Conta = AConta;
+      $Check(Self,"")._Saldo = 0;
+      $Check(Self,"")._PorcRendim = 0;
+      $Check(Self,"")._LimInf = 0;
+      $Check(Self,"")._LimSup = 0;
+      return Self
+   }
+   ,Destroy:function(Self) {
+      $Check(Self,"")._Conta = null;
+      TObject.Destroy(Self);
+   }
+   ,Destroy$:function($){return $.ClassType.Destroy($)}
+   ,AplicarRendimento$:function($){return $.ClassType.AplicarRendimento($)}
+   ,CopyFrom$:function($){return $.ClassType.CopyFrom.apply($.ClassType, arguments)}
+   ,Create$3$:function($){return $.ClassType.Create$3.apply($.ClassType, arguments)}
+   ,Depositar$:function($){return $.ClassType.Depositar.apply($.ClassType, arguments)}
+   ,Sacar$:function($){return $.ClassType.Sacar.apply($.ClassType, arguments)}
+};
+var TWContaOuro = {
+   $ClassName:"TWContaOuro",
+   $Parent:TWEstadoConta
+   ,$Init:function ($) {
+      TWEstadoConta.$Init($);
+   }
+   ,Create$3:function(Self, AConta$1) {
+      $Check(Self,"")._PorcRendim = 2;
+      $Check(Self,"")._LimInf = 1000;
+      $Check(Self,"")._LimSup = 99999.99;
+      return Self
+   }
+   ,Depositar:function(Self, AValor) {
+      $Check(Self,"")._Saldo+=AValor;
+   }
+   ,Sacar:function(Self, AValor$1) {
+      $Check(Self,"")._Saldo-=AValor$1;
+   }
+   ,AplicarRendimento:function(Self) {
+      $Check(Self,"")._Saldo+=($Check(Self,"")._Saldo*$Check(Self,"")._PorcRendim)/100;
+   }
+   ,Destroy:TWEstadoConta.Destroy
+   ,AplicarRendimento$:function($){return $.ClassType.AplicarRendimento($)}
+   ,CopyFrom:TWEstadoConta.CopyFrom
+   ,Create$3$:function($){return $.ClassType.Create$3.apply($.ClassType, arguments)}
+   ,Depositar$:function($){return $.ClassType.Depositar.apply($.ClassType, arguments)}
+   ,Sacar$:function($){return $.ClassType.Sacar.apply($.ClassType, arguments)}
+};
+var TWContaComum = {
+   $ClassName:"TWContaComum",
+   $Parent:TWEstadoConta
+   ,$Init:function ($) {
+      TWEstadoConta.$Init($);
+      $._TaxaServico = 0;
+   }
+   ,Create$3:function(Self, AConta$2) {
+      $Check(Self,"")._PorcRendim = 1;
+      $Check(Self,"")._TaxaServico = 5;
+      $Check(Self,"")._LimInf = 100;
+      $Check(Self,"")._LimSup = 999.99;
+      return Self
+   }
+   ,Depositar:function(Self, AValor$2) {
+      $Check(Self,"")._Saldo+=AValor$2;
+   }
+   ,Sacar:function(Self, AValor$3) {
+      var lValorReal = 0;
+      lValorReal = AValor$3+$Check(Self,"")._TaxaServico;
+      $Check(Self,"")._Saldo-=lValorReal;
+   }
+   ,AplicarRendimento:function(Self) {
+      $Check(Self,"")._Saldo+=($Check(Self,"")._Saldo*$Check(Self,"")._PorcRendim)/100;
+   }
+   ,Destroy:TWEstadoConta.Destroy
+   ,AplicarRendimento$:function($){return $.ClassType.AplicarRendimento($)}
+   ,CopyFrom:TWEstadoConta.CopyFrom
+   ,Create$3$:function($){return $.ClassType.Create$3.apply($.ClassType, arguments)}
+   ,Depositar$:function($){return $.ClassType.Depositar.apply($.ClassType, arguments)}
+   ,Sacar$:function($){return $.ClassType.Sacar.apply($.ClassType, arguments)}
+};
+var TWContaDiferenciada = {
+   $ClassName:"TWContaDiferenciada",
+   $Parent:TWContaComum
+   ,$Init:function ($) {
+      TWContaComum.$Init($);
+      $._TaxaJuros = 0;
+   }
+   ,Create$3:function(Self, AConta$3) {
+      $Check(Self,"")._PorcRendim = 0;
+      $Check(Self,"")._TaxaJuros = 1;
+      $Check(Self,"")._TaxaServico = 10;
+      $Check(Self,"")._LimInf = -100;
+      $Check(Self,"")._LimSup = 99.99;
+      return Self
+   }
+   ,Depositar:function(Self, AValor$4) {
+      $Check(Self,"")._Saldo+=AValor$4;
+   }
+   ,Sacar:function(Self, AValor$5) {
+      var lJuros = 0;
+      var lValorReal$1 = 0;
+      lValorReal$1 = AValor$5+$Check(Self,"")._TaxaServico;
+      if (($Check(Self,"")._Saldo-lValorReal$1)<$Check(Self,"")._LimInf) {
+         throw Exception.Create($New(Exception),"Saque não pode ser efetivado. Conta sem saldo.");
+      }
+      lJuros = 0;
+      if (($Check(Self,"")._Saldo-lValorReal$1)<0) {
+         lJuros = ((lValorReal$1-$Check(Self,"")._Saldo)*$Check(Self,"")._TaxaJuros)/100;
+      }
+      $Check(Self,"")._Saldo = $Check(Self,"")._Saldo-lValorReal$1-lJuros;
+   }
+   ,AplicarRendimento:function(Self) {
+      /* null */
+   }
+   ,Destroy:TWEstadoConta.Destroy
+   ,AplicarRendimento$:function($){return $.ClassType.AplicarRendimento($)}
+   ,CopyFrom:TWEstadoConta.CopyFrom
+   ,Create$3$:function($){return $.ClassType.Create$3.apply($.ClassType, arguments)}
+   ,Depositar$:function($){return $.ClassType.Depositar.apply($.ClassType, arguments)}
+   ,Sacar$:function($){return $.ClassType.Sacar.apply($.ClassType, arguments)}
+};
+var TWConta = {
+   $ClassName:"TWConta",
+   $Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $._Estado = null;
+      $._NomeCorrentista = "";
+      $._NroConta = 0;
+   }
+   ,AplicarRendimento$4:function(Self) {
+      TWEstadoConta.AplicarRendimento$($Check($Check(Self,"")._Estado,""));
+      TWConta.VerificaStatus(Self);
+   }
+   ,Create$7:function(Self, ANomeCorrentista) {
+      $Check(Self,"")._Estado = null;
+      $Check(Self,"")._NroConta = Trunc(Now()*100);
+      $Check(Self,"")._NomeCorrentista = ANomeCorrentista;
+      TWConta.VerificaStatus(Self);
+      return Self
+   }
+   ,Depositar$4:function(Self, AValor$6) {
+      TWEstadoConta.Depositar$($Check($Check(Self,"")._Estado,""),AValor$6);
+      TWConta.VerificaStatus(Self);
+   }
+   ,Destroy:function(Self) {
+      TObject.Destroy(Self);
+   }
+   ,ObtemEstado:function(Self) {
+      return $Check(Self,"")._Estado;
+   }
+   ,ObtemNroConta:function(Self) {
+      return $Check(Self,"")._NroConta;
+   }
+   ,ObtemSaldo:function(Self) {
+      return $Check($Check(Self,"")._Estado,"")._Saldo;
+   }
+   ,Sacar$4:function(Self, AValor$7) {
+      TWEstadoConta.Sacar$($Check($Check(Self,"")._Estado,""),AValor$7);
+      TWConta.VerificaStatus(Self);
+   }
+   ,VerificaStatus:function(Self) {
+      var lNovoEstado = null;
+      if ($Check(Self,"")._Estado===null) {
+         $Check(Self,"")._Estado = TWEstadoConta.Create$3$($New(TWContaComum),Self);
+         return;
+      }
+      lNovoEstado = null;
+      if ($Check($Check(Self,"")._Estado,"")._Saldo<$Check($Check(Self,"")._Estado,"")._LimInf) {
+         if ($Is($Check(Self,"")._Estado,TWContaComum)) {
+            lNovoEstado = TWEstadoConta.Create$3$($New(TWContaDiferenciada),Self);
+         }
+         if ($Is($Check(Self,"")._Estado,TWContaOuro)) {
+            lNovoEstado = TWEstadoConta.Create$3$($New(TWContaComum),Self);
+         }
+      }
+      if ($Check($Check(Self,"")._Estado,"")._Saldo>$Check($Check(Self,"")._Estado,"")._LimSup) {
+         if ($Is($Check(Self,"")._Estado,TWContaComum)) {
+            lNovoEstado = TWEstadoConta.Create$3$($New(TWContaOuro),Self);
+         }
+         if ($Is($Check(Self,"")._Estado,TWContaOuro)) {
+            lNovoEstado = TWEstadoConta.Create$3$($New(TWContaComum),Self);
+         }
+         if ($Is($Check(Self,"")._Estado,TWContaDiferenciada)) {
+            lNovoEstado = TWEstadoConta.Create$3$($New(TWContaComum),Self);
+         }
+      }
+      if (lNovoEstado!==null) {
+         TWEstadoConta.CopyFrom$($Check(lNovoEstado,""),$Check(Self,"")._Estado);
+         TObject.Free($Check(Self,"")._Estado);
+         $Check(Self,"")._Estado = lNovoEstado;
+      }
+   }
+   ,Destroy$:function($){return $.ClassType.Destroy($)}
+};
+var vUniqueNumber = 0;
+var vVendor = 0;
+var vDriver = null;
+var vRequestAnimFrame = null;
+var vCancelAnimFrame = null;
+
+
+function MostraSaldo(ATexto, ACor) {
+      var lCor = 0;
+      var v0 = undefined;
+      var v1 = undefined;
+      var v2 = undefined;
+      //if (TWConta.ObtemSaldo()._Conta)==0) {
+	  if (TWConta.ObtemSaldo(_Conta) == 0) {
+         lCor = 16711680;
+      } else if (TWConta.ObtemSaldo(_Conta)>0) {
+         lCor = 15794160;
+      } else {
+         lCor = 16766720;
+      }
+	  
+//	  if (TObject.ClassName(TWConta.ObtemEstado(_Conta).ClassType) == 'TWContaComum') {
+//	alert('comum');
+//	}
+var status;	  
+switch (TObject.ClassName(TWConta.ObtemEstado(_Conta).ClassType)) {
+    case 'TWContaComum':
+        status = "Silver <img src='b.png' border=0/>";
+        break;
+    case 'TWContaOuro':
+        status = "Gold <img src='a.png' border=0/>";
+        break;
+    default:
+        status = "Bronze <img src='c.png' border=0/>";
+};
+
+	  
+      v0 = ATexto;
+      v1 = status;
+      //v2 = (TWConta.ObtemSaldo()._Conta)).toString();
+	  v2 = TWConta.ObtemSaldo(_Conta).toFixed(2);
+      
+var table = document.getElementById("nameTable");
+var rowCount = table.rows.length;
+var row = table.insertRow(rowCount);
+
+row.insertCell(0).innerHTML = new Date().toLocaleTimeString();
+row.insertCell(1).innerHTML = v0;
+row.insertCell(2).innerHTML = v1;
+row.insertCell(3).innerHTML = v2;
+
+
+
+   }
+  
+
+
+  
+function btnCriarClick() {
+ _Conta = TWConta.Create$7($New(TWConta), document.getElementById("edNome").value );
+    TWConta.ObtemNroConta(_Conta).toString();
+	var Extrato = document.getElementById("Extrato");
+
+
+memo.innerHTML = '<table id="nameTable" width="78%">'+
+'    <tr>'+
+'      <th colspan="4" nowrap="nowrap" bgcolor="#FFFF99">HOME BANKING Pas2JS</th>'+
+'    </tr>'+
+'<tr><td colspan="3">$ Nro CONTA: <font color="blue">'+_Conta._NroConta+'</font></td></tr>'+
+'<tr><td colspan="3">CORRENTISTA: <font color="blue">'+document.getElementById("edNome").value+'</font></td></tr>'+
+'<tr><td colspan="3">DATE: '+new Date().toLocaleDateString()+'</td></tr>'+
+'<tbody style="text-align:right;">'+
+'    <tr>'+
+'      <th style="text-align:center;" width="20%" bgcolor="#FFCCFF">TIME</th>'+
+'      <th style="text-align:center;" width="20%" bgcolor="#FFCCFF">D/C</th>'+
+'      <th style="text-align:center;" width="20%" bgcolor="#FFCCFF">STATUS</th>'+
+'      <th style="text-align:center;" width="40%" bgcolor="#FFCCFF">SALDO</th>'+
+'    </tr>'+
+'</tbody>'+
+'  </table>';	
+	
+MostraSaldo("",0);	
+//	console.log(document.getElementById("edNome").value);
+}
+
+ 
+function btnDepositoClick() {
+//    console.log(document.getElementById("edValorDep").value);
+	var lValor = 0;
+	//if ($Check(Self, "")._Conta === null) {
+	if (_Conta === null) {
+	
+		return;
+	}
+	try {
+		//lValor = parseFloat(TW3EditBox.getText($Check($Check(Self, "").edValorDep, "")));
+		lValor = parseFloat(document.getElementById("edValorDep").value);
+		//TWConta.Depositar$4($Check(Self, "")._Conta, lValor);
+		TWConta.Depositar$4(_Conta, lValor);
+		//	TForm1.MostraSaldo(Self, "<font color=\"green\">+" + TW3EditBox.getText($Check($Check(Self, "").edValorDep, "")) + "</font>", 255);
+		
+		MostraSaldo('<font color="green">+' + lValor.toFixed(2) + '</font>', 255);
+		
+	} catch ($e) {
+		var Exc = $W($e);
+		alert(Exc.FMessage)
+	}
+};
+ 
+
+function btnSaqueClick() {
+	//console.log(document.getElementById("edValorSq").value);
+	var lValor$1 = 0;
+	//if ($Check(Self, "")._Conta === null) {
+	  if (_Conta === null) {
+		return;
+	}
+	try {
+		//lValor$1 = parseFloat(TW3EditBox.getText($Check($Check(Self, "").edValorSq, "")));
+		  lValor$1 = parseFloat(document.getElementById("edValorSq").value);
+		//TWConta.Sacar$4($Check(Self, "")._Conta, lValor$1);
+		  TWConta.Sacar$4(_Conta, lValor$1);
+		//TForm1.MostraSaldo(Self, "<font color=\"red\">-" + TW3EditBox.getText($Check($Check(Self, "").edValorSq, "")) + "</font>", 16711680);
+		MostraSaldo('<font color="blue">-' + lValor$1.toFixed(2) + '</font>', 16711680);
+	} catch ($e) {
+		var Exc$1 = $W($e);
+		//alert($Check(Exc$1, "").FMessage)
+		  alert(Exc$1.FMessage)
+	}
+};  
+
+
+
+	</script>
+</head>
+
+<body>
+Correntista: <input id="edNome" type="text" name="edNome" value="warleyalex"><br>
+Deposito: <input id="edValorDep" type="text" name="edValorDep" value="1000.00"><br>
+Saque: <input id="edValorSq" type="text" name="edValorSq" value="500.00"><br>
+<br>
+<input type="button" id="btnCriar" onclick="btnCriarClick()" value="Criar">
+<input type="button" id="btnDeposito" onclick="btnDepositoClick()" value="Depositar">
+<input type="button" id="btnSaque" onclick="btnSaqueClick()" value="Sacar">
+
+<div id="wrapper"> 
+  <div id="memo"></div> 
+   <table width=100%><tr><th colspan="4" nowrap="nowrap" bgcolor="#AAFF99">-</th></tr></table>
+</div> 
+
+<!-- <img alt="R" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABnRSTlMA/wAAAACkwsAdAAAAF0lEQVQokWP8z0AaYCJR/aiGUQ1DSAMAQC4BH5CRCM8AAAAASUVORK5CYII=" /> -->
+
+</body>
+
+</html>

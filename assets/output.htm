@@ -1,0 +1,144 @@
+<!-- (0049)Output -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Output command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Output, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Output</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Variable</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines the standard output text file</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+var <b>Output</b> : TextFile;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Output</b></font> variable is predefined by Delphi to refer to the standard text output file. 
+<br>&nbsp;<br>
+This is normally the console, but may be overriden to any file using the <b>Assign</b> statement.
+<br>&nbsp;<br>
+<font color=#996600><b>Output</b></font> is used in the text file <b>Write, WriteLn</b> and <b>Seek</b> routines. It may be omitted in these commands however, since it is the default file.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$apptype.htm">$AppType</a></b></td>
+<td width="8"></td>
+<td align="left">Determines the application type : GUI or Console</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="input.htm">Input</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the standard input text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="write.htm">Write</a></b></td>
+<td width="8"></td>
+<td align="left">Write data to a binary or text file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="writeln.htm">WriteLn</a></b></td>
+<td width="8"></td>
+<td align="left">Write a complete line of data to a text file</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Read and write to the console</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> program Project1;</b><br><b>
+</b><br><b>
+{$AppType CONSOLE}</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;SysUtils;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;name : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// A console application has the console Input and Output</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// assigned and opened on our behalf.</b></font><br>
+&nbsp;&nbsp;WriteLn(<font color=#C00000><b>Output</b></font>, 'Please enter your name');<br>
+&nbsp;&nbsp;ReadLn(Input, name);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And we do not even have to refer to these file names</b></font><br>
+&nbsp;&nbsp;WriteLn('Your name is '+name);<br>
+&nbsp;&nbsp;WriteLn('');<br>
+&nbsp;&nbsp;WriteLn('Press enter to exit');<br>
+&nbsp;&nbsp;ReadLn(name);<br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Example console output :<br>&nbsp;&nbsp;
+&nbsp;&nbsp; <br>&nbsp;&nbsp;
+Please enter your name<br>&nbsp;&nbsp;
+Joe Bloggs<br>&nbsp;&nbsp;
+Your name is Joe Bloggs<br>&nbsp;&nbsp;
+&nbsp;&nbsp; <br>&nbsp;&nbsp;
+Press enter to exit<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

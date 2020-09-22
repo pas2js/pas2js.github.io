@@ -1,0 +1,178 @@
+<!-- (0046)Sqr -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Sqr command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Sqr, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Sqr</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Gives the square of a number</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Sqr</b></font>
+
+(
+<b>Number </b> :&nbsp;&nbsp;Integer
+)
+ : Integer;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Sqr</b></font>&nbsp;(
+<b>Number </b> :&nbsp;&nbsp;&nbsp;&nbsp;Int64
+)  : Int64;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Sqr</b></font>&nbsp;(
+<b>Number </b> : Extended
+)  : Extended;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Sqr</b></font> function returns the square of a <b>Number</b>.
+<br>&nbsp;<br>
+<font color=#008000>Sqr(Number) = Number * Number</font>
+<br>&nbsp;<br>
+The number may be an integer or floating point type.
+<br>&nbsp;<br>
+<font color=#FF0000>Integer, Int64 numbers</font>
+<br>&nbsp;<br>
+If the square of the number exceeds the capacity of the target variable, then the result is :
+<br>&nbsp;<br>
+Result <b>Mod</b> Capacity
+<br>&nbsp;<br>
+<font color=#FF0000>Extended numbers</font>
+<br>&nbsp;<br>
+If the square of the number exceeds the capacity, <b>EOverFlow</b> exception is raised.
+<br>&nbsp;<br>
+Special values are treated as follows:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>Infinity, -Infinity&nbsp;</b></td><td class=dd> : Infinity</td></tr>
+<tr><td class=dt align='right'><b>NaN (Not a Number)&nbsp;</b></td><td class=dd> : NaN</td></tr></table>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="dec.htm">Dec</a></b></td>
+<td width="8"></td>
+<td align="left">Decrement an ordinal variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inc.htm">Inc</a></b></td>
+<td width="8"></td>
+<td align="left">Increment an ordinal variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="sqrt.htm">Sqrt</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the square root of a number</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="sum.htm">Sum</a></b></td>
+<td width="8"></td>
+<td align="left">Return the sum of an array of floating point values</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Find the square of various values</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;number, squared : Byte;<br>
+&nbsp;&nbsp;float : Extended;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// The square of 15 = 225</b></font><br>
+&nbsp;&nbsp;number&nbsp;&nbsp;:= 15;<br>
+&nbsp;&nbsp;squared := <font color=#C00000><b>Sqr</b></font>(number);<br>
+&nbsp;&nbsp;ShowMessageFmt('%d squared = %d',[number, squared]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The square of 17 = 289</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// But result exceeds byte size, so result = 289 MOD 256 = 33</b></font><br>
+&nbsp;&nbsp;number&nbsp;&nbsp;:= 17;<br>
+&nbsp;&nbsp;squared := <font color=#C00000><b>Sqr</b></font>(number);<br>
+&nbsp;&nbsp;ShowMessageFmt('%d squared = %d (see code above)',[number, squared]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The square of infinity is still infinity</b></font><br>
+&nbsp;&nbsp;float := Infinity;<br>
+&nbsp;&nbsp;float := <font color=#C00000><b>Sqr</b></font>(float);<br>
+&nbsp;&nbsp;ShowMessageFmt('Infinity squared = %f',[float]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="sqr&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;15 squared = 225<br>&nbsp;&nbsp;
+17 squared = 33 (see code above)<br>&nbsp;&nbsp;
+Infinity squared = INF<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

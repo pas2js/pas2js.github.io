@@ -1,0 +1,231 @@
+<!-- (0073)ShowMessageFmt&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : ShowMessageFmt command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, ShowMessageFmt, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>ShowMessageFmt</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Display formatted data in a simple dialog with an OK button</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Dialogs</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>ShowMessageFmt</b></font>
+
+(
+<b>const Formatting </b> : string;<b> const Data </b> : array of const
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>ShowMessageFmt</b></font> procedure provides 'C' like formatting of multiple of simple data types into a string that is displayed in a single. It provides very precise control over this formatting.
+<br>&nbsp;<br>
+The <b>Formatting</b> parameter defines how the <b>Data</b> array is manipulated into the displayed string.
+<br>&nbsp;<br>
+The dialog has an OK button to allow the user to register the message and close the dialog.
+<br>&nbsp;<br>
+The <b>Formatting</b> string can comprise a mix of ordinary characters (that are passed unchanged to the result string), and data formatting characters. This formatting is best explained by the example code. 
+<br>&nbsp;<br>
+In simple terms, each data formatting substring starts with a <b>%</b> and ends with a data type indicator : 
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>d&nbsp;</b></td><td class=dd> = Decimal (integer)</td></tr>
+<tr><td class=dt align='right'><b>e&nbsp;</b></td><td class=dd> = Scientific</td></tr>
+<tr><td class=dt align='right'><b>f&nbsp;</b></td><td class=dd> = Fixed</td></tr>
+<tr><td class=dt align='right'><b>g&nbsp;</b></td><td class=dd> = General</td></tr>
+<tr><td class=dt align='right'><b>m&nbsp;</b></td><td class=dd> = Money</td></tr>
+<tr><td class=dt align='right'><b>n&nbsp;</b></td><td class=dd> = Number (floating)</td></tr>
+<tr><td class=dt align='right'><b>p&nbsp;</b></td><td class=dd> = Pointer</td></tr>
+<tr><td class=dt align='right'><b>s&nbsp;</b></td><td class=dd> = String</td></tr>
+<tr><td class=dt align='right'><b>u&nbsp;</b></td><td class=dd> = Unsigned decimal</td></tr>
+<tr><td class=dt align='right'><b>x&nbsp;</b></td><td class=dd> = Hexadecimal</td></tr></table>
+<br>&nbsp;<br>
+The general format of each formatting substring is as follows:
+<br>&nbsp;<br>
+<font color=#200080><font class=mono><b>%[Index:][-][Width][.Precision]Type</b></font></font>
+<br>&nbsp;<br>
+where the square brackets refer to optional parameters, and the <b>: . -</b> characters are literals, the first 2 of which are used to identify two of the optional arguments.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="inputbox.htm">InputBox</a></b></td>
+<td width="8"></td>
+<td align="left">Display a dialog that asks for user text input, with default</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inputquery.htm">InputQuery</a></b></td>
+<td width="8"></td>
+<td align="left">Display a dialog that asks for user text input</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="messagedlg.htm">MessageDlg</a></b></td>
+<td width="8"></td>
+<td align="left">Displays a message, symbol, and selectable buttons</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="messagedlgpos.htm">MessageDlgPos</a></b></td>
+<td width="8"></td>
+<td align="left">Displays a message plus buttons at a given screen position</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="promptforfilename.htm">PromptForFileName</a></b></td>
+<td width="8"></td>
+<td align="left">Shows a dialog allowing the user to select a file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="showmessage.htm">ShowMessage</a></b></td>
+<td width="8"></td>
+<td align="left">Display a string in a simple dialog with an OK button</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="showmessagepos.htm">ShowMessagePos</a></b></td>
+<td width="8"></td>
+<td align="left">Display a string in a simple dialog at a given screen position</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Showing all of the formatting data types</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;text : string;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Just 1 data item</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('%s', ['Hello']);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// A mix of literal text and a data item</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('String = %s', ['Hello']);<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Examples of each of the data types</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Decimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= %d', [-123]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Exponent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = %e', [12345.678]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Fixed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= %f', [12345.678]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('General&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= %g', [12345.678]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = %n', [12345.678]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Money&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= %m', [12345.678]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Pointer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= %p', [addr(text)]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = %s', ['Hello']);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Unsigned decimal = %u', [123]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Hexadecimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= %x', [140]);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="showmessagefmt.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Hello<br>&nbsp;&nbsp;
+String = Hello<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Decimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= -123<br>&nbsp;&nbsp;
+Exponent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1.23456780000000E+004<br>&nbsp;&nbsp;
+Fixed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 12345.68<br>&nbsp;&nbsp;
+General&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 12345.678<br>&nbsp;&nbsp;
+Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 12,345,68<br>&nbsp;&nbsp;
+Money&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= ?12,345.68<br>&nbsp;&nbsp;
+Pointer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 0069FC90<br>&nbsp;&nbsp;
+String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Hello<br>&nbsp;&nbsp;
+Unsigned decimal = 123<br>&nbsp;&nbsp;
+Hexadecimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 8C<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Using the index, width and precision values</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// The width value dictates the output size</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// with blank padding to the left</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note the <> characters are added to show formatting</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Padded decimal&nbsp;&nbsp;&nbsp;&nbsp;= <%7d>', [1234]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// With the '-' operator, the data is left justified</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Justified decimal = <%-7d>', [1234]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The precision value forces 0 padding to the desired size</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('0 padded decimal&nbsp;&nbsp;= <%.6d>', [1234]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// A combination of width and precision</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note that width value precedes the precision value</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Width + precision = <%8.6d>', [1234]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The index value allows the next value in the data array</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// to be changed</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Reposition after 3 strings = %s %s %s %1:s %s',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ['Zero', 'One', 'Two', 'Three']);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// One or more of the values may be provided by the</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// data array itself. Note that testing has shown that an *</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// for the width parameter can yield EConvertError.</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('In line&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <%10.4d>', [1234]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Part data driven&nbsp;&nbsp;= <%*.4d>', [10, 1234]);<br>
+&nbsp;&nbsp;<font color=#C00000><b>ShowMessageFmt</b></font>('Data driven&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <%*.*d>', [10, 4, 1234]);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/showmessagefmt&expandcode1=yes&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Padded decimal&nbsp;&nbsp;&nbsp;&nbsp;= <&nbsp;&nbsp; 1234><br>&nbsp;&nbsp;
+Justified decimal = <1234&nbsp;&nbsp; ><br>&nbsp;&nbsp;
+0 padded decimal&nbsp;&nbsp;= <001234><br>&nbsp;&nbsp;
+Width + precision = <&nbsp;&nbsp;001234><br>&nbsp;&nbsp;
+Reposition after 3 strings = Zero One Two One Two<br>&nbsp;&nbsp;
+In line&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1234><br>&nbsp;&nbsp;
+Part data driven&nbsp;&nbsp;= <&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1234><br>&nbsp;&nbsp;
+Data driven&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1234><br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

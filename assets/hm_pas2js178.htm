@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">free | destroy</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js177.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js179.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	free | destroy
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+// ####################################
+// TFirstClass
+// ####################################
+
+Type
+
+  TFirstClass = Class(TObject)
+  private
+  Public
+    Constructor Create; virtual;
+    Destructor Destroy; override;
+  End;
+
+Constructor TFirstClass.Create;
+Begin
+  WriteLn('Create ' + Classname);
+  inherited Create;
+end;
+
+Destructor TFirstClass.Destroy;
+begin
+  WriteLn('Destroy ' + Classname);
+  inherited Destroy;
+end;
+
+// ####################################
+// TSecondClass
+// ####################################
+
+type
+
+  TSecondClass = Class(TFirstClass)
+  private
+    FTemp: TFirstClass;
+  public
+    Constructor Create; Override;
+    Destructor Destroy; Override;
+  End;
+
+Constructor TSecondClass.Create;
+Begin
+  WriteLn('2nd Create ' + Classname);
+  inherited Create;
+  FTemp := TFirstClass.Create;
+end;
+
+Destructor TSecondClass.Destroy;
+begin
+  WriteLn('2nd Destroy ' + Classname);
+  FTemp.free;
+  inherited Destroy;
+end;
+
+// ####################################
+// Test
+// ####################################
+
+var First: TFirstClass;
+First := TFirstClass.Create;
+
+var Second: TSecondClass;
+Second := TSecondClass.Create;
+
+First.free;
+Second.free;
+
+{<<< RESULT - CONSOLE LOG >>>
+-----------------------------
+Errors >>>>
+Hint: "Classname" does not match case of declaration ("ClassName") [line: 16, column: 21]
+Hint: "Classname" does not match case of declaration ("ClassName") [line: 22, column: 22]
+Hint: "Classname" does not match case of declaration ("ClassName") [line: 42, column: 25]
+Hint: "Classname" does not match case of declaration ("ClassName") [line: 49, column: 26]
+Hint: "free" does not match case of declaration ("Free") [line: 50, column: 9]
+Hint: "create" does not match case of declaration ("Create") [line: 63, column: 22]
+Hint: "free" does not match case of declaration ("Free") [line: 65, column: 7]
+Hint: "free" does not match case of declaration ("Free") [line: 66, column: 8]
+Result >>>>
+Create TFirstClass
+2nd Create TSecondClass
+Create TSecondClass
+Create TFirstClass
+Destroy TFirstClass
+2nd Destroy TSecondClass
+Destroy TFirstClass
+Destroy TSecondClass
+
+-----------------------------
+{<<<<<<<<< THE END >>>>>>>>>}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TObject={
+	$ClassName: "TObject",
+	$Parent: null,
+	ClassName: function (s) { return s.$ClassName },
+	ClassType: function (s) { return s },
+	ClassParent: function (s) { return s.$Parent },
+	$Init: function () {},
+	Create: function (s) { return s },
+	Destroy: function (s) { for (var prop in s) if (s.hasOwnProperty(prop)) delete s.prop },
+	Destroy$: function(s) { return s.ClassType.Destroy(s) },
+	Free: function (s) { if (s!==null) s.ClassType.Destroy(s) }
+}
+var Exception={
+	$ClassName: "Exception",
+	$Parent: TObject,
+	$Init: function () { FMessage="" },
+	Create: function (s,Msg) { s.FMessage=Msg; return s }
+}
+function $New(c) { var i={ClassType:c}; c.$Init(i); return i }
+function $Check(i,z) { if (i) return i; throw Exception.Create($New(Exception),"Object not instantiated"+z); }
+function WriteLn(value) {
+    if (window.console) { window.console.log(value); } };
+var TFirstClass = {
+   $ClassName:"TFirstClass",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,Create$3:function(Self) {
+      WriteLn(("Create "+TObject.ClassName($Check(Self,"").ClassType)));
+      TObject.Create(Self);
+      return Self
+   }
+   ,Destroy:function(Self) {
+      WriteLn(("Destroy "+TObject.ClassName($Check(Self,"").ClassType)));
+      TObject.Destroy(Self);
+   }
+   ,Destroy$:function($){return $.ClassType.Destroy($)}
+   ,Create$3$:function($){return $.ClassType.Create$3($)}
+};
+var TSecondClass = {
+   $ClassName:"TSecondClass",$Parent:TFirstClass
+   ,$Init:function ($) {
+      TFirstClass.$Init($);
+      $.FTemp = null;
+   }
+   ,Create$3:function(Self) {
+      WriteLn(("2nd Create "+TObject.ClassName($Check(Self,"").ClassType)));
+      TFirstClass.Create$3(Self);
+      $Check(Self,"").FTemp = TFirstClass.Create$3$($New(TFirstClass));
+      return Self
+   }
+   ,Destroy:function(Self) {
+      WriteLn(("2nd Destroy "+TObject.ClassName($Check(Self,"").ClassType)));
+      TObject.Free($Check(Self,"").FTemp);
+      TFirstClass.Destroy(Self);
+   }
+   ,Destroy$:function($){return $.ClassType.Destroy($)}
+   ,Create$3$:function($){return $.ClassType.Create$3($)}
+};
+var First = null;
+var Second = null;
+
+/* <<< main JS >>> */
+
+   First = TFirstClass.Create$3$($New(TFirstClass));
+   Second = TFirstClass.Create$3$($New(TSecondClass));
+   TObject.Free(First);
+   TObject.Free(Second);
+</code></pre></div>
+</div>
+</body>
+</html>

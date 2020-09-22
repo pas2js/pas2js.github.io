@@ -1,0 +1,386 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0050)Private -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : Private command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, Private, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>Private</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Directive</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Starts the section of private data and methods
+                in a class</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size="2">&nbsp; type Class
+                declaration<br />
+                &nbsp; <strong>Private</strong><br />
+                &nbsp; &nbsp;&nbsp;Data | Method declaration;<br />
+                &nbsp; {...}<br />
+                &nbsp; end;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>Private</strong></font> directive
+                starts the section of data (fields) and routines
+                (methods) of a class that are private (internal) to
+                that class.<br />
+                &nbsp;<br />
+                It is a vital part of the Object Oriented concept
+                that a class be treated like a black box - how it
+                operates internally is not relevant to the external
+                use. This is where the <font color=
+                "#996600"><strong>Private</strong></font> section
+                comes in - it hides data and routines used solely
+                by other routines in the class.<br />
+                &nbsp;<br />
+                If private data needs to be accessed externally, a
+                public (or published) property or routine is
+                provided to give this access.<br />
+                &nbsp;<br />
+                <font color=
+                "#996600"><strong>Private</strong></font> data and
+                routines are not even accessible by a descendent
+                class - you must use <strong>Protected</strong> to
+                provide this access. Protected data and methods are
+                externally invisible, but are accessible to all
+                classes in a hierarchy.
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "function.htm">Function</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a subroutine that returns a value
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "procedure.htm">Procedure</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a subroutine that does not return a
+                      value
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "property.htm">Property</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines controlled access to class fields
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "protected.htm">Protected</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts a section of class private data
+                      accesible to sub-classes
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "public.htm">Public</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts an externally accessible section of a
+                      class
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "published.htm">Published</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Starts a published externally accessible
+                      section of a class
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "type.htm">Type</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Defines a new category of variable or process
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code : A class
+                with private data and a private routine</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size="2"><font color=
+                "#008000"><strong>// Full Unit
+                code.</strong></font><br />
+                <font color="#008000"><strong>//
+                -----------------------------------------------------------</strong></font><br />
+
+                <font color="#008000"><strong>// You must store
+                this code in a unit called Unit1 with a
+                form</strong></font><br />
+                <font color="#008000"><strong>// called Form1 that
+                has an OnCreate event called
+                FormCreate.</strong></font><br />
+                <br />
+                <strong>unit Unit1;</strong><br />
+                <br />
+                <strong>interface</strong><br />
+                <br />
+                <strong>uses</strong><br />
+                &nbsp;&nbsp;Windows, Messages, SysUtils, Variants,
+                Classes, Graphics, Controls, Forms,<br />
+                &nbsp;&nbsp;Dialogs;<br />
+                <br />
+                <strong>type</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Class
+                with Indexed properties</strong></font><br />
+                &nbsp;&nbsp;TRectangle = class<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>Private</strong></font><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;fCoords: array[0..3] of
+                Longint;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;&nbsp;GetCoord(Index:
+                Integer): Longint;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure SetCoord(Index:
+                Integer; Value: Longint);<br />
+                &nbsp;&nbsp;public<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;property Left&nbsp;&nbsp; :
+                Longint index 0 read GetCoord write SetCoord;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;property
+                Top&nbsp;&nbsp;&nbsp;&nbsp;: Longint index 1 read
+                GetCoord write SetCoord;<br />
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;property Right&nbsp;&nbsp;:
+                Longint index 2 read GetCoord write SetCoord;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;property Bottom : Longint
+                index 3 read GetCoord write SetCoord;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;property Coords[Index:
+                Integer] : Longint read GetCoord write
+                SetCoord;<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// The
+                form class itself</strong></font><br />
+                &nbsp;&nbsp;TForm1 = class(TForm)<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;procedure
+                FormCreate(Sender: TObject);<br />
+                &nbsp;&nbsp;end;<br />
+                <br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;Form1: TForm1;<br />
+                <br />
+                <strong>implementation</strong><br />
+                <br />
+                <strong>{$R *.dfm}</strong><br />
+                <br />
+                <font color="#008000"><strong>// TRectangle
+                property 'Getter' routine</strong></font><br />
+                <strong>function TRectangle.GetCoord(Index:
+                Integer): Longint;</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Only
+                allow valid index values</strong></font><br />
+                &nbsp;&nbsp;if (Index &gt;= 0) and (Index &lt;=
+                3)<br />
+                &nbsp;&nbsp;then Result := fCoords[Index]<br />
+                &nbsp;&nbsp;else Result := -1;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// TRectangle
+                property 'Setter' routine</strong></font><br />
+                <strong>procedure TRectangle.SetCoord(Index, Value:
+                Integer);</strong><br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Only
+                allow valid index values</strong></font><br />
+                &nbsp;&nbsp;if (Index &gt;= 0) and (Index &lt;=
+                3)<br />
+                &nbsp;&nbsp;then fCoords[Index] := Value;<br />
+                <strong>end;</strong><br />
+                <br />
+                <font color="#008000"><strong>// Main line
+                code</strong></font><br />
+                <strong>procedure TForm1.FormCreate(Sender:
+                TObject);</strong><br />
+                <strong>var</strong><br />
+                &nbsp;&nbsp;myRect : TRectangle;<br />
+                &nbsp;&nbsp;i : Integer;<br />
+                <br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Create
+                my little rectangle</strong></font><br />
+                &nbsp;&nbsp;myRect := TRectangle.Create;<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// And
+                set the corner coordinates</strong></font><br />
+                &nbsp;&nbsp;myRect.Left :=
+                22;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <font color="#008000"><strong>// Left using direct
+                method</strong></font><br />
+                &nbsp;&nbsp;myRect.Top&nbsp;&nbsp;:= 33;<br />
+                &nbsp;&nbsp;myRect.SetCoord(2,44);&nbsp;&nbsp;
+                <font color="#008000"><strong>// Right using
+                indexed method</strong></font><br />
+                &nbsp;&nbsp;myRect.SetCoord(3,55);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// And
+                ask for these values</strong></font><br />
+                &nbsp;&nbsp;for i:= 0 to 3 do<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;WriteLn('myRect coord
+                '+IntToStr(i)+' =
+                '+intToStr(myRect.GetCoord(i)));<br />
+                <strong>end;</strong><br />
+                <br />
+                <strong>end.</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td></td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;myRect coord 0 = 22<br />
+                &nbsp;&nbsp; myRect coord 1 = 33<br />
+                &nbsp;&nbsp; myRect coord 2 = 44<br />
+                &nbsp;&nbsp; myRect coord 3 = 55<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td>
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

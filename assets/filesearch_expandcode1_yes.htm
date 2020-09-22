@@ -1,0 +1,174 @@
+<!-- (0069)FileSearch&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : FileSearch command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, FileSearch, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>FileSearch</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Search for a file in one or more directories</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>FileSearch</b></font>
+
+(
+<b>const FileName, DirectoryList </b> : string
+)
+ : string;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>FileSearch</b></font> function searches for the given <b>FileName</b> in the given <b>DirectoryList</b>.
+<br>&nbsp;<br>
+The <b>FileName</b> may be a file name or sub-path to a file.
+<br>&nbsp;<br>
+The <b>DirectoryList</b> is a <b>;</b> separated list of directory (path) names.
+<br>&nbsp;<br>
+If the file cannot be found, then an empty string is returned. Otherwise, the full path plus the name of the file is returned.
+<br>&nbsp;<br>
+<font color=#FF0000><b>WARNING:</b></font> the current directory (see <b>GetCurrentDir</b>) is <b>ALWAYS</b> searched first, regardless of the given directories. If the file is found there, then the returned path is <b>Only</b> the file name.
+<br>&nbsp;<br>
+You have been warned!
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+If any of the specified directories do not exist, no error is thrown.<br>
+<br>
+The directory list can be an empty string - only the current directory will be searched.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="findclose.htm">FindClose</a></b></td>
+<td width="8"></td>
+<td align="left">Closes a successful <b>FindFirst</b> file search</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="findfirst.htm">FindFirst</a></b></td>
+<td width="8"></td>
+<td align="left">Finds all files matching a file mask and attributes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="findnext.htm">FindNext</a></b></td>
+<td width="8"></td>
+<td align="left">Find the next file after a successful <b>FindFirst</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tsearchrec.htm">TSearchRec</a></b></td>
+<td width="8"></td>
+<td align="left">Record used to hold data for <b>FindFirst</b> and <b>FindNext</b></td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Searching in the current directory and beyond</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the FileSearch command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;myFile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : TextFile;<br>
+&nbsp;&nbsp;fileName&nbsp;&nbsp;&nbsp;&nbsp; : string;<br>
+&nbsp;&nbsp;fullFilePath : string;<br>
+&nbsp;&nbsp;dir1, dir2&nbsp;&nbsp; : string;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// The file we will be searching for</b></font><br>
+&nbsp;&nbsp;fileName := 'Test.txt';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write to a text file in the current directory</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, fileName);<br>
+&nbsp;&nbsp;ReWrite(myFile);<br>
+&nbsp;&nbsp;Write(myFile, 'Hello World');<br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Write to a text file to another directory</b></font><br>
+&nbsp;&nbsp;AssignFile(myFile, 'C:\Program Files\'+fileName);<br>
+&nbsp;&nbsp;ReWrite(myFile);<br>
+&nbsp;&nbsp;Write(myFile, 'Hello World');<br>
+&nbsp;&nbsp;CloseFile(myFile);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define two directories where we want to search for the file</b></font><br>
+&nbsp;&nbsp;dir1 := 'C:\No such directory';<br>
+&nbsp;&nbsp;dir2 := 'C:\Program Files';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Search for the file</b></font><br>
+&nbsp;&nbsp;fullFilePath := <font color=#C00000><b>FileSearch</b></font>(fileName, dir1+';'+dir2);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// If we search now, we will find it in the current directory</b></font><br>
+&nbsp;&nbsp;if fullFilePath = ''<br>
+&nbsp;&nbsp;then ShowMessage(fileName+' not found')<br>
+&nbsp;&nbsp;else ShowMessage(fullFilePath+' found OK');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now delete Test.txt from the current directory and retry</b></font><br>
+&nbsp;&nbsp;DeleteFile(fileName);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// If we search now, we will find it in one of the search dirs</b></font><br>
+&nbsp;&nbsp;fullFilePath := <font color=#C00000><b>FileSearch</b></font>(fileName, dir1+';'+dir2);<br>
+&nbsp;&nbsp;if fullFilePath = ''<br>
+&nbsp;&nbsp;then ShowMessage(fileName+' not found')<br>
+&nbsp;&nbsp;else ShowMessage(fullFilePath+' found OK');<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="filesearch.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Test.txt found OK<br>&nbsp;&nbsp;
+C:\Program Files\Test.txt found OK<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

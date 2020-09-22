@@ -1,0 +1,364 @@
+<!-- (0064)Array&ExpandCode3=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Array command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Array, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Array</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">A data type holding indexable collections of data</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>Name</b> = <b>array</b>[<b>Index</b> type|<b>Ordinal..Ordinal</b> {,...}] of <b>Base</b> type; <font color=#00A000>// Static array</font>
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>Name</b> = <b>array</b> of {<b>array</b> of ...} <b>Base</b> type; <font color=#00A000>// Dynamic array</font>
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>3</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Name</b> : <b>array</b> of {<b>array</b> of ...} const; <font color=#00A000>// Open variant array</font><br>&nbsp;
+<b>Name</b> : Array type; <font color=#00A000> // Open dynamic array</font>
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Array</b></font> keyword provides single and multi dimensional arrays (indexable sequences) of data.
+<br>&nbsp;<br>
+Delphi has three basic array types :
+<br>&nbsp;<br>
+<font color=#FF0000><b>1.Static arrays</b></font>
+<br>&nbsp;<br>
+These are defined with fixed, unchangeable sizes. They may be single or multidimensional - the latter being an array of arrays (of arrays etc). The size and range of such a multidimensional array is always given for the highest, leftmost array - the parent array.
+<br>&nbsp;<br>
+The size of each dimension is determined in two ways, which may be freely mixed in a multidimensional array :
+<br>&nbsp;<br>
+<font color=#200080><b>Index</b> type</font>
+Where <b>Index</b> is an integer type, normally Byte or Word. The range of this type defines the dimension range. For example, a Byte gives a 0..255 range.
+<br>&nbsp;<br>
+<font color=#200080><b>Ordinal..Ordinal</b></font>
+Alternatively, the range of each dimension may be given by direct ordinal values, such as <b>22..44</b>.
+<br>&nbsp;<br>
+<font color=#FF0000><b>2.Dynamic arrays</b></font>
+<br>&nbsp;<br>
+Dynamic arrays have no preallocated storage. When defined, only a pointer is created. Such arrays must have their length set before they can be used. For example :
+<br>&nbsp;<br>
+<b>SetLength(dynArray, 5);</b>
+<br>&nbsp;<br>
+sets the dynArray single dimension array size to 5 elements. This allocates storage.
+<br>&nbsp;<br>
+All dynamic arrays starts at <b>index = 0</b>.
+<br>&nbsp;<br>
+Individual subarrays of a multidimensional dynamic array may have different sized dimensions - they are, of course, separate arrays. After one such SetLength operation, elements of the set array may be referenced, even though the rest of the array is undefined.
+<br>&nbsp;<br>
+<font color=#FF0000><b>3.Open arrays</b></font>
+<br>&nbsp;<br>
+Both <b>static</b> and <b>dynamic</b> arrays may be passed to subroutines as parameters. If the array parameter definition has no range (ie, a dynamic array type), then you must, paradoxically pass a static array as a parameter. Such an array is referred to as an <b>Open</b> array. Delphi passes the length as a hidden parameter to the subroutine.
+<br>&nbsp;<br>
+An open array may also be defined with <b>const</b> value type. This is called a <b>Variant</b> open array - it is mostly used to allow a variable number of argument value to be passed to a subroutine.
+<br>&nbsp;<br>
+In order to pass a <b>Dynamic</b> array by reference, the array and the subroutine definition of the array must be via an array type definition. See the code for an example.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Use <b>Copy</b> to copy one array to another. But <b>be warned</b> - it only copies the first, highest array dimension - the new array will still refer to elements of the subarrays.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="copy.htm">Copy</a></b></td>
+<td width="8"></td>
+<td align="left">Create a copy of part of  a string or an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="high.htm">High</a></b></td>
+<td width="8"></td>
+<td align="left">Returns the highest value of a type or variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="length.htm">Length</a></b></td>
+<td width="8"></td>
+<td align="left">Return the number of elements in an array or string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="low.htm">Low</a></b></td>
+<td width="8"></td>
+<td align="left">Returns the lowest value of a type or variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setlength.htm">SetLength</a></b></td>
+<td width="8"></td>
+<td align="left">Changes the size of a string, or the size(s) of an array</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="slice.htm">Slice</a></b></td>
+<td width="8"></td>
+<td align="left">Creates a slice of an array as an Open Array parameter</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Declaring and using static arrays</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define static arrays</b></font><br>&nbsp;&nbsp;wordArray&nbsp;&nbsp;: <font color=#C00000><b>Array</b></font>[Word] of Integer;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Static, size=High(Word)</b></font><br>&nbsp;&nbsp;multiArray : <font color=#C00000><b>Array</b></font>[Byte, 1..5] of char;&nbsp;&nbsp;<font color=#008000><b>// Static array, 2 dimensions</b></font><br>&nbsp;&nbsp;rangeArray : <font color=#C00000><b>Array</b></font>[5..20] of string;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Static array, size = 16</b></font><br><b>
+</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the sizes and ranges of these arrays</b></font><br>
+&nbsp;&nbsp;WriteLn('wordArray length = '+IntToStr(Length(wordArray)));<br>
+&nbsp;&nbsp;WriteLn('wordArray lowest element = '+IntToStr(Low(wordArray)));<br>
+&nbsp;&nbsp;WriteLn('wordArray highest element = '+IntToStr(High(wordArray)));<br>
+&nbsp;&nbsp;WriteLn('multiArray length = '+IntToStr(Length(multiArray)));<br>
+&nbsp;&nbsp;WriteLn('multiArray lowest element = '+IntToStr(Low(multiArray)));<br>
+&nbsp;&nbsp;WriteLn('multiArray highest element = '+IntToStr(High(multiArray)));<br>
+&nbsp;&nbsp;WriteLn('rangeArray length = '+IntToStr(Length(rangeArray)));<br>
+&nbsp;&nbsp;WriteLn('rangeArray lowest element = '+IntToStr(Low(rangeArray)));<br>
+&nbsp;&nbsp;WriteLn('rangeArray highest element = '+IntToStr(High(rangeArray)));<br>
+&nbsp;&nbsp;WriteLn('');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The full range of a static array are available before assignment,</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// but the values will be unpredictable</b></font><br>
+&nbsp;&nbsp;WriteLn('wordArray Element 7 = '+IntToStr(wordArray[7]));<br>
+&nbsp;&nbsp;WriteLn('wordArray Element 20 = '+IntToStr(wordArray[20]));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Use indexing to furnish an array</b></font><br>
+&nbsp;&nbsp;for i := 5 to 20 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rangeArray[i] := IntToStr(i * 5);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now use indexing to display 2 of the elements</b></font><br>
+&nbsp;&nbsp;WriteLn('rangeArray element 7 = '+rangeArray[7]);<br>
+&nbsp;&nbsp;WriteLn('rangeArray element 20 = '+rangeArray[20]);<br><b>
+end;</b><br><b>
+</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/array&expandcode1=yes&expandcode3=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;wordArray length = 65536<br>&nbsp;&nbsp;
+wordArray lowest element = 0<br>&nbsp;&nbsp;
+wordArray highest element = 65535<br>&nbsp;&nbsp;
+multiArray length = 256<br>&nbsp;&nbsp;
+multiArray lowest element = 0<br>&nbsp;&nbsp;
+multiArray highest element = 255<br>&nbsp;&nbsp;
+rangeArray length = 16<br>&nbsp;&nbsp;
+rangeArray lowest element = 5<br>&nbsp;&nbsp;
+rangeArray highest element = 20<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+wordArray element 7 = 0<br>&nbsp;&nbsp;
+wordArray element 20 = 0<br>&nbsp;&nbsp;
+rangeArray element 7 = 35<br>&nbsp;&nbsp;
+rangeArray element 20 = 100<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Declaring and using dynamic arrays</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define dynamic arrays</b></font><br>&nbsp;&nbsp;byteArray&nbsp;&nbsp;: <font color=#C00000><b>Array</b></font> of Byte;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Single dimension array</b></font><br>&nbsp;&nbsp;multiArray : <font color=#C00000><b>Array</b></font> of <font color=#C00000><b>Array</b></font> of string;&nbsp;&nbsp;<font color=#008000><b>// Multi-dimension array</b></font><br><b>
+</b><br>
+&nbsp;&nbsp;i,j : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set the length of the single dimension array</b></font><br>
+&nbsp;&nbsp;SetLength(byteArray, 5);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the size and range of this array</b></font><br>
+&nbsp;&nbsp;WriteLn('byteArray length = '+IntToStr(Length(byteArray)));<br>
+&nbsp;&nbsp;WriteLn('byteArray lowest element = '+IntToStr(Low(byteArray)));<br>
+&nbsp;&nbsp;WriteLn('byteArray highest element = '+IntToStr(High(byteArray)));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Furnish this array - remember that dynamic arrays start at 0</b></font><br>
+&nbsp;&nbsp;for i := 0 to 4 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;byteArray[i] := i * 5;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show selected elements from the array</b></font><br>
+&nbsp;&nbsp;WriteLn('byteArray element 2 = '+IntToStr(byteArray[2]));<br>
+&nbsp;&nbsp;WriteLn('byteArray element 4 = '+IntToStr(byteArray[4]));<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set the length of the 1st dimension of the multi-dim array</b></font><br>
+&nbsp;&nbsp;SetLength(multiArray, 3);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set the length of the 3 sub-arrays to different sizes</b></font><br>
+&nbsp;&nbsp;SetLength(multiArray[0], 1);<br>
+&nbsp;&nbsp;SetLength(multiArray[1], 2);<br>
+&nbsp;&nbsp;SetLength(multiArray[2], 3);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set and show all elements of this array</b></font><br>
+&nbsp;&nbsp;for i := 0 to High(multiArray) do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for j := 0 to High(multiArray[i]) do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multiArray[i,j] := IntToStr(i+j);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('multiArray['+intToStr(i)+','+intToStr(j)+'] = '+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;multiArray[i,j]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end;<br><b>
+end;</b><br><b>
+</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/array&expandcode2=yes&expandcode3=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;byteArray length = 5<br>&nbsp;&nbsp;
+byteArray lowest element = 0<br>&nbsp;&nbsp;
+byteArray highest element = 4<br>&nbsp;&nbsp;
+byteArray element 2 = 10<br>&nbsp;&nbsp;
+byteArray element 4 = 20<br>&nbsp;&nbsp;
+multiArray[0,0] = 0<br>&nbsp;&nbsp;
+multiArray[1,0] = 1<br>&nbsp;&nbsp;
+multiArray[1,1] = 2<br>&nbsp;&nbsp;
+multiArray[2,0] = 2<br>&nbsp;&nbsp;
+multiArray[2,1] = 3<br>&nbsp;&nbsp;
+multiArray[2,2] = 4<br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex3"></a><b>Example code : Using open arrays as parameters</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TCharArray = array of char; // Required below<br>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FurnishDynamicArray(var typeArray : TCharArray);<br>
+????procedure ShowOpenTypeArray(typeArray : <b>Array</b> of char);<br>
+????procedure ShowOpenConstArray(const constArray : <b>Array</b> of const);
+<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a dynamic array</b></font><br>
+&nbsp;&nbsp;charArray : TCharArray;<br>
+&nbsp;&nbsp;openArray : <font color=#C00000><b>Array</b></font> [0..2] of char;<br><b>
+</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Pass the undefined array as a dynamic array to a subroutine</b></font><br>
+&nbsp;&nbsp;FurnishDynamicArray(charArray);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Furnish an array for the next routine</b></font><br>
+&nbsp;&nbsp;openArray[0] := 'N';<br>
+&nbsp;&nbsp;openArray[1] := 'o';<br>
+&nbsp;&nbsp;openArray[2] := 'w';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Pass this predefined array as an open array to a subroutine</b></font><br>
+&nbsp;&nbsp;ShowOpenTypeArray(openArray);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show all elements of the passed array</b></font><br>
+&nbsp;&nbsp;for i := 0 to High(charArray) do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('charArray['+intToStr(i)+'] = '+charArray[i]);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Pass a number of characters as an open constant array to a subroutine</b></font><br>
+&nbsp;&nbsp;ShowOpenConstArray(['H','e','l','l','o']);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Procedure that updates a dynamic array size</b></font><br><font color=#008000><b>// IMPORTANT - note that the array type must not be defined here -</b></font><br><font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; we must use an array type to avoid the array being treated</b></font><br><font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; as an open array.</b></font><br><b>
+procedure TForm1.FurnishDynamicArray(var typeArray : TCharArray);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set the length of the single dimension array</b></font><br>
+&nbsp;&nbsp;SetLength(typeArray, 5);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Furnish this array - remember that dynamic arrays start at 0</b></font><br>
+&nbsp;&nbsp;for i := 0 to 4 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;typeArray[i] := Chr(Ord('A') + i);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Procedure that takes an open array</b></font><br><b>
+procedure TForm1.ShowOpenTypeArray(typeArray : <font color=#C00000><b>Array</b></font> of char);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show all elements of the passed array</b></font><br>
+&nbsp;&nbsp;for i := 0 to High(typeArray) do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('typeArray['+intToStr(i)+'] = '+typeArray[i]);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Procedure that takes an open constant array</b></font><br><b>
+procedure TForm1.ShowOpenConstArray(const constArray : <font color=#C00000><b>Array</b></font> of const);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show all elements of the passed array</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// IMPORTANT - we assume here that the constant types are all char</b></font><br>&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; See the TVarRec type for more on Variant types.</b></font><br>
+&nbsp;&nbsp;for i := 0 to High(constArray) do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('constArray['+intToStr(i)+'] = '+constArray[i].VChar);<br><b>
+end;</b><br><b>
+</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="array.htm#Ex3"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;typeArray[0] = N<br>&nbsp;&nbsp;
+typeArray[1] = o<br>&nbsp;&nbsp;
+typeArray[2] = w<br>&nbsp;&nbsp;
+charArray[0] = A<br>&nbsp;&nbsp;
+charArray[1] = B<br>&nbsp;&nbsp;
+charArray[2] = C<br>&nbsp;&nbsp;
+charArray[3] = D<br>&nbsp;&nbsp;
+charArray[4] = E<br>&nbsp;&nbsp;
+constArray[0] = H<br>&nbsp;&nbsp;
+constArray[1] = e<br>&nbsp;&nbsp;
+constArray[2] = l<br>&nbsp;&nbsp;
+constArray[3] = l<br>&nbsp;&nbsp;
+constArray[4] = o<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

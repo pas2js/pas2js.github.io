@@ -1,0 +1,143 @@
+<!-- (0051)FillChar -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : FillChar command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, FillChar, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>FillChar</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Fills out a section of storage with a fill character or byte value</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>FillChar</b></font>
+
+(
+var Buffer;<b> FillCount </b> : Integer;<b> FillValue </b> : Byte
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>FillChar</b></font> procedure fills out a section of storage <b>Buffer</b> with the same byte or character <b>FillValue FillCount</b> times.
+<br>&nbsp;<br>
+It is principally used to initialise arrays of numbers. It can be used to initialise records and strings, but care should be used to avoid overwriting length fields. <b>StringOfChar</b> is best for filling out strings to the same character.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="getmem.htm">GetMem</a></b></td>
+<td width="8"></td>
+<td align="left">Get a specified number of storage bytes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setstring.htm">SetString</a></b></td>
+<td width="8"></td>
+<td align="left">Copies characters from a buffer into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="stringofchar.htm">StringOfChar</a></b></td>
+<td width="8"></td>
+<td align="left">Creates a string with one character repeated many times</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Fill out a word array</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;data : array[0..3] of Word;<br>
+&nbsp;&nbsp;i : Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Fill out the Word array</b></font><br>
+&nbsp;&nbsp;WriteLn('Before FillChar :');<br>
+&nbsp;&nbsp;for i := 0 to 3 do<br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data[i] := i*5;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(i)+' element value = '+IntToStr(data[i]));<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now fill out the array with the value 1</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// A Word is 2 bytes : 00000001 00000001 hex = 257 decimal</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>FillChar</b></font>(data, 4*SizeOf(Word), 1);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And show the array now</b></font><br>
+&nbsp;&nbsp;WriteLn('After FillChar :');<br>
+&nbsp;&nbsp;for i := 0 to 3 do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(i)+' element value = '+IntToStr(data[i]));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="fillchar&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Before FillChar :<br>&nbsp;&nbsp;
+0 element value = 0<br>&nbsp;&nbsp;
+1 element value = 5<br>&nbsp;&nbsp;
+2 element value = 10<br>&nbsp;&nbsp;
+3 element value = 15<br>&nbsp;&nbsp;
+After FillChar :<br>&nbsp;&nbsp;
+0 element value = 257<br>&nbsp;&nbsp;
+1 element value = 257<br>&nbsp;&nbsp;
+2 element value = 257<br>&nbsp;&nbsp;
+3 element value = 257<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

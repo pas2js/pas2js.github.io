@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Class Property</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js085.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js087.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Class Property
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TBase = class
+    class function GetName: string; virtual;
+    class procedure SetName(v: string); virtual;
+    property Name: string read GetName write SetName;
+  end;
+
+type
+  TChild = class(TBase)
+    class function GetName: string; override;
+    class procedure SetName(v: string); override;
+  end;
+
+type
+  TSubChild = class(TChild)
+    class procedure SetName(v: string); override;
+  end;
+
+class function TBase.GetName: string;
+begin
+  Result := 'Base';
+end;
+
+class procedure TBase.SetName(v: string);
+begin
+  WriteLn('TBase.SetName on ' + Name + ' with ' + v);
+end;
+
+class function TChild.GetName: string;
+begin
+  Result := 'Child';
+end;
+
+class procedure TChild.SetName(v: string);
+begin
+  WriteLn('TChild.SetName on ' + Name + ' with ' + v);
+end;
+
+class procedure TSubChild.SetName(v: string);
+begin
+  WriteLn('TSubChild.SetName on ' + Name + ' with ' + v);
+end;
+
+{ main.pas }
+
+var
+  v: class of TBase;
+  o: TBase;
+
+Begin
+WriteLn('Direct');
+  TBase.Name := TBase.Name;
+  TChild.Name := TChild.Name;
+  TSubChild.Name := TSubChild.Name;
+
+WriteLn('Class Var');
+  v := TBase;
+  v.Name := v.Name;
+  v := TChild;
+  v.Name := v.Name;
+  v := TSubChild;
+  v.Name := v.Name;
+
+WriteLn('Object Var');
+  o := TBase.Create;
+  o.Name := o.Name;
+  o := TChild.Create;
+  o.Name := o.Name;
+  o := TSubChild.Create;
+  o.Name := o.Name;
+
+  o := nil;
+try
+  o.Name := o.Name;
+except
+  on E: Exception do
+    WriteLn(e.Message);
+end;
+
+{ ### CONSOLE OUTPUTS ###
+ Direct
+  TBase.SetName on Base with Base
+  TChild.SetName on Child with Child
+  TSubChild.SetName on Child with Child
+ Class Var
+  TBase.SetName on Base with Base
+  TChild.SetName on Child with Child
+  TSubChild.SetName on Child with Child
+ Object Var
+  TBase.SetName on Base with Base
+  TChild.SetName on Child with Child
+  TSubChild.SetName on Child with Child
+  TypeError, Cannot read property 'ClassType' of null
+}
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+      var v = null;
+      var o = null;
+      WriteLn("Direct");
+      TBase.SetName$(TBase,TBase.GetName$(TBase));
+      TBase.SetName$(TChild,TBase.GetName$(TChild));
+      TBase.SetName$(TSubChild,TBase.GetName$(TSubChild));
+      WriteLn("Class Var");
+      v = TBase;
+      TBase.SetName$(v,TBase.GetName$(v));
+      v = TChild;
+      TBase.SetName$(v,TBase.GetName$(v));
+      v = TSubChild;
+      TBase.SetName$(v,TBase.GetName$(v));
+      WriteLn("Object Var");
+      o = TObject.Create($New(TBase));
+      TBase.SetName$(o.ClassType,TBase.GetName$(o.ClassType));
+      o = TObject.Create($New(TChild));
+      TBase.SetName$(o.ClassType,TBase.GetName$(o.ClassType));
+      o = TObject.Create($New(TSubChild));
+      TBase.SetName$(o.ClassType,TBase.GetName$(o.ClassType));
+      o = null;
+      try {
+         TBase.SetName$(o.ClassType,TBase.GetName$(o.ClassType));
+      } catch ($e) {
+         var E = $W($e);
+         WriteLn(E.FMessage)      }
+   }
+/// TBase = class (TObject)
+///  [line: 72, column: 3, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// function TBase.GetName() : String
+   ///  [line: 89, column: 22, file: uMain]
+   ,GetName:function(Self) {
+      return "Base";
+   }
+   /// procedure TBase.SetName(v: String)
+   ///  [line: 94, column: 23, file: uMain]
+   ,SetName:function(Self, v$1) {
+      WriteLn(("TBase.SetName on "+TBase.GetName$(Self)+" with "+v$1));
+   }
+   ,Destroy:TObject.Destroy
+   ,GetName$:function($){return $.GetName($)}
+   ,SetName$:function($){return $.SetName.apply($.ClassType, arguments)}
+};
+/// TChild = class (TBase)
+///  [line: 79, column: 3, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   /// function TChild.GetName() : String
+   ///  [line: 99, column: 23, file: uMain]
+   ,GetName:function(Self) {
+      return "Child";
+   }
+   /// procedure TChild.SetName(v: String)
+   ///  [line: 104, column: 24, file: uMain]
+   ,SetName:function(Self, v$2) {
+      WriteLn(("TChild.SetName on "+TBase.GetName$(Self)+" with "+v$2));
+   }
+   ,Destroy:TObject.Destroy
+   ,GetName$:function($){return $.GetName($)}
+   ,SetName$:function($){return $.SetName.apply($.ClassType, arguments)}
+};
+/// TSubChild = class (TChild)
+///  [line: 85, column: 3, file: uMain]
+var TSubChild = {
+   $ClassName:"TSubChild",$Parent:TChild
+   ,$Init:function ($) {
+      TChild.$Init($);
+   }
+   /// procedure TSubChild.SetName(v: String)
+   ///  [line: 109, column: 27, file: uMain]
+   ,SetName:function(Self, v$3) {
+      WriteLn(("TSubChild.SetName on "+TBase.GetName$(Self)+" with "+v$3));
+   }
+   ,Destroy:TObject.Destroy
+   ,GetName:TChild.GetName
+   ,SetName$:function($){return $.SetName.apply($.ClassType, arguments)}
+};   
+</code></pre></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Helper Methods</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Helper Methods</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_operator_overloading.htm">Previous</a>&nbsp;
+     <a href="hm_datatypes.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">Helper methods are accepted for operator overloading.</span></p>
+<p>&nbsp;</p>
+<p class="p_CodeExample" style="background: #ffff99; margin: 0px 0px 0px 24px;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Vec2&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">array</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;[0..1]&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">of</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Float;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TVec2Helper&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">helper</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">for</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Vec2</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Add(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;&nbsp;:&nbsp;&nbsp;Vec2)&nbsp;&nbsp;:&nbsp;&nbsp;Vec2;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">overload</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Result:=[Self[0]+v[0],&nbsp;&nbsp;Self[1]+v[1]];</span><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99; margin: 0px 0px 0px 24px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="font-weight: bold; color: #000000;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Add(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">const</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;f&nbsp;&nbsp;:&nbsp;&nbsp;Float)&nbsp;&nbsp;:&nbsp;&nbsp;Vec2;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">overload</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;Result:=[Self[0]+f,&nbsp;&nbsp;Self[1]+f];</span><br>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;+&nbsp;&nbsp;(Vec2,&nbsp;&nbsp;Vec2)&nbsp;&nbsp;:&nbsp;&nbsp;Vec2&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TVec2Helper.Add;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;+&nbsp;&nbsp;(Vec2,&nbsp;&nbsp;Float)&nbsp;&nbsp;:&nbsp;&nbsp;Vec2&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TVec2Helper.Add;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v1&nbsp;&nbsp;:&nbsp;&nbsp;Vec2&nbsp;&nbsp;:=&nbsp;&nbsp;[1,&nbsp;&nbsp;2];</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v2&nbsp;&nbsp;:&nbsp;&nbsp;Vec2&nbsp;&nbsp;:=&nbsp;&nbsp;[10,&nbsp;&nbsp;20];</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">var</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;v&nbsp;&nbsp;:=&nbsp;&nbsp;v1&nbsp;&nbsp;+&nbsp;&nbsp;v2;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;PrintLn(v[0]);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;PrintLn(v[1]);</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!-- (0062)Min&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Min command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Min, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Min</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Gives the minimum of two integer values</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Math</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Min</b></font>
+
+(
+<b>const A, B </b> : Integer|Int64|Single|Double|Extended
+)
+ : Integer|Int64|Single|Double|Extended;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Min</b></font> function returns the value of lower of two numeric arguments, <b>A</b> and <b>B</b>.
+<br>&nbsp;<br>
+These arguments may be any of the given numeric types, in any mixture. The result will be normalised to the appropriate value - floating point if either argument is floating point.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="max.htm">Max</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the maximum of two integer values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="mean.htm">Mean</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the <b>average</b> for a set of numbers</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="comparevalue.htm">CompareValue</a></b></td>
+<td width="8"></td>
+<td align="left">Compare numeric values with a tolerance</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate integer use of Min</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Math, <font color=#008000>&nbsp;&nbsp;// Unit containing the Min command</font><br>&nbsp;&nbsp;SysUtils,<br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;int1, int2, int3 : Integer;<br><b>
+begin</b><br>
+&nbsp;&nbsp;int1 := 37;<br>
+&nbsp;&nbsp;int2 := 38;<br>
+&nbsp;&nbsp;int3 := <font color=#C00000><b>Min</b></font>(int1, int2);<br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('int1 = '+IntToStr(int1));<br>
+&nbsp;&nbsp;WriteLn('int2 = '+IntToStr(int2));<br>
+&nbsp;&nbsp;WriteLn('Min(int1, int2) = '+IntToStr(int3));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="min.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;int1 = 37<br>&nbsp;&nbsp;
+int2 = 38<br>&nbsp;&nbsp;
+Min(int1, int2) = 37<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Illustrating Min of mixed number types</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;int1&nbsp;&nbsp; : Integer;<br>
+&nbsp;&nbsp;float1 : single;<br><b>
+begin</b><br>
+&nbsp;&nbsp;int1&nbsp;&nbsp; := 38;<br>
+&nbsp;&nbsp;float1 := 37.5;<br>
+&nbsp;&nbsp;float1 := <font color=#C00000><b>Min</b></font>(float1, int1);<br>
+&nbsp;&nbsp;WriteLn('Min(float1, int1) = '+FloatToStr(float1));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/min&expandcode1=yes&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Min(float1, int1) = 37.5<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

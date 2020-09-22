@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: rgba(0, 73, 138, 0.67);font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Records</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_language_types3.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_interface.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The Record keyword is one of the most useful, and distinguishing features of Delphi (and the Pascal language). It provides a means of collecting together a set of different data types into one named structure. Each field in the structure is referenced in the manner </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">record.field</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. </span></p>
+
+<pre><span id="code" class="language-css">Create simple javascript object with Records</span><br>
+<code class="javascript" style="background-color: #FFFEEB;">
+{
+"test" : {
+  "somevalue" : 12
+},
+"text" : "this is a string value"
+}
+</code></pre>
+<a href="hm_rec01.htm"><img src="btn.jpg" border="0"></a>
+<pre><span id="code" class="language-css">Example code parsing a JSON object to a Variant</span><br>
+<code class="javascript" style="background-color: #FFFEEB;">
+ {
+   "RowID" : 10,
+   "FirstName" : "abc",
+   "LastName" : "def",
+   "YearOfBirth" : 20,
+   "YearOfDeath" : 30,
+   "Sexe" : 1,
+   "Simple" : {
+      "F" : "",
+      "G" : [],
+      "H" : {
+         "H1" : 0,
+         "H2" : "",
+         "H3" : {
+            "H3a" : false,
+            "H3b" : null
+         }
+      },
+      "I" : "",
+      "J" : [{
+            "J1" : 1,
+            "J2" : "",
+            "J3" : "reLast"
+         }
+      ]
+   }
+ }
+</code></pre>
+<a href="hm_rec02.htm"><img src="btn.jpg" border="0"></a>
+<pre><span id="code" class="language-css">Example code creating a JSON object with Records</span><br>
+<code class="javascript" style="background-color: #FFFEEB;">
+  {
+   "F" : "warleyalex",
+   "G$3" : ["Delphi", "Java", "C++"],
+   "H$1" : {
+      "H1" : 123,
+      "H2" : "Jesus Cristo",
+      "H3" : {
+         "H3a" : true,
+         "H3b" : "Smart Mobile Studio"
+      }
+   },
+   "I" : 41864.09710032407,
+   "J" : []
+ }
+</code></pre>
+<a href="hm_rec03.htm"><img src="btn.jpg" border="0"></a>
+
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Array of Records in Pas2JS</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In practice, records are often more complex. Additionally, we may also have a lot of them, and might store them in an array. </span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Since a record type is legitimate as any other Pas2JS type, we can have a field of a record be a record itself. Here are some examples using Records in Pas2JS.</span></p>
+
+<span id="code" class="language-css">Using Records in Pas2JS</span><BR><BR>
+<a href="hm_rec04.htm"><img src="btn.jpg" border="0"></a><BR>
+
+<span id="code" class="language-css"> Using Array of Records with Pas2JS</span><BR><BR>
+<a href="hm_rec05.htm"><img src="btn.jpg" border="0"></a><BR>
+
+<span id="code" class="language-css"> Array of Records with Const  in Pas2JS</span><BR><BR>
+<a href="hm_rec06.htm"><img src="btn.jpg" border="0"></a><BR>
+
+<span id="code" class="language-css"> Create single javascript object with Records {x: 10, y: 33}</span><BR><BR>
+<a href="hm_rec07.htm"><img src="btn.jpg" border="0"></a><BR>
+
+<span id="code" class="language-css"> Another Records with Procedure in Pas2JS</span><BR><BR>
+<a href="hm_rec08.htm"><img src="btn.jpg" border="0"></a><BR>
+
+<span id="code" class="language-css"> Another Array of Records in Pas2JS</span><BR><BR>
+<a href="hm_rec09.htm"><img src="btn.jpg" border="0"></a><BR>
+
+<h2>Record fields with obfuscation</h2>
+<p>Once that code is obfuscated, record fields when serialized, becomes giberrish which is a bit of a problem if you store it in local storage and then update the app (field names will change). There's a little black magic:</p>
+<pre>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+TMyRecord = Record
+  mrMagic: Integer; //Magic word to check
+  mrData: Array of String; // your string data
+End; 
+</code></pre>
+<strong>{"oBM":3405691582,"zA4":["first","second"]}</strong><BR>
+<BR>
+<span>When you activate though, the record fields will get renamed randomly. There's a little black magic to prevent the field to be obsfucated, use the property keyword.</span>
+<pre>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+TMyRecord = Record
+  property mrMagic: Integer; //Magic word to check
+  property mrData: Array of String; // your string data
+
+End; 
+</code></pre>
+<strong>{"mrMagic":3405691582,"mrData":["first","second"]}</strong>
+
+<h2>Anonymous Records</h2>
+<span>Anonymous records allow you to declare arbitrary inline JavaScript objects.
+More details, see this example:</span>
+<BR><a href="hm_pas2js118.htm"><img src="btn.jpg" border="0"></a><BR>
+
+</body>
+</html>

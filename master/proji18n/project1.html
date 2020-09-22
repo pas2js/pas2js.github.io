@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project1</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.11.2/i18next.min.js"></script>
+  <script src="project1.js"></script>
+  <style>
+   .btn {
+      color: black;
+      background-color: orange;
+      width: 120px;
+      text-align: center;
+      font-size: 15px;
+      padding: 20px;
+      float: left;
+   }
+   #mybtn {
+      background-color: orange;
+   }
+  </style>
+</head>
+<body>
+
+<p><span>Select your language:</span><br>
+<select name="language">
+  <option value="en">British English</option>
+  <option value="fr">Français</option>
+  <option value="it">Italiano</option>
+  <option value="br">Brasileiro</option>
+</select>
+</p>
+
+<ul class="nav nav-sidebar">
+  <li><a href="#" data-i18n="menu.Good_bye"></a></li>
+  <li><a href="#" data-i18n="menu.Hello"></a></li>
+  <li><a href="#" data-i18n="menu.Selectyourlanguage"></a></li>
+</ul>
+
+  <div id="mybtn">
+     <button class="btn t01" data-i18n="menu.add"></button>
+  </div>
+
+<script>window.addEventListener("load", rtl.run);</script>
+  
+</body>
+</html>

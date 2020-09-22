@@ -1,0 +1,4 @@
+20.42KB gzipped (85.07KB uncompressed)
+Compiled Size:	16.34KB gzipped (54.79KB uncompressed)
+Saved 20.00% off the gzipped size (35.59% without gzip)
+The code may also be accessed at default.js.

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="projCryptoJS.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="project1"/>
+        <CursorPos Y="14"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="index.html"/>
+        <IsPartOfProject Value="True"/>
+        <CustomData Count="1">
+          <Item0 Name="PasJSIsProjectHTMLFile" Value="1"/>
+        </CustomData>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucryptojs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uCryptoJS"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="System.Diagnostics.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="syncrossplatformcrypto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SynCrossPlatformCrypto"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="59" Y="3"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uformview.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uFormView"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="7" Y="106"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umain.pas"/>
+        <UnitName Value="uMain"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="12"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\pas2js-windows-1.5.1\packages\rtl\web.pas"/>
+        <UnitName Value="Web"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1291"/>
+        <CursorPos X="42" Y="1302"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="D:\fpc2js\pas2js-windows-1.5.1\packages\rtl\web.pas"/>
+        <UnitName Value="Web"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="1290"/>
+        <CursorPos X="5" Y="1306"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory Count="7" HistoryIndex="6">
+      <Position1>
+        <Filename Value="uformview.pas"/>
+        <Caret Line="126" Column="15" TopLine="113"/>
+      </Position1>
+      <Position2>
+        <Filename Value="uformview.pas"/>
+        <Caret Line="12" Column="5" TopLine="4"/>
+      </Position2>
+      <Position3>
+        <Filename Value="uformview.pas"/>
+        <Caret Line="105" Column="39" TopLine="85"/>
+      </Position3>
+      <Position4>
+        <Filename Value="uformview.pas"/>
+        <Caret Line="106" Column="62" TopLine="94"/>
+      </Position4>
+      <Position5>
+        <Filename Value="D:\fpc2js\pas2js-windows-1.5.1\packages\rtl\web.pas"/>
+        <Caret Line="1306" Column="5" TopLine="1290"/>
+      </Position5>
+      <Position6>
+        <Filename Value="uformview.pas"/>
+        <Caret Line="106" Column="7"/>
+      </Position6>
+      <Position7>
+        <Filename Value="syncrossplatformcrypto.pas"/>
+        <Caret Line="16" Column="35"/>
+      </Position7>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

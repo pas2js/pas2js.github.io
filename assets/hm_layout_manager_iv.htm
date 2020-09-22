@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Layout manager IV</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Layout manager IV</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_layout_manager_iii.htm">Previous</a>&nbsp;
+     <a href="hm_smart_challenge.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This time I’ll show you how to dynamically set layout parameters in Resize.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The task is almost the same as before except that this time we want the big panel to have equal width and height.</span></p>
+<p><img src="hm_clip0018.png" width="640" height="460" border="0" alt="hm_clip0018"></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">This time we’ll need four form fields.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutLandscape</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">TLayout</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutRight</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">TLayout</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutPortrait</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">TLayout</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutBottom</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">TLayout</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Layout definitions are the same as in the previous case except that now we are storing internal part of both layout in two separate fields (FLayoutRight, FLayoutBottom). I have also removed Layout.Width(140) and Layout.Height(140) as width and height will be set in the Resize method.</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">FLayoutRight</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Layout.Right(</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Layout.Top(Layout.Stretch,&nbsp;[Panel2,&nbsp;Panel3,&nbsp;Panel4]));</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">FLayoutLandscape</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Layout.Client([</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;FLayoutRight,</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Layout.Client(Panel1)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;]);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">FLayoutBottom</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Layout.Bottom(</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Layout.Left(Layout.Stretch,&nbsp;[Panel2,&nbsp;Panel3,&nbsp;Panel4]));</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">FLayoutPortrait</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Layout.Client([</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;FLayoutBottom,</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Layout.Client(Panel1)</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;]);</span></p>
+<p><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In Resize, we are again comparing Width and Height but before we resize the outer layout we have to set the Width or Height for the inner one.</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.Resize;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;ClientWidth&nbsp;&gt;&nbsp;ClientHeight&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutRight</span><span class="f_CodeExample" style="color: #000000;">.Config.Width(ClientWidth&nbsp;-&nbsp;ClientHeight);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutLandscape</span><span class="f_CodeExample" style="color: #000000;">.Resize(Self);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">else</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutBottom</span><span class="f_CodeExample" style="color: #000000;">.Config.Height(ClientHeight&nbsp;-&nbsp;ClientWidth);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutPortrait</span><span class="f_CodeExample" style="color: #000000;">.Resize(Self);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The logic behind the Config.Width call in the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; color: #000000;">landscape</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> path is as follows.</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">We set the </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">FLayoutRight</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> width to ClientWidth – ClientHeight (those are form properties). </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">That will leave ClientWidth – (FLayoutRight width) = ClientWidth – (ClientWidth – ClientHeight) = ClientHeight pixels for the Client.Top layout. </span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 7px 24px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="24"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">As the Client.Top will be ClientHeight pixels high by default, it will be square. </span></td></tr></table></div><p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The logic for the second (</span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; color: #000000;">portrait) </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">code path follows the same pattern. </span></p>
+
+</td></tr></table>
+
+</body>
+</html>

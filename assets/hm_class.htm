@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Classes</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Classes</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_language_types10.htm">Previous</a>&nbsp;
+     <a href="hm_fields.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #800000;">Classes&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Classes all derive from the root TObject class and follow the classic Delphi syntax. They're reference types, see also </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">Records</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Named constructors are supported, as well as class methods, meta-classes, virtual methods, properties and destructors. Properties can optionally be array properties, and can feature an explicit index. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Classes can implement </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">Interfaces</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> and they can be partial. </span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">You can also declare class methods with &quot;method&quot; as in the </span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">Oxygene</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> language, in addition to &quot;procedure&quot; and &quot;function&quot;. </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Additionally classes can be marked as &quot;external&quot;, in which case they're meant to expose classes that are not implemented in the script, and unlike interfaces, then can defined fields. </span></p>
+<p>&nbsp;</p>
+<p class="p_CodeExample"><img src="hm_clip0026.png" width="257" height="145" border="0" alt="hm_clip0026"></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Named&nbsp;constructors&nbsp;are&nbsp;supported,&nbsp;as&nbsp;well&nbsp;as&nbsp;class&nbsp;methods,&nbsp;meta-classes,&nbsp;virtual&nbsp;methods,&nbsp;properties&nbsp;and&nbsp;destructors.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Properties&nbsp;can&nbsp;optionally&nbsp;be&nbsp;array&nbsp;properties,&nbsp;and&nbsp;can&nbsp;feature&nbsp;an&nbsp;explicit&nbsp;index.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">You&nbsp;can&nbsp;also&nbsp;declare&nbsp;class&nbsp;methods&nbsp;with&nbsp;method&nbsp;as&nbsp;in&nbsp;the&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; color: #0000ff;">Oxygene&nbsp;language</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">,&nbsp;in&nbsp;addition&nbsp;to&nbsp;procedure&nbsp;and&nbsp;function.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Classic&nbsp;constructor&nbsp;syntax&nbsp;is&nbsp;supported,&nbsp;but&nbsp;you&nbsp;can&nbsp;also&nbsp;specify&nbsp;a&nbsp;default&nbsp;constructor&nbsp;and&nbsp;use&nbsp;the&nbsp;new&nbsp;keyword&nbsp;to&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">instantiate&nbsp;classes.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Both&nbsp;lines&nbsp;of&nbsp;code&nbsp;below&nbsp;are&nbsp;equivalent:&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;obj&nbsp;&nbsp;:=&nbsp;&nbsp;TMyObject.Create(parameter);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;obj&nbsp;&nbsp;:=&nbsp;&nbsp;new&nbsp;&nbsp;TMyObject(parameter);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Visibilities&nbsp;are&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #0000ff;">private,&nbsp;protected,&nbsp;public&nbsp;&nbsp;and&nbsp;published</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">.&nbsp;Private&nbsp;&nbsp;and&nbsp;protected&nbsp;&nbsp;in&nbsp;Smart&nbsp;correspond&nbsp;to&nbsp;strict&nbsp;&nbsp;private&nbsp;and&nbsp;strict&nbsp;&nbsp;protected&nbsp;in&nbsp;Delphi.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Classes&nbsp;can&nbsp;implement&nbsp;Interfaces.&nbsp;(See&nbsp;example&nbsp;in&nbsp;the&nbsp;Interfaces&nbsp;section.)&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" style="border: none"><p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">&nbsp;type</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TMyClass&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">(TControl)</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">private</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;private&nbsp;declarations&nbsp;here&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">protected</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;protected&nbsp;declarations&nbsp;here&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;public&nbsp;declarations&nbsp;here&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">published</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;published&nbsp;declarations&nbsp;here&nbsp;}</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">A&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">private</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;member&nbsp;is&nbsp;invisible&nbsp;outside&nbsp;of&nbsp;the&nbsp;unit&nbsp;or&nbsp;program&nbsp;where&nbsp;its&nbsp;class&nbsp;is&nbsp;declared.&nbsp;In&nbsp;other&nbsp;words,&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">a&nbsp;private&nbsp;method&nbsp;cannot&nbsp;be&nbsp;called&nbsp;from&nbsp;another&nbsp;module,&nbsp;and&nbsp;a&nbsp;private&nbsp;field&nbsp;or&nbsp;property&nbsp;cannot&nbsp;be&nbsp;read&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">or&nbsp;written&nbsp;to&nbsp;from&nbsp;another&nbsp;module.&nbsp;By&nbsp;placing&nbsp;related&nbsp;class&nbsp;declarations&nbsp;in&nbsp;the&nbsp;same&nbsp;module,&nbsp;you&nbsp;can&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">give&nbsp;the&nbsp;classes&nbsp;access&nbsp;to&nbsp;one&nbsp;another's&nbsp;private&nbsp;members&nbsp;without&nbsp;making&nbsp;those&nbsp;members&nbsp;more&nbsp;widely&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">accessible.&nbsp;For&nbsp;a&nbsp;member&nbsp;to&nbsp;be&nbsp;visible&nbsp;only&nbsp;inside&nbsp;its&nbsp;class,&nbsp;it&nbsp;needs&nbsp;to&nbsp;be&nbsp;declared&nbsp;strict&nbsp;private.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">A&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">protected</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;member&nbsp;is&nbsp;visible&nbsp;anywhere&nbsp;in&nbsp;the&nbsp;module&nbsp;where&nbsp;its&nbsp;class&nbsp;is&nbsp;declared&nbsp;and&nbsp;from&nbsp;any&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">descendent&nbsp;class,&nbsp;regardless&nbsp;of&nbsp;the&nbsp;module&nbsp;where&nbsp;the&nbsp;descendent&nbsp;class&nbsp;appears.&nbsp;A&nbsp;protected&nbsp;method&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">can&nbsp;be&nbsp;called,&nbsp;and&nbsp;a&nbsp;protected&nbsp;field&nbsp;or&nbsp;property&nbsp;read&nbsp;or&nbsp;written&nbsp;to,&nbsp;from&nbsp;the&nbsp;definition&nbsp;of&nbsp;any&nbsp;method&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">belonging&nbsp;to&nbsp;a&nbsp;class&nbsp;that&nbsp;descends&nbsp;from&nbsp;the&nbsp;one&nbsp;where&nbsp;the&nbsp;protected&nbsp;member&nbsp;is&nbsp;declared.&nbsp;Members&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">that&nbsp;are&nbsp;intended&nbsp;for&nbsp;use&nbsp;only&nbsp;in&nbsp;the&nbsp;implementation&nbsp;of&nbsp;derived&nbsp;classes&nbsp;are&nbsp;usually&nbsp;protected.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">A&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">public</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;member&nbsp;is&nbsp;visible&nbsp;wherever&nbsp;its&nbsp;class&nbsp;can&nbsp;be&nbsp;referenced.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">Strict&nbsp;Visibility&nbsp;Specifiers</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">In&nbsp;addition&nbsp;to&nbsp;private&nbsp;and&nbsp;protected&nbsp;visibility&nbsp;specifiers,&nbsp;the&nbsp;Delphi&nbsp;compiler&nbsp;supports&nbsp;additional&nbsp;visibility&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">settings&nbsp;with&nbsp;greater&nbsp;access&nbsp;constraints.&nbsp;These&nbsp;settings&nbsp;are&nbsp;strict&nbsp;private&nbsp;and&nbsp;strict&nbsp;protected&nbsp;visibility.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">These&nbsp;settings&nbsp;can&nbsp;be&nbsp;used&nbsp;in&nbsp;Win32&nbsp;applications.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Class&nbsp;members&nbsp;with&nbsp;strict&nbsp;private&nbsp;visibility&nbsp;are&nbsp;accessible&nbsp;only&nbsp;within&nbsp;the&nbsp;class&nbsp;in&nbsp;which&nbsp;they&nbsp;are&nbsp;declared.&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">They&nbsp;are&nbsp;not&nbsp;visible&nbsp;to&nbsp;procedures&nbsp;or&nbsp;functions&nbsp;declared&nbsp;within&nbsp;the&nbsp;same&nbsp;unit.&nbsp;Class&nbsp;members&nbsp;with&nbsp;strict&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">protected&nbsp;visibility&nbsp;are&nbsp;visible&nbsp;within&nbsp;the&nbsp;class&nbsp;in&nbsp;which&nbsp;they&nbsp;are&nbsp;declared,&nbsp;and&nbsp;within&nbsp;any&nbsp;descendent&nbsp;class,&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">regardless&nbsp;of&nbsp;where&nbsp;it&nbsp;is&nbsp;declared.&nbsp;Furthermore,&nbsp;when&nbsp;instance&nbsp;members&nbsp;(those&nbsp;declared&nbsp;without&nbsp;the&nbsp;class&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">or&nbsp;class&nbsp;var&nbsp;keywords)&nbsp;are&nbsp;declared&nbsp;strict&nbsp;private&nbsp;or&nbsp;strict&nbsp;protected,&nbsp;they&nbsp;are&nbsp;inaccessible&nbsp;outside&nbsp;of&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">the&nbsp;instance&nbsp;of&nbsp;a&nbsp;class&nbsp;in&nbsp;which&nbsp;they&nbsp;appear.&nbsp;An&nbsp;instance&nbsp;of&nbsp;a&nbsp;class&nbsp;cannot&nbsp;access&nbsp;strict&nbsp;protected&nbsp;or&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">strict&nbsp;protected&nbsp;instance&nbsp;members&nbsp;in&nbsp;other&nbsp;instances&nbsp;of&nbsp;the&nbsp;same&nbsp;class.</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Delphi's&nbsp;traditional&nbsp;private&nbsp;visibility&nbsp;specifier&nbsp;maps&nbsp;to&nbsp;the&nbsp;CLR's&nbsp;assembly&nbsp;visibility.&nbsp;Delphi's&nbsp;protected&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">visibility&nbsp;specifier&nbsp;maps&nbsp;to&nbsp;the&nbsp;CLR's&nbsp;assembly&nbsp;or&nbsp;family&nbsp;visibility.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Note</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">:&nbsp;The&nbsp;word&nbsp;strict&nbsp;is&nbsp;treated&nbsp;as&nbsp;a&nbsp;directive&nbsp;within&nbsp;the&nbsp;context&nbsp;of&nbsp;a&nbsp;class&nbsp;declaration.&nbsp;Within&nbsp;a&nbsp;class&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">declaration&nbsp;you&nbsp;cannot&nbsp;declare&nbsp;a&nbsp;member&nbsp;named&nbsp;'strict',&nbsp;but&nbsp;it&nbsp;is&nbsp;acceptable&nbsp;for&nbsp;use&nbsp;outside&nbsp;of&nbsp;a&nbsp;class&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">declaration.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">Published&nbsp;Members</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Published&nbsp;members&nbsp;have&nbsp;the&nbsp;same&nbsp;visibility&nbsp;as&nbsp;public&nbsp;members.&nbsp;The&nbsp;difference&nbsp;is&nbsp;that&nbsp;run-time&nbsp;type&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">information&nbsp;(RTTI)&nbsp;is&nbsp;generated&nbsp;for&nbsp;published&nbsp;members.&nbsp;RTTI&nbsp;allows&nbsp;an&nbsp;application&nbsp;to&nbsp;query&nbsp;the&nbsp;fields&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">and&nbsp;properties&nbsp;of&nbsp;an&nbsp;object&nbsp;dynamically&nbsp;and&nbsp;to&nbsp;locate&nbsp;its&nbsp;methods.&nbsp;RTTI&nbsp;is&nbsp;used&nbsp;to&nbsp;access&nbsp;the&nbsp;values&nbsp;of&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">properties&nbsp;when&nbsp;saving&nbsp;and&nbsp;loading&nbsp;form&nbsp;files,&nbsp;to&nbsp;display&nbsp;properties&nbsp;in&nbsp;the&nbsp;Object&nbsp;Inspector,&nbsp;and&nbsp;to&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">associate&nbsp;specific&nbsp;methods&nbsp;(called&nbsp;event&nbsp;handlers)&nbsp;with&nbsp;specific&nbsp;properties&nbsp;(called&nbsp;events).</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Published&nbsp;properties&nbsp;are&nbsp;restricted&nbsp;to&nbsp;certain&nbsp;data&nbsp;types.&nbsp;Ordinal,&nbsp;string,&nbsp;class,&nbsp;interface,&nbsp;variant,&nbsp;and&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">method-pointer&nbsp;types&nbsp;can&nbsp;be&nbsp;published.&nbsp;So&nbsp;can&nbsp;set&nbsp;types,&nbsp;provided&nbsp;the&nbsp;upper&nbsp;and&nbsp;lower&nbsp;bounds&nbsp;of&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">the&nbsp;base&nbsp;type&nbsp;have&nbsp;ordinal&nbsp;values&nbsp;from&nbsp;0&nbsp;through&nbsp;31.&nbsp;(In&nbsp;other&nbsp;words,&nbsp;the&nbsp;set&nbsp;must&nbsp;fit&nbsp;in&nbsp;a&nbsp;byte,&nbsp;word,&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">or&nbsp;double&nbsp;word.)&nbsp;Any&nbsp;real&nbsp;type&nbsp;except&nbsp;Real48&nbsp;can&nbsp;be&nbsp;published.&nbsp;Properties&nbsp;of&nbsp;an&nbsp;array&nbsp;type&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">(as&nbsp;distinct&nbsp;from&nbsp;array&nbsp;properties,&nbsp;discussed&nbsp;below)&nbsp;cannot&nbsp;be&nbsp;published.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Some&nbsp;properties,&nbsp;although&nbsp;publishable,&nbsp;are&nbsp;not&nbsp;fully&nbsp;supported&nbsp;by&nbsp;the&nbsp;streaming&nbsp;system.&nbsp;These&nbsp;include&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">properties&nbsp;of&nbsp;record&nbsp;types,&nbsp;array&nbsp;properties&nbsp;of&nbsp;all&nbsp;publishable&nbsp;types,&nbsp;and&nbsp;properties&nbsp;of&nbsp;enumerated&nbsp;types&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">that&nbsp;include&nbsp;anonymous&nbsp;values.&nbsp;If&nbsp;you&nbsp;publish&nbsp;a&nbsp;property&nbsp;of&nbsp;this&nbsp;kind,&nbsp;the&nbsp;Object&nbsp;Inspector&nbsp;will&nbsp;not&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">display&nbsp;it&nbsp;correctly,&nbsp;nor&nbsp;will&nbsp;the&nbsp;property's&nbsp;value&nbsp;be&nbsp;preserved&nbsp;when&nbsp;objects&nbsp;are&nbsp;streamed&nbsp;to&nbsp;disk.</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">All&nbsp;methods&nbsp;are&nbsp;publishable,&nbsp;but&nbsp;a&nbsp;class&nbsp;cannot&nbsp;publish&nbsp;two&nbsp;or&nbsp;more&nbsp;overloaded&nbsp;methods&nbsp;with&nbsp;the&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">same&nbsp;name.&nbsp;Fields&nbsp;can&nbsp;be&nbsp;published&nbsp;only&nbsp;if&nbsp;they&nbsp;are&nbsp;of&nbsp;a&nbsp;class&nbsp;or&nbsp;interface&nbsp;type.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">See&nbsp;<a href="hm_external_classes.htm">Partial&nbsp;Classes</a></span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">See&nbsp;<a href="hm_external_classes.htm">External&nbsp;Classes</a></span></p>
+
+</td></tr></table>
+
+</body>
+</html>

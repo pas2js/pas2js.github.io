@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Interfaces</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Interfaces</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_language_types4.htm">Previous</a>&nbsp;
+     <a href="hm_language_types7.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Interfaces&nbsp;&nbsp;are&nbsp;supported&nbsp;&nbsp;using&nbsp;&nbsp;the&nbsp;&nbsp;classic&nbsp;&nbsp;Delphi&nbsp;&nbsp;syntax&nbsp;&nbsp;(except&nbsp;the&nbsp;GUID&nbsp;&nbsp;part&nbsp;&nbsp;which&nbsp;&nbsp;is&nbsp;&nbsp;not&nbsp;supported).&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Interfaces&nbsp;can&nbsp;define&nbsp;properties,&nbsp;which&nbsp;are&nbsp;syntax&nbsp;sugar&nbsp;to&nbsp;their&nbsp;methods.&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">They&nbsp;can&nbsp;be&nbsp;implemented&nbsp;by&nbsp;Classes.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; background: #fdfdfd; margin: 0px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Pas2JS fully supports interfaces. There is no need for TInterfacedObject, interfaces can be applied directly to TObject since JavaScript does not have a mechanism for observing reference counts. </span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">The&nbsp;Interface&nbsp;keyword&nbsp;is&nbsp;used&nbsp;in&nbsp;two&nbsp;different&nbsp;ways:&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Version&nbsp;1:&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">It&nbsp;starts&nbsp;the&nbsp;definition&nbsp;of&nbsp;external&nbsp;interface&nbsp;of&nbsp;a&nbsp;Unit.&nbsp;Declarations&nbsp;here&nbsp;are&nbsp;externally&nbsp;visible&nbsp;by&nbsp;other&nbsp;units.&nbsp;All&nbsp;of&nbsp;these&nbsp;declarations&nbsp;must&nbsp;be&nbsp;implemented&nbsp;in&nbsp;the&nbsp;Implementation&nbsp;section.&nbsp;The&nbsp;Uses&nbsp;statement,&nbsp;if&nbsp;present,&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">must&nbsp;be&nbsp;at&nbsp;the&nbsp;start.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Version&nbsp;2:&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">In&nbsp;Object&nbsp;Oriented&nbsp;programming,&nbsp;we&nbsp;often&nbsp;use&nbsp;Abstract&nbsp;class&nbsp;methods&nbsp;in&nbsp;a&nbsp;base&nbsp;class&nbsp;as&nbsp;a&nbsp;placeholder.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">All&nbsp;derived&nbsp;classes&nbsp;must&nbsp;implement&nbsp;these&nbsp;methods.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Taking&nbsp;this&nbsp;one&nbsp;step&nbsp;further,&nbsp;an&nbsp;Interface&nbsp;defines&nbsp;a&nbsp;grouping&nbsp;of&nbsp;just&nbsp;abstract&nbsp;properties&nbsp;and&nbsp;methods.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">It&nbsp;provides&nbsp;a&nbsp;template&nbsp;for&nbsp;a&nbsp;class&nbsp;to&nbsp;use&nbsp;to&nbsp;ensure&nbsp;consistency.&nbsp;It&nbsp;is&nbsp;like&nbsp;a&nbsp;class&nbsp;with&nbsp;only&nbsp;abstract&nbsp;methods.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">It&nbsp;has&nbsp;the&nbsp;benefits&nbsp;that&nbsp;classes&nbsp;can&nbsp;be&nbsp;based&nbsp;on&nbsp;one&nbsp;parent&nbsp;class,&nbsp;and&nbsp;implement&nbsp;one&nbsp;or&nbsp;more&nbsp;interfaces.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">It&nbsp;adds&nbsp;a&nbsp;predictable&nbsp;flavour&nbsp;of&nbsp;operation&nbsp;to&nbsp;each&nbsp;class&nbsp;that&nbsp;implements&nbsp;the&nbsp;interface.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Note:&nbsp;</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">The&nbsp;class&nbsp;implementing&nbsp;an&nbsp;interface&nbsp;can&nbsp;be&nbsp;derived&nbsp;from&nbsp;any&nbsp;parent.&nbsp;There&nbsp;is&nbsp;no&nbsp;TInterfacedObject&nbsp;class.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold; color: #800000;">An&nbsp;interface&nbsp;example&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Like&nbsp;many&nbsp;ideas,&nbsp;an&nbsp;example&nbsp;is&nbsp;the&nbsp;best&nbsp;way&nbsp;to&nbsp;illustrate&nbsp;the&nbsp;concepts.&nbsp;We'll&nbsp;do&nbsp;it&nbsp;in&nbsp;stages&nbsp;to&nbsp;keep&nbsp;things&nbsp;as&nbsp;simple&nbsp;as&nbsp;possible.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">First,&nbsp;let&nbsp;us&nbsp;define&nbsp;a&nbsp;interface.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">Interface,&nbsp;it&nbsp;makes&nbsp;it&nbsp;easier&nbsp;for&nbsp;the&nbsp;programmer&nbsp;to&nbsp;be&nbsp;disciplined&nbsp;in&nbsp;developing&nbsp;the&nbsp;application;&nbsp;all&nbsp;of&nbsp;the&nbsp;classes&nbsp;have&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">an&nbsp;additional&nbsp;set&nbsp;of&nbsp;methods&nbsp;that&nbsp;are&nbsp;identical.&nbsp;And&nbsp;Pas2JS&nbsp;insists&nbsp;that&nbsp;all&nbsp;of&nbsp;the&nbsp;methods&nbsp;in&nbsp;an&nbsp;interface&nbsp;are&nbsp;implemented.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0px; background: #fdfdfd; padding: 0px 0px 0px 0px; margin: 0px 0px 14px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="399" style="width:399px; border: none"><p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #800000;">unit</span><span class="f_CodeExample" style="color: #800000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">uTest</span><span class="f_CodeExample" style="color: #800000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">interface</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;SmartCL.System;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;An&nbsp;interface&nbsp;definition</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;IMyInterface&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">interface</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;myInternalMethod;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;An&nbsp;interface&nbsp;definition</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;IVehicle&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Interface</span><span class="f_CodeExample" style="color: #000000;">(</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">IInterface</span><span class="f_CodeExample" style="color: #000000;">)</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Properties&nbsp;and&nbsp;their&nbsp;functions</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetAge&nbsp;&nbsp;&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetMiles&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;age&nbsp;&nbsp;&nbsp;:&nbsp;Integer&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetAge;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;miles&nbsp;:&nbsp;Integer&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetMiles;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Non-property&nbsp;function</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetValue&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">implementation</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="background-color: #ffff99;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Our&nbsp;interface&nbsp;uses&nbsp;the&nbsp;standard&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">IInterface</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;interface&nbsp;definition&nbsp;as&nbsp;a&nbsp;base.&nbsp;Interfaces&nbsp;definitions&nbsp;are&nbsp;like&nbsp;class&nbsp;definitions&nbsp;with&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">all&nbsp;abstract&nbsp;elements.&nbsp;We&nbsp;do&nbsp;not&nbsp;have&nbsp;to&nbsp;declare&nbsp;them&nbsp;as&nbsp;abstract&nbsp;-&nbsp;they&nbsp;are&nbsp;by&nbsp;default.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">This&nbsp;interface&nbsp;adds&nbsp;two&nbsp;properties.&nbsp;The&nbsp;the&nbsp;power&nbsp;and&nbsp;benefit&nbsp;of&nbsp;interfaces&nbsp;is&nbsp;the&nbsp;uniformity&nbsp;across&nbsp;potentially&nbsp;very&nbsp;different&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">classes.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">How&nbsp;to&nbsp;implement&nbsp;a&nbsp;interface?</span></p>
+<div style="text-align: left; text-indent: 0px; background: #fdfdfd; padding: 0px 0px 0px 0px; margin: 0px 0px 14px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="520" style="width:520px; border: none"><p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #800000;">unit</span><span class="f_CodeExample" style="color: #800000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">uTestImpl</span><span class="f_CodeExample" style="color: #800000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">interface</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;SmartCL.System,&nbsp;uTest;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;TMyObject&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">(TObject,IMyInterface)</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;IMyInterface&nbsp;Implementation&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;myInternalMethod;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Implement&nbsp;this&nbsp;interface&nbsp;in&nbsp;a&nbsp;car&nbsp;class</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Note&nbsp;that&nbsp;there&nbsp;is&nbsp;no&nbsp;TInterfacedObject&nbsp;class.</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TCar&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">Class</span><span class="f_CodeExample" style="color: #000000;">(IVehicle)</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">private</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;fAge,&nbsp;fMiles&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;fCarType&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetAge&nbsp;&nbsp;&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetMiles&nbsp;:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">public</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Integer&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetAge;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;miles&nbsp;&nbsp;&nbsp;:&nbsp;Integer&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetMiles;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">property</span><span class="f_CodeExample" style="color: #000000;">&nbsp;carType&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">read</span><span class="f_CodeExample" style="color: #000000;">&nbsp;fCarType;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Non-property&nbsp;function</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;GetValue&nbsp;:&nbsp;Float;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">published</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Create(age,&nbsp;miles&nbsp;:&nbsp;Integer;&nbsp;carType&nbsp;:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">implementation</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;TMyObject&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TMyObject.myInternalMethod;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;WriteLn(</span><span class="f_CodeExample" style="color: #0000ff;">'Hello&nbsp;warleyalex'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Car&nbsp;constructor</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">constructor</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TCar.Create(age,&nbsp;miles:&nbsp;Integer;&nbsp;carType:&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">string</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Save&nbsp;parameters</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;fAge&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=&nbsp;age;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;fMiles&nbsp;&nbsp;&nbsp;:=&nbsp;miles;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;fCarType&nbsp;:=&nbsp;carType;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Get&nbsp;the&nbsp;age&nbsp;of&nbsp;the&nbsp;car</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TCar.GetAge:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;fAge;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Get&nbsp;the&nbsp;mileage&nbsp;of&nbsp;the&nbsp;car</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TCar.GetMiles:&nbsp;Integer;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;fMiles;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Calculate&nbsp;the&nbsp;car&nbsp;value</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">function</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TCar.GetValue:&nbsp;Float;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Result&nbsp;:=&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">10000</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">&nbsp;-&nbsp;((age&nbsp;*&nbsp;miles)/</span><span class="f_CodeExample" style="color: #0000ff;">10</span><span class="f_CodeExample" style="color: #000000;">.</span><span class="f_CodeExample" style="color: #0000ff;">0</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="background-color: #ccffff;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffff;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p style="background: #fdfdfd; margin: 0px 0px 14px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000; background-color: #fdfdfd;">Note that:</span></p>
+<div style="text-align: left; text-indent: 0px; background: #fdfdfd; padding: 0px 0px 0px 0px; margin: 0px 0px 14px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">We place the function used by the interface&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">GetAge</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> and </span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">GetMIles</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">&nbsp;property in the private section. We only want the caller to use the property.&nbsp;</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; background: #fdfdfd; padding: 0px 0px 0px 0px; margin: 0px 0px 14px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">We must declare the&nbsp;</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold; color: #000000;">GetAge and GetMiles</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000; background-color: #fdfdfd;">&nbsp;functions.</span></td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 7px 0px 7px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="13"><span style="font-size: 16px; font-family: 'Symbol'; font-style: normal; color: #000000; text-decoration: none;">&#183;</span></td><td><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">We must not forget to set this </span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal; font-weight: bold;">Age, Miles and CarType</span><span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;"> values. We'll do it in the constructor:</span><br>
+<span class="f_ImageCaption" style="font-size: 16px; font-family: 'Times New Roman'; font-style: normal;">&nbsp;</span></td></tr></table></div><p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">How&nbsp;to&nbsp;instantiate&nbsp;our&nbsp;Car&nbsp;object?</span></p>
+<div style="text-align: left; text-indent: 0px; background: #fdfdfd; padding: 0px 0px 0px 0px; margin: 0px 0px 14px 0px;"><table cellspacing="0" cellpadding="0" border="1" style="border: solid 1px #000000; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="639" style="width:639px; border: none"><p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #800000;">unit</span><span class="f_CodeExample" style="color: #800000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #800000;">Form1</span><span class="f_CodeExample" style="color: #800000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">interface</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;SmartCL.System,&nbsp;SmartCL.Graphics,&nbsp;SmartCL.Components,&nbsp;SmartCL.Forms,&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;uTestImpl,</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;SmartCL.Fonts,&nbsp;SmartCL.Borders,&nbsp;SmartCL.Application,&nbsp;SmartCL.Controls.Button;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">type</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TForm1&nbsp;=&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">class</span><span class="f_CodeExample" style="color: #000000;">(TW3Form)</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;W3Button1Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">private</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">{$I&nbsp;'Form1:intf'}</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">protected</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InitializeForm;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;InitializeObject;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Resize;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">override</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">implementation</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;TForm1&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.W3Button1Click(Sender:&nbsp;TObject);</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">var</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;car&nbsp;:&nbsp;TCar;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;obj&nbsp;:&nbsp;TMyObject;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">obj&nbsp;:=&nbsp;TMyObject.Create();</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">obj.myInternalMethod;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">car&nbsp;:=&nbsp;TCar.Create(</span><span class="f_CodeExample" style="color: #0000ff;">1</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">2076</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">'Honda&nbsp;Jazz'</span><span class="f_CodeExample" style="color: #000000;">);</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;Show&nbsp;the&nbsp;current&nbsp;value&nbsp;of&nbsp;this&nbsp;car</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">WriteLn(Format(</span><span class="f_CodeExample" style="color: #0000ff;">'My&nbsp;%s&nbsp;car&nbsp;is&nbsp;%d&nbsp;years&nbsp;old,&nbsp;%d&nbsp;miles,&nbsp;value&nbsp;%d'</span><span class="f_CodeExample" style="color: #000000;">,</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[car.carType,&nbsp;car.age,&nbsp;car.miles,&nbsp;car.GetValue]));</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.InitializeForm;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #008000;">//&nbsp;this&nbsp;is&nbsp;a&nbsp;good&nbsp;place&nbsp;to&nbsp;initialize&nbsp;components</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.InitializeObject;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="color: #000080;">{$I&nbsp;'Form1:impl'}</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.Resize;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">begin</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000080;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">initialization</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Forms.RegisterForm(</span><span class="f_CodeExample" style="color: #000080;">{$I&nbsp;%FILE%}</span><span class="f_CodeExample" style="color: #000000;">,&nbsp;TForm1);</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-style: italic; color: #008000;">{&nbsp;TMyObject&nbsp;}</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="background-color: #ccffcc;">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ccffcc;"><span class="f_CodeExample" style="font-weight: bold; color: #000080;">end</span><span class="f_CodeExample" style="color: #000000;">.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">Hello&nbsp;warleyalex</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="color: #000000;">My&nbsp;Honda&nbsp;Jazz&nbsp;car&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">is</span><span class="f_CodeExample" style="color: #000000;">&nbsp;1&nbsp;years&nbsp;old,&nbsp;2076&nbsp;miles,&nbsp;value&nbsp;9792.4&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

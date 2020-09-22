@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">IN keyword with Dynamic Array</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js027.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js029.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	"in" keyword
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TRec = record
+    x: Integer;
+    y: string;
+  end;
+
+const r1: TRec = (x: 1; y: 'one');
+      r2: TRec = (x: 2; y: 'two');
+      r3: TRec = (x: 2; y: 'twobis');
+
+{ unit1.pas}
+
+var
+  recs: array of TRec;
+  ints: array of Integer;
+  objs: array of TObject;
+  o := New TObject;
+
+begin
+  ints.Add(1);
+  ints.Add(2);
+
+  Writeln('Integers');  // Integers
+
+  Writeln(0 in ints);  // False
+  Writeln(1 in ints);  // True
+  Writeln(2 in ints);  // True
+  Writeln(0 not in ints);  // True
+  Writeln(1 not in ints);  // False
+  Writeln(2 not in ints);  // False
+
+  Writeln('Records');  // Records
+  recs.Add(r1);  // True
+  recs.Add(r2);  // True
+
+  Writeln(r1 in recs);  // true
+  Writeln(r2 in recs);  // true
+  Writeln(r3 in recs);  // false
+
+  objs.Add(TObject.Create);
+  objs.Add(o);
+
+  Writeln('Objects');  // Objects
+  Writeln(TObject.Create in objs);  // False
+  Writeln(o in objs);  // True
+  
+{ unit2.pas}
+var
+    list: array of Integer = [5, 7];
+    item: variant = 5;
+begin
+
+  if item in list then
+    Writeln('success')else Writeln('fail');  
+
+  if not item in list then
+    Writeln('bug');
+
+  if not 5 in list then
+    Writeln('bug');
+
+  if not (not 5) in list then
+    Writeln('ok');   
+{
+success
+ok
+}  
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+/* unit1.js  */
+function Copy$TRec(s, d) {
+	d.x$1 = s.x$1;
+	d.y = s.y;
+	return d;
+}
+function Clone$TRec($) {
+	return {
+		x$1 : $.x$1,
+		y : $.y
+	}
+}
+function $IndexOfRecord(a, i, f) {
+	var ij = JSON.stringify(i);
+	for (var k = f, n = a.length; k < n; k++)
+		if (JSON.stringify(a[k]) == ij)
+			return k;
+	return -1
+}
+
+      var recs = [],
+         ints = [],
+         objs = [],
+         o = null,
+         o = TObject.Create($New(TObject));
+      ints.push(1);
+      ints.push(2);
+      WriteLn("Integers");
+      WriteLn((ints.indexOf(0)>=0));
+      WriteLn((ints.indexOf(1)>=0));
+      WriteLn((ints.indexOf(2)>=0));
+      WriteLn((!(ints.indexOf(0)>=0)));
+      WriteLn((!(ints.indexOf(1)>=0)));
+      WriteLn((!(ints.indexOf(2)>=0)));
+      WriteLn("Records");
+      recs.push(Clone$TRec({x$1:1,y:"one"}));
+      recs.push(Clone$TRec({x$1:2,y:"two"}));
+      WriteLn(($IndexOfRecord(recs,{x$1:1,y:"one"},0)>=0));
+      WriteLn(($IndexOfRecord(recs,{x$1:2,y:"two"},0)>=0));
+      WriteLn(($IndexOfRecord(recs,{x$1:2,y:"twobis"},0)>=0));
+      objs.push(TObject.Create($New(TObject)));
+      objs.push(o);
+      WriteLn("Objects");
+      WriteLn((objs.indexOf(TObject.Create($New(TObject)))>=0));
+      WriteLn((objs.indexOf(o)>=0));
+	  
+/* unit2.js  */	  
+
+      var list = [],
+         list = [5, 7].slice();
+      var item,
+         item = 5;
+      if (list.indexOf(parseInt(item,10))>=0) {
+         WriteLn("success");
+      } else {
+         WriteLn("fail");
+      }
+      if (list.indexOf(parseInt((!item),10))>=0) {
+         WriteLn("bug");
+      }
+      if (list.indexOf(~5)>=0) {
+         WriteLn("bug");
+      }
+      if (list.indexOf(~(-6))>=0) {
+         WriteLn("ok");
+      }
+function Copy$TRec(s,d) {
+   d.x$1=s.x$1;
+   d.y=s.y;
+   return d;
+}
+function Clone$TRec($) {
+   return {
+      x$1:$.x$1,
+      y:$.y
+   }
+}	  
+
+</code></pre></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Operator Overloading</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Operator Overloading</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_operators.htm">Previous</a>&nbsp;
+     <a href="hm_helper_methods.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Smart Pascal supports operator overloading. It can be applied to every type, classes included. You can overload all binary operators (+, *, etc.). The declaration syntax is as follows:</span></p>
+<p>&nbsp;</p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #ff0000;">&lt;op&gt;</span><span class="f_CodeExample" style="color: #000000;">(&lt;typeLeft&gt;,&lt;typeRight&gt;):&nbsp;&lt;typeResult&gt;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&lt;someFunc&gt;;&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Operator overloading is considered a form of syntax-sugar, and treated as such, ie. you have to provide a regular function to handle the processing, the operator is just an alias for that function. </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">There are three extra operators - &lt;&lt;, &gt;&gt; and ˆ, which can additionally be used at statement level (unlike regular binary operators). By default those three operators do nothing, they’re available for operator-overloading purposes only. </span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Smart Pascal also supports class operator overloading. The syntax differs from Delphi, FreePascal &amp; Prism in that they are not special methods/procedures, but syntax-sugar aliases, in a fashion similar to what properties achieve.</span></p>
+<p>&nbsp;</p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&lt;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&gt;&nbsp;&nbsp;&lt;rightType&gt;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&lt;method&gt;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">To illustrate this with TList, you could declare.</span></p>
+<p>&nbsp;</p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;+=&nbsp;&nbsp;TObject&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Add;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;-=&nbsp;&nbsp;TObject&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Remove;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">After that, myList &nbsp;+= &nbsp;item would be equivalent to myList.Add(item). </span></p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">Class operators support type overloading. It is thus possible to declare:</span> </p>
+<p>&nbsp;</p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;TMyClass&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;AddInteger(i:&nbsp;&nbsp;Integer);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;AddString(s:&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;+=&nbsp;&nbsp;Integer&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;AddInteger;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">class</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">operator</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;+=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">String</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">uses</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;AddString;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px; font-family: 'Times New Roman';">The method will be selected depending on the operand type:</span></p>
+<p>&nbsp;</p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;myObject&nbsp;&nbsp;+=&nbsp;&nbsp;10;&nbsp;</span><span class="f_CodeExample" style="color: #0000ff;">&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #0000ff;">//&nbsp;&nbsp;will&nbsp;&nbsp;use&nbsp;&nbsp;AddInteger</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;myObject&nbsp;&nbsp;+=&nbsp;&nbsp;'ten';&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-style: italic; color: #0000ff;">//&nbsp;&nbsp;will&nbsp;&nbsp;use&nbsp;&nbsp;AddString;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</td></tr></table>
+
+</body>
+</html>

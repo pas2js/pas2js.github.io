@@ -1,0 +1,225 @@
+<!-- (0051)Abstract -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Abstract command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Abstract, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Abstract</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines a class method only implemented in subclasses</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+Function|Procedure declaration; Virtual; <b>Abstract</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Abstract</b></font> directive defines a class method as being implemented only in derived classes. It is abstract in the sense that it is a placeholder - it has no implementation in the current class, but must be implemented in any derived classes.
+<br>&nbsp;<br>
+It is used where the base class is always treated as a skeleton class. Where such a class is never directly used - only based classes are ever instantiated into objects.
+<br>&nbsp;<br>
+For example, a <b>TAnimal</b> class may have an abstract method for how the animal moves. Only when creating, say, a <b>TCat</b> class based in TAnimal will you implement the method. In this instance, the cat moves by walking.
+<br>&nbsp;<br>
+An <font color=#996600><b>Abstract</b></font> class must be used to qualify a virtual class, since we are not implementing the class (see <b>Virtual</b> for more details).
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+If you create an instance of a class that has an <font color=#996600><b>Abstract</b></font> method, then delphi warns you that it contains an uncallable method.<br>
+<br>
+If you then try to call this method, Delphi will try to call <b>AbstractErrorProc</b>. If not found, it will throw an <b>EAbstractError</b> exception.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="abstracterrorproc.htm">AbstractErrorProc</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a proc called when an abstract method is called</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inherited.htm">Inherited</a></b></td>
+<td width="8"></td>
+<td align="left">Used to call the parent class constructor or destructor method</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="overload.htm">Overload</a></b></td>
+<td width="8"></td>
+<td align="left">Allows 2 or more routines to have the same name</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="override.htm">Override</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a method that replaces a virtual parent class method</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="virtual.htm">Virtual</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a class method to be overriden in derived classes</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="dynamic.htm">Dynamic</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a class method to be overriden in derived classes</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Polygon skeleton class with triangle and square based classes</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Forms, Dialogs, Classes, Controls, StdCtrls, SysUtils;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a base TPolygon class :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// This class is a triangle if 3 sides, square if 4 sides ...</b></font><br>
+&nbsp;&nbsp;TPolygon = class<br>
+&nbsp;&nbsp;private<br>&nbsp;&nbsp;&nbsp;&nbsp;sideCount&nbsp;&nbsp;: Integer;&nbsp;&nbsp;<font color=#008000><b>// How many sides?</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;sideLength : Integer;&nbsp;&nbsp;<font color=#008000><b>// How long each side?</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;shapeArea&nbsp;&nbsp;: Double;&nbsp;&nbsp; <font color=#008000><b>// Area of the polygon</b></font><br>
+&nbsp;&nbsp;protected<br>&nbsp;&nbsp;&nbsp;&nbsp; procedure setArea; Virtual; <font color=#C00000><b>Abstract</b></font>;&nbsp;&nbsp;<font color=#008000><b>// Cannot code until sides known</b></font><br>
+&nbsp;&nbsp;published<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property count&nbsp;&nbsp;: Integer read sideCount;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property length : Integer read sideLength;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;property area&nbsp;&nbsp; : Double&nbsp;&nbsp;read shapeArea;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(sides, length : Integer);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define triangle and square descendents</b></font><br>
+&nbsp;&nbsp;TTriangle = class(TPolygon)<br>
+&nbsp;&nbsp;protected<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure setArea; override;&nbsp;&nbsp; <font color=#008000><b>// Override the abstract method</b></font><br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>
+&nbsp;&nbsp;TSquare = class(TPolygon)<br>
+&nbsp;&nbsp;protected<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure setArea; override;&nbsp;&nbsp; <font color=#008000><b>// Override the abstract method</b></font><br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define the form class used by this unit</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ Private declarations }<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ Public declarations }<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+{$R *.dfm} // Include form definitions</b><br><b>
+</b><br><font color=#008000><b>// Create the TPolygon object</b></font><br><b>
+constructor TPolygon.Create(sides, length : Integer);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Save the number and length of the sides</b></font><br>
+&nbsp;&nbsp;sideCount := sides;<br>
+&nbsp;&nbsp;sideLength := length;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set the area using the abstract setArea method :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// This call will be satisfied only by a subclass</b></font><br>
+&nbsp;&nbsp;setArea;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Implement the abstract setArea parent method for the triangle</b></font><br><b>
+procedure TTriangle.setArea;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Calculate and save the area of the triangle</b></font><br>
+&nbsp;&nbsp;shapeArea := (sideLength * sideLength*0.866) / 2;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Implement the abstract setArea parent method for the square</b></font><br><b>
+procedure TSquare.setArea;</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Calculate and save the area of the square</b></font><br>
+&nbsp;&nbsp;shapeArea := sideLength * sideLength;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;triangle : TTriangle;<br>
+&nbsp;&nbsp;square&nbsp;&nbsp; : TSquare;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create a triangle and a square</b></font><br>
+&nbsp;&nbsp;triangle := TTriangle.Create(3, 10);<br>
+&nbsp;&nbsp;square&nbsp;&nbsp; := TSquare.Create(4, 10);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the areas of our polygons:</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('Triangle area = %f',[triangle.area]);<br>
+&nbsp;&nbsp;ShowMessageFmt('Square&nbsp;&nbsp; area = %f',[square.area]);<br><b>
+end;</b><br><b>
+</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Triangle area = 43.3<br>&nbsp;&nbsp;
+Square&nbsp;&nbsp; area = 100.0<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

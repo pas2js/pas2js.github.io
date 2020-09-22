@@ -1,0 +1,175 @@
+<!-- (0072)StrToInt64Def&ExpandCode2=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : StrToInt64Def command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, StrToInt64Def, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>StrToInt64Def</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Convert a string into an <b>Int64</b> value with default</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>StrToInt64Def</b></font>
+
+(
+<b>const IntegerString </b> : string;<b> Default </b> : Integer
+)
+ : Int64;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>StrToInt64Def</b></font> function converts an Integer string, <b>IntegerString</b> such as '123' into an Int64 value, with a <b>Default</b> if the conversion fails.
+<br>&nbsp;<br>
+It supports +ve and -ve numbers, and hexadecimal numbers, as prefixed by <b>$</b> or <b>0x</b>.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+No conversion errors are generated - bad conversions simply result in the <b>Default</b> being returned.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="int64.htm">Int64</a></b></td>
+<td width="8"></td>
+<td align="left">A 64 bit sized integer - the largest in Delphi</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="inttostr.htm">IntToStr</a></b></td>
+<td width="8"></td>
+<td align="left">Convert an integer into a string</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="strtoint.htm">StrToInt</a></b></td>
+<td width="8"></td>
+<td align="left">Convert an integer string into an <b>Integer</b> value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="strtoint64.htm">StrToInt64</a></b></td>
+<td width="8"></td>
+<td align="left">Convert an integer string into an <b>Int64</b> value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="strtointdef.htm">StrToIntDef</a></b></td>
+<td width="8"></td>
+<td align="left">Convert a string into an <b>Integer</b> value with default</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Converting decimal and hexadecimal numbers</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;A, B, C, D, E, F : Int64;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;A := 32;<br>&nbsp;&nbsp;B := <font color=#C00000><b>StrToInt64Def</b></font>('100', 0);&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// '100' string converted to 100 integer</b></font><br>&nbsp;&nbsp;C := <font color=#C00000><b>StrToInt64Def</b></font>('&nbsp;&nbsp;-12', 0);&nbsp;&nbsp;<font color=#008000><b>// Leading blanks are ignored</b></font><br>&nbsp;&nbsp;D := <font color=#C00000><b>StrToInt64Def</b></font>('$1E', 0);&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Hexadecimal values start with a '$'</b></font><br>&nbsp;&nbsp;E := <font color=#C00000><b>StrToInt64Def</b></font>('-0x1E', 0);&nbsp;&nbsp;<font color=#008000><b>// ... or with a '0x'</b></font><br>&nbsp;&nbsp;F := A + B + C + D + E;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// Lets add up all these integers</b></font><br><b>
+</b><br>
+&nbsp;&nbsp;WriteLn('A : '+IntToStr(A));<br>
+&nbsp;&nbsp;WriteLn('B : '+IntToStr(B));<br>
+&nbsp;&nbsp;WriteLn('C : '+IntToStr(C));<br>
+&nbsp;&nbsp;WriteLn('D : '+IntToStr(D));<br>
+&nbsp;&nbsp;WriteLn('E : '+IntToStr(E));<br>
+&nbsp;&nbsp;WriteLn('F : '+IntToStr(F));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="%&ovr0/strtoint64def&expandcode1=yes&expandcode2=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;A :&nbsp;&nbsp;32<br>&nbsp;&nbsp;
+B : 100<br>&nbsp;&nbsp;
+C : -12<br>&nbsp;&nbsp;
+D :&nbsp;&nbsp;30<br>&nbsp;&nbsp;
+E : -30<br>&nbsp;&nbsp;
+F : 120<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Catching string to integer conversion errors</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;SysUtils, <font color=#008000>&nbsp;&nbsp;// Unit containing the StrToInt64Def command</font><br>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;A : Int64;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// No need to catch conversion errors</b></font><br>&nbsp;&nbsp;A := <font color=#C00000><b>StrToInt64Def</b></font>('100 ', 55);&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Trailing blanks are not supported</b></font><br>
+&nbsp;&nbsp;WriteLn('Value = '+IntToStr(A));<br><b>
+</b><br>&nbsp;&nbsp;A := <font color=#C00000><b>StrToInt64Def</b></font>('$FG' , 66);&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 'G' is an invalid hexadecimal digit</b></font><br>
+&nbsp;&nbsp;WriteLn('Value = '+IntToStr(A));<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="strtoint64def.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Value = 55<br>&nbsp;&nbsp;
+Value = 66<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

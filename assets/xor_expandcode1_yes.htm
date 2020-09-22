@@ -1,0 +1,148 @@
+<!-- (0062)Xor&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Xor command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Xor, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Xor</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Boolean <b>Xor</b> or bitwise <b>Xor</b> of two arguments</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+Boolean expression <b>Xor</b> Boolean expression
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+Integer expression <b>Xor</b> Integer expression
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Xor</b></font> keyword is used in two different ways:
+<br>&nbsp;<br>
+<font color=#FF0000><b>1.</b></font> To perform a logical or boolean 'Exclusive-or' of two logical values. If they are different, then the result is true.
+<br>&nbsp;<br>
+<font color=#FF0000><b>2.</b></font> To perform a mathematical 'Exclusive-or' of two integers. The result is a bitwise 'Exclusive-or' of the two numbers. For example:
+<br>&nbsp;<br>
+<font color=#200080><b>10110001 <font color=#996600><b>Xor</b></font> 01100110 = 11010111</b></font>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+If the boolean expression is calculated (as opposed to being a Boolean variable), then brackets are required to isolate it.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="and.htm">And</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>and</b> or bitwise <b>and</b> of two arguments</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="not.htm">Not</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>Not</b> or bitwise <b>not</b> of one arguments</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="or.htm">Or</a></b></td>
+<td width="8"></td>
+<td align="left">Boolean <b>or</b> or bitwise <b>or</b> of two arguments</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate both types of  Xor usage</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> var</b><br>
+&nbsp;&nbsp;num1, num2, num3 : Integer;<br>
+&nbsp;&nbsp;letter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Char;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;num1&nbsp;&nbsp; := $25;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Binary value : 0010 0101&nbsp;&nbsp; $25</b></font><br>&nbsp;&nbsp;num2&nbsp;&nbsp; := $32;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Binary value : 0011 0010&nbsp;&nbsp; $32</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// XOr'ed value : 0001 0111 = $17</b></font><br>
+&nbsp;&nbsp;letter := 'G';<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And used to return a Boolean value</b></font><br>
+&nbsp;&nbsp;if (num1 > 0) <font color=#C00000><b>Xor</b></font> (letter = 'G')<br>
+&nbsp;&nbsp;then WriteLn('Only one of the values is true')<br>
+&nbsp;&nbsp;else WriteLn('Both values are true or false');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And used to perform a mathematical Xor operation</b></font><br>
+&nbsp;&nbsp;num3 := num1 <font color=#C00000><b>Xor</b></font> num2;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Display the result</b></font><br>
+&nbsp;&nbsp;ShowMessageFmt('$25 Xor $32 = $%x',[num3]);<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="xor.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Both values are true or false<br>&nbsp;&nbsp;
+$25 Xor $32 = $17<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

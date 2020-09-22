@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Overload / Override the constructor</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js003.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js005.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	
+Smart Mobile Studio supports implicit overload, so you can both overload/override the constructor, when "override" is used, an implicit overload is accepted (but it can be explicit).
+The following script reproduces this nice feature.
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+{ filename: C.pas }
+unit C;
+
+interface
+
+uses 
+  SmartCL.System;
+
+type
+  TApp = class
+  public
+    procedure DoIt;
+  end;
+
+type
+  TCustomScene = class
+  private
+    FA: Integer;
+    FB: Integer;
+    FC: Integer;
+    FApp: TApp;
+  protected
+    constructor Create(App: TApp); overload;
+    procedure PA; virtual; abstract;
+    procedure PB; virtual; abstract;
+    procedure PC; virtual; abstract;
+    procedure PD; virtual; abstract;
+    procedure PE; virtual; abstract;
+  public
+    constructor Create; overload; virtual; abstract;
+
+    property App: TApp read FApp; 
+    property A: Integer read FA; 
+    property B: Integer read FB;
+    property C: Integer read FC; 
+  end;
+
+type
+  TMyScene = class(TCustomScene)
+  protected
+    procedure PA; override;
+    procedure PB; override;
+    procedure PC; override;
+    procedure PD; override;
+    procedure PE; override;
+  public
+    constructor Create; override;
+    constructor Create(a : Integer); overload;
+  end;
+
+implementation
+
+{ TApp }
+procedure TApp.DoIt;
+begin
+  WriteLn('doing it');
+end;
+
+{ TCustomScene }
+constructor TCustomScene.Create(App: TApp);
+begin
+ FApp := App;
+end;
+
+{ TMyScene }
+constructor TMyScene.Create;
+begin end;
+
+constructor TMyScene.Create(a: Integer);
+begin end;
+
+procedure TMyScene.PA;
+begin end;
+
+procedure TMyScene.PB;
+begin end;
+
+procedure TMyScene.PC;
+begin end;
+
+procedure TMyScene.PD;
+begin end;
+
+procedure TMyScene.PE;
+begin end;
+end.
+ 
+{ filename: uMain.pas } 
+var myScene : TMyScene;
+    myScene := TMyScene.Create(20);
+    myScene.App.DoIt; //displays 'doing it'
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+var TApplication = {
+   $ClassName:"TApplication",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,RunApp:function(Self) {
+      var myScene = null;
+      myScene = TMyScene.Create$7($New(TMyScene),20);
+      TApp.DoIt(myScene.FApp);
+   }
+   ,Destroy:TObject.Destroy
+};
+
+var TCustomScene = {
+   $ClassName:"TCustomScene",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FApp = null;
+   }
+   ,Create$5:function(Self, App$1) {
+      Self.FApp = App$1;
+      return Self
+   }
+   ,Destroy:TObject.Destroy
+   ,Create$6$:function($){return $.ClassType.Create$6($)}
+   ,PA$:function($){return $.ClassType.PA($)}
+   ,PB$:function($){return $.ClassType.PB($)}
+   ,PC$:function($){return $.ClassType.PC($)}
+   ,PD$:function($){return $.ClassType.PD($)}
+   ,PE$:function($){return $.ClassType.PE($)}
+};
+var TMyScene = {
+   $ClassName:"TMyScene",$Parent:TCustomScene
+   ,$Init:function ($) {
+      TCustomScene.$Init($);
+   }
+   ,Create$6:function(Self) {
+return Self
+   }
+   ,Create$7:function(Self, a) {
+return Self
+   }
+   ,PA:function(Self) {
+   }
+   ,PB:function(Self) {
+   }
+   ,PC:function(Self) {
+   }
+   ,PD:function(Self) {
+   }
+   ,PE:function(Self) {
+   }
+   ,Destroy:TObject.Destroy
+   ,Create$6$:function($){return $.ClassType.Create$6($)}
+   ,PA$:function($){return $.ClassType.PA($)}
+   ,PB$:function($){return $.ClassType.PB($)}
+   ,PC$:function($){return $.ClassType.PC($)}
+   ,PD$:function($){return $.ClassType.PD($)}
+   ,PE$:function($){return $.ClassType.PE($)}
+};
+var TApp = {
+   $ClassName:"TApp",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,DoIt:function(Self) {
+      WriteLn("doing it");
+   }
+   ,Destroy:TObject.Destroy
+};
+
+</code></pre></div>
+</div>
+</body>
+</html>

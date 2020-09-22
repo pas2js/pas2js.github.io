@@ -1,0 +1,285 @@
+<!-- (0047)Type -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Type command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Type, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Type</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines a new category of variable or process</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+<font color=#FF0000>?1. </font>type <b>Name</b> = Existing type;<br>&nbsp;
+<font color=#FF0000>?2. </font>type <b>Name</b> = <b>type</b> Existing type;<br>&nbsp;
+<font color=#FF0000>?3. </font>type <b>Name</b> = (EnumValue1 [=value], EnumValue2 [=value] ...);<br>&nbsp;
+<font color=#FF0000>?4. </font>type <b>Name</b> = Expression1..Expression2;<br>&nbsp;
+<font color=#FF0000>?5. </font>type <b>Name</b> = ^Existing type;<br>&nbsp;
+<font color=#FF0000>?6. </font>type <b>Name</b> = array[...] of Existing type;<br>&nbsp;
+<font color=#FF0000>?7. </font>type <b>Name</b> = class ... end;<br>&nbsp;
+<font color=#FF0000>?8. </font>type <b>Name</b> = class of Existing class<br>&nbsp;
+<font color=#FF0000>?9. </font>type <b>Name</b> = dispinterface ... end;<br>&nbsp;
+<font color=#FF0000>10. </font>type <b>Name</b> = file of Existing type;<br>&nbsp;
+<font color=#FF0000>11. </font>type <b>Name</b> = function ...;<br>&nbsp;
+<font color=#FF0000>12. </font>type <b>Name</b> = interface ...&nbsp;&nbsp;end;<br>&nbsp;
+<font color=#FF0000>13. </font>type <b>Name</b> = object ... end;<br>&nbsp;
+<font color=#FF0000>14. </font>type <b>Name</b> = procedure ...;<br>&nbsp;
+<font color=#FF0000>15. </font>type <b>Name</b> = record ... end;<br>&nbsp;
+<font color=#FF0000>16. </font>type <b>Name</b> = set of Ordinal values
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Type</b></font> keyword is a fundamental part of Delphi. Unlike other languages, it allows new categories (types) of variable and process to be created. These newly named categories can then be referenced just as if they were a part of the language.
+<br>&nbsp;<br>
+For example : 
+<br>&nbsp;<br>
+<font class=mono><font color=#008000><font color=#996600><b>Type</b></font> TCourtCards = (Ace, Jack, Queen, King);</font></font>
+<br>&nbsp;<br>
+allows a new variable of this 'type' to be defined :
+<br>&nbsp;<br>
+<font class=mono><font color=#008000>var Card : TCourtCard;
+Card := Queen;</font></font>
+<br>&nbsp;<br>
+It is a useful convention to prefix type <b>Name</b>s with a <b>T</b>.
+<br>&nbsp;<br>
+<font color=#FF0000>1.type Name = Existing type</font>
+<br>&nbsp;<br>
+Refers to an existing type, such as <b>string</b> by a new <b>Name</b>.
+<br>&nbsp;<br>
+<font color=#FF0000>2.type Name = type Existing type</font>
+<br>&nbsp;<br>
+This has the same effect as above, but ensures that at run time, variables of this type are identified by their new type name, rather than the existing type name.
+<br>&nbsp;<br>
+<font color=#FF0000>3.type Name = (EnumValue1, EnumValue2 ...)</font>
+<br>&nbsp;<br>
+Defines an enumeration type, with values EnumValu1, EnumValue2 and so on. These are user defined names representing all possible values for the enumeration.
+<br>&nbsp;<br>
+These values must be unique in your program. Once defined in a type, they can be referenced in two ways : when assigning/referencing a variable of that type, and as a numerical value using the Ord keyword. See right for examples.
+<br>&nbsp;<br>
+Note that these enumerations are set to have values 0, 1, 2 etc by position in the definition unless this value is overriden by the <b>=value</b> number.
+<br>&nbsp;<br>
+For example :
+<br>&nbsp;<br>
+<font class=mono><font color=#008000><font color=#996600><b>Type</b></font> Days = (Monday = 1, Tuesday, Wed ...);</font></font>
+<br>&nbsp;<br>
+where Monday would be set to 1, Tuesday 2, Wednesday 3 and so on.
+<br>&nbsp;<br>
+<font color=#FF0000>4.type Name = Expression1..Expression2</font>
+Here we have a complete range of integer numbers or characters from Expression1 to Expression2.
+<br>&nbsp;<br>
+Expression1 and 2 maybe expressions that evaluate to an integer number or a character, or just integer or character constants.
+<br>&nbsp;<br>
+For example:
+<br>&nbsp;<br>
+<font class=mono><font color=#008000><font color=#996600><b>Type</b></font> TAlphabet = 'A'..'z';</font></font>
+<br>&nbsp;<br>
+is often used to define the range of letters from upper case A right through to lower case z.
+<br>&nbsp;<br>
+<font color=#FF0000>5.type Name = ^Existing type</font>
+<br>&nbsp;<br>
+The '^' is a pointer to the existing type. It is often used to navigate through sets of records.
+<br>&nbsp;<br>
+<font color=#FF0000>6.type Name = array[...] of existing type</font>
+<br>&nbsp;<br>
+A structured type, encapsulating an array of types as a new type.
+<br>&nbsp;<br>
+<font color=#FF0000>7.type Name = class ... end</font>
+Mechanism for defining a new class. See the Class keyword for full details.
+<br>&nbsp;<br>
+<font color=#FF0000>8.type Name = class of existing class</font>
+<br>&nbsp;<br>
+This provides a meta-class definition. See the Class keyword for details.
+<br>&nbsp;<br>
+<font color=#FF0000>9.type Name = dispinterface ... end</font>
+A dispatch interface type. See the Dispinterface keyword for full details.
+<br>&nbsp;<br>
+<font color=#FF0000>10.type Name = file of Existing type</font>
+<br>&nbsp;<br>
+Defines a type to refer to file that contains records of the given existing type (by default, files are treated as containing binary data).
+<br>&nbsp;<br>
+<font color=#FF0000>11.type Name = function ...</font>
+<br>&nbsp;<br>
+Defines a function as a type, allowing the function to be defined as a parameter to a subroutine.
+<br>&nbsp;<br>
+<font color=#FF0000>12.type Name = interface ... end</font>
+<br>&nbsp;<br>
+Mechanism for defining an interface. See the Interface keyword for full details.
+<br>&nbsp;<br>
+<font color=#FF0000>13.type Name = object ... end</font>
+<br>&nbsp;<br>
+Obsolete equivalent to the Class definition.
+<br>&nbsp;<br>
+<font color=#FF0000>14.type Name = procedure ...</font>
+<br>&nbsp;<br>
+Defines a function as a type, allowing the function to be defined as a parameter to a subroutine.
+<br>&nbsp;<br>
+<font color=#FF0000>15.type Name = record ... end</font>
+<br>&nbsp;<br>
+Encapsulates a data structure under the given <b>Name</b>. See the Record keyword for full details.
+<br>&nbsp;<br>
+<font color=#FF0000>16.type Name = set of Ordinal values</font>
+<br>&nbsp;<br>
+The set of Ordinal values defines a range of integer numbers or characters. See the Set keyword for full details of sets.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="array.htm">Array</a></b></td>
+<td width="8"></td>
+<td align="left">A data type holding indexable collections of data</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="class.htm">Class</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the declaration of a type of object class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="const.htm">Const</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of fixed data values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="file.htm">File</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a typed or untyped file</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="interface.htm">Interface</a></b></td>
+<td width="8"></td>
+<td align="left">Used for Unit external definitions, and as a Class skeleton</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="object.htm">Object</a></b></td>
+<td width="8"></td>
+<td align="left">Allows a subroutine data type to refer to an object method</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="record.htm">Record</a></b></td>
+<td width="8"></td>
+<td align="left">A structured data type - holding fields of data</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="set.htm">Set</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a set of up to 255 distinct values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="var.htm">Var</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the definition of a section of data variables</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Examples of some of these types</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> <font color=#C00000><b>Type</b></font></b><br>&nbsp;&nbsp;TString1 = string;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;1. type Name&nbsp;&nbsp;= Existing type</b></font><br>&nbsp;&nbsp;TString2 = type string;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>//&nbsp;&nbsp;2. type Name&nbsp;&nbsp;= type Existing type</b></font><br>&nbsp;&nbsp;TTemp&nbsp;&nbsp;&nbsp;&nbsp;= (Hot, Warm, Cold);&nbsp;&nbsp; <font color=#008000><b>//&nbsp;&nbsp;3. type Name&nbsp;&nbsp;= (Enum1, Enum2 ...)</b></font><br>&nbsp;&nbsp;TExpr&nbsp;&nbsp;&nbsp;&nbsp;= 5*2 .. 6*3;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;4. type Name&nbsp;&nbsp;= Expr1 .. Expr2</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;5. See the Pointer keyword</b></font><br>&nbsp;&nbsp;TArray&nbsp;&nbsp; = array[1..3] of byte; <font color=#008000><b>//&nbsp;&nbsp;6. type Name&nbsp;&nbsp;= array[...] of type</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;7. See the expanded code</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;8. See the Class keyword</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>//&nbsp;&nbsp;9. See the Dispinterface keyword</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 10. See the File keyword</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 11. See the Function keyword</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 12. See the Interface keyword</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 13. Obsolete</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// 14. See the Procedure keyword</b></font><br>&nbsp;&nbsp;TRecord&nbsp;&nbsp;= record&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// 15. type Name&nbsp;&nbsp;= record .. end;</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; header : string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value&nbsp;&nbsp;: Integer;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;<br>&nbsp;&nbsp;TLetters = set of 'A'..'z';&nbsp;&nbsp;&nbsp;&nbsp; <font color=#008000><b>// 16. type Name&nbsp;&nbsp;= set of Ordinals</b></font><br><b>
+</b><br><b>
+var</b><br>&nbsp;&nbsp;<font color=#008000><b>// Declare variables using the above types</b></font><br>
+&nbsp;&nbsp;firstName&nbsp;&nbsp; : TString1;<br>
+&nbsp;&nbsp;lastName&nbsp;&nbsp;&nbsp;&nbsp;: TString2;<br>
+&nbsp;&nbsp;temperature : TTemp;<br>
+&nbsp;&nbsp;expression&nbsp;&nbsp;: TExpr;<br>
+&nbsp;&nbsp;myArray&nbsp;&nbsp;&nbsp;&nbsp; : TArray;<br>
+&nbsp;&nbsp;myRecord&nbsp;&nbsp;&nbsp;&nbsp;: TRecord;<br>
+&nbsp;&nbsp;letters&nbsp;&nbsp;&nbsp;&nbsp; : TLetters;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Assign values to these types</b></font><br>
+&nbsp;&nbsp;firstName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; := 'Neil';<br>
+&nbsp;&nbsp;lastName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:= 'Moffatt';<br>
+&nbsp;&nbsp;temperature&nbsp;&nbsp;&nbsp;&nbsp; := Cold;<br>
+&nbsp;&nbsp;expression&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:= 10;<br>
+&nbsp;&nbsp;myArray[1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:= 5;<br>
+&nbsp;&nbsp;myRecord.header := 'data file';<br>
+&nbsp;&nbsp;letters&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; := ['F'..'Q'];<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="type&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;The program runs with no output<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#2196f3">
+  <link rel="stylesheet" type="text/css" href="res/app.css">
+  <link rel="stylesheet" type="text/css" href="res/comps.css">
+
+  <!--<script type="text/javascript" src="dom7.core.min.js"></script>-->
+  <title>ProjPromises</title>
+  <script src="projpromises.js"></script>
+</head>
+<body>
+
+<div>
+<header class="bar bar-nav">
+  <div class="buttons-row">
+    <a href="#tab1" class="tab-link tab1 button active">atSequence</a>
+    <a href="#tab2" class="tab-link tab2 button">atOnce</a>
+    <a href="#tab3" class="tab-link tab3 button">atAll</a>
+  </div>
+  <h1 class="title"></h1>
+</header>
+  <div class="wrap"></div>
+</div>
+
+  <script>
+  window.addEventListener("load", rtl.run);
+  </script>
+  
+</body>
+</html>

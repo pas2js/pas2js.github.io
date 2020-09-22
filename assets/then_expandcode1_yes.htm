@@ -1,0 +1,161 @@
+<!-- (0063)Then&ExpandCode1=Yes -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Then command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Then, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Then</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Part of an <b>if</b> statement - starts the <b>true</b> clause</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>if</b> Condition <b>then</b> Statement;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>if</b> Condition <b>then</b> Statement <b>else</b> Statement;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Then</b></font> keyword is part of the </b>If</b> statement. It is used to start the section of code executed when the if <b>condition</b> is true.
+<br>&nbsp;<br>
+There are two forms of the <b>If</b> statement - one with an <b>else</b> clause, the other not.
+<br>&nbsp;<br>
+<b>If</b> works as follows :
+<br>&nbsp;<br>
+If the <b>condition</b> is <b>true</b>, then the first statement is executed. If <b>false</b>, then this statement is bypassed. If there is an else statement, it is executed instead.
+<br>&nbsp;<br>
+In all cases, the <b>Statement</b> clause must be contained in a <b>begin/end</b> block if it is longer than one statement in length.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+It is an easy mistake to make, but Delphi insists on no <b>;</b> after the then statement if an else statement follows.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="else.htm">Else</a></b></td>
+<td width="8"></td>
+<td align="left">Starts false section of <b>if, case</b> and <b>try</b> statements</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="end.htm">End</a></b></td>
+<td width="8"></td>
+<td align="left">Keyword that terminates statement blocks</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="if.htm">If</a></b></td>
+<td width="8"></td>
+<td align="left">Starts a conditional expression to determine what to do next</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrate various uses of the then clause</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000>// Full Unit code.<br>// -----------------------------------------------------------<br>// You must store this code in a unit called <b>Unit1</b> with a form<br>// called <b>Form1</b> that has an <b>OnCreate</b> event called <b>FormCreate</b>.<br></font>&nbsp;<br><font color=#808080><b>unit Unit1;<br>&nbsp;<br>interface<br>&nbsp;<br>uses<br></b>&nbsp;&nbsp;Forms, Dialogs;<br>&nbsp;<br><b>type<br></b>&nbsp;&nbsp;TForm1 = class(TForm)<br>&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>&nbsp;&nbsp;<b>end;<br>&nbsp;<br>var<br>&nbsp;&nbsp;</b>Form1: TForm1;<br>&nbsp;<br><b>implementation<br><font color=#008800>{$R *.dfm}  // Include form definitions</font><br>&nbsp;<br>procedure TForm1.FormCreate(Sender: TObject);</b></font><br><b> begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Illustrate a simple if statement that executes true</b></font><br>
+&nbsp;&nbsp;if True <font color=#C00000><b>Then</b></font> WriteLn('True!');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Illustrate the same, but with multiple actions</b></font><br>
+&nbsp;&nbsp;if 1 = 1 <font color=#C00000><b>Then</b></font><br>
+&nbsp;&nbsp;begin<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('We now have');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('multiple lines');<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Illustrate a simple if statement that fails</b></font><br>
+&nbsp;&nbsp;if 1 = 2 <font color=#C00000><b>Then</b></font> WriteLn('1 = 2');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Illustrate an if then else statement</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Note the lack of a ';' after the 'then' clause</b></font><br>
+&nbsp;&nbsp;if False<br>
+&nbsp;&nbsp;<font color=#C00000><b>Then</b></font> WriteLn('True')<br>
+&nbsp;&nbsp;else WriteLn('False');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Nested if statements - Delphi sensibly manages associations</b></font><br>
+&nbsp;&nbsp;if true <font color=#C00000><b>Then</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;if false <font color=#C00000><b>Then</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Inner then satisfied')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Inner else satisfied')<br>
+&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Outer else satisfied')<br><b>
+end;</b><br><font color=#808080>&nbsp;<br><b>end.</b></font>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="then.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Hide full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;True!<br>&nbsp;&nbsp;
+We now have<br>&nbsp;&nbsp;
+multiple lines<br>&nbsp;&nbsp;
+False<br>&nbsp;&nbsp;
+Inner else satisfied<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

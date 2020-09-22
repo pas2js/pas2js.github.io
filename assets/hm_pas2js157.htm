@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">for in Array | step</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js156.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js158.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	for in Array | step
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+const
+  primaries: array [3 .. 6] of Integer = [3, 5, 7, 9];
+
+const
+  colors: array [0 .. 2] of String = ['red', 'green', 'blue'];
+
+type
+  TMyClass = class
+    Field: String;
+    constructor Create(f: String);
+    begin
+      Field := f;
+    end;
+    procedure DoWriteLn;
+    begin
+      WriteLn(Field);
+    end;
+  end;
+
+  {---- main.pas ----}
+  var
+    i: Integer;
+    c: String;
+    objs: array of TMyClass;
+
+Begin
+  objs.Add(new TMyClass('hello'));
+  objs.Add(TMyClass.Create('world'));
+
+  for i in primaries do
+    WriteLn(i);
+
+  for c in colors do
+    WriteLn(c);
+
+  var
+    o: TMyClass;
+  for o in objs do
+    o.DoWriteLn;
+
+  for i in primaries step 2 do
+    WriteLn(i);
+  { <<< CONSOLE OUTPUTS >>>
+    3
+    5
+    7
+    9
+    red
+    green
+    blue
+    hello
+    world
+    3
+    7
+  }
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+      var i = 0;
+      var c = "";
+      var objs = [];
+      var a$1 = 0;
+      var a$2 = 0;
+      var o = null;
+      var a$3 = 0;
+      var a$4 = 0;
+      objs.push(TMyClass.Create$5($New(TMyClass),"hello"));
+      objs.push(TMyClass.Create$5($New(TMyClass),"world"));
+      for(a$1=3;a$1<=6;a$1++) {
+         i = primaries[(a$1)-3];
+         WriteLn(i);
+      }
+      for(a$2=0;a$2<=2;a$2++) {
+         c = colors[a$2];
+         WriteLn(c);
+      }
+      var $temp1;
+      for(a$3=0,$temp1=objs.length;a$3<$temp1;a$3++) {
+         o = objs[a$3];
+         TMyClass.DoWriteLn(o);
+      }
+      for(a$4=3;a$4<=6;a$4+=2) {
+         i = primaries[(a$4)-3];
+         WriteLn(i);
+      }
+	  
+/// TMyClass = class (TObject)
+///  [line: 41, column: 3, file: uMain]
+var TMyClass = {
+   $ClassName:"TMyClass",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.Field = "";
+   }
+   /// constructor TMyClass.Create(f: String)
+   ///  [line: 43, column: 17, file: uMain]
+   ,Create$5:function(Self, f) {
+      Self.Field = f;
+      return Self
+   }
+   /// procedure TMyClass.DoWriteLn()
+   ///  [line: 47, column: 15, file: uMain]
+   ,DoWriteLn:function(Self) {
+      WriteLn(Self.Field);
+   }
+   ,Destroy:TObject.Destroy
+};
+var colors = ["red","green","blue"],
+    primaries = [3,5,7,9];	  
+
+</code></pre></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!-- (0053)DecodeTime -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : DecodeTime command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, DecodeTime, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>DecodeTime</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Procedure</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Break a TDateTime value into individual time values</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>SysUtils</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;procedure&nbsp;<font color="#0000A0"><b>DecodeTime</b></font>
+
+(
+<b>const SourceDateTime </b> : TDateTime;<b> out Hour, Min, Sec, MSec</b> : Word
+)
+;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>DecodeTime</b></font> procedure extracts hour, minute, second and milli-second values from a given <b>SourceDateTime</b> TDateTime type value.
+<br>&nbsp;<br>
+It stores the values in the output variables : <b>Hour, Min, Sec</b> and <b>MSec</b>.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="decodedate.htm">DecodeDate</a></b></td>
+<td width="8"></td>
+<td align="left">Extracts the year, month, day values from a TDateTime var.</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="decodedatetime.htm">DecodeDateTime</a></b></td>
+<td width="8"></td>
+<td align="left">Breaks a TDateTime variable into its date/time parts</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="encodedate.htm">EncodeDate</a></b></td>
+<td width="8"></td>
+<td align="left">Build a TDateTime value from year, month and day values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="encodedatetime.htm">EncodeDateTime</a></b></td>
+<td width="8"></td>
+<td align="left">Build a TDateTime value from day and time values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="encodetime.htm">EncodeTime</a></b></td>
+<td width="8"></td>
+<td align="left">Build a TDateTime value from hour, min, sec and msec values</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="recodedate.htm">RecodeDate</a></b></td>
+<td width="8"></td>
+<td align="left">Change only the date part of a TDateTime variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="recodetime.htm">RecodeTime</a></b></td>
+<td width="8"></td>
+<td align="left">Change only the time part of a TDateTime variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="replacedate.htm">ReplaceDate</a></b></td>
+<td width="8"></td>
+<td align="left">Change only the date part of a TDateTime variable</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="replacetime.htm">ReplaceTime</a></b></td>
+<td width="8"></td>
+<td align="left">Change only the time part of a TDateTime variable</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Add 5 minutes to a time and then extract the new time values</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myDate : TDateTime;<br>
+&nbsp;&nbsp;myHour, myMin, mySec, myMilli : Word;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set up the myDate variable to have a December 2000 value</b></font><br>
+&nbsp;&nbsp;myDate := StrToDateTime('29/12/2000 12:45:12.34');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now add 5 minutes to this value</b></font><br>
+&nbsp;&nbsp;myDate := IncMinute(myDate, 5);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// And let us see what we get</b></font><br>
+&nbsp;&nbsp;<font color=#C00000><b>DecodeTime</b></font>(myDate, myHour, myMin, mySec, myMilli);<br>
+&nbsp;&nbsp;WriteLn('Time now = '+TimeToStr(myDate));<br>
+&nbsp;&nbsp;WriteLn('Hour&nbsp;&nbsp;&nbsp;&nbsp; = '+IntToStr(myHour));<br>
+&nbsp;&nbsp;WriteLn('Minute&nbsp;&nbsp; = '+IntToStr(myMin));<br>
+&nbsp;&nbsp;WriteLn('Second&nbsp;&nbsp; = '+IntToStr(mySec));<br>
+&nbsp;&nbsp;WriteLn('MilliSec = '+IntToStr(myMilli));<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="decodetime&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Time now = 12:50:12<br>&nbsp;&nbsp;
+Hour&nbsp;&nbsp;&nbsp;&nbsp; = 12<br>&nbsp;&nbsp;
+Minute&nbsp;&nbsp; = 50<br>&nbsp;&nbsp;
+Second&nbsp;&nbsp; = 12<br>&nbsp;&nbsp;
+MilliSec = 34<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

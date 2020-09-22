@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Compare enumerations | in keyword</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js097.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js099.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Compare enumerations
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+type
+  TEnum = (enOne, enTwo, enThree);
+
+procedure WriteLnBool(msg: string; b: Boolean);
+begin
+  Writeln(msg);
+  if b then
+    Writeln('True')
+  else
+    Writeln('False');
+end;
+
+{ main.pas }
+
+Begin
+WriteLnBool('1 = 1 is ', enOne = enOne);
+
+WriteLnBool('1 <> 1 is ', enOne <> enOne);
+
+WriteLnBool('1 = 2 is ', enOne = enTwo);
+
+WriteLnBool('1 <> 2 is ', enOne <> enTwo);
+
+WriteLnBool('1 in [2, 3] is ', enOne in [enTwo, enThree]);
+
+WriteLnBool('1 not in [2, 3] is ', enOne not in [enTwo, enThree]);
+
+WriteLnBool('2 in [2, 3] is ', enTwo in [enTwo, enThree]);
+
+WriteLnBool('2 not in [2, 3] is ', enTwo not in [enTwo, enThree]);
+{ <<< CONSOLE OUTPUTS >>>
+  1 = 1 is True
+  1 <> 1 is False
+  1 = 2 is False
+  1 <> 2 is True
+  1 in [2, 3] is False
+  1 not in [2, 3] is True
+  2 in [2, 3] is True
+  2 not in [2, 3] is False
+}
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+      WriteLnBool("1 = 1 is ",(0==0));
+      WriteLnBool("1 <> 1 is ",(0!=0));
+      WriteLnBool("1 = 2 is ",(1==0));
+      WriteLnBool("1 <> 2 is ",(1!=0));
+      WriteLnBool("1 in [2, 3] is ",(1<<0&6)!=0);
+      WriteLnBool("1 not in [2, 3] is ",!((1<<0&6)!=0));
+      WriteLnBool("2 in [2, 3] is ",(1<<1&6)!=0);
+      WriteLnBool("2 not in [2, 3] is ",!((1<<1&6)!=0));
+
+function WriteLnBool(msg, b) {
+   WriteLn(msg);
+   if (b) {
+      WriteLn("True");
+   } else {
+      WriteLn("False");
+   }
+};	  
+
+</code></pre></div>
+</div>
+</body>
+</html>

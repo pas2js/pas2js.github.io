@@ -1,0 +1,182 @@
+<!-- (0050)Variant -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Variant command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Variant, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Variant</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Type</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">A variable type that can hold changing data types</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+type <b>Variant</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Variant</b></font> data type provides a flexible general purpose data type.
+<br>&nbsp;<br>
+It can hold anything but structured data and pointers.
+<br>&nbsp;<br>
+But use with care - there are penalties in performance, potentials for run time errors and poor code clarity when using Variants.
+<br>&nbsp;<br>
+Use <b>VarType</b> in conjunction with <b>VarTypeMask</b> to determine the curent data types a Variant is set to.
+<br>&nbsp;<br>
+Variants are useful in very specific circumstances, where data types and their content are determined at run time rather than at compile time.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Variant strings cannot be indexed.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="null.htm">Null</a></b></td>
+<td width="8"></td>
+<td align="left">A variable that has no value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="pvariant.htm">PVariant</a></b></td>
+<td width="8"></td>
+<td align="left">Pointer to a Variant value</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Illustrating a few Variant assignments and the resulting data types</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;myVar : <font color=#C00000><b>Variant</b></font>;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Assign various values to a Variant</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// and then show the resulting Variant type</b></font><br>
+&nbsp;&nbsp;WriteLn('Variant value = not yet set');<br>
+&nbsp;&nbsp;ShowBasicVariantType(myVar);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Simple value</b></font><br>
+&nbsp;&nbsp;myVar := 123;<br>
+&nbsp;&nbsp;WriteLn('Variant value = 123');<br>
+&nbsp;&nbsp;ShowBasicVariantType(myVar);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Calculated value using a Variant and a constant</b></font><br>
+&nbsp;&nbsp;myVar := myVar + 456;<br>
+&nbsp;&nbsp;WriteLn('Variant value = 123 + 456');<br>
+&nbsp;&nbsp;ShowBasicVariantType(myVar);<br><b>
+</b><br>
+&nbsp;&nbsp;myVar := 'String '+IntToStr(myVar);<br>
+&nbsp;&nbsp;WriteLn('Variant value = String 579');<br>
+&nbsp;&nbsp;ShowBasicVariantType(myVar);<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Show the type of a variant</b></font><br><b>
+procedure TForm1.ShowBasicVariantType(varVar: Variant);</b><br><b>
+var</b><br>
+&nbsp;&nbsp;typeString : string;<br>
+&nbsp;&nbsp;basicType&nbsp;&nbsp;: Integer;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Get the Variant basic type :</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// this means excluding array or indirection modifiers</b></font><br>
+&nbsp;&nbsp;basicType := VarType(varVar) and VarTypeMask;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Set a string to match the type</b></font><br>
+&nbsp;&nbsp;case basicType of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varEmpty&nbsp;&nbsp;&nbsp;&nbsp; : typeString := 'varEmpty';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varNull&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varNull';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varSmallInt&nbsp;&nbsp;: typeString := 'varSmallInt';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varInteger&nbsp;&nbsp; : typeString := 'varInteger';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varSingle&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varSingle';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varDouble&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varDouble';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varCurrency&nbsp;&nbsp;: typeString := 'varCurrency';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varDate';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varOleStr&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varOleStr';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varDispatch&nbsp;&nbsp;: typeString := 'varDispatch';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varError&nbsp;&nbsp;&nbsp;&nbsp; : typeString := 'varError';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varBoolean&nbsp;&nbsp; : typeString := 'varBoolean';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varVariant&nbsp;&nbsp; : typeString := 'varVariant';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varUnknown&nbsp;&nbsp; : typeString := 'varUnknown';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varByte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varByte';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varWord&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varWord';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varLongWord&nbsp;&nbsp;: typeString := 'varLongWord';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varInt64&nbsp;&nbsp;&nbsp;&nbsp; : typeString := 'varInt64';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varStrArg&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varStrArg';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varString&nbsp;&nbsp;&nbsp;&nbsp;: typeString := 'varString';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varAny&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : typeString := 'varAny';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;varTypeMask&nbsp;&nbsp;: typeString := 'varTypeMask';<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the Variant type</b></font><br>
+&nbsp;&nbsp;WriteLn('Variant type&nbsp;&nbsp;= '+typeString);<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="variant&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Variant value = not yet set<br>&nbsp;&nbsp;
+Variant type&nbsp;&nbsp;= varEmpty <br>&nbsp;&nbsp;
+Variant value = 123<br>&nbsp;&nbsp;
+Variant type&nbsp;&nbsp;= varByte <br>&nbsp;&nbsp;
+Variant value = 123 + 456<br>&nbsp;&nbsp;
+Variant type&nbsp;&nbsp;= varInt64 <br>&nbsp;&nbsp;
+Variant value = String 579<br>&nbsp;&nbsp;
+Variant type&nbsp;&nbsp;= varString <br>&nbsp;&nbsp;
+<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

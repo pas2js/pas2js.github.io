@@ -1,0 +1,210 @@
+<!-- (0058)SelectDirectory -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : SelectDirectory command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, SelectDirectory, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>SelectDirectory</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Display a dialog to allow user selection of a directory</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>FileCtrl</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>SelectDirectory</b></font>
+
+(
+<b>const Caption </b> : string;<b> const StartDir </b> : WideString;<b> out ChosenDir </b> : string
+)
+ : Boolean;</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>SelectDirectory</b></font>&nbsp;(
+<b>var CurrDir </b> : string;<b> DialogOptions </b> : TSelectDirOpts ;<b> HelpContext </b> : Longint
+)  : Boolean;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>SelectDirectory</b></font> displays a dialog allowing the user to select a directory <b>ChosenDirectory</b> (drive plus path). 
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 1.</b></font>
+<br>&nbsp;<br>
+This displays a Windows browser dialog, initialised to the specified <b>StartDir</b>. The <b>Caption</b> text is shown at the top of the dialog. 
+<br>&nbsp;<br>
+If the user presses <b>OK</b>, then the selected directory is returned in the <b>ChosenDir</b> variable, and the return value is <b>True</b>.
+<br>&nbsp;<br>
+If the user presses <b>Cancel</b>, then no output is given, and the return value is <b>False</b>.
+<br>&nbsp;<br>
+<font color=#FF0000><b>Version 2.</b></font>
+<br>&nbsp;<br>
+This displays a very different type of dialog, that incidently shows the files in the currently selected directory.
+<br>&nbsp;<br>
+The <b>CurrDir</b> value is used to position the display to the given directory, and is updated with the selected value if the user presses <b>OK</b>.
+<br>&nbsp;<br>
+The <b>DialogOptions</b> and <b>HelpContext</b> parameters are beyond the scope of this article. They may safely be left to default values, as in the given example.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="chdir.htm">ChDir</a></b></td>
+<td width="8"></td>
+<td align="left">Change the working drive plus path for a specified drive</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="createdir.htm">CreateDir</a></b></td>
+<td width="8"></td>
+<td align="left">Create a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="getcurrentdir.htm">GetCurrentDir</a></b></td>
+<td width="8"></td>
+<td align="left">Get the current directory (drive plus directory)</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="getdir.htm">GetDir</a></b></td>
+<td width="8"></td>
+<td align="left">Get the default directory (drive plus path) for a specified drive</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="mkdir.htm">MkDir</a></b></td>
+<td width="8"></td>
+<td align="left">Make a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="removedir.htm">RemoveDir</a></b></td>
+<td width="8"></td>
+<td align="left">Remove a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="rmdir.htm">RmDir</a></b></td>
+<td width="8"></td>
+<td align="left">Remove a directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="setcurrentdir.htm">SetCurrentDir</a></b></td>
+<td width="8"></td>
+<td align="left">Change the current directory</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="forcedirectories.htm">ForceDirectories</a></b></td>
+<td width="8"></td>
+<td align="left">Create a new path of directories</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Let the user select a dialog using the first version</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;chosenDirectory : string;<br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Ask the user to select a required directory, starting with C:</b></font><br>
+&nbsp;&nbsp;if <font color=#C00000><b>SelectDirectory</b></font>('Select a directory', 'C:\', chosenDirectory)<br>
+&nbsp;&nbsp;then WriteLn('Chosen directory = '+chosenDirectory)<br>
+&nbsp;&nbsp;else WriteLn('Directory selection aborted');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="selectdirectory&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;{ Dialog displays - user selects C:\Program Files and hits OK }<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Chosen directory = C:\Program Files<br>
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : Let the user select a dialog using the second version</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;options : TSelectDirOpts;<br>
+&nbsp;&nbsp;chosenDirectory : string;<br><b>
+begin</b><br>&nbsp;&nbsp;chosenDirectory := 'C:\';&nbsp;&nbsp;<font color=#008000><b>// Set the starting directory</b></font><br>&nbsp;&nbsp;<font color=#008000><b>// Ask the user to select using a completely different dialog!</b></font><br>
+&nbsp;&nbsp;if <font color=#C00000><b>SelectDirectory</b></font>(chosenDirectory, options, 0)<br>
+&nbsp;&nbsp;then WriteLn('Chosen directory = '+chosenDirectory)<br>
+&nbsp;&nbsp;else WriteLn('Directory selection aborted');<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="selectdirectory&expandcode2=yes.htm#Ex2"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;{ Dialog displays - user selects C:\Program Files and hits Cancel }<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Directory selection aborted<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

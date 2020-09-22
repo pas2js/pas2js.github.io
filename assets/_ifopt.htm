@@ -1,0 +1,182 @@
+<!-- (0049)$IfOpt -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : $IfOpt command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, $IfOpt, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>$IfOpt</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Compiler Directive</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Tests for the state of a <b>Compiler directive</b></font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$IfOpt Switch</b>-}<br>&nbsp;
+&nbsp;&nbsp;...<br>&nbsp;
+{$Else}<br>&nbsp;
+&nbsp;&nbsp;...<br>&nbsp;
+{$EndIf}
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+{<b>$IfOpt Switch</b>+}<br>&nbsp;
+&nbsp;&nbsp;...<br>&nbsp;
+{$Else}<br>&nbsp;
+&nbsp;&nbsp;...<br>&nbsp;
+{$EndIf}
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>$IfOpt</b></font> compiler directive is a meta-directive - it tests for the <b>+</b> or <b>-</b> state of a single character compiler directive.
+<br>&nbsp;<br>
+For example:
+<br>&nbsp;<br>
+<font class=mono><font color=#008000><b>
+{$IfOpt H+}<br>
+&nbsp;&nbsp;WriteLn('Longstrings are set on');<br>
+{$EndIf</b>}</font></font>
+<br>&nbsp;<br>
+It is useful to report on directive settings at the start of a program, when testing.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+<font color=#996600><b>$IfOpt</b></font> can be used multiple times in your code.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$define.htm">$Define</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a compiler directive symbol - as used by <b>IfDef</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$else.htm">$Else</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the alternate section of an <b>IfDef</b> or <b>IfNDef</b></td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$endif.htm">$EndIf</a></b></td>
+<td width="8"></td>
+<td align="left">Terminates conditional code compilation</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$ifdef.htm">$IfDef</a></b></td>
+<td width="8"></td>
+<td align="left">Executes code if a conditional symbol has been defined</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$ifndef.htm">$IfNDef</a></b></td>
+<td width="8"></td>
+<td align="left">Executes code if a conditional symbol has not been defined</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="$undef.htm">$UnDef</a></b></td>
+<td width="8"></td>
+<td align="left">Undefines a compiler directive symbol - as used by <b>IfDef</b></td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Show various default directive settings</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the default settings of various compiler directives</b></font><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$IfOpt</b></font> A+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Align is On');<br>
+&nbsp;&nbsp;{$Else}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('Align is Off');<br>
+&nbsp;&nbsp;{$EndIf}<br><b>
+</b><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$IfOpt</b></font> B+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('BoolEval is On');<br>
+&nbsp;&nbsp;{$Else}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('BoolEval is Off');<br>
+&nbsp;&nbsp;{$EndIf}<br><b>
+</b><br>
+&nbsp;&nbsp;{<font color=#C00000><b>$IfOpt</b></font> H+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('LongStrings is On');<br>
+&nbsp;&nbsp;{$Else}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteLn('LongStrings is Off');<br>
+&nbsp;&nbsp;{$EndIf}<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="$ifopt&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Align is Off<br>&nbsp;&nbsp;
+BoolEval is Off<br>&nbsp;&nbsp;
+LongStrings is On<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

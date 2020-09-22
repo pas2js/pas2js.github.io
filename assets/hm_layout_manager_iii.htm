@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Layout manager III</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Layout manager III</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_layout_manager_ii.htm">Previous</a>&nbsp;
+     <a href="hm_layout_manager_iv.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">The third layout manager demo shows how to set different layouts for portrait and landscape display orientation.</span></p>
+<p style="text-align: justify; margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Let’s say we want to have a form with a big panel and three small panels. In the portrait orientation, small panels should be positioned below the big one and in display orientation they should be positioned right to it.</span><br>
+<span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In portrait orientation, small panels should be of an equal width and in the landscape orientation they should have the same height. (Give or take a pixel).</span></p>
+<p><img src="hm_clip0015.png" width="333" height="533" border="0" alt="hm_clip0015"><br>
+<img src="hm_clip0016.png" width="486" height="393" border="0" alt="hm_clip0016"></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Let’s start with the design. We need a large panel and small panels.Dimensions don’t matter as they will be set in code.</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><img src="hm_clip0017.png" width="527" height="409" border="0" alt="hm_clip0017"></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">We have to declare two TLayout fields in the form class.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">FLayoutLandscape</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;TLayout;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">FLayoutPortrait</span><span class="f_CodeExample" style="color: #000000;">:&nbsp;TLayout;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Both layouts are defined in the InitialzeObject overload, as in the previous examples.</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; font-weight: bold; color: #000000;">Landscape</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> layout contains one Client layout for the Panel1 and one Right layout containing a Top layout containing Panel2, Panel3, and Panel4. The trick here is the Layout.Stretch call which changes Layout.Top behavior. Because of this Stretch, Layout.Top will stretch all contained controls to the same size (plus or minus a pixel – sometimes it is not possible to set all to the same size) so that they will fill the Right container from top to bottom.</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutLandscape</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Layout.Client([</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Layout.Client(Panel1),</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Layout.Right(Layout.Width(140),</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout.Top(Layout.Stretch,&nbsp;[Panel2,&nbsp;Panel3,&nbsp;Panel4]))</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;]);</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">Similarly, </span><span style="font-size: 16px; font-family: 'Times New Roman'; font-style: italic; font-weight: bold; color: #000000;">portrait</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;"> layout contains a Bottom layout with nested Left layout with the Stretch parameter. Height is specified explicitly and Panel2 to 4 width is set to the same value (plus or minus a pixel) so that they fill up whole row.</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutPortrait</span><span class="f_CodeExample" style="color: #000000;">&nbsp;:=</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;Layout.Client([</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Layout.Client(Panel1),</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;Layout.Bottom(Layout.Height(140),</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout.Left(Layout.Stretch,&nbsp;[Panel2,&nbsp;Panel3,&nbsp;Panel4]))</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;]);</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 13px;">&nbsp;</span></p>
+<p style="margin: 7px 0px 7px 0px;"><span style="font-size: 16px; font-family: 'Times New Roman'; color: #000000;">In the Resize method we have to check Width and Height of the form and apply appropriate layout.</span></p>
+<p class="p_CodeExample" style="border-color: #000000; border-style: solid; border-width: 1px; background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">procedure</span><span class="f_CodeExample" style="color: #000000;">&nbsp;TForm1.Resize;</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">begin</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">inherited</span><span class="f_CodeExample" style="color: #000000;">;</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">if</span><span class="f_CodeExample" style="color: #000000;">&nbsp;Width&nbsp;&gt;&nbsp;Height&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">then</span><span class="f_CodeExample" style="color: #000000;">&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutLandscape</span><span class="f_CodeExample" style="color: #000000;">.Resize(Self)&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">else</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">FLayoutPortrait</span><span class="f_CodeExample" style="color: #000000;">.Resize(Self);</span><br>
+<span class="f_CodeExample" style="font-weight: bold; color: #000000;">end</span><span class="f_CodeExample" style="color: #000000;">;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html oncontextmenu="return false">
+<head>
+   <title>Enumerations</title>
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="styles.css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/toc.js"></script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; filter:progid:DXImageTransform.Microsoft.DropShadow(color='b0b0b0', Direction=135, OffX='3', OffY='3') progid:DXImageTransform.Microsoft.Fade(Overlap=1.00);"></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#C0C0C0">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1" style="font-weight: bold; color: #ffffff;">Enumerations</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="index.htm">Top</a>&nbsp;
+     <a href="hm_language_types.htm">Previous</a>&nbsp;
+     <a href="hm_language_types2.htm">Next</a>
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">An&nbsp;Enumeration&nbsp;is&nbsp;simply&nbsp;a&nbsp;fixed&nbsp;range&nbsp;of&nbsp;named&nbsp;values&nbsp;integer-based&nbsp;types,&nbsp;which&nbsp;may&nbsp;have&nbsp;explicit&nbsp;or&nbsp;automatically&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">assigned&nbsp;values.&nbsp;Enumerations&nbsp;can&nbsp;be&nbsp;cast&nbsp;to&nbsp;and&nbsp;from&nbsp;Integer.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p style="text-align: justify; white-space: nowrap;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">When&nbsp;you&nbsp;want&nbsp;to&nbsp;use&nbsp;an&nbsp;enumeration&nbsp;variable,&nbsp;you&nbsp;must&nbsp;define&nbsp;the&nbsp;range&nbsp;of&nbsp;possible&nbsp;values&nbsp;in&nbsp;an&nbsp;enumeration&nbsp;type&nbsp;</span></p>
+<p style="text-align: justify; white-space: nowrap;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">first&nbsp;Since&nbsp;enumeration&nbsp;variables&nbsp;and&nbsp;values&nbsp;can&nbsp;also&nbsp;be&nbsp;treated&nbsp;as&nbsp;numbers&nbsp;(ordinals).</span></p>
+<p style="text-align: justify; white-space: nowrap;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">We&nbsp;can&nbsp;use&nbsp;them&nbsp;in&nbsp;expressions&nbsp;and&nbsp;we&nbsp;can&nbsp;also&nbsp;use&nbsp;them&nbsp;in&nbsp;loops.&nbsp;</span></p>
+<p style="text-align: justify; white-space: nowrap;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">In&nbsp;the&nbsp;following&nbsp;example,&nbsp;the&nbsp;value&nbsp;of&nbsp;day&nbsp;can&nbsp;be&nbsp;treated&nbsp;as&nbsp;a&nbsp;number&nbsp;or&nbsp;an&nbsp;enumeration&nbsp;value.&nbsp;</span></p>
+<p style="text-align: justify; white-space: nowrap;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">To&nbsp;treat&nbsp;as&nbsp;a&nbsp;number,&nbsp;you&nbsp;must&nbsp;use&nbsp;the&nbsp;</span><span style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff; text-decoration: underline;">Ord</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;function.</span><br>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_enum01.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;enumerations&nbsp;in&nbsp;Pas2JS&nbsp;example&nbsp;1</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Explicitly&nbsp;scoped&nbsp;enumerations&nbsp;are&nbsp;supported&nbsp;using&nbsp;the&nbsp;enum&nbsp;keyword:&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;MyEnumeration&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">enum</span><span class="f_CodeExample" style="color: #000000;">(First,&nbsp;Second,Third,Tenth=10,Eleventh);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">With&nbsp;this&nbsp;syntax,&nbsp;enumeration&nbsp;elements&nbsp;must&nbsp;be&nbsp;referred&nbsp;with&nbsp;the&nbsp;enumeration&nbsp;type&nbsp;as&nbsp;scope,&nbsp;as&nbsp;in&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">MyEnumeration.First</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">.&nbsp;If&nbsp;values&nbsp;aren’t&nbsp;specified&nbsp;explicitly,&nbsp;they&nbsp;start&nbsp;from&nbsp;0&nbsp;and&nbsp;increase&nbsp;by&nbsp;1&nbsp;from&nbsp;the&nbsp;previous&nbsp;member.&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Another&nbsp;variant&nbsp;of&nbsp;enumerations&nbsp;is&nbsp;when&nbsp;using&nbsp;the&nbsp;flags&nbsp;keyword,&nbsp;in&nbsp;that&nbsp;case,&nbsp;values&nbsp;cannot&nbsp;be&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">explicit,&nbsp;and&nbsp;they&nbsp;start&nbsp;from&nbsp;1&nbsp;and&nbsp;are&nbsp;multiplied&nbsp;by&nbsp;2&nbsp;from&nbsp;the&nbsp;previous&nbsp;member&nbsp;(1,&nbsp;2,&nbsp;4,&nbsp;8&nbsp;etc.)&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;MyFlags&nbsp;&nbsp;=&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #0000ff;">flags</span><span class="f_CodeExample" style="color: #000000;">(Alpha,Beta,Gamma);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">With&nbsp;this&nbsp;syntax&nbsp;too&nbsp;the&nbsp;elements&nbsp;can&nbsp;only&nbsp;be&nbsp;accessed&nbsp;through&nbsp;explicit&nbsp;scoping&nbsp;as&nbsp;in&nbsp;MyFlags.Beta.</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">Finally,&nbsp;the&nbsp;classic&nbsp;Object&nbsp;Pascal&nbsp;enumeration&nbsp;syntax&nbsp;is&nbsp;supported:</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="background: #ffff99;"><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TMyEnumeration&nbsp;&nbsp;=&nbsp;&nbsp;(firstEnum,secondEnum,thirdEnum);</span><br>
+<span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;&nbsp;</span><span class="f_CodeExample" style="font-weight: bold; color: #000000;">type</span><span class="f_CodeExample" style="color: #000000;">&nbsp;&nbsp;TMyExplicitEnum&nbsp;&nbsp;=&nbsp;&nbsp;(eeOne=1,eeTwo=3,eeFive=5);</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">With&nbsp;this&nbsp;classic&nbsp;syntax,&nbsp;an&nbsp;enumeration&nbsp;element&nbsp;can&nbsp;be&nbsp;referred&nbsp;directly&nbsp;(</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; color: #0000ff;">eeOne</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">)&nbsp;or&nbsp;prefixed&nbsp;with&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">the&nbsp;enumeration&nbsp;type&nbsp;(</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman'; font-weight: bold;">TMyExplicitEnum.eeOne</span><span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">).&nbsp;</span></p>
+<p class="p_CodeExample"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_enum02.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Set&nbsp;of&nbsp;enumerations&nbsp;with&nbsp;Records&nbsp;in&nbsp;Pas2JS.</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_enum03.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;enumerations&nbsp;in&nbsp;Pas2JS&nbsp;example&nbsp;3&nbsp;TODO</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><a href="hm_enum04.htm"><img src="btn.jpg" border="0"/></a>
+<span class="f_CodeExample" style="font-size: 16px; font-family: 'Times New Roman';">&nbsp;Using&nbsp;enumerations&nbsp;in&nbsp;Pas2JS&nbsp;example&nbsp;4&nbsp;TODO</span></p>
+<p class="p_CodeExample" style="text-align: justify;"><span class="f_CodeExample">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

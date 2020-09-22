@@ -1,0 +1,230 @@
+<!-- (0049)Object -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Object command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Object, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Object</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Allows a subroutine data type to refer to an object method</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>1</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type Name = Function header of <b>Object</b>;
+</font></td>
+
+</tr>
+
+<tr valign="top">
+<td width="15" align="right"><font face="Courier New" size="2" color="#FF0000"><b>2</b></font></td>
+
+<td><font face="Courier New" size="2">&nbsp;
+type Name = Procedure header of <b>Object</b>;
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Object</b></font> keyword has one principle use - to qualify a function or procedure data type, allowing it to refer to an equivalent object method.
+<br>&nbsp;<br>
+The older, obsolete use (not given in the syntax above), was used to create an object (now we use a class constructor).
+<br>&nbsp;<br>
+Variables of function and procedure types can be used as pointers, in effect, to functions and procedures with the same argument and return value profile (signature).
+<br>&nbsp;<br>
+For example :
+<br>&nbsp;<br>
+<font class=mono><font color=#200080>
+function AddUp(a, b : Integer) : Integer;<br>
+...<br>
+type<br>
+&nbsp;&nbsp;TFunc = function(a, b : Integer) : Integer;<br>
+var<br>
+&nbsp;&nbsp;func : TFunc;<br>
+&nbsp;&nbsp;c : Integer;<br>
+begin<br>
+&nbsp;&nbsp;func := AddUp;<br>
+&nbsp;&nbsp;c := func(12, 34);&nbsp;&nbsp; <font color=#008000>// Invokes AddUp function</font><br>
+end;<br>
+</font></font>
+<br>&nbsp;<br>
+With the <b>Of Object</b> qualifier, the subroutine type must be set to refer to a method in an object. For example :
+<br>&nbsp;<br>
+<font class=mono><font color=#200080>
+type<br>
+&nbsp;&nbsp;TMyClass = class<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure StoreName(name : string);<br>
+&nbsp;&nbsp;end;<br>
+<br>
+&nbsp;&nbsp;TProc = procedure(name : string) of <font color=#996600><b>Object</b></font>;<br>
+var<br>
+&nbsp;&nbsp;proc&nbsp;&nbsp;&nbsp;&nbsp;: TProc;<br>
+&nbsp;&nbsp;myClass : TMyClass;<br>
+begin<br>
+&nbsp;&nbsp;myClass := TMyClass.Create;<br>
+&nbsp;&nbsp;proc&nbsp;&nbsp;&nbsp;&nbsp;:= myClass.StoreName;<br>
+&nbsp;&nbsp;proc('My name');&nbsp;&nbsp;// Invokes myClass.StoreName<br>
+end;</font></font>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="title" bgcolor="#FFD6D4"><b>Notes</b></td></tr>
+<tr bgcolor="#FFF5F3"><td>
+Such subroutine types are in effect pointers to both&nbsp;&nbsp;the code and data parts of the method.<br>
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="class.htm">Class</a></b></td>
+<td width="8"></td>
+<td align="left">Starts the declaration of a type of object class</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="function.htm">Function</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that returns a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="procedure.htm">Procedure</a></b></td>
+<td width="8"></td>
+<td align="left">Defines a subroutine that does not return a value</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="tobject.htm">TObject</a></b></td>
+<td width="8"></td>
+<td align="left">The base class type that is ancestor to all other classes</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Accessing an object method directly and indirectly</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<font color=#008000><b>// Full Unit code.</b></font><br><font color=#008000><b>// -----------------------------------------------------------</b></font><br><font color=#008000><b>// You must store this code in a unit called Unit1 with a form</b></font><br><font color=#008000><b>// called Form1 that has an OnCreate event called FormCreate.</b></font><br><b>
+</b><br><b>
+unit Unit1;</b><br><b>
+</b><br><b>
+interface</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,<br>
+&nbsp;&nbsp;Dialogs;<br><b>
+</b><br><b>
+type</b><br>&nbsp;&nbsp;<font color=#008000><b>// Define a simple class</b></font><br>
+&nbsp;&nbsp;TSimple = class<br>
+&nbsp;&nbsp;private<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name : string;<br>
+&nbsp;&nbsp;public<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function GetName : string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;constructor Create(name : string);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// The form class itself</b></font><br>
+&nbsp;&nbsp;TForm1 = class(TForm)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;procedure FormCreate(Sender: TObject);<br>
+&nbsp;&nbsp;end;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;Form1: TForm1;<br><b>
+</b><br><b>
+implementation</b><br><b>
+</b><br><b>
+{$R *.dfm}</b><br><b>
+</b><br><font color=#008000><b>// Create a simple object</b></font><br><b>
+constructor TSimple.Create(name: string);</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Save the passed string</b></font><br>
+&nbsp;&nbsp;self.name := name;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Returns the simple name</b></font><br><b>
+function TSimple.GetName: string;</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Result := name;<br><b>
+end;</b><br><b>
+</b><br><font color=#008000><b>// Main line code</b></font><br><b>
+procedure TForm1.FormCreate(Sender: TObject);</b><br><b>
+type</b><br>
+&nbsp;&nbsp;TNameFunc = Function : string of <font color=#C00000><b>Object</b></font>;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;simple&nbsp;&nbsp; : TSimple;<br>
+&nbsp;&nbsp;nameFunc : TNameFunc;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create a simple object</b></font><br>
+&nbsp;&nbsp;simple := TSimple.Create('Brian');<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the object name</b></font><br>
+&nbsp;&nbsp;WriteLn('Name accessed directly = '+simple.GetName);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Now refer to this method indirectly</b></font><br>
+&nbsp;&nbsp;nameFunc := simple.GetName;<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// Show the object name</b></font><br>
+&nbsp;&nbsp;WriteLn('Name accessed indirectly = '+nameFunc);<br><b>
+end;</b><br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;Name accessed directly = Brian<br>&nbsp;&nbsp;
+Name accessed indirectly = Brian<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

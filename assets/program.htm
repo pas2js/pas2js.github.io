@@ -1,0 +1,178 @@
+<!-- (0050)Program -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Program command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Program, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Program</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Keyword</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Defines the start of an application</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>System</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;
+<b>Program</b> Name;<br>&nbsp;
+&nbsp;&nbsp;... Code ...<br>&nbsp;
+<b>end.</b>
+</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Program</b></font> keyword defines the start of an application.
+<br>&nbsp;<br>
+The Code is executed after running the initialisation sections of all the units referenced in the <b>Uses</b> section of the code block.
+<br>&nbsp;<br>
+When the Code completes, the finalisation sections of the units are run in reverse order.
+<br>&nbsp;<br>
+Parameters passed to the program are not defined in the <font color=#996600><b>Program</b></font> statement - it is up to your code to handle them using such functions as <b>ParamStr</b>.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="$apptype.htm">$AppType</a></b></td>
+<td width="8"></td>
+<td align="left">Determines the application type : GUI or Console</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="cmdline.htm">CmdLine</a></b></td>
+<td width="8"></td>
+<td align="left">Holds the execution text used to start the current program</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="paramcount.htm">ParamCount</a></b></td>
+<td width="8"></td>
+<td align="left">Gives the number of parameters passed to the current program</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="paramstr.htm">ParamStr</a></b></td>
+<td width="8"></td>
+<td align="left">Returns one of the parameters used to run the current program</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="unit.htm">Unit</a></b></td>
+<td width="8"></td>
+<td align="left">Defines the start of a unit file - a Delphi module</td>
+</tr>
+
+<tr valign="top">
+<td><b><a href="uses.htm">Uses</a></b></td>
+<td width="8"></td>
+<td align="left">Declares a list of <b>Units</b> to be imported</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : A Console application</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> <font color=#C00000><b>Program</b></font> Project1;</b><br><b>
+</b><br><b>
+{$AppType CONSOLE}</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;SysUtils;<br><b>
+</b><br><b>
+var</b><br>
+&nbsp;&nbsp;name : string;<br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;WriteLn('Please enter your name');<br>
+&nbsp;&nbsp;ReadLn(name);<br>
+&nbsp;&nbsp;WriteLn('Your name is '+name);<br>
+&nbsp;&nbsp;WriteLn('');<br>
+&nbsp;&nbsp;WriteLn('Press enter to exit');<br>
+&nbsp;&nbsp;ReadLn(name);<br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;
+&nbsp;
+</font></td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex2"></a><b>Example code : The project part of a GUI application</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> <font color=#C00000><b>Program</b></font> Project1;</b><br><b>
+</b><br><b>
+uses</b><br>
+&nbsp;&nbsp;Forms,<br>
+&nbsp;&nbsp;Unit1 in 'Unit1.pas' {Form1};<br><b>
+</b><br><b>
+{$R *.res}</b><br><b>
+</b><br><b>
+begin</b><br>
+&nbsp;&nbsp;Application.Initialize;<br>
+&nbsp;&nbsp;Application.CreateForm(TForm1, Form1);<br>
+&nbsp;&nbsp;Application.Run;<br><b>
+end.</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

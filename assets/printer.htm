@@ -1,0 +1,138 @@
+<!-- (0050)Printer -->
+<html oncontextmenu="return false">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Smart Pascal : Printer command</title>
+<meta name="Description" content="">
+<meta name="Keywords" content="Delphi, Delphi Programming, Basics, Keyword, Command, Printer, RTL ">
+
+<link rel="stylesheet" type="text/css" href="css/delphi.css" />
+
+</head>
+<body bgcolor="#FFFFFF">
+<table width="984" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td>
+<table width="100%" cellpadding="5" cellspacing="0" border="0" align="center"><tr>
+<td>
+<b><a href="index.htm"><font color="#A00000" size="6">Object</font></a><font color="#000000" size="2"><a href="index.htm">Pascal</a></font></b>
+</tr>
+
+<tr height="50" valign="top" bgcolor="#DDDDDD">
+
+<td><font color="#0000A0" face="Courier New" size="5"><b>Printer</b><br><font face="Arial,Helvetica,Sans-Serif" size="1">Function</font></font></td>
+
+<td align="center"><font color="#444444" face="Courier New" size="4">Returns a reference to the global <b>Printer</b> object</font></td>
+
+<td align="right"><font color="#000000" face="Arial,Helvetica,Sans-Serif" size="3"><b>Printers</b> unit</font></td>
+
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="5" cellspacing="0" align="center" bgcolor="#F8F8F8">
+<tr valign="top">
+
+<td><font face="Courier New" size="2">&nbsp;function&nbsp;<font color="#0000A0"><b>Printer</b></font>
+ : TPrinter;</font></td>
+
+</tr>
+
+</table>
+</td>
+</tr>
+<tr height="10"><td></td></tr>
+</table>
+<table width="984" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr valign="top">
+<td width="380">
+<table border="0" cellpadding="7" cellspacing="0">
+<tr height="30"><td class="title" bgcolor="#FEF5B5"><b>Description</b></td></tr>
+<tr bgcolor="#FFFEEB"><td>
+The <font color=#996600><b>Printer</b></font> function returns a reference to the global Printer (TPrinter) object.
+<br>&nbsp;<br>
+This object has many methods and properties that you can use to manage printing. In particular:
+<br>&nbsp;<br>
+<table><tr><td class=dt align='right'><b>BeginDoc&nbsp;</b></td><td class=dd> : Start printing</td></tr>
+<tr><td class=dt align='right'><b>EndDoc&nbsp;</b></td><td class=dd> : Finish printing</td></tr>
+<tr><td class=dt align='right'><b>NewPage&nbsp;</b></td><td class=dd> : Start a new page</td></tr>
+<tr><td class=dt align='right'><b>PageHeight&nbsp;</b></td><td class=dd> : The page canvas height in pixels</td></tr>
+<tr><td class=dt align='right'><b>PageWidth&nbsp;</b></td><td class=dd> : The page canvas width&nbsp;&nbsp;in pixels</td></tr>
+<tr><td class=dt align='right'><b>Canvas.Font&nbsp;</b></td><td class=dd> : Used to set font size/colour etc</td></tr>
+<tr><td class=dt align='right'><b>Canvas.Draw&nbsp;</b></td><td class=dd> : Draw a graphic on the page</td></tr>
+<tr><td class=dt align='right'><b>Canvas.TextOut&nbsp;</b></td><td class=dd> : Write text to the page</td></tr></table>
+<br>&nbsp;<br>
+You should use <b>TPrintDialog</b> to show the user a printer selection and configuration dialog before printing, as in the example.
+</td></tr>
+
+<tr height="10"><td></td></tr>
+<tr height="30" bgcolor="#DADAF0"><td class="h2"><b>Related commands</b></td></tr>
+<tr bgcolor="#F9F9FF"><td>
+<table cellpadding="0" cellspacing="0">
+
+<tr valign="top">
+<td><b><a href="tobject.htm">TObject</a></b></td>
+<td width="8"></td>
+<td align="left">The base class type that is ancestor to all other classes</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+<td width="8">&nbsp;</td>
+
+<td width="690">
+<table width="100%" border="0" cellpadding="6" cellspacing="0">
+<tr height="30"><td class="h1" bgcolor="#BCF6BB"><a name="Ex1"></a><b>Example code : Printing the page width and height text strings onto a page</b></tr>
+<tr bgcolor="#FAFAFA"><td><font face="Courier New" size="2">
+<b> var</b><br>
+&nbsp;&nbsp;printDialog : TPrintDialog;<br>
+&nbsp;&nbsp;myPrinter&nbsp;&nbsp; : TPrinter;<br><b>
+</b><br><b>
+begin</b><br>&nbsp;&nbsp;<font color=#008000><b>// Create a printer selection dialog</b></font><br>
+&nbsp;&nbsp;printDialog := TPrintDialog.Create(Form1);<br><b>
+</b><br>&nbsp;&nbsp;<font color=#008000><b>// If the user has selected a printer (or default), then print!</b></font><br>
+&nbsp;&nbsp;if printDialog.Execute then<br>
+&nbsp;&nbsp;begin<br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Use the Printer function to get access to the</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// global TPrinter object.</b></font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// All references below are to the TPrinter object</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;myPrinter := <font color=#C00000><b>Printer</b></font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with myPrinter do<br>
+&nbsp;&nbsp;&nbsp;&nbsp;begin<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Start printing</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BeginDoc;<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Set up a large blue font</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Canvas.Font.Size&nbsp;&nbsp; := 20;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Canvas.Font.Color&nbsp;&nbsp;:= clBlue;<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Write out the page size</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Canvas.TextOut(20,&nbsp;&nbsp;20, 'Page&nbsp;&nbsp;width = '+IntToStr(PageWidth));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Canvas.TextOut(20, 150, 'Page height = '+IntToStr(PageHeight));<br><b>
+</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=#008000><b>// Finish printing</b></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EndDoc;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end;<br>
+&nbsp;&nbsp;end;<br><b>
+end;</b><br>
+</font></td></tr>
+<tr bgcolor="#D2ECCF">
+ 
+<td align="right"><a href="printer&expandcode1=yes.htm#Ex1"><font face="Arial,Helvetica,Sans-Serif" size="1">Show full unit code</font></a></td>
+
+</tr>
+<tr bgcolor="#D2ECCF"><td><font face="Courier New" size="2">
+&nbsp;&nbsp;&nbsp;A page will be printed with big blue text at the top left:<br>&nbsp;&nbsp;
+<br>&nbsp;&nbsp;
+Page&nbsp;&nbsp;width = 2400<br>&nbsp;&nbsp;
+Page height = 3357<br>
+&nbsp;
+</font></td></tr>
+
+</table>
+</td>
+
+</tr>
+<tr height="10"><td>&nbsp;</td></tr>
+</table>
+
+</html>

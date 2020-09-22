@@ -1,0 +1,468 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!-- (0057)ShowMessageFmt -->
+  <head>
+
+    <script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    <!--
+    function CatchJavaScriptErrors() {return true;}
+    window.onerror = CatchJavaScriptErrors;
+    //-->
+    //]]>
+    </script>
+    <meta http-equiv="Content-Type" content=
+    "text/html; charset=utf-8" />
+    <title>
+      Smart Pascal : ShowMessageFmt command
+    </title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content=
+    "Delphi, Delphi Programming, Basics, Keyword, Command, ShowMessageFmt, RTL" />
+    <meta name="Author" content="Neil Moffatt" />
+    <meta name="Generator" content="AceHTML 4 Pro" />
+    <link rel="stylesheet" type="text/css" href="css/delphi.css" />
+    
+  </head>
+  <body bgcolor="#FFFFFF">
+    <table width="984" cellpadding="0" cellspacing="0" border="0"
+    align="center">
+      <tr>
+        <td>
+          <table width="100%" cellpadding="5" cellspacing="0"
+          border="0" align="center">
+            <tr>
+              <td>
+                <strong><a href="index.htm"><font color="#A00000"
+                size="6">Object</font></a><a href=
+                "index.htm"><font color="#000000" size=
+                "2">Pascal</font></a></strong>
+              </td>
+            </tr>
+            <tr height="50" valign="top" bgcolor="#DDDDDD">
+              <td>
+                <font color="#0000A0" face="Courier New" size=
+                "5"><strong>ShowMessageFmt</strong><br />
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Procedure</font></font>
+              </td>
+              <td align="center">
+                <font color="#444444" face="Courier New" size=
+                "4">Display formatted data in a simple dialog with
+                an OK button</font>
+              </td>
+              <td align="right">
+                <font color="#000000" face=
+                "Arial,Helvetica,Sans-Serif" size=
+                "3"><strong>Dialogs</strong> unit</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="100%" border="0" cellpadding="5"
+          cellspacing="0" align="center" bgcolor="#F8F8F8">
+            <tr valign="top">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;procedure&nbsp;<font color=
+                "#0000A0"><strong>ShowMessageFmt</strong></font> (
+                <strong>const Formatting</strong> : string;
+                <strong>const Data</strong> : array of const )
+                ;</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr height="10">
+        <td></td>
+      </tr>
+    </table>
+    <table width="984" border="0" cellspacing="0" cellpadding="0"
+    align="center">
+      <tr valign="top">
+        <td width="380">
+          <table border="0" cellpadding="7" cellspacing="0">
+            <tr height="30">
+              <td class="title" bgcolor="#FEF5B5">
+                <strong>Description</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FFFEEB">
+              <td>
+                The <font color=
+                "#996600"><strong>ShowMessageFmt</strong></font>
+                procedure provides 'C' like formatting of multiple
+                of simple data types into a string that is
+                displayed in a single. It provides very precise
+                control over this formatting.<br />
+                &nbsp;<br />
+                The <strong>Formatting</strong> parameter defines
+                how the <strong>Data</strong> array is manipulated
+                into the displayed string.<br />
+                &nbsp;<br />
+                The dialog has an OK button to allow the user to
+                register the message and close the dialog.<br />
+                &nbsp;<br />
+                The <strong>Formatting</strong> string can comprise
+                a mix of ordinary characters (that are passed
+                unchanged to the result string), and data
+                formatting characters. This formatting is best
+                explained by the example code.<br />
+                &nbsp;<br />
+                In simple terms, each data formatting substring
+                starts with a <strong>%</strong> and ends with a
+                data type indicator :<br />
+                &nbsp;<br />
+                <table>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>d&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = Decimal (integer)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>e&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = Scientific
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>f&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = Fixed
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>g&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = General
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>m&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = Money
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>n&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = Number (floating)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>p&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = Pointer
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>s&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = String
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>u&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = Unsigned decimal
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dt" align='right'>
+                      <strong>x&nbsp;</strong>
+                    </td>
+                    <td class="dd">
+                      = Hexadecimal
+                    </td>
+                  </tr>
+                </table><br />
+                &nbsp;<br />
+                The general format of each formatting substring is
+                as follows:<br />
+                &nbsp;<br />
+                <font color="#200080"><font class=
+                "mono"><strong>%[Index:][-][Width][.Precision]Type</strong></font></font><br />
+
+                &nbsp;<br />
+                where the square brackets refer to optional
+                parameters, and the <strong>: . -</strong>
+                characters are literals, the first 2 of which are
+                used to identify two of the optional arguments.
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30" bgcolor="#DADAF0">
+              <td class="h2">
+                <strong>Related commands</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#F9F9FF">
+              <td>
+                <table cellpadding="0" cellspacing="0">
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "inputbox.htm">InputBox</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Display a dialog that asks for user text
+                      input, with default
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "inputquery.htm">InputQuery</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Display a dialog that asks for user text
+                      input
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "messagedlg.htm">MessageDlg</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Displays a message, symbol, and selectable
+                      buttons
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "messagedlgpos.htm">MessageDlgPos</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Displays a message plus buttons at a given
+                      screen position
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "promptforfilename.htm">PromptForFileName</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Shows a dialog allowing the user to select a
+                      file
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "showmessage.htm">ShowMessage</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Display a string in a simple dialog with an
+                      OK button
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td>
+                      <strong><a href=
+                      "showmessagepos.htm">ShowMessagePos</a></strong>
+                    </td>
+                    <td width="8"></td>
+                    <td align="left">
+                      Display a string in a simple dialog at a
+                      given screen position
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Added for AdSense--><script type=
+                "text/javascript">
+//<![CDATA[
+                <!--
+                google_ad_client = "pub-5499211888959302";
+                //300x250, created 07/01/08
+                google_ad_slot = "1706833624";
+                google_ad_width = 300;
+                google_ad_height = 250;
+                //-->
+                //]]>
+                </script>
+              </td>
+            </tr><!-- Added for AdSense-->
+          </table>
+        </td>
+        <td width="8">
+          &nbsp;
+        </td>
+        <td width="690">
+          <table width="100%" border="0" cellpadding="6"
+          cellspacing="0">
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex1"></a><strong>Example code : Showing
+                all of the formatting data types</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size=
+                "2"><strong>var</strong><br />
+                &nbsp;&nbsp;text : string;<br />
+                <strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Just 1
+                data item</strong></font><br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('%s',
+                ['Hello']);<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// A mix
+                of literal text and a data
+                item</strong></font><br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('String
+                = %s', ['Hello']);<br />
+                &nbsp;&nbsp;WriteLn('');<br />
+                <br />
+                &nbsp;&nbsp;<font color="#008000"><strong>//
+                Examples of each of the data
+                types</strong></font><br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Decimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                %d', [-123]);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Exponent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                = %e', [12345.678]);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Fixed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                %f', [12345.678]);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('General&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                %g', [12345.678]);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                = %n', [12345.678]);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Money&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                %m', [12345.678]);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Pointer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                %p', [addr(text)]);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                = %s', ['Hello']);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Unsigned
+                decimal = %u', [123]);<br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Hexadecimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                %x', [140]);<br />
+                <strong>end;</strong><br /></font>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td align="right">
+                <a href=
+                "showmessagefmt&amp;expandcode1=yes.htm#Ex1">
+                <font face="Arial,Helvetica,Sans-Serif" size=
+                "1">Show full unit code</font></a>
+              </td>
+            </tr>
+            <tr bgcolor="#D2ECCF">
+              <td>
+                <font face="Courier New" size=
+                "2">&nbsp;&nbsp;&nbsp;Hello<br />
+                &nbsp;&nbsp; String = Hello<br />
+                &nbsp;&nbsp;<br />
+                &nbsp;&nbsp;
+                Decimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                -123<br />
+                &nbsp;&nbsp;
+                Exponent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                = 1.23456780000000E+004<br />
+                &nbsp;&nbsp;
+                Fixed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                12345.68<br />
+                &nbsp;&nbsp;
+                General&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                12345.678<br />
+                &nbsp;&nbsp;
+                Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                = 12,345,68<br />
+                &nbsp;&nbsp;
+                Money&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                ?12,345.68<br />
+                &nbsp;&nbsp;
+                Pointer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                0069FC90<br />
+                &nbsp;&nbsp;
+                String&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                = Hello<br />
+                &nbsp;&nbsp; Unsigned decimal = 123<br />
+                &nbsp;&nbsp;
+                Hexadecimal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+                8C<br />
+                &nbsp;</font>
+              </td>
+            </tr>
+            <tr height="10">
+              <td></td>
+            </tr>
+            <tr height="30">
+              <td class="h1" bgcolor="#BCF6BB">
+                <a name="Ex2"></a><strong>Example code : Using the
+                index, width and precision values</strong>
+              </td>
+            </tr>
+            <tr bgcolor="#FAFAFA">
+              <td>
+                <font face="Courier New" size=
+                "2"><strong>begin</strong><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// The
+                width value dictates the output
+                size</strong></font><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// with
+                blank padding to the left</strong></font><br />
+                &nbsp;&nbsp;<font color="#008000"><strong>// Note
+                the &lt;&gt; characters are added to show
+                formatting</strong></font><br />
+                &nbsp;&nbsp;<font color=
+                "#C00000"><strong>ShowMessageFmt</strong></font>('Padded
+                decimal&nbsp;&nbsp;&nbsp;&nbsp;=</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

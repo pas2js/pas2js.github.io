@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #2C5D88;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #2C5D88;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+p {padding:5px; line-height:1.5em;}
+.note {padding: 12px;margin: 6px;border-top: 1px;border-right: 1px;border-bottom: 1px;border-left: 1px;border-style: solid;border-color: #D3D3D3;background-color: #E5EFFB;}
+.smart_mobile_studio-table{border-collapse:collapse}.smart_mobile_studio-table tr:nth-child(odd){background-color:#f9f9f9}.smart_mobile_studio-table tr:nth-child(even){background-color:#ededed}.smart_mobile_studio-table th{color:#fff;background-color:#555;border:1px solid #555;padding:3px;vertical-align:middle;text-align:left;text-transform:uppercase}a,h1,h2{background:0 0}.smart_mobile_studio-table td{border:1px solid #d4d4d4;padding:7px 5px;vertical-align:middle}a{text-decoration:none;color:#3296c8}a:focus,a:hover{color:#32c864;text-decoration:underline}a:active{color:#43d072}a:visited{color:#2db45a}a.new{color:#c8324b}a.new:visited{color:#d0435b}
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Base Types</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js001.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js003.htm"><span class="hmbtnnext"></span></a>	  
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+<tbody style="line-height: 1.45;">
+  <tr>
+	<td>
+
+<h2><span id="gs" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> String</span></h2>
+<p>String type is used when you wish to store a character string of any length. It uses the Unicode character set for the characters that comprise the string. Character type store a single character, and also use the Unicode character set.</p>
+
+<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp;String maps to JavaScript String object. Strings can be delimited by a single quote ('abc'). Explicit Unicode characters can be specified by using # followed by an integer codepoint (decimal or hexadecimal). Characters specified this way are always understood as Unicode codepoint.</div>
+<p></p>
+<div align="center">
+  <table cellpadding="3"
+  style="position: relative; width: 95%; border-width: 1px; border-style: inset; /* padding: 10px 0; */ /* border-bottom: 1pt solid rgb(221, 221, 221); */ /* border-bottom: 1pt solid rgb(221, 221, 221); */">
+	<tbody>
+	  <tr style="background-color: #2C5D88; color: white; line-height: 1.45;border-bottom: 1pt solid black;border-bottom: 1pt solid rgb(221, 221, 221);">
+
+		<td align="left">
+		  <strong>Type</strong>
+		</td>
+		<td align="left">
+		  <strong>Description</strong>
+		</td>
+	  </tr>
+	  <tr style="border-bottom:1pt solid #2C5D88;">
+		<td align="left">
+		  <strong>String</strong>
+		</td>
+		<td align="left">A string value with a variable number of characters.</td>
+	  </tr>
+	  <tr style="border-bottom:1pt solid #2C5D88;">
+		<td align="left">
+		  <strong>Char</strong>
+		</td>
+		<td align="left">A single character.</td>
+	  </tr>
+	</tbody>
+  </table>
+</div>
+
+<p><strong>String literals</strong> use the single quote (') character to identify themselves as such. Any single quotes enclosed inside of the literal must be escaped by prefacing them with another single quote. In addition, single character constants may be specified using their literal value or by prefacing their ordinal character set position with the pound sign (#) character. To reference a specific character in a string, use the left and right brackets ([]) with the 1-based integer position of the character being referenced.
+</p>
+<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp;Strings are immutable, meaning that they cannot be modified in-place by assigning new character values at specific positions in the string.  They must always be copied and then assigned to a new string in order to be modified.</div>
+<p>The unit SysUtils provides many utility functions for String, like:</p>
+<table class="smart_mobile_studio-table" style="margin-left:25px;">
+<tbody>
+<tr>
+  <th>String Methods</th>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">CharInSet</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">LeftStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">RightStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">Trim</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TrimLeft</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TrimRight</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">UpperCase</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">LowerCase</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">CompareStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">SameStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">CompareText</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">SameText</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">AnsiCompareText</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">AnsiSameText</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">AnsiCompareStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">AppendStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">Format</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">LocaleCompare</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">NormalizeStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">IsValidIdent</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StringReplace</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">QuoteString</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">IsDelimiter</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">AdjustLineBreaks</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">WrapText</a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+
+<h2><span id="gs" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> Boolean</span></h2>
+<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp;<strong>Boolean</strong> Stores True or False. Maps to JavaScript Boolean object. When casting a Boolean as an Integer, True maps to 1 and False maps to 0. When casting an Integer as a Boolean, 0 maps to False and all other values map to True.</div>
+<p></p>
+<div align="center">
+  <table cellpadding="3"
+  style="position: relative; width: 95%; border-width: 1px; border-style: inset; /* padding: 10px 0; */ /* border-bottom: 1pt solid rgb(221, 221, 221); */ /* border-bottom: 1pt solid rgb(221, 221, 221); */">
+	<tbody>
+	  <tr style="background-color: #2C5D88; color: white; line-height: 1.45;border-bottom: 1pt solid black;border-bottom: 1pt solid rgb(221, 221, 221);">
+
+		<td align="left">
+		  <strong>Type</strong>
+		</td>
+		<td align="left">
+		  <strong>Description</strong>
+		</td>
+	  </tr>
+	  <tr style="border-bottom:1pt solid #2C5D88;">
+		<td align="left">
+		  <strong>Boolean</strong>
+		</td>
+		<td align="left">A logical true/false value.</td>
+	  </tr>
+	</tbody>
+  </table>
+</div>
+
+<p>The unit SysUtils provides many utility functions for Boolean, like:</p>
+<table class="smart_mobile_studio-table" style="margin-left:25px;">
+<tbody>
+<tr>
+  <th>Boolean Methods</th>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToBool</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">BoolToStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToBoolDef</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToBool</a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+
+<h2><span id="gs" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> Numbers</span></h2>
+
+<p>Unlike many other programming languages, <strong>javaScript</strong> does not define different types of numbers, like integers, short, long, floating-point etc. JavaScript only supports double. All Pascal number types and enum values are mapped to this.</p>
+
+<p><strong>Exact numeric types</strong> are used when you wish to store a numeric value in its exact representation without accumulating rounding errors. Exact numeric literals use the minus (-) as the negative sign character, the plus (+) as the positive sign character, and scientific notation is supported. In addition, hexadecimal literals can be specified by prefacing the hexadecimal value with the dollar sign ($). Represents <strong>integer</strong> numbers.</p>
+
+<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp;<strong>Integer</strong> maps to JavaScript Number object and is therefore internally always represented as a floating-point number. The compiler will strive to keep the Number object with an integer value, though since Number is a double-precision float that value can exceed the 32 bits range and reach up to 53 bits for regular operands (+, -, <, etc.) are accurate from <strong>-4503599627370496 to 4503599627370495</strong>. Due to JavaScript limitations, value will be clamped to 32 bits for bitwise operands. </div>
+<p></p>
+
+<div align="center">
+  <table cellpadding="3" style="position: relative; width: 95%;">
+	<tbody>
+	  <tr style="background-color: #2C5D88; color:white; line-height: 1.45;">
+		<td align="left">
+		  <strong>Type</strong>
+		</td>
+		<td align="center">
+		  <strong>Range</strong>
+		</td>
+		<td align="right">
+		  <strong>Size</strong>
+		</td>
+	  </tr>
+	  <tr>
+		<td align="left">
+		  <strong>Byte</strong>
+		</td>
+		<td align="center">0 .. 255</td>
+		<td align="right">unsigned 8-bit</td>
+	  </tr>
+	  <tr style="background-color: #ececec;">
+		<td align="left">
+		  <strong>Shortint</strong>
+		</td>
+		<td align="center">-128 .. 127</td>
+		<td align="right">signed 8-bit</td>
+	  </tr>
+	  <tr>
+		<td align="left">
+		  <strong>SmallInt</strong>
+		</td>
+		<td align="center">-32768 .. 32767</td>
+		<td align="right">signed 16-bit</td>
+	  </tr>
+	  <tr style="background-color: #ececec;">
+		<td align="left">
+		  <strong>Word</strong>
+		</td>
+		<td align="center">0 .. 65535</td>
+		<td align="right">unsigned 16-bit</td>
+	  </tr>
+	  <tr style="background-color: #F7B36C;">
+		<td align="left">
+		  <strong>Integer</strong>
+		</td>
+		<td align="center">-4503599627370496 .. 4503599627370495</td>
+		<td align="right">signed 53-bit</td>
+	  </tr>
+	  <tr style="background-color: #ececec;">
+		<td align="left">
+		  <strong>Cardinal</strong>
+		</td>
+		<td align="center">0 .. 4294967295</td>
+		<td align="right">unsigned 32-bit</td>
+	  </tr>
+	  <tr>
+		<td align="left">
+		  <strong>Longint</strong>
+		</td>
+		<td align="center">-2147483648 .. 2147483647</td>
+		<td align="right">signed 32-bit</td>
+	  </tr>
+	  <tr style="background-color: #ececec;">
+		<td align="left">
+		  <strong>NativeUInt</strong>
+		</td>
+		<td align="center">0 .. 4503599627370495</td>
+		<td align="right">unsigned 52-bit</td>
+	  </tr>
+	  <tr>
+		<td align="left">
+		  <strong>NativeInt</strong>
+		</td>
+		<td align="center">-4503599627370496 .. 4503599627370495</td>
+		<td align="right">signed 53-bit</td>
+	  </tr>	  
+	  <tr style="background-color: #ececec;">
+		<td align="left">
+		  <strong>LongWord</strong>
+		</td>
+		<td align="center">0 .. 4294967295</td>
+		<td align="right">unsigned 32-bit</td>
+	  </tr>
+	  <tr>
+		<td align="left">
+		  <strong>Int64</strong>
+		</td>
+		<td align="center">-9223372036854775808 .. 9223372036854775807</td>
+		<td align="right">signed 64-bit</td>
+	  </tr>
+	  <tr style="background-color: #ececec;">
+		<td align="left">
+		  <strong>QWord</strong>
+		</td>
+		<td align="center">0 .. 18446744073709551615</td>
+		<td align="right">unsigned 64-bit</td>
+	  </tr>
+	</tbody>
+  </table>
+</div>
+
+
+<p>The unit SysUtils provides many utility functions for Integer, like:</p>
+<table class="smart_mobile_studio-table" style="margin-left:25px;">
+<tbody>
+<tr>
+  <th>Integer Methods</th>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">IntToStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToInt</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToIntDef</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToInt</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToNativeInt</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToInt64</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToInt64Def</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToInt64</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToQWord</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToQWordDef</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToQWord</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToUInt64</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToUInt64Def</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToUInt64</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToDWord</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToDWordDef</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToDWord</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">IntToHex</a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+
+<p><strong>JavaScript numbers</strong> are always stored as double precision floating point numbers. This format stores numbers in 64 bits, where the number (the fraction) is stored in bits 0 to 51, the exponent in bits 52 to 62, and the sign in bit 63.</p>
+
+<p><strong>Approximate numeric types</strong> are used when you wish to store a numeric value in an approximate representation with a floating decimal point. Using approximate numeric types can cause rounding errors due to the fact that certain numbers such as 0.33 cannot be accurately represented using floating-point precision.</p>
+
+<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp;<strong>Double</strong> Represents double-precision floating-point numbers. Float maps to JavaScript Number object. Double can be represented in normal notation (3.1415) or in exponential notation (1.23e45). Maximum precision of 16 digits, are accurate from <strong>5x10<sup>-324</sup> to  1.7x10<sup>308</sup></strong>.</div>
+<p></p>
+<div align="center">
+<table cellpadding="3" style="position: relative; width: 95%;">
+<tbody>
+<tr style="background-color: #2C5D88; color: white; line-height: 1.45;">
+<td align="left"><strong>Type</strong></td>
+<td align="center"><strong>Range</strong></td>
+<td align="right"><strong>Significant digits</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Real</strong></td>
+<td align="center">&plusmn;2.9&times;10-<sup>39</sup> .. 1.7&times;10<sup>38</sup></td>
+<td align="right">11-12</td>
+</tr>
+<tr style="background-color: #ececec;">
+<td align="left"><strong>Single</strong></td>
+<td align="center">&plusmn;1.5*10<sup>-45 ..&nbsp;</sup>3.4*10<sup>38</sup></td>
+<td align="right">7-8</td>
+</tr>
+<tr style="background-color: #F7B36C;">
+<td align="left"><strong>Double</strong></td>
+<td align="center">5*10<sup>-324 ..&nbsp;</sup>1.7*10<sup>308</sup></td>
+<td align="right">15-16</td>
+</tr>
+<tr style="background-color: #ececec;">
+<td align="left"><strong>Extended</strong></td>
+<td align="center">1.9*10<sup>-4932 ..&nbsp;</sup>1.1*10<sup>4932</sup></td>
+<td align="right">19-20</td>
+</tr>
+<tr>
+<td align="left"><strong>Comp</strong></td>
+<td align="center">-2*10<sup>64 ..&nbsp;</sup>+2*10<sup>64</sup>-1</td>
+<td align="right">19-20</td>
+</tr>
+<tr style="background-color: #ececec;">
+<td align="left"><strong>Currency</strong></td>
+<td align="center">-922337203685477.5808 .. 922337203685477.5807</td>
+<td align="right">19-20</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>The unit SysUtils provides many utility functions for Float, like:</p>
+<table class="smart_mobile_studio-table" style="margin-left:25px;">
+<tbody>
+<tr>
+  <th>Float Methods</th>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">FloatToDecimal</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">FloatToStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">FloatToStrF</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToFloat</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToFloatDef</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToFloat</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">FormatFloat</a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+
+<h2><span id="gs" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> DateTime</span></h2>
+
+<div align="center">
+  <table cellpadding="3"
+  style="position: relative; width: 95%; border-width: 1px; border-style: inset; /* padding: 10px 0; */ /* border-bottom: 1pt solid rgb(221, 221, 221); */ /* border-bottom: 1pt solid rgb(221, 221, 221); */">
+	<tbody>
+	  <tr style="background-color: #2C5D88; color: white; line-height: 1.45;border-bottom: 1pt solid black;border-bottom: 1pt solid rgb(221, 221, 221);">
+
+		<td align="left">
+		  <strong>Type</strong>
+		</td>
+		<td align="left">
+		  <strong>Description</strong>
+		</td>
+	  </tr>
+	  <tr style="border-bottom:1pt solid #2C5D88;">
+		<td align="left">
+		  <strong>DateTime</strong>
+		</td>
+		<td align="left">A date/time value containing the number of milliseconds since midnight on January 1, 1970.</td>
+	  </tr>
+	</tbody>
+  </table>
+</div>
+<p>The unit SysUtils provides many utility functions for DateTime, like:</p>
+<table class="smart_mobile_studio-table" style="margin-left:25px;">
+<tbody>
+<tr>
+  <th>Date/Time Methods</th>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DateTimeToJSDate</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">JSDateToDateTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DateTimeToTimeStamp</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TimeStampToDateTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">MSecsToTimeStamp</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TimeStampToMSecs</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryEncodeDate</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryEncodeTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">EncodeDate</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">EncodeTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">ComposeDateTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DecodeDate</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DecodeDateFully</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DecodeTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DateTimeToSystemTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">SystemTimeToDateTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DayOfWeek</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">Date</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">Time</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">Now</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">IncMonth</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">IncAMonth</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">IsLeapYear</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DateToStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TimeToStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">DateTimeToStr</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToDate</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToDateTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">FormatDateTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToDate</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">TryStrToDateTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToDateDef</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToTimeDef</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">StrToDateTimeDef</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">CurrentYear</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">ReplaceTime</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">ReplaceDate</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">FloatToDateTime</a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+
+<h2><span id="gs" class="mw-headline"><img src="propertyicon.png" alt="propertyicon.png" width="16" height="14"> JSValue</span></h2>
+<div class="note"><img src="information.png" border="0" alt="Information" align="bottom" height="16" width="16">&nbsp;<strong>JSValue</strong>  works similar to a JS variable. You can assign almost any value to it and it can be type casted to many types, for instance, Any array can be assigned to an array of JSValue. JSValue is useful for JS wrappers, when a variable can have multiple types. And it can be used for containers storing arbitrary data, e.g. a list of JSValue. A JSValue variable initial value is undefined.</div>
+<p></p>
+<div align="center">
+  <table cellpadding="3"
+  style="position: relative; width: 95%; border-width: 1px; border-style: inset; /* padding: 10px 0; */ /* border-bottom: 1pt solid rgb(221, 221, 221); */ /* border-bottom: 1pt solid rgb(221, 221, 221); */">
+	<tbody>
+	  <tr style="background-color: #2C5D88; color: white; line-height: 1.45;border-bottom: 1pt solid black;border-bottom: 1pt solid rgb(221, 221, 221);">
+
+		<td align="left">
+		  <strong>Type</strong>
+		</td>
+		<td align="left">
+		  <strong>Description</strong>
+		</td>
+	  </tr>
+	  <tr style="border-bottom:1pt solid #2C5D88;">
+		<td align="left">
+		  <strong>JSValue</strong>
+		</td>
+		<td align="left">JSValue stores any pascal base, since you do not have to predefine the structure by hand.</td>
+	  </tr>
+	</tbody>
+  </table>
+</div>
+
+<p>The unit JS provides many utility functions for JSValue, like:</p>
+<table class="smart_mobile_studio-table" style="margin-left:25px;">
+<tbody>
+<tr>
+  <th>JSValue Methods</th>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">hasString</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">hasValue</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isArray</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isBoolean</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isCallback</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isChar</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isClass</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isClassInstance</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isFunction</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isInteger</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isModule</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isNull</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isNumber</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isObject</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isRecord</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isString</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isUndefined</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isDefined</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isUTF16Char</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">isExt</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">jsInstanceOf</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">jsTypeOf</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">jsIsNaN</a></td>
+</tr>
+<tr>
+  <td>
+  <img src="methodicon.png" alt="methodicon.png" width="16" height="12" /> 
+  <a href="#">toNumber</a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+
+<pre><span id="code" class="language-css" style=" background-color: #e18728;">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+var number: TFuncOfInt;
+   MyInteger: Integer;
+   MyDouble: Double;
+   MyString: String;
+   MyCharacter: Char;
+   MyBoolean: Boolean;
+   MyJSValue: JSValue;
+begin
+
+ MyInteger := 100; // Assign 100 to the Integer variable
+ MyInteger := $64; // Assign 100 as hexadecimal to the Integer variable
+ MyDouble := -100.25; // Assign -100.25 to the Double variable
+ MyDouble := 5E-324 * 1E1;
+ MyString := 'This is a test'; // Assign "This is a test"
+                               // to the String variable
+ MyString := #13+#10; // Assign a carriage return and
+                      // linefeed to the String variable
+
+ MyCharacter := MyString[2]; // Assign the second character
+                             // from the String variable to
+                             // the Char variable
+
+ MyString := 'Hello'#13#$0A'World';
+ console.log(MyString);
+ MyBoolean := False; // Assign False to the Boolean variable
+
+ MyJSValue := $64;
+ console.log( Math.floor(Integer(MyJSValue)) );
+
+ MyJSValue := 13.535;
+ console.log( Math.floor(Double(MyJSValue)) );
+
+ MyJSValue := True;
+ MyJSValue := MyString[5];
+
+end. 
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+rtl.module("program",["System","Web","math","Classes","SysUtils"],function () {
+  "use strict";
+  var $mod = this;
+  this.MyInteger = 0;
+  this.MyDouble = 0.0;
+  this.MyString = "";
+  this.MyCharacter = "";
+  this.MyBoolean = false;
+  this.MyJSValue = undefined;
+  $mod.$main = function () {
+    $mod.MyInteger = 100;
+    $mod.MyInteger = 0x64;
+    $mod.MyDouble = -100.25;
+    $mod.MyDouble = 5E-324 * 1E1;
+    $mod.MyString = "This is a test";
+    $mod.MyString = "\r" + "\n";
+    $mod.MyCharacter = $mod.MyString.charAt(1);
+    $mod.MyString = "Hello\r\nWorld";
+    window.console.log($mod.MyString);
+    $mod.MyBoolean = false;
+    $mod.MyJSValue = 0x64;
+    window.console.log(pas.math.Floor(Math.floor($mod.MyJSValue)));
+    $mod.MyJSValue = 13.535;
+    window.console.log(pas.math.Floor(rtl.getNumber($mod.MyJSValue)));
+    $mod.MyJSValue = true;
+    $mod.MyJSValue = $mod.MyString.charAt(4);
+  };
+});
+
+</code></pre></div>
+</div>
+
+<div align="center">
+  <table cellpadding="1"
+  style="position: relative; width: 95%; border-width: 1px; border-style: inset; /* padding: 10px 0; */ /* border-bottom: 1pt solid rgb(221, 221, 221); */ /* border-bottom: 1pt solid rgb(221, 221, 221); */">
+
+	<caption>
+	  <strong>Type Mappings</strong>
+	</caption>
+	<tbody>
+	  <tr style="background-color: #2C5D88; color: white; line-height: 1.45; border-bottom: 1pt solid rgb(221, 221, 221);">
+		<td align="left">
+		  <strong>Type</strong>
+		</td>
+	  </tr>
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>Integer  = LongInt;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>Cardinal = LongWord;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>DWord    = LongWord;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>SizeInt  = NativeInt;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>SizeUInt = NativeUInt;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>PtrInt   = NativeInt;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>PtrUInt  = NativeUInt;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>ValSInt  = NativeInt;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>ValUInt  = NativeUInt;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>ValReal  = Double;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>Real     = Double;</strong>
+		</td>
+	  </tr>	 	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>Extended = Double;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>Float    = Double;</strong>
+		</td>
+	  </tr>	 	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>Int64           = NativeInt unimplemented;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>UInt64          = NativeUInt unimplemented;</strong>
+		</td>
+	  </tr>	 	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>QWord           = NativeUInt unimplemented;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>Single          = Double unimplemented;</strong>
+		</td>
+	  </tr>	 	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>Comp            = NativeInt unimplemented;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>NativeLargeUInt = NativeUInt;</strong>
+		</td>
+	  </tr>	 	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>UnicodeString   = String;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>WideString      = String;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>WideChar        = char;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>TDynArrayIndex  = NativeInt; </strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>TBooleanDynArray = array of Boolean;</strong>
+		</td>
+	  </tr>
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>TIntegerDynArray = array of Integer;</strong>
+		</td>
+	  </tr>	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>TStringDynArray  = array of String;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>TDoubleDynArray  = array of Double;</strong>
+		</td>
+	  </tr>	  	  
+	  <tr style="font-size:small;">
+		<td align="left" style="padding: 0.7em 0.0em 0.0em 1.0em;">
+		  <strong>TJSValueDynArray = array of JSValue;</strong>
+		</td>
+	  </tr>
+	</tbody>
+  </table>
+</div>
+
+	</td>
+  </tr>
+</tbody>  
+</table>
+</body>
+</html>

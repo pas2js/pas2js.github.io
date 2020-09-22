@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+<link type="text/css" href="css/styles.css" rel="stylesheet" />
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link rel="stylesheet" title="Default" href="css/default.css"> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/highlight.min.js"></script>
+<script src="js/delphi.min.js"></script>
+<script src="js/javascript.min.js"></script>   
+<script type="text/javascript">
+hljs.tabReplace='    ';hljs.initHighlightingOnLoad();function showme(id){var divid=document.getElementById(id);if(divid.style.display=='block')divid.style.display='none';else divid.style.display='block';}
+$(document).ready(function(){$("button").click(function(){$(this).text($(this).text()=='Show JS code'?'Hide JS code':'Show JS code');showme('widget');});});
+</script>   
+<style> 
+html, body { margin:0; padding:0; background: #ffffff;} 
+#idheader {width:100%; height:auto; padding: 0; margin: 0;position: fixed;top: 0;
+z-index: 2;} 
+#idheader table { background: #2C5D88; min-height: 59px }             
+#idheader h1 { color: #FFF }     
+#idnav {text-align: right; width: 158px; vertical-align: middle;} 
+#idnav a { text-decoration: none }
+#idnav span {display: inline-block;width: 24px;height: 24px;margin-left: 4px;
+background:url('css/img/hm_webhelp_buttons_grey.png') top left no-repeat;} 
+#idnav a span {background-image:url('css/img/hm_webhelp_buttons_white.png');} 
+#idnav a span:hover {background-image:url('css/img/hm_webhelp_buttons_orange.png');} 
+#idnav span.hmbtnprev { background-position: 0 -32px }
+#idnav span.hmbtnnext { background-position: -24px -32px }
+#idnav span.hmbtntop  { background-position: -48px -32px }
+.language-css {background-color: #cd6a51;content: attr(rel);color: white;position: absolute;
+width: 100%;background: #e18728;font-family: 'PT Serif', serif;padding: 5px 0;text-indent: 15px;font-size: 17px;font-weight: 300;line-height: 1.45;font-weight: 700;}
+#checkoutbutton {
+    background-color: #2C5D88;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #FFFFFF;
+  border: 5px solid #e18728;
+  padding: 2px;
+  margin: 0px 0px 0px 25px;
+}
+#checkoutbutton:hover {opacity: 0.6; }
+</style>
+</head>
+<body>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left;">
+      <h1 class="p_Heading1" style="page-break-after: avoid;"><span class="f_Heading1">Class type with Const keyword</span></h1>
+    </td>
+    <td class="topichead" id="idnav">
+      <a href="hm_pas2js075.htm"><span class="hmbtnprev"></span></a>
+      <a href="index.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="hm_pas2js077.htm"><span class="hmbtnnext"></span></a>
+     </td>  
+  </tr>  
+</table>
+</div>
+</div>  
+
+<br/><br/>
+<table style="width:100%;border:none;margin:10px;" cellspacing="0" cellpadding="0">
+  <tr>
+	<td>
+	Class type with Const keyword
+	</td>
+  </tr>
+</table>
+	
+<pre><span id="code" class="language-css">Pas2JS pascal source code</span><br>
+<code class="delphi" style="background-color: #FFFEEB;">
+{ unit1.pas }
+type
+TBase = class
+   private const cPrivate = 1;
+   protected const cProtected = 2;
+   public class const cPublic = 3;
+   procedure WriteLnAll;
+   class procedure ClassWriteLnAll;
+end;
+
+type
+TChild = class (TBase)
+   procedure WriteLnFromChild;
+end;
+
+type
+TBase2 = class
+   const c1 = 1;
+   const c2 = c1+1;
+end;
+
+const cTOTO = 'toto';
+
+type maclasse1 = class
+  private
+   const cTOTO = 'titi';
+  public
+   class procedure Test;
+   begin
+     WriteLn(cTOTO);
+   end;
+end;
+
+type maclasse2 = class
+ private
+  const cTOTO = 'tata';
+ public
+  class procedure Test;
+  begin
+    WriteLn(cTOTO);
+  end;
+end;
+
+type
+TObj = class
+  const Value = 5;
+  FField := Value; // TObj.Value - OK
+end;
+
+type
+TObj2 = class
+  private
+   const Value = 6;
+  public
+    FField := TObj2.Value;
+end;
+
+implementation
+
+{ TBase }
+procedure TBase.WriteLnAll;
+begin
+   WriteLn('From base');
+   WriteLn(cPrivate);
+   WriteLn(cProtected);
+   WriteLn(cPublic);
+end;
+
+class procedure TBase.ClassWriteLnAll;
+begin
+   WriteLn('From class proc');
+   WriteLn(cPrivate);
+   WriteLn(cProtected);
+   WriteLn(cPublic);
+end;
+{ TChild }
+procedure TChild.WriteLnFromChild;
+begin
+   WriteLn('From child');
+   WriteLn(cProtected);
+   WriteLn(cPublic);
+end;
+
+{ main.pas }
+var
+  o := TBase.Create;
+
+Begin
+  WriteLn('From Outside');
+  WriteLn(TBase.cPublic);
+  WriteLn(o.cPublic);
+
+  TBase.ClassWriteLnAll;
+  o.WriteLnAll;
+
+  TChild.Create.WriteLnFromChild;
+{ ### CONSOLE OUTPUTS ###
+
+  From Outside
+  3
+  3
+  From class proc
+  1
+  2
+  3
+  From base
+  1
+  2
+  3
+  From child
+  2
+  3
+}
+{ TEST II }
+WriteLn(TBase2.c1);  // 1
+WriteLn(TBase2.c2);  // 2
+
+{ TEST III }
+WriteLn(cToto);
+maclasse1.Test;
+maclasse2.Test;
+{ ### CONSOLE OUTPUTS ###
+  toto
+  titi
+  tata
+}
+{ TEST IV }
+  Writeln(New TObj.FField);   // 5
+  Writeln(New TObj2.FField);  // 6
+
+</code></pre>
+<button type="button" id="checkoutbutton">Show JS code</button>
+<div id="widget" style="display:none;">
+<pre>
+<code class="javascript">
+      var o = null,
+         o = TObject.Create($New(TBase));
+      WriteLn("From Outside");
+      WriteLn(3);
+      WriteLn(3);
+      TBase.ClassWriteLnAll(TBase);
+      TBase.WriteLnAll(o);
+      TChild.WriteLnFromChild(TObject.Create($New(TChild)));
+      WriteLn(1);
+      WriteLn(2);
+      WriteLn("toto");
+      maclasse1.Test$1(maclasse1);
+      maclasse2.Test(maclasse2);
+      WriteLn(TObject.Create($New(TObj)).FField$1);
+      WriteLn(TObject.Create($New(TObj2)).FField);
+
+/// TObj2 = class (TObject)
+///  [line: 120, column: 1, file: uMain]
+var TObj2 = {
+   $ClassName:"TObj2",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FField = 6;
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TObj = class (TObject)
+///  [line: 114, column: 1, file: uMain]
+var TObj = {
+   $ClassName:"TObj",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+      $.FField$1 = 5;
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TBase = class (TObject)
+///  [line: 72, column: 1, file: uMain]
+var TBase = {
+   $ClassName:"TBase",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// procedure TBase.WriteLnAll()
+   ///  [line: 127, column: 17, file: uMain]
+   ,WriteLnAll:function(Self) {
+      WriteLn("From base");
+      WriteLn(1);
+      WriteLn(2);
+      WriteLn(3);
+   }
+   /// procedure TBase.ClassWriteLnAll()
+   ///  [line: 135, column: 23, file: uMain]
+   ,ClassWriteLnAll:function(Self) {
+      WriteLn("From class proc");
+      WriteLn(1);
+      WriteLn(2);
+      WriteLn(3);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TChild = class (TBase)
+///  [line: 81, column: 1, file: uMain]
+var TChild = {
+   $ClassName:"TChild",$Parent:TBase
+   ,$Init:function ($) {
+      TBase.$Init($);
+   }
+   /// procedure TChild.WriteLnFromChild()
+   ///  [line: 143, column: 18, file: uMain]
+   ,WriteLnFromChild:function(Self) {
+      WriteLn("From child");
+      WriteLn(2);
+      WriteLn(3);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// TBase2 = class (TObject)
+///  [line: 86, column: 1, file: uMain]
+var TBase2 = {
+   $ClassName:"TBase2",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   ,Destroy:TObject.Destroy
+};
+/// maclasse2 = class (TObject)
+///  [line: 103, column: 6, file: uMain]
+var maclasse2 = {
+   $ClassName:"maclasse2",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// procedure maclasse2.Test()
+   ///  [line: 107, column: 19, file: uMain]
+   ,Test:function(Self) {
+      WriteLn("tata");
+   }
+   ,Destroy:TObject.Destroy
+};
+/// maclasse1 = class (TObject)
+///  [line: 93, column: 6, file: uMain]
+var maclasse1 = {
+   $ClassName:"maclasse1",$Parent:TObject
+   ,$Init:function ($) {
+      TObject.$Init($);
+   }
+   /// procedure maclasse1.Test()
+   ///  [line: 97, column: 20, file: uMain]
+   ,Test$1:function(Self) {
+      WriteLn("titi");
+   }
+   ,Destroy:TObject.Destroy
+};	  
+
+</code></pre></div>
+</div>
+</body>
+</html>
