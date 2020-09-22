@@ -6057,7 +6057,7 @@ rtl.module("uDatabase",["System","Classes","SysUtils","Types","JS","Web","DB","u
     var fetched = null;
     var buf = null;
     var dataDB = null;
-    fetched = await window.fetch(path,  {cache: "no-store"});
+    fetched = await window.fetch(path,pas.JS.New(["cache","no-store"]));
     buf = await fetched.arrayBuffer();
     dataDB = new Uint8Array(buf);
     await $mod.Sleep(25);
