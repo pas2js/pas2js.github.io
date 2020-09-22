@@ -6057,7 +6057,7 @@ rtl.module("uDatabase",["System","Classes","SysUtils","Types","JS","Web","DB","u
     var fetched = null;
     var buf = null;
     var dataDB = null;
-    fetched = await window.fetch(path);
+    fetched = await window.fetch(path,  {cache: "no-store"});
     buf = await fetched.arrayBuffer();
     dataDB = new Uint8Array(buf);
     await $mod.Sleep(25);
@@ -6232,4 +6232,3 @@ rtl.module("program",["System","JS","Classes","SysUtils","Web","uMain"],function
     };
   };
 });
-//# sourceMappingURL=projSQLite.js.map
