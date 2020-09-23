@@ -6191,7 +6191,6 @@ rtl.module("uMain",["System","JS","Web","Types","Classes","SysUtils","uDatabase"
       window.console.log(this.MasterDetailDatabase.DB);
       document.querySelector("#btn1").disabled = false;
       document.querySelector("#btn2").disabled = false;
-      $impl.resetElement(document.querySelector("#btn1"));
       $impl.resetElement(document.querySelector("#btn2"));
       document.querySelector("#btn1").innerHTML = "Click me";
       document.querySelector("#btn2").innerHTML = "DataTables";
