@@ -6193,8 +6193,8 @@ rtl.module("uMain",["System","JS","Web","Types","Classes","SysUtils","uDatabase"
       document.querySelector("#btn2").disabled = false;
       $impl.resetElement(document.querySelector("#btn1"));
       $impl.resetElement(document.querySelector("#btn2"));
-      document.querySelector("#btn1").innerText = "Click me";
-      document.querySelector("#btn2").innerText = "DataTables";
+      document.querySelector("#btn1").innerHTML = "Click me";
+      document.querySelector("#btn2").innerHTML = "DataTables";
     };
     this.OnConnectError = function (Sender, fDatabase) {
       window.console.log('The "' + fDatabase + '" database was not found!');
