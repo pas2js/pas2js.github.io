@@ -6060,13 +6060,14 @@ rtl.module("uDatabase",["System","Classes","SysUtils","Types","JS","Web","DB","u
     fetched = await window.fetch(path,pas.JS.New(["cache","no-store"]));
     buf = await fetched.arrayBuffer();
     dataDB = new Uint8Array(buf);
-    await $mod.Sleep(25);
+    await $mod.Sleep(50);
     callBackDB(new SQL.Database(dataDB));
   };
 });
 rtl.module("uMain",["System","JS","Web","Types","Classes","SysUtils","uDatabase","uSQLite"],function () {
   "use strict";
   var $mod = this;
+  var $impl = $mod.$impl;
   rtl.createClass($mod,"TJSMain",pas.System.TObject,function () {
     this.$init = function () {
       pas.System.TObject.$init.call(this);
@@ -6190,12 +6191,17 @@ rtl.module("uMain",["System","JS","Web","Types","Classes","SysUtils","uDatabase"
       window.console.log(this.MasterDetailDatabase.DB);
       document.querySelector("#btn1").disabled = false;
       document.querySelector("#btn2").disabled = false;
+      $impl.resetElement(document.querySelector("#btn1"));
+      $impl.resetElement(document.querySelector("#btn2"));
+      document.querySelector("#btn1").innerText = "Click me";
+      document.querySelector("#btn2").innerText = "DataTables";
     };
     this.OnConnectError = function (Sender, fDatabase) {
       window.console.log('The "' + fDatabase + '" database was not found!');
     };
     this.RunApp = function () {
       pas.System.Writeln("starting app");
+      $impl.changeVisibility(document.querySelector("#btn2"));
       document.querySelector("#btn1").disabled = true;
       document.querySelector("#btn2").disabled = true;
       this.bindEvent(document.querySelector("#btn1"),"click",rtl.createCallback(this,"onBtn1Click"));
@@ -6215,6 +6221,17 @@ rtl.module("uMain",["System","JS","Web","Types","Classes","SysUtils","uDatabase"
       };
     };
   });
+},null,function () {
+  "use strict";
+  var $mod = this;
+  var $impl = $mod.$impl;
+  $impl.changeVisibility = function (el) {
+    el.setAttribute("style","visibility: hidden");
+  };
+  $impl.resetElement = function (el) {
+    el.setAttribute("style","display: block");
+    el.setAttribute("style","visibility: visible");
+  };
 });
 rtl.module("program",["System","JS","Classes","SysUtils","Web","uMain"],function () {
   "use strict";
